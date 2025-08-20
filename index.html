@@ -273,10 +273,14 @@
         /* Fix animated text sizing */
         .equipment-cycler {
             font-size: 1.8rem !important;
-            min-width: auto !important;
-            max-width: 100% !important;
+            width: 200px !important;
+            min-width: 200px !important;
+            max-width: 200px !important;
             display: inline-block !important;
             vertical-align: baseline !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            white-space: nowrap !important;
         }
         
         /* Fix tagline text sizing */
@@ -298,6 +302,7 @@
             text-align: center !important;
             width: 100% !important;
             overflow: hidden !important;
+            min-height: 60px !important;
         }
         
         /* Fix hero description text */
@@ -380,6 +385,12 @@
         
         .equipment-cycler {
             font-size: 1.5rem !important;
+            width: 150px !important;
+            min-width: 150px !important;
+            max-width: 150px !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            white-space: nowrap !important;
         }
         
         .tagline-word {
@@ -435,6 +446,7 @@
         overflow: hidden !important;
         word-wrap: break-word !important;
         hyphens: auto !important;
+        min-height: 60px !important;
     }
     
     .equipment-cycler {
@@ -442,12 +454,22 @@
         overflow: hidden !important;
         text-overflow: ellipsis !important;
         white-space: nowrap !important;
+        width: 200px !important;
+        min-width: 200px !important;
+        max-width: 200px !important;
     }
     
     /* Ensure proper spacing for animated text */
     .tagline-word {
         display: inline-block !important;
         vertical-align: top !important;
+    }
+    
+    /* Prevent page resizing */
+    .hero-gradient .relative.z-10 {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
     }
 </style>
 </head>
