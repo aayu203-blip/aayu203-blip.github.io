@@ -281,6 +281,8 @@
             overflow: hidden !important;
             text-overflow: ellipsis !important;
             white-space: nowrap !important;
+            text-align: center !important;
+            margin: 0 auto !important;
         }
         
         /* Fix tagline text sizing */
@@ -303,6 +305,8 @@
             width: 100% !important;
             overflow: hidden !important;
             min-height: 60px !important;
+            display: flex !important;
+            justify-content: center !important;
         }
         
         /* Fix hero description text */
@@ -352,12 +356,20 @@
         }
         
         /* Hide sticky popups on mobile - keep only WhatsApp button */
-        #help-popup {
+        #help-popup,
+        div[id="help-popup"] {
             display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
         }
         
-        #shipping-popup {
+        #shipping-popup,
+        div[id="shipping-popup"] {
             display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
         }
     }
     
@@ -410,12 +422,20 @@
         }
         
         /* Ensure popups are hidden on very small screens too */
-        #help-popup {
+        #help-popup,
+        div[id="help-popup"] {
             display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
         }
         
-        #shipping-popup {
+        #shipping-popup,
+        div[id="shipping-popup"] {
             display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
         }
     }
     
@@ -456,6 +476,17 @@
         width: 200px !important;
         min-width: 200px !important;
         max-width: 200px !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Fix cycling text container */
+    .tagline-container:has(.equipment-cycler) {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        min-height: 60px !important;
     }
     
     /* Ensure proper spacing for animated text */
