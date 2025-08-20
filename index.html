@@ -256,6 +256,184 @@
     * {
         cursor: default !important;
     }
+    
+    /* Mobile Optimization Fixes - Inline to ensure they work */
+    @media (max-width: 768px) {
+        /* Fix header hiding hero content */
+        .hero-gradient {
+            padding-top: 60px !important;
+        }
+        
+        /* Fix animated text sizing */
+        .equipment-cycler {
+            font-size: 1.2rem !important;
+            min-width: auto !important;
+            max-width: 100% !important;
+        }
+        
+        /* Fix tagline text sizing */
+        .tagline-word {
+            font-size: 1.8rem !important;
+            line-height: 1.2 !important;
+        }
+        
+        /* Fix hero title sizing */
+        h1 {
+            font-size: 2.5rem !important;
+            line-height: 1.1 !important;
+        }
+        
+        /* Fix text overflow issues */
+        .tagline-container {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            width: 100% !important;
+        }
+        
+        /* Fix hero description text */
+        p {
+            font-size: 1rem !important;
+            line-height: 1.4 !important;
+            padding: 0 10px !important;
+        }
+        
+        /* Fix button sizing on mobile */
+        .flex.flex-col.sm\\:flex-row.gap-6.justify-center a {
+            min-width: auto !important;
+            width: 100% !important;
+            margin-bottom: 10px !important;
+        }
+        
+        /* Fix hero stats grid */
+        .hero-stats {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 15px !important;
+            padding: 0 10px !important;
+        }
+        
+        .hero-stats .text-3xl.md\\:text-4xl {
+            font-size: 1.5rem !important;
+        }
+        
+        .hero-stats .text-gray-300.text-sm.md\\:text-base {
+            font-size: 0.8rem !important;
+        }
+        
+        /* Fix floating buttons positioning */
+        .whatsapp-float {
+            bottom: 15px !important;
+            right: 70px !important;
+            width: 45px !important;
+            height: 45px !important;
+            z-index: 50 !important;
+        }
+        
+        .back-to-top {
+            bottom: 15px !important;
+            right: 15px !important;
+            width: 45px !important;
+            height: 45px !important;
+            z-index: 50 !important;
+        }
+        
+        /* Fix popup positioning */
+        #help-popup {
+            bottom: 70px !important;
+            left: 10px !important;
+            right: 10px !important;
+            max-width: none !important;
+            width: calc(100% - 20px) !important;
+        }
+        
+        #shipping-popup {
+            bottom: 70px !important;
+            right: 10px !important;
+            left: 10px !important;
+            max-width: none !important;
+            width: calc(100% - 20px) !important;
+            white-space: normal !important;
+            font-size: 0.8rem !important;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        /* Further mobile optimizations */
+        .hero-gradient {
+            padding-top: 50px !important;
+        }
+        
+        .equipment-cycler {
+            font-size: 1rem !important;
+        }
+        
+        .tagline-word {
+            font-size: 1.5rem !important;
+        }
+        
+        h1 {
+            font-size: 2rem !important;
+        }
+        
+        p {
+            font-size: 0.9rem !important;
+        }
+        
+        /* Fix hero stats for very small screens */
+        .hero-stats {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 10px !important;
+        }
+        
+        .hero-stats .text-3xl.md\\:text-4xl {
+            font-size: 1.2rem !important;
+        }
+        
+        .hero-stats .text-gray-300.text-sm.md\\:text-base {
+            font-size: 0.7rem !important;
+        }
+    }
+    
+    /* Fix floating buttons overlap */
+    .whatsapp-float,
+    .back-to-top {
+        position: fixed !important;
+        z-index: 50 !important;
+    }
+    
+    .whatsapp-float {
+        bottom: 20px !important;
+        right: 80px !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .back-to-top {
+        bottom: 20px !important;
+        right: 20px !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    /* Fix text overflow and nudging */
+    .tagline-container {
+        overflow: hidden !important;
+        word-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    
+    .equipment-cycler {
+        display: inline-block !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+    
+    /* Ensure proper spacing for animated text */
+    .tagline-word {
+        display: inline-block !important;
+        vertical-align: top !important;
+    }
 </style>
 </head>
 <body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;">
@@ -367,7 +545,7 @@
 </div>
 </div>
 </nav>
-<section aria-label="Hero" class="hero-gradient relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20" data-aos="fade-in" id="home">
+<section aria-label="Hero" class="hero-gradient relative min-h-screen flex items-center justify-center overflow-hidden pt-12 md:pt-20" data-aos="fade-in" id="home">
 <video autoplay="" class="hero-video" loop="" muted="" playsinline="">
 <source src="PTC Hero Video.mp4" type="video/mp4"/>
 </video>
