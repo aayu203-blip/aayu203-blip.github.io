@@ -351,23 +351,13 @@
             z-index: 50 !important;
         }
         
-        /* Fix popup positioning */
+        /* Hide sticky popups on mobile - keep only WhatsApp button */
         #help-popup {
-            bottom: 70px !important;
-            left: 10px !important;
-            right: 10px !important;
-            max-width: none !important;
-            width: calc(100% - 20px) !important;
+            display: none !important;
         }
         
         #shipping-popup {
-            bottom: 70px !important;
-            right: 10px !important;
-            left: 10px !important;
-            max-width: none !important;
-            width: calc(100% - 20px) !important;
-            white-space: normal !important;
-            font-size: 0.8rem !important;
+            display: none !important;
         }
     }
     
@@ -417,6 +407,15 @@
         
         .hero-stats .text-gray-300.text-sm.md\\:text-base {
             font-size: 0.7rem !important;
+        }
+        
+        /* Ensure popups are hidden on very small screens too */
+        #help-popup {
+            display: none !important;
+        }
+        
+        #shipping-popup {
+            display: none !important;
         }
     }
     
