@@ -27713,7 +27713,7 @@ const partDatabase = [
     "Alt Part No 7": "",
     "Brand": "Volvo",
     "Measurement (MXX)": "",
-    "Category": "Body & Cabin",
+    "Category": "Engine Components",
     "OEM Part Nos": ""
   },
   {
@@ -29665,7 +29665,7 @@ const partDatabase = [
     "Alt Part No 7": "",
     "Brand": "Volvo",
     "Measurement (MXX)": "",
-    "Category": "Body & Cabin",
+    "Category": "Engine Components",
     "OEM Part Nos": ""
   },
   {
