@@ -270,7 +270,7 @@
             margin-bottom: 2rem !important;
         }
         
-        /* Fix animated text sizing */
+        /* Fix animated text sizing for mobile only */
         .equipment-cycler {
             font-size: 1.8rem !important;
             width: 200px !important;
@@ -393,6 +393,8 @@
             overflow: hidden !important;
             text-overflow: ellipsis !important;
             white-space: nowrap !important;
+            text-align: center !important;
+            margin: 0 auto !important;
         }
         
         .tagline-word {
@@ -468,25 +470,25 @@
         min-height: 60px !important;
     }
     
+    /* Fix text overflow and nudging */
+    .tagline-container {
+        overflow: hidden !important;
+        word-wrap: break-word !important;
+        hyphens: auto !important;
+        min-height: 60px !important;
+    }
+    
     .equipment-cycler {
         display: inline-block !important;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
         white-space: nowrap !important;
-        width: 200px !important;
-        min-width: 200px !important;
-        max-width: 200px !important;
-        text-align: center !important;
-        margin: 0 auto !important;
     }
     
-    /* Fix cycling text container */
-    .tagline-container:has(.equipment-cycler) {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        width: 100% !important;
-        min-height: 60px !important;
+    /* Ensure proper spacing for animated text */
+    .tagline-word {
+        display: inline-block !important;
+        vertical-align: top !important;
     }
     
     /* Ensure proper spacing for animated text */
