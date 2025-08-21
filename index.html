@@ -347,18 +347,18 @@
     
     /* Mobile Optimization Fixes - Inline to ensure they work */
     @media (max-width: 768px) {
-        /* Fix header hiding hero content */
+        /* Fix header hiding hero content - MOBILE ONLY */
         .hero-gradient {
             padding-top: 60px !important;
         }
         
-        /* Fix Trusted Since badge positioning */
+        /* Fix Trusted Since badge positioning - MOBILE ONLY */
         .mb-8 {
             margin-top: 80px !important;
             margin-bottom: 2rem !important;
         }
         
-        /* Fix animated text sizing for mobile only */
+        /* Fix animated text sizing for mobile only - PREVENT LAYOUT SHIFTS */
         .equipment-cycler {
             font-size: 1.8rem !important;
             width: 280px !important;
@@ -373,21 +373,25 @@
             margin: 0 auto !important;
             height: 2.5rem !important;
             line-height: 2.5rem !important;
+            /* Prevent layout shifts */
+            position: relative !important;
+            transform: none !important;
+            transition: none !important;
         }
         
-        /* Fix tagline text sizing */
+        /* Fix tagline text sizing - MOBILE ONLY */
         .tagline-word {
             font-size: 1.8rem !important;
             line-height: 1.2 !important;
         }
         
-        /* Fix hero title sizing */
+        /* Fix hero title sizing - MOBILE ONLY */
         h1 {
             font-size: 2.5rem !important;
             line-height: 1.1 !important;
         }
         
-        /* Fix text overflow issues for mobile only */
+        /* Fix text overflow issues for mobile only - PREVENT JERKING */
         .tagline-container {
             flex-direction: column !important;
             align-items: center !important;
@@ -398,13 +402,21 @@
             display: flex !important;
             justify-content: center !important;
             margin-bottom: 5px !important;
+            /* Prevent layout shifts */
+            position: relative !important;
+            transform: none !important;
+            transition: none !important;
         }
         
-        /* Specific container for cycling text to prevent layout shifts */
+        /* Specific container for cycling text to prevent layout shifts - MOBILE ONLY */
         .tagline-container:nth-child(2) {
             height: 2.5rem !important;
             min-height: 2.5rem !important;
             max-height: 2.5rem !important;
+            /* Prevent jerking */
+            position: relative !important;
+            transform: none !important;
+            transition: none !important;
         }
         
         /* Fix hero description text */
@@ -496,6 +508,10 @@
             margin: 0 auto !important;
             height: 2rem !important;
             line-height: 2rem !important;
+            /* Prevent layout shifts */
+            position: relative !important;
+            transform: none !important;
+            transition: none !important;
         }
         
         /* Specific container for cycling text to prevent layout shifts on small screens */
@@ -503,6 +519,10 @@
             height: 2rem !important;
             min-height: 2rem !important;
             max-height: 2rem !important;
+            /* Prevent jerking */
+            position: relative !important;
+            transform: none !important;
+            transition: none !important;
         }
         
         .tagline-word {
