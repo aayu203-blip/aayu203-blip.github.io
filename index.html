@@ -273,9 +273,9 @@
         /* Fix animated text sizing for mobile only */
         .equipment-cycler {
             font-size: 1.8rem !important;
-            width: 250px !important;
-            min-width: 250px !important;
-            max-width: 250px !important;
+            width: 280px !important;
+            min-width: 280px !important;
+            max-width: 280px !important;
             display: block !important;
             vertical-align: baseline !important;
             overflow: hidden !important;
@@ -283,6 +283,8 @@
             white-space: nowrap !important;
             text-align: center !important;
             margin: 0 auto !important;
+            height: 2.5rem !important;
+            line-height: 2.5rem !important;
         }
         
         /* Fix tagline text sizing */
@@ -308,6 +310,13 @@
             display: flex !important;
             justify-content: center !important;
             margin-bottom: 5px !important;
+        }
+        
+        /* Specific container for cycling text to prevent layout shifts */
+        .tagline-container:nth-child(2) {
+            height: 2.5rem !important;
+            min-height: 2.5rem !important;
+            max-height: 2.5rem !important;
         }
         
         /* Fix hero description text */
@@ -388,15 +397,24 @@
         
         .equipment-cycler {
             font-size: 1.5rem !important;
-            width: 200px !important;
-            min-width: 200px !important;
-            max-width: 200px !important;
+            width: 220px !important;
+            min-width: 220px !important;
+            max-width: 220px !important;
             display: block !important;
             overflow: hidden !important;
             text-overflow: ellipsis !important;
             white-space: nowrap !important;
             text-align: center !important;
             margin: 0 auto !important;
+            height: 2rem !important;
+            line-height: 2rem !important;
+        }
+        
+        /* Specific container for cycling text to prevent layout shifts on small screens */
+        .tagline-container:nth-child(2) {
+            height: 2rem !important;
+            min-height: 2rem !important;
+            max-height: 2rem !important;
         }
         
         .tagline-word {
