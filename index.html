@@ -2154,15 +2154,15 @@
                 }
             });
             
-            // Track when user tries to close tab/window
-            window.addEventListener('beforeunload', function(e) {
-                if (!hasShownExitModal) {
-                    showExitModal();
-                    hasShownExitModal = true;
-                    e.preventDefault();
-                    e.returnValue = '';
-                }
-            });
+            // Track when user tries to close tab/window (disabled to prevent browser warnings)
+            // window.addEventListener('beforeunload', function(e) {
+            //     if (!hasShownExitModal) {
+            //         showExitModal();
+            //         hasShownExitModal = true;
+            //         e.preventDefault();
+            //         e.returnValue = '';
+            //     }
+            // });
         }
         
         function showExitModal() {
