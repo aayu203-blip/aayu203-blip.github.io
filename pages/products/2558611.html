@@ -623,7 +623,13 @@
         
         /* Ensure content doesn't hide behind fixed header */
         body {
-            padding-top: 6rem;
+            padding-top: 4rem;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 3rem;
+            }
         }
         
         /* Ensure nav is at top */
