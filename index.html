@@ -902,11 +902,11 @@
                 </p>
 <div class="w-24 h-1 bg-yellow-400 mx-auto mb-8 rounded-full"></div>
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="pages/volvo-categories.html" style="text-decoration:none;">
+<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="#product-categories" style="text-decoration:none;">
 <h3 class="text-2xl font-bold text-gray-900 mb-3 text-center leading-tight group-hover:text-yellow-600 transition-colors duration-300 flex items-center justify-center min-h-[3rem] px-2">VOLVO</h3>
 <p class="text-gray-600 text-center text-xs leading-relaxed group-hover:text-gray-700 transition-colors duration-300 h-8 flex items-center justify-center">Trucks &amp; Excavators</p>
 </a>
-<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="pages/scania-categories.html" style="text-decoration:none;">
+<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="#product-categories" style="text-decoration:none;">
 <h3 class="text-2xl font-bold text-gray-900 mb-3 text-center leading-tight group-hover:text-yellow-600 transition-colors duration-300 flex items-center justify-center min-h-[3rem] px-2">SCANIA</h3>
 <p class="text-gray-600 text-center text-xs leading-relaxed group-hover:text-gray-700 transition-colors duration-300 h-8 flex items-center justify-center">Heavy Trucks</p>
 </a>
@@ -3188,9 +3188,9 @@ function resetCategoryCard(button) {
 function selectBrand(brand, category) {
     // Navigate to the appropriate brand category page
     if (brand === 'scania') {
-        window.location.href = 'pages/scania-categories.html';
+        window.location.href = '#product-categories';
     } else if (brand === 'volvo') {
-        window.location.href = 'pages/volvo-categories.html';
+        window.location.href = '#product-categories';
     }
 }
 
