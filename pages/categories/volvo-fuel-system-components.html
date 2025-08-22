@@ -303,6 +303,42 @@
     </nav>
 </div>
 
+<!-- Page Header -->
+<div class="text-center mb-12" data-aos="fade-up">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Volvo <span class="text-yellow-400">Fuel System Components</span>
+    </h1>
+    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Complete range of fuel system components and parts for Volvo equipment
+    </p>
+    <div class="w-24 h-1 bg-yellow-400 mx-auto mt-6 rounded-full"></div>
+</div>
+
+<!-- Search and Filter Section -->
+<div class="bg-white rounded-2xl shadow-lg p-6 mb-8" data-aos="fade-up">
+    <div class="flex flex-col md:flex-row gap-4">
+        <div class="flex-1">
+            <input type="text" id="searchInput" placeholder="Search Fuel System Components..." 
+                   class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors">
+        </div>
+        <div class="flex items-center space-x-4 text-sm text-gray-600">
+            <span>Showing <span id="visibleCount">0</span> of <span id="totalCount">0</span> products</span>
+        </div>
+    </div>
+</div>
+
+<!-- Products Grid -->
+<div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
+    <!-- Products will be loaded here -->
+</div>
+
+<!-- Load More Button -->
+<div class="text-center">
+    <button id="loadMoreBtn" class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-8 py-3 rounded-xl font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 hidden">
+        Load More Products
+    </button>
+</div>
+
 <!-- Title -->
 <div class="text-center mb-12" data-aos="fade-up">
 <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">Fuel System Components</h1>
@@ -493,11 +529,139 @@ Showing <span id="visibleCount" class="font-semibold text-yellow-600">0</span> o
 <!-- Database Script -->
 <script src="../../database/new_partDatabase.js"></script>
 
-<!-- AOS Animation -->
+<!-- Page Script -->
 <script>
+    // Initialize AOS
     AOS.init({
-        duration: 800,
+        duration: 1000,
         easing: 'ease-in-out',
+        once: true
+    });
+
+    // Category page functionality
+    let allProducts = [];
+    let filteredProducts = [];
+    let currentPage = 1;
+    const productsPerPage = 12;
+
+    // Filter products by category and brand
+    function filterProductsByCategoryAndBrand() {
+        const targetBrand = "Volvo";
+        const targetCategories = ["Fuel System Components"]; // Match the actual categories in database
+
+        allProducts = partDatabase.filter(product => {
+            return product["Brand"] === targetBrand && targetCategories.includes(product["Category"]);
+        });
+        
+        filteredProducts = [...allProducts];
+        updateProductDisplay();
+    }
+
+    // Search functionality
+    function searchProducts(query) {
+        if (!query.trim()) {
+            filteredProducts = [...allProducts];
+        } else {
+            const searchTerm = query.toLowerCase();
+            filteredProducts = allProducts.filter(product => 
+                product["Part No"].toLowerCase().startsWith(searchTerm) ||
+                product["Cleaned Description"].toLowerCase().startsWith(searchTerm) ||
+                product["Brand"].toLowerCase().startsWith(searchTerm) ||
+                product["Category"].toLowerCase().startsWith(searchTerm) ||
+                (product["Application"] && product["Application"].toLowerCase().startsWith(searchTerm)) ||
+                (product["Alt Part No 1"] && product["Alt Part No 1"].toLowerCase().startsWith(searchTerm)) ||
+                (product["Alt Part No 2"] && product["Alt Part No 2"].toLowerCase().startsWith(searchTerm)) ||
+                (product["Alt Part No 3"] && product["Alt Part No 3"].toLowerCase().startsWith(searchTerm))
+            );
+        }
+        currentPage = 1;
+        updateProductDisplay();
+    }
+
+    // Update product display
+    function updateProductDisplay() {
+        const grid = document.getElementById('productsGrid');
+        const startIndex = (currentPage - 1) * productsPerPage;
+        const endIndex = startIndex + productsPerPage;
+        const productsToShow = filteredProducts.slice(startIndex, endIndex);
+        
+        grid.innerHTML = '';
+        
+        productsToShow.forEach(product => {
+            const productCard = createProductCard(product);
+            grid.appendChild(productCard);
+        });
+        
+        // Update counts
+        document.getElementById('visibleCount').textContent = Math.min(endIndex, filteredProducts.length);
+        document.getElementById('totalCount').textContent = filteredProducts.length;
+        
+        // Show/hide load more button
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (endIndex < filteredProducts.length) {
+            loadMoreBtn.classList.remove('hidden');
+        } else {
+            loadMoreBtn.classList.add('hidden');
+        }
+    }
+
+    // Create product card
+    function createProductCard(product) {
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-xl shadow-lg hover:shadow-xl hover:border-2 hover:border-yellow-400 transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden cursor-pointer';
+        
+        card.innerHTML = `
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded-full">${product["Brand"]}</span>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2"><strong>${product["Part No"]}</strong></h3>
+                <p class="text-yellow-600 text-sm mb-3 font-semibold"><strong>${product["Cleaned Description"]}</strong></p>
+                <div class="space-y-2 mb-4">
+                    <p class="text-gray-600 text-xs"><strong>Application:</strong> ${product["Application"] || ''}</p>
+                    <p class="text-gray-600 text-xs"><strong>Alternate Part No:</strong> ${[product["Alt Part No 1"], product["Alt Part No 2"], product["Alt Part No 3"]].filter(alt => alt && alt.trim()).join(', ') || ''}</p>
+                </div>
+                <div class="flex space-x-2">
+                    <a href="../products/${product["Part No"]}.html" class="flex-1 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300 text-sm text-center">
+                        View Details
+                    </a>
+                    <button onclick="window.open('https://wa.me/919821037990?text=Hi! I am interested in ${product["Part No"]} - ${product["Cleaned Description"]}. Please provide a quote.', '_blank')" class="flex-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 text-sm">
+                        Get Quote
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        // Make entire card clickable except for buttons
+        card.addEventListener('click', function(e) {
+            if (!e.target.closest('button') && !e.target.closest('a')) {
+                window.location.href = `../products/${product["Part No"]}.html`;
+            }
+        });
+        
+        return card;
+    }
+
+    // Load more functionality
+    function loadMore() {
+        currentPage++;
+        updateProductDisplay();
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', function() {
+        filterProductsByCategoryAndBrand();
+        
+        // Search input
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function() {
+            searchProducts(this.value);
+        });
+        
+        // Load more button
+        document.getElementById('loadMoreBtn').addEventListener('click', loadMore);
+    });
+</script>
         once: true
     });
 
