@@ -453,7 +453,7 @@
             z-index: 50 !important;
         }
         
-        /* Hide sticky popups on mobile - keep only WhatsApp button */
+        /* Hide help popup on mobile - keep only WhatsApp button */
         #help-popup,
         div[id="help-popup"] {
             display: none !important;
@@ -462,12 +462,13 @@
             pointer-events: none !important;
         }
         
+        /* Show shipping popup on mobile - only on homepage */
         #shipping-popup,
         div[id="shipping-popup"] {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            pointer-events: none !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
         }
     }
     
@@ -531,7 +532,7 @@
             font-size: 0.7rem !important;
         }
         
-        /* Ensure popups are hidden on very small screens too */
+        /* Ensure help popup is hidden on very small screens too */
         #help-popup,
         div[id="help-popup"] {
             display: none !important;
@@ -540,12 +541,13 @@
             pointer-events: none !important;
         }
         
+        /* Show shipping popup on very small screens too - only on homepage */
         #shipping-popup,
         div[id="shipping-popup"] {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            pointer-events: none !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
         }
     }
     
