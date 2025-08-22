@@ -359,4 +359,108 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Chinese Homepage -->
+    <url>
+        <loc>https://cn.partstrading.com/</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://partstrading.com/"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://partstrading.com/hi/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://ru.partstrading.com/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cn.partstrading.com/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://id.partstrading.com/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://partstrading.com/fr/"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://partstrading.com/ar/"/>
+    </url>
+
+    <!-- Indonesian Homepage -->
+    <url>
+        <loc>https://id.partstrading.com/</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://partstrading.com/"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://partstrading.com/hi/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://ru.partstrading.com/"/>
+        <xhtml:link rel="alternate" hreflang="zh-CN" href="https://cn.partstrading.com/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://id.partstrading.com/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://partstrading.com/fr/"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://partstrading.com/ar/"/>
+    </url>
+
+    <!-- Chinese Category Pages -->
+    <url>
+        <loc>https://cn.partstrading.com/pages/categories/volvo-fuel-system-components.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://cn.partstrading.com/pages/categories/volvo-engine-components.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://cn.partstrading.com/pages/categories/volvo-steering-and-suspension-parts.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Indonesian Category Pages -->
+    <url>
+        <loc>https://id.partstrading.com/pages/categories/volvo-fuel-system-components.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://id.partstrading.com/pages/categories/volvo-engine-components.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://id.partstrading.com/pages/categories/volvo-steering-and-suspension-parts.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Sample Chinese Product Pages -->
+    <url>
+        <loc>https://cn.partstrading.com/pages/products/1521879.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://cn.partstrading.com/pages/products/1521725.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Sample Indonesian Product Pages -->
+    <url>
+        <loc>https://id.partstrading.com/pages/products/1521879.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://id.partstrading.com/pages/products/1521725.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>
