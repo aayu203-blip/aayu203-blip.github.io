@@ -10,7 +10,22 @@
         <priority>1.0</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://partstrading.com/"/>
         <xhtml:link rel="alternate" hreflang="hi" href="https://partstrading.com/hi/"/>
-        <xhtml:link rel="alternate" hreflang="ru" href="https://partstrading.com/ru/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://ru.partstrading.com/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://partstrading.com/id/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://partstrading.com/fr/"/>
+        <xhtml:link rel="alternate" hreflang="ar" href="https://partstrading.com/ar/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://partstrading.com/zh/"/>
+    </url>
+
+    <!-- Russian Homepage -->
+    <url>
+        <loc>https://ru.partstrading.com/</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://partstrading.com/"/>
+        <xhtml:link rel="alternate" hreflang="hi" href="https://partstrading.com/hi/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://ru.partstrading.com/"/>
         <xhtml:link rel="alternate" hreflang="id" href="https://partstrading.com/id/"/>
         <xhtml:link rel="alternate" hreflang="fr" href="https://partstrading.com/fr/"/>
         <xhtml:link rel="alternate" hreflang="ar" href="https://partstrading.com/ar/"/>
@@ -288,6 +303,57 @@
     
     <url>
         <loc>https://partstrading.com/pages/products/21232928.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Russian Category Pages -->
+    <url>
+        <loc>https://ru.partstrading.com/pages/categories/volvo-fuel-system-components.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://ru.partstrading.com/pages/categories/volvo-engine-components.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://ru.partstrading.com/pages/categories/volvo-steering-and-suspension-parts.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Russian Product Pages -->
+    <url>
+        <loc>https://ru.partstrading.com/pages/products/1521879.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://ru.partstrading.com/pages/products/1521725.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://ru.partstrading.com/pages/products/1521870.html</loc>
+        <lastmod>2024-12-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://ru.partstrading.com/pages/products/1521878.html</loc>
         <lastmod>2024-12-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
