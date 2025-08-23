@@ -346,14 +346,11 @@ body {
   position: fixed;
   bottom: 20px;
   right: 80px; /* Positioned to the left of back-to-top button */
-  background: #25d366;
-  color: white;
   width: 50px; /* Same size as back-to-top button */
   height: 50px; /* Same size as back-to-top button */
   border-radius: 50%;
   text-align: center;
   font-size: 24px; /* Slightly smaller icon to fit better */
-  box-shadow: 2px 2px 3px #999;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -364,7 +361,6 @@ body {
 
 .whatsapp-float:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
 }
 
 /* Back to top button */
