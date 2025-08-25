@@ -619,7 +619,39 @@
             background-clip: text;
         }
         
-        /* Floating buttons are now handled by styles.css */
+        /* Floating buttons styles to match homepage */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 70px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
         
         /* Ensure content doesn't hide behind fixed header */
         body {
@@ -629,6 +661,36 @@
         @media (max-width: 768px) {
             body {
                 padding-top: 3rem;
+            }
+            
+            .whatsapp-float {
+                bottom: 15px;
+                right: 70px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .whatsapp-float {
+                bottom: 15px;
+                right: 70px;
+                width: 45px;
+                height: 45px;
+            }
+            
+            .back-to-top {
+                bottom: 15px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
             }
         }
         
@@ -1284,9 +1346,10 @@
     </div>
 
     <!-- WhatsApp Float Button (exactly like homepage) -->
-    <a aria-label="Contact us on WhatsApp" class="whatsapp-float bg-gradient-to-r from-green-500/80 to-green-600/80 backdrop-blur-xl border border-green-300/50 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:from-green-600/90 hover:to-green-700/90" href="https://wa.me/919821037990?text=Hi!%20I%20am%20interested%20in%201521878%20-%20Engaging%20Ring%20%28Part%20No:%201521878%29.%20Please%20provide%20a%20quote%20and%20availability."
+    <a aria-label="Contact us on WhatsApp" class="whatsapp-float bg-gradient-to-r from-green-500/80 to-green-600/80 backdrop-blur-xl border border-green-300/50 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:from-green-600/90 hover:to-green-700/90 z-50" href="https://wa.me/919821037990?text=Hi!%20I%20am%20interested%20in%201521878%20-%20Engaging%20Ring%20%28Part%20No:%201521878%29.%20Please%20provide%20a%20quote%20and%20availability." rel="noopener noreferrer" target="_blank">
 <svg aria-hidden="true" class="h-8 w-8 text-white" fill="currentColor" viewbox="0 0 24 24">
-<path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7M12.22 1.85c-5.46 0-9.9 4.41-9.9 9.83 0 2.15.7 4.14 1.88 5.76L2.96 21.1l3.8-1.2a9.9 9.9 0 0 0 5.46 1.62c5.46 0 9.9-4.4 9.9-9.83a9.88 9.88 0 0 0-9.9-9.83m5.95 12.52c-.08-.12-.27-.19-.56-.33-.28-.14-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.14-.2.29-.75.93-.91 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43a8.64 8.64 0 0 1-1.6-1.98c-.18-.29-.03-.44.12-.58.13-.13.29-.34.43-.5.15-.17.2-.3.29-.48.1-.2.05-.36-.02-.5-.08-.15-.65-1.56-.9-2.13-.24-.58-.48-.48-.65-.48-.17 0-.37-.03-.56-.03-.2 0-.5.08-.77.36-.26.29-1 .98-1 2.4 0 1.4 1.03 2.76 1.17 2.96.14.19 2 3.17 4.93 4.32 2.94 1.15 2.94.77 3.47.72.53-.05 1.7-.7 1.95-1.36.24-.67.24-1.25.17-1.37"></path></svg>
+<path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7M12.22 1.85c-5.46 0-9.9 4.41-9.9 9.83 0 2.15.7 4.14 1.88 5.76L2.96 21.1l3.8-1.2a9.9 9.9 0 0 0 5.46 1.62c5.46 0 9.9-4.4 9.9-9.83a9.88 9.88 0 0 0-9.9-9.83m5.95 12.52c-.08-.12-.27-.19-.56-.33-.28-.14-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.14-.2.29-.75.93-.91 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43a8.64 8.64 0 0 1-1.6-1.98c-.18-.29-.03-.44.12-.58.13-.13.29-.34.43-.5.15-.17.2-.3.29-.48.1-.2.05-.36-.02-.5-.08-.15-.65-1.56-.9-2.13-.24-.58-.48-.48-.65-.48-.17 0-.37-.03-.56-.03-.2 0-.5.08-.77.36-.26.29-1 .98-1 2.4 0 1.4 1.03 2.76 1.17 2.96.14.19 2 3.17 4.93 4.32 2.94 1.15 2.94.77 3.47.72.53-.05 1.7-.7 1.95-1.36.24-.67.24-1.25.17-1.37"/>
+                            </svg>
 </a>
 <button aria-label="Back to top" class="back-to-top bg-gradient-to-r from-yellow-400/80 to-yellow-500/80 backdrop-blur-xl border border-yellow-300/50 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:from-yellow-500/90 hover:to-yellow-600/90" id="back-to-top">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -1351,9 +1414,101 @@
                 });
         }
         
+        // Global location detection and storage
+        let userLocation = {
+            city: '',
+            country: '',
+            region: ''
+        };
+        
+        function detectAndStoreUserLocation() {
+            // Try IP-based geolocation first (no permission required)
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    userLocation = {
+                        city: data.city || data.region || 'Mumbai',
+                        country: data.country_name || 'India',
+                        region: data.region || data.state || 'Maharashtra'
+                    };
+                    
+                    // Update any existing city elements
+                    const cityElement = document.getElementById('user-city');
+                    if (cityElement) {
+                        cityElement.textContent = userLocation.city;
+                    }
+                    
+                    // Update WhatsApp buttons with location
+                    updateWhatsAppButtons();
+                })
+                .catch(error => {
+                    console.log('Could not detect location via IP:', error);
+                    // Fallback to major Indian cities
+                    const cities = ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Hyderabad', 'Kolkata', 'Pune', 'Ahmedabad'];
+                    userLocation = {
+                        city: cities[Math.floor(Math.random() * cities.length)],
+                        country: 'India',
+                        region: 'Maharashtra'
+                    };
+                    
+                    // Update any existing city elements
+                    const cityElement = document.getElementById('user-city');
+                    if (cityElement) {
+                        cityElement.textContent = userLocation.city;
+                    }
+                    
+                    // Update WhatsApp buttons with location
+                    updateWhatsAppButtons();
+                });
+        }
+        
+        // Generate WhatsApp URL with location
+        function generateWhatsAppURL(baseMessage, partNumber = '', partName = '', category = '', application = '') {
+            const locationInfo = `Location: ${userLocation.city}, ${userLocation.country}`;
+            let fullMessage = baseMessage;
+            
+            if (partNumber && partName) {
+                fullMessage = `Hi! I am interested in ${partNumber} - ${partName} (Part No: ${partNumber}). ${locationInfo}. Please provide a quote and availability.`;
+            } else if (baseMessage.includes('interested in')) {
+                fullMessage = `${baseMessage} ${locationInfo}. Please provide a quote and availability.`;
+            } else {
+                fullMessage = `${baseMessage} ${locationInfo}`;
+            }
+            
+            return `https://wa.me/919821037990?text=${encodeURIComponent(fullMessage)}`;
+        }
+        
+        // Update all WhatsApp buttons with location
+        function updateWhatsAppButtons() {
+            // Update floating WhatsApp button
+            const floatingWhatsAppBtn = document.querySelector('.whatsapp-float');
+            if (floatingWhatsAppBtn) {
+                floatingWhatsAppBtn.href = generateWhatsAppURL('Hi! I am interested in 1521878 - Engaging Ring (Part No: 1521878)', '1521878', 'Engaging Ring', 'Engine Components', 'FMX480');
+            }
+            
+            // Update any other WhatsApp buttons on the page
+            const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
+            whatsappButtons.forEach(button => {
+                if (button.classList.contains('whatsapp-float')) return; // Skip floating button as it's handled above
+                
+                const currentHref = button.getAttribute('href');
+                if (currentHref && currentHref.includes('wa.me')) {
+                    // Extract existing message if any
+                    const urlParams = new URLSearchParams(currentHref.split('?')[1] || '');
+                    const existingText = urlParams.get('text') || '';
+                    
+                    if (existingText.includes('interested in')) {
+                        button.href = generateWhatsAppURL(existingText);
+                    } else {
+                        button.href = generateWhatsAppURL('Hi! I need assistance with parts inquiry');
+                    }
+                }
+            });
+        }
+        
         // Initialize location detection when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            detectUserLocation();
+            detectAndStoreUserLocation();
             showShippingPopup();
             showHelpPopup();
             initExitIntent();
@@ -1396,6 +1551,7 @@
         }
         
         function requestQuoteOnWhatsApp(partNumber, description, brand, category, application) {
+            const locationInfo = `Location: ${userLocation.city}, ${userLocation.country}`;
             const message = `Hi! I am interested in a quote for:
 
 Part Number: ${partNumber}
@@ -1403,6 +1559,7 @@ Description: ${description}
 Brand: ${brand}
 Category: ${category}
 Application: ${application}
+${locationInfo}
 
 Please provide pricing and availability.`;
             
