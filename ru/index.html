@@ -48,6 +48,7 @@
 <meta content="Компания Parts Trading" name="apple-mobile-web-app-title"/>
 <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="preload"/>
 <link as="script" href="https://cdn.tailwindcss.com" rel="preload"/>
+<link href="../assets/css/styles.css" rel="stylesheet"/>
 <link href="//fonts.googleapis.com" rel="dns-prefetch"/>
 <link href="//cdn.tailwindcss.com" rel="dns-prefetch"/>
 <link href="//unpkg.com" rel="dns-prefetch"/>
@@ -909,11 +910,11 @@
                 </p>
 <div class="w-24 h-1 bg-yellow-400 mx-auto mb-8 rounded-full"></div>
 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="pages/volvo-categories.html" style="text-decoration:none;">
+<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="../pages/volvo-categories.html" style="text-decoration:none;">
 <h3 class="text-2xl font-bold text-gray-900 mb-3 text-center leading-tight group-hover:text-yellow-600 transition-colors duration-300 flex items-center justify-center min-h-[3rem] px-2">VOLVO</h3>
 <p class="text-gray-600 text-center text-xs leading-relaxed group-hover:text-gray-700 transition-colors duration-300 h-8 flex items-center justify-center">Trucks &amp; Экскаваторы</p>
 </a>
-<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="pages/scania-categories.html" style="text-decoration:none;">
+<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="../pages/scania-categories.html" style="text-decoration:none;">
 <h3 class="text-2xl font-bold text-gray-900 mb-3 text-center leading-tight group-hover:text-yellow-600 transition-colors duration-300 flex items-center justify-center min-h-[3rem] px-2">SCANIA</h3>
 <p class="text-gray-600 text-center text-xs leading-relaxed group-hover:text-gray-700 transition-colors duration-300 h-8 flex items-center justify-center">Тяжелые грузовики</p>
 </a>
@@ -2453,7 +2454,7 @@
             
             <!-- Сохранить контакт Button - Centered -->
             <div class="text-center mt-8">
-                <a href="parts_trading_company.vcf" download class="inline-flex items-center px-6 py-3 bg-yellow-500 text-gray-900 rounded-lg font-semibold hover:bg-yellow-400 transition-colors text-sm shadow-lg hover:shadow-xl">
+                <a href="../parts_trading_company.vcf" download class="inline-flex items-center px-6 py-3 bg-yellow-500 text-gray-900 rounded-lg font-semibold hover:bg-yellow-400 transition-colors text-sm shadow-lg hover:shadow-xl">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                     </svg>
@@ -2713,7 +2714,7 @@
                                 </div>
                             </div>
                             <div class="flex gap-3">
-                                <a href="pages/products/${result["Part No"]}.html" class="group relative overflow-hidden flex-1 bg-gradient-to-r from-yellow-400/90 to-yellow-500/90 backdrop-blur-xl border border-yellow-300/60 text-gray-900 px-4 py-2.5 rounded-lg font-semibold hover:from-yellow-500/95 hover:to-yellow-600/95 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/60 flex items-center justify-center gap-2 text-sm">
+                                <a href="../pages/products/${result["Part No"]}.html" class="group relative overflow-hidden flex-1 bg-gradient-to-r from-yellow-400/90 to-yellow-500/90 backdrop-blur-xl border border-yellow-300/60 text-gray-900 px-4 py-2.5 rounded-lg font-semibold hover:from-yellow-500/95 hover:to-yellow-600/95 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/60 flex items-center justify-center gap-2 text-sm">
 <div class="absolute inset-0 bg-yellow-400/30 blur-xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
 <div class="relative flex items-center justify-center gap-2">
@@ -3293,6 +3294,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script src="../database/new_partDatabase.js"></script>
 </body>
 </html>
 
