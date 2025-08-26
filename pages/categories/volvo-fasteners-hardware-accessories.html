@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volvo Крепежные элементы, оборудование и аксессуары - Компания Parts Trading</title>
+    <title>Volvo Fasteners, Hardware & Accessories - Parts Trading Company</title>
     <meta name="description" content="Complete range of Volvo fasteners, hardware components and accessories. Quality spare parts for all Volvo equipment.">
     <meta name="keywords" content="Volvo fasteners, hardware components, accessories, Volvo spare parts">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Volvo Крепежные элементы, оборудование и аксессуары - Компания Parts Trading">
+    <meta property="og:title" content="Volvo Fasteners, Hardware & Accessories - Parts Trading Company">
     <meta property="og:description" content="Complete range of Volvo fasteners, hardware components and accessories. Quality spare parts for all Volvo equipment.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://partstrading.com/pages/categories/volvo-fasteners-hardware-accessories.html">
@@ -41,8 +41,8 @@
                             </svg>
                         </div>
                         <div class="flex flex-col">
-                            <span class="text-2xl font-black leading-tight tracking-tight drop-shadow-sm transition-colors duration-300 text-gray-900" id="nav-logo">تداول قطع الغيار</span>
-                            <span class="text-sm font-bold leading-tight tracking-wide uppercase drop-shadow-sm transition-colors duration-300 text-yellow-600" id="nav-company">КОМПАНИЯ</span>
+                            <span class="text-2xl font-black leading-tight tracking-tight drop-shadow-sm transition-colors duration-300 text-gray-900" id="nav-logo">PARTS TRADING</span>
+                            <span class="text-sm font-bold leading-tight tracking-wide uppercase drop-shadow-sm transition-colors duration-300 text-yellow-600" id="nav-company">COMPANY</span>
                         </div>
                     </a>
                 </div>
@@ -51,7 +51,7 @@
                         <svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300 text-gray-900" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                             <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
                         </svg>
-                        <span class="font-bold tracking-wide text-gray-900">ГЛАВНАЯ</span>
+                        <span class="font-bold tracking-wide text-gray-900">HOME</span>
                     </a>
                 </div>
             </div>
@@ -83,7 +83,7 @@
         <!-- Page Header -->
         <div class="text-center mb-12" data-aos="fade-up">
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Volvo <span class="text-yellow-400">Крепежные элементы, оборудование и аксессуары</span>
+                Volvo <span class="text-yellow-400">Fasteners, Hardware & Accessories</span>
             </h1>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                 Complete range of fasteners, hardware components and accessories for Volvo equipment
@@ -95,7 +95,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-6 mb-8" data-aos="fade-up">
             <div class="flex flex-col md:flex-row gap-4">
                 <div class="flex-1">
-                    <input type="text" id="searchInput" placeholder="Search Крепежные элементы, оборудование и аксессуары..." 
+                    <input type="text" id="searchInput" placeholder="Search Fasteners, Hardware & Accessories..." 
                            class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors">
                 </div>
                 <div class="flex items-center space-x-4 text-sm text-gray-600">
@@ -120,7 +120,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2024 Компания Parts Trading. All rights reserved.</p>
+            <p>&copy; 2024 Parts Trading Company. All rights reserved.</p>
         </div>
     </footer>
 
@@ -136,19 +136,19 @@
             once: true
         });
 
-        // Категория page functionality
+        // Category page functionality
         let allProducts = [];
         let filteredProducts = [];
         let currentPage = 1;
         const productsPerPage = 12;
 
         // Filter products by category and brand
-        function filterProductsByКатегорияAndБренд() {
-            const targetБренд = "Volvo";
-            const targetCategories = ["Крепежные элементы, оборудование и аксессуары"]; // Match the actual categories in database
+        function filterProductsByCategoryAndBrand() {
+            const targetBrand = "Volvo";
+            const targetCategories = ["Fasteners, Hardware & Accessories"]; // Match the actual categories in database
 
             allProducts = partDatabase.filter(product => {
-                return product["Бренд"] === targetБренд && targetCategories.includes(product["Категория"]);
+                return product["Brand"] === targetBrand && targetCategories.includes(product["Category"]);
             });
             
             // Show all products (no filtering by existing pages)
@@ -167,9 +167,9 @@
                 const searchTerm = query.toLowerCase();
                 filteredProducts = allProducts.filter(product => 
                     product["Part No"].toLowerCase().startsWith(searchTerm) ||
-                    product["Cleaned Описание"].toLowerCase().startsWith(searchTerm) ||
-                    product["Бренд"].toLowerCase().startsWith(searchTerm) ||
-                    product["Категория"].toLowerCase().startsWith(searchTerm) ||
+                    product["Cleaned Description"].toLowerCase().startsWith(searchTerm) ||
+                    product["Brand"].toLowerCase().startsWith(searchTerm) ||
+                    product["Category"].toLowerCase().startsWith(searchTerm) ||
                     (product["Application"] && product["Application"].toLowerCase().startsWith(searchTerm)) ||
                     (product["Alt Part No 1"] && product["Alt Part No 1"].toLowerCase().startsWith(searchTerm)) ||
                     (product["Alt Part No 2"] && product["Alt Part No 2"].toLowerCase().startsWith(searchTerm)) ||
@@ -215,10 +215,10 @@
             card.innerHTML = `
                 <div class="p-6">
                     <div class="flex items-center justify-between mb-4">
-                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded-full">${product["Бренд"]}</span>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded-full">${product["Brand"]}</span>
                     </div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2"><strong>${product["Part No"]}</strong></h3>
-                    <p class="text-yellow-600 text-sm mb-3 font-semibold"><strong>${product["Cleaned Описание"]}</strong></p>
+                    <p class="text-yellow-600 text-sm mb-3 font-semibold"><strong>${product["Cleaned Description"]}</strong></p>
                     <div class="space-y-2 mb-4">
                         <p class="text-gray-600 text-xs"><strong>Application:</strong> ${product["Application"] || ''}</p>
                         <p class="text-gray-600 text-xs"><strong>Alternate Part No:</strong> ${[product["Alt Part No 1"], product["Alt Part No 2"], product["Alt Part No 3"]].filter(alt => alt && alt.trim()).join(', ') || ''}</p>
@@ -227,8 +227,8 @@
                         <a href="../products/${product["Part No"]}.html" class="flex-1 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300 text-sm text-center">
                             View Details
                         </a>
-                        <button onclick="window.open('https://wa.me/919821037990?text=Hi! I am interested in ${product["Part No"]} - ${product["Cleaned Описание"]}. Please provide a quote.', '_blank')" class="flex-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 text-sm">
-                            Получить предложение
+                        <button onclick="window.open('https://wa.me/919821037990?text=Hi! I am interested in ${product["Part No"]} - ${product["Cleaned Description"]}. Please provide a quote.', '_blank')" class="flex-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 text-sm">
+                            Get Quote
                         </button>
                     </div>
                 </div>
@@ -252,7 +252,7 @@
 
         // Event listeners
         document.addEventListener('DOMContentLoaded', function() {
-            filterProductsByКатегорияAndБренд();
+            filterProductsByCategoryAndBrand();
             
             // Search input
             const searchInput = document.getElementById('searchInput');
