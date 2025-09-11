@@ -413,6 +413,20 @@ body {
   background-color: #fffef6;
 }
 
+/* Header/logo fixes for inner pages (categories/products) */
+nav .w-12.h-12.bg-gradient-to-br {
+  display: none; /* hide extra square icon block */
+}
+
+nav #nav-company {
+  display: none; /* remove stray COMPANY label */
+}
+
+nav #nav-logo img {
+  height: 9rem; /* align with homepage logo size */
+  width: auto;
+}
+
 /* Brand image styles */
 .brand-img {
   transition: all 0.5s ease;
