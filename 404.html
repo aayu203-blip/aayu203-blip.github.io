@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Redirecting…</title>
+<meta name="robots" content="noindex"/>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 2rem; color: #111; }
+  .box { max-width: 640px; margin: 10vh auto; padding: 2rem; border: 1px solid #ffe08a; border-radius: 16px; background: #fff8e1; }
+  h1 { margin: 0 0 0.5rem 0; font-size: 1.5rem; }
+  p { margin: 0.25rem 0; color: #444; }
+  code { background: #fff; padding: 2px 6px; border-radius: 6px; border: 1px solid #eee; }
+  a { color: #b7791f; }
+  .hidden { display: none; }
+  .spinner { width: 16px; height: 16px; border: 2px solid rgba(0,0,0,0.1); border-top-color: #b7791f; border-radius: 50%; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .small { font-size: 0.9rem; }
+  .muted { color: #666; }
+  .mt { margin-top: 0.75rem; }
+  .mt2 { margin-top: 1.25rem; }
+</style>
+<script>
+  (function() {
+    function loadProductKeepURL(id, cleanPath) {
+      fetch('/pages/products/' + id + '.html', { credentials: 'omit' })
+        .then(function(res){ return res.text(); })
+        .then(function(html){
+          var modified = html.replace(/<head>/i, '<head><base href="/">');
+          if (cleanPath && typeof history !== 'undefined' && history.replaceState) {
+            history.replaceState({}, '', cleanPath);
+          }
+          document.open();
+          document.write(modified);
+          document.close();
+        })
+        .catch(function(){ window.location.replace('/'); });
+    }
+    function resolve() {
+      try {
+        var path = window.location.pathname || '';
+        var clean = path.replace(/\/+$/, '');
+
+        // Match /brand/category/123456
+        var m1 = clean.match(/^\/[A-Za-z0-9_-]+\/[A-Za-z0-9_-]+\/(\d+)$/);
+        if (m1 && m1[1]) {
+          var id = m1[1];
+          loadProductKeepURL(id, clean);
+          return;
+        }
+
+        // Match /products/123456
+        var m2 = clean.match(/^\/products\/(\d+)$/);
+        if (m2 && m2[1]) {
+          var id2 = m2[1];
+          loadProductKeepURL(id2, clean);
+          return;
+        }
+
+        // If already a file under /pages/products, keep 404 to avoid loop
+        if (/^\/pages\/products\//.test(clean)) {
+          return;
+        }
+
+        // Default: go home
+        window.location.replace('/');
+      } catch (e) {
+        // If anything fails, still go home after a brief delay
+        setTimeout(function(){ window.location.replace('/'); }, 500);
+      }
+    }
+
+    // Run as soon as possible
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      resolve();
+    } else {
+      document.addEventListener('DOMContentLoaded', resolve);
+    }
+  })();
+  </script>
+</head>
+<body>
+  <div class="box">
+    <h1>Redirecting <span class="spinner" aria-hidden="true"></span></h1>
+    <p class="small">Trying to find the requested page…</p>
+    <p class="small muted mt">If you are not redirected automatically, <a href="/">click here</a>.</p>
+    <p class="small muted mt2">This fallback enables clean URLs like <code>/volvo/transmission/1656116</code> on GitHub Pages.</p>
+  </div>
+</body>
+</html>
+
+

@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Clean product URL -> actual static file
+# Matches /brand/category/123456 and serves /pages/products/123456.html
+RewriteRule ^[^/]+/[^/]+/([0-9]+)/?$ /pages/products/$1.html [L]
+
+# Optional generic clean URL path
+# Matches /products/123456 and serves /pages/products/123456.html
+RewriteRule ^products/([0-9]+)/?$ /pages/products/$1.html [L]
+
+# Redirect old URL with /pages/ to generic clean URL (cannot infer brand/category here)
+RewriteRule ^pages/products/([0-9]+)\.html$ /products/$1 [R=301,L]
+
+
+

@@ -1,0 +1,6 @@
+/:brand/:category/:id   /pages/products/:id.html   200
+/products/:id           /pages/products/:id.html   200
+/pages/products/:id.html  /products/:id            301
+
+
+

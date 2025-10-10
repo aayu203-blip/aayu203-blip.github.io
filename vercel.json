@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    { "source": "/:brand/:category/:id", "destination": "/pages/products/:id.html" },
+    { "source": "/products/:id", "destination": "/pages/products/:id.html" }
+  ],
+  "redirects": [
+    { "source": "/pages/products/:id.html", "destination": "/products/:id", "permanent": true }
+  ]
+}
+
+
+

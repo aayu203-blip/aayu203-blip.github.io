@@ -415,16 +415,20 @@ body {
 
 /* Header/logo fixes for inner pages (categories/products) */
 nav .w-12.h-12.bg-gradient-to-br {
-  display: none; /* hide extra square icon block */
+  display: none !important; /* hide extra square icon block */
 }
 
 nav #nav-company {
-  display: none; /* remove stray COMPANY label */
+  display: none !important; /* remove stray COMPANY label */
+}
+
+nav #nav-logo {
+  display: inline-block !important;
 }
 
 nav #nav-logo img {
-  height: 9rem; /* align with homepage logo size */
-  width: auto;
+  height: 9rem !important; /* align with homepage logo size */
+  width: auto !important;
 }
 
 /* Brand image styles */
