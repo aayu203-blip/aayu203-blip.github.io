@@ -5,6 +5,7 @@ Allow: /
 Sitemap: https://partstrading.com/sitemap_index.xml
 Sitemap: https://partstrading.com/sitemap.xml
 Sitemap: https://partstrading.com/sitemap-products.xml
+Sitemap: https://partstrading.com/sitemap-blog.xml
 
 # Allow all search engines to crawl the site
 User-agent: Googlebot
