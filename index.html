@@ -3022,10 +3022,16 @@ const categoryData = [
 ];
 
 function renderCategoryCards() {
+    console.log('renderCategoryCards called');
     const container = document.getElementById('category-cards-container');
-    if (!container) return;
+    console.log('Container found:', container);
+    if (!container) {
+        console.error('Container not found!');
+        return;
+    }
     
-    container.innerHTML = categoryData.map(cat => `
+    console.log('Generating cards for', categoryData.length, 'categories');
+    const html = categoryData.map(cat => `
         <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" data-slug="${cat.slug}">
             <div class="card-front">
                 <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
@@ -3042,6 +3048,10 @@ function renderCategoryCards() {
             </div>
         </div>
     `).join('');
+    
+    console.log('Generated HTML length:', html.length);
+    container.innerHTML = html;
+    console.log('Cards rendered, attaching events');
     
     attachCardEvents();
 }
