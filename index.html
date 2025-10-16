@@ -627,7 +627,26 @@
     
 
 </style>
-</head>
+
+<style>
+.category-card .card-front,
+.category-card .card-back {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.category-card .card-front.hidden,
+.category-card .card-back.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+
+.category-card .card-front:not(.hidden),
+.category-card .card-back:not(.hidden) {
+    opacity: 1;
+    transform: scale(1);
+}
+</style></head>
 <body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;">
 <nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
   function updateNavColor() {
