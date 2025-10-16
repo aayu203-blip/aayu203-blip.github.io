@@ -415,9 +415,21 @@
     transform: scale(1);
 }
 
-/* Ensure all "Click to view" text is at same position */
+/* Ensure consistent alignment across all cards */
+.card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-front h3 {
+    margin: 0;
+}
+
 .card-front p {
     margin-top: auto;
+    margin-bottom: 0;
 }
 </style>
 <style>
@@ -1261,14 +1273,14 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
     
     <!-- Engine Components -->
     <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all h-[280px] relative overflow-hidden" onclick="this.querySelector('.card-front').classList.add('hidden'); this.querySelector('.card-back').classList.remove('hidden');">
-        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-center">
+        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-between">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <rect x="6" y="6" width="12" height="8" rx="2" stroke-width="1.2"/><path d="M9 8h6M9 10h6M9 12h6" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2 text-center w-full">Engine Components</h3>
-            <p class="text-yellow-600 text-sm font-semibold text-center w-full">Click to select brand →</p>
+            <p class="text-yellow-600 text-sm font-semibold text-center w-full mt-auto">Click to select brand →</p>
         </div>
         <div class="card-back absolute inset-0 p-6 flex flex-col items-center justify-center hidden">
             <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
@@ -1280,14 +1292,14 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
     
     <!-- Fuel System -->
     <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all h-[280px] relative overflow-hidden" onclick="this.querySelector('.card-front').classList.add('hidden'); this.querySelector('.card-back').classList.remove('hidden');">
-        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-center">
+        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-between">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M12 3.5c-3 4-5 6-5 8A5 5 0 0012 16a5 5 0 005-4.5c0-2-2-4-5-8z" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2 text-center w-full">Fuel System</h3>
-            <p class="text-yellow-600 text-sm font-semibold text-center w-full">Click to select brand →</p>
+            <p class="text-yellow-600 text-sm font-semibold text-center w-full mt-auto">Click to select brand →</p>
         </div>
         <div class="card-back absolute inset-0 p-6 flex flex-col items-center justify-center hidden">
             <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
@@ -1299,14 +1311,14 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
     
     <!-- Transmission -->
     <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all h-[280px] relative overflow-hidden" onclick="this.querySelector('.card-front').classList.add('hidden'); this.querySelector('.card-back').classList.remove('hidden');">
-        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-center">
+        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-between">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <circle cx="9" cy="12" r="3" stroke-width="1.2"/><circle cx="15" cy="12" r="3" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2 text-center w-full">Transmission</h3>
-            <p class="text-yellow-600 text-sm font-semibold text-center w-full">Click to select brand →</p>
+            <p class="text-yellow-600 text-sm font-semibold text-center w-full mt-auto">Click to select brand →</p>
         </div>
         <div class="card-back absolute inset-0 p-6 flex flex-col items-center justify-center hidden">
             <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
@@ -1318,14 +1330,14 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
     
     <!-- Braking -->
     <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all h-[280px] relative overflow-hidden" onclick="this.querySelector('.card-front').classList.add('hidden'); this.querySelector('.card-back').classList.remove('hidden');">
-        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-center">
+        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-between">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="9" stroke-width="1.2"/><circle cx="12" cy="12" r="3" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2 text-center w-full">Braking System</h3>
-            <p class="text-yellow-600 text-sm font-semibold text-center w-full">Click to select brand →</p>
+            <p class="text-yellow-600 text-sm font-semibold text-center w-full mt-auto">Click to select brand →</p>
         </div>
         <div class="card-back absolute inset-0 p-6 flex flex-col items-center justify-center hidden">
             <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
@@ -1337,14 +1349,14 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
     
     <!-- Hydraulic -->
     <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all h-[280px] relative overflow-hidden" onclick="this.querySelector('.card-front').classList.add('hidden'); this.querySelector('.card-back').classList.remove('hidden');">
-        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-center">
+        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-between">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <rect x="6" y="8" width="12" height="8" rx="1" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2 text-center w-full">Hydraulic Systems</h3>
-            <p class="text-yellow-600 text-sm font-semibold text-center w-full">Click to select brand →</p>
+            <p class="text-yellow-600 text-sm font-semibold text-center w-full mt-auto">Click to select brand →</p>
         </div>
         <div class="card-back absolute inset-0 p-6 flex flex-col items-center justify-center hidden">
             <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
@@ -1356,14 +1368,14 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
     
     <!-- Filtration -->
     <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all h-[280px] relative overflow-hidden" onclick="this.querySelector('.card-front').classList.add('hidden'); this.querySelector('.card-back').classList.remove('hidden');">
-        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-center">
+        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-between">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <rect x="6" y="4" width="12" height="16" rx="2" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2 text-center w-full">Air & Filtration</h3>
-            <p class="text-yellow-600 text-sm font-semibold text-center w-full">Click to select brand →</p>
+            <p class="text-yellow-600 text-sm font-semibold text-center w-full mt-auto">Click to select brand →</p>
         </div>
         <div class="card-back absolute inset-0 p-6 flex flex-col items-center justify-center hidden">
             <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
@@ -1375,14 +1387,14 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
     
     <!-- Steering -->
     <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all h-[280px] relative overflow-hidden" onclick="this.querySelector('.card-front').classList.add('hidden'); this.querySelector('.card-back').classList.remove('hidden');">
-        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-center">
+        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-between">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="8" stroke-width="1.2"/><circle cx="12" cy="12" r="3" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2 text-center w-full">Steering & Suspension</h3>
-            <p class="text-yellow-600 text-sm font-semibold text-center w-full">Click to select brand →</p>
+            <p class="text-yellow-600 text-sm font-semibold text-center w-full mt-auto">Click to select brand →</p>
         </div>
         <div class="card-back absolute inset-0 p-6 flex flex-col items-center justify-center hidden">
             <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
@@ -1394,14 +1406,14 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
     
     <!-- Lighting -->
     <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all h-[280px] relative overflow-hidden" onclick="this.querySelector('.card-front').classList.add('hidden'); this.querySelector('.card-back').classList.remove('hidden');">
-        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-center">
+        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-between">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M12 3l-1.5 4.5h-4.5l3.75 3-1.5 4.5 3.75-3 3.75 3-1.5-4.5 3.75-3h-4.5z" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2 text-center w-full">Lighting & Exterior</h3>
-            <p class="text-yellow-600 text-sm font-semibold text-center w-full">Click to select brand →</p>
+            <p class="text-yellow-600 text-sm font-semibold text-center w-full mt-auto">Click to select brand →</p>
         </div>
         <div class="card-back absolute inset-0 p-6 flex flex-col items-center justify-center hidden">
             <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
@@ -1413,14 +1425,14 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
     
     <!-- Fasteners -->
     <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all h-[280px] relative overflow-hidden" onclick="this.querySelector('.card-front').classList.add('hidden'); this.querySelector('.card-back').classList.remove('hidden');">
-        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-center">
+        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-between">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2v20M6 8l6-6 6 6" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2 text-center w-full">Fasteners & Hardware</h3>
-            <p class="text-yellow-600 text-sm font-semibold text-center w-full">Click to select brand →</p>
+            <p class="text-yellow-600 text-sm font-semibold text-center w-full mt-auto">Click to select brand →</p>
         </div>
         <div class="card-back absolute inset-0 p-6 flex flex-col items-center justify-center hidden">
             <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
@@ -1432,14 +1444,14 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
     
     <!-- Miscellaneous -->
     <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all h-[280px] relative overflow-hidden" onclick="this.querySelector('.card-front').classList.add('hidden'); this.querySelector('.card-back').classList.remove('hidden');">
-        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-center">
+        <div class="card-front absolute inset-0 p-6 flex flex-col items-center justify-between">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <rect x="4" y="4" width="7" height="7" rx="1" stroke-width="1.2"/><rect x="13" y="4" width="7" height="7" rx="1" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2 text-center w-full">Miscellaneous</h3>
-            <p class="text-yellow-600 text-sm font-semibold text-center w-full">Click to select brand →</p>
+            <p class="text-yellow-600 text-sm font-semibold text-center w-full mt-auto">Click to select brand →</p>
         </div>
         <div class="card-back absolute inset-0 p-6 flex flex-col items-center justify-center hidden">
             <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
