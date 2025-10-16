@@ -1240,138 +1240,193 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
     
     <!-- Engine Components -->
-    <div class="category-card bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <a href="/pages/hubs/category-engine-components.html" class="block text-center">
+    <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all" onclick="this.querySelector('.card-front').style.display='none'; this.querySelector('.card-back').style.display='block';">
+        <div class="card-front">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <rect x="6" y="6" width="12" height="8" rx="2" stroke-width="1.2"/>
-                    <path d="M9 8h6M9 10h6M9 12h6" stroke-width="1.2"/>
+                    <rect x="6" y="6" width="12" height="8" rx="2" stroke-width="1.2"/><path d="M9 8h6M9 10h6M9 12h6" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2">Engine Components</h3>
-            <p class="text-yellow-600 text-sm font-semibold">View Parts →</p>
-        </a>
+            <p class="text-yellow-600 text-sm font-semibold">Click to select brand →</p>
+        </div>
+        <div class="card-back" style="display:none;">
+            <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
+            <a href="/pages/hubs/category-engine-components.html#volvo" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-2 text-center">VOLVO</a>
+            <a href="/pages/hubs/category-engine-components.html#scania" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-3 text-center">SCANIA</a>
+            <button onclick="event.stopPropagation(); this.closest('.category-card').querySelector('.card-back').style.display='none'; this.closest('.category-card').querySelector('.card-front').style.display='block';" class="text-sm text-gray-500 hover:text-gray-700">← Back</button>
+        </div>
     </div>
     
     <!-- Fuel System -->
-    <div class="category-card bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <a href="/pages/hubs/category-fuel-system-components.html" class="block text-center">
+    <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all" onclick="this.querySelector('.card-front').style.display='none'; this.querySelector('.card-back').style.display='block';">
+        <div class="card-front">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M12 3.5c-3 4-5 6-5 8A5 5 0 0012 16a5 5 0 005-4.5c0-2-2-4-5-8z" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2">Fuel System</h3>
-            <p class="text-yellow-600 text-sm font-semibold">View Parts →</p>
-        </a>
+            <p class="text-yellow-600 text-sm font-semibold">Click to select brand →</p>
+        </div>
+        <div class="card-back" style="display:none;">
+            <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
+            <a href="/pages/hubs/category-fuel-system-components.html#volvo" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-2 text-center">VOLVO</a>
+            <a href="/pages/hubs/category-fuel-system-components.html#scania" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-3 text-center">SCANIA</a>
+            <button onclick="event.stopPropagation(); this.closest('.category-card').querySelector('.card-back').style.display='none'; this.closest('.category-card').querySelector('.card-front').style.display='block';" class="text-sm text-gray-500 hover:text-gray-700">← Back</button>
+        </div>
     </div>
     
     <!-- Transmission -->
-    <div class="category-card bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <a href="/pages/hubs/category-transmission---differential-components.html" class="block text-center">
+    <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all" onclick="this.querySelector('.card-front').style.display='none'; this.querySelector('.card-back').style.display='block';">
+        <div class="card-front">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <circle cx="9" cy="12" r="3" stroke-width="1.2"/>
-                    <circle cx="15" cy="12" r="3" stroke-width="1.2"/>
+                    <circle cx="9" cy="12" r="3" stroke-width="1.2"/><circle cx="15" cy="12" r="3" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2">Transmission</h3>
-            <p class="text-yellow-600 text-sm font-semibold">View Parts →</p>
-        </a>
+            <p class="text-yellow-600 text-sm font-semibold">Click to select brand →</p>
+        </div>
+        <div class="card-back" style="display:none;">
+            <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
+            <a href="/pages/hubs/category-transmission---differential-components.html#volvo" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-2 text-center">VOLVO</a>
+            <a href="/pages/hubs/category-transmission---differential-components.html#scania" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-3 text-center">SCANIA</a>
+            <button onclick="event.stopPropagation(); this.closest('.category-card').querySelector('.card-back').style.display='none'; this.closest('.category-card').querySelector('.card-front').style.display='block';" class="text-sm text-gray-500 hover:text-gray-700">← Back</button>
+        </div>
     </div>
     
-    <!-- Braking System -->
-    <div class="category-card bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <a href="/pages/hubs/category-braking-system-components.html" class="block text-center">
+    <!-- Braking -->
+    <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all" onclick="this.querySelector('.card-front').style.display='none'; this.querySelector('.card-back').style.display='block';">
+        <div class="card-front">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="9" stroke-width="1.2"/>
-                    <circle cx="12" cy="12" r="3" stroke-width="1.2"/>
+                    <circle cx="12" cy="12" r="9" stroke-width="1.2"/><circle cx="12" cy="12" r="3" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2">Braking System</h3>
-            <p class="text-yellow-600 text-sm font-semibold">View Parts →</p>
-        </a>
+            <p class="text-yellow-600 text-sm font-semibold">Click to select brand →</p>
+        </div>
+        <div class="card-back" style="display:none;">
+            <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
+            <a href="/pages/hubs/category-braking-system-components.html#volvo" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-2 text-center">VOLVO</a>
+            <a href="/pages/hubs/category-braking-system-components.html#scania" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-3 text-center">SCANIA</a>
+            <button onclick="event.stopPropagation(); this.closest('.category-card').querySelector('.card-back').style.display='none'; this.closest('.category-card').querySelector('.card-front').style.display='block';" class="text-sm text-gray-500 hover:text-gray-700">← Back</button>
+        </div>
     </div>
     
-    <!-- Hydraulic Systems -->
-    <div class="category-card bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <a href="/pages/hubs/category-hydraulic-systems---connectors.html" class="block text-center">
+    <!-- Hydraulic -->
+    <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all" onclick="this.querySelector('.card-front').style.display='none'; this.querySelector('.card-back').style.display='block';">
+        <div class="card-front">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <rect x="6" y="8" width="12" height="8" rx="1" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2">Hydraulic Systems</h3>
-            <p class="text-yellow-600 text-sm font-semibold">View Parts →</p>
-        </a>
+            <p class="text-yellow-600 text-sm font-semibold">Click to select brand →</p>
+        </div>
+        <div class="card-back" style="display:none;">
+            <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
+            <a href="/pages/hubs/category-hydraulic-systems---connectors.html#volvo" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-2 text-center">VOLVO</a>
+            <a href="/pages/hubs/category-hydraulic-systems---connectors.html#scania" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-3 text-center">SCANIA</a>
+            <button onclick="event.stopPropagation(); this.closest('.category-card').querySelector('.card-back').style.display='none'; this.closest('.category-card').querySelector('.card-front').style.display='block';" class="text-sm text-gray-500 hover:text-gray-700">← Back</button>
+        </div>
     </div>
     
     <!-- Filtration -->
-    <div class="category-card bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <a href="/pages/hubs/category-air---fluid-filtration-systems.html" class="block text-center">
+    <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all" onclick="this.querySelector('.card-front').style.display='none'; this.querySelector('.card-back').style.display='block';">
+        <div class="card-front">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <rect x="6" y="4" width="12" height="16" rx="2" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2">Air & Filtration</h3>
-            <p class="text-yellow-600 text-sm font-semibold">View Parts →</p>
-        </a>
+            <p class="text-yellow-600 text-sm font-semibold">Click to select brand →</p>
+        </div>
+        <div class="card-back" style="display:none;">
+            <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
+            <a href="/pages/hubs/category-air---fluid-filtration-systems.html#volvo" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-2 text-center">VOLVO</a>
+            <a href="/pages/hubs/category-air---fluid-filtration-systems.html#scania" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-3 text-center">SCANIA</a>
+            <button onclick="event.stopPropagation(); this.closest('.category-card').querySelector('.card-back').style.display='none'; this.closest('.category-card').querySelector('.card-front').style.display='block';" class="text-sm text-gray-500 hover:text-gray-700">← Back</button>
+        </div>
     </div>
     
     <!-- Steering -->
-    <div class="category-card bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <a href="/pages/hubs/category-steering---suspension-parts.html" class="block text-center">
+    <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all" onclick="this.querySelector('.card-front').style.display='none'; this.querySelector('.card-back').style.display='block';">
+        <div class="card-front">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="8" stroke-width="1.2"/>
-                    <circle cx="12" cy="12" r="3" stroke-width="1.2"/>
+                    <circle cx="12" cy="12" r="8" stroke-width="1.2"/><circle cx="12" cy="12" r="3" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2">Steering & Suspension</h3>
-            <p class="text-yellow-600 text-sm font-semibold">View Parts →</p>
-        </a>
+            <p class="text-yellow-600 text-sm font-semibold">Click to select brand →</p>
+        </div>
+        <div class="card-back" style="display:none;">
+            <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
+            <a href="/pages/hubs/category-steering---suspension-parts.html#volvo" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-2 text-center">VOLVO</a>
+            <a href="/pages/hubs/category-steering---suspension-parts.html#scania" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-3 text-center">SCANIA</a>
+            <button onclick="event.stopPropagation(); this.closest('.category-card').querySelector('.card-back').style.display='none'; this.closest('.category-card').querySelector('.card-front').style.display='block';" class="text-sm text-gray-500 hover:text-gray-700">← Back</button>
+        </div>
     </div>
     
     <!-- Lighting -->
-    <div class="category-card bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <a href="/pages/hubs/category-lighting---exterior-body-components.html" class="block text-center">
+    <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all" onclick="this.querySelector('.card-front').style.display='none'; this.querySelector('.card-back').style.display='block';">
+        <div class="card-front">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M12 3l-1.5 4.5h-4.5l3.75 3-1.5 4.5 3.75-3 3.75 3-1.5-4.5 3.75-3h-4.5z" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2">Lighting & Exterior</h3>
-            <p class="text-yellow-600 text-sm font-semibold">View Parts →</p>
-        </a>
+            <p class="text-yellow-600 text-sm font-semibold">Click to select brand →</p>
+        </div>
+        <div class="card-back" style="display:none;">
+            <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
+            <a href="/pages/hubs/category-lighting---exterior-body-components.html#volvo" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-2 text-center">VOLVO</a>
+            <a href="/pages/hubs/category-lighting---exterior-body-components.html#scania" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-3 text-center">SCANIA</a>
+            <button onclick="event.stopPropagation(); this.closest('.category-card').querySelector('.card-back').style.display='none'; this.closest('.category-card').querySelector('.card-front').style.display='block';" class="text-sm text-gray-500 hover:text-gray-700">← Back</button>
+        </div>
     </div>
     
     <!-- Fasteners -->
-    <div class="category-card bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <a href="/pages/hubs/category-fasteners--hardware---accessories.html" class="block text-center">
+    <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all" onclick="this.querySelector('.card-front').style.display='none'; this.querySelector('.card-back').style.display='block';">
+        <div class="card-front">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2v20M6 8l6-6 6 6" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2">Fasteners & Hardware</h3>
-            <p class="text-yellow-600 text-sm font-semibold">View Parts →</p>
-        </a>
+            <p class="text-yellow-600 text-sm font-semibold">Click to select brand →</p>
+        </div>
+        <div class="card-back" style="display:none;">
+            <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
+            <a href="/pages/hubs/category-fasteners--hardware---accessories.html#volvo" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-2 text-center">VOLVO</a>
+            <a href="/pages/hubs/category-fasteners--hardware---accessories.html#scania" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-3 text-center">SCANIA</a>
+            <button onclick="event.stopPropagation(); this.closest('.category-card').querySelector('.card-back').style.display='none'; this.closest('.category-card').querySelector('.card-front').style.display='block';" class="text-sm text-gray-500 hover:text-gray-700">← Back</button>
+        </div>
     </div>
     
     <!-- Miscellaneous -->
-    <div class="category-card bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-        <a href="/pages/hubs/category-miscellaneous.html" class="block text-center">
+    <div class="category-card bg-white rounded-2xl shadow-md p-6 cursor-pointer hover:shadow-xl transition-all" onclick="this.querySelector('.card-front').style.display='none'; this.querySelector('.card-back').style.display='block';">
+        <div class="card-front">
             <div class="bg-yellow-100 rounded-full p-4 mb-4 mx-auto w-20 h-20 flex items-center justify-center">
                 <svg class="w-10 h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <rect x="4" y="4" width="7" height="7" rx="1" stroke-width="1.2"/>
-                    <rect x="13" y="4" width="7" height="7" rx="1" stroke-width="1.2"/>
+                    <rect x="4" y="4" width="7" height="7" rx="1" stroke-width="1.2"/><rect x="13" y="4" width="7" height="7" rx="1" stroke-width="1.2"/>
                 </svg>
             </div>
             <h3 class="text-lg font-bold text-gray-900 mb-2">Miscellaneous</h3>
-            <p class="text-yellow-600 text-sm font-semibold">View Parts →</p>
-        </a>
+            <p class="text-yellow-600 text-sm font-semibold">Click to select brand →</p>
+        </div>
+        <div class="card-back" style="display:none;">
+            <h4 class="text-lg font-bold text-gray-900 text-center mb-4">Select Brand</h4>
+            <a href="/pages/hubs/category-miscellaneous.html#volvo" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-2 text-center">VOLVO</a>
+            <a href="/pages/hubs/category-miscellaneous.html#scania" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded-lg mb-3 text-center">SCANIA</a>
+            <button onclick="event.stopPropagation(); this.closest('.category-card').querySelector('.card-back').style.display='none'; this.closest('.category-card').querySelector('.card-front').style.display='block';" class="text-sm text-gray-500 hover:text-gray-700">← Back</button>
+        </div>
     </div>
     
 </div>
