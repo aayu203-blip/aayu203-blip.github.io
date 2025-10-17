@@ -2684,21 +2684,32 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
             const brand = (result["Brand"] || '').toString().trim().toLowerCase();
             const category = (result["Category"] || '').toString().trim().toLowerCase();
             const partNo = (result["Part No"] || '').toString().trim();
-            const brandSlug = brand.replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+            
+            // Map category names to folder names
             const catMap = {
-                'engine components': 'engine',
-                'fuel system components': 'fuel',
-                'transmission & differential components': 'transmission',
-                'braking system components': 'braking',
-                'steering & suspension parts': 'steering',
-                'hydraulic systems & connectors': 'hydraulic',
-                'air & fluid filtration systems': 'filtration',
-                'lighting & exterior body components': 'lighting',
-                'fasteners, hardware & accessories': 'fasteners'
+                'engine components': 'engine-components',
+                'fuel system components': 'fuel-system-components',
+                'transmission & differential components': 'transmission-&-differential-components',
+                'braking system components': 'braking-system-components',
+                'steering & suspension parts': 'steering-&-suspension-parts',
+                'hydraulic systems & connectors': 'hydraulic-systems-&-connectors',
+                'air & fluid filtration systems': 'air-&-fluid-filtration-systems',
+                'lighting & exterior body components': 'lighting-&-exterior-body-components',
+                'fasteners, hardware & accessories': 'fasteners,-hardware-&-accessories'
             };
+            
             const catKey = category.replace(/\s+/g,' ');
-            const catSlug = catMap[catKey] || (category.replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').split('-')[0] || 'products');
-            return `/${brandSlug || 'product'}/${catSlug}/${partNo}`;
+            const catSlug = catMap[catKey] || 'miscellaneous';
+            
+            // Determine brand folder
+            let brandFolder = 'scania'; // default
+            if (brand.includes('volvo')) brandFolder = 'volvo';
+            else if (brand.includes('scania')) brandFolder = 'scania';
+            else if (brand.includes('komatsu')) brandFolder = 'komatsu';
+            else if (brand.includes('cat') || brand.includes('caterpillar')) brandFolder = 'cat';
+            
+            // New URL structure: pages/products/brand/category/part.html
+            return `/pages/products/${brandFolder}/${catSlug}/${partNo}.html`;
         }
         
         // Contact for part function
