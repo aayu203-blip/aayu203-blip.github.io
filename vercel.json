@@ -1,10 +1,6 @@
 {
-  "rewrites": [
-    {
-      "source": "/:brand(volvo|scania|komatsu|cat|hitachi|kobelco)/:category/:part",
-      "destination": "/pages/products/:brand/:category/:part.html"
-    }
-  ],
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",

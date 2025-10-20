@@ -2679,13 +2679,13 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
             `;
             document.body.appendChild(modal);
         }
-        // Helper to get product page link (clean URL)
+        // Helper to get product page link (actual file path - guaranteed to work!)
         function getProductPageLink(result) {
             const brand = (result["Brand"] || '').toString().trim().toLowerCase();
             const category = (result["Category"] || '').toString().trim().toLowerCase();
             const partNo = (result["Part No"] || '').toString().trim();
             
-            // Map category names to clean URL slugs
+            // Map category names to actual folder names (now clean!)
             const catMap = {
                 'engine components': 'engine',
                 'fuel system components': 'fuel',
@@ -2699,7 +2699,7 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
             };
             
             const catKey = category.replace(/\s+/g,' ');
-            const catSlug = catMap[catKey] || 'miscellaneous';
+            const catSlug = catMap[catKey] || 'misc';
             
             // Determine brand folder
             let brandFolder = 'scania'; // default
@@ -2708,8 +2708,8 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
             else if (brand.includes('komatsu')) brandFolder = 'komatsu';
             else if (brand.includes('cat') || brand.includes('caterpillar')) brandFolder = 'cat';
             
-            // Clean URL structure: /{brand}/{category}/{part}
-            return `/${brandFolder}/${catSlug}/${partNo}`;
+            // Return clean URL (now matches actual file!)
+            return `/${brandFolder}/${catSlug}/${partNo}.html`;
         }
         
         // Contact for part function
