@@ -284,11 +284,8 @@
 </nav>
 
 <!-- Main Content Section -->
-<section class="pt-32 pb-16 bg-white" style="min-height: 500px; border: 5px solid red;">
+<section class="pt-32 pb-16 bg-white">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div style="background: yellow; padding: 20px; margin: 20px 0; font-size: 24px; font-weight: bold;">
-🚨 TEST: IF YOU SEE THIS, THE PAGE IS LOADING! 🚨
-</div>
 <!-- Breadcrumb Navigation -->
 <div class="mb-8">
     <nav class="flex items-center space-x-2 text-sm text-gray-500">
@@ -551,14 +548,35 @@ if (typeof AOS !== 'undefined') {
         
         products.forEach(p => {
             const card = document.createElement('div');
-            card.className = 'bg-white p-4 rounded shadow hover:shadow-lg transition';
+            card.className = 'bg-white rounded-xl shadow-lg hover:shadow-xl hover:border-2 hover:border-yellow-400 transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden';
+            
+            // Get alternate part numbers
+            const altParts = [p["Alt Part No 1"], p["Alt Part No 2"], p["Alt Part No 3"]]
+                .filter(alt => alt && alt.trim())
+                .join(', ');
+            
             card.innerHTML = `
-                <div class="font-bold text-lg mb-2">${p["Part No"]}</div>
-                <div class="text-gray-700 mb-2">${p["Cleaned Description"]}</div>
-                <a href="/${brand.toLowerCase()}/${catSlug}/${p["Part No"]}.html" 
-                   class="inline-block bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">
-                    View Details
-                </a>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded-full">${p["Brand"]}</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">${p["Part No"]}</h3>
+                    <p class="text-yellow-600 text-sm mb-3 font-semibold">${p["Cleaned Description"]}</p>
+                    <div class="space-y-2 mb-4 text-xs text-gray-600">
+                        ${p["Application"] ? `<p><strong>Application:</strong> ${p["Application"]}</p>` : ''}
+                        ${altParts ? `<p><strong>Alt Part No:</strong> ${altParts}</p>` : ''}
+                    </div>
+                    <div class="flex space-x-2">
+                        <a href="/${brand.toLowerCase()}/${catSlug}/${p["Part No"]}.html" 
+                           class="flex-1 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300 text-sm text-center">
+                            View Details
+                        </a>
+                        <button onclick="window.open('https://wa.me/919821037990?text=Hi! I am interested in ${encodeURIComponent(p["Part No"] + ' - ' + p["Cleaned Description"])}. Please provide a quote.', '_blank')" 
+                                class="flex-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 text-sm">
+                            Get Quote
+                        </button>
+                    </div>
+                </div>
             `;
             grid.appendChild(card);
         });
