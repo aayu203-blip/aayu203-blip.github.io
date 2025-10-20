@@ -513,13 +513,9 @@ Showing <span id="visibleCount" class="font-semibold text-yellow-600">0</span> o
 
         const targetBrand = "Scania";
         const targetCategories = ["Engine Components"];
-        allProducts = partDatabase
-          .filter(product => product["Brand"] === targetBrand && targetCategories.includes(product["Category"]))
-          .filter(product => ([/piston/i, /liner/i, /ring/i, /valve/i, /head/i, /block/i, /cam/i, /crank/i, /turbo/i, /coolant/i, /radiator/i, /water pump/i, /oil pump/i, /gasket/i, /seal/i, /bearing/i].some(rx => rx.test((product["Cleaned Description"]||'') + ' ' + (product["Application"]||'')))) && !([/fuel/i, /inject/i, /nozzle/i, /rail/i, /pump/i].some(rx => rx.test((product["Cleaned Description"]||'') + ' ' + (product["Application"]||'')))));
-    
-        // Filter to only show products that have corresponding product pages
-        const existingProductPages = new Set([]);
-        allProducts = allProducts.filter(product => existingProductPages.size === 0 || existingProductPages.has(product["Part No"]));
+        allProducts = partDatabase.filter(product => {
+            return product["Brand"] === "Scania" && targetCategories.includes(product["Category"]);
+        });
         filteredProducts = [...allProducts];
         updateProductDisplay();
     }

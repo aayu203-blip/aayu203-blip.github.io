@@ -513,13 +513,9 @@ Showing <span id="visibleCount" class="font-semibold text-yellow-600">0</span> o
 
         const targetBrand = "Scania";
         const targetCategories = ["Fuel System Components"];
-        allProducts = partDatabase
-          .filter(product => product["Brand"] === targetBrand && targetCategories.includes(product["Category"]))
-          .filter(product => ([/fuel/i, /inject/i, /injection/i, /nozzle/i, /rail/i, /pressure regulator/i, /feed pump/i, /fuel pump/i, /diesel pump/i, /fuel line/i, /fuel hose/i].some(rx => rx.test((product["Cleaned Description"]||'') + ' ' + (product["Application"]||'')))) && !(false));
-    
-        // Filter to only show products that have corresponding product pages
-        const existingProductPages = new Set([]);
-        allProducts = allProducts.filter(product => existingProductPages.size === 0 || existingProductPages.has(product["Part No"]));
+        allProducts = partDatabase.filter(product => {
+            return product["Brand"] === "Scania" && targetCategories.includes(product["Category"]);
+        });
         filteredProducts = [...allProducts];
         updateProductDisplay();
     }
