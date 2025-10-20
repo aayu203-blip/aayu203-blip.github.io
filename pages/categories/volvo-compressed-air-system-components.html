@@ -12,6 +12,8 @@
 <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
 <meta content="index, follow" name="googlebot"/>
 <meta content="index, follow" name="bingbot"/>
+<meta name="page-brand" content="Volvo"/>
+<meta name="page-category" content="Air & Fluid Filtration Systems"/>
 <meta content="website" property="og:type"/>
 <meta content="https://partstrading.com/categories/volvo-compressed-air-system-components.html" property="og:url"/>
 <meta content="Compressed Air System Components | Scania Spare Parts" property="og:title"/>
@@ -496,236 +498,96 @@ Showing <span id="visibleCount" class="font-semibold text-yellow-600">0</span> o
 
 <!-- AOS Animation -->
 <script>
-    AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true
-    });
+if (typeof AOS !== 'undefined') {
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+}
 
-    // Category page functionality
-    let allProducts = [];
-    let filteredProducts = [];
-    let currentPage = 1;
-    const productsPerPage = 12;
-
-    // Filter products by category and brand
-    function filterProductsByCategoryAndBrand() {
-        const targetBrand = "Volvo";
-        const targetCategories = ["Miscellaneous"]; // This should match the category name in your database
-
-        allProducts = partDatabase.filter(product => {
-            return product["Brand"] === targetBrand && targetCategories.includes(product["Category"]);
-        });
-        
-        // Filter to only show products that have corresponding product pages
-        const existingProductPages = new Set([]);
-        // allProducts = allProducts.filter(product => existingProductPages.has(product["Part No"]));
-        
-        filteredProducts = [...allProducts];
-        updateProductDisplay();
-    }
-
-    // Search functionality
-    function searchProducts(query) {
-        if (!query.trim()) {
-            filteredProducts = [...allProducts];
-        } else {
-            const searchTerm = query.toLowerCase();
-            filteredProducts = allProducts.filter(product => 
-                product["Part No"].toLowerCase().startsWith(searchTerm) ||
-                product["Cleaned Description"].toLowerCase().startsWith(searchTerm) ||
-                product["Brand"].toLowerCase().startsWith(searchTerm) ||
-                product["Category"].toLowerCase().startsWith(searchTerm) ||
-                (product["Application"] && product["Application"].toLowerCase().startsWith(searchTerm)) ||
-                ([product["Alt Part No 1"], product["Alt Part No 2"], product["Alt Part No 3"]].filter(alt => alt && alt.trim()) && [product["Alt Part No 1"], product["Alt Part No 2"], product["Alt Part No 3"]].filter(alt => alt && alt.trim()).some(alt => alt.toLowerCase().startsWith(searchTerm)))
-            );
-        }
-        currentPage = 1;
-        updateProductDisplay();
-    }
-
-    // Update product display (same as before)
-    function updateProductDisplay() {
-        const grid = document.getElementById('productsGrid');
-        const startIndex = (currentPage - 1) * productsPerPage;
-        const endIndex = startIndex + productsPerPage;
-        const productsToShow = filteredProducts.slice(startIndex, endIndex);
-        
-        grid.innerHTML = '';
-        
-        productsToShow.forEach(product => {
-            const productCard = createProductCard(product);
-            grid.appendChild(productCard);
-        });
-        
-        // Update counts
-        document.getElementById('visibleCount').textContent = Math.min(endIndex, filteredProducts.length);
-        document.getElementById('totalCount').textContent = filteredProducts.length;
-        
-        // Show/hide load more button
-        const loadMoreBtn = document.getElementById('loadMoreBtn');
-        if (endIndex < filteredProducts.length) {
-            loadMoreBtn.classList.remove('hidden');
-        } else {
-            loadMoreBtn.classList.add('hidden');
-        }
-    }
-
-    // Create product card
-    function createProductCard(product) {
-        const card = document.createElement('div');
-        card.className = 'bg-white rounded-xl shadow-lg hover:shadow-xl hover:border-2 hover:border-yellow-400 transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden cursor-pointer';
-        
-        card.innerHTML = `
-            <div class="p-6">
-                <div class="flex items-center justify-between mb-4">
-                    <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded-full">${product["Brand"]}</span>
-                </div>
-                <h3 class="text-lg font-bold text-gray-900 mb-2"><strong>${product["Part No"]}</strong></h3>
-                <p class="text-yellow-600 text-sm mb-3 font-semibold"><strong>${product["Cleaned Description"]}</strong></p>
-                <div class="space-y-2 mb-4">
-                    <p class="text-gray-600 text-xs"><strong>Application:</strong> ${product["Application"] || ''}</p>
-                    <p class="text-gray-600 text-xs"><strong>Alternate Part No:</strong> ${[product["Alt Part No 1"], product["Alt Part No 2"], product["Alt Part No 3"]].filter(alt => alt && alt.trim()) && [product["Alt Part No 1"], product["Alt Part No 2"], product["Alt Part No 3"]].filter(alt => alt && alt.trim()).length > 0 ? [product["Alt Part No 1"], product["Alt Part No 2"], product["Alt Part No 3"]].filter(alt => alt && alt.trim()).join(', ') : ''}</p>
-                </div>
-                <div class="flex space-x-2">
-                    <a href="/volvo/compressed-air-system-components/${product[\"Part No\"]}" class="flex-1 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300 text-sm text-center">
-                        View Details
-                    </a>
-                    <button onclick="window.open('https://wa.me/919821037990?text=Hi! I am interested in ${product["Part No"]} - ${product["Cleaned Description"]}. Please provide a quote.', '_blank')" class="flex-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 text-sm">
-                        Get Quote
-                    </button>
-                </div>
-            </div>
-        `;
-        
-        
-        
-        
-        
-        return card;
-    }
-
-    // Update product display with pagination
-    function updateProductDisplay() {
-        const grid = document.getElementById('productsGrid');
-        const startIndex = (currentPage - 1) * productsPerPage;
-        const endIndex = startIndex + productsPerPage;
-        const productsToShow = filteredProducts.slice(startIndex, endIndex);
-        
-        grid.innerHTML = '';
-        
-        productsToShow.forEach(product => {
-            const productCard = createProductCard(product);
-            grid.appendChild(productCard);
-        });
-        
-        // Update counts
-        document.getElementById('visibleCount').textContent = Math.min(endIndex, filteredProducts.length);
-        document.getElementById('totalCount').textContent = filteredProducts.length;
-        
-        // Update pagination
-        updatePagination();
-    }
-
-    // Create pagination buttons
-    function updatePagination() {
-        const pagination = document.getElementById('pagination');
-        const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-        
-        if (totalPages <= 1) {
-            pagination.innerHTML = '';
+// Simple bulletproof initialization
+(function() {
+    // Wait for database AND DOM
+    function init() {
+        if (typeof partDatabase === 'undefined' || !Array.isArray(partDatabase)) {
+            console.error('❌ Database not ready');
+            setTimeout(init, 100); // Retry
             return;
         }
         
-        let paginationHTML = '';
+        console.log('✅ Database loaded:', partDatabase.length, 'products');
         
-        // Previous button
-        if (currentPage > 1) {
-            paginationHTML += `
-                <button onclick="goToPage(${currentPage - 1})" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
-                    Previous
-                </button>
+        // Get brand/category from meta tags
+        const brand = document.querySelector('meta[name="page-brand"]')?.content || 'Volvo';
+        const category = document.querySelector('meta[name="page-category"]')?.content || 'Air & Fluid Filtration Systems';
+        
+        console.log('Filtering:', brand, '-', category);
+        
+        // Filter products
+        const products = partDatabase.filter(p => p.Brand === brand && p.Category === category);
+        
+        console.log('✅ Found:', products.length, 'products');
+        
+        // Update display
+        document.getElementById('visibleCount').textContent = products.length;
+        document.getElementById('totalCount').textContent = products.length;
+        
+        // Render products
+        const grid = document.getElementById('productsGrid');
+        grid.innerHTML = '';
+        
+        const catMap = {
+            'Engine Components': 'engine',
+            'Fuel System Components': 'fuel',
+            'Transmission & Differential Components': 'transmission',
+            'Braking System Components': 'braking',
+            'Steering & Suspension Parts': 'suspension',
+            'Hydraulic Systems & Connectors': 'hydraulics',
+            'Air & Fluid Filtration Systems': 'filtration',
+            'Lighting & Exterior Body Components': 'exterior',
+            'Fasteners, Hardware & Accessories': 'hardware'
+        };
+        const catSlug = catMap[category] || 'misc';
+        
+        products.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'bg-white rounded-xl shadow-lg hover:shadow-xl hover:border-2 hover:border-yellow-400 transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden';
+            
+            // Get alternate part numbers
+            const altParts = [p["Alt Part No 1"], p["Alt Part No 2"], p["Alt Part No 3"]]
+                .filter(alt => alt && alt.trim())
+                .join(', ');
+            
+            card.innerHTML = `
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded-full">${p["Brand"]}</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">${p["Part No"]}</h3>
+                    <p class="text-yellow-600 text-sm mb-3 font-semibold">${p["Cleaned Description"]}</p>
+                    <div class="space-y-2 mb-4 text-xs text-gray-600">
+                        ${p["Application"] ? `<p><strong>Application:</strong> ${p["Application"]}</p>` : ''}
+                        ${altParts ? `<p><strong>Alt Part No:</strong> ${altParts}</p>` : ''}
+                    </div>
+                    <div class="flex space-x-2">
+                        <a href="/${brand.toLowerCase()}/${catSlug}/${p["Part No"]}.html" 
+                           class="flex-1 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300 text-sm text-center">
+                            View Details
+                        </a>
+                        <button onclick="window.open('https://wa.me/919821037990?text=Hi! I am interested in ${encodeURIComponent(p["Part No"] + ' - ' + p["Cleaned Description"])}. Please provide a quote.', '_blank')" 
+                                class="flex-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 text-sm">
+                            Get Quote
+                        </button>
+                    </div>
+                </div>
             `;
-        }
-        
-        // Page numbers
-        const maxVisiblePages = 5;
-        let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-        let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
-        
-        if (endPage - startPage + 1 < maxVisiblePages) {
-            startPage = Math.max(1, endPage - maxVisiblePages + 1);
-        }
-        
-        for (let i = startPage; i <= endPage; i++) {
-            if (i === currentPage) {
-                paginationHTML += `
-                    <button class="px-4 py-2 bg-yellow-500 text-gray-900 rounded-lg font-semibold">
-                        ${i}
-                    </button>
-                `;
-            } else {
-                paginationHTML += `
-                    <button onclick="goToPage(${i})" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
-                        ${i}
-                    </button>
-                `;
-            }
-        }
-        
-        // Next button
-        if (currentPage < totalPages) {
-            paginationHTML += `
-                <button onclick="goToPage(${currentPage + 1})" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors">
-                    Next
-                </button>
-            `;
-        }
-        
-        pagination.innerHTML = paginationHTML;
+            grid.appendChild(card);
+        });
     }
-
-    // Go to specific page
-    function goToPage(page) {
-        currentPage = page;
-        updateProductDisplay();
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
     }
-
-    // Initialize page
-    document.addEventListener('DOMContentLoaded', function() {
-        // Check if database is loaded
-        if (typeof partDatabase === 'undefined') {
-            console.error('Database not loaded!');
-            document.getElementById('visibleCount').textContent = 'Error';
-            document.getElementById('totalCount').textContent = 'Database not loaded';
-            return;
-        }
-        
-        console.log('Database loaded:', partDatabase.length, 'products');
-        filterProductsByCategoryAndBrand(); // Call the new filtering function
-        console.log('Filtered products:', filteredProducts.length);
-        
-        // Search input event listener
-        const searchInput = document.getElementById('categorySearch');
-        searchInput.addEventListener('input', function() {
-            searchProducts(this.value);
-        });
-        
-
-
-        // Back to top button
-        const backToTopButton = document.getElementById("back-to-top");
-        window.addEventListener("scroll", () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add("visible");
-            } else {
-                backToTopButton.classList.remove("visible");
-            }
-        });
-        backToTopButton.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    });
+})();
 </script>
 </body>
-</html> 
+</html>
