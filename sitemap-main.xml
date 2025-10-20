@@ -1,39 +1,294 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main pages with high priority -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage with high priority -->
   <url>
     <loc>https://partstrading.com/</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://partstrading.com/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://partstrading.com/hi/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://partstrading.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://partstrading.com/id/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://partstrading.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://partstrading.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://partstrading.com/cn/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://partstrading.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://partstrading.com/kn/"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://partstrading.com/ml/"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://partstrading.com/ta/"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://partstrading.com/te/"/>
   </url>
   
-  <!-- Important category pages -->
+  <!-- Brand Category Pages -->
   <url>
-    <loc>https://partstrading.com/#brands</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://partstrading.com/pages/volvo-categories.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/scania-categories.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
+  <!-- Hub Pages -->
+  <url>
+    <loc>https://partstrading.com/pages/hubs/brand-volvo.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://partstrading.com/#product-categories</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://partstrading.com/pages/hubs/brand-scania.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
-    <loc>https://partstrading.com/#contact</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://partstrading.com/pages/hubs/brand-komatsu.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/hubs/brand-cat.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/hubs/brand-hitachi.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/hubs/brand-kobelco.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Category Pages - Volvo -->
+  <url>
+    <loc>https://partstrading.com/pages/categories/volvo-engine-components.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/volvo-fuel-system-components.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/volvo-transmission-&amp;-differential-components.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/volvo-braking-system-components.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/volvo-steering-&amp;-suspension-parts.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/volvo-hydraulic-systems-&amp;-connectors.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/volvo-air-&amp;-fluid-filtration-systems.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/volvo-lighting-&amp;-exterior-body-components.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/volvo-fasteners,-hardware-&amp;-accessories.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <!-- Category Pages - Scania -->
+  <url>
+    <loc>https://partstrading.com/pages/categories/scania-engine-components.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/scania-fuel-system-components.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/scania-transmission-&amp;-differential-components.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/scania-braking-system-components.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/scania-steering-&amp;-suspension-parts.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/scania-hydraulic-systems-&amp;-connectors.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/scania-air-&amp;-fluid-filtration-systems.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/scania-lighting-&amp;-exterior-body-components.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/pages/categories/scania-fasteners,-hardware-&amp;-accessories.html</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://partstrading.com/blog/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
+  <!-- Multilingual Homepages -->
   <url>
-    <loc>https://partstrading.com/#faq</loc>
-    <lastmod>2024-01-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://partstrading.com/hi/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/ru/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/id/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/fr/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/ar/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/cn/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/es/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/kn/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/ml/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/ta/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://partstrading.com/te/</loc>
+    <lastmod>2025-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>

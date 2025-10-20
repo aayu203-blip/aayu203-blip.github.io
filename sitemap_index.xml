@@ -1,23 +1,23 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://partstrading.com/sitemap-main.xml</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-10-20</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-blog.xml</loc>
+    <lastmod>2025-10-20</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-products-1.xml</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-10-20</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-products-2.xml</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-10-20</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-products-3.xml</loc>
-    <lastmod>2025-01-15</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>https://partstrading.com/news-sitemap.xml</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2025-10-20</lastmod>
   </sitemap>
 </sitemapindex>
