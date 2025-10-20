@@ -693,7 +693,17 @@ Showing <span id="visibleCount" class="font-semibold text-yellow-600">0</span> o
 
     // Initialize page
     document.addEventListener('DOMContentLoaded', function() {
+        // Check if database is loaded
+        if (typeof partDatabase === 'undefined') {
+            console.error('Database not loaded!');
+            document.getElementById('visibleCount').textContent = 'Error';
+            document.getElementById('totalCount').textContent = 'Database not loaded';
+            return;
+        }
+        
+        console.log('Database loaded:', partDatabase.length, 'products');
         filterProductsByCategoryAndBrand(); // Call the new filtering function
+        console.log('Filtered products:', filteredProducts.length);
         
         // Search input event listener
         const searchInput = document.getElementById('categorySearch');
