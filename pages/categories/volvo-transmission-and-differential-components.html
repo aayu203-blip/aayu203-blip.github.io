@@ -588,7 +588,7 @@ Showing <span id="visibleCount" class="font-semibold text-yellow-600">0</span> o
                     <p class="text-gray-600 text-xs"><strong>Alternate Part No:</strong> ${[product["Alt Part No 1"], product["Alt Part No 2"], product["Alt Part No 3"]].filter(alt => alt && alt.trim()) && [product["Alt Part No 1"], product["Alt Part No 2"], product["Alt Part No 3"]].filter(alt => alt && alt.trim()).length > 0 ? [product["Alt Part No 1"], product["Alt Part No 2"], product["Alt Part No 3"]].filter(alt => alt && alt.trim()).join(', ') : ''}</p>
                 </div>
                 <div class="flex space-x-2">
-                    <a href="/volvo/transmission/${product[\"Part No\"]}" class="flex-1 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300 text-sm text-center">
+                    <a href="/volvo/transmission/${product[\"Part No\"]}.html" class="flex-1 bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-all duration-300 text-sm text-center">
                         View Details
                     </a>
                     <button onclick="window.open('https://wa.me/919821037990?text=Hi! I am interested in ${product["Part No"]} - ${product["Cleaned Description"]}. Please provide a quote.', '_blank')" class="flex-1 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 text-sm">
