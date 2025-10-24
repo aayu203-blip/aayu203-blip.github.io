@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmailJS Test - Parts Trading Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfHZfUrAAAAACPo1X9FCmuwdaBhuxhruta_YDke"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full bg-white rounded-xl shadow-lg p-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-4">EmailJS Integration Test</h1>
+        <p class="text-gray-600 mb-6">Use this page to test if EmailJS is working correctly</p>
+        
+        <!-- Test Results -->
+        <div id="testResults" class="mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <h3 class="font-semibold text-gray-900 mb-2">Test Status:</h3>
+            <div id="statusLog" class="text-sm space-y-1">
+                <p class="text-gray-600">⏳ Waiting for test...</p>
+            </div>
+        </div>
+        
+        <!-- Test Form -->
+        <form id="testForm" class="space-y-4">
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Your Name *</label>
+                <input type="text" name="name" value="Test User" required class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-yellow-400 focus:outline-none">
+            </div>
+            
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Email *</label>
+                <input type="email" name="email" value="test@example.com" required class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-yellow-400 focus:outline-none">
+            </div>
+            
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Phone *</label>
+                <input type="tel" name="phone" value="+91 98765 43210" required class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-yellow-400 focus:outline-none">
+            </div>
+            
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Company</label>
+                <input type="text" name="company" value="Test Company Pvt Ltd" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-yellow-400 focus:outline-none">
+            </div>
+            
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Model</label>
+                <input type="text" name="model" value="Volvo FH16" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-yellow-400 focus:outline-none">
+            </div>
+            
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Location</label>
+                <input type="text" name="location" value="Mumbai, India" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-yellow-400 focus:outline-none">
+            </div>
+            
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Parts Required *</label>
+                <textarea name="parts" required rows="3" class="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-yellow-400 focus:outline-none">Engine filters, brake pads, oil filters</textarea>
+            </div>
+            
+            <button type="submit" id="submitBtn" class="w-full py-3 bg-yellow-400 text-gray-900 font-bold rounded-lg hover:bg-yellow-500 transition-colors">
+                🚀 Test EmailJS Integration
+            </button>
+        </form>
+        
+        <!-- Instructions -->
+        <div class="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <h3 class="font-semibold text-blue-900 mb-2">📋 Instructions:</h3>
+            <ol class="text-sm text-blue-800 space-y-1 list-decimal list-inside">
+                <li>Click the "Test EmailJS Integration" button above</li>
+                <li>Check the "Test Status" box for real-time updates</li>
+                <li>Open your browser's Developer Console (F12) for detailed logs</li>
+                <li>Check your email inbox for the test message</li>
+                <li>If it works: ✅ EmailJS is configured correctly!</li>
+                <li>If it fails: ❌ Follow the troubleshooting steps below</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Initialize EmailJS
+        (function(){
+            emailjs.init("gNoxuYBCX3W_dMRMM");
+            addLog("✅ EmailJS initialized with Public Key: gNoxuYBCX3W_dMRMM", "success");
+        })();
+        
+        function addLog(message, type = "info") {
+            const statusLog = document.getElementById('statusLog');
+            const timestamp = new Date().toLocaleTimeString();
+            const colors = {
+                info: "text-gray-600",
+                success: "text-green-600",
+                error: "text-red-600",
+                warning: "text-yellow-600"
+            };
+            const p = document.createElement('p');
+            p.className = colors[type] + " font-mono text-xs";
+            p.textContent = `[${timestamp}] ${message}`;
+            statusLog.appendChild(p);
+            console.log(`[${timestamp}] ${message}`);
+        }
+        
+        document.getElementById('testForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Clear previous logs except initialization
+            const statusLog = document.getElementById('statusLog');
+            while (statusLog.children.length > 1) {
+                statusLog.removeChild(statusLog.lastChild);
+            }
+            
+            addLog("🚀 Starting EmailJS test...", "info");
+            addLog("📝 Service ID: service_zizi36t", "info");
+            addLog("📝 Template ID: template_yesevuc", "info");
+            
+            submitBtn.innerHTML = '⏳ Sending...';
+            submitBtn.disabled = true;
+            
+            // Get reCAPTCHA token
+            addLog("🔒 Requesting reCAPTCHA token...", "info");
+            
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(function() {
+                    grecaptcha.execute('6LfHZfUrAAAAACPo1X9FCmuwdaBhuxhruta_YDke', {action: 'test_form'})
+                        .then(function(token) {
+                            addLog("✅ reCAPTCHA token received", "success");
+                            
+                            // Add token to form
+                            const recaptchaInput = document.createElement('input');
+                            recaptchaInput.type = 'hidden';
+                            recaptchaInput.name = 'g-recaptcha-response';
+                            recaptchaInput.value = token;
+                            document.getElementById('testForm').appendChild(recaptchaInput);
+                            
+                            sendTestEmail(submitBtn, originalText);
+                        })
+                        .catch(function(error) {
+                            addLog("⚠️ reCAPTCHA failed: " + error.message, "warning");
+                            addLog("⏭️ Continuing without reCAPTCHA...", "info");
+                            sendTestEmail(submitBtn, originalText);
+                        });
+                });
+            } else {
+                addLog("⚠️ reCAPTCHA not loaded, continuing without it", "warning");
+                sendTestEmail(submitBtn, originalText);
+            }
+        });
+        
+        function sendTestEmail(submitBtn, originalText) {
+            addLog("📧 Sending email via EmailJS...", "info");
+            
+            try {
+                emailjs.sendForm('service_zizi36t', 'template_yesevuc', document.getElementById('testForm'))
+                    .then(function(response) {
+                        addLog("✅ SUCCESS! Email sent successfully!", "success");
+                        addLog("📊 Response Status: " + response.status, "success");
+                        addLog("📊 Response Text: " + response.text, "success");
+                        addLog("", "info");
+                        addLog("🎉 EmailJS is working correctly!", "success");
+                        addLog("📬 Check your email inbox (may take 1-2 minutes)", "success");
+                        
+                        submitBtn.innerHTML = '✅ Test Successful!';
+                        submitBtn.className = 'w-full py-3 bg-green-500 text-white font-bold rounded-lg';
+                        
+                        setTimeout(() => {
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.className = 'w-full py-3 bg-yellow-400 text-gray-900 font-bold rounded-lg hover:bg-yellow-500 transition-colors';
+                            submitBtn.disabled = false;
+                        }, 5000);
+                    }, function(error) {
+                        addLog("❌ ERROR: EmailJS failed!", "error");
+                        addLog("📊 Error Status: " + error.status, "error");
+                        addLog("📊 Error Text: " + error.text, "error");
+                        addLog("📊 Full Error: " + JSON.stringify(error), "error");
+                        addLog("", "info");
+                        addLog("🔧 Troubleshooting Steps:", "warning");
+                        addLog("1. Check if service_zizi36t exists in your EmailJS account", "warning");
+                        addLog("2. Check if template_yesevuc exists in your EmailJS account", "warning");
+                        addLog("3. Verify your EmailJS Public Key: gNoxuYBCX3W_dMRMM", "warning");
+                        addLog("4. Make sure your EmailJS service is connected to an email provider", "warning");
+                        addLog("5. Check EmailJS dashboard for any errors or limits reached", "warning");
+                        
+                        submitBtn.innerHTML = '❌ Test Failed - Check Logs';
+                        submitBtn.className = 'w-full py-3 bg-red-500 text-white font-bold rounded-lg';
+                        
+                        setTimeout(() => {
+                            submitBtn.innerHTML = originalText;
+                            submitBtn.className = 'w-full py-3 bg-yellow-400 text-gray-900 font-bold rounded-lg hover:bg-yellow-500 transition-colors';
+                            submitBtn.disabled = false;
+                        }, 5000);
+                    });
+            } catch (error) {
+                addLog("❌ CRITICAL ERROR: " + error.message, "error");
+                addLog("📊 Full Error: " + error.stack, "error");
+                
+                submitBtn.innerHTML = '❌ Critical Error';
+                submitBtn.className = 'w-full py-3 bg-red-500 text-white font-bold rounded-lg';
+                
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.className = 'w-full py-3 bg-yellow-400 text-gray-900 font-bold rounded-lg hover:bg-yellow-500 transition-colors';
+                    submitBtn.disabled = false;
+                }, 5000);
+            }
+        }
+    </script>
+</body>
+</html>
+
