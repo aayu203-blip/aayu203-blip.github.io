@@ -2,7 +2,11 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://partstrading.com/sitemap-main.xml</loc>
-    <lastmod>2025-10-21</lastmod>
+    <lastmod>2025-10-24</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-models.xml</loc>
+    <lastmod>2025-10-24</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-products-1.xml</loc>
