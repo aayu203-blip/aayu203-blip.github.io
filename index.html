@@ -2114,12 +2114,20 @@ We offer a full range of spare parts for <span class="text-yellow-400 font-semib
 <input class="form-input" id="name" name="name" required="" type="text"/>
 </div>
 <div>
+<label class="block text-sm font-medium text-gray-700 mb-1" for="company">Company Name</label>
+<input class="form-input" id="company" name="company" type="text" placeholder="Your company name (optional)"/>
+</div>
+<div>
 <label class="block text-sm font-medium text-gray-700 mb-1" for="email">Email <span class="text-red-500">*</span></label>
 <input class="form-input" id="email" name="email" required="" type="email"/>
 </div>
 <div>
 <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Phone <span class="text-red-500">*</span></label>
 <input class="form-input" id="phone" name="phone" required="" type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1" for="location">Location</label>
+<input class="form-input" id="location" name="location" type="text" placeholder="City, Country (optional)"/>
 </div>
 <div>
 <label class="block text-sm font-medium text-gray-700 mb-1" for="message">Message <span class="text-red-500">*</span></label>
@@ -3281,8 +3289,10 @@ Please provide a quote and availability.`;
             // Create mailto link as fallback
             const mailtoLink = `mailto:partstrading@gmail.com?subject=${encodeURIComponent('New Contact Form Submission - Parts Trading Company')}&body=${encodeURIComponent(`
 Name: ${formData.get('name')}
+Company: ${formData.get('company')}
 Email: ${formData.get('email')}
 Phone: ${formData.get('phone')}
+Location: ${formData.get('location')}
 
 Message:
 ${formData.get('message')}
