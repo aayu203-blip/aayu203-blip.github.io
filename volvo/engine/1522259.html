@@ -1222,6 +1222,123 @@
 </div>
 </div>
 </div>
+
+<!-- Quick Contact Form (Floating) -->
+<div class="mt-6">
+<div class="bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-300 rounded-xl p-6 shadow-xl" style="position: sticky; top: calc(8rem + 520px); height: fit-content;">
+<div class="text-center mb-4">
+<h3 class="text-lg font-bold text-gray-900 mb-1">Quick Inquiry</h3>
+<p class="text-sm text-gray-600">We'll respond within 24 hours</p>
+</div>
+
+<form id="quickContactForm" class="space-y-4" onsubmit="handleQuickContact(event)">
+<!-- Name Field -->
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1" for="quick-name">
+Your Name <span class="text-red-500">*</span>
+</label>
+<input 
+    class="w-full px-4 py-2 border-2 border-yellow-200 rounded-lg focus:outline-none focus:border-yellow-400 transition-colors bg-white" 
+    id="quick-name" 
+    name="name"
+    placeholder="Enter your name" 
+    required 
+    type="text"
+/>
+</div>
+
+<!-- Phone Field -->
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1" for="quick-phone">
+Phone Number <span class="text-red-500">*</span>
+</label>
+<input 
+    class="w-full px-4 py-2 border-2 border-yellow-200 rounded-lg focus:outline-none focus:border-yellow-400 transition-colors bg-white" 
+    id="quick-phone" 
+    name="phone"
+    pattern="[0-9]{10}" 
+    placeholder="10-digit mobile number" 
+    required 
+    type="tel"
+/>
+</div>
+
+<!-- Email Field -->
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1" for="quick-email">
+Email (Optional)
+</label>
+<input 
+    class="w-full px-4 py-2 border-2 border-yellow-200 rounded-lg focus:outline-none focus:border-yellow-400 transition-colors bg-white" 
+    id="quick-email" 
+    name="email"
+    placeholder="your@email.com" 
+    type="email"
+/>
+</div>
+
+<!-- Message Field -->
+<div>
+<label class="block text-sm font-semibold text-gray-700 mb-1" for="quick-message">
+Your Message <span class="text-red-500">*</span>
+</label>
+<textarea 
+    class="w-full px-4 py-2 border-2 border-yellow-200 rounded-lg focus:outline-none focus:border-yellow-400 transition-colors bg-white resize-none" 
+    id="quick-message" 
+    name="message"
+    placeholder="I'm interested in Part #1522259..." 
+    required 
+    rows="3"
+></textarea>
+</div>
+
+<!-- Submit Button -->
+<button 
+    class="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 px-6 py-3 rounded-lg font-bold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+    type="submit"
+>
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+</svg>
+Send Inquiry
+</button>
+
+<!-- Success Message -->
+<div class="hidden bg-green-100 border-2 border-green-300 rounded-lg p-3 text-center" id="form-success">
+<svg class="w-6 h-6 text-green-600 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"/>
+</svg>
+<p class="text-green-800 font-semibold text-sm">Message sent successfully!</p>
+<p class="text-green-700 text-xs mt-1">We'll contact you soon.</p>
+</div>
+</form>
+
+<!-- Trust Badges -->
+<div class="mt-4 pt-4 border-t border-yellow-200">
+<div class="flex items-center justify-center gap-4 text-xs text-gray-600">
+<div class="flex items-center gap-1">
+<svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+<path d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+</svg>
+<span>Secure</span>
+</div>
+<div class="flex items-center gap-1">
+<svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" fill-rule="evenodd"/>
+</svg>
+<span>24h Response</span>
+</div>
+<div class="flex items-center gap-1">
+<svg class="w-4 h-4 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+<path clip-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"/>
+</svg>
+<span>Verified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 </div>
 </div>
 <!-- Related Parts Section (Separate Section) -->
@@ -1415,6 +1532,59 @@ Please provide pricing and availability.`;
             
             const encodedMessage = encodeURIComponent(message);
             window.open(`https://wa.me/919821037990?text=${encodedMessage}`, '_blank');
+        }
+
+        // Quick Contact Form Handler
+        function handleQuickContact(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                email: formData.get('email') || 'Not provided',
+                message: formData.get('message'),
+                partNumber: '1522259',
+                partName: 'Volvo Housing Half 1522259',
+                timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+            };
+            
+            // Create WhatsApp message
+            const whatsappMessage = `🔔 NEW INQUIRY FROM WEBSITE
+
+👤 Name: ${data.name}
+📱 Phone: ${data.phone}
+📧 Email: ${data.email}
+💬 Message: ${data.message}
+
+📦 Part: ${data.partName} (${data.partNumber})
+🕐 Time: ${data.timestamp}`;
+            
+            // Send to WhatsApp (opens in new tab)
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            window.open(`https://wa.me/919821037990?text=${encodedMessage}`, '_blank');
+            
+            // Show success message
+            const successDiv = document.getElementById('form-success');
+            form.classList.add('hidden');
+            successDiv.classList.remove('hidden');
+            
+            // Reset form and hide success message after 5 seconds
+            setTimeout(() => {
+                form.reset();
+                form.classList.remove('hidden');
+                successDiv.classList.add('hidden');
+            }, 5000);
+            
+            // Optional: Track form submission (Google Analytics)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submission', {
+                    'event_category': 'Quick Inquiry Form',
+                    'event_label': 'Part: 1522259',
+                    'value': 1
+                });
+            }
         }
 
         // Back to top functionality
