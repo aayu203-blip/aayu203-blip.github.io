@@ -10,7 +10,7 @@
 <link href="../../assets/images/favicon-16x16.png?v=2" rel="icon" sizes="16x16" type="image/png"/>
 <link href="../../assets/images/favicon.png?v=2" rel="shortcut icon" type="image/png"/>
 <link href="../../assets/images/favicon.png?v=2" rel="apple-touch-icon" sizes="180x180"/>
-<link rel="shortcut icon" type="image/x-icon"/>
+
 <meta content="Transmission &amp; Differential Components - Genuine Scania spare parts. Fast shipping across India. Expert technical support." name="description"/>
 <meta content="Scania engine and fuel systems, engine parts, fuel systems, Scania spare parts, heavy equipment parts" name="keywords"/>
 <meta content="Parts Trading Company" name="author"/>
@@ -79,37 +79,7 @@
         emailjs.init("s6jWMEYpe-XNRS88_");
     })();
     
-    // Navigation color change - Always keep text black since no hero section
-    document.addEventListener('DOMContentLoaded', function() {
-        const navLogo = document.getElementById('nav-logo');
-        const navCompany = document.getElementById('nav-company');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const mobileMenuButton = document.querySelector('[aria-label="Toggle mobile menu"]');
-        
-        function updateNavColor() {
-            // Always keep text black since there's no hero section
-            // Logo
-            navLogo.classList.remove('text-white');
-            navLogo.classList.add('text-gray-900');
-            navCompany.classList.remove('text-yellow-300');
-            navCompany.classList.add('text-yellow-600');
-            
-            // Navigation links
-            navLinks.forEach(link => {
-                link.classList.remove('text-white');
-                link.classList.add('text-gray-900');
-            });
-            
-            // Mobile menu button
-            if (mobileMenuButton) {
-                mobileMenuButton.classList.remove('text-white');
-                mobileMenuButton.classList.add('text-gray-900');
-            }
-        }
-        
-        updateNavColor();
-        window.addEventListener('scroll', updateNavColor);
-    });
+    
 </script>
 <link href="../../assets/css/styles.css" rel="stylesheet"/>
 <style>
