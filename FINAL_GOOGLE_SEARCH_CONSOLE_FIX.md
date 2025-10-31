@@ -269,3 +269,6 @@ All Product structured data now passes Google's validation for:
 
 Your website is now **100% compliant** with Google's requirements!
 
+
+
+

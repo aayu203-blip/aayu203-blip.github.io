@@ -319,3 +319,6 @@ def validate_canonical(filepath):
 
 *This fix resolves the primary indexing issue. Multilingual pages remaining "not indexed" is correct and expected behavior.*
 
+
+
+
