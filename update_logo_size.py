@@ -16,7 +16,7 @@ def update_logo_size(filepath):
         
         # Pattern 1: Replace text-based logo with PTC logo image
         text_logo_pattern = r'(<span[^>]*id="nav-logo"[^>]*>)[^<]+(</span>)'
-        text_logo_replacement = r'\1<img src="../../assets/images/ptc-logo.png?v=1" alt="PTC Parts Trading Company" class="h-24 w-auto transition-all duration-300" id="nav-logo">\2'
+        text_logo_replacement = r'\1<img src="/assets/images/ptc-logo.png?v=1" alt="PTC Parts Trading Company" class="h-24 w-auto transition-all duration-300" id="nav-logo">\2'
         
         # Pattern 2: Update existing PTC logo size
         img_logo_pattern = r'(<img[^>]*src="[^"]*ptc-logo[^"]*"[^>]*class="[^"]*)h-\d+([^"]*"[^>]*>)'
