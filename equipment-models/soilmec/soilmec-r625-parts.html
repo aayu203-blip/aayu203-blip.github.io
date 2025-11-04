@@ -265,6 +265,17 @@
 </div>
 </div>
 </nav>
+<!-- Breadcrumb Navigation -->
+<nav class="mb-6" aria-label="Breadcrumb">
+<ol class="flex items-center space-x-2 text-sm text-gray-600">
+<li><a href="/" class="hover:text-yellow-600 transition-colors flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 0 001 1h3m10-11l2 2m-2-2v10a1 0 01-1 1h-3m-6 0a1 0 001-1v-4a1 0 011-1h2a1 0 011 1v4a1 0 001 1m-6 0h6" /></svg>Home</a></li>
+<li><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></li>
+<li><a href="/pages/brand-soilmec.html" class="hover:text-yellow-600 transition-colors">Soilmec</a></li>
+<li><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></li>
+<li class="text-yellow-600 font-semibold">Soilmec R625</li>
+</ol>
+</nav>
+
 <!-- Mobile Menu Button -->
 <button class="md:hidden p-2 rounded-lg hover:bg-gray-700 transition-colors" onclick="toggleMobileMenu()">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -855,6 +866,9 @@ function toggleFAQ(button) {
 <div>
 <label class="block text-sm font-medium text-gray-700 mb-1" for="name">Name <span class="text-red-500">*</span></label>
 <input class="form-input" id="name" name="name" required="" type="text"/>
+                    <!-- Honeypot field - invisible to humans, bots will fill it -->
+                    <input type="text" name="website" id="website" style="position:absolute;left:-9999px;width:1px;height:1px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <input type="hidden" name="form_timestamp" id="form_timestamp" value="">
 </div>
 <div>
 <label class="block text-sm font-medium text-gray-700 mb-1" for="company">Company Name</label>
@@ -1066,6 +1080,19 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
         // Form submission with reCAPTCHA
         document.getElementById('inquiryForm').addEventListener('submit', function(e) {
             e.preventDefault();
+                
+                // Anti-bot validation
+                const formData = new FormData(this);
+                if (!validateAntiBot(formData)) {
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        const originalText = submitButton.getAttribute('data-original-text') || 'Send Message';
+                        submitButton.innerHTML = originalText;
+                    }
+                    alert('Form validation failed. Please fill out the form correctly.');
+                    return;
+                }
             
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.innerHTML;

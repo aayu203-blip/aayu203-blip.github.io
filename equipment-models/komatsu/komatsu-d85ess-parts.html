@@ -232,6 +232,17 @@
 </div>
 </div>
 </nav>
+<!-- Breadcrumb Navigation -->
+<nav class="mb-6" aria-label="Breadcrumb">
+<ol class="flex items-center space-x-2 text-sm text-gray-600">
+<li><a href="/" class="hover:text-yellow-600 transition-colors flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 0 001 1h3m10-11l2 2m-2-2v10a1 0 01-1 1h-3m-6 0a1 0 001-1v-4a1 0 011-1h2a1 0 011 1v4a1 0 001 1m-6 0h6" /></svg>Home</a></li>
+<li><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></li>
+<li><a href="/pages/brand-komatsu.html" class="hover:text-yellow-600 transition-colors">Komatsu</a></li>
+<li><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></li>
+<li class="text-yellow-600 font-semibold">Komatsu D85ESS</li>
+</ol>
+</nav>
+
 <!-- Hero Section -->
 <section class="pt-40 pb-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
 <div class="absolute inset-0 opacity-10">
@@ -304,6 +315,9 @@
 <div>
 <label class="block text-gray-700 font-semibold mb-2">Your Name *</label>
 <input class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors" name="name" required="" type="text"/>
+                    <!-- Honeypot field - invisible to humans, bots will fill it -->
+                    <input type="text" name="website" id="website" style="position:absolute;left:-9999px;width:1px;height:1px;" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <input type="hidden" name="form_timestamp" id="form_timestamp" value="">
 </div>
 <div>
 <label class="block text-gray-700 font-semibold mb-2">Company Name</label>
@@ -867,6 +881,77 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
     backToTopButton.addEventListener("click", () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
+    // Anti-bot protection
+    (function() {
+        // Find all forms and set timestamps
+        const forms = document.querySelectorAll('form[id*="Form"], form[id*="form"]');
+        forms.forEach(form => {
+            const timestampField = form.querySelector('input[name="form_timestamp"]');
+            if (timestampField) {
+                timestampField.value = Date.now();
+            }
+        });
+    })();
+    
+    // Validate form before submission
+    function validateAntiBot(formData) {
+        // Check 1: Honeypot field must be empty
+        const honeypot = formData.get('website');
+        if (honeypot && honeypot.trim() !== '') {
+            console.warn('Bot detected: Honeypot filled');
+            return false;
+        }
+        
+        // Check 2: Form must take at least 3 seconds to fill
+        const timestamp = formData.get('form_timestamp');
+        if (timestamp) {
+            const timeTaken = Date.now() - parseInt(timestamp);
+            if (timeTaken < 3000) {  // Less than 3 seconds
+                console.warn('Bot detected: Form filled too quickly');
+                return false;
+            }
+        }
+        
+        // Check 3: Check for random gibberish in text fields
+        const name = formData.get('name') || formData.get('from_name') || '';
+        const company = formData.get('company') || '';
+        const message = formData.get('message') || formData.get('parts_required') || '';
+        
+        function isGibberish(text) {
+            if (!text) return false;
+            
+            // Check for excessive consecutive consonants (sign of random strings)
+            const consonantPattern = /[bcdfghjklmnpqrstvwxyz]{8,}/i;
+            if (consonantPattern.test(text)) return true;
+            
+            // Check for very long strings without spaces
+            const words = text.split(/\s+/);
+            const hasLongWord = words.some(word => word.length > 25);
+            if (hasLongWord) return true;
+            
+            // Check for repeating character patterns
+            const repeatPattern = /(.)\1{6,}/;
+            if (repeatPattern.test(text)) return true;
+            
+            return false;
+        }
+        
+        if (isGibberish(name) || isGibberish(company) || isGibberish(message)) {
+            console.warn('Bot detected: Gibberish text detected');
+            return false;
+        }
+        
+        // Check 4: Basic email validation
+        const email = formData.get('email') || formData.get('from_email') || '';
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email && !emailPattern.test(email)) {
+            console.warn('Invalid email format');
+            return false;
+        }
+        
+        return true;
+    }
+
     
     // Inquiry Form Handler with EmailJS
     document.addEventListener('DOMContentLoaded', function() {
