@@ -425,10 +425,10 @@
 </div>
 <div class="md:hidden">
 <button @click="mobileMenuOpen = !mobileMenuOpen" aria-expanded="false" aria-label="Toggle mobile menu" class="p-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-yellow-400/50 transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" x-bind:aria-expanded="mobileMenuOpen">
-<svg class="h-7 w-7" fill="none" stroke="currentColor" viewbox="0 0 24 24" x-show="!mobileMenuOpen">
+<svg class="h-7 w-7" fill="none" stroke="currentColor" viewbox="0 0 24 24" x-show="!mobileMenuOpen" aria-hidden="true">
 <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
 </svg>
-<svg class="h-7 w-7" fill="none" stroke="currentColor" viewbox="0 0 24 24" x-show="mobileMenuOpen">
+<svg class="h-7 w-7" fill="none" stroke="currentColor" viewbox="0 0 24 24" x-show="mobileMenuOpen" aria-hidden="true">
 <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
 </svg>
 </button>
@@ -438,43 +438,43 @@
 <div class="md:hidden bg-white/98 backdrop-blur-xl border-t-2 border-yellow-300/60 shadow-2xl" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:enter-start="opacity-0 transform -translate-y-4" x-transition:leave="transition ease-in duration-200" x-transition:leave-end="opacity-0 transform -translate-y-4" x-transition:leave-start="opacity-100 transform translate-y-0">
 <div class="px-6 py-6 space-y-3">
 <a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" href="/">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
 </svg>
 <span class="font-bold tracking-wide">HOME</span>
 </a>
 <a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#brands">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
 </svg>
 <span class="font-bold tracking-wide">BRANDS</span>
 </a>
 <a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#equipment-models">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
 </svg>
 <span class="font-bold tracking-wide">MODELS</span>
 </a>
 <a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#product-categories">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
 </svg>
 <span class="font-bold tracking-wide">PRODUCTS</span>
 </a>
 <a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" href="/blog/index.html">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
 </svg>
 <span class="font-bold tracking-wide">BLOG</span>
 </a>
 <a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#faq">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
 </svg>
 <span class="font-bold tracking-wide">FAQ</span>
 </a>
 <a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 rounded-2xl font-bold tracking-wide hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 border-2 border-yellow-300/50" href="/#contact">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
 </svg>
 <span class="font-bold tracking-wide">CONTACT</span>
@@ -492,12 +492,12 @@
 <!-- Breadcrumb Navigation -->
 <nav class="mb-6" aria-label="Breadcrumb">
 <ol class="flex items-center space-x-2 text-sm text-gray-600">
-<li><a href="/" class="hover:text-yellow-600 transition-colors flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>Home</a></li>
-<li><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></li>
+<li><a href="/" class="hover:text-yellow-600 transition-colors flex items-center"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>Home</a></li>
+<li><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></li>
 <li><a href="/pages/volvo-categories.html" class="hover:text-yellow-600 transition-colors">Volvo</a></li>
-<li><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></li>
+<li><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></li>
 <li><a href="/pages/categories/volvo-braking-system-components.html" class="hover:text-yellow-600 transition-colors">Braking System Components</a></li>
-<li><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></li>
+<li><svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></li>
 <li class="text-yellow-600 font-semibold">22526512</li>
 </ol>
 </nav>
@@ -605,13 +605,13 @@
 <!-- Footer Text Inside Box -->
 <div class="flex items-center justify-between text-sm text-gray-600">
 <div class="flex items-center gap-2">
-<svg class="w-4 h-4 text-green-500" fill="currentColor" viewbox="0 0 20 20">
+<svg class="w-4 h-4 text-green-500" fill="currentColor" viewbox="0 0 20 20" aria-hidden="true">
 <path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
 </svg>
 <span>Quality Parts
 </div>
 <div class="flex items-center gap-2">
-<svg class="w-4 h-4 text-green-500" fill="currentColor" viewbox="0 0 20 20">
+<svg class="w-4 h-4 text-green-500" fill="currentColor" viewbox="0 0 20 20" aria-hidden="true">
 <path clip-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" fill-rule="evenodd"></path>
 </svg>
 <span>Fast Delivery
@@ -658,6 +658,49 @@
 <div>
 <p class="font-semibold text-gray-900">Technical Expertise</p>
 <p class="text-sm text-gray-600">Knowledgeable staff helps you find the right brake parts</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Why Choose PTC Section -->
+<div class="mt-8 bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-6 border border-yellow-200">
+<h2 class="text-xl font-bold text-gray-900 mb-4">Why Choose Parts Trading Company?</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+<div>
+<p class="font-semibold text-gray-900">Established 1956</p>
+<p class="text-sm text-gray-600">Seven decades serving the heavy equipment industry</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+<div>
+<p class="font-semibold text-gray-900">5000+ Parts in Stock</p>
+<p class="text-sm text-gray-600">Extensive inventory for immediate dispatch</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+<div>
+<p class="font-semibold text-gray-900">Same-Day Shipping</p>
+<p class="text-sm text-gray-600">Orders before 2 PM ship today from Mumbai</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<svg class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+</svg>
+<div>
+<p class="font-semibold text-gray-900">Quality Assured</p>
+<p class="text-sm text-gray-600">Rigorous inspection before dispatch</p>
 </div>
 </div>
 </div>
@@ -732,7 +775,7 @@ Package includes the brake component as listed. Hardware, seals, or additional p
 <p class="text-sm text-gray-500 mb-4">Brake & Steering Systems</p>
 <a class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline" href="/volvo/braking/20533211.html">
                                          View Details 
-                                         <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                         <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </a>
@@ -751,7 +794,7 @@ Package includes the brake component as listed. Hardware, seals, or additional p
 <p class="text-sm text-gray-500 mb-4">Body & Cabin</p>
 <a class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline" href="/volvo/miscellaneous/22040506.html">
                                          View Details 
-                                         <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                         <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </a>
@@ -770,7 +813,7 @@ Package includes the brake component as listed. Hardware, seals, or additional p
 <p class="text-sm text-gray-500 mb-4">Body & Cabin</p>
 <a class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline" href="/volvo/miscellaneous/22089732.html">
                                          View Details 
-                                         <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                         <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </a>
@@ -789,7 +832,7 @@ Package includes the brake component as listed. Hardware, seals, or additional p
 <p class="text-sm text-gray-500 mb-4">Steering &amp; Suspension Parts</p>
 <a class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline" href="/volvo/engine/8171927.html">
                                          View Details 
-                                         <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                         <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </a>
@@ -808,7 +851,7 @@ Package includes the brake component as listed. Hardware, seals, or additional p
 <p class="text-sm text-gray-500 mb-4">Steering &amp; Suspension Parts</p>
 <a class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline" href="/volvo/engine/8172433.html">
                                          View Details 
-                                         <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                         <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </a>
@@ -827,7 +870,7 @@ Package includes the brake component as listed. Hardware, seals, or additional p
 <p class="text-sm text-gray-500 mb-4">Steering &amp; Suspension Parts</p>
 <a class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline" href="/volvo/engine/20390836.html">
                                          View Details 
-                                         <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                                         <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </a>
@@ -842,7 +885,7 @@ Package includes the brake component as listed. Hardware, seals, or additional p
 <path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7M12.22 1.85c-5.46 0-9.9 4.41-9.9 9.83 0 2.15.7 4.14 1.88 5.76L2.96 21.1l3.8-1.2a9.9 9.9 0 0 0 5.46 1.62c5.46 0 9.9-4.4 9.9-9.83a9.88 9.88 0 0 0-9.9-9.83m5.95 12.52c-.08-.12-.27-.19-.56-.33-.28-.14-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.14-.2.29-.75.93-.91 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43a8.64 8.64 0 0 1-1.6-1.98c-.18-.29-.03-.44.12-.58.13-.13.29-.34.43-.5.15-.17.2-.3.29-.48.1-.2.05-.36-.02-.5-.08-.15-.65-1.56-.9-2.13-.24-.58-.48-.48-.65-.48-.17 0-.37-.03-.56-.03-.2 0-.5.08-.77.36-.26.29-1 .98-1 2.4 0 1.4 1.03 2.76 1.17 2.96.14.19 2 3.17 4.93 4.32 2.94 1.15 2.94.77 3.47.72.53-.05 1.7-.7 1.95-1.36.24-.67.24-1.25.17-1.37"></path></svg>
 </a>
 <button aria-label="Back to top" class="back-to-top bg-gradient-to-r from-yellow-400/80 to-yellow-500/80 backdrop-blur-xl border border-yellow-300/50 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:from-yellow-500/90 hover:to-yellow-600/90" id="back-to-top">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </button>
@@ -1059,7 +1102,7 @@ Please provide pricing and availability.`;
 <!-- Save Contact Button - Centered -->
 <div class="text-center mt-8">
 <a class="inline-flex items-center px-6 py-3 bg-yellow-500 text-gray-900 rounded-lg font-semibold hover:bg-yellow-400 transition-colors text-sm shadow-lg hover:shadow-xl" download="" href="../parts_trading_company.vcf">
-<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
                         Save Contact
@@ -1087,7 +1130,7 @@ Please provide pricing and availability.`;
 <!-- Direct link button -->
 <div class="text-center mt-4">
 <a class="inline-flex items-center px-6 py-3 bg-yellow-500 text-gray-900 rounded-lg font-semibold hover:bg-yellow-400 transition-colors text-sm shadow-lg hover:shadow-xl" href="https://www.google.com/maps/dir//1st+Floor,+Parts+Trading+Company,+Vijay+Chambers,+opp.+Dreamland+Cinema,+Grant+Road+East,+Shapur+Baug,+Grant+Road,+Mumbai,+Maharashtra+400004,+India/@18.9602634,72.7367389,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3be7ce13b538727b:0x9daa2711223502bd!2m2!1d72.8191406!2d18.9602816?entry=ttu&amp;g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
 <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
                         Open in Google Maps
@@ -1099,10 +1142,10 @@ Please provide pricing and availability.`;
 <div class="text-center text-gray-400"><!-- Social Media Links -->
 <div class="flex justify-center items-center space-x-6 mb-6">
 <a href="https://www.instagram.com/partstradingco" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-500 transition-colors" aria-label="Instagram">
-<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
 </a>
 <a href="https://www.linkedin.com/company/81588687/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-500 transition-colors" aria-label="LinkedIn">
-<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
 </a>
 </div>
 © Parts Trading Company. All rights reserved.</div>
