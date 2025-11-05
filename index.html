@@ -415,18 +415,18 @@
 }
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com" defer></script>
 <script defer src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js"></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
 <script type="text/javascript">
     (function() {
         emailjs.init("s6jWMEYpe-XNRS88_");
     })();
 </script>
 <!-- Google reCAPTCHA v3 -->
-<script src="https://www.google.com/recaptcha/api.js?render=6LfHZfUrAAAAACPo1X9FCmuwdaBhuxhruta_YDke"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LfHZfUrAAAAACPo1X9FCmuwdaBhuxhruta_YDke" async defer></script>
 <script type="text/javascript">
     // Navigation color change
     document.addEventListener('DOMContentLoaded', function() {
@@ -1056,7 +1056,7 @@
 </div>
 <div class="relative max-w-2xl mx-auto">
 <div class="relative">
-<input autocomplete="off" class="w-full px-8 py-5 text-lg bg-white border-2 border-yellow-200 rounded-2xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-yellow-400 focus:ring-4 focus:ring-yellow-100 transition-all duration-300 shadow-lg" id="partSearch" oninput="showSuggestions(this.value)" onkeydown="if(event.key==='Enter'){event.preventDefault(); searchParts();}" placeholder="Enter Part Number or Description" type="text"/>
+<input autocomplete="off" class="w-full px-8 py-5 text-lg bg-white border-2 border-yellow-200 rounded-2xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-yellow-400 focus:ring-4 focus:ring-yellow-100 transition-all duration-300 shadow-lg" id="partSearch" oninput="showSuggestions(this.value).catch(() => {})" onkeydown="if(event.key==='Enter'){event.preventDefault(); searchParts();}" placeholder="Enter Part Number or Description" type="text"/>
 <div class="absolute left-0 right-0 mt-2 bg-white border border-yellow-100 rounded-xl shadow-xl z-20 hidden max-h-64 overflow-y-auto" id="search-suggestions"></div>
 <div class="absolute right-6 top-1/2 transform -translate-y-1/2">
 <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
@@ -1065,7 +1065,7 @@
 </div>
 </div>
 <div class="mt-6 text-center">
-<button class="group relative overflow-hidden bg-gradient-to-r from-yellow-400/90 to-yellow-500/90 backdrop-blur-xl border border-yellow-300/60 text-gray-900 px-10 py-4 rounded-2xl font-bold text-lg hover:from-yellow-500/95 hover:to-yellow-600/95 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-yellow-400/60" onclick="searchParts()">
+<button class="group relative overflow-hidden bg-gradient-to-r from-yellow-400/90 to-yellow-500/90 backdrop-blur-xl border border-yellow-300/60 text-gray-900 px-10 py-4 rounded-2xl font-bold text-lg hover:from-yellow-500/95 hover:to-yellow-600/95 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-yellow-400/60" onclick="searchParts().catch(() => {})">
 <div class="absolute inset-0 bg-yellow-400/30 blur-xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
 <div class="relative flex items-center justify-center">
@@ -3037,13 +3037,30 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
 
 <script>
         // --- UPDATED WORKING SEARCH & SUGGESTIONS LOGIC ---
-        function showSuggestions(query) {
+        async function showSuggestions(query) {
           const suggestionsBox = document.getElementById('search-suggestions');
-          if (!query || query.length < 1 || typeof partDatabase === 'undefined') {
+          if (!query || query.length < 1) {
             suggestionsBox.innerHTML = '';
             suggestionsBox.classList.add('hidden');
             return;
           }
+          
+          // Load database if not already loaded
+          try {
+            await loadDatabase();
+          } catch (error) {
+            console.warn('Database not available:', error);
+            suggestionsBox.innerHTML = '';
+            suggestionsBox.classList.add('hidden');
+            return;
+          }
+          
+          if (!partDatabase || !Array.isArray(partDatabase)) {
+            suggestionsBox.innerHTML = '';
+            suggestionsBox.classList.add('hidden');
+            return;
+          }
+          
           const q = query.toLowerCase();
           const matches = partDatabase.filter(part =>
             (part["Part No"] && part["Part No"].toLowerCase().startsWith(q)) ||
@@ -3063,7 +3080,7 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
             return;
           }
           suggestionsBox.innerHTML = matches.map(part =>
-            `<div class='px-4 py-2 cursor-pointer hover:bg-yellow-50' onclick="selectSuggestion('${part["Part No"].replace(/'/g, "\\'")}')">
+            `<div class='px-4 py-2 cursor-pointer hover:bg-yellow-50' onclick="selectSuggestion('${part["Part No"].replace(/'/g, "\\'")}').catch(() => {})">
               <span class='font-semibold text-gray-900'>${part["Part No"]}</span> 
               <span class='text-gray-500 text-sm'>${part["Cleaned Description"]}</span>
               <span class='text-blue-600 text-xs ml-2'>${part["Brand"]}</span>
@@ -3071,14 +3088,24 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
           ).join('');
           suggestionsBox.classList.remove('hidden');
         }
-        function selectSuggestion(partNumber) {
+        async function selectSuggestion(partNumber) {
           document.getElementById('partSearch').value = partNumber;
           document.getElementById('search-suggestions').classList.add('hidden');
-          if (typeof partDatabase !== 'undefined' && Array.isArray(partDatabase)) {
+          
+          // Ensure database is loaded
+          try {
+            await loadDatabase();
+          } catch (error) {
+            console.warn('Database not available:', error);
+            await searchParts();
+            return;
+          }
+          
+          if (partDatabase && Array.isArray(partDatabase)) {
             const match = partDatabase.find(p => (p["Part No"]||'').toLowerCase() === partNumber.toLowerCase());
             if (match) { window.location.href = getProductPageLink(match); return; }
           }
-          searchParts();
+          await searchParts();
         }
         window.addEventListener('click', function(e) {
           const box = document.getElementById('search-suggestions');
@@ -3089,21 +3116,40 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
         document.addEventListener('DOMContentLoaded', function() {
           var input = document.getElementById('partSearch');
           if (input) {
-            input.oninput = function() { showSuggestions(this.value); };
+            input.oninput = function() { showSuggestions(this.value).catch(() => {}); };
             input.onkeydown = function(e) { if(e.key==='Enter'){ e.preventDefault(); searchParts(); } };
           }
-          var btn = document.querySelector('button[onclick="searchParts()"]');
+          var btn = document.querySelector('button[onclick="searchParts().catch(() => {})"]');
           if (btn) {
-            btn.onclick = function() { searchParts(); };
+            btn.onclick = function() { searchParts().catch(() => {}); };
           }
         });
-        function searchParts() {
+        async function searchParts() {
           const searchInput = document.getElementById('partSearch');
           if (!searchInput) {  return; }
           const query = searchInput.value.trim();
           if (query.length < 1) {
             return;
           }
+          
+          // Load database if not already loaded
+          try {
+            await loadDatabase();
+          } catch (error) {
+            console.error('Database not available:', error);
+            searchInput.disabled = false;
+            searchInput.value = query;
+            alert('Search temporarily unavailable. Please try again in a moment.');
+            return;
+          }
+          
+          if (!partDatabase || !Array.isArray(partDatabase)) {
+            searchInput.disabled = false;
+            searchInput.value = query;
+            alert('Search temporarily unavailable. Please try again in a moment.');
+            return;
+          }
+          
           searchInput.disabled = true;
           searchInput.value = 'Searching...';
           setTimeout(() => {
@@ -3134,8 +3180,78 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
         }
     </script>
     
-    <!-- Load database before other scripts -->
-    <script src="database/new_partDatabase.js"></script>
+    <!-- Database loaded lazily on search -->
+    <script>
+        let partDatabase = null;
+        let databaseLoading = false;
+        let databaseLoadPromise = null;
+        
+        async function loadDatabase() {
+            if (partDatabase && Array.isArray(partDatabase)) {
+                return partDatabase; // Already loaded
+            }
+            
+            if (databaseLoading && databaseLoadPromise) {
+                // Wait for ongoing load
+                return await databaseLoadPromise;
+            }
+            
+            databaseLoading = true;
+            databaseLoadPromise = new Promise((resolve, reject) => {
+                // Check if database is already defined (from script tag)
+                if (typeof partsDatabase !== 'undefined' && partsDatabase) {
+                    partDatabase = partsDatabase;
+                    databaseLoading = false;
+                    resolve(partDatabase);
+                    return;
+                }
+                
+                // Load database script dynamically
+                const script = document.createElement('script');
+                script.src = 'database/new_partDatabase.js';
+                script.async = true;
+                script.onload = function() {
+                    // Wait for partsDatabase to be available
+                    const checkInterval = setInterval(() => {
+                        if (typeof partsDatabase !== 'undefined' && partsDatabase) {
+                            partDatabase = partsDatabase;
+                            clearInterval(checkInterval);
+                            databaseLoading = false;
+                            resolve(partDatabase);
+                        }
+                    }, 50);
+                    
+                    // Timeout after 10 seconds
+                    setTimeout(() => {
+                        clearInterval(checkInterval);
+                        databaseLoading = false;
+                        console.warn('Database load timeout');
+                        reject(new Error('Database load timeout'));
+                    }, 10000);
+                };
+                script.onerror = function() {
+                    databaseLoading = false;
+                    reject(new Error('Database load failed'));
+                };
+                document.body.appendChild(script);
+            });
+            
+            return await databaseLoadPromise;
+        }
+        
+        // Preload database when user focuses on search
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('partSearch');
+            if (searchInput) {
+                searchInput.addEventListener('focus', function() {
+                    // Start loading database in background (don't block)
+                    loadDatabase().catch(() => {
+                        console.warn('Database preload failed');
+                    });
+                }, { once: true });
+            }
+        });
+    </script>
 
 <script>
         function showSearchResults(results, query) {
