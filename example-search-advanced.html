@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Search 5,000+ Parts | Volvo Scania CAT Komatsu | PTC Mumbai</title>
+    <meta name="description" content="Search 5,000+ heavy equipment parts by part number, brand, or description. Real-time results, fuzzy matching, voice search. Mumbai warehouse stock.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9S54H015YY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-9S54H015YY');
+    </script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fuzzy Search Library -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+    
+    <style>
+        body {
+            font-family: 'IBM Plex Sans Condensed', sans-serif;
+            background: #f7f6f3;
+            color: #1a1a1a;
+        }
+        .mono { font-family: 'IBM Plex Mono', monospace; }
+        .stamp { font-family: 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; font-size: 0.7rem; }
+        
+        .blueprint-bg {
+            background-image: linear-gradient(rgba(30, 64, 175, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(30, 64, 175, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .search-result {
+            transition: all 0.2s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .search-result:hover {
+            background: #fef3c7;
+            border-left-color: #f59e0b;
+            transform: translateX(4px);
+        }
+        
+        .filter-chip {
+            transition: all 0.2s ease;
+        }
+        
+        .filter-chip.active {
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .voice-btn {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        mark {
+            background: #fef08a;
+            color: #1a1a1a;
+            font-weight: 700;
+            padding: 0 2px;
+        }
+        
+        .loading-spinner {
+            border: 3px solid #f3f4f6;
+            border-top: 3px solid #f59e0b;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="blueprint-bg">
+
+<!-- Top Bar -->
+<div class="bg-yellow-500 text-stone-900 py-2 border-b-2 border-stone-900">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-xs">
+        <div class="stamp">SEARCH 2,497 PRODUCTS • REAL-TIME RESULTS</div>
+        <a href="tel:+919821037990" class="stamp hover:underline">📞 +91 98210 37990</a>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="bg-gradient-to-r from-neutral-900 to-neutral-800 text-white border-b-4 border-yellow-500">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center mb-4">
+            <a href="/" class="text-2xl font-bold hover:text-yellow-500 transition-colors">PARTS TRADING COMPANY</a>
+            <a href="https://wa.me/919821037990" target="_blank" class="bg-yellow-500 text-stone-900 px-6 py-3 stamp text-xs hover:bg-yellow-400 transition-colors">
+                💬 WHATSAPP
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Main Search Interface -->
+<div class="max-w-7xl mx-auto px-6 py-8">
+    
+    <!-- Search Header -->
+    <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-stone-900 mb-3" style="letter-spacing: -0.02em;">
+            INTELLIGENT PARTS SEARCH
+        </h1>
+        <p class="text-xl text-stone-600">Search 2,497 heavy equipment parts with fuzzy matching, voice input & filters</p>
+    </div>
+    
+    <!-- Search Bar with Voice & Barcode -->
+    <div class="bg-white border-4 border-stone-900 p-6 mb-8 shadow-lg">
+        <div class="relative">
+            <input 
+                type="text" 
+                id="main-search"
+                placeholder="Search by part number, brand, description... (try typos, we'll fix them!)"
+                class="w-full bg-stone-50 border-2 border-stone-300 text-stone-900 px-6 py-4 pr-32 mono text-base focus:outline-none focus:border-yellow-500 transition-colors"
+                autocomplete="off"
+            />
+            
+            <!-- Voice Search Button -->
+            <button 
+                id="voice-btn" 
+                class="absolute right-20 top-3 bg-yellow-500 text-stone-900 px-4 py-2 stamp text-xs hover:bg-yellow-400 transition-colors"
+                title="Voice Search"
+            >
+                🎤 VOICE
+            </button>
+            
+            <!-- Barcode Scanner (Mobile) -->
+            <button 
+                id="barcode-btn" 
+                class="absolute right-2 top-3 bg-stone-900 text-white px-4 py-2 stamp text-xs hover:bg-black transition-colors md:hidden"
+                title="Scan Barcode"
+            >
+                📷 SCAN
+            </button>
+        </div>
+        
+        <!-- Search Suggestions Dropdown -->
+        <div id="suggestions" class="hidden mt-2 bg-stone-50 border-2 border-stone-300 max-h-40 overflow-y-auto">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+    
+    <!-- Recent Searches & Popular Searches -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        
+        <!-- Recent Searches -->
+        <div class="bg-white border-2 border-stone-300 p-6">
+            <div class="flex justify-between items-center mb-4">
+                <div class="stamp text-sm text-stone-900">RECENT SEARCHES</div>
+                <button id="clear-recent" class="stamp text-xs text-stone-500 hover:text-stone-900">CLEAR</button>
+            </div>
+            <div id="recent-searches" class="flex flex-wrap gap-2">
+                <div class="stamp text-xs text-stone-400">No recent searches</div>
+            </div>
+        </div>
+        
+        <!-- Popular Searches -->
+        <div class="bg-white border-2 border-stone-300 p-6">
+            <div class="stamp text-sm text-stone-900 mb-4">POPULAR SEARCHES</div>
+            <div id="popular-searches" class="flex flex-wrap gap-2">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Filters & Sort -->
+    <div class="bg-white border-2 border-stone-300 p-6 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            
+            <!-- Brand Filter -->
+            <div class="md:col-span-5">
+                <div class="stamp text-xs text-stone-600 mb-3">FILTER BY BRAND</div>
+                <div id="brand-filters" class="flex flex-wrap gap-2">
+                    <button class="filter-chip px-3 py-2 border-2 border-stone-300 text-xs font-semibold active" data-brand="all">
+                        ALL BRANDS
+                    </button>
+                    <button class="filter-chip px-3 py-2 border-2 border-stone-300 text-xs font-semibold" data-brand="Volvo">
+                        VOLVO
+                    </button>
+                    <button class="filter-chip px-3 py-2 border-2 border-stone-300 text-xs font-semibold" data-brand="Scania">
+                        SCANIA
+                    </button>
+                    <button class="filter-chip px-3 py-2 border-2 border-stone-300 text-xs font-semibold" data-brand="CAT">
+                        CAT
+                    </button>
+                    <button class="filter-chip px-3 py-2 border-2 border-stone-300 text-xs font-semibold" data-brand="Komatsu">
+                        KOMATSU
+                    </button>
+                    <button class="filter-chip px-3 py-2 border-2 border-stone-300 text-xs font-semibold" data-brand="Hitachi">
+                        HITACHI
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Category Filter -->
+            <div class="md:col-span-4">
+                <div class="stamp text-xs text-stone-600 mb-3">FILTER BY CATEGORY</div>
+                <select id="category-filter" class="w-full bg-stone-50 border-2 border-stone-300 px-4 py-2 text-sm font-semibold focus:outline-none focus:border-stone-900">
+                    <option value="all">All Categories</option>
+                    <option value="Engine Components">Engine Components</option>
+                    <option value="Brake & Steering Systems">Brake & Steering</option>
+                    <option value="Filtration & Maintenance">Filtration</option>
+                    <option value="Electrical & Lighting">Electrical</option>
+                    <option value="Fasteners & Hardware">Hardware</option>
+                </select>
+            </div>
+            
+            <!-- Sort -->
+            <div class="md:col-span-3">
+                <div class="stamp text-xs text-stone-600 mb-3">SORT RESULTS</div>
+                <select id="sort-select" class="w-full bg-stone-50 border-2 border-stone-300 px-4 py-2 text-sm font-semibold focus:outline-none focus:border-stone-900">
+                    <option value="relevance">Relevance</option>
+                    <option value="partno-asc">Part No (A-Z)</option>
+                    <option value="partno-desc">Part No (Z-A)</option>
+                    <option value="brand">Brand</option>
+                </select>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Results Header -->
+    <div id="results-header" class="hidden bg-stone-800 text-white p-4 mb-6 border-l-4 border-yellow-500">
+        <div class="flex justify-between items-center">
+            <div>
+                <span class="stamp text-sm">SHOWING <span id="result-count">0</span> RESULTS</span>
+                <span id="search-query" class="ml-4 text-stone-300"></span>
+            </div>
+            <div class="stamp text-xs text-yellow-500" id="search-time"></div>
+        </div>
+    </div>
+    
+    <!-- Loading State -->
+    <div id="loading" class="hidden text-center py-16">
+        <div class="loading-spinner mx-auto mb-4"></div>
+        <div class="stamp text-sm text-stone-600">SEARCHING DATABASE...</div>
+    </div>
+    
+    <!-- Search Results -->
+    <div id="search-results" class="space-y-2">
+        <!-- Initial State -->
+        <div class="text-center py-16">
+            <div class="text-6xl mb-4">🔍</div>
+            <div class="stamp text-lg text-stone-900 mb-2">START SEARCHING</div>
+            <p class="text-stone-600">Type part number, brand, or description above</p>
+        </div>
+    </div>
+    
+    <!-- No Results State -->
+    <div id="no-results" class="hidden text-center py-16">
+        <div class="text-6xl mb-4">❌</div>
+        <div class="stamp text-lg text-stone-900 mb-2">NO RESULTS FOUND</div>
+        <p class="text-stone-600 mb-6">Try different keywords or check spelling</p>
+        <a href="https://wa.me/919821037990" target="_blank" class="inline-block bg-stone-900 text-white px-8 py-4 stamp text-sm hover:bg-black transition-colors">
+            💬 ASK ON WHATSAPP
+        </a>
+    </div>
+    
+</div>
+
+<!-- Load Parts Database -->
+<script src="new_partDatabase.js"></script>
+
+<script>
+// ============================================
+// SEARCH ENGINE WITH ALL FEATURES
+// ============================================
+
+let fuse; // Fuzzy search instance
+let currentBrand = 'all';
+let currentCategory = 'all';
+let currentSort = 'relevance';
+let recentSearches = JSON.parse(localStorage.getItem('recentSearches') || '[]');
+
+// Popular searches (hardcoded top 20)
+const popularSearches = [
+    '1521725', 'valve', 'filter', 'gasket', 'brake', 
+    'piston', 'bearing', 'seal', 'injector', 'pump',
+    '982456', '1654088', 'volvo', 'scania', 'engine',
+    'oil', 'fuel', 'sensor', 'belt', 'clutch'
+];
+
+// ============================================
+// INITIALIZE FUZZY SEARCH ENGINE
+// ============================================
+
+function initializeSearch() {
+    // Fuse.js options for fuzzy matching
+    const options = {
+        keys: [
+            { name: 'Part No', weight: 3 },
+            { name: 'Cleaned Description', weight: 2 },
+            { name: 'Brand', weight: 1.5 },
+            { name: 'Category', weight: 1 },
+            { name: 'Application', weight: 1 },
+            { name: 'OEM Part Nos', weight: 1 }
+        ],
+        threshold: 0.4, // More forgiving (allows typos)
+        distance: 100,
+        minMatchCharLength: 2,
+        includeScore: true,
+        useExtendedSearch: true
+    };
+    
+    fuse = new Fuse(partDatabase, options);
+    console.log(`✅ Search engine initialized with ${partDatabase.length} parts`);
+    
+    // Initialize UI
+    renderPopularSearches();
+    renderRecentSearches();
+}
+
+// ============================================
+// SEARCH FUNCTIONALITY
+// ============================================
+
+let searchTimeout;
+const searchInput = document.getElementById('main-search');
+const suggestionsBox = document.getElementById('suggestions');
+const resultsContainer = document.getElementById('search-results');
+const resultsHeader = document.getElementById('results-header');
+const loading = document.getElementById('loading');
+const noResults = document.getElementById('no-results');
+
+searchInput.addEventListener('input', function() {
+    clearTimeout(searchTimeout);
+    const query = this.value.trim();
+    
+    if (query.length < 2) {
+        hideSuggestions();
+        showInitialState();
+        return;
+    }
+    
+    // Show suggestions
+    searchTimeout = setTimeout(() => {
+        showSuggestions(query);
+    }, 200);
+    
+    // Perform search
+    searchTimeout = setTimeout(() => {
+        performSearch(query);
+    }, 500);
+});
+
+// Enter key search
+searchInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        performSearch(this.value.trim());
+        hideSuggestions();
+    }
+});
+
+function performSearch(query) {
+    if (!query || query.length < 2) return;
+    
+    const startTime = performance.now();
+    
+    // Show loading
+    showLoading();
+    
+    // Track search
+    gtag('event', 'search', { 'search_term': query });
+    
+    // Save to recent searches
+    addRecentSearch(query);
+    
+    // Perform fuzzy search
+    let results = fuse.search(query);
+    
+    // Apply brand filter
+    if (currentBrand !== 'all') {
+        results = results.filter(r => r.item.Brand === currentBrand);
+    }
+    
+    // Apply category filter
+    if (currentCategory !== 'all') {
+        results = results.filter(r => r.item.Category === currentCategory);
+    }
+    
+    // Apply sorting
+    results = sortResults(results, currentSort);
+    
+    // Limit to top 100 results
+    results = results.slice(0, 100);
+    
+    const endTime = performance.now();
+    const searchTime = ((endTime - startTime) / 1000).toFixed(3);
+    
+    // Display results
+    displayResults(results, query, searchTime);
+}
+
+function displayResults(results, query, searchTime) {
+    hideLoading();
+    
+    if (results.length === 0) {
+        showNoResults();
+        return;
+    }
+    
+    // Update header
+    document.getElementById('result-count').textContent = results.length;
+    document.getElementById('search-query').textContent = `for "${query}"`;
+    document.getElementById('search-time').textContent = `${searchTime}s`;
+    resultsHeader.classList.remove('hidden');
+    noResults.classList.add('hidden');
+    
+    // Render results
+    resultsContainer.innerHTML = results.map(result => renderResultCard(result.item, query, result.score)).join('');
+}
+
+function renderResultCard(part, query, score) {
+    const partNo = part['Part No'];
+    const description = part['Cleaned Description'] || 'N/A';
+    const brand = part['Brand'] || 'Unknown';
+    const category = part['Category'] || 'General';
+    const application = part['Application'] || '';
+    
+    // Determine URL based on brand and category
+    const brandSlug = brand.toLowerCase().replace(/\s+/g, '-');
+    const categorySlug = category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and');
+    const url = `/${brandSlug}/${categorySlug}/${partNo}.html`;
+    
+    // Stock status (randomized for demo - in production, use real data)
+    const inStock = Math.random() > 0.3;
+    
+    return `
+        <a href="${url}" class="search-result block bg-white border-b-2 border-stone-200 p-4 hover:no-underline">
+            <div class="grid grid-cols-12 gap-4 items-center">
+                
+                <!-- Part Number -->
+                <div class="col-span-12 md:col-span-2">
+                    <div class="mono font-bold text-lg text-stone-900">
+                        ${highlightQuery(partNo, query)}
+                    </div>
+                    <div class="stamp text-xs ${inStock ? 'text-green-700' : 'text-yellow-700'} mt-1">
+                        ${inStock ? '✓ IN STOCK' : '○ 2-3 DAYS'}
+                    </div>
+                </div>
+                
+                <!-- Description -->
+                <div class="col-span-12 md:col-span-4">
+                    <div class="font-semibold text-stone-900 mb-1">
+                        ${highlightQuery(description, query)}
+                    </div>
+                    ${application ? `<div class="text-sm text-stone-600">App: ${highlightQuery(application, query)}</div>` : ''}
+                </div>
+                
+                <!-- Brand & Category -->
+                <div class="col-span-6 md:col-span-3">
+                    <div class="stamp text-xs text-stone-500 mb-1">BRAND</div>
+                    <div class="font-bold text-stone-900">${highlightQuery(brand, query)}</div>
+                </div>
+                
+                <div class="col-span-6 md:col-span-2">
+                    <div class="stamp text-xs text-stone-500 mb-1">CATEGORY</div>
+                    <div class="text-sm text-stone-700">${category.substring(0, 20)}...</div>
+                </div>
+                
+                <!-- Action -->
+                <div class="col-span-12 md:col-span-1 text-right">
+                    <svg class="w-6 h-6 text-stone-400 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+                
+            </div>
+        </a>
+    `;
+}
+
+function highlightQuery(text, query) {
+    if (!query || !text) return text;
+    
+    // Escape special regex characters
+    const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(${escapedQuery})`, 'gi');
+    
+    return text.toString().replace(regex, '<mark>$1</mark>');
+}
+
+// ============================================
+// SEARCH SUGGESTIONS
+// ============================================
+
+function showSuggestions(query) {
+    const suggestions = fuse.search(query).slice(0, 5);
+    
+    if (suggestions.length === 0) {
+        hideSuggestions();
+        return;
+    }
+    
+    suggestionsBox.innerHTML = suggestions.map(s => {
+        const partNo = s.item['Part No'];
+        const desc = s.item['Cleaned Description'];
+        return `
+            <div class="suggestion-item px-4 py-2 hover:bg-yellow-100 cursor-pointer border-b border-stone-200"
+                 onclick="fillSearch('${partNo}')">
+                <span class="mono font-bold text-sm">${partNo}</span>
+                <span class="text-sm text-stone-600 ml-3">${desc}</span>
+            </div>
+        `;
+    }).join('');
+    
+    suggestionsBox.classList.remove('hidden');
+}
+
+function hideSuggestions() {
+    suggestionsBox.classList.add('hidden');
+}
+
+function fillSearch(value) {
+    searchInput.value = value;
+    performSearch(value);
+    hideSuggestions();
+}
+
+// Click outside to close suggestions
+document.addEventListener('click', function(e) {
+    if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+        hideSuggestions();
+    }
+});
+
+// ============================================
+// RECENT SEARCHES
+// ============================================
+
+function addRecentSearch(query) {
+    // Remove if exists
+    recentSearches = recentSearches.filter(s => s !== query);
+    
+    // Add to beginning
+    recentSearches.unshift(query);
+    
+    // Keep only last 10
+    recentSearches = recentSearches.slice(0, 10);
+    
+    // Save to localStorage
+    localStorage.setItem('recentSearches', JSON.stringify(recentSearches));
+    
+    renderRecentSearches();
+}
+
+function renderRecentSearches() {
+    const container = document.getElementById('recent-searches');
+    
+    if (recentSearches.length === 0) {
+        container.innerHTML = '<div class="stamp text-xs text-stone-400">No recent searches</div>';
+        return;
+    }
+    
+    container.innerHTML = recentSearches.map(search => `
+        <button 
+            onclick="fillSearch('${search}')"
+            class="px-3 py-2 bg-stone-100 hover:bg-yellow-100 border border-stone-300 text-sm font-semibold transition-colors">
+            ${search}
+        </button>
+    `).join('');
+}
+
+document.getElementById('clear-recent').addEventListener('click', function() {
+    recentSearches = [];
+    localStorage.removeItem('recentSearches');
+    renderRecentSearches();
+});
+
+// ============================================
+// POPULAR SEARCHES
+// ============================================
+
+function renderPopularSearches() {
+    const container = document.getElementById('popular-searches');
+    
+    container.innerHTML = popularSearches.slice(0, 10).map(search => `
+        <button 
+            onclick="fillSearch('${search}')"
+            class="px-3 py-2 bg-yellow-100 hover:bg-yellow-200 border border-yellow-300 text-sm font-semibold transition-colors">
+            ${search}
+        </button>
+    `).join('');
+}
+
+// ============================================
+// FILTERS & SORT
+// ============================================
+
+// Brand filter
+document.getElementById('brand-filters').addEventListener('click', function(e) {
+    if (e.target.classList.contains('filter-chip')) {
+        // Update active state
+        document.querySelectorAll('.filter-chip').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        
+        // Update filter
+        currentBrand = e.target.dataset.brand;
+        
+        // Re-search
+        const query = searchInput.value.trim();
+        if (query.length >= 2) {
+            performSearch(query);
+        }
+    }
+});
+
+// Category filter
+document.getElementById('category-filter').addEventListener('change', function() {
+    currentCategory = this.value;
+    
+    const query = searchInput.value.trim();
+    if (query.length >= 2) {
+        performSearch(query);
+    }
+});
+
+// Sort
+document.getElementById('sort-select').addEventListener('change', function() {
+    currentSort = this.value;
+    
+    const query = searchInput.value.trim();
+    if (query.length >= 2) {
+        performSearch(query);
+    }
+});
+
+function sortResults(results, sortBy) {
+    switch(sortBy) {
+        case 'partno-asc':
+            return results.sort((a, b) => a.item['Part No'].localeCompare(b.item['Part No']));
+        case 'partno-desc':
+            return results.sort((a, b) => b.item['Part No'].localeCompare(a.item['Part No']));
+        case 'brand':
+            return results.sort((a, b) => (a.item.Brand || '').localeCompare(b.item.Brand || ''));
+        case 'relevance':
+        default:
+            return results; // Already sorted by relevance (Fuse.js score)
+    }
+}
+
+// ============================================
+// VOICE SEARCH
+// ============================================
+
+const voiceBtn = document.getElementById('voice-btn');
+
+if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    
+    recognition.continuous = false;
+    recognition.lang = 'en-IN';
+    
+    recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        searchInput.value = transcript;
+        performSearch(transcript);
+        voiceBtn.classList.remove('voice-btn');
+    };
+    
+    recognition.onerror = function(event) {
+        console.error('Speech recognition error:', event.error);
+        voiceBtn.classList.remove('voice-btn');
+    };
+    
+    voiceBtn.addEventListener('click', function() {
+        recognition.start();
+        this.classList.add('voice-btn');
+        this.textContent = '🎤 LISTENING...';
+    });
+    
+    recognition.onend = function() {
+        voiceBtn.classList.remove('voice-btn');
+        voiceBtn.textContent = '🎤 VOICE';
+    };
+} else {
+    voiceBtn.style.display = 'none';
+}
+
+// ============================================
+// BARCODE SCANNER (Mobile)
+// ============================================
+
+const barcodeBtn = document.getElementById('barcode-btn');
+
+barcodeBtn.addEventListener('click', function() {
+    alert('📷 Barcode scanner coming soon!\n\nFor now, please type the part number or use WhatsApp to send a photo.');
+    
+    // In production, integrate with: https://github.com/zxing-js/library
+    // Or use: https://serratus.github.io/quaggaJS/
+});
+
+// ============================================
+// UI STATE MANAGEMENT
+// ============================================
+
+function showLoading() {
+    loading.classList.remove('hidden');
+    resultsContainer.innerHTML = '';
+    noResults.classList.add('hidden');
+    resultsHeader.classList.add('hidden');
+}
+
+function hideLoading() {
+    loading.classList.add('hidden');
+}
+
+function showNoResults() {
+    noResults.classList.remove('hidden');
+    resultsContainer.innerHTML = '';
+    resultsHeader.classList.add('hidden');
+}
+
+function showInitialState() {
+    resultsContainer.innerHTML = `
+        <div class="text-center py-16">
+            <div class="text-6xl mb-4">🔍</div>
+            <div class="stamp text-lg text-stone-900 mb-2">START SEARCHING</div>
+            <p class="text-stone-600">Type part number, brand, or description above</p>
+        </div>
+    `;
+    resultsHeader.classList.add('hidden');
+    noResults.classList.add('hidden');
+}
+
+// ============================================
+// INITIALIZE ON LOAD
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    initializeSearch();
+    
+    // Check if there's a search query in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('q');
+    
+    if (query) {
+        searchInput.value = query;
+        performSearch(query);
+    }
+});
+</script>
+
+</body>
+</html>
+
