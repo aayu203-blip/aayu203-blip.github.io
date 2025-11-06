@@ -3338,84 +3338,33 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
         }
     </script>
     
-    <!-- Database loaded lazily on search -->
+    <!-- Database loaded directly via script tag at bottom of page -->
     <script>
-        // Global database variable (will be populated from new_partDatabase.js)
-        if (typeof partDatabase === 'undefined') {
-            var partDatabase = null;
-        }
-        let databaseLoading = false;
-        let databaseLoadPromise = null;
-        
+        // Simple database availability check
         async function loadDatabase() {
-            console.log('[SEARCH] loadDatabase called, current state:', { 
-                hasPartDatabase: !!partDatabase, 
-                isArray: Array.isArray(partDatabase),
-                length: partDatabase ? partDatabase.length : 0 
-            });
-            
-            if (partDatabase && Array.isArray(partDatabase) && partDatabase.length > 0) {
-                console.log('[SEARCH] Database already loaded:', partDatabase.length, 'parts');
-                return partDatabase; // Already loaded
+            // Database is loaded via script tag, just wait for it if needed
+            if (typeof partDatabase !== 'undefined' && partDatabase && Array.isArray(partDatabase) && partDatabase.length > 0) {
+                console.log('[SEARCH] ✅ Database ready:', partDatabase.length, 'parts');
+                return partDatabase;
             }
             
-            if (databaseLoading && databaseLoadPromise) {
-                console.log('[SEARCH] Waiting for ongoing database load...');
-                return await databaseLoadPromise;
-            }
-            
-            console.log('[SEARCH] Starting database load...');
-            databaseLoading = true;
-            databaseLoadPromise = new Promise((resolve, reject) => {
-                // Check if database is already defined (from script tag)
-                if (typeof partDatabase !== 'undefined' && partDatabase && Array.isArray(partDatabase) && partDatabase.length > 0) {
-                    console.log('[SEARCH] Database found in global scope');
-                    databaseLoading = false;
-                    resolve(partDatabase);
-                    return;
-                }
-                
-                console.log('[SEARCH] Loading database from new_partDatabase.js...');
-                // Load database script dynamically
-                const script = document.createElement('script');
-                script.src = '/new_partDatabase.js'; // Try absolute path
-                script.async = true;
-                script.onload = function() {
-                    console.log('[SEARCH] Script loaded, waiting for partDatabase variable...');
-                    // Wait for partDatabase to be available
-                    let checkCount = 0;
-                    const checkInterval = setInterval(() => {
-                        checkCount++;
-                        console.log(`[SEARCH] Check ${checkCount}: partDatabase exists?`, typeof partDatabase !== 'undefined', 'is array?', Array.isArray(partDatabase), 'length?', partDatabase ? partDatabase.length : 0);
-                        
-                        if (typeof partDatabase !== 'undefined' && partDatabase && Array.isArray(partDatabase) && partDatabase.length > 0) {
-                            console.log('[SEARCH] ✅ Database loaded successfully:', partDatabase.length, 'parts');
-                            clearInterval(checkInterval);
-                            databaseLoading = false;
-                            resolve(partDatabase);
-                        }
-                    }, 100);
-                    
-                    // Timeout after 15 seconds
-                    setTimeout(() => {
+            // If not loaded yet, wait a bit for the script tag to execute
+            console.log('[SEARCH] Waiting for database to load...');
+            return new Promise((resolve, reject) => {
+                let attempts = 0;
+                const checkInterval = setInterval(() => {
+                    attempts++;
+                    if (typeof partDatabase !== 'undefined' && partDatabase && Array.isArray(partDatabase) && partDatabase.length > 0) {
+                        console.log('[SEARCH] ✅ Database loaded:', partDatabase.length, 'parts');
                         clearInterval(checkInterval);
-                        databaseLoading = false;
-                        const errorMsg = 'Database load timeout after 15s';
-                        console.error('[SEARCH] ❌', errorMsg);
-                        reject(new Error(errorMsg));
-                    }, 15000);
-                };
-                script.onerror = function(error) {
-                    databaseLoading = false;
-                    const errorMsg = 'Database script load failed: ' + (error.message || 'Unknown error');
-                    console.error('[SEARCH] ❌', errorMsg);
-                    reject(new Error(errorMsg));
-                };
-                document.body.appendChild(script);
-                console.log('[SEARCH] Script tag appended to body');
+                        resolve(partDatabase);
+                    } else if (attempts > 50) { // 5 seconds max
+                        clearInterval(checkInterval);
+                        console.error('[SEARCH] ❌ Database failed to load');
+                        reject(new Error('Database not available'));
+                    }
+                }, 100);
             });
-            
-            return await databaseLoadPromise;
         }
         
         // Preload database when user focuses on search
@@ -4194,6 +4143,9 @@ Sent from Parts Trading Company website
 
 
     
+<!-- Load Parts Database Directly -->
+<script src="/new_partDatabase.js"></script>
+
 </body>
 </html>
 
