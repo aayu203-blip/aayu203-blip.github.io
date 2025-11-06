@@ -237,10 +237,16 @@
                 placeholder="SEARCH BY PART NUMBER (e.g., 1521725, 982456) OR EQUIPMENT MODEL..."
                 class="w-full bg-stone-900 border-2 border-stone-700 text-white placeholder-stone-500 px-6 py-4 mono text-sm focus:outline-none focus:border-yellow-500 transition-colors"
                 aria-label="Search parts by part number or model"
+                autocomplete="off"
             />
-            <button class="absolute right-2 top-2 industrial-btn px-6 py-2 text-xs">
+            <button onclick="performSearch()" class="absolute right-2 top-2 industrial-btn px-6 py-2 text-xs">
                 SEARCH 5,000+ PARTS
             </button>
+            
+            <!-- Search Results Dropdown -->
+            <div id="search-results" class="absolute top-full left-0 right-0 mt-2 bg-white border-4 border-stone-900 hidden z-50 max-h-96 overflow-y-auto">
+                <!-- Results populate here -->
+            </div>
         </div>
     </div>
 </header>
@@ -628,6 +634,250 @@
 </footer>
 
 <script>
+// PARTS DATABASE - Top 10 Products
+const partsDatabase = [
+    {
+        partNumber: '1521725',
+        name: 'Intermediate Ring',
+        description: 'Valve stem sealing interface. Heat-resistant alloy construction.',
+        brand: 'Volvo',
+        category: 'Engine Components',
+        application: 'Valve Assembly',
+        stock: true,
+        url: '/volvo/engine/1521725.html'
+    },
+    {
+        partNumber: '982456',
+        name: 'Valve Seal Assembly',
+        description: 'Complete valve seal kit. Includes stem seals and O-rings.',
+        brand: 'Volvo',
+        category: 'Engine Components',
+        application: 'Valve Assembly',
+        stock: true,
+        url: '/volvo/engine/982456.html'
+    },
+    {
+        partNumber: '1654088',
+        name: 'Gasket Set Complete',
+        description: 'Full engine overhaul gasket kit. Head, manifold, oil pan gaskets.',
+        brand: 'Volvo',
+        category: 'Engine Components',
+        application: 'Gaskets & Seals',
+        stock: true,
+        url: '/volvo/engine/1654088.html'
+    },
+    {
+        partNumber: '991970',
+        name: 'Oil Filter Element',
+        description: 'High-capacity oil filter. Synthetic media. Extended service intervals.',
+        brand: 'Volvo',
+        category: 'Engine Components',
+        application: 'Filters',
+        stock: true,
+        url: '/volvo/engine/991970.html'
+    },
+    {
+        partNumber: '21067551',
+        name: 'Piston Ring Set',
+        description: 'Standard bore piston rings. Compression and oil control rings.',
+        brand: 'Volvo',
+        category: 'Engine Components',
+        application: 'Piston & Cylinder',
+        stock: true,
+        url: '/volvo/engine/21067551.html'
+    },
+    {
+        partNumber: '21838766',
+        name: 'Brake Disc Assembly',
+        description: 'Ventilated brake disc. High carbon steel construction.',
+        brand: 'Volvo',
+        category: 'Braking Systems',
+        application: 'Disc Brakes',
+        stock: true,
+        url: '/volvo/braking/21838766.html'
+    },
+    {
+        partNumber: '2491807',
+        name: 'Exterior Panel',
+        description: 'Body panel for cabin exterior. Corrosion-resistant finish.',
+        brand: 'Scania',
+        category: 'Body & Structure',
+        application: 'Exterior Components',
+        stock: true,
+        url: '/scania/exterior/2491807.html'
+    },
+    {
+        partNumber: '1391162',
+        name: 'Mounting Hardware Kit',
+        description: 'Complete mounting bracket assembly with fasteners.',
+        brand: 'Scania',
+        category: 'Body & Structure',
+        application: 'Hardware',
+        stock: true,
+        url: '/scania/hardware/1391162.html'
+    },
+    {
+        partNumber: '20430353',
+        name: 'Fuel Injector Nozzle',
+        description: 'Precision fuel injection nozzle. Multi-hole spray pattern.',
+        brand: 'Volvo',
+        category: 'Engine Components',
+        application: 'Fuel Injection',
+        stock: false,
+        url: '/volvo/engine/20430353.html'
+    },
+    {
+        partNumber: '21213631',
+        name: 'Timing Belt Tensioner',
+        description: 'Hydraulic automatic tensioner. Maintains belt tension.',
+        brand: 'Volvo',
+        category: 'Engine Components',
+        application: 'Timing Components',
+        stock: true,
+        url: '/volvo/engine/21213631.html'
+    }
+];
+
+// Search Functionality
+let searchTimeout;
+const searchInput = document.getElementById('part-search');
+const searchResults = document.getElementById('search-results');
+
+searchInput.addEventListener('input', function() {
+    clearTimeout(searchTimeout);
+    const query = this.value.trim().toLowerCase();
+    
+    if (query.length < 2) {
+        searchResults.classList.add('hidden');
+        return;
+    }
+    
+    searchTimeout = setTimeout(() => {
+        performSearch(query);
+    }, 300);
+});
+
+searchInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        performSearch(this.value.trim().toLowerCase());
+    }
+});
+
+// Click outside to close
+document.addEventListener('click', function(e) {
+    if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+        searchResults.classList.add('hidden');
+    }
+});
+
+function performSearch(query) {
+    if (!query) {
+        query = searchInput.value.trim().toLowerCase();
+    }
+    
+    if (!query || query.length < 2) {
+        searchResults.classList.add('hidden');
+        return;
+    }
+    
+    // Track search
+    gtag('event', 'search', { 'search_term': query });
+    
+    // Search through database
+    const results = partsDatabase.filter(part => {
+        return part.partNumber.toLowerCase().includes(query) ||
+               part.name.toLowerCase().includes(query) ||
+               part.description.toLowerCase().includes(query) ||
+               part.brand.toLowerCase().includes(query) ||
+               part.category.toLowerCase().includes(query) ||
+               part.application.toLowerCase().includes(query);
+    });
+    
+    displaySearchResults(results, query);
+}
+
+function displaySearchResults(results, query) {
+    if (results.length === 0) {
+        searchResults.innerHTML = `
+            <div class="p-8 text-center">
+                <div class="text-stone-400 mb-4">
+                    <svg class="w-16 h-16 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+                <div class="stamp text-sm text-stone-900 mb-2">NO MATCHES FOUND</div>
+                <p class="text-sm text-stone-600 mb-4">Part "${query}" not in quick search database</p>
+                <a href="https://wa.me/919821037990?text=Hi!%20I'm%20searching%20for:%20${encodeURIComponent(query)}" 
+                   target="_blank"
+                   class="inline-block bg-stone-900 text-white px-6 py-3 stamp text-xs hover:bg-black transition-colors">
+                    💬 ASK ON WHATSAPP
+                </a>
+            </div>
+        `;
+        searchResults.classList.remove('hidden');
+        return;
+    }
+    
+    const resultsHTML = `
+        <div class="p-4 bg-yellow-500 border-b-2 border-stone-900">
+            <div class="stamp text-xs text-stone-900">FOUND ${results.length} RESULT${results.length > 1 ? 'S' : ''}</div>
+        </div>
+        ${results.map(part => `
+            <a href="${part.url}" class="block border-b-2 border-stone-200 p-4 hover:bg-yellow-50 transition-colors group">
+                <div class="flex justify-between items-start gap-4">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="mono font-bold text-lg text-stone-900 group-hover:text-yellow-700 transition-colors">
+                                ${highlightQuery(part.partNumber, query)}
+                            </div>
+                            <span class="stamp text-xs px-2 py-1 ${part.stock ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'}">
+                                ${part.stock ? 'IN STOCK' : '2-3 DAYS'}
+                            </span>
+                        </div>
+                        <div class="font-semibold text-stone-900 mb-1">
+                            ${highlightQuery(part.name, query)}
+                        </div>
+                        <div class="text-sm text-stone-600 mb-2">
+                            ${highlightQuery(part.description, query)}
+                        </div>
+                        <div class="flex gap-3 text-xs">
+                            <span class="stamp text-stone-500">
+                                <span class="text-yellow-700">●</span> ${part.brand}
+                            </span>
+                            <span class="stamp text-stone-500">
+                                ${part.application}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="stamp text-xs text-stone-500 mb-2">VIEW DETAILS</div>
+                        <svg class="w-6 h-6 text-stone-400 group-hover:text-yellow-700 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        `).join('')}
+        <div class="p-4 bg-stone-100 text-center border-t-2 border-stone-300">
+            <div class="stamp text-xs text-stone-600 mb-3">CAN'T FIND YOUR PART?</div>
+            <a href="https://wa.me/919821037990?text=Hi!%20I'm%20searching%20for:%20${encodeURIComponent(query)}" 
+               target="_blank"
+               class="inline-block bg-stone-900 text-white px-6 py-3 stamp text-xs hover:bg-black transition-colors">
+                💬 SEARCH FULL 5,000+ CATALOG ON WHATSAPP
+            </a>
+        </div>
+    `;
+    
+    searchResults.innerHTML = resultsHTML;
+    searchResults.classList.remove('hidden');
+}
+
+function highlightQuery(text, query) {
+    if (!query) return text;
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<mark class="bg-yellow-300 text-stone-900 font-bold px-1">$1</mark>');
+}
+
 // Quick Quote Form with Location Tracking
 document.getElementById('quick-quote').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -660,18 +910,6 @@ document.getElementById('quick-quote').addEventListener('submit', function(e) {
             alert(`Quote sent! We'll respond within 30 minutes with pricing and dispatch time to ${location}.`);
             document.getElementById('quick-quote').reset();
         });
-    }
-});
-
-// Part Number Search
-document.getElementById('part-search').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        const query = this.value.trim();
-        if (query) {
-            gtag('event', 'search', { 'search_term': query });
-            // Redirect to search results or WhatsApp
-            window.open(`https://wa.me/919821037990?text=Hi!%20I'm%20searching%20for%20part:%20${encodeURIComponent(query)}`, '_blank');
-        }
     }
 });
 </script>
