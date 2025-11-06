@@ -359,3 +359,4 @@ python3 generate_product_images.py --dry-run  # Test first
 python3 generate_product_images.py            # Real run
 ```
 
+
