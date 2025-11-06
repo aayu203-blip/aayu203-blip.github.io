@@ -79,6 +79,13 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://cdn.tailwindcss.com" rel="preconnect"/>
 <link href="https://unpkg.com" rel="preconnect"/>
+<!-- EmailJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init("s6jWMEYpe-XNRS88_");
+    })();
+</script>
 <!-- Enhanced Structured Data -->
 <script type="application/ld+json">
 {
@@ -1308,14 +1315,48 @@ function submitQuote(partNumber, partName, brand, category) {
     const qty = document.getElementById('qty-input').value;
     const location = document.getElementById('location-input').value.trim();
     const contact = document.getElementById('contact-input').value.trim();
+    const submitBtn = document.getElementById('submit-quote-btn');
+    const originalBtnText = submitBtn.innerHTML;
     
     if (/^\d{10}$/.test(contact)) {
+        // Phone -> WhatsApp
         const message = `Hi! I need a quote for:\n\nPart: ${partNumber} (${partName})\nBrand: ${brand}\nCategory: ${category}\n\nQuantity: ${qty} units\nLocation: ${location}\nContact: +91-${contact}\n\nPlease send pricing and dispatch time.`;
         window.open(`https://wa.me/919821037990?text=${encodeURIComponent(message)}`, '_blank');
     } else {
-        const subject = `Quote Request: ${partNumber}`;
-        const body = `Hi,\n\nI need a quote for:\n\nPart Number: ${partNumber}\nPart Name: ${partName}\nBrand: ${brand}\nCategory: ${category}\n\nQuantity: ${qty} units\nDelivery Location: ${location}\nContact Email: ${contact}\n\nPlease send me pricing and dispatch information.\n\nThank you!`;
-        window.location.href = `mailto:info@partstrading.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        // Email -> EmailJS
+        submitBtn.innerHTML = '<span class="opacity-70">Sending...</span>';
+        submitBtn.disabled = true;
+        
+        emailjs.send('service_zizi36t', 'template_jyu1i3d', {
+            part_number: partNumber,
+            part_name: partName,
+            brand: brand,
+            category: category,
+            quantity: qty,
+            location: location,
+            contact: contact,
+            part_url: window.location.href
+        }).then(function() {
+            submitBtn.innerHTML = '<span>✓ Sent! Check your email</span>';
+            setTimeout(() => {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                document.getElementById('qty-input').value = '1';
+                document.getElementById('location-input').value = '';
+                document.getElementById('contact-input').value = '';
+                document.getElementById('qty-feedback').textContent = '';
+                document.getElementById('dispatch-info').textContent = '';
+                document.getElementById('contact-feedback').textContent = '';
+            }, 3000);
+        }).catch(function(error) {
+            console.error('EmailJS error:', error);
+            submitBtn.innerHTML = '<span>✗ Failed - Please call</span>';
+            setTimeout(() => {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+            }, 3000);
+            alert('Could not send email. Please call us at +91 98210 37990 or try WhatsApp.');
+        });
     }
 }
 </script>
