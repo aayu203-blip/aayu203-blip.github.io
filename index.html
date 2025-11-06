@@ -3499,21 +3499,22 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
             const category = (result["Category"] || '').toString().trim().toLowerCase();
             const partNo = (result["Part No"] || '').toString().trim();
             
-            // Map category names to actual folder names (now clean!)
+            // Map actual database category names to folder names
             const catMap = {
                 'engine components': 'engine',
-                'fuel system components': 'fuel',
-                'transmission & differential components': 'transmission',
-                'braking system components': 'braking',
-                'steering & suspension parts': 'suspension',
-                'hydraulic systems & connectors': 'hydraulics',
-                'air & fluid filtration systems': 'filtration',
-                'lighting & exterior body components': 'exterior',
-                'fasteners, hardware & accessories': 'hardware'
+                'brake & steering systems': 'braking',
+                'filtration & maintenance': 'filtration',
+                'electrical & lighting': 'electrical',
+                'transmission & driveline': 'transmission',
+                'cooling & exhaust systems': 'cooling',
+                'cab & body parts': 'exterior',
+                'fasteners & hardware': 'hardware',
+                'hydraulic components': 'hydraulics',
+                'fuel & air systems': 'fuel',
+                'chassis & suspension': 'suspension'
             };
             
-            const catKey = category.replace(/\s+/g,' ');
-            const catSlug = catMap[catKey] || 'misc';
+            const catSlug = catMap[category] || category.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'parts';
             
             // Determine brand folder
             let brandFolder = 'scania'; // default
@@ -3521,8 +3522,10 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
             else if (brand.includes('scania')) brandFolder = 'scania';
             else if (brand.includes('komatsu')) brandFolder = 'komatsu';
             else if (brand.includes('cat') || brand.includes('caterpillar')) brandFolder = 'cat';
+            else if (brand.includes('hitachi')) brandFolder = 'hitachi';
+            else if (brand.includes('hyundai')) brandFolder = 'hyundai';
             
-            // Return clean URL (now matches actual file!)
+            // Return clean URL
             return `/${brandFolder}/${catSlug}/${partNo}.html`;
         }
         
