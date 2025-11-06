@@ -3324,7 +3324,10 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
     
     <!-- Database loaded lazily on search -->
     <script>
-        let partDatabase = null;
+        // Global database variable (will be populated from new_partDatabase.js)
+        if (typeof partDatabase === 'undefined') {
+            var partDatabase = null;
+        }
         let databaseLoading = false;
         let databaseLoadPromise = null;
         
@@ -3341,8 +3344,7 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
             databaseLoading = true;
             databaseLoadPromise = new Promise((resolve, reject) => {
                 // Check if database is already defined (from script tag)
-                if (typeof partsDatabase !== 'undefined' && partsDatabase) {
-                    partDatabase = partsDatabase;
+                if (typeof partDatabase !== 'undefined' && partDatabase && Array.isArray(partDatabase)) {
                     databaseLoading = false;
                     resolve(partDatabase);
                     return;
@@ -3350,13 +3352,12 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
                 
                 // Load database script dynamically
                 const script = document.createElement('script');
-                script.src = 'database/new_partDatabase.js';
+                script.src = 'new_partDatabase.js';
                 script.async = true;
                 script.onload = function() {
-                    // Wait for partsDatabase to be available
+                    // Wait for partDatabase to be available
                     const checkInterval = setInterval(() => {
-                        if (typeof partsDatabase !== 'undefined' && partsDatabase) {
-                            partDatabase = partsDatabase;
+                        if (typeof partDatabase !== 'undefined' && partDatabase && Array.isArray(partDatabase)) {
                             clearInterval(checkInterval);
                             databaseLoading = false;
                             resolve(partDatabase);
