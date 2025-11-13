@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9S54H015YY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9S54H015YY');
+</script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>{{BRAND}} {{PART_NAME}} — Part No. {{PART_NUMBER}} | Parts Trading Company</title>
+<meta name="description" content="{{PART_NAME}} for {{BRAND}} vehicles. Learn usage scenarios, failure symptoms, and get mechanic-assisted identification. Share a photo to receive pricing and availability from Parts Trading Company."/>
+<link rel="canonical" href="https://partstrading.com/products/{{PART_NUMBER}}.html"/>
+<link rel="icon" href="../assets/images/favicon.png?v=2" type="image/png"/>
+<link rel="apple-touch-icon" href="../assets/images/favicon.png?v=2"/>
+
+<!-- Product Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{BRAND}} {{PART_NAME}}",
+  "mpn": "{{PART_NUMBER}}",
+  "category": "{{CATEGORY}}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{BRAND}}"
+  },
+  "description": "{{PART_NAME}} for {{BRAND}} vehicles. Contact our technicians for availability and identification assistance.",
+  "image": "https://partstrading.com/assets/images/placeholder-part.png",
+  "url": "https://partstrading.com/products/{{PART_NUMBER}}.html",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "0.00",
+    "availability": "https://schema.org/InStock",
+    "url": "https://partstrading.com/products/{{PART_NUMBER}}.html",
+    "seller": {
+      "@type": "Organization",
+      "name": "Parts Trading Company"
+    }
+  }
+}
+</script>
+
+<!-- ItemList Structured Data for related parts -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Often replaced with {{PART_NUMBER}}",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{RELATED_PART_1_NAME}}",
+      "url": "https://partstrading.com/products/{{RELATED_PART_1_NUMBER}}.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{RELATED_PART_2_NAME}}",
+      "url": "https://partstrading.com/products/{{RELATED_PART_2_NUMBER}}.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{RELATED_PART_3_NAME}}",
+      "url": "https://partstrading.com/products/{{RELATED_PART_3_NUMBER}}.html"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui']
+        },
+        colors: {
+          brand: {
+            navy: '#0a1c2e',
+            steel: '#475569',
+            accent: '#facc15'
+          }
+        },
+        boxShadow: {
+          soft: '0 25px 80px -40px rgba(10, 28, 46, 0.6)'
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900">
+<header class="relative z-30 border-b border-slate-200 bg-white/95 px-4 py-4 shadow-sm">
+  <div class="mx-auto flex max-w-7xl items-center justify-between">
+    <a href="/" class="flex items-center gap-3">
+      <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand.navy text-white shadow-lg shadow-brand.navy/30">
+        <svg viewBox="0 0 48 48" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8 34h32M8 14h32M14 34l9-20 9 20"/>
+          <circle cx="24" cy="24" r="22" stroke-dasharray="4 4"/>
+        </svg>
+      </span>
+      <div>
+        <span class="block text-base font-bold uppercase tracking-[0.2em] text-brand.navy">Partstrading</span>
+        <span class="text-xs font-medium uppercase tracking-[0.28em] text-brand.steel">Since 1956</span>
+      </div>
+    </a>
+    <a href="https://wa.me/919821037990" target="_blank" rel="noopener" class="hidden items-center gap-2 rounded-full bg-brand.accent px-4 py-2 text-sm font-semibold text-brand.navy shadow-md shadow-brand.accent/40 transition hover:-translate-y-[1px] hover:bg-yellow-400 md:flex">
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7"/>
+      </svg>
+      WhatsApp Technician
+    </a>
+  </div>
+</header>
+
+<main class="relative pb-28">
+  <!-- Sticky mobile CTA -->
+  <div class="md:hidden fixed inset-x-4 bottom-5 z-40 rounded-3xl border border-slate-200 bg-white/95 px-4 py-3 shadow-2xl shadow-brand.navy/30 backdrop-blur">
+    <div class="flex items-center justify-between gap-3">
+      <div>
+        <p class="text-sm font-semibold text-brand.navy">{{PART_NAME}}</p>
+        <p class="text-xs text-slate-500">Part No. {{PART_NUMBER}} • {{BRAND}}</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <a href="tel:+919821037990" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-brand.navy shadow-sm">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3l3 7-3 2a12 12 0 005 5l2-3 7 3v3a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/919821037990?text=Hi!%20I%20need%20details%20on%20Part%20{{PART_NUMBER}}%20({{PART_NAME}})." class="inline-flex items-center gap-2 rounded-full bg-brand.accent px-4 py-2 text-xs font-semibold text-brand.navy shadow">
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto flex max-w-7xl flex-col gap-16 px-4 pt-14 sm:px-6 lg:px-8 lg:pt-20">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-sm text-slate-500" aria-label="Breadcrumb">
+      <a href="/" class="font-medium text-brand.navy hover:text-brand.accent">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="/brands/{{BRAND | slug}}.html" class="hover:text-brand.accent">{{BRAND}}</a>
+      <span aria-hidden="true">/</span>
+      <a href="/categories/{{CATEGORY | slug}}.html" class="hover:text-brand.accent">{{CATEGORY}}</a>
+      <span aria-hidden="true">/</span>
+      <span class="font-semibold text-brand.navy">{{PART_NAME}}</span>
+    </nav>
+
+    <!-- Hero Block -->
+    <section class="grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div class="relative rounded-3xl border border-slate-200 bg-gradient-to-br from-white via-slate-50 to-slate-100 p-8 shadow-soft">
+        <span class="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full bg-brand.navy px-4 py-1 text-xs font-semibold tracking-wide text-white shadow-lg shadow-brand.navy/40">
+          <span class="inline-flex h-2 w-2 animate-ping rounded-full bg-brand.accent"></span>
+          Placeholder illustration
+        </span>
+        <div class="grid min-h-[360px] place-items-center">
+          <svg class="h-48 w-48 text-slate-400/80" viewBox="0 0 200 200" fill="none">
+            <rect x="25" y="60" width="150" height="80" rx="18" stroke="currentColor" stroke-width="6" stroke-dasharray="14 12"/>
+            <path d="M60 110 Q100 70 140 110" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="60" cy="110" r="16" stroke="currentColor" stroke-width="6"/>
+            <circle cx="140" cy="110" r="16" stroke="currentColor" stroke-width="6"/>
+            <path d="M100 110 L140 70" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <h1 class="text-3xl font-extrabold leading-tight text-brand.navy sm:text-4xl lg:text-5xl">
+          {{BRAND}} {{PART_NAME}} — Part No. {{PART_NUMBER}}
+        </h1>
+        <p class="text-lg text-slate-600">
+          {{PART_NAME}} for {{CATEGORY}} applications on {{BRAND}} fleets. Built for heavy-duty performance and supported by our technician network.
+        </p>
+        <ul class="space-y-3 text-sm font-medium text-slate-700">
+          <li class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-brand.accent"></span>
+            In-demand replacement component
+          </li>
+          <li class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-brand.accent"></span>
+            Mechanic-assisted part identification
+          </li>
+          <li class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-brand.accent"></span>
+            Fast availability updates
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Part Matching Module -->
+    <section class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+      <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
+        <div class="space-y-3">
+          <h2 class="text-2xl font-bold text-brand.navy">Find the Right Match for {{PART_NUMBER}}</h2>
+          <p class="text-slate-600">
+            Share your part number, vehicle model, or a photo of the part — our technician will confirm compatibility and share pricing.
+          </p>
+        </div>
+        <form class="mt-8 grid gap-5" onsubmit="handleEmailSubmission(event)">
+          <div class="grid gap-2">
+            <label class="text-sm font-semibold text-slate-600">Part Number</label>
+            <input type="text" value="{{PART_NUMBER}}" readonly class="rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-sm font-semibold text-brand.navy shadow-inner"/>
+          </div>
+          <div class="grid gap-2">
+            <label class="text-sm font-semibold text-slate-600">Vehicle Model / Series</label>
+            <input id="vehicle-model" type="text" placeholder="Example: P410 / G440" class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand.navy shadow-inner focus:border-brand.accent focus:outline-none focus:ring-4 focus:ring-brand.accent/30"/>
+          </div>
+          <div class="grid gap-2">
+            <label class="text-sm font-semibold text-slate-600">Tell us what you're repairing</label>
+            <select id="repair-context" class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand.navy shadow-inner focus:border-brand.accent focus:outline-none focus:ring-4 focus:ring-brand.accent/30">
+              <option value="" selected>Select an option</option>
+              <option value="steering">Steering circuit</option>
+              <option value="suspension">Suspension assembly</option>
+              <option value="hydraulic-power">Hydraulic power pack</option>
+              <option value="coolant">Cooling system loop</option>
+              <option value="other">Other / unsure</option>
+            </select>
+          </div>
+          <div class="grid gap-2">
+            <label class="text-sm font-semibold text-slate-600">Upload part photo</label>
+            <button type="button" onclick="document.getElementById('part-photo').click();" class="inline-flex items-center gap-2 rounded-2xl border border-dashed border-brand.navy/40 bg-slate-100 px-4 py-3 text-sm font-semibold text-brand.navy shadow-inner transition hover:border-brand.accent hover:bg-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3l2 3h8a2 2 0 012 2v3m-3 4h-3m0 0V12m0 4l-3 3m3-3l3 3"/>
+              </svg>
+              Upload part photo
+            </button>
+            <input type="file" id="part-photo" accept="image/*" class="hidden" onchange="handlePhotoUpload(event)"/>
+            <p id="photo-helper" class="text-xs text-slate-500">Attach a clear photo of the existing part or the stamped number.</p>
+          </div>
+          <div class="grid gap-2">
+            <label class="text-sm font-semibold text-slate-600">Name</label>
+            <input id="contact-name" type="text" placeholder="Your name" required class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand.navy shadow-inner focus:border-brand.accent focus:outline-none focus:ring-4 focus:ring-brand.accent/30"/>
+          </div>
+          <div class="grid gap-2">
+            <label class="text-sm font-semibold text-slate-600">Phone number</label>
+            <input id="contact-phone" type="tel" pattern="[0-9+ ]{6,}" placeholder="+91 98210 37990" required class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand.navy shadow-inner focus:border-brand.accent focus:outline-none focus:ring-4 focus:ring-brand.accent/30"/>
+          </div>
+          <div class="grid gap-2">
+            <label class="text-sm font-semibold text-slate-600">Email (optional)</label>
+            <input id="contact-email" type="email" placeholder="you@example.com" class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand.navy shadow-inner focus:border-brand.accent focus:outline-none focus:ring-4 focus:ring-brand.accent/30"/>
+          </div>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <a id="cta-whatsapp" href="https://wa.me/919821037990?text=Hi!%20Can%20you%20confirm%20availability%20for%20{{PART_NUMBER}}%20(%20{{PART_NAME}}%20)%20and%20help%20with%20compatibility%3F" target="_blank" rel="noopener" class="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-brand.accent px-5 py-3 text-sm font-semibold text-brand.navy shadow-lg shadow-brand.accent/40 transition hover:-translate-y-[1px] hover:bg-yellow-400">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7"/>
+              </svg>
+              WhatsApp Technician
+            </a>
+            <button type="submit" class="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-brand.navy shadow-lg shadow-brand.navy/10 transition hover:-translate-y-[1px] hover:bg-slate-100">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5l9 6 9-6M4.5 6h15a1.5 1.5 0 011.5 1.5v9a1.5 1.5 0 01-1.5 1.5h-15A1.5 1.5 0 013 16.5v-9A1.5 1.5 0 014.5 6z"/>
+              </svg>
+              Get Details by Email
+            </button>
+          </div>
+          <p class="text-xs text-slate-400">Quick response during business hours.</p>
+        </form>
+      </div>
+      <div class="grid gap-6">
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <h3 class="text-lg font-semibold text-brand.navy">Upload a photo for faster matching</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Clear images of stamped part numbers, hose routing, or the installed assembly help us identify the correct variant immediately.
+          </p>
+          <button type="button" onclick="document.getElementById('part-photo').click();" class="mt-5 inline-flex items-center gap-2 rounded-full border border-brand.navy/30 bg-brand.navy/10 px-4 py-2 text-xs font-semibold text-brand.navy shadow-sm">
+            Upload part photo
+          </button>
+        </div>
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <h3 class="text-lg font-semibold text-brand.navy">Related parts • Often requested together</h3>
+          <ul class="mt-4 space-y-3 text-sm text-brand.navy">
+            <li class="flex items-center justify-between">
+              <div>
+                <p class="font-medium">{{RELATED_PART_1_NAME}}</p>
+                <p class="text-xs text-slate-500">Part No. {{RELATED_PART_1_NUMBER}}</p>
+              </div>
+              <a href="/products/{{RELATED_PART_1_NUMBER}}.html" class="rounded-full border border-brand.navy/40 px-3 py-1 text-xs font-semibold text-brand.navy hover:bg-brand.navy hover:text-white">View</a>
+            </li>
+            <li class="flex items-center justify-between">
+              <div>
+                <p class="font-medium">{{RELATED_PART_2_NAME}}</p>
+                <p class="text-xs text-slate-500">Part No. {{RELATED_PART_2_NUMBER}}</p>
+              </div>
+              <a href="/products/{{RELATED_PART_2_NUMBER}}.html" class="rounded-full border border-brand.navy/40 px-3 py-1 text-xs font-semibold text-brand.navy hover:bg-brand.navy hover:text-white">View</a>
+            </li>
+            <li class="flex items-center justify-between">
+              <div>
+                <p class="font-medium">{{RELATED_PART_3_NAME}}</p>
+                <p class="text-xs text-slate-500">Part No. {{RELATED_PART_3_NUMBER}}</p>
+              </div>
+              <a href="/products/{{RELATED_PART_3_NUMBER}}.html" class="rounded-full border border-brand.navy/40 px-3 py-1 text-xs font-semibold text-brand.navy hover:bg-brand.navy hover:text-white">View</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Description -->
+    <section class="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
+      <h2 class="text-2xl font-bold text-brand.navy">About {{PART_NAME}} (Part No. {{PART_NUMBER}})</h2>
+      <p class="mt-4 text-base leading-7 text-slate-600">
+        {{PART_NAME}} is widely used across {{BRAND}} {{CATEGORY}} assemblies to maintain fluid routing and prevent line distortion. Mechanics typically investigate this component when hydraulic fluid tracks show dampness around fittings, when there is audible whistling during steering lock, or if routine inspections uncover corrosion on existing elbows. In most workshops, technicians identify the correct replacement by referencing the stamped number on the original part and comparing the seating angle to workshop diagrams. This elbow is commonly swapped during periodic hose replacements or whenever pressure lines are realigned after collision repair. If you are unsure about the part visual, simply share a photo of the current installation or the old fitting. Our team will provide the exact match, confirm availability, and help you schedule dispatch without delays.
+      </p>
+    </section>
+
+    <!-- Technical Section -->
+    <section class="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
+      <div class="divide-y divide-slate-200">
+        <details open class="group py-5">
+          <summary class="flex items-center justify-between text-lg font-semibold text-brand.navy">
+            Technical Information
+            <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600">
+            Detailed specifications available upon request. Share a part photo for quick confirmation.
+          </p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex items-center justify-between text-lg font-semibold text-brand.navy">
+            Common Usage
+            <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600">
+            This component is frequently used in hydraulic or pressure-line assemblies on {{BRAND}} vehicles.
+          </p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex items-center justify-between text-lg font-semibold text-brand.navy">
+            Identification Help
+            <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600">
+            Mechanics usually identify this part by matching the stamped number on the original fitting.
+          </p>
+        </details>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="border-t border-slate-200 bg-white/95 px-4 py-8 text-sm text-slate-500">
+  <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row">
+    <p>© <span id="year"></span> Parts Trading Company. Heavy-duty spares delivered across India.</p>
+    <div class="flex gap-4 text-xs uppercase tracking-[0.2em] text-brand.steel">
+      <a href="/about.html" class="hover:text-brand.navy">About</a>
+      <a href="/brands.html" class="hover:text-brand.navy">Brands</a>
+      <a href="/contact.html" class="hover:text-brand.navy">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function handlePhotoUpload(event) {
+    const helper = document.getElementById('photo-helper');
+    if (event.target.files && event.target.files.length > 0) {
+      helper.textContent = `${event.target.files[0].name} attached.`;
+      helper.classList.remove('text-slate-500');
+      helper.classList.add('text-brand.navy');
+    } else {
+      helper.textContent = 'Attach a clear photo of the existing part or the stamped number.';
+      helper.classList.remove('text-brand.navy');
+      helper.classList.add('text-slate-500');
+    }
+  }
+
+  function buildWhatsAppURL() {
+    const base = 'https://wa.me/919821037990?text=';
+    const partNumber = '{{PART_NUMBER}}';
+    const partName = '{{PART_NAME}}';
+    const model = document.getElementById('vehicle-model').value.trim();
+    const repair = document.getElementById('repair-context').value;
+    const name = document.getElementById('contact-name').value.trim();
+    const phone = document.getElementById('contact-phone').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+
+    let message = `Hi! Can you help with ${partName} (Part No. ${partNumber})?`;
+    if (model) message += ` Vehicle model/series: ${model}.`;
+    if (repair) message += ` Repair context: ${repair}.`;
+    if (name) message += ` Contact: ${name}.`;
+    if (phone) message += ` Phone: ${phone}.`;
+    if (email) message += ` Email: ${email}.`;
+    message += ' Please share availability and pricing.';
+
+    return base + encodeURIComponent(message);
+  }
+
+  document.getElementById('vehicle-model').addEventListener('input', () => {
+    document.getElementById('cta-whatsapp').href = buildWhatsAppURL();
+  });
+  document.getElementById('repair-context').addEventListener('change', () => {
+    document.getElementById('cta-whatsapp').href = buildWhatsAppURL();
+  });
+  document.getElementById('contact-name').addEventListener('input', () => {
+    document.getElementById('cta-whatsapp').href = buildWhatsAppURL();
+  });
+  document.getElementById('contact-phone').addEventListener('input', () => {
+    document.getElementById('cta-whatsapp').href = buildWhatsAppURL();
+  });
+  document.getElementById('contact-email').addEventListener('input', () => {
+    document.getElementById('cta-whatsapp').href = buildWhatsAppURL();
+  });
+
+  function handleEmailSubmission(event) {
+    event.preventDefault();
+    const partNumber = '{{PART_NUMBER}}';
+    const partName = '{{PART_NAME}}';
+    const model = document.getElementById('vehicle-model').value.trim();
+    const repair = document.getElementById('repair-context').value;
+    const name = document.getElementById('contact-name').value.trim();
+    const phone = document.getElementById('contact-phone').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+
+    let body = `Part enquiry:%0A- Part: ${partName} (Part No. ${partNumber})`;
+    if (model) body += `%0A- Vehicle model/series: ${model}`;
+    if (repair) body += `%0A- Repair context: ${repair}`;
+    if (name) body += `%0A- Name: ${name}`;
+    if (phone) body += `%0A- Phone: ${phone}`;
+    if (email) body += `%0A- Email: ${email}`;
+    body += `%0A%0APlease provide compatibility confirmation and pricing.`;
+
+    window.location.href = `mailto:parts@partstrading.com?subject=Part%20No.%20${partNumber}%20enquiry&body=${body}`;
+  }
+</script>
+</body>
+</html>
+
