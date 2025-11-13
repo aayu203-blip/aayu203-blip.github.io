@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9S54H015YY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9S54H015YY');
+</script>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>{{BRAND}} {{PART_NAME}} — Part No. {{PART_NUMBER}} | Parts Trading Company</title>
+<meta name="description" content="{{PART_NAME}} for {{BRAND}} {{CATEGORY}} systems. Identify usage symptoms, see when it’s replaced, and send a photo for confirmation. Mechanic-assisted matching from Parts Trading Company."/>
+<link rel="canonical" href="https://partstrading.com/products/{{PART_NUMBER}}.html"/>
+<link rel="icon" href="../assets/images/favicon.png?v=2" type="image/png"/>
+<link rel="apple-touch-icon" href="../assets/images/favicon.png?v=2"/>
+
+<!-- Product Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{BRAND}} {{PART_NAME}}",
+  "mpn": "{{PART_NUMBER}}",
+  "category": "{{CATEGORY}}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{BRAND}}"
+  },
+  "description": "{{PART_NAME}} for {{BRAND}} {{CATEGORY}} applications. Contact Parts Trading Company for availability and technician-assisted matching.",
+  "image": "https://partstrading.com/assets/images/placeholder-part.png",
+  "url": "https://partstrading.com/products/{{PART_NUMBER}}.html",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "0.00",
+    "availability": "https://schema.org/InStock",
+    "url": "https://partstrading.com/products/{{PART_NUMBER}}.html",
+    "seller": {
+      "@type": "Organization",
+      "name": "Parts Trading Company"
+    }
+  }
+}
+</script>
+
+<!-- ItemList Structured Data for related parts -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Often requested with {{PART_NUMBER}}",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "{{RELATED_PART_1_NAME}}",
+      "url": "https://partstrading.com/products/{{RELATED_PART_1_NUMBER}}.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{RELATED_PART_2_NAME}}",
+      "url": "https://partstrading.com/products/{{RELATED_PART_2_NUMBER}}.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{RELATED_PART_3_NAME}}",
+      "url": "https://partstrading.com/products/{{RELATED_PART_3_NUMBER}}.html"
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui']
+        },
+        colors: {
+          brand: {
+            navy: '#0a1c2e',
+            steel: '#1f2937',
+            accent: '#facc15'
+          }
+        },
+        boxShadow: {
+          soft: '0 35px 120px -70px rgba(10, 28, 46, 0.7)'
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900">
+<!-- HEADER (unchanged from theme) -->
+<nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
+  function updateNavColor() {
+    const scrollY = window.scrollY;
+    scrolled = scrollY > 500;
+  }
+  updateNavColor();
+  window.addEventListener('scroll', updateNavColor);
+">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-28">
+<div class="flex items-center">
+<div class="flex-shrink-0">
+                <a href="/" class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
+                    <img src="../assets/images/ptc-logo.png?v=1" alt="PTC Parts Trading Company" class="h-36 w-auto transition-all duration-300" id="nav-logo">
+                </a>
+</div>
+</div>
+<div class="hidden md:flex items-center space-x-2">
+<a class="nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-gray-900" href="/">
+<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<span class="font-bold tracking-wide">HOME</span>
+</a>
+<a class="nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#brands">
+<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<span class="font-bold tracking-wide">BRANDS</span>
+</a>
+<a class="nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#equipment-models">
+<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<span class="font-bold tracking-wide">MODELS</span>
+</a>
+<a class="nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#product-categories">
+<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<span class="font-bold tracking-wide">PRODUCTS</span>
+</a>
+<a class="nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-gray-900" href="/blog/index.html">
+<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<span class="font-bold tracking-wide">BLOG</span>
+</a>
+<a class="nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#faq">
+<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<span class="font-bold tracking-wide">FAQ</span>
+</a>
+<a class="group relative bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-6 py-4 rounded-2xl font-bold tracking-wide hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 border-2 border-yellow-300/50 flex items-center space-x-3" href="/#contact">
+<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<span class="font-bold tracking-wide">CONTACT</span>
+</a>
+</div>
+<div class="md:hidden">
+<button @click="mobileMenuOpen = !mobileMenuOpen" aria-expanded="false" aria-label="Toggle mobile menu" class="p-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-yellow-400/50 transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" x-bind:aria-expanded="mobileMenuOpen">
+<svg class="h-7 w-7" fill="none" stroke="currentColor" viewbox="0 0 24 24" x-show="!mobileMenuOpen">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+<svg class="h-7 w-7" fill="none" stroke="currentColor" viewbox="0 0 24 24" x-show="mobileMenuOpen">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+</div>
+</div>
+</div>
+<div class="md:hidden bg-white/98 backdrop-blur-xl border-t-2 border-yellow-300/60 shadow-2xl" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:enter-start="opacity-0 transform -translate-y-4" x-transition:leave="transition ease-in duration-200" x-transition:leave-end="opacity-0 transform -translate-y-4" x-transition:leave-start="opacity-100 transform translate-y-0">
+<div class="px-6 py-6 space-y-3">
+<template x-for="item in [
+    { label: 'HOME', href: '/' },
+    { label: 'BRANDS', href: '/#brands' },
+    { label: 'MODELS', href: '/#equipment-models' },
+    { label: 'PRODUCTS', href: '/#product-categories' },
+    { label: 'BLOG', href: '/blog/index.html' },
+    { label: 'FAQ', href: '/#faq' },
+    { label: 'CONTACT', href: '/#contact', cta: true }
+  ]" :key="item.label">
+  <a @click="mobileMenuOpen = false" :class="item.cta ? 'bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 border-yellow-300/50' : 'text-gray-900'" class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm" :href="item.href">
+    <span x-text="item.label" class="font-bold tracking-wide"></span>
+  </a>
+</template>
+</div>
+</div>
+</div>
+</nav>
+
+<main class="relative pt-40 pb-28 bg-gradient-to-b from-slate-50 via-white to-slate-100">
+  <!-- Sticky mobile CTA handled below -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-40">
+    <div class="mx-4 mb-5 rounded-3xl border border-slate-200 bg-white/95 px-4 py-3 shadow-[0_20px_80px_-40px_rgba(10,28,46,0.75)] backdrop-blur">
+      <div class="flex items-center justify-between gap-3">
+        <div>
+          <p class="text-sm font-semibold text-brand.navy">{{PART_NAME}}</p>
+          <p class="text-xs text-slate-500">Part No. {{PART_NUMBER}} • {{BRAND}}</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="tel:+919821037990" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-brand.navy shadow-sm">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3l3 7-3 2a12 12 0 005 5l2-3 7 3v3a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+          </a>
+          <a id="sticky-whatsapp" href="https://wa.me/919821037990?text=Hi!%20Can%20you%20help%20with%20Part%20{{PART_NUMBER}}%20(%20{{PART_NAME}}%20)%3F" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full bg-brand.accent px-4 py-2 text-xs font-semibold text-brand.navy shadow">
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto flex max-w-7xl flex-col gap-16 px-4 sm:px-6 lg:px-8">
+    <!-- Breadcrumbs -->
+    <nav class="mt-6 flex items-center gap-2 text-sm text-slate-500" aria-label="Breadcrumb">
+      <a href="/" class="font-medium text-brand.navy hover:text-brand.accent">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="/brands/{{BRAND | slug}}.html" class="hover:text-brand.accent">{{BRAND}}</a>
+      <span aria-hidden="true">/</span>
+      <a href="/categories/{{CATEGORY | slug}}.html" class="hover:text-brand.accent">{{CATEGORY}}</a>
+      <span aria-hidden="true">/</span>
+      <span class="font-semibold text-brand.navy">{{PART_NAME}}</span>
+    </nav>
+
+    <!-- Hero -->
+    <section class="grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div class="relative rounded-3xl border border-slate-200 bg-white/80 p-8 shadow-soft">
+        <span class="absolute left-6 top-6 inline-flex items-center gap-2 rounded-full bg-brand.navy px-4 py-1 text-xs font-semibold tracking-wide text-white shadow-lg shadow-brand.navy/40">
+          <span class="inline-flex h-2 w-2 animate-pulse rounded-full bg-brand.accent"></span>
+          Neutral illustration
+        </span>
+        <div class="grid min-h-[360px] place-items-center">
+          <svg class="h-48 w-48 text-slate-400/80" viewBox="0 0 200 200" fill="none">
+            <rect x="25" y="60" width="150" height="90" rx="18" stroke="currentColor" stroke-width="6" stroke-dasharray="14 12"/>
+            <path d="M60 120 Q100 70 140 120" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="60" cy="120" r="18" stroke="currentColor" stroke-width="6"/>
+            <circle cx="140" cy="120" r="18" stroke="currentColor" stroke-width="6"/>
+            <path d="M100 118 L142 75" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <h1 class="text-3xl font-extrabold leading-tight text-brand.navy sm:text-4xl lg:text-5xl">
+          {{BRAND}} {{PART_NAME}} — Part No. {{PART_NUMBER}}
+        </h1>
+        <p class="text-lg text-slate-600">
+          {{PART_NAME}} delivers dependable flow routing across {{BRAND}} {{CATEGORY}} platforms. Supported by technician guidance and quick availability.
+        </p>
+        <ul class="space-y-3 text-sm font-medium text-slate-700">
+          <li class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-brand.accent"></span>
+            In-demand replacement component
+          </li>
+          <li class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-brand.accent"></span>
+            Mechanic-assisted part identification
+          </li>
+          <li class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
+            <span class="h-2 w-2 rounded-full bg-brand.accent"></span>
+            Fast availability updates
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Part Matching Module -->
+    <section class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+      <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
+        <div class="space-y-3">
+          <h2 class="text-2xl font-bold text-brand.navy">Find the Right Match for {{PART_NUMBER}}</h2>
+          <p class="text-slate-600">
+            Share your part number, vehicle model, or a photo of the part — our technician will confirm compatibility and share pricing.
+          </p>
+        </div>
+        <form class="mt-8 grid gap-5" onsubmit="submitEmailLead(event)">
+          <div class="grid gap-2">
+            <label class="text-sm font-semibold text-slate-600">Part Number</label>
+            <input type="text" value="{{PART_NUMBER}}" readonly class="rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-sm font-semibold text-brand.navy shadow-inner"/>
+          </div>
+          <div class="grid gap-2">
+            <label for="vehicle-model" class="text-sm font-semibold text-slate-600">Vehicle Model / Series</label>
+            <input id="vehicle-model" type="text" placeholder="Example: {{BRAND}} P410 / G440" class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand.navy shadow-inner focus:border-brand.accent focus:outline-none focus:ring-4 focus:ring-brand.accent/30"/>
+          </div>
+          <div class="grid gap-2">
+            <label class="text-sm font-semibold text-slate-600">Tell us what you're repairing</label>
+            <select id="repair-context" class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand.navy shadow-inner focus:border-brand.accent focus:outline-none focus:ring-4 focus:ring-brand.accent/30">
+              <option value="" selected>Select an option</option>
+              <option value="steering">Steering circuit</option>
+              <option value="hydraulic">Hydraulic supply line</option>
+              <option value="cooling">Cooling assembly</option>
+              <option value="suspension">Suspension routing</option>
+              <option value="other">Other / unsure</option>
+            </select>
+          </div>
+          <div class="grid gap-2">
+            <label class="text-sm font-semibold text-slate-600">Upload part photo</label>
+            <button type="button" onclick="document.getElementById('part-photo').click();" class="inline-flex items-center gap-2 rounded-2xl border border-dashed border-brand.navy/30 bg-slate-100 px-4 py-3 text-sm font-semibold text-brand.navy shadow-inner transition hover:border-brand.accent hover:bg-white">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3l2 3h8a2 2 0 012 2v3m-3 4h-3m0 0V12m0 4l-3 3m3-3l3 3"/>
+              </svg>
+              Upload part photo
+            </button>
+            <input type="file" id="part-photo" accept="image/*" class="hidden" onchange="handlePhotoSelection(event)"/>
+            <p id="photo-helper" class="text-xs text-slate-500">Attach a clear photo of the existing part or stamped number.</p>
+          </div>
+          <div class="grid gap-2">
+            <label for="contact-name" class="text-sm font-semibold text-slate-600">Name</label>
+            <input id="contact-name" type="text" placeholder="Your name" required class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand.navy shadow-inner focus:border-brand.accent focus:outline-none focus:ring-4 focus:ring-brand.accent/30"/>
+          </div>
+          <div class="grid gap-2">
+            <label for="contact-phone" class="text-sm font-semibold text-slate-600">Phone number</label>
+            <input id="contact-phone" type="tel" pattern="[0-9+ ]{6,}" placeholder="+91 98210 37990" required class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand.navy shadow-inner focus:border-brand.accent focus:outline-none focus:ring-4 focus:ring-brand.accent/30"/>
+          </div>
+          <div class="grid gap-2">
+            <label for="contact-email" class="text-sm font-semibold text-slate-600">Email (optional)</label>
+            <input id="contact-email" type="email" placeholder="you@example.com" class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-brand.navy shadow-inner focus:border-brand.accent focus:outline-none focus:ring-4 focus:ring-brand.accent/30"/>
+          </div>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <a id="cta-whatsapp" href="https://wa.me/919821037990?text=Hi!%20Please%20confirm%20availability%20for%20{{PART_NUMBER}}%20(%20{{PART_NAME}}%20)%20and%20help%20me%20match%20it%20to%20my%20vehicle." target="_blank" rel="noopener" class="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-brand.accent px-5 py-3 text-sm font-semibold text-brand.navy shadow-lg shadow-brand.accent/40 transition hover:-translate-y-[1px] hover:bg-yellow-400">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7"/>
+              </svg>
+              WhatsApp Technician
+            </a>
+            <button type="submit" class="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-brand.navy shadow-lg shadow-brand.navy/10 transition hover:-translate-y-[1px] hover:bg-slate-100">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5l9 6 9-6M4.5 6h15a1.5 1.5 0 011.5 1.5v9a1.5 1.5 0 01-1.5 1.5h-15A1.5 1.5 0 013 16.5v-9A1.5 1.5 0 014.5 6z"/>
+              </svg>
+              Get Details by Email
+            </button>
+          </div>
+          <p class="text-xs text-slate-400">Quick response during business hours.</p>
+        </form>
+      </div>
+      <div class="grid gap-6">
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <h3 class="text-lg font-semibold text-brand.navy">Upload a photo for faster matching</h3>
+          <p class="mt-3 text-sm text-slate-600">
+            Crisp images of stamped numbers, hose routing, or the assembly help us confirm the right {{PART_NAME}} without delays.
+          </p>
+          <button type="button" onclick="document.getElementById('part-photo').click();" class="mt-5 inline-flex items-center gap-2 rounded-full border border-brand.navy/30 bg-brand.navy/10 px-4 py-2 text-xs font-semibold text-brand.navy shadow-sm">
+            Upload part photo
+          </button>
+        </div>
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft">
+          <h3 class="text-lg font-semibold text-brand.navy">Related parts • Often ordered with {{PART_NUMBER}}</h3>
+          <ul class="mt-4 space-y-3 text-sm text-brand.navy">
+            <li class="flex items-center justify-between">
+              <div>
+                <p class="font-medium">{{RELATED_PART_1_NAME}}</p>
+                <p class="text-xs text-slate-500">Part No. {{RELATED_PART_1_NUMBER}}</p>
+              </div>
+              <a href="/products/{{RELATED_PART_1_NUMBER}}.html" class="rounded-full border border-brand.navy/40 px-3 py-1 text-xs font-semibold text-brand.navy hover:bg-brand.navy hover:text-white">View</a>
+            </li>
+            <li class="flex items-center justify-between">
+              <div>
+                <p class="font-medium">{{RELATED_PART_2_NAME}}</p>
+                <p class="text-xs text-slate-500">Part No. {{RELATED_PART_2_NUMBER}}</p>
+              </div>
+              <a href="/products/{{RELATED_PART_2_NUMBER}}.html" class="rounded-full border border-brand.navy/40 px-3 py-1 text-xs font-semibold text-brand.navy hover:bg-brand.navy hover:text-white">View</a>
+            </li>
+            <li class="flex items-center justify-between">
+              <div>
+                <p class="font-medium">{{RELATED_PART_3_NAME}}</p>
+                <p class="text-xs text-slate-500">Part No. {{RELATED_PART_3_NUMBER}}</p>
+              </div>
+              <a href="/products/{{RELATED_PART_3_NUMBER}}.html" class="rounded-full border border-brand.navy/40 px-3 py-1 text-xs font-semibold text-brand.navy hover:bg-brand.navy hover:text-white">View</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEO Description -->
+    <section class="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
+      <h2 class="text-2xl font-bold text-brand.navy">About {{PART_NAME}} (Part No. {{PART_NUMBER}})</h2>
+      <p class="mt-4 text-base leading-7 text-slate-600">
+        {{PART_NAME}} supports {{BRAND}} {{CATEGORY}} systems where fluid routing needs a stable elbow or union. Workshops typically inspect this part when technicians spot fluid seepage, staining around hose clamps, or hear unusual hiss during steering cycles. In many cases, mechanics match the stamped number on the existing component and compare the bend angle against service diagrams. This part is usually replaced while hoses are refreshed, during comprehensive overhauls, or after collisions that stress pressure lines. If you aren’t certain the number you have on file is exact, share a quick photo of the current installation. Our support team will confirm the match, discuss availability, and give you an accurate dispatch timeline.
+      </p>
+    </section>
+
+    <!-- Technical Section -->
+    <section class="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
+      <div class="divide-y divide-slate-200">
+        <details open class="group py-5">
+          <summary class="flex items-center justify-between text-lg font-semibold text-brand.navy">
+            Technical Information
+            <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600">
+            Detailed specifications available upon request. Share a part photo for quick confirmation.
+          </p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex items-center justify-between text-lg font-semibold text-brand.navy">
+            Common Usage
+            <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600">
+            This component is frequently used in hydraulic or pressure-line assemblies on {{BRAND}} vehicles.
+          </p>
+        </details>
+        <details class="group py-5">
+          <summary class="flex items-center justify-between text-lg font-semibold text-brand.navy">
+            Identification Help
+            <svg class="h-5 w-5 text-slate-400 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600">
+            Mechanics usually identify this part by matching the stamped number on the original fitting.
+          </p>
+        </details>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- FOOTER (unchanged theme) -->
+<footer class="site-footer relative overflow-hidden">
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+<div class="floating-shape circle absolute w-3 h-3 bg-yellow-400/6 rounded-full animate-float-slow" style="top: 20%; left: 15%; animation-delay: 0s;"></div>
+<div class="floating-shape circle absolute w-4 h-4 bg-yellow-300/5 rounded-full animate-float-medium" style="top: 40%; right: 30%; animation-delay: 1.8s;"></div>
+<div class="floating-shape circle absolute w-2 h-2 bg-yellow-500/8 rounded-full animate-float-fast" style="bottom: 30%; left: 25%; animation-delay: 3.2s;"></div>
+<div class="floating-shape circle absolute w-5 h-5 bg-yellow-400/4 rounded-full animate-float-slow" style="bottom: 20%; right: 20%; animation-delay: 0.9s;"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Contact Details Box -->
+<div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-gray-700/50 shadow-2xl">
+<div class="text-center mb-8">
+<h3 class="text-2xl font-bold text-white mb-2">Contact Information</h3>
+<div class="w-16 h-1 bg-yellow-400 mx-auto rounded-full"></div>
+</div>
+<div class="relative">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Contact Information Column 1 (Phone Numbers & Email) -->
+<div class="text-center lg:text-left pl-4">
+<div class="space-y-4">
+<div class="flex items-start justify-center lg:justify-start">
+<div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+<svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<div class="font-semibold text-white mb-1">Landline</div>
+<a class="text-yellow-400 hover:text-yellow-300 transition-colors text-sm" href="tel:+912240755999">+91 22407 55999</a>
+</div>
+</div>
+<div class="flex items-start justify-center lg:justify-start">
+<div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+<svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<div class="font-semibold text-white mb-1">Mobile</div>
+<a class="text-yellow-400 hover:text-yellow-300 transition-colors text-sm" href="tel:+919821037990">+91 98210 37990</a>
+</div>
+</div>
+<div class="flex items-start justify-center lg:justify-start">
+<div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+<svg class="w-5 h-5 text-yellow-400" fill="none" stroke="CurrentColor" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<div class="font-semibold text-white mb-1">Email</div>
+<a class="text-yellow-400 hover:text-yellow-300 transition-colors text-sm" href="mailto:parts@partstrading.com">parts@partstrading.com</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Information Column 2 (Address) -->
+<div class="text-center lg:text-right pr-4">
+<div class="space-y-4">
+<div class="flex items-start justify-center lg:justify-end">
+<div class="text-right">
+<div class="font-semibold text-white mb-1">Address</div>
+<a class="text-yellow-400 hover:text-yellow-300 transition-colors text-sm leading-relaxed" href="https://www.google.com/maps/dir//1st+Floor,+Parts+Trading+Company,+Vijay+Chambers,+opp.+Dreamland+Cinema,+Grant+Road+East,+Shapur+Baug,+Grant+Road,+Mumbai,+Maharashtra+400004,+India/@18.9602634,72.7367389,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3be7ce13b538727b:0x9daa2711223502bd!2m2!1d72.8191406!2d18.9602816?entry=ttu&amp;g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                                    1st Floor, Parts Trading Company,<br/>
+                                    Vijay Chambers, opp. Dreamland Cinema,<br/>
+                                    Grant Road, Mumbai, Maharashtra 400004
+                                </a>
+</div>
+<div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center ml-4 flex-shrink-0">
+<svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Save Contact Button - Centered -->
+<div class="text-center mt-8">
+<a class="inline-flex items-center px-6 py-3 bg-yellow-500 text-gray-900 rounded-lg font-semibold hover:bg-yellow-400 transition-colors text-sm shadow-lg hover:shadow-xl" download="" href="parts_trading_company.vcf">
+<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                    Save Contact
+                </a>
+</div>
+</div>
+<!-- Vertical Separator Line -->
+<div class="hidden lg:block absolute left-1/2 top-24 bottom-20 w-px bg-gray-600 transform -translate-x-1/2"></div>
+</div>
+</div>
+<!-- Google Maps Integration -->
+<div class="mb-8">
+<div class="bg-gray-800 rounded-lg p-6">
+<h3 class="text-lg font-semibold text-white mb-4 text-center">Find Us on Google Maps</h3>
+<div class="rounded-lg overflow-hidden shadow-lg relative group cursor-pointer" onclick="window.open('https://www.google.com/maps/dir//1st+Floor,+Parts+Trading+Company,+Vijay+Chambers,+opp.+Dreamland+Cinema,+Grant+Road+East,+Shapur+Baug,+Grant+Road,+Mumbai,+Maharashtra+400004,+India/@18.9602634,72.7367389,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3be7ce13b538727b:0x9daa2711223502bd!2m2!1d72.8191406!2d18.9602816?entry=ttu&amp;g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D', '_blank')">
+<iframe allowfullscreen="" class="rounded-lg" height="250" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.5!2d72.8191406!3d18.9602816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce13b538727b:0x9daa2711223502bd!2sParts+Trading+Company!5e0!3m2!1sen!2sin!4v1234567890" style="border:0;" width="100%"></iframe>
+<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<div class="bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 text-gray-900 font-semibold">
+                        Click to open in Google Maps
+                    </div>
+</div>
+</div>
+<div class="text-center mt-4">
+<a class="inline-flex items-center px-6 py-3 bg-yellow-500 text-gray-900 rounded-lg font-semibold hover:bg-yellow-400 transition-colors text-sm shadow-lg hover:shadow-xl" href="https://www.google.com/maps/dir//1st+Floor,+Parts+Trading+Company,+Vijay+Chambers,+opp.+Dreamland+Cinema,+Grant+Road+East,+Shapur+Baug,+Grant+Road,+Mumbai,+Maharashtra+400004,+India/@18.9602634,72.7367389,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3be7ce13b538727b:0x9daa2711223502bd!2m2!1d72.8191406!2d18.9602816?entry=ttu&amp;g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24" aria-hidden="true">
+<path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+                    Open in Google Maps
+                </a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-600 pt-6">
+<div class="text-center text-gray-400">© Parts Trading Company. All rights reserved.</div>
+<div class="text-sm text-gray-400 mt-2 text-center">GST: 27AAAFP1087E1ZG</div>
+<div class="disclaimer mt-4 text-center text-gray-400">
+Disclaimer: All brand names, logos, images, and part numbers used on this website are for identification and reference purposes only. Parts Trading Company is not affiliated with any original equipment manufacturers (OEMs) unless specifically stated. We offer a range of products that may include genuine OEM parts or compatible high-quality aftermarket alternatives, based on availability and customer requirements.
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+  function handlePhotoSelection(event) {
+    const helper = document.getElementById('photo-helper');
+    if (event.target.files && event.target.files.length > 0) {
+      helper.textContent = `${event.target.files[0].name} attached.`;
+      helper.classList.remove('text-slate-500');
+      helper.classList.add('text-brand.navy');
+    } else {
+      helper.textContent = 'Attach a clear photo of the existing part or stamped number.';
+      helper.classList.remove('text-brand.navy');
+      helper.classList.add('text-slate-500');
+    }
+  }
+
+  function buildWhatsAppMessage() {
+    const partNumber = '{{PART_NUMBER}}';
+    const partName = '{{PART_NAME}}';
+    const model = document.getElementById('vehicle-model').value.trim();
+    const repair = document.getElementById('repair-context').value;
+    const name = document.getElementById('contact-name').value.trim();
+    const phone = document.getElementById('contact-phone').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+
+    let message = `Hi! Please help with ${partName} (Part No. ${partNumber}).`;
+    if (model) message += ` Vehicle model/series: ${model}.`;
+    if (repair) message += ` Repair context: ${repair}.`;
+    if (name) message += ` Name: ${name}.`;
+    if (phone) message += ` Phone: ${phone}.`;
+    if (email) message += ` Email: ${email}.`;
+    message += ' Please confirm compatibility and share pricing.';
+
+    return `https://wa.me/919821037990?text=${encodeURIComponent(message)}`;
+  }
+
+  function syncWhatsAppLinks() {
+    const href = buildWhatsAppMessage();
+    document.getElementById('cta-whatsapp').href = href;
+    document.getElementById('sticky-whatsapp').href = href;
+  }
+
+  ['vehicle-model', 'repair-context', 'contact-name', 'contact-phone', 'contact-email'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', syncWhatsAppLinks);
+    }
+  });
+
+  function submitEmailLead(event) {
+    event.preventDefault();
+    const partNumber = '{{PART_NUMBER}}';
+    const partName = '{{PART_NAME}}';
+    const model = document.getElementById('vehicle-model').value.trim();
+    const repair = document.getElementById('repair-context').value;
+    const name = document.getElementById('contact-name').value.trim();
+    const phone = document.getElementById('contact-phone').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+
+    let body = `Part enquiry:%0A- Part: ${partName} (Part No. ${partNumber})`;
+    if (model) body += `%0A- Vehicle model/series: ${model}`;
+    if (repair) body += `%0A- Repair context: ${repair}`;
+    if (name) body += `%0A- Name: ${name}`;
+    if (phone) body += `%0A- Phone: ${phone}`;
+    if (email) body += `%0A- Email: ${email}`;
+    body += `%0A%0APlease confirm compatibility and pricing.`;
+
+    window.location.href = `mailto:parts@partstrading.com?subject=Part%20No.%20${partNumber}%20enquiry&body=${body}`;
+  }
+
+  syncWhatsAppLinks();
+</script>
+</body>
+</html>
+
