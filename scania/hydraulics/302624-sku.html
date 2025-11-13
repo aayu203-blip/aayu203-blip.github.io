@@ -96,73 +96,146 @@
     80% { opacity: 1; transform: translateY(0);}
     100% { opacity: 0; transform: translateY(-10px);}
   }
+  .bg-brand-accent { background-color: #f6c000; }
+  .text-brand-navy { color: #0a1c2e; }
+  .focus-visible\:ring-brand-accent:focus-visible { outline: 2px solid rgba(246, 192, 0, 0.6); outline-offset: 2px; }
+  .ptc-sku-header.ptc-sku-shrink .ptc-sku-inner { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+  .ptc-sku-header.ptc-sku-shrink .ptc-sku-logo { height: 2.25rem !important; }
 </style>
 </head>
-<body class="ptc-product-page bg-slate-50 font-sans text-slate-900">
-<header id="ptc-header" class="ptc-header-a fixed inset-x-0 top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200 transition-all duration-200">
+<body data-sku="302624" data-sku-name="Scania Elbow Union" class="ptc-product-page bg-slate-50 font-sans text-slate-900">
+<header id="ptc-sku-header" class="ptc-sku-header fixed inset-x-0 top-0 z-40 bg-white/92 backdrop-blur border-b border-slate-200 transition-all duration-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between gap-4 lg:h-18">
-      <a href="/" class="inline-flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" aria-label="Parts Trading Company home">
-        <img src="../../assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 w-auto transition-all duration-200 lg:h-10" />
-      </a>
+    <div class="ptc-sku-inner flex w-full items-center gap-4 py-3 lg:py-4">
+      <div class="flex flex-1 items-center gap-3 lg:flex-none">
+        <button id="ptc-sku-menu" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent lg:hidden" aria-label="Open navigation" aria-controls="ptc-sku-nav-panel" aria-expanded="false">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <a href="/" class="inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:rounded-xl" aria-label="Parts Trading Company home">
+          <img src="../../assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="ptc-sku-logo h-12 w-auto transition-all duration-200 md:h-10 sm:h-8" />
+        </a>
+      </div>
 
-      <nav aria-label="Primary" class="hidden lg:flex items-center gap-6 text-sm font-semibold text-brand-navy">
+      <nav aria-label="Primary navigation" class="hidden lg:flex flex-1 items-center justify-center gap-6 text-sm font-semibold text-brand-navy">
         <a href="/#product-categories" class="hover:text-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:rounded">Products</a>
         <a href="/#brands" class="hover:text-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:rounded">Brands</a>
-        <a href="/#faq" class="hover:text-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:rounded">Support</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <button id="ptc-search-trigger" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 hover:text-brand-navy shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" aria-haspopup="dialog" aria-controls="ptc-search-dialog" aria-expanded="false">
-          <span class="sr-only">Search</span>
-          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M11 17a6 6 0 100-12 6 6 0 000 12z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20 20l-3-3" /></svg>
-        </button>
+      <div class="flex flex-1 items-center justify-end gap-3">
+        <form id="ptc-sku-search" role="search" class="hidden lg:flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-2 shadow-sm focus-within:ring-2 focus-within:ring-brand-accent">
+          <label for="ptc-sku-search-input" class="sr-only">Search by SKU or keyword</label>
+          <svg class="h-5 w-5 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M11 17a6 6 0 100-12 6 6 0 000 12z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20 20l-3-3" /></svg>
+          <input id="ptc-sku-search-input" name="q" type="search" autocomplete="off" placeholder="Search SKU (ex: 302624) or keyword" class="w-60 bg-transparent text-sm text-brand-navy placeholder-slate-400 focus:outline-none" />
+          <button type="submit" class="rounded-xl bg-brand-accent px-3 py-1 text-xs font-semibold text-brand-navy shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">Search</button>
+        </form>
 
-        <a href="tel:+91XXXXXXXXXX" data-analytics="cta" class="hidden lg:inline-flex items-center gap-3 rounded-full bg-brand-accent px-5 py-2 text-sm font-semibold text-brand-navy shadow-md hover:-translate-y-[1px] hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">
-          Call / WhatsApp +91XXXXXXXXXX
+        <a href="tel:+91XXXXXXXXXX" class="hidden lg:inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm hover:text-brand-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" data-analytics="header_cta_click" data-cta-type="call" aria-label="Call Parts Trading Company">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.6a1 1 0 01.95.69l1.16 3.48a1 1 0 01-.5 1.2l-1.5.75a11.03 11.03 0 005.52 5.52l.75-1.5a1 1 0 011.2-.5l3.48 1.16a1 1 0 01.69.95V19a2 2 0 01-2 2H18C11.373 21 6 15.627 6 9V7a2 2 0 012-2z"/></svg>
         </a>
-        <p class="hidden lg:block text-[11px] text-slate-500">Talk to a technician</p>
 
-        <button id="ptc-menu-trigger" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 hover:text-brand-navy shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent lg:hidden" aria-label="Open menu" aria-haspopup="true" aria-controls="ptc-mobile-menu" aria-expanded="false">
-          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <button id="ptc-sku-request" type="button" class="hidden lg:inline-flex items-center gap-2 rounded-full border border-brand-navy/30 bg-white px-5 py-2 text-sm font-semibold text-brand-navy shadow-sm hover:-translate-y-[1px] hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" data-analytics="header_request_open" aria-haspopup="dialog">
+          Request Price
         </button>
+
+        <a id="ptc-sku-whatsapp" href="https://wa.me/919XXXXXXXXXX" class="hidden md:inline-flex items-center gap-2 rounded-full bg-brand-accent px-5 py-2 text-sm font-semibold text-brand-navy shadow-lg shadow-brand-accent/35 hover:-translate-y-[1px] hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" data-analytics="header_cta_click" data-cta-type="whatsapp">
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7"/></svg>
+          WhatsApp +91XXXXXXXXXX
+        </a>
+        <a id="ptc-sku-whatsapp-mobile" href="https://wa.me/919XXXXXXXXXX" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-brand-accent text-brand-navy shadow-lg shadow-brand-accent/35 hover:-translate-y-[1px] hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent md:hidden" data-analytics="header_cta_click" data-cta-type="whatsapp" aria-label="WhatsApp technician">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7"/></svg>
+        </a>
       </div>
     </div>
   </div>
 
-  <div id="ptc-mobile-menu" class="ptc-mobile-menu hidden lg:hidden fixed inset-x-0 top-16 bg-white/95 backdrop-blur border-b border-slate-200 shadow-lg">
-    <nav aria-label="Mobile primary" class="px-4 py-4 space-y-2 text-base font-semibold text-brand-navy">
+  <div class="lg:hidden border-t border-slate-200 bg-white/95">
+    <form id="ptc-sku-search-mobile" role="search" class="mx-4 my-3 flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-2 shadow-sm focus-within:ring-2 focus-within:ring-brand-accent">
+      <label for="ptc-sku-search-input-mobile" class="sr-only">Search by SKU or keyword</label>
+      <svg class="h-5 w-5 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M11 17a6 6 0 100-12 6 6 0 000 12z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20 20l-3-3" /></svg>
+      <input id="ptc-sku-search-input-mobile" name="q" type="search" placeholder="Search SKU or keyword" class="flex-1 bg-transparent text-sm text-brand-navy placeholder-slate-400 focus:outline-none" />
+      <button type="submit" class="rounded-xl bg-brand-accent px-3 py-1 text-xs font-semibold text-brand-navy shadow hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">Search</button>
+    </form>
+  </div>
+
+  <div id="ptc-sku-nav-panel" class="hidden lg:hidden border-t border-slate-200 bg-white/95 backdrop-blur shadow-lg">
+    <nav aria-label="Mobile navigation" class="px-4 py-4 space-y-2 text-base font-semibold text-brand-navy">
       <a href="/#product-categories" class="block rounded-lg px-3 py-2 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">Products</a>
       <a href="/#brands" class="block rounded-lg px-3 py-2 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">Brands</a>
-      <a href="/#faq" class="block rounded-lg px-3 py-2 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">Support</a>
-      <a href="tel:+91XXXXXXXXXX" class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-accent px-4 py-2 text-sm font-semibold text-brand-navy shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" data-analytics="cta">Call / WhatsApp +91XXXXXXXXXX</a>
+      <button type="button" id="ptc-sku-request-mobile" class="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full border border-brand-navy/30 bg-white px-4 py-2 text-sm font-semibold text-brand-navy shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" data-analytics="header_request_open" aria-haspopup="dialog">
+        Request Price
+      </button>
+      <a id="ptc-sku-whatsapp-mobile-panel" href="https://wa.me/919XXXXXXXXXX" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-accent px-4 py-2 text-sm font-semibold text-brand-navy shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" data-analytics="header_cta_click" data-cta-type="whatsapp">
+        WhatsApp +91XXXXXXXXXX
+      </a>
+      <a href="tel:+91XXXXXXXXXX" class="block text-center text-xs text-slate-500">Call +91XXXXXXXXXX</a>
     </nav>
   </div>
 </header>
 
-<div id="ptc-search-dialog" role="dialog" aria-modal="true" aria-hidden="true" class="ptc-search hidden fixed inset-0 z-50 items-center justify-center bg-black/40 px-4">
-  <div class="w-full max-w-xl rounded-2xl bg-white p-6 shadow-xl">
-    <div class="flex items-center gap-3">
-      <svg class="h-5 w-5 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M11 17a6 6 0 100-12 6 6 0 000 12z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20 20l-3-3" /></svg>
-      <input type="search" class="flex-1 border-0 text-slate-900 placeholder-slate-400 focus:ring-0" placeholder="Search part number or keyword…" />
-      <button type="button" class="inline-flex h-8 w-8 items-center justify-center rounded-full text-slate-500 hover:text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" id="ptc-search-close">
-        <span class="sr-only">Close search</span>
-        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6"/></svg>
-      </button>
+<div id="ptc-sku-sticky" class="fixed inset-x-0 bottom-0 z-40 hidden mx-4 mb-5 rounded-2xl border border-slate-200 bg-white/95 px-4 py-3 shadow-2xl backdrop-blur md:hidden">
+  <div class="flex items-center justify-between gap-3">
+    <div>
+      <p id="ptc-sku-sticky-title" class="text-sm font-semibold text-brand-navy">SKU • In stock</p>
+      <p id="ptc-sku-sticky-subtitle" class="text-xs text-slate-500">Product summary</p>
+    </div>
+    <div class="flex items-center gap-2">
+      <a id="ptc-sku-sticky-wa" href="#" class="inline-flex items-center gap-2 rounded-full bg-brand-accent px-4 py-2 text-xs font-semibold text-brand-navy shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" data-analytics="header_cta_click" data-cta-type="whatsapp">WhatsApp</a>
+      <button type="button" id="ptc-sku-sticky-request" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-brand-navy shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" data-analytics="header_request_open">Request Price</button>
     </div>
   </div>
 </div>
 
-<div id="ptc-sticky-sku" class="fixed inset-x-0 bottom-0 z-40 mx-4 mb-5 hidden rounded-2xl border border-slate-200 bg-white/95 px-4 py-3 shadow-2xl backdrop-blur md:hidden">
-  <div class="flex items-center justify-between gap-3">
-    <div>
-      <p class="text-sm font-semibold text-brand-navy">302624 • In stock</p>
-      <p class="text-xs text-slate-500">Scania Elbow Union</p>
+<div id="ptc-sku-modal" class="hidden fixed inset-0 z-50 items-center justify-center bg-black/40 px-4">
+  <div class="w-full max-w-lg rounded-3xl bg-white shadow-xl">
+    <div class="flex items-center justify-between border-b border-slate-200 px-6 py-4">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">Request price</p>
+        <h2 class="text-lg font-bold text-brand-navy">Start a quote</h2>
+      </div>
+      <button id="ptc-sku-modal-close" class="inline-flex h-9 w-9 items-center justify-center rounded-full text-slate-500 hover:text-brand-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">
+        <span class="sr-only">Close</span>
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6"/></svg>
+      </button>
     </div>
-    <div class="flex items-center gap-2">
-      <a href="https://wa.me/919821037990?text=Hi%20PTC%2C%20I%20need%20price%20and%20availability%20for%20Part%20No.%20302624%20(Qty:%201)%20Please%20confirm%20fitment.%20Source:productpage&utm_source=site&utm_medium=whatsapp&utm_campaign=sku_302624" class="inline-flex items-center gap-2 rounded-full bg-brand-accent px-4 py-2 text-xs font-semibold text-brand-navy shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" data-analytics="sticky_whatsapp">WhatsApp</a>
-      <button type="button" class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold text-brand-navy shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" onclick="document.getElementById('price-form').scrollIntoView({behavior:'smooth'})" data-analytics="sticky_request">Request Price</button>
-    </div>
+    <form id="ptc-sku-modal-form" class="space-y-4 px-6 py-6">
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-[0.28em] text-slate-400" for="ptc-sku-modal-sku">SKU</label>
+        <input id="ptc-sku-modal-sku" name="sku" type="text" readonly class="mt-1 w-full rounded-2xl border border-slate-200 bg-slate-100 px-4 py-3 text-sm font-semibold text-brand-navy" />
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-[0.28em] text-slate-400" for="ptc-sku-modal-qty">Qty</label>
+          <input id="ptc-sku-modal-qty" name="qty" type="number" min="1" required class="mt-1 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-brand-navy focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/40" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-[0.28em] text-slate-400" for="ptc-sku-modal-name">Name</label>
+          <input id="ptc-sku-modal-name" name="name" type="text" required class="mt-1 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-brand-navy focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/40" />
+        </div>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-[0.28em] text-slate-400" for="ptc-sku-modal-phone">Phone</label>
+          <input id="ptc-sku-modal-phone" name="phone" type="tel" pattern="[0-9+ ]{6,}" required class="mt-1 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-brand-navy focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/40" />
+        </div>
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-[0.28em] text-slate-400" for="ptc-sku-modal-email">Email (optional)</label>
+          <input id="ptc-sku-modal-email" name="email" type="email" class="mt-1 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-brand-navy focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/40" />
+        </div>
+      </div>
+      <div>
+        <label class="block text-xs font-semibold uppercase tracking-[0.28em] text-slate-400" for="ptc-sku-modal-notes">Notes</label>
+        <textarea id="ptc-sku-modal-notes" name="notes" rows="3" class="mt-1 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-brand-navy focus:border-brand-accent focus:outline-none focus:ring-2 focus:ring-brand-accent/40" placeholder="Share machine model or urgency"></textarea>
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <button type="submit" class="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-brand-accent px-5 py-3 text-sm font-semibold text-brand-navy shadow-lg shadow-brand-accent/40 hover:-translate-y-[1px] hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">
+          Submit request
+        </button>
+        <button type="button" id="ptc-sku-modal-cancel" class="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-brand-navy shadow-sm hover:-translate-y-[1px] hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">
+          Cancel
+        </button>
+      </div>
+      <p class="text-xs text-slate-400">We respond within minutes during business hours. This form shares the SKU with our sales desk.</p>
+    </form>
   </div>
 </div>
 
@@ -442,75 +515,166 @@
 <script>
   (function () {
     const dataLayer = window.dataLayer || (window.dataLayer = []);
-    const header = document.getElementById('ptc-header');
-    const menuTrigger = document.getElementById('ptc-menu-trigger');
-    const mobileMenu = document.getElementById('ptc-mobile-menu');
-    const searchTrigger = document.getElementById('ptc-search-trigger');
-    const searchDialog = document.getElementById('ptc-search-dialog');
-    const searchClose = document.getElementById('ptc-search-close');
-    const stickyBar = document.getElementById('ptc-sticky-sku');
+    const body = document.body;
+    const header = document.getElementById('ptc-sku-header');
+    const menuBtn = document.getElementById('ptc-sku-menu');
+    const navPanel = document.getElementById('ptc-sku-nav-panel');
+    const searchForms = [document.getElementById('ptc-sku-search'), document.getElementById('ptc-sku-search-mobile')].filter(Boolean);
+    const searchInputs = [document.getElementById('ptc-sku-search-input'), document.getElementById('ptc-sku-search-input-mobile')].filter(Boolean);
+    const whatsAppButtons = [document.getElementById('ptc-sku-whatsapp'), document.getElementById('ptc-sku-whatsapp-mobile'), document.getElementById('ptc-sku-whatsapp-mobile-panel'), document.getElementById('ptc-sku-sticky-wa')].filter(Boolean);
+    const requestButtons = [document.getElementById('ptc-sku-request'), document.getElementById('ptc-sku-request-mobile'), document.getElementById('ptc-sku-sticky-request')].filter(Boolean);
+    const modal = document.getElementById('ptc-sku-modal');
+    const modalForm = document.getElementById('ptc-sku-modal-form');
+    const modalClose = document.getElementById('ptc-sku-modal-close');
+    const modalCancel = document.getElementById('ptc-sku-modal-cancel');
+    const modalSku = document.getElementById('ptc-sku-modal-sku');
+    const stickyBar = document.getElementById('ptc-sku-sticky');
+    const stickyTitle = document.getElementById('ptc-sku-sticky-title');
+    const stickySubtitle = document.getElementById('ptc-sku-sticky-subtitle');
+    let ptc_header_lastFocus = null;
 
-    function pushEvent(event, detail = {}) {
+    const ptc_header_pageSku = body.dataset.sku || '302624';
+    const ptc_header_pageName = body.dataset.skuName || 'Scania Elbow Union';
+    const ptc_header_skuRegex = /\b\d{3,}\b/;
+
+    function ptc_header_pushEvent(event, detail = {}) {
       dataLayer.push({ event, header_variant: 'A', ...detail });
     }
 
-    function shrinkOnScroll() {
+    function ptc_header_toggleNav(force) {
+      if (!menuBtn || !navPanel) return;
+      const shouldOpen = typeof force === 'boolean' ? force : navPanel.classList.contains('hidden');
+      navPanel.classList.toggle('hidden', !shouldOpen);
+      menuBtn.setAttribute('aria-expanded', shouldOpen);
+      ptc_header_pushEvent('header_menu_open', { open: shouldOpen });
+      if (shouldOpen) {
+        const focusable = navPanel.querySelector('a, button');
+        focusable && focusable.focus();
+      } else {
+        menuBtn.focus();
+      }
+    }
+
+    function ptc_header_shrink() {
+      if (!header) return;
       const y = window.scrollY || window.pageYOffset;
-      header.classList.toggle('ptc-shrink', y > 80);
-      header.querySelectorAll('img').forEach(img => {
-        if (y > 80) img.classList.add('!h-8');
-        else img.classList.remove('!h-8');
+      header.classList.toggle('ptc-sku-shrink', y > 70);
+    }
+
+    function ptc_header_formatWhatsApp(baseUrl) {
+      const url = baseUrl.split('?')[0] || 'https://wa.me/919XXXXXXXXXX';
+      const message = `Hi PTC, please quote for SKU ${ptc_header_pageSku}. Source: header`;
+      const params = new URLSearchParams({
+        text: message,
+        utm_source: 'site',
+        utm_medium: 'whatsapp',
+        utm_campaign: `header_sku_${ptc_header_pageSku}`
+      });
+      return `${url}?${params.toString()}`;
+    }
+
+    function ptc_header_enhanceWhatsAppLinks() {
+      whatsAppButtons.forEach(btn => {
+        if (!btn) return;
+        btn.setAttribute('href', ptc_header_formatWhatsApp(btn.getAttribute('href') || 'https://wa.me/919XXXXXXXXXX'));
       });
     }
 
-    function toggleMobileMenu(force) {
-      const shouldOpen = typeof force === 'boolean' ? force : mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden', !shouldOpen);
-      menuTrigger.setAttribute('aria-expanded', shouldOpen);
-      pushEvent('header_menu_open', { open: shouldOpen });
-      if (shouldOpen) mobileMenu.querySelector('a').focus();
-      else menuTrigger.focus();
-    }
-
-    function openSearch() {
-      searchDialog.classList.remove('hidden');
-      searchDialog.classList.add('flex');
-      searchTrigger.setAttribute('aria-expanded', 'true');
-      searchDialog.querySelector('input').focus();
-    }
-
-    function closeSearch() {
-      searchDialog.classList.add('hidden');
-      searchDialog.classList.remove('flex');
-      searchTrigger.setAttribute('aria-expanded', 'false');
-      searchTrigger.focus();
-    }
-
-    function initStickyBar() {
+    function ptc_header_initStickyBar() {
       if (!stickyBar) return;
-      const shouldShow = document.body.classList.contains('ptc-product-page');
+      const shouldShow = body.classList.contains('ptc-product-page');
       stickyBar.classList.toggle('hidden', !shouldShow);
+      if (shouldShow) {
+        stickyTitle.textContent = `${ptc_header_pageSku} • In stock`;
+        stickySubtitle.textContent = ptc_header_pageName;
+      }
     }
 
-    menuTrigger?.addEventListener('click', () => toggleMobileMenu());
-    searchTrigger?.addEventListener('click', () => openSearch());
-    searchClose?.addEventListener('click', () => closeSearch());
-    searchDialog?.addEventListener('click', (e) => { if (e.target === searchDialog) closeSearch(); });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        if (!searchDialog.classList.contains('hidden')) closeSearch();
-        if (!mobileMenu.classList.contains('hidden')) toggleMobileMenu(false);
+    function ptc_header_openModal() {
+      if (!modal) return;
+      ptc_header_lastFocus = document.activeElement;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      modalSku.value = ptc_header_pageSku;
+      const qtyField = document.getElementById('ptc-sku-modal-qty');
+      qtyField && qtyField.focus();
+      ptc_header_pushEvent('header_request_open', { sku: ptc_header_pageSku });
+    }
+
+    function ptc_header_closeModal() {
+      if (!modal) return;
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      if (ptc_header_lastFocus && typeof ptc_header_lastFocus.focus === 'function') {
+        ptc_header_lastFocus.focus();
       }
+    }
+
+    function ptc_header_handleSearch(event, input) {
+      event.preventDefault();
+      if (!input) return;
+      const value = (input.value || '').trim();
+      if (!value) return;
+      const match = value.match(ptc_header_skuRegex);
+      if (match) {
+        ptc_header_pushEvent('header_search_sku', { sku: match[0] });
+        window.location.href = `/scania/hydraulics/${match[0]}-sku.html`;
+      } else {
+        ptc_header_pushEvent('header_search_sku', { keyword: value });
+        window.location.href = `/search?q=${encodeURIComponent(value)}`;
+      }
+    }
+
+    function ptc_header_submitModal(event) {
+      event.preventDefault();
+      if (!modalForm) return;
+      const payload = {
+        sku: modalSku.value,
+        qty: modalForm.querySelector('[name="qty"]').value,
+        name: modalForm.querySelector('[name="name"]').value,
+        phone: modalForm.querySelector('[name="phone"]').value,
+        email: modalForm.querySelector('[name="email"]').value,
+        notes: modalForm.querySelector('[name="notes"]').value,
+        source: 'header'
+      };
+      ptc_header_pushEvent('header_request_submit', payload);
+      fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(() => console.info('Lead API unavailable in demo environment.'));
+      window.open(ptc_header_formatWhatsApp('https://wa.me/919XXXXXXXXXX'), '_blank');
+      ptc_header_closeModal();
+    }
+
+    menuBtn && menuBtn.addEventListener('click', () => ptc_header_toggleNav());
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      if (navPanel && !navPanel.classList.contains('hidden')) ptc_header_toggleNav(false);
+      if (modal && modal.classList.contains('flex')) ptc_header_closeModal();
     });
 
-    document.querySelectorAll('[data-analytics="cta"]').forEach(btn => {
-      btn.addEventListener('click', () => pushEvent('header_cta_click', { target: btn.href || 'button' }));
+    requestButtons.forEach(btn => btn && btn.addEventListener('click', ptc_header_openModal));
+    modalClose && modalClose.addEventListener('click', ptc_header_closeModal);
+    modalCancel && modalCancel.addEventListener('click', ptc_header_closeModal);
+    modal && modal.addEventListener('click', (event) => { if (event.target === modal) ptc_header_closeModal(); });
+    modalForm && modalForm.addEventListener('submit', ptc_header_submitModal);
+
+    searchForms.forEach((form, idx) => form && form.addEventListener('submit', (event) => ptc_header_handleSearch(event, searchInputs[idx])));
+    searchInputs.forEach(input => input && input.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') ptc_header_handleSearch(event, input);
+    }));
+
+    document.querySelectorAll('[data-analytics="header_cta_click"]').forEach(btn => {
+      btn.addEventListener('click', () => ptc_header_pushEvent('header_cta_click', { target: btn.dataset.ctaType || 'cta', sku: ptc_header_pageSku }));
     });
 
-    window.addEventListener('scroll', () => window.requestAnimationFrame(shrinkOnScroll), { passive: true });
-    initStickyBar();
-    shrinkOnScroll();
-    pushEvent('header_variant_shown');
+    window.addEventListener('scroll', () => window.requestAnimationFrame(ptc_header_shrink), { passive: true });
+
+    ptc_header_enhanceWhatsAppLinks();
+    ptc_header_initStickyBar();
+    ptc_header_shrink();
+    ptc_header_pushEvent('header_variant_shown', { sku: ptc_header_pageSku });
   })();
 </script>
 
