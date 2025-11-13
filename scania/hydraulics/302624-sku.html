@@ -102,6 +102,7 @@
   .focus-visible\:ring-brand-accent:focus-visible { outline: 2px solid rgba(246, 192, 0, 0.6); outline-offset: 2px; }
   .ptc-sku-header.ptc-sku-shrink .ptc-sku-inner { padding-top: 0.5rem; padding-bottom: 0.5rem; }
   .ptc-sku-header.ptc-sku-shrink .ptc-sku-logo { height: 2.25rem !important; }
+  .ptc-sku-header.ptc-sku-shrink .ptc-sku-tagline { display: none; }
 </style>
 </head>
 <body data-sku="302624" data-sku-name="Scania Elbow Union" class="ptc-product-page bg-slate-50 font-sans text-slate-900">
@@ -112,14 +113,16 @@
         <button id="ptc-sku-menu" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent lg:hidden" aria-label="Open navigation" aria-controls="ptc-sku-nav-panel" aria-expanded="false">
           <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
         </button>
-        <a href="/" class="inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:rounded-xl" aria-label="Parts Trading Company home">
+        <a href="/" class="inline-flex flex-col items-start focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:rounded-xl" aria-label="Parts Trading Company home">
           <img src="../../assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="ptc-sku-logo h-12 w-auto transition-all duration-200 md:h-10 sm:h-8" />
+          <span class="ptc-sku-tagline hidden sm:block text-[10px] font-medium text-slate-500 mt-0.5">Spare parts since 1956</span>
         </a>
       </div>
 
       <nav aria-label="Primary navigation" class="hidden lg:flex flex-1 items-center justify-center gap-6 text-sm font-semibold text-brand-navy">
         <a href="/#product-categories" class="hover:text-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:rounded">Products</a>
         <a href="/#brands" class="hover:text-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:rounded">Brands</a>
+        <a href="/#about" class="hover:text-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:rounded">About</a>
       </nav>
 
       <div class="flex flex-1 items-center justify-end gap-3">
@@ -172,6 +175,7 @@
     <nav aria-label="Mobile navigation" class="px-4 py-4 space-y-2 text-base font-semibold text-brand-navy">
       <a href="/#product-categories" class="block rounded-lg px-3 py-2 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">Products</a>
       <a href="/#brands" class="block rounded-lg px-3 py-2 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">Brands</a>
+      <a href="/#about" class="block rounded-lg px-3 py-2 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">About</a>
       <button type="button" id="ptc-sku-request-mobile" class="mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full border border-brand-navy/30 bg-white px-4 py-2 text-sm font-semibold text-brand-navy shadow focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" data-analytics="header_request_open" aria-haspopup="dialog">
         Request Price
       </button>
