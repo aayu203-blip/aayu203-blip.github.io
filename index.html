@@ -132,6 +132,7 @@
         }
     }
     </script>
+    <script src="assets/js/product-paths.js" defer></script>
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -3495,38 +3496,82 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
         }
         // Helper to get product page link (actual file path - guaranteed to work!)
         function getProductPageLink(result) {
-            const brand = (result["Brand"] || '').toString().trim().toLowerCase();
-            const category = (result["Category"] || '').toString().trim().toLowerCase();
-            const partNo = (result["Part No"] || '').toString().trim();
-            
-            // Map actual database category names to folder names
-            const catMap = {
-                'engine components': 'engine',
-                'brake & steering systems': 'braking',
-                'filtration & maintenance': 'filtration',
-                'electrical & lighting': 'electrical',
-                'transmission & driveline': 'transmission',
-                'cooling & exhaust systems': 'cooling',
-                'cab & body parts': 'exterior',
-                'fasteners & hardware': 'hardware',
-                'hydraulic components': 'hydraulics',
-                'fuel & air systems': 'fuel',
-                'chassis & suspension': 'suspension'
+            const brandRaw = (result["Brand"] || '').toString().trim();
+            const categoryRaw = (result["Category"] || '').toString().trim();
+            const partNoRaw = (result["Part No"] || '').toString().trim();
+            if (!partNoRaw) {
+                return '#';
+            }
+
+            const brand = brandRaw.toLowerCase();
+            const category = categoryRaw.toLowerCase();
+            const partNo = partNoRaw.toUpperCase();
+
+            if (typeof window.productPathIndex === 'object' && window.productPathIndex !== null) {
+                const brandKey = `${brand}|${partNo}`;
+                const directPath = window.productPathIndex[brandKey] || window.productPathIndex[partNo];
+                if (directPath) {
+                    return directPath;
+                }
+            }
+
+            const brandFolder = brand.includes('volvo') ? 'volvo'
+                              : brand.includes('scania') ? 'scania'
+                              : brand.includes('komatsu') ? 'komatsu'
+                              : brand.includes('cat') || brand.includes('caterpillar') ? 'cat'
+                              : brand.includes('hitachi') ? 'hitachi'
+                              : brand.includes('hyundai') ? 'hyundai'
+                              : 'scania';
+
+            const categoryPriority = {
+                scania: {
+                    'body & cabin': ['exterior'],
+                    'brake & steering systems': ['suspension', 'braking'],
+                    'drivetrain': ['transmission'],
+                    'engine components': ['engine', 'fuel'],
+                    'fasteners & hardware': ['hardware'],
+                    'filtration & maintenance': ['filtration'],
+                    'hydraulic connectors': ['hydraulics'],
+                    'hydraulic systems': ['hydraulics'],
+                    'miscellaneous': ['misc', 'filtration']
+                },
+                volvo: {
+                    'body & cabin': ['braking', 'engine'],
+                    'brake & steering systems': ['braking', 'suspension', 'engine'],
+                    'drivetrain': ['braking', 'transmission', 'engine', 'suspension'],
+                    'engine components': ['engine', 'braking'],
+                    'fasteners & hardware': ['braking', 'engine'],
+                    'filtration & maintenance': ['braking', 'engine', 'filtration'],
+                    'hydraulic connectors': ['braking'],
+                    'hydraulic systems': ['engine', 'braking'],
+                    'miscellaneous': ['braking', 'engine']
+                }
             };
-            
-            const catSlug = catMap[category] || category.replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'parts';
-            
-            // Determine brand folder
-            let brandFolder = 'scania'; // default
-            if (brand.includes('volvo')) brandFolder = 'volvo';
-            else if (brand.includes('scania')) brandFolder = 'scania';
-            else if (brand.includes('komatsu')) brandFolder = 'komatsu';
-            else if (brand.includes('cat') || brand.includes('caterpillar')) brandFolder = 'cat';
-            else if (brand.includes('hitachi')) brandFolder = 'hitachi';
-            else if (brand.includes('hyundai')) brandFolder = 'hyundai';
-            
-            // Return clean URL
-            return `/${brandFolder}/${catSlug}/${partNo}.html`;
+
+            const defaultFallback = {
+                scania: ['suspension', 'braking', 'engine', 'exterior', 'filtration', 'fuel', 'hydraulics', 'hardware', 'misc', 'transmission'],
+                volvo: ['braking', 'engine', 'suspension', 'transmission', 'filtration'],
+                komatsu: ['engine', 'hydraulics', 'braking', 'transmission'],
+                cat: ['engine', 'hydraulics', 'braking', 'transmission'],
+                hitachi: ['engine', 'hydraulics', 'braking'],
+                hyundai: ['engine', 'hydraulics', 'braking']
+            };
+
+            const candidates = [];
+            const categoryFolders = (categoryPriority[brandFolder] && categoryPriority[brandFolder][category]) || [];
+            categoryFolders.forEach(folder => candidates.push(`/${brandFolder}/${folder}/${partNo}.html`));
+            const fallbacks = defaultFallback[brandFolder] || [];
+            fallbacks.forEach(folder => candidates.push(`/${brandFolder}/${folder}/${partNo}.html`));
+            candidates.push(`/products/${partNo}.html`, `/products/${partNo.toLowerCase()}.html`);
+
+            const seen = new Set();
+            for (const path of candidates) {
+                if (!seen.has(path)) {
+                    seen.add(path);
+                }
+            }
+
+            return Array.from(seen)[0] || `/products/${partNo}.html`;
         }
         
         // Contact for part function
