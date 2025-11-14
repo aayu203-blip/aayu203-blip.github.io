@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Batch-convert Scania product pages to the modern template for multiple categories."""
 
+import argparse
 import json
 import re
 from pathlib import Path
@@ -9,7 +10,7 @@ from typing import Dict, List
 from bs4 import BeautifulSoup  # type: ignore
 
 BASE_TEMPLATE_PATH = Path('templates/scania-hydraulics-base.html')
-CATEGORY_CONFIGS: Dict[str, Dict[str, str]] = {
+CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
     'engine': {
         'dir': 'scania/engine',
         'category_label': 'Engine Components',
@@ -43,7 +44,6 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, str]] = {
             },
         ],
         'structured_category': 'Engine Components',
-        'target_categories': ['engine'],
     },
     'transmission': {
         'dir': 'scania/transmission',
@@ -51,7 +51,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, str]] = {
         'category_url': '/pages/categories/scania-transmission-and-driveline.html',
         'description_template': (
             "Scania {part_label_lower} (Part {part_number}) keeps gearboxes shifting cleanly on {application}. "
-            "We hone sealing lands, balance rotating parts, and batch-test every lot under load so your driveline goes back on road without chatter."),
+            "We hone sealing lands, balance rotating parts, and batch-test every lot under load so your driveline goes back on road without chatter."
+        ),
         'features': [
             'Hardened bearing surfaces stand up to torsional spikes above OEM spec.',
             'Spline and gear profiles are ground to factory backlash tolerances.',
@@ -77,12 +78,78 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, str]] = {
             },
         ],
         'structured_category': 'Transmission & Driveline',
-        'target_categories': ['transmission'],
+    },
+    'suspension': {
+        'dir': 'scania/suspension',
+        'category_label': 'Suspension & Ride Control',
+        'category_url': '/pages/categories/scania-suspension-and-ride-control.html',
+        'description_template': (
+            "Scania {part_label_lower} (Part {part_number}) absorbs axle shock on {application}. "
+            "We match OEM rubber hardness, shot-peen metal inserts, and pre-stress every batch so the truck returns to factory ride height."
+        ),
+        'features': [
+            'OEM-spec rubber compound keeps ride height and damping consistent.',
+            'Shot-peened steel inserts resist fatigue on rough quarry or mining routes.',
+            'Press-fit bores honed for perfect bushing alignment—less squeal, longer life.',
+            'Each part ships with torque markings plus anti-corrosion wrap for ready installs.',
+        ],
+        'faqs': [
+            {
+                'q': 'Which chassis does this suspension component fit?',
+                'a': 'It suits Scania P/G/R/S-series suspensions (share VIN or axle code for confirmation). We only dispatch after EPC verification.',
+            },
+            {
+                'q': 'Do I need special tools to install it?',
+                'a': 'Standard hydraulic presses/torque tools work. We can send torque specs and press orientation on request.',
+            },
+            {
+                'q': 'How is the part protected during shipping?',
+                'a': 'Bushings get VCI wrap and dust caps; large components are foam-braced so rubbers don’t deform in transit.',
+            },
+            {
+                'q': 'Do you support export orders?',
+                'a': 'Yes, we dispatch domestically and consolidate weekly export lots with HS codes and inspection reports for customs.',
+            },
+        ],
+        'structured_category': 'Suspension & Ride Control',
+    },
+    'exterior': {
+        'dir': 'scania/exterior',
+        'category_label': 'Body & Exterior',
+        'category_url': '/pages/categories/scania-body-and-exterior.html',
+        'description_template': (
+            "Scania {part_label_lower} (Part {part_number}) refreshes cab appearance and aerodynamics on {application}. "
+            "We colour-match primers, keep mounting holes indexed, and ship panels in protective crates so they bolt straight on."
+        ),
+        'features': [
+            'Injection-moulded to OEM dimensions for perfect door/trim alignment.',
+            'Primer-ready finish saves prep time—just scuff and spray.',
+            'Mounting bosses reinforced to stop cracking during cab flex.',
+            'Ships with peel-off film and foam corners so paint stays flawless.',
+        ],
+        'faqs': [
+            {
+                'q': 'Does this panel match factory paint?',
+                'a': 'Panels ship in primer; provide your paint code and our team will advise the OE colour for refinish.',
+            },
+            {
+                'q': 'Are mounting clips included?',
+                'a': 'We include OEM-style clips or specify compatible clip kits in the box so installers aren’t reusing worn hardware.',
+            },
+            {
+                'q': 'How do you pack large exterior pieces?',
+                'a': 'Every part gets foam edging, corner protectors, and carton support so it arrives dent-free.',
+            },
+            {
+                'q': 'Can you send fitment photos?',
+                'a': 'Yes, request pre-dispatch photos or mounting diagrams via WhatsApp for faster body-shop installs.',
+            },
+        ],
+        'structured_category': 'Body & Exterior',
     },
 }
 
-# Order to process continuously
-PROCESS_ORDER: List[str] = ['engine', 'transmission']
+DEFAULT_PROCESS_ORDER: List[str] = list(CATEGORY_CONFIGS.keys())
 
 
 def read_template() -> str:
@@ -95,7 +162,7 @@ def slug_part_label(raw_title: str, part_number: str) -> str:
     label = raw_title.replace(part_number, '').strip()
     if label.lower().startswith('scania'):
         label = label[6:].strip()
-    return label or 'Engine Component'
+    return label or 'Component'
 
 
 def extract_metadata(html_text: str, part_number: str) -> dict:
@@ -137,16 +204,14 @@ def build_copy(category_key: str, part_label: str, part_number: str, application
     cfg = CATEGORY_CONFIGS[category_key]
     part_label_lower = part_label.lower()
     description = cfg['description_template'].format(part_label_lower=part_label_lower, part_number=part_number, application=application)
-    features = cfg['features']
-    faqs = cfg['faqs']
     meta_description = f"Order Scania {part_label_lower} {part_number} for {cfg['category_label'].lower()}. Ready stock in Mumbai with pan-India dispatch and WhatsApp quotes."
     keywords = f"Scania {part_number}, {part_label_lower} {part_number}, {cfg['category_label'].lower()}, {part_number} India, scania parts Mumbai"
     return {
         'description': description,
         'meta_description': meta_description,
         'keywords': keywords,
-        'features': features,
-        'faqs': faqs,
+        'features': cfg['features'],
+        'faqs': cfg['faqs'],
     }
 
 
@@ -330,11 +395,26 @@ def process_category(category_key: str) -> int:
     return processed
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description='Convert Scania product pages to the modern template.')
+    parser.add_argument(
+        '--categories',
+        nargs='+',
+        choices=sorted(CATEGORY_CONFIGS.keys()),
+        help='Specific categories to process (default: all configured categories).',
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
     if not BASE_TEMPLATE_PATH.exists():
         raise SystemExit('Base template missing; create templates/scania-hydraulics-base.html first.')
+
+    args = parse_args()
+    categories = args.categories or DEFAULT_PROCESS_ORDER
+
     total = 0
-    for category_key in PROCESS_ORDER:
+    for category_key in categories:
         total += process_category(category_key)
     print(f"Total pages converted: {total}")
 
