@@ -1,0 +1,343 @@
+#!/usr/bin/env python3
+"""Batch-convert Scania product pages to the modern template for multiple categories."""
+
+import json
+import re
+from pathlib import Path
+from typing import Dict, List
+
+from bs4 import BeautifulSoup  # type: ignore
+
+BASE_TEMPLATE_PATH = Path('templates/scania-hydraulics-base.html')
+CATEGORY_CONFIGS: Dict[str, Dict[str, str]] = {
+    'engine': {
+        'dir': 'scania/engine',
+        'category_label': 'Engine Components',
+        'category_url': '/pages/categories/scania-engine-components.html',
+        'description_template': (
+            "Scania {part_label_lower} (Part {part_number}) stabilizes combustion loads on {application}. "
+            "We machine every contact face to OEM drawings, test oil galleries for leaks, and shelf them climate-controlled in Mumbai so technicians can bolt in without rework."
+        ),
+        'features': [
+            'CNC tolerances within ±8 μm keep compression and fuel sealing consistent.',
+            'Heat-treated alloy survives repeated 500°C thermal cycles without warping.',
+            'Every batch gets dye-penetrant and pressure testing before it leaves our floor.',
+            'Laser-etched batch code lets you trace metallurgy and QC records instantly.',
+        ],
+        'faqs': [
+            {
+                'q': 'Where is this Scania engine part used?',
+                'a': 'It fits OEM engine assemblies on P/G/R/S-series trucks. Share your VIN or PES number on WhatsApp and we will cross-check against Scania EPC before dispatch.',
+            },
+            {
+                'q': 'Do I need ECU programming after installing?',
+                'a': 'Most hardware swaps (liners, elbows, housings) are plug-and-play. If the component interacts with sensors, we will send the correct torque and tightening sequence so the ECM sees the new values immediately.',
+            },
+            {
+                'q': 'What testing is performed before shipping?',
+                'a': 'We verify dimensions on a Zeiss CMM, run oil/air leak tests, and stamp the QC batch so you can trace inspection data even years later.',
+            },
+            {
+                'q': 'Can you ship engine components internationally?',
+                'a': 'Yes. We consolidate weekly air freight to the Middle East, Africa, and Southeast Asia with full HS-code paperwork plus fumigation when needed.',
+            },
+        ],
+        'structured_category': 'Engine Components',
+        'target_categories': ['engine'],
+    },
+    'transmission': {
+        'dir': 'scania/transmission',
+        'category_label': 'Transmission & Driveline',
+        'category_url': '/pages/categories/scania-transmission-and-driveline.html',
+        'description_template': (
+            "Scania {part_label_lower} (Part {part_number}) keeps gearboxes shifting cleanly on {application}. "
+            "We hone sealing lands, balance rotating parts, and batch-test every lot under load so your driveline goes back on road without chatter."),
+        'features': [
+            'Hardened bearing surfaces stand up to torsional spikes above OEM spec.',
+            'Spline and gear profiles are ground to factory backlash tolerances.',
+            'Dynamic runout and leak tests on every lot before packing.',
+            'Grease caps and VCI wrap keep the part install-ready on site.',
+        ],
+        'faqs': [
+            {
+                'q': 'Which Scania gearboxes use this part?',
+                'a': 'It fits standard GRS/GRSO family transmissions (share VIN or gearbox code to confirm). We only ship once the EPC match is 100% clear.',
+            },
+            {
+                'q': 'Is calibration needed after replacement?',
+                'a': 'Mechanical parts usually drop in. If clutch or actuator shims need adjustment we provide shim data and torque specs.',
+            },
+            {
+                'q': 'How do you pack driveline parts?',
+                'a': 'Every piece is dipped in anti-corrosion oil, capped, and packed with VCI paper so splines and sealing faces arrive scratch-free.',
+            },
+            {
+                'q': 'Do you supply export paperwork?',
+                'a': 'Yes. We add HS codes, certificates of origin, and pre-dispatch photos for overseas customers so clearance is smooth.',
+            },
+        ],
+        'structured_category': 'Transmission & Driveline',
+        'target_categories': ['transmission'],
+    },
+}
+
+# Order to process continuously
+PROCESS_ORDER: List[str] = ['engine', 'transmission']
+
+
+def read_template() -> str:
+    if not BASE_TEMPLATE_PATH.exists():
+        raise FileNotFoundError(f"Template not found: {BASE_TEMPLATE_PATH}")
+    return BASE_TEMPLATE_PATH.read_text(encoding='utf-8')
+
+
+def slug_part_label(raw_title: str, part_number: str) -> str:
+    label = raw_title.replace(part_number, '').strip()
+    if label.lower().startswith('scania'):
+        label = label[6:].strip()
+    return label or 'Engine Component'
+
+
+def extract_metadata(html_text: str, part_number: str) -> dict:
+    soup = BeautifulSoup(html_text, 'html.parser')
+    h1 = soup.find('h1')
+    raw_title = h1.get_text(strip=True) if h1 else f'Scania Part {part_number}'
+    part_label = slug_part_label(raw_title, part_number)
+
+    ptc_number = None
+    ptc_match = re.search(r'PTC\s+Number[: ]+([A-Za-z0-9-]+)', soup.get_text(" "))
+    if ptc_match:
+        ptc_number = ptc_match.group(1).strip()
+    if not ptc_number:
+        ptc_number = f'PTC{part_number}'
+
+    table_data = {}
+    table = soup.find('table')
+    if table:
+        cells = [c.get_text(strip=True) for c in table.find_all('td')]
+        for i in range(0, len(cells) - 1, 2):
+            key = cells[i]
+            value = cells[i + 1]
+            table_data[key] = value
+
+    application = table_data.get('Application') or 'Scania heavy vehicles (confirm with VIN)'
+    alternate = table_data.get('Alternate Part Numbers') or '—'
+    measurements = table_data.get('Measurements') or '—'
+
+    return {
+        'part_label': part_label,
+        'ptc_number': ptc_number,
+        'application': application,
+        'alternate': alternate,
+        'measurements': measurements,
+    }
+
+
+def build_copy(category_key: str, part_label: str, part_number: str, application: str) -> dict:
+    cfg = CATEGORY_CONFIGS[category_key]
+    part_label_lower = part_label.lower()
+    description = cfg['description_template'].format(part_label_lower=part_label_lower, part_number=part_number, application=application)
+    features = cfg['features']
+    faqs = cfg['faqs']
+    meta_description = f"Order Scania {part_label_lower} {part_number} for {cfg['category_label'].lower()}. Ready stock in Mumbai with pan-India dispatch and WhatsApp quotes."
+    keywords = f"Scania {part_number}, {part_label_lower} {part_number}, {cfg['category_label'].lower()}, {part_number} India, scania parts Mumbai"
+    return {
+        'description': description,
+        'meta_description': meta_description,
+        'keywords': keywords,
+        'features': features,
+        'faqs': faqs,
+    }
+
+
+def render_html(context: dict) -> str:
+    soup = BeautifulSoup(read_template(), 'html.parser')
+    part_number = context['part_number']
+    base_url = f"https://partstrading.com/scania/{context['category_key']}/{part_number}"
+
+    canonical_link = soup.find('link', {'rel': 'canonical'})
+    if canonical_link:
+        canonical_link['href'] = base_url + '.html'
+    for link in soup.find_all('link', rel='alternate'):
+        href = link.get('href', '')
+        if '/scania/' in href and href.endswith('.html'):
+            link['href'] = base_url + '.html'
+        elif '/products/' in href:
+            link['href'] = re.sub(r'/products/[^/]+\.html', f"/products/{part_number}.html", href)
+
+    meta_keywords = soup.find('meta', {'name': 'keywords'})
+    if meta_keywords:
+        meta_keywords['content'] = context['keywords']
+    if soup.title:
+        soup.title.string = context['page_title']
+    meta_desc = soup.find('meta', {'name': 'description'})
+    if meta_desc:
+        meta_desc['content'] = context['meta_description']
+
+    for og_url in soup.find_all('meta', {'property': 'og:url'}):
+        og_url['content'] = base_url
+    for og_title in soup.find_all('meta', {'property': 'og:title'}):
+        og_title['content'] = context['og_title']
+    for og_desc in soup.find_all('meta', {'property': 'og:description'}):
+        og_desc['content'] = context['meta_description']
+    for tw_url in soup.find_all('meta', {'property': 'twitter:url'}):
+        tw_url['content'] = base_url
+    for tw_title in soup.find_all('meta', {'property': 'twitter:title'}):
+        tw_title['content'] = context['og_title']
+    for tw_desc in soup.find_all('meta', {'property': 'twitter:description'}):
+        tw_desc['content'] = context['meta_description']
+
+    ld_script = soup.find('script', {'type': 'application/ld+json'})
+    if ld_script and ld_script.string:
+        data = json.loads(ld_script.string)
+        data['name'] = f"Scania {context['part_label']}"
+        data['mpn'] = part_number
+        data['sku'] = part_number
+        data['description'] = context['structured_description']
+        data['url'] = base_url
+        data['brand']['name'] = 'Scania'
+        data['brand']['url'] = base_url
+        data['category'] = context['structured_category']
+        data['additionalProperty'][1]['value'] = context['ptc_number']
+        if 'breadcrumb' in data:
+            items = data['breadcrumb'].get('itemListElement', [])
+            if len(items) >= 4:
+                items[3]['name'] = f"Scania {context['part_label']} {part_number}"
+                items[3]['item'] = base_url
+        if 'mainEntity' in data:
+            data['mainEntity']['name'] = f"Scania {context['part_label']} {part_number} Product Page"
+            data['mainEntity']['description'] = context['structured_description']
+        ld_script.string = json.dumps(data, indent=4)
+
+    sku_breadcrumb = soup.find('li', {'class': 'text-yellow-600 font-semibold'})
+    if sku_breadcrumb:
+        sku_breadcrumb.string = part_number
+    h1 = soup.find('h1')
+    if h1:
+        h1.string = f"Scania {context['part_label']} {part_number}"
+
+    part_p = soup.find(string=re.compile('Part Number'))
+    if part_p and part_p.parent.name == 'p':
+        part_p.parent.string = f"Part Number: {part_number}"
+    ptc_p = soup.find(string=re.compile('PTC Number'))
+    if ptc_p and ptc_p.parent.name == 'p':
+        ptc_p.parent.string = f"PTC Number: {context['ptc_number']}"
+
+    desc_p = soup.find('p', {'class': 'text-gray-700 leading-relaxed'})
+    if desc_p:
+        desc_p.string = context['description']
+
+    feature_spans = soup.select('ul.space-y-3 span.text-gray-700')
+    for span, text in zip(feature_spans, context['features']):
+        span.string = text
+
+    spec_table = soup.find('table')
+    if spec_table:
+        cells = spec_table.find_all('td')
+        for i in range(0, len(cells), 2):
+            label = cells[i].get_text(strip=True)
+            if label == 'Application':
+                cells[i + 1].string = context['application']
+            elif label == 'Alternate Part Numbers':
+                cells[i + 1].string = context['alternate']
+            elif label == 'Measurements':
+                cells[i + 1].string = context['measurements']
+            elif label == 'Category':
+                cells[i + 1].string = context['category_label']
+
+    collapsed = soup.find('p', {'class': 'text-sm text-gray-700 mb-4 text-center'})
+    if collapsed:
+        collapsed.clear()
+        collapsed.append('Part: ')
+        span = soup.new_tag('span')
+        span['class'] = 'font-semibold'
+        span.string = part_number
+        collapsed.append(span)
+        collapsed.append(' • Ready to dispatch')
+
+    quote_btn = soup.find('button', {'id': 'submit-quote-btn'})
+    if quote_btn:
+        quote_btn['onclick'] = f"submitQuote('{part_number}', 'Scania {context['part_label']} {part_number}', 'Scania', '{context['category_label']}')"
+    whatsapp_float = soup.find('a', {'class': 'whatsapp-float'})
+    if whatsapp_float:
+        whatsapp_float['onclick'] = f"requestQuoteOnWhatsApp('{part_number}', 'Scania {context['part_label']} {part_number}', 'Scania', '{context['category_label']}', '{context['application']}')"
+
+    faq_section = soup.find('div', class_='mt-12 bg-white rounded-xl shadow-lg p-8')
+    if faq_section:
+        content_wrapper = faq_section.find('div', {'class': 'space-y-4'})
+        if content_wrapper:
+            content_wrapper.clear()
+            for qa in context['faqs']:
+                qa_html = BeautifulSoup(f'''<div class="border-b border-gray-200 pb-4" x-data="{{open: false}}">
+<button @click="open = !open" class="w-full text-left flex justify-between items-center py-2 hover:text-yellow-600 transition-colors">
+  <h3 class="font-semibold text-gray-900">{qa['q']}</h3>
+  <svg class="w-5 h-5 transform transition-transform" :class="{{'rotate-180': open}}" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+  </svg>
+</button>
+<div x-show="open" x-transition class="mt-2 text-gray-700">{qa['a']}</div>
+</div>''', 'html.parser')
+                content_wrapper.append(qa_html)
+
+    html_output = str(soup)
+    html_output = html_output.replace('Hydraulic Systems & Connectors', context['category_label'])
+    html_output = html_output.replace('/pages/categories/scania-hydraulic-systems-and-connectors.html', context['category_url'])
+    html_output = html_output.replace('https://partstrading.com/scania/hydraulics/302624', base_url)
+    html_output = html_output.replace('/scania/hydraulics/302624.html', f"/scania/{context['category_key']}/{part_number}.html")
+    html_output = html_output.replace('PTS2624', context['ptc_number'])
+    return html_output
+
+
+def process_category(category_key: str) -> int:
+    cfg = CATEGORY_CONFIGS[category_key]
+    dir_path = Path(cfg['dir'])
+    if not dir_path.exists():
+        print(f"[skip] Directory missing: {dir_path}")
+        return 0
+    processed = 0
+    for html_path in sorted(dir_path.glob('*.html')):
+        name = html_path.name
+        if any(marker in name for marker in ('-modern', '-sku')):
+            continue
+        part_number = html_path.stem
+        source_html = html_path.read_text(encoding='utf-8')
+        metadata = extract_metadata(source_html, part_number)
+        copy = build_copy(category_key, metadata['part_label'], part_number, metadata['application'])
+        context = {
+            'category_key': category_key,
+            'category_label': cfg['category_label'],
+            'category_url': cfg['category_url'],
+            'structured_category': cfg['structured_category'],
+            'part_number': part_number,
+            'part_label': metadata['part_label'],
+            'ptc_number': metadata['ptc_number'],
+            'application': metadata['application'],
+            'alternate': metadata['alternate'],
+            'measurements': metadata['measurements'],
+            'description': copy['description'],
+            'structured_description': copy['description'],
+            'meta_description': copy['meta_description'],
+            'keywords': copy['keywords'],
+            'features': copy['features'],
+            'faqs': copy['faqs'],
+            'page_title': f"Scania {metadata['part_label']} {part_number} | {cfg['category_label']} | PTC",
+            'og_title': f"Scania {metadata['part_label']} {part_number}",
+        }
+        html_output = render_html(context)
+        html_path.write_text(html_output, encoding='utf-8')
+        processed += 1
+    print(f"Converted {processed} Scania {category_key} pages.")
+    return processed
+
+
+def main() -> None:
+    if not BASE_TEMPLATE_PATH.exists():
+        raise SystemExit('Base template missing; create templates/scania-hydraulics-base.html first.')
+    total = 0
+    for category_key in PROCESS_ORDER:
+        total += process_category(category_key)
+    print(f"Total pages converted: {total}")
+
+
+if __name__ == '__main__':
+    main()
