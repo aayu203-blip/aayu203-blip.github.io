@@ -147,6 +147,176 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         ],
         'structured_category': 'Body & Exterior',
     },
+    'hardware': {
+        'dir': 'scania/hardware',
+        'category_label': 'Hardware & Fasteners',
+        'category_url': '/pages/categories/scania-hardware-and-fasteners.html',
+        'description_template': (
+            "Scania {part_label_lower} (Part {part_number}) keeps chassis assemblies locked down on {application}. "
+            "Thread geometry, coatings, and proof-load testing match the OEM spec so torque readings stay accurate even after field service."
+        ),
+        'features': [
+            'Grade-marked steel with OEM coatings resists corrosion and galling.',
+            'Threads roll-formed for higher fatigue strength versus cut threads.',
+            'Each lot torque-tested and batch-coded for traceability.',
+            'Ships with protective caps or VCI sleeves so threads stay clean.',
+        ],
+        'faqs': [
+            {
+                'q': 'Which torque spec should I follow?',
+                'a': 'Use the torque chart from the Scania workshop manual for your VIN. We can share the spec sheet when you request a quote.',
+            },
+            {
+                'q': 'Are washers or nuts included?',
+                'a': 'Most kits include mating hardware. If not, we list compatible part numbers and can pack them together.',
+            },
+            {
+                'q': 'Do you stock stainless or zinc-nickel variants?',
+                'a': 'Yes, select SKUs come in alternate finishes. Share the environment details and we will match the right coating.',
+            },
+            {
+                'q': 'Can you ship consolidated hardware kits?',
+                'a': 'We regularly palletize mixed fastener kits for fleet overhauls with labeled bags and packing lists.',
+            },
+        ],
+        'structured_category': 'Hardware & Fasteners',
+    },
+    'misc': {
+        'dir': 'scania/misc',
+        'category_label': 'Electrical & Cabin Essentials',
+        'category_url': '/pages/categories/scania-electrical-and-cabin.html',
+        'description_template': (
+            "Scania {part_label_lower} (Part {part_number}) keeps auxiliary systems running on {application}. "
+            "Switchgear, sensors, and cabin hardware ship pre-tested so your technicians plug them in without rewiring surprises."
+        ),
+        'features': [
+            'Bench-tested for continuity, signal accuracy, or mechanical travel before packing.',
+            'Harness connectors retain OEM keying so they plug into factory looms instantly.',
+            'Compact packaging with foam cells protects delicate plastics and PCB traces.',
+            'Every box includes QR codes linking to install notes or wiring diagrams.',
+        ],
+        'faqs': [
+            {
+                'q': 'Will this part trigger fault codes?',
+                'a': 'Components mirror OEM resistance/voltage curves so ECUs read them correctly. Send fault logs and we will double-check before shipping.',
+            },
+            {
+                'q': 'Do you provide wiring assistance?',
+                'a': 'Yes, our desk shares pinouts, wiring diagrams, or voice support if your technician needs guidance during install.',
+            },
+            {
+                'q': 'How do you package fragile cabin parts?',
+                'a': 'We use foam cradles and anti-static bags so switchgear and displays reach your shop intact.',
+            },
+            {
+                'q': 'Can I club multiple cabin trims in one order?',
+                'a': 'Absolutely—we bundle mixed SKUs with labeled cartons so installers can stage parts per cab.',
+            },
+        ],
+        'structured_category': 'Electrical & Cabin Essentials',
+    },
+    'filtration': {
+        'dir': 'scania/filtration',
+        'category_label': 'Filters & Filtration',
+        'category_url': '/pages/categories/scania-filters-and-filtration.html',
+        'description_template': (
+            "Scania {part_label_lower} (Part {part_number}) keeps oil, fuel, or air circuits clean on {application}. "
+            "Media density matches OEM microns, and every element is vacuum-bagged so it drops straight into housings without contamination."
+        ),
+        'features': [
+            'Multi-layer media catches fine particulates while maintaining flow.',
+            'Seals and end caps moulded to OEM dimensions for leak-free installs.',
+            'Each batch pressure-tested for collapse and bypass performance.',
+            'Ships vacuum-sealed with desiccant so media stays dust-free.',
+        ],
+        'faqs': [
+            {
+                'q': 'What service interval should I follow?',
+                'a': 'Use the Scania service schedule for your duty cycle. We can provide interval tables for on-road vs. mining use.',
+            },
+            {
+                'q': 'Is this compatible with biofuel or synthetic oils?',
+                'a': 'Yes—media is rated for modern fluids. Share your lubricant if you have special additive packages.',
+            },
+            {
+                'q': 'Do filters ship with O-rings?',
+                'a': 'Critical filters include fresh seals. If a kit needs extra gaskets we add them to the pack list.',
+            },
+            {
+                'q': 'Can you supply MSDS or lab reports?',
+                'a': 'Sure, we maintain filtration certificates and can email them with your invoice.',
+            },
+        ],
+        'structured_category': 'Filters & Filtration',
+    },
+    'fuel': {
+        'dir': 'scania/fuel',
+        'category_label': 'Fuel System Components',
+        'category_url': '/pages/categories/scania-fuel-system.html',
+        'description_template': (
+            "Scania {part_label_lower} (Part {part_number}) keeps injection and supply circuits primed on {application}. "
+            "We test every unit for pressure integrity and clean-room pack it so installers don’t fight debris in rail lines."
+        ),
+        'features': [
+            'Bench-tested for correct opening pressure or flow before dispatch.',
+            'Critical sealing surfaces capped to prevent nicks during shipping.',
+            'Supplied with torque specs or shim data where applicable.',
+            'Each lot bagged in ISO-clean pouches to keep fuel circuits spotless.',
+        ],
+        'faqs': [
+            {
+                'q': 'Is coding required after injector/valve replacement?',
+                'a': 'If EMS coding is required we’ll send the trim file or reference so your dealer software can upload it.',
+            },
+            {
+                'q': 'Do you flush components before shipping?',
+                'a': 'Yes, fuel hardware is cleaned with filtered fluid and nitrogen-dried before sealing.',
+            },
+            {
+                'q': 'Can you match older pump revisions?',
+                'a': 'We keep legacy part numbers mapped. Share your engine serial and we’ll confirm compatibility.',
+            },
+            {
+                'q': 'How fast can you dispatch fuel parts?',
+                'a': 'Most SKUs leave the same day with shock-proof packaging and insurance for high-value components.',
+            },
+        ],
+        'structured_category': 'Fuel System Components',
+    },
+    'braking': {
+        'dir': 'scania/braking',
+        'category_label': 'Brake & Air Systems',
+        'category_url': '/pages/categories/scania-brake-and-air.html',
+        'description_template': (
+            "Scania {part_label_lower} (Part {part_number}) maintains braking pressure and modulation on {application}. "
+            "Seals, seats, and diaphragms follow factory tolerances so stopping distances stay consistent after service."
+        ),
+        'features': [
+            'Valve bodies and chambers leak-tested at operating pressure.',
+            'Elastomers sourced to OEM Shore hardness for long diaphragm life.',
+            'Port threads protected with caps plus corrosion inhibitor.',
+            'Each unit serialized so you can trace QC data post-install.',
+        ],
+        'faqs': [
+            {
+                'q': 'Does this part require calibration?',
+                'a': 'Most brake hardware is plug-and-play. If stroke or bias needs setting we send the adjustment guide with your invoice.',
+            },
+            {
+                'q': 'Is it compatible with ABS/EBS systems?',
+                'a': 'Yes—components follow OEM specs so sensors and ECU logic read the correct pressures.',
+            },
+            {
+                'q': 'How do you package air-system parts?',
+                'a': 'We block ports, add desiccant, and strap assemblies inside double-wall cartons to avoid impact damage.',
+            },
+            {
+                'q': 'Can you support fleet brake rebuilds?',
+                'a': 'We can palletize multi-axle kits with labelled cartons so workshops can service several trucks in parallel.',
+            },
+        ],
+        'structured_category': 'Brake & Air Systems',
+    },
 }
 
 DEFAULT_PROCESS_ORDER: List[str] = list(CATEGORY_CONFIGS.keys())
@@ -334,7 +504,7 @@ def render_html(context: dict) -> str:
             content_wrapper.clear()
             for qa in context['faqs']:
                 qa_html = BeautifulSoup(f'''<div class="border-b border-gray-200 pb-4" x-data="{{open: false}}">
-<button @click="open = !open" class="w-full text-left flex justify-between items-center py-2 hover:text-yellow-600 transition-colors">
+<button @click="open = !open" class="w-full text-left flex justify-between items center py-2 hover:text-yellow-600 transition-colors">
   <h3 class="font-semibold text-gray-900">{qa['q']}</h3>
   <svg class="w-5 h-5 transform transition-transform" :class="{{'rotate-180': open}}" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
