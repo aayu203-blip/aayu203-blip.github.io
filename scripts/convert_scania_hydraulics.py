@@ -75,19 +75,19 @@ def build_copy(part_label: str, part_number: str, application: str) -> dict:
     )
     keywords = f"Scania {part_number}, {part_label_lower} {part_number}, scania hydraulic fittings, {part_number} India, scania parts Mumbai"
     features = [
-        f"Precision-machined sealing faces match Scania drawings for a direct drop-in {part_label_lower} fit.",
-        "Zinc-nickel plating lasts 240+ hours in ASTM B117 salt spray for better corrosion resistance.",
-        "Every batch is hydro-tested to 1.5x working pressure and batch-coded for traceability.",
-        "Ships with clean threads and protective caps so technicians can install without prepping the part."
+        "Precision-machined sealing faces follow Scania OEM drawings for a drop-in hydraulic fit.",
+        "Corrosion-resistant zinc-nickel plating handles humid yards, salt spray, and dirty job sites.",
+        "Every lot is hydro-tested to 1.5× working pressure and batch-coded so you can trace QC records.",
+        "Ships with clean, capped threads or ports so technicians can install without extra prep on site."
     ]
     faqs = [
         {
             'question': f"Where is Scania {part_label_lower} {part_number} used?",
-            'answer': f"It links the pressure line to the manifold in Scania hydraulic kits ({application}). The OEM geometry keeps the flare sealed so lift cylinders get full flow.",
+            'answer': f"It's spec'd for Scania hydraulic kits ({application}). Share your VIN or kit number and we’ll confirm the match before dispatch.",
         },
         {
-            'question': "What pressure rating does this connector handle?",
-            'answer': "Each unit is rated for 350 bar working pressure with a safety factor beyond 1.5×, and we batch test to verify the seal before dispatch.",
+            'question': "What pressure rating does this part handle?",
+            'answer': "Each unit is validated at OEM working pressure with a 1.5× safety factor during our hydro test run.",
         },
         {
             'question': "How do I confirm it fits my truck?",
