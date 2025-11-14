@@ -20,27 +20,27 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
             "We machine every contact face to OEM drawings, test oil galleries for leaks, and shelf them climate-controlled in Mumbai so technicians can bolt in without rework."
         ),
         'features': [
-            'CNC tolerances within ±8 μm keep compression and fuel sealing consistent.',
-            'Heat-treated alloy survives repeated 500°C thermal cycles without warping.',
-            'Every batch gets dye-penetrant and pressure testing before it leaves our floor.',
-            'Laser-etched batch code lets you trace metallurgy and QC records instantly.',
+            'Machined to Scania OEM tolerances so housings and covers bolt up without shims.',
+            'Heat-treated alloys handle repeated hot/cold cycles on long-haul and mining duty.',
+            'Oil and coolant passages are leak-checked before every batch leaves our bench.',
+            'Each lot is laser batch-coded so you can pull QC data whenever you need it.',
         ],
         'faqs': [
             {
                 'q': 'Where is this Scania engine part used?',
-                'a': 'It fits OEM engine assemblies on P/G/R/S-series trucks. Share your VIN or PES number on WhatsApp and we will cross-check against Scania EPC before dispatch.',
+                'a': 'It fits Scania P/G/R/S-series engine assemblies. Share your VIN or PES number and we’ll confirm the EPC match before dispatch.',
             },
             {
                 'q': 'Do I need ECU programming after installing?',
-                'a': 'Most hardware swaps (liners, elbows, housings) are plug-and-play. If the component interacts with sensors, we will send the correct torque and tightening sequence so the ECM sees the new values immediately.',
+                'a': 'Most mechanical swaps drop in. If a sensor or actuator needs calibration we include torque values and adaptation steps in the quote reply.',
             },
             {
                 'q': 'What testing is performed before shipping?',
-                'a': 'We verify dimensions on a Zeiss CMM, run oil/air leak tests, and stamp the QC batch so you can trace inspection data even years later.',
+                'a': 'Every lot is CMM-measured, leak-tested, and signed off on a QC sheet that we can share with your service team.',
             },
             {
                 'q': 'Can you ship engine components internationally?',
-                'a': 'Yes. We consolidate weekly air freight to the Middle East, Africa, and Southeast Asia with full HS-code paperwork plus fumigation when needed.',
+                'a': 'Yes—daily India dispatch plus weekly export lots with HS codes, fumigation certificates, and pre-dispatch photos.',
             },
         ],
         'structured_category': 'Engine Components',
@@ -54,27 +54,27 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
             "We hone sealing lands, balance rotating parts, and batch-test every lot under load so your driveline goes back on road without chatter."
         ),
         'features': [
-            'Hardened bearing surfaces stand up to torsional spikes above OEM spec.',
-            'Spline and gear profiles are ground to factory backlash tolerances.',
-            'Dynamic runout and leak tests on every lot before packing.',
-            'Grease caps and VCI wrap keep the part install-ready on site.',
+            'Ground spline and gear profiles keep backlash within Scania spec.',
+            'Hardened bearing surfaces shrug off torsional spikes from loaded drivetrains.',
+            'Assemblies are spun for runout and leak-checked before we pack them.',
+            'Splines and ports ship capped with VCI wrap so installs stay clean and quick.',
         ],
         'faqs': [
             {
                 'q': 'Which Scania gearboxes use this part?',
-                'a': 'It fits standard GRS/GRSO family transmissions (share VIN or gearbox code to confirm). We only ship once the EPC match is 100% clear.',
+                'a': 'It covers GRS/GRSO/I-Shift families. Send your VIN or gearbox code so we can confirm the EPC match before dispatch.',
             },
             {
                 'q': 'Is calibration needed after replacement?',
-                'a': 'Mechanical parts usually drop in. If clutch or actuator shims need adjustment we provide shim data and torque specs.',
+                'a': 'Most mechanical drops do not. If clutch packs or actuators need shimming we include shim data and torque notes.',
             },
             {
                 'q': 'How do you pack driveline parts?',
-                'a': 'Every piece is dipped in anti-corrosion oil, capped, and packed with VCI paper so splines and sealing faces arrive scratch-free.',
+                'a': 'Components are dipped in anti-corrosion oil, capped, and cushioned so sealing faces arrive blemish-free.',
             },
             {
                 'q': 'Do you supply export paperwork?',
-                'a': 'Yes. We add HS codes, certificates of origin, and pre-dispatch photos for overseas customers so clearance is smooth.',
+                'a': 'Yes—HS codes, certificates of origin, and pre-dispatch photos are available for every shipment.',
             },
         ],
         'structured_category': 'Transmission & Driveline',
@@ -88,27 +88,27 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
             "We match OEM rubber hardness, shot-peen metal inserts, and pre-stress every batch so the truck returns to factory ride height."
         ),
         'features': [
-            'OEM-spec rubber compound keeps ride height and damping consistent.',
-            'Shot-peened steel inserts resist fatigue on rough quarry or mining routes.',
-            'Press-fit bores honed for perfect bushing alignment—less squeal, longer life.',
-            'Each part ships with torque markings plus anti-corrosion wrap for ready installs.',
+            'OEM-grade rubber and metal pairs keep ride height and damping consistent.',
+            'Shot-peened, stress-relieved inserts resist cracking on rough haul roads.',
+            'Press-fit bores are honed for quiet alignment and longer bushing life.',
+            'Parts ship with torque markings plus VCI wrap so they drop in without extra prep.',
         ],
         'faqs': [
             {
                 'q': 'Which chassis does this suspension component fit?',
-                'a': 'It suits Scania P/G/R/S-series suspensions (share VIN or axle code for confirmation). We only dispatch after EPC verification.',
+                'a': 'It suits Scania chassis codes once we verify your VIN or axle code against the EPC.',
             },
             {
                 'q': 'Do I need special tools to install it?',
-                'a': 'Standard hydraulic presses/torque tools work. We can send torque specs and press orientation on request.',
+                'a': 'Standard hydraulic presses and torque tools work. We can share orientation diagrams and torque charts on request.',
             },
             {
                 'q': 'How is the part protected during shipping?',
-                'a': 'Bushings get VCI wrap and dust caps; large components are foam-braced so rubbers don’t deform in transit.',
+                'a': 'Bushings are capped and foam-braced so the rubber doesn’t flatten or pick up shop debris in transit.',
             },
             {
                 'q': 'Do you support export orders?',
-                'a': 'Yes, we dispatch domestically and consolidate weekly export lots with HS codes and inspection reports for customs.',
+                'a': 'Yes—daily domestic dispatch plus consolidated export shipments with HS codes and inspection notes.',
             },
         ],
         'structured_category': 'Suspension & Ride Control',
@@ -122,27 +122,27 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
             "We colour-match primers, keep mounting holes indexed, and ship panels in protective crates so they bolt straight on."
         ),
         'features': [
-            'Injection-moulded to OEM dimensions for perfect door/trim alignment.',
-            'Primer-ready finish saves prep time—just scuff and spray.',
-            'Mounting bosses reinforced to stop cracking during cab flex.',
-            'Ships with peel-off film and foam corners so paint stays flawless.',
+            'Injection-moulded or pressed to OEM dimensions so gaps and shut lines stay true.',
+            'Neutral primer finish saves prep time—scuff, paint, and install.',
+            'Reinforced mounting bosses handle cab flex and repeated service.',
+            'Panels ship with peel film, corner protectors, and foam cradles to prevent transit scuffs.',
         ],
         'faqs': [
             {
                 'q': 'Does this panel match factory paint?',
-                'a': 'Panels ship in primer; provide your paint code and our team will advise the OE colour for refinish.',
+                'a': 'Panels arrive in primer. Share your paint code and we’ll confirm the OE reference for your body shop.',
             },
             {
                 'q': 'Are mounting clips included?',
-                'a': 'We include OEM-style clips or specify compatible clip kits in the box so installers aren’t reusing worn hardware.',
+                'a': 'Most kits include the needed clips or seals; if not, we list the compatible hardware in the quote.',
             },
             {
                 'q': 'How do you pack large exterior pieces?',
-                'a': 'Every part gets foam edging, corner protectors, and carton support so it arrives dent-free.',
+                'a': 'Each part gets foam edging, corner protectors, and double-wall cartons so it arrives dent-free.',
             },
             {
                 'q': 'Can you send fitment photos?',
-                'a': 'Yes, request pre-dispatch photos or mounting diagrams via WhatsApp for faster body-shop installs.',
+                'a': 'Yes—ask for mounting diagrams or photos and we’ll include them in the dispatch email.',
             },
         ],
         'structured_category': 'Body & Exterior',
@@ -318,6 +318,117 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'structured_category': 'Brake & Air Systems',
     },
 }
+
+GENERIC_COPY = {
+    'engine': {
+        'features': [
+            'Machined to Scania OEM tolerances so housings and covers bolt up without shims.',
+            'Heat-treated alloys handle repeated hot/cold cycles on long-haul and mining duty.',
+            'Oil and coolant passages are leak-checked before every batch leaves our bench.',
+            'Each lot is laser batch-coded so you can pull QC data whenever you need it.',
+        ],
+        'faqs': [
+            {
+                'q': 'Where is this Scania engine part used?',
+                'a': "It fits Scania P/G/R/S-series engine assemblies. Share your VIN or PES number and we'll confirm the EPC match before dispatch.",
+            },
+            {
+                'q': 'Do I need ECU programming after installing?',
+                'a': 'Most mechanical swaps drop in. If a sensor or actuator needs calibration we include torque values and adaptation steps in the quote reply.',
+            },
+            {
+                'q': 'What testing is performed before shipping?',
+                'a': 'Every lot is CMM-measured, leak-tested, and backed by a QC sheet we can share with your workshop.',
+            },
+            {
+                'q': 'Can you ship engine components internationally?',
+                'a': 'Yes—daily India dispatch plus weekly export lots with HS codes, fumigation certificates, and pre-dispatch photos.',
+            },
+        ],
+    },
+    'transmission': {
+        'features': [
+            'Ground spline and gear profiles keep backlash within Scania spec.',
+            'Hardened bearing surfaces shrug off torsional spikes from loaded drivetrains.',
+            'Assemblies are spun for runout and leak-checked before we pack them.',
+            'Splines and ports ship capped with VCI wrap so installs stay clean and quick.',
+        ],
+        'faqs': [
+            {
+                'q': 'Which Scania gearboxes use this part?',
+                'a': "It covers GRS/GRSO/I-Shift families. Send your VIN or gearbox code so we can confirm the EPC match before dispatch.",
+            },
+            {
+                'q': 'Is calibration needed after replacement?',
+                'a': 'Most mechanical drops do not. If clutch packs or actuators need shimming we include shim data and torque notes.',
+            },
+            {
+                'q': 'How do you pack driveline parts?',
+                'a': 'Components are dipped in anti-corrosion oil, capped, and cushioned so sealing faces arrive blemish-free.',
+            },
+            {
+                'q': 'Do you supply export paperwork?',
+                'a': 'Yes—HS codes, certificates of origin, and pre-dispatch photos are available for every shipment.',
+            },
+        ],
+    },
+    'suspension': {
+        'features': [
+            'OEM-grade rubber and metal pairs keep ride height and damping consistent.',
+            'Shot-peened, stress-relieved inserts resist cracking on rough haul roads.',
+            'Press-fit bores are honed for quiet alignment and longer bushing life.',
+            'Parts ship with torque markings plus VCI wrap so they drop in without extra prep.',
+        ],
+        'faqs': [
+            {
+                'q': 'Which chassis does this suspension component fit?',
+                'a': "It suits Scania chassis codes once we verify your VIN or axle code against the EPC.",
+            },
+            {
+                'q': 'Do I need special tools to install it?',
+                'a': 'Standard hydraulic presses and torque tools work. We can share orientation diagrams and torque charts on request.',
+            },
+            {
+                'q': 'How is the part protected during shipping?',
+                'a': "Bushings are capped and foam-braced so the rubber doesn't flatten or pick up shop debris in transit.",
+            },
+            {
+                'q': 'Do you support export orders?',
+                'a': 'Yes—daily domestic dispatch plus consolidated export shipments with HS codes and inspection notes.',
+            },
+        ],
+    },
+    'exterior': {
+        'features': [
+            'Injection-moulded or pressed to OEM dimensions so gaps and shut lines stay true.',
+            'Neutral primer finish saves prep time—scuff, paint, and install.',
+            'Reinforced mounting bosses handle cab flex and repeated service.',
+            'Panels ship with peel film, corner protectors, and foam cradles to prevent transit scuffs.',
+        ],
+        'faqs': [
+            {
+                'q': 'Does this panel match factory paint?',
+                'a': 'Panels arrive in primer. Share your paint code and we will confirm the OE reference for your body shop.',
+            },
+            {
+                'q': 'Are mounting clips included?',
+                'a': 'Most kits include the needed clips or seals; if not, we list the compatible hardware in the quote.',
+            },
+            {
+                'q': 'How do you pack large exterior pieces?',
+                'a': 'Each part gets foam edging, corner protectors, and double-wall cartons so it arrives dent-free.',
+            },
+            {
+                'q': 'Can you send fitment photos?',
+                'a': 'Yes—ask for mounting diagrams or photos and we will include them in the dispatch email.',
+            },
+        ],
+    },
+}
+
+for category_key, copy in GENERIC_COPY.items():
+    CATEGORY_CONFIGS[category_key]['features'] = copy['features']
+    CATEGORY_CONFIGS[category_key]['faqs'] = copy['faqs']
 
 DEFAULT_PROCESS_ORDER: List[str] = list(CATEGORY_CONFIGS.keys())
 

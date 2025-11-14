@@ -20,27 +20,27 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
             "Each batch is machined to OEM drawings, bench-tested for leaks, and held in our Mumbai warehouse so field techs can bolt it in without rework."
         ),
         'features': [
-            'CNC tolerances within ±10 μm maintain compression, fuel, and oil sealing.',
-            'Heat-treated alloy survives repeated 500°C thermal cycles.',
-            'Every lot gets dye-penetrant plus pressure testing prior to dispatch.',
-            'Laser-etched batch code lets fleets trace metallurgy and QC reports.',
+            'Machined to Volvo OEM tolerances so housings and covers bolt up without shims.',
+            'Heat-treated alloys handle repeated hot/cold cycles on highway and quarry duty.',
+            'Oil and coolant passages are leak-checked before every batch leaves our bench.',
+            'Each lot is laser batch-coded so you can pull QC data whenever you need it.',
         ],
         'faqs': [
             {
                 'q': 'Where is this Volvo engine part used?',
-                'a': 'It fits OEM engine assemblies on FM/FH/B-series platforms. Share your VIN or PES number and we will cross-check the EPC before shipping. '
+                'a': "It fits Volvo FM/FH/B-series engine assemblies. Share your VIN or PES number and we'll confirm the EPC match before dispatch.",
             },
             {
                 'q': 'Is ECU programming required?',
-                'a': 'Mechanical parts drop in. If sensors need calibration we provide torque and tightening sequence so EMS recognizes the new part.',
+                'a': 'Most mechanical swaps drop in. If a sensor or actuator needs calibration we include torque values and adaptation steps in the quote reply.',
             },
             {
                 'q': 'What QC is performed?',
-                'a': 'We verify geometry on a CMM, run oil/air leak tests, and record the inspection data under each batch code.',
+                'a': 'Every lot is CMM-measured, leak-tested, and backed by a QC sheet we can share with your workshop.',
             },
             {
                 'q': 'Do you export engine components?',
-                'a': 'Yes—weekly air freight lots leave Mumbai with HS codes and fumigation certificates.',
+                'a': 'Yes—daily India dispatch plus weekly export lots with HS codes, fumigation certificates, and pre-dispatch photos.',
             },
         ],
         'structured_category': 'Engine Components',
@@ -148,6 +148,117 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'structured_category': 'Transmission & Driveline',
     },
 }
+
+GENERIC_COPY = {
+    'engine': {
+        'features': [
+            'Machined to Volvo OEM tolerances so housings and covers bolt up without shims.',
+            'Heat-treated alloys handle repeated hot/cold cycles on highway and quarry duty.',
+            'Oil and coolant passages are leak-checked before every batch leaves our bench.',
+            'Each lot is laser batch-coded so you can pull QC data whenever you need it.',
+        ],
+        'faqs': [
+            {
+                'q': 'Where is this Volvo engine part used?',
+                'a': "It fits Volvo FM/FH/B-series engine assemblies. Share your VIN or PES number and we'll confirm the EPC match before dispatch.",
+            },
+            {
+                'q': 'Is ECU programming required?',
+                'a': 'Most mechanical swaps drop in. If a sensor or actuator needs calibration we include torque values and adaptation steps in the quote reply.',
+            },
+            {
+                'q': 'What QC is performed?',
+                'a': 'Every lot is CMM-measured, leak-tested, and backed by a QC sheet we can share with your workshop.',
+            },
+            {
+                'q': 'Do you export engine components?',
+                'a': 'Yes—daily India dispatch plus weekly export lots with HS codes, fumigation certificates, and pre-dispatch photos.',
+            },
+        ],
+    },
+    'transmission': {
+        'features': [
+            'Ground spline and gear profiles keep backlash within Volvo spec.',
+            'Hardened bearing surfaces shrug off torsional spikes from heavy drivetrains.',
+            'Assemblies are spun for runout and leak-checked before we pack them.',
+            'Splines and ports ship capped with VCI wrap so installs stay clean and quick.',
+        ],
+        'faqs': [
+            {
+                'q': 'Which transmissions use this part?',
+                'a': "It covers Volvo I-Shift/AT gearboxes. Send your VIN or gearbox code and we'll confirm the match before dispatch.",
+            },
+            {
+                'q': 'Is calibration needed?',
+                'a': 'Most mechanical drops do not require calibration. If clutch packs or actuators need shimming we include shim data and torque notes.',
+            },
+            {
+                'q': 'How do you pack driveline parts?',
+                'a': 'Components are dipped in anti-corrosion oil, capped, and cushioned so sealing faces arrive blemish-free.',
+            },
+            {
+                'q': 'Do you supply export paperwork?',
+                'a': 'Yes—HS codes, certificates of origin, and pre-dispatch photos are available for every shipment.',
+            },
+        ],
+    },
+    'suspension': {
+        'features': [
+            'OEM-grade rubber and metal pairs keep ride height and damping consistent.',
+            'Shot-peened, stress-relieved inserts resist cracking on rough haul roads.',
+            'Press-fit bores are honed for quiet alignment and longer bushing life.',
+            'Parts ship with torque markings plus VCI wrap so they drop in without extra prep.',
+        ],
+        'faqs': [
+            {
+                'q': 'Which chassis does it fit?',
+                'a': "It suits Volvo FMX/FH suspension sets once we verify your VIN or axle code against the EPC.",
+            },
+            {
+                'q': 'Do I need special tools?',
+                'a': 'Standard hydraulic presses and torque tools work. We can share orientation diagrams and torque charts on request.',
+            },
+            {
+                'q': 'How is it packaged?',
+                'a': "Bushings are capped and foam-braced so the rubber doesn't deform or pick up shop debris in transit.",
+            },
+            {
+                'q': 'Do you export?',
+                'a': 'Yes—daily domestic dispatch plus consolidated export shipments with HS codes and inspection notes.',
+            },
+        ],
+    },
+    'braking': {
+        'features': [
+            'Valve bodies and chambers are leak-tested at working pressure.',
+            'Elastomers are matched to Volvo Shore hardness so diaphragms last longer.',
+            'Port threads ship capped with corrosion inhibitor to stay clean.',
+            'Each unit is serialized so fleets can trace QC data after install.',
+        ],
+        'faqs': [
+            {
+                'q': 'Is calibration required?',
+                'a': 'Most brake hardware is plug-and-play. If stroke or bias needs setting we include the adjustment guide.',
+            },
+            {
+                'q': 'Is it compatible with ABS/EBS?',
+                'a': 'Yes—components follow Volvo specs so sensors and ECU logic read the correct pressures.',
+            },
+            {
+                'q': 'How do you pack air-system parts?',
+                'a': 'Ports are blocked, assemblies are foam-braced, and desiccant keeps moisture away.',
+            },
+            {
+                'q': 'Can you ship multi-axle kits?',
+                'a': 'We can palletize labelled kits for fleet rebuilds with HS codes and inspection photos.',
+            },
+        ],
+    },
+}
+
+for category_key, copy in GENERIC_COPY.items():
+    CATEGORY_CONFIGS[category_key]['features'] = copy['features']
+    CATEGORY_CONFIGS[category_key]['faqs'] = copy['faqs']
 
 DEFAULT_ORDER: List[str] = list(CATEGORY_CONFIGS.keys())
 
