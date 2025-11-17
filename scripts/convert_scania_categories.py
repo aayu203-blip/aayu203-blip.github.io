@@ -10,426 +10,349 @@ from typing import Dict, List, Optional
 from bs4 import BeautifulSoup  # type: ignore
 
 BASE_TEMPLATE_PATH = Path('templates/scania-hydraulics-base.html')
-PLACEHOLDER_VALUES = {'-', '—', 'n/a', 'na', 'n.a.', 'na.', 'nil', 'none'}
+PLACEHOLDER_VALUES = {'-', '—', 'n/a', 'na', 'n.a.', 'na.', 'nil', 'none', 'scania chassis (share vin for confirmation)'}
 CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
     'engine': {
         'dir': 'scania/engine',
         'category_label': 'Engine Components',
         'category_url': '/pages/categories/scania-engine-components.html',
         'description_template': (
-            "Scania {part_label_lower} (Part {part_number}) stabilizes combustion loads on {application}. "
-            "We machine every contact face to OEM drawings, test oil galleries for leaks, and shelf them climate-controlled in Mumbai so technicians can bolt in without rework."
+            "Scania {part_label_lower} (Part {part_number}) keeps engine assemblies aligned on highway and off-road duty. "
+            "Surfaces follow OEM drawings so the part bolts in without extra machining and technicians can follow the workshop manual torque steps without surprises."
         ),
         'features': [
-            'Machined to Scania OEM tolerances so housings and covers bolt up without shims.',
-            'Heat-treated alloys handle repeated hot/cold cycles on long-haul and mining duty.',
-            'Oil and coolant passages are leak-checked before every batch leaves our bench.',
-            'Each lot is laser batch-coded so you can pull QC data whenever you need it.',
+            'OEM bolt patterns and dowel seats stay true so housings align without shim stacks.',
+            'Heat-treated alloys handle long-haul thermal swings and stop-start duty.',
+            'Oil, coolant, and breather ports retain factory diameters for painless plumbing.',
+            'Surface finishes arrive gasket-ready to keep assembly time predictable.',
         ],
         'faqs': [
             {
-                'q': 'Where is this Scania engine part used?',
-                'a': 'It fits Scania P/G/R/S-series engine assemblies. Share your VIN or PES number and we’ll confirm the EPC match before dispatch.',
+                'q': 'Which Scania models use this engine component?',
+                'a': 'Matches the OEM part number across P/G/R/S-series engines; compare with the reference already in your Scania EPC before ordering.',
             },
             {
-                'q': 'Do I need ECU programming after installing?',
-                'a': 'Most mechanical swaps drop in. If a sensor or actuator needs calibration we include torque values and adaptation steps in the quote reply.',
+                'q': 'Do I need special tools during install?',
+                'a': 'Use the fixtures and torque charts from your Scania workshop manual—the footprint mirrors the OE part so standard tools are enough.',
             },
             {
-                'q': 'What testing is performed before shipping?',
-                'a': 'Every lot is CMM-measured, leak-tested, and signed off on a QC sheet that we can share with your service team.',
+                'q': 'Can I bundle multiple engine parts in one shipment?',
+                'a': 'Yes, we consolidate cylinder, head, and accessory parts so fleets receive complete kits in a single dispatch.',
             },
             {
-                'q': 'Can you ship engine components internationally?',
-                'a': 'Yes—daily India dispatch plus weekly export lots with HS codes, fumigation certificates, and pre-dispatch photos.',
+                'q': 'Do you support export or remote deliveries?',
+                'a': 'Engine components ship nationwide daily and depart in weekly export lots with HS codes, invoices, and packing photos for customs.',
             },
         ],
         'structured_category': 'Engine Components',
     },
     'transmission': {
         'dir': 'scania/transmission',
-        'category_label': 'Transmission & Driveline',
-        'category_url': '/pages/categories/scania-transmission-and-driveline.html',
+        'category_label': 'Transmission & Differential Components',
+        'category_url': '/pages/categories/scania-transmission-and-differential-components.html',
         'description_template': (
-            "Scania {part_label_lower} (Part {part_number}) keeps gearboxes shifting cleanly on {application}. "
-            "We hone sealing lands, balance rotating parts, and batch-test every lot under load so your driveline goes back on road without chatter."
+            "Scania {part_label_lower} (Part {part_number}) keeps transmissions and differentials shifting clean on mixed duty cycles. "
+            "Gear profiles and splines mirror OEM backlash windows so the driveline returns to work without chatter."
         ),
         'features': [
-            'Ground spline and gear profiles keep backlash within Scania spec.',
-            'Hardened bearing surfaces shrug off torsional spikes from loaded drivetrains.',
-            'Assemblies are spun for runout and leak-checked before we pack them.',
-            'Splines and ports ship capped with VCI wrap so installs stay clean and quick.',
+            'Spline geometry and gear flanks hold backlash within Scania specs.',
+            'Hardened bearing seats absorb torsional shock from hill starts and heavy loads.',
+            'Seal lands and clutch faces mirror factory finishes for quick assembly.',
+            'Locator flats and timing marks match Scania drawings so forks and hubs align quickly.',
         ],
         'faqs': [
             {
-                'q': 'Which Scania gearboxes use this part?',
-                'a': 'It covers GRS/GRSO/I-Shift families. Send your VIN or gearbox code so we can confirm the EPC match before dispatch.',
+                'q': 'Which gearboxes is this part compatible with?',
+                'a': 'Follows the listed Scania part number across GRS/GRSO, Opticruise, and related families—use the same number your EPC displays.',
             },
             {
-                'q': 'Is calibration needed after replacement?',
-                'a': 'Most mechanical drops do not. If clutch packs or actuators need shimming we include shim data and torque notes.',
+                'q': 'Does installation require ECU calibration?',
+                'a': 'Mechanical swaps reuse the existing ECU settings; if your service manual calls for an adaptation, follow those steps once the part is in.',
             },
             {
-                'q': 'How do you pack driveline parts?',
-                'a': 'Components are dipped in anti-corrosion oil, capped, and cushioned so sealing faces arrive blemish-free.',
+                'q': 'Can you ship driveline kits together?',
+                'a': 'Yes, clutch packs, seals, and gears can be palletized together with one tracking number.',
             },
             {
-                'q': 'Do you supply export paperwork?',
-                'a': 'Yes—HS codes, certificates of origin, and pre-dispatch photos are available for every shipment.',
+                'q': 'How fast can you dispatch transmission parts?',
+                'a': 'In-stock driveline components are staged for same-day dispatch with tracking shared over email and WhatsApp.',
             },
         ],
-        'structured_category': 'Transmission & Driveline',
+        'structured_category': 'Transmission & Differential Components',
     },
     'suspension': {
         'dir': 'scania/suspension',
-        'category_label': 'Suspension & Ride Control',
-        'category_url': '/pages/categories/scania-suspension-and-ride-control.html',
+        'category_label': 'Steering & Suspension Parts',
+        'category_url': '/pages/categories/scania-steering-and-suspension-parts.html',
         'description_template': (
-            "Scania {part_label_lower} (Part {part_number}) keeps ride height steady on {application}. "
-            "We match OEM durometer, pre-load each batch on hydraulic presses, log traceable QC notes, and keep WhatsApp VIN confirmations under 30 minutes so downtime stays planned."
+            "Scania {part_label_lower} (Part {part_number}) keeps ride height steady on quarry, port, and highway duty. "
+            "Bushings and housings follow OEM durometer and geometry so they press into hangers smoothly and hold alignment under load."
         ),
         'features': [
-            'Durometer-matched rubber with forged housings keeps ride height and damping consistent even on quarry duty.',
-            'Every batch is pre-loaded on hydraulic presses, measured, and batch-coded so you can pull QC sheets later.',
-            "Press-fit bores are honed and dry-fit checked; installers don't have to chase squeaks after torque.",
-            'Packed with torque decals, capped sleeves, and VCI wrap so benches stay clean and installs move fast.',
+            'OEM durometer rubber bonded to forged housings keeps ride height consistent.',
+            'Chamfered sleeves guide the part into hangers without tearing bush eyes.',
+            'Locator flats and keyways mirror Scania brackets so alignment plates line up quickly.',
+            'Quote references highlight companion hardware so axle jobs can be staged in one go.',
         ],
         'faqs': [
             {
-                'q': 'Which chassis does this suspension component fit?',
-                'a': 'Share your VIN or axle code and we confirm the EPC chapter via WhatsApp in under 30 minutes before dispatch.',
+                'q': 'Which chassis does this suspension part fit?',
+                'a': 'Matches the Scania part number used on steering and drive axles; confirm against your EPC listing before installation.',
             },
             {
-                'q': 'Do I need special tools to install it?',
-                'a': 'Standard hydraulic presses and torque tools work. We include orientation diagrams and torque charts in the quote so crews can prep ahead of downtime.',
+                'q': 'What tools are required for install?',
+                'a': 'Standard presses, torque wrenches, and hanger fixtures from the Scania workshop manual cover the job.',
             },
             {
-                'q': 'How is the part protected during shipping?',
-                "a": "Bushings are capped, foam-braced, bagged with desiccant, and strapped inside double-wall cartons so rubber doesn't flatten in transit.",
+                'q': 'Can I order left/right or front/rear pairs together?',
+                'a': 'Yes, mirrored parts can be cartoned together so your bay services both sides during the same downtime window.',
             },
             {
-                'q': 'Can you ship export orders?',
-                'a': 'Yes—daily domestic dispatch plus weekly export lots with HS codes, fumigation certificates, and pre-dispatch photos shared for traceability.',
+                'q': 'Do you support export shipments for suspension parts?',
+                'a': 'Steering and suspension SKUs ship across India daily and internationally with HS codes each week.',
             },
         ],
-        'structured_category': 'Suspension & Ride Control',
+        'structured_category': 'Steering & Suspension Parts',
     },
     'exterior': {
         'dir': 'scania/exterior',
-        'category_label': 'Body & Exterior',
-        'category_url': '/pages/categories/scania-body-and-exterior.html',
+        'category_label': 'Lighting & Exterior Body Components',
+        'category_url': '/pages/categories/scania-lighting-and-exterior-body-components.html',
         'description_template': (
-            "Scania {part_label_lower} (Part {part_number}) refreshes cab appearance and aerodynamics on {application}. "
-            "We colour-match primers, keep mounting holes indexed, and ship panels in protective crates so they bolt straight on."
+            "Scania {part_label_lower} (Part {part_number}) refreshes cab appearance and lighting while keeping airflow on spec. "
+            "Panels follow factory hole patterns so they align with OE brackets and trim clips."
         ),
         'features': [
-            'Injection-moulded or pressed to OEM dimensions so gaps and shut lines stay true.',
-            'Neutral primer finish saves prep time—scuff, paint, and install.',
+            'Injection-moulded or pressed to OEM contours so gaps and shut lines stay tight.',
+            'Primer-ready or UV-stable finishes help paint and vinyl steps move faster.',
             'Reinforced mounting bosses handle cab flex and repeated service.',
-            'Panels ship with peel film, corner protectors, and foam cradles to prevent transit scuffs.',
+            'Clip, seal, and lamp references mirror the Scania parts book for faster staging.',
         ],
         'faqs': [
             {
-                'q': 'Does this panel match factory paint?',
-                'a': 'Panels arrive in primer. Share your paint code and we’ll confirm the OE reference for your body shop.',
+                'q': 'Does this match factory paint?',
+                'a': 'Panels arrive in primer or neutral finishes so your body shop can color-match using Scania paint codes.',
             },
             {
-                'q': 'Are mounting clips included?',
-                'a': 'Most kits include the needed clips or seals; if not, we list the compatible hardware in the quote.',
+                'q': 'Are clips or seals included?',
+                'a': 'If the OEM assembly lists clips or seals we can add them to the quote so everything arrives together.',
             },
             {
-                'q': 'How do you pack large exterior pieces?',
-                'a': 'Each part gets foam edging, corner protectors, and double-wall cartons so it arrives dent-free.',
+                'q': 'How are large panels shipped?',
+                'a': 'Large exterior pieces are scheduled on dedicated carriers with tracking so workshops can plan prep and paint time.',
             },
             {
-                'q': 'Can you send fitment photos?',
-                'a': 'Yes—ask for mounting diagrams or photos and we’ll include them in the dispatch email.',
+                'q': 'Can you send installation references?',
+                'a': "Request the relevant Scania diagram in your quote and we'll include the PDF link.",
             },
         ],
-        'structured_category': 'Body & Exterior',
+        'structured_category': 'Lighting & Exterior Body Components',
     },
     'hardware': {
         'dir': 'scania/hardware',
-        'category_label': 'Hardware & Fasteners',
-        'category_url': '/pages/categories/scania-hardware-and-fasteners.html',
+        'category_label': 'Fasteners, Hardware & Accessories',
+        'category_url': '/pages/categories/scania-fasteners-hardware-accessories.html',
         'description_template': (
-            "Scania {part_label_lower} (Part {part_number}) keeps chassis assemblies locked down on {application}. "
-            "Thread geometry, coatings, and proof-load testing match the OEM spec so torque readings stay accurate even after field service."
+            "Scania {part_label_lower} (Part {part_number}) keeps chassis assemblies locked down across harsh duty cycles. "
+            "Thread geometry and coatings mirror OEM specs so torque readings stay consistent after service."
         ),
         'features': [
-            'Grade-marked steel with OEM coatings resists corrosion and galling.',
-            'Threads roll-formed for higher fatigue strength versus cut threads.',
-            'Each lot torque-tested and batch-coded for traceability.',
-            'Ships with protective caps or VCI sleeves so threads stay clean.',
+            'Grade-marked steel and OEM coatings resist corrosion and galling.',
+            'Roll-formed threads deliver higher fatigue strength and repeatable torque.',
+            'Head markings follow Scania specifications so crews can audit fasteners quickly.',
+            'Supplied in clearly labelled sets so bays can stage bolts, nuts, and spacers per axle or assembly.',
         ],
         'faqs': [
             {
                 'q': 'Which torque spec should I follow?',
-                'a': 'Use the torque chart from the Scania workshop manual for your VIN. We can share the spec sheet when you request a quote.',
+                'a': 'Use the torque chart from your Scania repair manual; the hardware matches the OEM grade printed on the head.',
             },
             {
                 'q': 'Are washers or nuts included?',
-                'a': 'Most kits include mating hardware. If not, we list compatible part numbers and can pack them together.',
+                'a': 'Assemblies can be quoted with the washer or nut combinations shown in the parts book so everything arrives together.',
             },
             {
-                'q': 'Do you stock stainless or zinc-nickel variants?',
-                'a': 'Yes, select SKUs come in alternate finishes. Share the environment details and we will match the right coating.',
+                'q': 'Can I order bulk fastener kits?',
+                'a': 'Yes, we kit frame, suspension, or cab fasteners in labelled bags so fleets can service multiple trucks.',
             },
             {
-                'q': 'Can you ship consolidated hardware kits?',
-                'a': 'We regularly palletize mixed fastener kits for fleet overhauls with labeled bags and packing lists.',
+                'q': 'Do you offer corrosion-resistant finishes?',
+                'a': 'Zinc-nickel, Dacromet, or stainless variants are available on select SKUs—mention your environment when requesting a quote.',
             },
         ],
-        'structured_category': 'Hardware & Fasteners',
+        'structured_category': 'Fasteners, Hardware & Accessories',
     },
     'misc': {
         'dir': 'scania/misc',
-        'category_label': 'Electrical & Cabin Essentials',
-        'category_url': '/pages/categories/scania-electrical-and-cabin.html',
+        'category_label': 'Miscellaneous Parts',
+        'category_url': '/pages/categories/scania-miscellaneous-parts.html',
         'description_template': (
-            "Scania {part_label_lower} (Part {part_number}) keeps auxiliary systems running on {application}. "
-            "Switchgear, sensors, and cabin hardware ship pre-tested so your technicians plug them in without rewiring surprises."
+            "Scania {part_label_lower} (Part {part_number}) covers electrical and cabin essentials that keep dashboards, harnesses, and sensors operating. "
+            "Connectors follow OEM keying so they plug straight into factory looms."
         ),
         'features': [
-            'Bench-tested for continuity, signal accuracy, or mechanical travel before packing.',
-            'Harness connectors retain OEM keying so they plug into factory looms instantly.',
-            'Compact packaging with foam cells protects delicate plastics and PCB traces.',
-            'Every box includes QR codes linking to install notes or wiring diagrams.',
+            'Connector keys and pin-outs mirror the OEM harness so it plugs in without rewiring.',
+            'Housings are moulded in flame-resistant polymers suited for cab interiors.',
+            'Switch detents and tactile feedback match the OE feel drivers expect.',
+            'Part numbers are printed directly on housings so techs can stage harnesses quickly.',
         ],
         'faqs': [
             {
-                'q': 'Will this part trigger fault codes?',
-                'a': 'Components mirror OEM resistance/voltage curves so ECUs read them correctly. Send fault logs and we will double-check before shipping.',
+                'q': 'Does this component require coding after install?',
+                'a': 'Most electrical spares reuse existing ECU settings; refer to your diagnostic tool if the Scania manual mentions calibration.',
             },
             {
-                'q': 'Do you provide wiring assistance?',
-                'a': 'Yes, our desk shares pinouts, wiring diagrams, or voice support if your technician needs guidance during install.',
+                'q': 'Can I combine multiple cabin parts in one order?',
+                'a': 'Yes, harnesses, switches, and trims can be boxed together so the interior job finishes in one visit.',
             },
             {
-                'q': 'How do you package fragile cabin parts?',
-                'a': 'We use foam cradles and anti-static bags so switchgear and displays reach your shop intact.',
+                'q': 'Can you share wiring references?',
+                'a': 'Quote replies can include the relevant wiring or connector references when you request them.',
             },
             {
-                'q': 'Can I club multiple cabin trims in one order?',
-                'a': 'Absolutely—we bundle mixed SKUs with labeled cartons so installers can stage parts per cab.',
+                'q': 'Do you ship internationally?',
+                'a': 'Electrical SKUs ship nationwide daily and internationally with the same paperwork as mechanical parts.',
             },
         ],
-        'structured_category': 'Electrical & Cabin Essentials',
+        'structured_category': 'Miscellaneous Parts',
     },
     'filtration': {
         'dir': 'scania/filtration',
-        'category_label': 'Filters & Filtration',
-        'category_url': '/pages/categories/scania-filters-and-filtration.html',
+        'category_label': 'Air & Fluid Filtration Systems',
+        'category_url': '/pages/categories/scania-air-and-fluid-filtration-systems.html',
         'description_template': (
-            "Scania {part_label_lower} (Part {part_number}) keeps oil, fuel, or air circuits clean on {application}. "
-            "Media density matches OEM microns, and every element is vacuum-bagged so it drops straight into housings without contamination."
+            "Scania {part_label_lower} (Part {part_number}) keeps air and fluid circuits clean with OEM-spec media. "
+            "The cartridge drops straight into the housing so preventative maintenance stays quick."
         ),
         'features': [
-            'Multi-layer media catches fine particulates while maintaining flow.',
-            'Seals and end caps moulded to OEM dimensions for leak-free installs.',
-            'Each batch pressure-tested for collapse and bypass performance.',
-            'Ships vacuum-sealed with desiccant so media stays dust-free.',
+            'Multi-layer media captures debris while maintaining OEM flow rates.',
+            'End caps and seals moulded to factory tolerances for leak-free seating.',
+            'Center tubes resist collapse during cold starts or pressure spikes.',
+            'Each element is clearly labelled with part number and flow direction for quick bay identification.',
         ],
         'faqs': [
             {
                 'q': 'What service interval should I follow?',
-                'a': 'Use the Scania service schedule for your duty cycle. We can provide interval tables for on-road vs. mining use.',
+                'a': 'Stick to the interval listed in your Scania maintenance schedule and adjust for dusty or severe duty as required.',
             },
             {
-                'q': 'Is this compatible with biofuel or synthetic oils?',
-                'a': 'Yes—media is rated for modern fluids. Share your lubricant if you have special additive packages.',
+                'q': 'Is it compatible with modern fuels or oils?',
+                'a': 'Media is specified for current diesel, bio blends, and synthetic lubes listed in Scania documentation.',
             },
             {
-                'q': 'Do filters ship with O-rings?',
-                'a': 'Critical filters include fresh seals. If a kit needs extra gaskets we add them to the pack list.',
+                'q': 'Do filters include O-rings or gaskets?',
+                'a': 'Critical seals can be bundled into the same shipment on request so technicians have everything in one tray.',
             },
             {
-                'q': 'Can you supply MSDS or lab reports?',
-                'a': 'Sure, we maintain filtration certificates and can email them with your invoice.',
+                'q': 'Can I order bulk filter packs?',
+                'a': 'Yes, we palletize filter kits for fleets so PM services can be staged per truck or engine family.',
             },
         ],
-        'structured_category': 'Filters & Filtration',
+        'structured_category': 'Air & Fluid Filtration Systems',
     },
     'fuel': {
         'dir': 'scania/fuel',
         'category_label': 'Fuel System Components',
-        'category_url': '/pages/categories/scania-fuel-system.html',
+        'category_url': '/pages/categories/scania-fuel-system-components.html',
         'description_template': (
-            "Scania {part_label_lower} (Part {part_number}) keeps injection and supply circuits primed on {application}. "
-            "We test every unit for pressure integrity and clean-room pack it so installers don’t fight debris in rail lines."
+            "Scania {part_label_lower} (Part {part_number}) keeps injection and supply circuits primed across harsh duty cycles. "
+            "Sealing faces and threads mirror OEM specs so plumbing reconnects without drama."
         ),
         'features': [
-            'Bench-tested for correct opening pressure or flow before dispatch.',
-            'Critical sealing surfaces capped to prevent nicks during shipping.',
-            'Supplied with torque specs or shim data where applicable.',
-            'Each lot bagged in ISO-clean pouches to keep fuel circuits spotless.',
+            'Metering components hold OEM pressures so injection timing stays stable.',
+            'Precision-ground sealing faces keep rail pressure where it belongs.',
+            'Ports and threads mirror factory sizes for plug-and-play plumbing.',
+            'Supplied with part-number tags so build benches can stage banked assemblies quickly.',
         ],
         'faqs': [
             {
-                'q': 'Is coding required after injector/valve replacement?',
-                'a': 'If EMS coding is required we’ll send the trim file or reference so your dealer software can upload it.',
+                'q': 'Do I need ECU coding after replacement?',
+                'a': 'If your Scania manual mentions trim coding, use your diagnostic tool to upload those values after install.',
             },
             {
-                'q': 'Do you flush components before shipping?',
-                'a': 'Yes, fuel hardware is cleaned with filtered fluid and nitrogen-dried before sealing.',
+                'q': 'Can you match older revisions?',
+                'a': "Provide the part number currently on your engine plate and we'll supply the same revision or a backwards-compatible supersession.",
             },
             {
-                'q': 'Can you match older pump revisions?',
-                'a': 'We keep legacy part numbers mapped. Share your engine serial and we’ll confirm compatibility.',
+                'q': 'Can you bundle seals or fittings?',
+                'a': 'Yes, crush washers, seals, or fittings listed alongside the main component can ship in the same box.',
             },
             {
-                'q': 'How fast can you dispatch fuel parts?',
-                'a': 'Most SKUs leave the same day with shock-proof packaging and insurance for high-value components.',
+                'q': 'How fast are fuel components dispatched?',
+                'a': 'Fuel-system SKUs ship daily with tracked courier options and WhatsApp notifications.',
             },
         ],
         'structured_category': 'Fuel System Components',
     },
     'braking': {
         'dir': 'scania/braking',
-        'category_label': 'Brake & Air Systems',
-        'category_url': '/pages/categories/scania-brake-and-air.html',
+        'category_label': 'Braking System Components',
+        'category_url': '/pages/categories/scania-braking-system-components.html',
         'description_template': (
-            "Scania {part_label_lower} (Part {part_number}) maintains braking pressure and modulation on {application}. "
-            "Seals, seats, and diaphragms follow factory tolerances so stopping distances stay consistent after service."
+            "Scania {part_label_lower} (Part {part_number}) maintains brake balance on tractor-trailers and rigid trucks. "
+            "Port layouts and mounting faces align with Scania brake hardware so lines reconnect easily."
         ),
         'features': [
-            'Valve bodies and chambers leak-tested at operating pressure.',
-            'Elastomers sourced to OEM Shore hardness for long diaphragm life.',
-            'Port threads protected with caps plus corrosion inhibitor.',
-            'Each unit serialized so you can trace QC data post-install.',
+            'Port locations and mounting faces match Scania layouts for easy plumbing.',
+            'Diaphragm and seal materials handle repeated heat cycles without fade.',
+            'Linkage arms include the same splines and keyways as the OE unit.',
+            'Reference marks show adjuster positions so setup is repeatable.',
         ],
         'faqs': [
             {
-                'q': 'Does this part require calibration?',
-                'a': 'Most brake hardware is plug-and-play. If stroke or bias needs setting we send the adjustment guide with your invoice.',
+                'q': 'Which series is this brake part for?',
+                'a': 'Matches the Scania part number stamped on your existing valve or chamber—check that stamp before ordering.',
             },
             {
-                'q': 'Is it compatible with ABS/EBS systems?',
-                'a': 'Yes—components follow OEM specs so sensors and ECU logic read the correct pressures.',
+                'q': 'Do I need special bleeding procedures?',
+                'a': 'Follow the Scania brake manual for bleeding and adjustment; the hardware installs like the OE part.',
             },
             {
-                'q': 'How do you package air-system parts?',
-                'a': 'We block ports, add desiccant, and strap assemblies inside double-wall cartons to avoid impact damage.',
+                'q': 'Can you bundle brake hardware?',
+                'a': 'Yes, chambers, valves, and fittings can be shipped together for axle overhauls.',
             },
             {
-                'q': 'Can you support fleet brake rebuilds?',
-                'a': 'We can palletize multi-axle kits with labelled cartons so workshops can service several trucks in parallel.',
+                'q': 'Do you offer urgent dispatch?',
+                'a': 'Brake parts are prioritized for same-day dispatch with courier tracking and WhatsApp status updates.',
             },
         ],
-        'structured_category': 'Brake & Air Systems',
+        'structured_category': 'Braking System Components',
+    },
+    'hydraulics': {
+        'dir': 'scania/hydraulics',
+        'category_label': 'Hydraulic Systems & Connectors',
+        'category_url': '/pages/categories/scania-hydraulic-systems-and-connectors.html',
+        'description_template': (
+            "Scania {part_label_lower} (Part {part_number}) keeps hydraulic circuits sealed across tippers, cranes, and steering systems. "
+            "Thread forms and flare angles follow Scania specs for leak-free sealing."
+        ),
+        'features': [
+            'Thread forms and flare angles match Scania specs for leak-free sealing.',
+            'Corrosion-resistant alloys handle harsh on-site environments.',
+            'Port orientation mirrors OEM layouts so hoses run clean routes.',
+            'Part numbers are etched or tagged so maintenance teams grab the right fitting quickly.',
+        ],
+        'faqs': [
+            {
+                'q': 'Which systems does this hydraulic part suit?',
+                'a': 'Matches the OEM part number across tipper, crane, steering, and auxiliary hydraulic circuits—confirm with your existing parts list.',
+            },
+            {
+                'q': 'Can I get hoses and fittings together?',
+                'a': 'Yes, hoses, unions, and valves can be quoted as a complete kit per vehicle.',
+            },
+            {
+                'q': 'Do you support export shipments?',
+                'a': 'Hydraulic SKUs are stocked for nationwide and export dispatch with HS codes ready.',
+            },
+            {
+                'q': 'How do I verify size before ordering?',
+                'a': 'Measure the thread or refer to your Scania hydraulic diagram; the part matches the OEM specification listed there.',
+            },
+        ],
+        'structured_category': 'Hydraulic Systems & Connectors',
     },
 }
-
-GENERIC_COPY = {
-    'engine': {
-        'features': [
-            'Machined to Scania OEM tolerances so housings and covers bolt up without shims.',
-            'Heat-treated alloys handle repeated hot/cold cycles on long-haul and mining duty.',
-            'Oil and coolant passages are leak-checked before every batch leaves our bench.',
-            'Each lot is laser batch-coded so you can pull QC data whenever you need it.',
-        ],
-        'faqs': [
-            {
-                'q': 'Where is this Scania engine part used?',
-                'a': "It fits Scania P/G/R/S-series engine assemblies. Share your VIN or PES number and we'll confirm the EPC match before dispatch.",
-            },
-            {
-                'q': 'Do I need ECU programming after installing?',
-                'a': 'Most mechanical swaps drop in. If a sensor or actuator needs calibration we include torque values and adaptation steps in the quote reply.',
-            },
-            {
-                'q': 'What testing is performed before shipping?',
-                'a': 'Every lot is CMM-measured, leak-tested, and backed by a QC sheet we can share with your workshop.',
-            },
-            {
-                'q': 'Can you ship engine components internationally?',
-                'a': 'Yes—daily India dispatch plus weekly export lots with HS codes, fumigation certificates, and pre-dispatch photos.',
-            },
-        ],
-    },
-    'transmission': {
-        'features': [
-            'Ground spline and gear profiles keep backlash within Scania spec.',
-            'Hardened bearing surfaces shrug off torsional spikes from loaded drivetrains.',
-            'Assemblies are spun for runout and leak-checked before we pack them.',
-            'Splines and ports ship capped with VCI wrap so installs stay clean and quick.',
-        ],
-        'faqs': [
-            {
-                'q': 'Which Scania gearboxes use this part?',
-                'a': "It covers GRS/GRSO/I-Shift families. Send your VIN or gearbox code so we can confirm the EPC match before dispatch.",
-            },
-            {
-                'q': 'Is calibration needed after replacement?',
-                'a': 'Most mechanical drops do not. If clutch packs or actuators need shimming we include shim data and torque notes.',
-            },
-            {
-                'q': 'How do you pack driveline parts?',
-                'a': 'Components are dipped in anti-corrosion oil, capped, and cushioned so sealing faces arrive blemish-free.',
-            },
-            {
-                'q': 'Do you supply export paperwork?',
-                'a': 'Yes—HS codes, certificates of origin, and pre-dispatch photos are available for every shipment.',
-            },
-        ],
-    },
-    'suspension': {
-        'features': [
-            'Durometer-matched rubber with forged housings keeps ride height and damping consistent even on quarry duty.',
-            'Every batch is pre-loaded on hydraulic presses, measured, and batch-coded so you can pull QC sheets later.',
-            "Press-fit bores are honed and dry-fit checked; installers don't have to chase squeaks after torque.",
-            'Packed with torque decals, capped sleeves, and VCI wrap so benches stay clean and installs move fast.',
-        ],
-        'faqs': [
-            {
-                'q': 'Which chassis does this suspension component fit?',
-                'a': 'Share your VIN or axle code and we confirm the EPC chapter via WhatsApp in under 30 minutes before dispatch.',
-            },
-            {
-                'q': 'Do I need special tools to install it?',
-                'a': 'Standard hydraulic presses and torque tools work. We include orientation diagrams and torque charts in the quote so crews can prep ahead of downtime.',
-            },
-            {
-                'q': 'How is the part protected during shipping?',
-                'a': "Bushings are capped, foam-braced, bagged with desiccant, and strapped inside double-wall cartons so rubber doesn't flatten in transit.",
-            },
-            {
-                'q': 'Can you ship export orders?',
-                'a': 'Yes—daily domestic dispatch plus weekly export lots with HS codes, fumigation certificates, and pre-dispatch photos shared for traceability.',
-            },
-        ],
-    },
-    'exterior': {
-        'features': [
-            'Injection-moulded or pressed to OEM dimensions so gaps and shut lines stay true.',
-            'Neutral primer finish saves prep time—scuff, paint, and install.',
-            'Reinforced mounting bosses handle cab flex and repeated service.',
-            'Panels ship with peel film, corner protectors, and foam cradles to prevent transit scuffs.',
-        ],
-        'faqs': [
-            {
-                'q': 'Does this panel match factory paint?',
-                'a': 'Panels arrive in primer. Share your paint code and we will confirm the OE reference for your body shop.',
-            },
-            {
-                'q': 'Are mounting clips included?',
-                'a': 'Most kits include the needed clips or seals; if not, we list the compatible hardware in the quote.',
-            },
-            {
-                'q': 'How do you pack large exterior pieces?',
-                'a': 'Each part gets foam edging, corner protectors, and double-wall cartons so it arrives dent-free.',
-            },
-            {
-                'q': 'Can you send fitment photos?',
-                'a': 'Yes—ask for mounting diagrams or photos and we will include them in the dispatch email.',
-            },
-        ],
-    },
-}
-
-for category_key, copy in GENERIC_COPY.items():
-    CATEGORY_CONFIGS[category_key]['features'] = copy['features']
-    CATEGORY_CONFIGS[category_key]['faqs'] = copy['faqs']
 
 DEFAULT_PROCESS_ORDER: List[str] = list(CATEGORY_CONFIGS.keys())
 
@@ -480,7 +403,7 @@ def extract_metadata(html_text: str, part_number: str) -> dict:
             value = cells[i + 1]
             table_data[key] = value
 
-    application = normalize_field(table_data.get('Application'), 'Scania chassis (share VIN for confirmation)')
+    application = normalize_field(table_data.get('Application'), 'Scania trucks (reference OEM part list)')
     alternate = normalize_field(table_data.get('Alternate Part Numbers'), '—')
     measurements = normalize_field(table_data.get('Measurements'), '—')
 
@@ -496,10 +419,10 @@ def extract_metadata(html_text: str, part_number: str) -> dict:
 def build_copy(category_key: str, part_label: str, part_number: str, application: str) -> dict:
     cfg = CATEGORY_CONFIGS[category_key]
     part_label_lower = part_label.lower()
-    application_clean = normalize_field(application, 'Scania chassis (share VIN for confirmation)')
+    application_clean = normalize_field(application, 'Scania trucks (reference OEM part list)')
     description = cfg['description_template'].format(part_label_lower=part_label_lower, part_number=part_number, application=application_clean)
-    meta_description = f"Order Scania {part_label_lower} {part_number} for {cfg['category_label'].lower()}. Ready stock in Mumbai with pan-India dispatch and WhatsApp quotes."
-    keywords = f"Scania {part_number}, {part_label_lower} {part_number}, {cfg['category_label'].lower()}, {part_number} India, scania parts Mumbai"
+    meta_description = f"Order Scania {part_label_lower} {part_number} for {cfg['category_label'].lower()}. Ready stock for nationwide dispatch with WhatsApp quotes and export support."
+    keywords = f"Scania {part_number}, {part_label_lower} {part_number}, {cfg['category_label'].lower()}, {part_number} india, scania parts supplier"
     return {
         'description': description,
         'meta_description': meta_description,
