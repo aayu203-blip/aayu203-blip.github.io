@@ -16,6 +16,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'scania/engine',
         'category_label': 'Engine Components',
         'category_url': '/pages/categories/scania-engine-components.html',
+        'icon': '/assets/icons/icon-engine.svg',
+        'category_blurb': 'Precision pistons, liners, and valvetrain hardware for full engine refreshes.',
         'description_template': (
             "Scania {part_label_lower} (Part {part_number}) keeps engine assemblies aligned on highway and off-road duty. "
             "Surfaces follow OEM drawings so the part bolts in without extra machining and technicians can follow the workshop manual torque steps without surprises."
@@ -50,6 +52,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'scania/transmission',
         'category_label': 'Transmission & Differential Components',
         'category_url': '/pages/categories/scania-transmission-and-differential-components.html',
+        'icon': '/assets/icons/icon-gear.svg',
+        'category_blurb': 'Synchronizers, gears, and clutch packs that keep drivetrains shifting clean.',
         'description_template': (
             "Scania {part_label_lower} (Part {part_number}) keeps transmissions and differentials shifting clean on mixed duty cycles. "
             "Gear profiles and splines mirror OEM backlash windows so the driveline returns to work without chatter."
@@ -84,6 +88,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'scania/suspension',
         'category_label': 'Steering & Suspension Parts',
         'category_url': '/pages/categories/scania-steering-and-suspension-parts.html',
+        'icon': '/assets/icons/icon-suspension.svg',
+        'category_blurb': 'Springs, bushings, and dampers that hold ride height on punishing duty cycles.',
         'description_template': (
             "Scania {part_label_lower} (Part {part_number}) keeps ride height steady on quarry, port, and highway duty. "
             "Bushings and housings follow OEM durometer and geometry so they press into hangers smoothly and hold alignment under load."
@@ -118,6 +124,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'scania/exterior',
         'category_label': 'Lighting & Exterior Body Components',
         'category_url': '/pages/categories/scania-lighting-and-exterior-body-components.html',
+        'icon': '/assets/icons/icon-light.svg',
+        'category_blurb': 'Headlamps, fascia, and trim pieces that keep cabs looking fleet-ready.',
         'description_template': (
             "Scania {part_label_lower} (Part {part_number}) refreshes cab appearance and lighting while keeping airflow on spec. "
             "Panels follow factory hole patterns so they align with OE brackets and trim clips."
@@ -152,6 +160,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'scania/hardware',
         'category_label': 'Fasteners, Hardware & Accessories',
         'category_url': '/pages/categories/scania-fasteners-hardware-accessories.html',
+        'icon': '/assets/icons/icon-hardware.svg',
+        'category_blurb': 'OE-grade bolts, brackets, and accessories for chassis and cab repairs.',
         'description_template': (
             "Scania {part_label_lower} (Part {part_number}) keeps chassis assemblies locked down across harsh duty cycles. "
             "Thread geometry and coatings mirror OEM specs so torque readings stay consistent after service."
@@ -186,6 +196,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'scania/misc',
         'category_label': 'Miscellaneous Parts',
         'category_url': '/pages/categories/scania-miscellaneous-parts.html',
+        'icon': '/assets/icons/icon-misc.svg',
+        'category_blurb': 'Sensors, harnesses, and cabin essentials that keep diagnostics clean.',
         'description_template': (
             "Scania {part_label_lower} (Part {part_number}) covers electrical and cabin essentials that keep dashboards, harnesses, and sensors operating. "
             "Connectors follow OEM keying so they plug straight into factory looms."
@@ -220,6 +232,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'scania/filtration',
         'category_label': 'Air & Fluid Filtration Systems',
         'category_url': '/pages/categories/scania-air-and-fluid-filtration-systems.html',
+        'icon': '/assets/icons/icon-filter.svg',
+        'category_blurb': 'OEM-spec media elements that protect air, oil, and fuel circuits.',
         'description_template': (
             "Scania {part_label_lower} (Part {part_number}) keeps air and fluid circuits clean with OEM-spec media. "
             "The cartridge drops straight into the housing so preventative maintenance stays quick."
@@ -254,6 +268,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'scania/fuel',
         'category_label': 'Fuel System Components',
         'category_url': '/pages/categories/scania-fuel-system-components.html',
+        'icon': '/assets/icons/icon-fuel.svg',
+        'category_blurb': 'Injectors, rails, and pumps that keep injection pressure on target.',
         'description_template': (
             "Scania {part_label_lower} (Part {part_number}) keeps injection and supply circuits primed across harsh duty cycles. "
             "Sealing faces and threads mirror OEM specs so plumbing reconnects without drama."
@@ -288,6 +304,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'scania/braking',
         'category_label': 'Braking System Components',
         'category_url': '/pages/categories/scania-braking-system-components.html',
+        'icon': '/assets/icons/icon-brake.svg',
+        'category_blurb': 'Chambers, rotors, and valves for confident, repeatable stops.',
         'description_template': (
             "Scania {part_label_lower} (Part {part_number}) maintains brake balance on tractor-trailers and rigid trucks. "
             "Port layouts and mounting faces align with Scania brake hardware so lines reconnect easily."
@@ -322,6 +340,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'scania/hydraulics',
         'category_label': 'Hydraulic Systems & Connectors',
         'category_url': '/pages/categories/scania-hydraulic-systems-and-connectors.html',
+        'icon': '/assets/icons/icon-hydraulic.svg',
+        'category_blurb': 'Cylinders, hoses, and unions for tipping gears, cranes, and steering.',
         'description_template': (
             "Scania {part_label_lower} (Part {part_number}) keeps hydraulic circuits sealed across tippers, cranes, and steering systems. "
             "Thread forms and flare angles follow Scania specs for leak-free sealing."
@@ -528,6 +548,28 @@ def render_html(context: dict) -> str:
             category_anchor['href'] = context['category_url']
             category_anchor.string = context['category_label']
 
+    hero_icon = soup.find(attrs={'data-category-icon': True})
+    if hero_icon:
+        icon_src = context.get('category_icon')
+        if icon_src:
+            hero_icon['src'] = icon_src
+        hero_icon['alt'] = f"{context['category_label']} icon"
+
+    for label_el in soup.select('[data-category-label]'):
+        label_el.string = context['category_label']
+
+    blurb_el = soup.find(attrs={'data-category-blurb': True})
+    if blurb_el:
+        blurb_el.string = context.get('category_blurb') or context['structured_category']
+
+    hero_app = soup.find(attrs={'data-category-application': True})
+    if hero_app:
+        hero_app.string = context['application']
+
+    hero_ptc = soup.find(attrs={'data-category-ptc': True})
+    if hero_ptc:
+        hero_ptc.string = context['ptc_number']
+
     part_p = soup.find('p', string=re.compile(r'Part Number', re.IGNORECASE))
     if part_p:
         part_p.string = f"Part Number: {part_number}"
@@ -632,6 +674,8 @@ def process_category(category_key: str) -> int:
             'category_label': cfg['category_label'],
             'category_url': cfg['category_url'],
             'structured_category': cfg['structured_category'],
+            'category_icon': cfg.get('icon', ''),
+            'category_blurb': cfg.get('category_blurb', ''),
             'part_number': part_number,
             'part_label': metadata['part_label'],
             'ptc_number': metadata['ptc_number'],

@@ -15,6 +15,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'volvo/engine',
         'category_label': 'Engine Components',
         'category_url': '/pages/categories/volvo-engine-components.html',
+        'icon': '/assets/icons/icon-engine.svg',
+        'category_blurb': 'Precision-built pistons, liners, and valvetrain parts for D-series overhauls.',
         'description_template': (
             "Volvo {part_label_lower} (Part {part_number}) keeps D-series engines within spec on {application}. "
             "Each batch is machined to OEM drawings, bench-tested for leaks, and held in our Mumbai warehouse so field techs can bolt it in without rework."
@@ -49,6 +51,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'volvo/braking',
         'category_label': 'Brake & Air Systems',
         'category_url': '/pages/categories/volvo-brake-and-air.html',
+        'icon': '/assets/icons/icon-brake.svg',
+        'category_blurb': 'Chambers, valves, and rotors that keep Volvo fleets stopping on spec.',
         'description_template': (
             "Volvo {part_label_lower} (Part {part_number}) maintains safe braking pressure on {application}. "
             "Valve seats, diaphragms, and sealing faces follow OEM tolerances so stopping distances stay predictable after service."
@@ -83,6 +87,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'volvo/suspension',
         'category_label': 'Suspension & Ride Control',
         'category_url': '/pages/categories/volvo-suspension-and-ride-control.html',
+        'icon': '/assets/icons/icon-suspension.svg',
+        'category_blurb': 'Air springs, bushings, and dampers tuned for FMX and FH chassis.',
         'description_template': (
             "Volvo {part_label_lower} (Part {part_number}) absorbs axle shock on {application}. "
             "We match OEM rubber hardness, shot-peen metal inserts, and preload each batch so the chassis returns to factory ride height."
@@ -117,6 +123,8 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'dir': 'volvo/transmission',
         'category_label': 'Transmission & Driveline',
         'category_url': '/pages/categories/volvo-transmission-and-driveline.html',
+        'icon': '/assets/icons/icon-gear.svg',
+        'category_blurb': 'Synchronizers, gears, and clutch kits that keep I-Shift drivetrains smooth.',
         'description_template': (
             "Volvo {part_label_lower} (Part {part_number}) keeps I-Shift/AT gearboxes shifting cleanly on {application}. "
             "We hone sealing lands, balance rotating parts, and test every lot so the driveline goes back on road without chatter."
@@ -413,6 +421,28 @@ def render_html(context: dict) -> str:
     if desc_p:
         desc_p.string = context['description']
 
+    hero_icon = soup.find(attrs={'data-category-icon': True})
+    if hero_icon:
+        icon_src = context.get('category_icon')
+        if icon_src:
+            hero_icon['src'] = icon_src
+        hero_icon['alt'] = f"{context['category_label']} icon"
+
+    for label_el in soup.select('[data-category-label]'):
+        label_el.string = context['category_label']
+
+    blurb_el = soup.find(attrs={'data-category-blurb': True})
+    if blurb_el:
+        blurb_el.string = context.get('category_blurb') or context['structured_category']
+
+    hero_app = soup.find(attrs={'data-category-application': True})
+    if hero_app:
+        hero_app.string = context['application']
+
+    hero_ptc = soup.find(attrs={'data-category-ptc': True})
+    if hero_ptc:
+        hero_ptc.string = context['ptc_number']
+
     feature_spans = soup.select('ul.space-y-3 span.text-gray-700')
     for span, text in zip(feature_spans, context['features']):
         span.string = text
@@ -495,6 +525,8 @@ def process_category(category_key: str) -> int:
             'category_label': cfg['category_label'],
             'category_url': cfg['category_url'],
             'structured_category': cfg['structured_category'],
+            'category_icon': cfg.get('icon', ''),
+            'category_blurb': cfg.get('category_blurb', ''),
             'part_number': part_number,
             'part_label': metadata['part_label'],
             'ptc_number': metadata['ptc_number'],
