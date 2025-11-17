@@ -334,68 +334,45 @@
         nav {
             top: 0 !important;
         }
-        .category-hero-wrap {
-            display: grid;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        @media (min-width: 1024px) {
-            .category-hero-wrap {
-                grid-template-columns: minmax(0, 1fr) 320px;
-                align-items: stretch;
-            }
-        }
-        .category-hero-card {
-            height: 100%;
+        .category-summary {
+            border: 1px solid #e5e7eb;
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            background: #f9fafb;
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            padding: 1.75rem;
-            border-radius: 1.5rem;
-            border: 1px solid rgba(251, 191, 36, 0.4);
-            background: linear-gradient(135deg, #fffbea 0%, #fef3c7 100%);
-            box-shadow: 0 25px 50px -12px rgba(250, 204, 21, 0.25);
         }
-        .category-icon-shell {
-            width: 96px;
-            height: 96px;
-            border-radius: 1.25rem;
-            background: rgba(17, 24, 39, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+        .summary-label {
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            color: #6b7280;
+            margin-bottom: 0.25rem;
         }
-        .category-icon-shell img {
-            width: 64px;
-            height: 64px;
-            object-fit: contain;
-            filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.25));
-        }
-        .category-hero-name {
+        .summary-title {
             font-size: 1.1rem;
             font-weight: 700;
             color: #111827;
         }
-        .category-hero-blurb {
-            color: #4b5563;
+        .summary-copy {
             font-size: 0.95rem;
+            color: #4b5563;
             line-height: 1.45;
-            margin-bottom: 0.5rem;
         }
-        .category-hero-stats {
+        .summary-stats {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 1rem;
         }
-        .category-hero-stats .stat-label {
+        .summary-stats .stat-label {
             font-size: 0.7rem;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: #6b7280;
         }
-        .category-hero-stats .stat-value {
-            font-size: 0.95rem;
+        .summary-stats .stat-value {
+            font-size: 1rem;
             font-weight: 600;
             color: #111827;
         }
@@ -536,9 +513,6 @@
 <!-- Left Section (Product Information) - 70% -->
 <div class="lg:col-span-2">
 <div class="bg-white rounded-xl shadow-lg p-8">
-<div class="category-hero-wrap">
-<div class="category-hero-content">
-<!-- Category Tags -->
 <!-- Breadcrumb Navigation -->
 <nav aria-label="Breadcrumb" class="mb-6">
 <ol class="flex items-center space-x-2 text-sm text-gray-600">
@@ -546,7 +520,7 @@
 <li><svg aria-hidden="true" class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></li>
 <li><a class="hover:text-yellow-600 transition-colors" href="/pages/scania-categories.html">Scania</a></li>
 <li><svg aria-hidden="true" class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></li>
-<li><a class="hover:text-yellow-600 transition-colors" href="/pages/categories/scania-engine-components.html">Engine Components</a></li>
+<li><a class="hover:text-yellow-600 transition-colors" data-category-label="" href="/pages/categories/scania-engine-components.html">Engine Components</a></li>
 <li><svg aria-hidden="true" class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></li>
 <li class="text-yellow-600 font-semibold">1104069</li>
 </ol>
@@ -554,24 +528,21 @@
 <!-- Product Title -->
 <h1 class="text-3xl font-bold text-gray-900 mb-4">Scania Shim 1104069</h1>
 <!-- Part Numbers -->
-<div class="space-y-2 mb-6">
-<p class="text-xl font-bold text-yellow-600">Part Number: 1104069</p>
-<p class="text-lg font-semibold text-blue-600">PTC Number: PTS04069</p>
+<div class="space-y-2 mb-4">
+<p class="text-xl font-bold text-yellow-600" data-part-number="">Part Number: 1104069</p>
+<p class="text-lg font-semibold text-blue-600" data-ptc-number="">PTC Number: PTS04069</p>
 </div>
 <!-- Description -->
 <div class="mb-6">
 <p class="text-gray-700 leading-relaxed" data-description="">Scania shim (Part 1104069) keeps engine assemblies aligned on highway and off-road duty. Surfaces follow OEM drawings so the part bolts in without extra machining and technicians can follow the workshop manual torque steps without surprises.</p>
 </div>
+<div class="category-summary">
+<div>
+<p class="summary-label">Category</p>
+<p class="summary-title" data-category-label="">Engine Components</p>
+<p class="summary-copy" data-category-blurb="">Precision pistons, liners, and valvetrain hardware for full engine refreshes.</p>
 </div>
-<div class="category-hero-side">
-<div class="category-hero-card">
-<div class="category-icon-shell">
-<img alt="Engine Components icon" data-category-icon="" src="/assets/icons/icon-engine.svg"/>
-</div>
-<div class="category-hero-text">
-<p class="category-hero-name" data-category-label="">Engine Components</p>
-<p class="category-hero-blurb" data-category-blurb="">Precision pistons, liners, and valvetrain hardware for full engine refreshes.</p>
-<div class="category-hero-stats">
+<div class="summary-stats">
 <div>
 <p class="stat-label">Application Fit</p>
 <p class="stat-value" data-category-application="">P410</p>
@@ -579,9 +550,6 @@
 <div>
 <p class="stat-label">PTC No.</p>
 <p class="stat-value" data-category-ptc="">PTS04069</p>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
