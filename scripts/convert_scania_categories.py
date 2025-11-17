@@ -5,11 +5,12 @@ import argparse
 import json
 import re
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 from bs4 import BeautifulSoup  # type: ignore
 
 BASE_TEMPLATE_PATH = Path('templates/scania-hydraulics-base.html')
+PLACEHOLDER_VALUES = {'-', '—', 'n/a', 'na', 'n.a.', 'na.', 'nil', 'none'}
 CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
     'engine': {
         'dir': 'scania/engine',
@@ -84,31 +85,31 @@ CATEGORY_CONFIGS: Dict[str, Dict[str, object]] = {
         'category_label': 'Suspension & Ride Control',
         'category_url': '/pages/categories/scania-suspension-and-ride-control.html',
         'description_template': (
-            "Scania {part_label_lower} (Part {part_number}) absorbs axle shock on {application}. "
-            "We match OEM rubber hardness, shot-peen metal inserts, and pre-stress every batch so the truck returns to factory ride height."
+            "Scania {part_label_lower} (Part {part_number}) keeps ride height steady on {application}. "
+            "We match OEM durometer, pre-load each batch on hydraulic presses, log traceable QC notes, and keep WhatsApp VIN confirmations under 30 minutes so downtime stays planned."
         ),
         'features': [
-            'OEM-grade rubber and metal pairs keep ride height and damping consistent.',
-            'Shot-peened, stress-relieved inserts resist cracking on rough haul roads.',
-            'Press-fit bores are honed for quiet alignment and longer bushing life.',
-            'Parts ship with torque markings plus VCI wrap so they drop in without extra prep.',
+            'Durometer-matched rubber with forged housings keeps ride height and damping consistent even on quarry duty.',
+            'Every batch is pre-loaded on hydraulic presses, measured, and batch-coded so you can pull QC sheets later.',
+            "Press-fit bores are honed and dry-fit checked; installers don't have to chase squeaks after torque.",
+            'Packed with torque decals, capped sleeves, and VCI wrap so benches stay clean and installs move fast.',
         ],
         'faqs': [
             {
                 'q': 'Which chassis does this suspension component fit?',
-                'a': 'It suits Scania chassis codes once we verify your VIN or axle code against the EPC.',
+                'a': 'Share your VIN or axle code and we confirm the EPC chapter via WhatsApp in under 30 minutes before dispatch.',
             },
             {
                 'q': 'Do I need special tools to install it?',
-                'a': 'Standard hydraulic presses and torque tools work. We can share orientation diagrams and torque charts on request.',
+                'a': 'Standard hydraulic presses and torque tools work. We include orientation diagrams and torque charts in the quote so crews can prep ahead of downtime.',
             },
             {
                 'q': 'How is the part protected during shipping?',
-                'a': 'Bushings are capped and foam-braced so the rubber doesn’t flatten or pick up shop debris in transit.',
+                "a": "Bushings are capped, foam-braced, bagged with desiccant, and strapped inside double-wall cartons so rubber doesn't flatten in transit.",
             },
             {
-                'q': 'Do you support export orders?',
-                'a': 'Yes—daily domestic dispatch plus consolidated export shipments with HS codes and inspection notes.',
+                'q': 'Can you ship export orders?',
+                'a': 'Yes—daily domestic dispatch plus weekly export lots with HS codes, fumigation certificates, and pre-dispatch photos shared for traceability.',
             },
         ],
         'structured_category': 'Suspension & Ride Control',
@@ -374,27 +375,27 @@ GENERIC_COPY = {
     },
     'suspension': {
         'features': [
-            'OEM-grade rubber and metal pairs keep ride height and damping consistent.',
-            'Shot-peened, stress-relieved inserts resist cracking on rough haul roads.',
-            'Press-fit bores are honed for quiet alignment and longer bushing life.',
-            'Parts ship with torque markings plus VCI wrap so they drop in without extra prep.',
+            'Durometer-matched rubber with forged housings keeps ride height and damping consistent even on quarry duty.',
+            'Every batch is pre-loaded on hydraulic presses, measured, and batch-coded so you can pull QC sheets later.',
+            "Press-fit bores are honed and dry-fit checked; installers don't have to chase squeaks after torque.",
+            'Packed with torque decals, capped sleeves, and VCI wrap so benches stay clean and installs move fast.',
         ],
         'faqs': [
             {
                 'q': 'Which chassis does this suspension component fit?',
-                'a': "It suits Scania chassis codes once we verify your VIN or axle code against the EPC.",
+                'a': 'Share your VIN or axle code and we confirm the EPC chapter via WhatsApp in under 30 minutes before dispatch.',
             },
             {
                 'q': 'Do I need special tools to install it?',
-                'a': 'Standard hydraulic presses and torque tools work. We can share orientation diagrams and torque charts on request.',
+                'a': 'Standard hydraulic presses and torque tools work. We include orientation diagrams and torque charts in the quote so crews can prep ahead of downtime.',
             },
             {
                 'q': 'How is the part protected during shipping?',
-                'a': "Bushings are capped and foam-braced so the rubber doesn't flatten or pick up shop debris in transit.",
+                'a': "Bushings are capped, foam-braced, bagged with desiccant, and strapped inside double-wall cartons so rubber doesn't flatten in transit.",
             },
             {
-                'q': 'Do you support export orders?',
-                'a': 'Yes—daily domestic dispatch plus consolidated export shipments with HS codes and inspection notes.',
+                'q': 'Can you ship export orders?',
+                'a': 'Yes—daily domestic dispatch plus weekly export lots with HS codes, fumigation certificates, and pre-dispatch photos shared for traceability.',
             },
         ],
     },
@@ -446,6 +447,17 @@ def slug_part_label(raw_title: str, part_number: str) -> str:
     return label or 'Component'
 
 
+def normalize_field(value: Optional[str], fallback: str) -> str:
+    if value is None:
+        return fallback
+    cleaned = value.strip()
+    if not cleaned:
+        return fallback
+    if cleaned.lower() in PLACEHOLDER_VALUES:
+        return fallback
+    return cleaned
+
+
 def extract_metadata(html_text: str, part_number: str) -> dict:
     soup = BeautifulSoup(html_text, 'html.parser')
     h1 = soup.find('h1')
@@ -468,9 +480,9 @@ def extract_metadata(html_text: str, part_number: str) -> dict:
             value = cells[i + 1]
             table_data[key] = value
 
-    application = table_data.get('Application') or 'Scania heavy vehicles (confirm with VIN)'
-    alternate = table_data.get('Alternate Part Numbers') or '—'
-    measurements = table_data.get('Measurements') or '—'
+    application = normalize_field(table_data.get('Application'), 'Scania chassis (share VIN for confirmation)')
+    alternate = normalize_field(table_data.get('Alternate Part Numbers'), '—')
+    measurements = normalize_field(table_data.get('Measurements'), '—')
 
     return {
         'part_label': part_label,
@@ -484,7 +496,8 @@ def extract_metadata(html_text: str, part_number: str) -> dict:
 def build_copy(category_key: str, part_label: str, part_number: str, application: str) -> dict:
     cfg = CATEGORY_CONFIGS[category_key]
     part_label_lower = part_label.lower()
-    description = cfg['description_template'].format(part_label_lower=part_label_lower, part_number=part_number, application=application)
+    application_clean = normalize_field(application, 'Scania chassis (share VIN for confirmation)')
+    description = cfg['description_template'].format(part_label_lower=part_label_lower, part_number=part_number, application=application_clean)
     meta_description = f"Order Scania {part_label_lower} {part_number} for {cfg['category_label'].lower()}. Ready stock in Mumbai with pan-India dispatch and WhatsApp quotes."
     keywords = f"Scania {part_number}, {part_label_lower} {part_number}, {cfg['category_label'].lower()}, {part_number} India, scania parts Mumbai"
     return {
@@ -534,6 +547,7 @@ def render_html(context: dict) -> str:
         tw_desc['content'] = context['meta_description']
 
     ld_script = soup.find('script', {'type': 'application/ld+json'})
+    breadcrumb_data = None
     if ld_script and ld_script.string:
         data = json.loads(ld_script.string)
         data['name'] = f"Scania {context['part_label']}"
@@ -544,16 +558,38 @@ def render_html(context: dict) -> str:
         data['brand']['name'] = 'Scania'
         data['brand']['url'] = base_url
         data['category'] = context['structured_category']
-        data['additionalProperty'][1]['value'] = context['ptc_number']
+        additional_props = data.get('additionalProperty', [])
+        for prop in additional_props:
+            name = (prop.get('name') or '').strip().lower()
+            if name == 'part number':
+                prop['value'] = part_number
+            elif name == 'ptc number':
+                prop['value'] = context['ptc_number']
+            elif name == 'application':
+                prop['value'] = context['application']
+            elif name == 'alternate part numbers':
+                prop['value'] = context['alternate']
+            elif name == 'measurements':
+                prop['value'] = context['measurements']
         if 'breadcrumb' in data:
             items = data['breadcrumb'].get('itemListElement', [])
             if len(items) >= 4:
                 items[3]['name'] = f"Scania {context['part_label']} {part_number}"
-                items[3]['item'] = base_url
+                items[3]['item'] = base_url + '.html'
+            # Extract breadcrumb data for standalone schema
+            breadcrumb_data = data['breadcrumb'].copy()
+            breadcrumb_data['@context'] = 'https://schema.org'
         if 'mainEntity' in data:
             data['mainEntity']['name'] = f"Scania {context['part_label']} {part_number} Product Page"
             data['mainEntity']['description'] = context['structured_description']
         ld_script.string = json.dumps(data, indent=4)
+    
+    # Add standalone BreadcrumbList schema for validators
+    if breadcrumb_data and ld_script:
+        breadcrumb_script = soup.new_tag('script', type='application/ld+json')
+        breadcrumb_script.string = json.dumps(breadcrumb_data, indent=4)
+        # Insert after the Product schema script
+        ld_script.insert_after(breadcrumb_script)
 
     sku_breadcrumb = soup.find('li', {'class': 'text-yellow-600 font-semibold'})
     if sku_breadcrumb:
@@ -562,16 +598,27 @@ def render_html(context: dict) -> str:
     if h1:
         h1.string = f"Scania {context['part_label']} {part_number}"
 
-    part_p = soup.find(string=re.compile('Part Number'))
-    if part_p and part_p.parent.name == 'p':
-        part_p.parent.string = f"Part Number: {part_number}"
-    ptc_p = soup.find(string=re.compile('PTC Number'))
-    if ptc_p and ptc_p.parent.name == 'p':
-        ptc_p.parent.string = f"PTC Number: {context['ptc_number']}"
+    breadcrumb_nav = soup.find('nav', {'aria-label': 'Breadcrumb'})
+    if breadcrumb_nav:
+        category_anchor = breadcrumb_nav.find('a', href=re.compile(r'/pages/categories/'))
+        if category_anchor:
+            category_anchor['href'] = context['category_url']
+            category_anchor.string = context['category_label']
+
+    part_p = soup.find('p', string=re.compile(r'Part Number', re.IGNORECASE))
+    if part_p:
+        part_p.string = f"Part Number: {part_number}"
+    ptc_p = soup.find('p', string=re.compile(r'PTC Number', re.IGNORECASE))
+    if ptc_p:
+        ptc_p.string = f"PTC Number: {context['ptc_number']}"
 
     desc_p = soup.find('p', {'class': 'text-gray-700 leading-relaxed'})
     if desc_p:
         desc_p.string = context['description']
+
+    features_heading = soup.find('h2', string=re.compile('Technical Features'))
+    if features_heading:
+        features_heading.string = f"Scania {context['part_label']} {part_number} Technical Features"
 
     feature_spans = soup.select('ul.space-y-3 span.text-gray-700')
     for span, text in zip(feature_spans, context['features']):
@@ -604,6 +651,14 @@ def render_html(context: dict) -> str:
     quote_btn = soup.find('button', {'id': 'submit-quote-btn'})
     if quote_btn:
         quote_btn['onclick'] = f"submitQuote('{part_number}', 'Scania {context['part_label']} {part_number}', 'Scania', '{context['category_label']}')"
+        quote_panel = quote_btn.find_parent('div', class_='premium-quote-panel')
+        if quote_panel:
+            cta_title = quote_panel.find('h3')
+            if cta_title:
+                cta_title.string = f"Scania {context['part_label']} {part_number}"
+            cta_part = quote_panel.find('p', string=re.compile(r'Part #', re.IGNORECASE))
+            if cta_part:
+                cta_part.string = f"Part #{part_number}"
     whatsapp_float = soup.find('a', {'class': 'whatsapp-float'})
     if whatsapp_float:
         whatsapp_float['onclick'] = f"requestQuoteOnWhatsApp('{part_number}', 'Scania {context['part_label']} {part_number}', 'Scania', '{context['category_label']}', '{context['application']}')"
