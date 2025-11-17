@@ -154,8 +154,8 @@ def generate_product_sitemaps():
     return total_count
 
 def generate_multilingual_sitemaps():
-    """Generate sitemaps for multilingual pages"""
-    languages = ['hi', 'ar', 'cn', 'es', 'fr', 'id', 'kn', 'ml', 'ru', 'ta', 'te']
+    """Generate sitemaps for multilingual pages (disabled while language sites are offline)."""
+    languages: list[str] = []
     
     total_count = 0
     sitemap_files = []
@@ -295,6 +295,13 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
+
 
 
 

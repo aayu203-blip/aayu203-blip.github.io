@@ -362,6 +362,7 @@ def render_html(context: dict) -> str:
         tw_desc['content'] = context['meta_description']
 
     ld_script = soup.find('script', {'type': 'application/ld+json'})
+    breadcrumb_data = None
     if ld_script and ld_script.string:
         data = json.loads(ld_script.string)
         data['name'] = f"Volvo {context['part_label']}"
@@ -377,11 +378,22 @@ def render_html(context: dict) -> str:
         items = breadcrumb.get('itemListElement', []) if isinstance(breadcrumb, dict) else []
         if len(items) >= 4:
             items[3]['name'] = f"Volvo {context['part_label']} {part_number}"
-            items[3]['item'] = base_url
+            items[3]['item'] = base_url + '.html'
+        # Extract breadcrumb data for standalone schema
+        if isinstance(breadcrumb, dict) and breadcrumb:
+            breadcrumb_data = breadcrumb.copy()
+            breadcrumb_data['@context'] = 'https://schema.org'
         if 'mainEntity' in data:
             data['mainEntity']['name'] = f"Volvo {context['part_label']} {part_number} Product Page"
             data['mainEntity']['description'] = context['structured_description']
         ld_script.string = json.dumps(data, indent=4)
+    
+    # Add standalone BreadcrumbList schema for validators
+    if breadcrumb_data and ld_script:
+        breadcrumb_script = soup.new_tag('script', type='application/ld+json')
+        breadcrumb_script.string = json.dumps(breadcrumb_data, indent=4)
+        # Insert after the Product schema script
+        ld_script.insert_after(breadcrumb_script)
 
     sku_crumb = soup.find('li', {'class': 'text-yellow-600 font-semibold'})
     if sku_crumb:
