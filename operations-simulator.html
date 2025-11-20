@@ -686,7 +686,7 @@
             </ul>
         </div>
 
-        <button class="cta-pulse" onclick="startGame()">Initiate Simulation</button>
+        <button id="btn-start" class="cta-pulse" onclick="startGame()">Initiate Simulation</button>
         <div class="control-hint">Use ← → or A / D to steer · Press Enter to launch</div>
     </div>
 
@@ -1200,6 +1200,7 @@
             leaderboard: document.getElementById('leaderboard-list'),
             inputName: document.getElementById('player-name'),
             btnContinue: document.getElementById('btn-continue'),
+            btnStart: document.getElementById('btn-start'),
             popup: document.getElementById('level-popup'),
             intelSync: document.getElementById('intel-sync'),
             intelHealth: document.getElementById('intel-health'),
@@ -1216,6 +1217,15 @@
                 els.intelTempo.textContent = `${tempo}%`;
             }
         }, 1600);
+
+        if (els.btnStart) {
+            els.btnStart.addEventListener('click', (event) => {
+                event.preventDefault();
+                if (!state.isPlaying) {
+                    startGame();
+                }
+            });
+        }
 
         function updateLivesUI() {
             els.lives.innerHTML = "";
