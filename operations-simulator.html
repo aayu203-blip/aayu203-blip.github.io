@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parts Trading Company – Operations Simulator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js" integrity="sha512-6Jr2raXIiQunlslqY5T2r8j04YfGLmRoTSesFiNUFDXL9uBeb5GsyhQOdE31E4n4t4DccnE9vrFica8tWHQrNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+        :root {
+            --bg: #030508;
+            --bg-elevated: rgba(8, 12, 22, 0.96);
+            --brand-navy: #0b1220;
+            --accent: #ffb81c;
+            --accent-soft: rgba(255, 184, 28, 0.18);
+            --accent-strong: #f59e0b;
+            --danger: #dc2626;
+            --text-main: #f7fafc;
+            --text-muted: #9ca3af;
+            --border-subtle: #1f2535;
+            --hud-glow: rgba(255, 184, 28, 0.28);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: var(--bg);
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            user-select: none;
+            color: var(--text-main);
+        }
+
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: radial-gradient(circle at top, #050b16, #010308 65%);
+        }
+
+        /* UI Overlay */
+        .ui-screen {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at 20% 15%, rgba(15, 25, 45, 0.9), var(--bg-elevated));
+            z-index: 20;
+            color: var(--text-main);
+            backdrop-filter: blur(12px);
+        }
+
+        .hidden { display: none !important; }
+
+        /* Logo */
+        #game-logo {
+            max-width: 260px;
+            max-height: 80px;
+            margin-bottom: 18px;
+            object-fit: contain;
+        }
+
+        .fallback-logo {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 26px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 10px 18px;
+            border-radius: 999px;
+            border: 1px solid var(--accent-soft);
+            color: var(--text-main);
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 26px;
+            font-weight: 500;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--accent-soft);
+            padding-bottom: 12px;
+        }
+
+        .start-info {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            max-width: 520px;
+            text-align: center;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .start-info strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* HUD */
+        #hud-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            padding: 18px 36px;
+            box-sizing: border-box;
+            background: linear-gradient(to bottom, rgba(1,1,2,0.92), transparent);
+        }
+
+        .hud-panel { text-align: left; }
+
+        .label {
+            color: var(--text-muted);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .value {
+            color: var(--text-main);
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            text-shadow: 0 0 18px var(--hud-glow);
+        }
+
+        .highlight { color: var(--accent); }
+
+        /* Lives indicator */
+        #lives-display {
+            display: inline-flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .life-indicator {
+            width: 10px;
+            height: 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(220, 38, 38, 0.45);
+            background: transparent;
+        }
+
+        .life-indicator.active {
+            background: radial-gradient(circle at 30% 20%, #ffb3a8, var(--danger));
+            box-shadow: 0 0 6px rgba(220, 38, 38, 0.55);
+            border-color: transparent;
+        }
+
+        /* Buttons */
+        button {
+            background: var(--accent);
+            color: #111927;
+            border: none;
+            padding: 14px 42px;
+            font-size: 16px;
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+        }
+
+        button:hover {
+            background: var(--accent-strong);
+            transform: translateY(-1px);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        button.secondary {
+            background: #141b2a;
+            color: var(--text-main);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        button.secondary:hover {
+            background: #1c2536;
+        }
+
+        /* Inputs */
+        input[type="text"] {
+            padding: 12px 14px;
+            font-size: 18px;
+            border-radius: 999px;
+            border: 1px solid var(--border-subtle);
+            background: rgba(6, 10, 19, 0.9);
+            color: var(--text-main);
+            text-align: center;
+            margin-bottom: 20px;
+            width: 260px;
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            outline: none;
+        }
+
+        input[type="text"]::placeholder {
+            color: #5c6678;
+        }
+
+        input[type="text"]:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px rgba(255, 184, 28, 0.22);
+        }
+
+        /* Leaderboard */
+        #leaderboard-box {
+            background: radial-gradient(circle at top left, rgba(255, 184, 28, 0.08), rgba(3, 7, 15, 0.96));
+            padding: 22px 22px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(44, 62, 80, 0.85);
+            margin-bottom: 28px;
+            width: 360px;
+            box-shadow:
+                0 16px 40px rgba(0, 0, 0, 0.7),
+                0 0 0 1px rgba(255, 255, 255, 0.02);
+        }
+
+        #leaderboard-title {
+            margin: 0 0 14px;
+            text-align: left;
+            color: var(--text-main);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.26em;
+            opacity: 0.9;
+        }
+
+        #leaderboard-subtitle {
+            margin: 0 0 12px;
+            color: var(--text-muted);
+            font-size: 11px;
+            letter-spacing: 0.06em;
+        }
+
+        #leaderboard-list {
+            list-style: none;
+            padding: 0;
+            margin: 4px 0 0;
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        #leaderboard-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 14px;
+            color: var(--text-main);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        #leaderboard-list li span:first-child {
+            font-feature-settings: "tnum" 1, "lnum" 1;
+        }
+
+        #leaderboard-list li:first-child {
+            font-weight: 600;
+        }
+
+        #leaderboard-list li:first-child span:nth-child(2) {
+            color: var(--accent);
+        }
+
+        /* Level popup */
+        .level-popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            color: var(--accent);
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            text-shadow: 0 0 40px rgba(255, 184, 28, 0.5);
+            pointer-events: none;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 100;
+            white-space: nowrap;
+        }
+
+        /* Brand footer */
+        .brand-logo-small {
+            position: absolute;
+            bottom: 16px;
+            right: 24px;
+            color: rgba(255,255,255,0.4);
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            z-index: 5;
+        }
+
+        /* Game over screen */
+        #game-over-screen h1 {
+            color: var(--danger);
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 40px;
+            margin: 0 0 6px;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+        }
+
+        #game-over-screen .tagline {
+            border-color: rgba(220, 38, 38, 0.5);
+            margin-bottom: 18px;
+        }
+
+        #game-over-screen .summary-line {
+            margin: 10px 0 28px;
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+
+        #final-score {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 24px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* CTA pulse for start button */
+        .cta-pulse {
+            position: relative;
+        }
+
+        .cta-pulse::after {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            border-radius: inherit;
+            border: 1px solid rgba(255, 184, 28, 0.45);
+            opacity: 0;
+            transform: scale(0.96);
+            animation: ctaPulse 1.8s ease-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes ctaPulse {
+            0% {
+                opacity: 0.0;
+                transform: scale(0.96);
+            }
+            40% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.08);
+            }
+        }
+
+        /* Small helper text on start screen */
+        .control-hint {
+            color: var(--text-muted);
+            font-size: 12px;
+            margin-top: 4px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            #hud-layer {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+
+            #leaderboard-box {
+                width: 90vw;
+            }
+
+            button {
+                width: 90%;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="level-popup" class="level-popup">THROUGHPUT BOOST</div>
+
+    <div id="start-screen" class="ui-screen">
+        <img id="game-logo" src="" alt="Parts Trading Company" style="display:none;">
+        <div id="fallback-logo" class="fallback-logo">PARTS TRADING COMPANY</div>
+
+        <div class="tagline">Official Fleet Console</div>
+
+        <div class="start-info">
+            <strong>Objective:</strong> Align every inbound load with the Parts Trading manifest.<br>
+            <strong>Risk:</strong> Scrap or off-manifest material degrades fleet integrity.<br>
+            <strong>Note:</strong> Dispatch tempo accelerates as the cargo ledger climbs.
+        </div>
+
+        <div id="leaderboard-box">
+            <h3 id="leaderboard-title">PTC OPS LEADERBOARD</h3>
+            <p id="leaderboard-subtitle">Highest cargo values logged on this terminal</p>
+            <ul id="leaderboard-list">
+                <li><span>No PTC runs logged</span><span>–</span></li>
+            </ul>
+        </div>
+
+        <button class="cta-pulse" onclick="startGame()">Initiate Simulation</button>
+        <div class="control-hint">Use ← → or A / D to steer</div>
+    </div>
+
+    <div id="game-over-screen" class="ui-screen hidden">
+        <h1>Operations Halted</h1>
+        <div class="tagline">PTC Session Summary</div>
+        <div class="summary-line">
+            Cargo Ledger: <span id="final-score">0</span>
+        </div>
+        <div id="input-container">
+            <input
+                type="text"
+                id="player-name"
+                placeholder="OPERATOR ID (3 LETTERS)"
+                maxlength="3"
+            >
+        </div>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+            <button id="btn-continue" onclick="continueGame()">Resume Mission (One-Time)</button>
+            <button id="btn-restart" class="secondary" onclick="submitAndRestart()">Log Score &amp; Reset Terminal</button>
+        </div>
+    </div>
+
+    <div id="hud-layer" class="hidden">
+        <div class="hud-panel">
+            <span class="label">PTC Cargo Ledger</span>
+            <span class="value highlight" id="score-display">0</span>
+        </div>
+        <div class="hud-panel">
+            <span class="label">Convoy Throughput</span>
+            <span class="value" id="level-display">100%</span>
+        </div>
+        <div class="hud-panel" style="text-align: right;">
+            <span class="label">Fleet Integrity</span>
+            <span class="value" id="lives-display"></span>
+        </div>
+    </div>
+
+    <div class="brand-logo-small">Parts Trading Company © 2025</div>
+    <div id="canvas-container"></div>
+
+    <script>
+        const ASSETS = {
+            logo: "https://www.partstradingco.com/assets/images/ptc-logo.png?v=1",
+            parts: [],
+            hazards: []
+        };
+
+        const CONFIG = {
+            truckColorPrimary: '#ffb81c',
+            truckColorBody: '#0b1220',
+            truckHighlight: '#ffe8a3',
+            bgColor: '#030508',
+            truckSpeed: 14,
+            baseSpawnRate: 1400,
+            gravity: 1.24,
+            maxLives: 3
+        };
+
+        const images = {
+            parts: [],
+            hazards: []
+        };
+
+        function preloadImages() {
+            const logoEl = document.getElementById('game-logo');
+            const fallbackLogo = document.getElementById('fallback-logo');
+
+            if (ASSETS.logo) {
+                logoEl.src = ASSETS.logo;
+                logoEl.onload = () => {
+                    logoEl.style.display = 'block';
+                    fallbackLogo.style.display = 'none';
+                };
+                logoEl.onerror = () => {
+                    logoEl.style.display = 'none';
+                    fallbackLogo.style.display = 'inline-block';
+                };
+            }
+
+            ASSETS.parts.forEach(url => {
+                const img = new Image();
+                img.src = url;
+                images.parts.push(img);
+            });
+
+            ASSETS.hazards.forEach(url => {
+                const img = new Image();
+                img.src = url;
+                images.hazards.push(img);
+            });
+        }
+        preloadImages();
+
+        let state = {
+            score: 0,
+            lives: CONFIG.maxLives,
+            level: 1,
+            spawnRate: CONFIG.baseSpawnRate,
+            isPlaying: false,
+            hasContinued: false,
+            spawnTimer: null,
+            timeScale: 1.0
+        };
+
+        let particles = [];
+        let floatingTexts = [];
+
+        function createExplosion(x, y, color) {
+            for (let i = 0; i < 8; i++) {
+                particles.push({
+                    x,
+                    y,
+                    vx: (Math.random() - 0.5) * 10,
+                    vy: (Math.random() - 0.5) * 10,
+                    life: 1.0,
+                    color
+                });
+            }
+        }
+
+        function createFloatingText(x, y, text, color) {
+            floatingTexts.push({ x, y, text, color, life: 1.0, vy: -2 });
+        }
+
+        const Engine = Matter.Engine,
+              Render = Matter.Render,
+              Runner = Matter.Runner,
+              Bodies = Matter.Bodies,
+              Composite = Matter.Composite,
+              Events = Matter.Events,
+              Body = Matter.Body;
+
+        const engine = Engine.create();
+        const world = engine.world;
+        engine.gravity.y = CONFIG.gravity;
+
+        const container = document.getElementById('canvas-container');
+        const render = Render.create({
+            element: container,
+            engine: engine,
+            options: {
+                width: window.innerWidth,
+                height: window.innerHeight,
+                background: 'transparent',
+                wireframes: false,
+                showAngleIndicator: false
+            }
+        });
+
+        let truck;
+
+        function createTruck() {
+            const x = render.canvas.width / 2;
+            const y = render.canvas.height - 80;
+            const scale = 1.25;
+
+            const chassis = Bodies.rectangle(x, y, 200 * scale, 30 * scale, { render: { visible: false } });
+            const cabin = Bodies.rectangle(x + 78 * scale, y - 40 * scale, 60 * scale, 80 * scale, { render: { visible: false } });
+            const bedBottom = Bodies.rectangle(x - 52 * scale, y - 14 * scale, 140 * scale, 16 * scale, { render: { visible: false } });
+            const bedLeft = Bodies.rectangle(x - 122 * scale, y - 46 * scale, 16 * scale, 86 * scale, { render: { visible: false } });
+            const bedRight = Bodies.rectangle(x + 16 * scale, y - 46 * scale, 14 * scale, 86 * scale, { render: { visible: false } });
+            const sensor = Bodies.rectangle(x - 50 * scale, y - 40 * scale, 120 * scale, 50 * scale, {
+                isSensor: true,
+                label: 'truck_sensor',
+                render: { visible: false }
+            });
+            const w1 = Bodies.circle(x - 70 * scale, y + 25 * scale, 26 * scale, { render: { visible: false } });
+            const w2 = Bodies.circle(x + 70 * scale, y + 25 * scale, 26 * scale, { render: { visible: false } });
+
+            truck = Body.create({
+                parts: [chassis, cabin, bedBottom, bedLeft, bedRight, sensor, w1, w2],
+                inertia: Infinity,
+                friction: 0,
+                frictionAir: 0.12,
+                label: 'truck'
+            });
+
+            truck.render.visible = false;
+            truck.parts.forEach(p => p.render.visible = false);
+
+            Composite.add(world, truck);
+        }
+
+        Events.on(render, 'afterRender', function() {
+            const ctx = render.context;
+            const width = render.canvas.width;
+            const height = render.canvas.height;
+
+            ctx.save();
+            const gradient = ctx.createLinearGradient(0, 0, 0, height);
+            gradient.addColorStop(0, '#050915');
+            gradient.addColorStop(0.4, '#05070b');
+            gradient.addColorStop(1, '#02030a');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, height);
+            ctx.restore();
+
+            ctx.save();
+            ctx.fillStyle = '#070b10';
+            ctx.beginPath();
+            ctx.moveTo(0, height);
+            for (let i = 0; i <= width; i += 80) {
+                const h = (Math.sin(i * 0.01) * 30) + (Math.cos(i * 0.04) * 18) + 140;
+                ctx.lineTo(i, height - h);
+            }
+            ctx.lineTo(width, height);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+
+            const bodies = Composite.allBodies(world);
+
+            bodies.forEach(body => {
+                if (body.label === 'debris' || body.label === 'hazard') {
+                    ctx.save();
+                    ctx.translate(body.position.x, body.position.y);
+                    ctx.rotate(body.angle);
+
+                    const radius = body.circleRadius;
+                    const size = radius * 2.1;
+
+                    if (body.renderImage) {
+                        ctx.drawImage(body.renderImage, -size / 2, -size / 2, size, size);
+                    } else {
+                        const isHazard = body.label === 'hazard';
+
+                        const g = ctx.createRadialGradient(0, -radius * 0.4, radius * 0.2, 0, 0, radius * 1.2);
+                        if (isHazard) {
+                            g.addColorStop(0, '#ffb3a8');
+                            g.addColorStop(0.4, '#dc2626');
+                            g.addColorStop(1, '#7c1e16');
+                        } else {
+                            g.addColorStop(0, '#fdfcfb');
+                            g.addColorStop(0.35, '#ffb81c');
+                            g.addColorStop(1, '#8c5e17');
+                        }
+
+                        ctx.fillStyle = g;
+                        ctx.beginPath();
+                        ctx.roundRect(-size / 2, -size / 2, size, size, radius * 0.4);
+                        ctx.fill();
+
+                        ctx.globalAlpha = 0.12;
+                        ctx.strokeStyle = isHazard ? '#ffdad4' : '#ffe1b6';
+                        ctx.lineWidth = 1;
+                        ctx.strokeRect(-size / 2 + 3, -size / 2 + 3, size - 6, size - 6);
+                        ctx.globalAlpha = 1;
+                    }
+
+                    ctx.restore();
+                }
+            });
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+                let p = particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
+                p.life -= 0.05;
+                if (p.life <= 0) {
+                    particles.splice(i, 1);
+                    continue;
+                }
+                ctx.fillStyle = p.color;
+                ctx.globalAlpha = p.life;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            ctx.font = "600 20px 'Space Grotesk', system-ui, sans-serif";
+            for (let i = floatingTexts.length - 1; i >= 0; i--) {
+                let t = floatingTexts[i];
+                t.y += t.vy;
+                t.life -= 0.02;
+                if (t.life <= 0) {
+                    floatingTexts.splice(i, 1);
+                    continue;
+                }
+                ctx.fillStyle = t.color;
+                ctx.globalAlpha = t.life;
+                ctx.fillText(t.text, t.x, t.y);
+            }
+            ctx.globalAlpha = 1;
+
+            if (truck) {
+                ctx.save();
+                ctx.translate(truck.position.x, truck.position.y);
+                ctx.rotate(truck.angle * 0.8);
+                const w = 260;
+                const h = 70;
+
+                ctx.save();
+                ctx.translate(0, 38);
+                const s = ctx.createRadialGradient(0, 0, 10, 0, 0, 120);
+                s.addColorStop(0, 'rgba(0,0,0,0.5)');
+                s.addColorStop(1, 'rgba(0,0,0,0)');
+                ctx.fillStyle = s;
+                ctx.ellipse(0, 0, w * 0.5, 18, 0, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+
+                ctx.fillStyle = CONFIG.truckColorBody;
+                ctx.beginPath();
+                ctx.roundRect(-w * 0.55, -h * 0.6, w * 0.55, h * 0.7, 12);
+                ctx.fill();
+
+                ctx.fillStyle = CONFIG.truckColorPrimary;
+                ctx.globalAlpha = 0.95;
+                ctx.fillRect(-w * 0.54, -h * 0.85, w * 0.53, 10);
+                ctx.globalAlpha = 1;
+                ctx.fillRect(-w * 0.55, -h * 0.8, 8, h * 0.9);
+                ctx.fillRect(-w * 0.06, -h * 0.8, 8, h * 0.9);
+
+                ctx.fillStyle = CONFIG.truckColorBody;
+                ctx.beginPath();
+                ctx.roundRect(-w * 0.15, -h * 0.3, w * 0.48, h * 0.6, 14);
+                ctx.fill();
+
+                ctx.fillStyle = CONFIG.truckColorPrimary;
+                ctx.beginPath();
+                ctx.roundRect(w * 0.08, -h * 1.0, w * 0.34, h * 1.2, 16);
+                ctx.fill();
+
+                ctx.save();
+                ctx.translate(w * 0.16, -h * 0.8);
+                ctx.fillStyle = CONFIG.truckHighlight;
+                ctx.globalAlpha = 0.9;
+                ctx.beginPath();
+                ctx.roundRect(0, 0, w * 0.18, h * 0.5, 10);
+                ctx.fill();
+                ctx.restore();
+
+                ctx.strokeStyle = 'rgba(255,255,255,0.22)';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(-w * 0.1, 0);
+                ctx.lineTo(w * 0.25, 0);
+                ctx.stroke();
+
+                function drawWheel(xOffset) {
+                    ctx.save();
+                    ctx.translate(xOffset, h * 0.35);
+                    ctx.fillStyle = '#05070b';
+                    ctx.beginPath();
+                    ctx.arc(0, 0, 24, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    const radial = ctx.createRadialGradient(0, -6, 4, 0, 0, 24);
+                    radial.addColorStop(0, '#1f2933');
+                    radial.addColorStop(0.5, '#0b1119');
+                    radial.addColorStop(1, '#020409');
+                    ctx.fillStyle = radial;
+                    ctx.beginPath();
+                    ctx.arc(0, 0, 20, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    ctx.fillStyle = '#d0d4df';
+                    ctx.beginPath();
+                    ctx.arc(0, 0, 7, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+
+                drawWheel(-w * 0.22);
+                drawWheel(w * 0.1);
+
+                ctx.restore();
+            }
+        });
+
+        function createBoundaries() {
+            const w = render.canvas.width;
+            const h = render.canvas.height;
+            Composite.add(world, [
+                Bodies.rectangle(w / 2, h + 40, w, 100, {
+                    isStatic: true,
+                    label: 'ground',
+                    render: { visible: false }
+                }),
+                Bodies.rectangle(-50, h / 2, 100, h * 5, { isStatic: true, render: { visible: false } }),
+                Bodies.rectangle(w + 50, h / 2, 100, h * 5, { isStatic: true, render: { visible: false } })
+            ]);
+        }
+
+        function spawnDebris() {
+            if (!state.isPlaying) return;
+
+            const margin = 180;
+            const playWidth = render.canvas.width - (margin * 2);
+            const startX = (playWidth < 50) ? (render.canvas.width / 2) : margin;
+            const x = Math.random() * Math.max(50, playWidth) + startX;
+
+            const isHazard = Math.random() < 0.25;
+
+            const size = 26 + Math.random() * 18;
+            const airFriction = Math.max(0.001, 0.055 - (state.level * 0.008));
+
+            const debris = Bodies.circle(x, -60, size, {
+                label: isHazard ? 'hazard' : 'debris',
+                frictionAir: airFriction,
+                restitution: 0.16,
+                render: {
+                    visible: false
+                }
+            });
+
+            if (isHazard) {
+                if (images.hazards.length > 0) {
+                    debris.renderImage = images.hazards[Math.floor(Math.random() * images.hazards.length)];
+                }
+            } else {
+                if (images.parts.length > 0) {
+                    debris.renderImage = images.parts[Math.floor(Math.random() * images.parts.length)];
+                }
+            }
+
+            Body.setAngularVelocity(debris, Math.random() * 0.18 - 0.09);
+            Composite.add(world, debris);
+
+            const rate = Math.max(340, state.spawnRate - (state.level * 48));
+            state.spawnTimer = setTimeout(spawnDebris, rate);
+        }
+
+        const keys = { ArrowLeft: false, ArrowRight: false, a: false, d: false };
+        document.addEventListener('keydown', (e) => {
+            if (keys.hasOwnProperty(e.key)) keys[e.key] = true;
+        });
+        document.addEventListener('keyup', (e) => {
+            if (keys.hasOwnProperty(e.key)) keys[e.key] = false;
+        });
+
+        Events.on(engine, 'beforeUpdate', () => {
+            if (!state.isPlaying || !truck) return;
+
+            let speed = CONFIG.truckSpeed;
+            let vx = 0;
+            if (keys.ArrowLeft || keys.a) vx = -speed;
+            else if (keys.ArrowRight || keys.d) vx = speed;
+
+            Body.setVelocity(truck, { x: vx, y: 0 });
+
+            const tilt = vx * 0.002;
+            Body.setAngle(truck, tilt);
+
+            Body.setPosition(truck, {
+                x: Math.max(140, Math.min(render.canvas.width - 140, truck.position.x)),
+                y: render.canvas.height - 60
+            });
+        });
+
+        Events.on(engine, 'collisionStart', (event) => {
+            if (!state.isPlaying) return;
+
+            event.pairs.forEach((pair) => {
+                const bodyA = pair.bodyA;
+                const bodyB = pair.bodyB;
+
+                const item = (bodyA.label === 'debris' || bodyA.label === 'hazard') ? bodyA :
+                             (bodyB.label === 'debris' || bodyB.label === 'hazard') ? bodyB : null;
+
+                if (!item) return;
+
+                const other = (bodyA === item) ? bodyB : bodyA;
+
+                if (other.label === 'truck_sensor') {
+                    if (item.label === 'debris') {
+                        createExplosion(item.position.x, item.position.y, '#ffb81c');
+                        createFloatingText(item.position.x - 18, item.position.y - 40, "+10", "#6adc87");
+                        Composite.remove(world, item);
+                        updateScore(10);
+                    } else {
+                        createExplosion(item.position.x, item.position.y, '#dc2626');
+                        createFloatingText(item.position.x - 40, item.position.y - 40, "SCRAP FLAGGED", "#ffb3a8");
+                        Composite.remove(world, item);
+                        loseLife();
+                    }
+                } else if (other.label === 'ground') {
+                    createExplosion(item.position.x, item.position.y, '#8d9aa7');
+                    Composite.remove(world, item);
+                    if (item.label === 'debris') {
+                        loseLife();
+                    }
+                }
+            });
+        });
+
+        const els = {
+            start: document.getElementById('start-screen'),
+            gameOver: document.getElementById('game-over-screen'),
+            hud: document.getElementById('hud-layer'),
+            score: document.getElementById('score-display'),
+            lives: document.getElementById('lives-display'),
+            level: document.getElementById('level-display'),
+            finalScore: document.getElementById('final-score'),
+            leaderboard: document.getElementById('leaderboard-list'),
+            inputName: document.getElementById('player-name'),
+            btnContinue: document.getElementById('btn-continue'),
+            popup: document.getElementById('level-popup')
+        };
+
+        function updateLivesUI() {
+            els.lives.innerHTML = "";
+            for (let i = 0; i < CONFIG.maxLives; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'life-indicator' + (i < state.lives ? ' active' : '');
+                els.lives.appendChild(dot);
+            }
+        }
+
+        function updateUI() {
+            els.score.textContent = state.score.toLocaleString();
+            els.level.textContent = Math.round(state.timeScale * 100) + "%";
+            updateLivesUI();
+        }
+
+        function increaseDifficulty() {
+            state.level++;
+            state.timeScale += 0.05;
+            engine.timing.timeScale = state.timeScale;
+            els.popup.style.transform = "translate(-50%, -50%) scale(1)";
+            setTimeout(() => {
+                els.popup.style.transform = "translate(-50%, -50%) scale(0)";
+            }, 800);
+        }
+
+        function updateScore(points) {
+            state.score += points;
+            if (state.score > 0 && state.score % 100 === 0) {
+                increaseDifficulty();
+            }
+            updateUI();
+        }
+
+        function loseLife() {
+            if (state.lives <= 0) return;
+            state.lives--;
+            updateUI();
+
+            container.style.transform = `translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px)`;
+            setTimeout(() => container.style.transform = 'none', 70);
+
+            if (state.lives <= 0) {
+                gameOver();
+            }
+        }
+
+        function gameOver() {
+            state.isPlaying = false;
+            clearTimeout(state.spawnTimer);
+            els.hud.classList.add('hidden');
+            els.gameOver.classList.remove('hidden');
+            els.finalScore.textContent = state.score.toLocaleString();
+            els.btnContinue.style.display = state.hasContinued ? 'none' : 'inline-block';
+            els.inputName.value = "";
+            setTimeout(() => els.inputName.focus(), 120);
+        }
+
+        function continueGame() {
+            state.lives = 1;
+            state.isPlaying = true;
+            state.hasContinued = true;
+            state.timeScale = Math.max(1.0, state.timeScale - 0.1);
+            engine.timing.timeScale = state.timeScale;
+            els.gameOver.classList.add('hidden');
+            els.hud.classList.remove('hidden');
+            updateUI();
+            spawnDebris();
+        }
+
+        function submitAndRestart() {
+            const rawName = els.inputName.value.trim().toUpperCase();
+            const name = rawName || "PTC";
+            saveScore(name.slice(0, 3), state.score);
+            loadLeaderboard();
+            els.gameOver.classList.add('hidden');
+            els.start.classList.remove('hidden');
+            Composite.clear(world, false);
+            createBoundaries();
+        }
+
+        function saveScore(name, score) {
+            let scores = JSON.parse(localStorage.getItem('ptc_scores') || '[]');
+            scores.push({ name, score });
+            scores.sort((a, b) => b.score - a.score);
+            scores = scores.slice(0, 5);
+            localStorage.setItem('ptc_scores', JSON.stringify(scores));
+        }
+
+        function loadLeaderboard() {
+            let scores = JSON.parse(localStorage.getItem('ptc_scores') || '[]');
+            const list = els.leaderboard;
+            list.innerHTML = '';
+            if (scores.length === 0) {
+                list.innerHTML = '<li><span>No PTC runs logged</span><span>–</span></li>';
+                return;
+            }
+            scores.forEach((entry, index) => {
+                const rank = index + 1;
+                const li = document.createElement('li');
+                li.innerHTML = `<span>#${rank.toString().padStart(2, '0')} ${entry.name}</span><span>${entry.score.toLocaleString()}</span>`;
+                list.appendChild(li);
+            });
+        }
+
+        function initGame() {
+            createBoundaries();
+            loadLeaderboard();
+
+            window.addEventListener('resize', () => {
+                render.canvas.width = window.innerWidth;
+                render.canvas.height = window.innerHeight;
+                Composite.clear(world, false);
+                createBoundaries();
+                if (state.isPlaying) {
+                    createTruck();
+                }
+            });
+
+            Render.run(render);
+            const runner = Runner.create();
+            Runner.run(runner, engine);
+            updateLivesUI();
+        }
+
+        function startGame() {
+            clearTimeout(state.spawnTimer);
+
+            state.score = 0;
+            state.lives = CONFIG.maxLives;
+            state.level = 1;
+            state.spawnRate = CONFIG.baseSpawnRate;
+            state.timeScale = 1.0;
+            state.isPlaying = true;
+            engine.timing.timeScale = 1.0;
+            particles = [];
+            floatingTexts = [];
+
+            Composite.clear(world, false);
+            createBoundaries();
+            createTruck();
+
+            els.start.classList.add('hidden');
+            els.gameOver.classList.add('hidden');
+            els.hud.classList.remove('hidden');
+            updateUI();
+            spawnDebris();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (!state.isPlaying && e.key === 'R') {
+                localStorage.removeItem('ptc_scores');
+                loadLeaderboard();
+            }
+        });
+
+        initGame();
+    </script>
+</body>
+</html>
