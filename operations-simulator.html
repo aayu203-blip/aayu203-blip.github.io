@@ -9,19 +9,20 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap');
 
         :root {
-            --bg: #0b1424;
-            --bg-elevated: rgba(17, 26, 43, 0.9);
-            --brand-navy: #111e33;
+            /* Light industrial palette */
+            --bg: #e5ecf5;
+            --bg-elevated: rgba(255, 255, 255, 0.96);
+            --brand-navy: #111827;
             --accent: #ffb81c;
-            --accent-soft: rgba(255, 184, 28, 0.2);
+            --accent-soft: rgba(255, 184, 28, 0.15);
             --accent-strong: #ffce4d;
             --danger: #f45d4c;
-            --text-main: #fdf7e8;
-            --text-muted: #b8c4d9;
-            --border-subtle: #23314d;
+            --text-main: #111827;
+            --text-muted: #6b7280;
+            --border-subtle: #cbd5e1;
             --hud-glow: rgba(255, 185, 40, 0.45);
-            --hud-panel: rgba(22, 33, 52, 0.75);
-            --hud-border: rgba(255, 255, 255, 0.09);
+            --hud-panel: rgba(255, 255, 255, 0.9);
+            --hud-border: rgba(15, 23, 42, 0.12);
         }
 
         * {
@@ -42,8 +43,9 @@
             content: "";
             position: fixed;
             inset: 0;
-            background: radial-gradient(circle at 20% 20%, rgba(255, 184, 28, 0.08), transparent 55%),
-                        radial-gradient(circle at 80% 10%, rgba(14, 165, 233, 0.08), transparent 45%);
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 184, 28, 0.18), transparent 55%),
+                radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.12), transparent 50%);
             z-index: 0;
             pointer-events: none;
         }
@@ -52,9 +54,9 @@
             content: "";
             position: fixed;
             inset: 0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><g fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"><path d="M0 20 H160"/><path d="M0 40 H160"/><path d="M0 60 H160"/><path d="M0 80 H160"/><path d="M0 100 H160"/><path d="M0 120 H160"/><path d="M0 140 H160"/><path d="M20 0 V160"/><path d="M40 0 V160"/><path d="M60 0 V160"/><path d="M80 0 V160"/><path d="M100 0 V160"/><path d="M120 0 V160"/><path d="M140 0 V160"/></g></svg>');
-            opacity: 0.35;
-            mix-blend-mode: screen;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><g fill="none" stroke="rgba(148,163,184,0.25)" stroke-width="0.5"><path d="M0 20 H160"/><path d="M0 40 H160"/><path d="M0 60 H160"/><path d="M0 80 H160"/><path d="M0 100 H160"/><path d="M0 120 H160"/><path d="M0 140 H160"/><path d="M20 0 V160"/><path d="M40 0 V160"/><path d="M60 0 V160"/><path d="M80 0 V160"/><path d="M100 0 V160"/><path d="M120 0 V160"/><path d="M140 0 V160"/></g></svg>');
+            opacity: 0.25;
+            mix-blend-mode: multiply;
             pointer-events: none;
         }
 
@@ -62,9 +64,8 @@
             width: 100vw;
             height: 100vh;
             position: relative;
-            background: radial-gradient(circle at 12% 10%, rgba(255, 200, 70, 0.35), transparent 55%),
-                        radial-gradient(circle at 80% 0%, rgba(107, 165, 255, 0.25), transparent 60%),
-                        linear-gradient(160deg, #0c1a2f, #050b16 55%, #091124);
+            background:
+                linear-gradient(180deg, #f7f9fc 0%, #e1e7f2 50%, #cdd5e4 100%);
             z-index: 1;
         }
 
@@ -72,22 +73,20 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(120deg, rgba(255, 184, 28, 0.05), transparent),
-                        linear-gradient(-120deg, rgba(14, 165, 233, 0.04), transparent);
+            background:
+                linear-gradient(120deg, rgba(255, 184, 28, 0.12), transparent),
+                linear-gradient(-120deg, rgba(37, 99, 235, 0.06), transparent);
             pointer-events: none;
-            animation: auroraShift 8s ease-in-out infinite alternate;
+            animation: auroraShift 10s ease-in-out infinite alternate;
         }
 
         #canvas-container::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.35);
-            mix-blend-mode: multiply;
             pointer-events: none;
         }
 
-        /* UI Overlay */
         .ui-screen {
             position: absolute;
             inset: 0;
@@ -95,15 +94,16 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: radial-gradient(circle at 25% 15%, rgba(255, 255, 255, 0.15), transparent 60%),
-                        radial-gradient(circle at 70% 20%, rgba(255, 184, 28, 0.1), transparent 70%),
-                        var(--bg-elevated);
+            background:
+                radial-gradient(circle at 25% 15%, rgba(255, 255, 255, 0.85), transparent 65%),
+                radial-gradient(circle at 70% 20%, rgba(255, 248, 235, 0.9), transparent 70%),
+                var(--bg-elevated);
             z-index: 20;
             color: var(--text-main);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(14px);
             border-radius: 32px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            box-shadow: 0 22px 60px rgba(15, 23, 42, 0.35);
             margin: 24px;
         }
 
@@ -122,14 +122,13 @@
             content: "";
             position: absolute;
             inset: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(148, 163, 184, 0.4);
             border-radius: 32px;
             pointer-events: none;
         }
 
         .hidden { display: none !important; }
 
-        /* Logo */
         #game-logo {
             max-width: 260px;
             max-height: 80px;
@@ -145,7 +144,8 @@
             padding: 10px 18px;
             border-radius: 999px;
             border: 1px solid var(--accent-soft);
-            color: var(--text-main);
+            color: var(--brand-navy);
+            background: rgba(255, 255, 255, 0.9);
         }
 
         .tagline {
@@ -171,7 +171,7 @@
         }
 
         .start-info strong {
-            color: var(--text-main);
+            color: var(--brand-navy);
             font-weight: 600;
         }
 
@@ -181,15 +181,15 @@
             letter-spacing: 0.24em;
             text-transform: uppercase;
             color: var(--accent);
-            border: 1px solid rgba(255, 184, 28, 0.35);
+            border: 1px solid rgba(255, 184, 28, 0.45);
             border-radius: 999px;
             padding: 10px 22px;
             margin-bottom: 18px;
             display: inline-flex;
             gap: 10px;
             align-items: center;
-            background: rgba(11, 18, 32, 0.6);
-            box-shadow: 0 0 20px rgba(255, 184, 28, 0.18);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
         }
 
         .meta-badge span {
@@ -210,14 +210,14 @@
         }
 
         .intel-card {
-            background: rgba(5, 7, 11, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(148, 163, 184, 0.6);
             border-radius: 16px;
             padding: 16px 20px;
             min-width: 150px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.25);
         }
 
         .intel-card::after {
@@ -226,7 +226,7 @@
             inset: -80% auto auto -30%;
             width: 160%;
             height: 160%;
-            background: radial-gradient(circle, rgba(255, 184, 28, 0.18), transparent 55%);
+            background: radial-gradient(circle, rgba(255, 184, 28, 0.16), transparent 55%);
             animation: sweep 6s linear infinite;
         }
 
@@ -273,11 +273,10 @@
             height: 10px;
             border-radius: 50%;
             background: var(--accent);
-            box-shadow: 0 0 16px rgba(255, 184, 28, 0.8);
+            box-shadow: 0 0 16px rgba(253, 224, 71, 0.8);
             animation: pulseDot 1.4s ease-in-out infinite;
         }
 
-        /* HUD */
         #hud-layer {
             position: absolute;
             top: 0;
@@ -289,7 +288,7 @@
             justify-content: space-between;
             padding: 18px 36px;
             box-sizing: border-box;
-            background: linear-gradient(to bottom, rgba(4, 7, 12, 0.88), transparent);
+            background: linear-gradient(to bottom, rgba(248, 250, 252, 0.9), transparent);
             position: relative;
         }
 
@@ -297,7 +296,7 @@
             content: "";
             position: absolute;
             inset: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(148, 163, 184, 0.45);
             border-radius: 18px;
             pointer-events: none;
         }
@@ -309,7 +308,9 @@
             border-radius: 18px;
             padding: 14px 20px;
             min-width: 220px;
-            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02), 0 15px 30px rgba(0, 0, 0, 0.35);
+            box-shadow:
+                0 12px 26px rgba(15, 23, 42, 0.18),
+                inset 0 0 16px rgba(255, 255, 255, 0.4);
         }
 
         .label {
@@ -322,16 +323,15 @@
         }
 
         .value {
-            color: var(--text-main);
+            color: var(--brand-navy);
             font-family: 'Space Grotesk', system-ui, sans-serif;
             font-size: 30px;
             font-weight: 600;
-            text-shadow: 0 0 22px var(--hud-glow);
+            text-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
         }
 
         .highlight { color: var(--accent); }
 
-        /* Lives indicator */
         #lives-display {
             display: inline-flex;
             gap: 6px;
@@ -347,15 +347,14 @@
         }
 
         .life-indicator.active {
-            background: radial-gradient(circle at 30% 20%, #ffb3a8, var(--danger));
+            background: radial-gradient(circle at 30% 20%, #fecaca, var(--danger));
             box-shadow: 0 0 6px rgba(220, 38, 38, 0.55);
             border-color: transparent;
         }
 
-        /* Buttons */
         button {
             background: var(--accent);
-            color: #111927;
+            color: #111827;
             border: none;
             padding: 14px 42px;
             font-size: 16px;
@@ -367,7 +366,7 @@
             text-transform: uppercase;
             letter-spacing: 0.18em;
             transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
             position: relative;
             overflow: hidden;
         }
@@ -375,32 +374,31 @@
         button:hover {
             background: var(--accent-strong);
             transform: translateY(-1px);
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 16px 32px rgba(15, 23, 42, 0.3);
         }
 
         button:active {
             transform: translateY(0);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.28);
         }
 
         button.secondary {
-            background: #141b2a;
-            color: var(--text-main);
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+            background: #e5e7eb;
+            color: var(--brand-navy);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
         }
 
         button.secondary:hover {
-            background: #1c2536;
+            background: #dde3ee;
         }
 
-        /* Inputs */
         input[type="text"] {
             padding: 12px 14px;
             font-size: 18px;
             border-radius: 999px;
             border: 1px solid var(--border-subtle);
-            background: rgba(6, 10, 19, 0.9);
-            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.96);
+            color: var(--brand-navy);
             text-align: center;
             margin-bottom: 20px;
             width: 260px;
@@ -409,44 +407,34 @@
         }
 
         input[type="text"]::placeholder {
-            color: #5c6678;
+            color: #9ca3af;
         }
 
         input[type="text"]:focus {
             border-color: var(--accent);
-            box-shadow: 0 0 0 1px rgba(255, 184, 28, 0.22);
+            box-shadow: 0 0 0 1px rgba(255, 184, 28, 0.5);
         }
 
-        /* Leaderboard */
         #leaderboard-box {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(12, 22, 38, 0.95));
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(226, 232, 240, 0.98));
             padding: 26px 26px 20px;
             border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(148, 163, 184, 0.7);
             margin-bottom: 28px;
             width: 360px;
             box-shadow:
-                0 18px 40px rgba(0, 0, 0, 0.55),
-                0 0 0 1px rgba(255, 255, 255, 0.05);
+                0 18px 40px rgba(15, 23, 42, 0.25),
+                0 0 0 1px rgba(255, 255, 255, 0.9);
         }
 
         #leaderboard-title {
             margin: 0 0 14px;
             text-align: left;
-            color: var(--text-main);
+            color: var(--brand-navy);
             text-transform: uppercase;
             font-size: 12px;
             letter-spacing: 0.26em;
             opacity: 0.9;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #leaderboard-title span {
-            font-size: 10px;
-            letter-spacing: 0.4em;
-            color: rgba(255, 255, 255, 0.6);
         }
 
         #leaderboard-subtitle {
@@ -468,11 +456,11 @@
             justify-content: space-between;
             padding: 10px 12px;
             font-size: 15px;
-            color: var(--text-main);
+            color: var(--brand-navy);
             border-radius: 14px;
             margin-bottom: 8px;
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: rgba(248, 250, 252, 0.96);
+            border: 1px solid rgba(148, 163, 184, 0.6);
         }
 
         #leaderboard-list li span:first-child {
@@ -486,10 +474,9 @@
         #leaderboard-list li span:nth-child(2) {
             color: var(--accent);
             font-weight: 600;
-            text-shadow: 0 0 12px rgba(255, 184, 28, 0.6);
+            text-shadow: 0 0 8px rgba(250, 204, 21, 0.6);
         }
 
-        /* Level popup */
         .level-popup {
             position: absolute;
             top: 50%;
@@ -497,23 +484,22 @@
             transform: translate(-50%, -50%) scale(0);
             color: var(--accent);
             font-family: 'Space Grotesk', system-ui, sans-serif;
-            font-size: 52px;
+            font-size: 48px;
             font-weight: 700;
             letter-spacing: 0.25em;
             text-transform: uppercase;
-            text-shadow: 0 0 40px rgba(255, 184, 28, 0.5);
+            text-shadow: 0 0 28px rgba(250, 204, 21, 0.6);
             pointer-events: none;
             transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 100;
             white-space: nowrap;
         }
 
-        /* Brand footer */
         .brand-logo-small {
             position: absolute;
             bottom: 16px;
             right: 24px;
-            color: rgba(255,255,255,0.4);
+            color: rgba(55, 65, 81, 0.85);
             font-family: 'Space Grotesk', system-ui, sans-serif;
             font-size: 11px;
             letter-spacing: 0.22em;
@@ -521,7 +507,6 @@
             z-index: 5;
         }
 
-        /* Game over screen */
         #game-over-screen h1 {
             color: var(--danger);
             font-family: 'Space Grotesk', system-ui, sans-serif;
@@ -532,7 +517,7 @@
         }
 
         #game-over-screen .tagline {
-            border-color: rgba(220, 38, 38, 0.5);
+            border-color: rgba(220, 38, 38, 0.4);
             margin-bottom: 18px;
         }
 
@@ -549,7 +534,6 @@
             font-variant-numeric: tabular-nums;
         }
 
-        /* CTA pulse for start button */
         .cta-pulse {
             position: relative;
         }
@@ -567,33 +551,22 @@
         }
 
         @keyframes ctaPulse {
-            0% {
-                opacity: 0.0;
-                transform: scale(0.96);
-            }
-            40% {
-                opacity: 1;
-                transform: scale(1.05);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(1.08);
-            }
+            0% { opacity: 0; transform: scale(0.96); }
+            40% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 0; transform: scale(1.08); }
         }
 
-        /* Small helper text on start screen */
         .control-hint {
             color: var(--text-muted);
             font-size: 12px;
             margin-top: 4px;
             letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.8);
         }
 
         .hero-orbit {
             position: absolute;
-            border: 1px solid rgba(255, 184, 28, 0.18);
+            border: 1px solid rgba(148, 163, 184, 0.45);
             border-radius: 50%;
             animation: orbitSpin 18s linear infinite;
             pointer-events: none;
@@ -604,8 +577,8 @@
         }
 
         .orbit-one { width: 420px; height: 420px; }
-        .orbit-two { width: 520px; height: 520px; animation-duration: 26s; border-color: rgba(147, 197, 253, 0.2); }
-        .orbit-three { width: 620px; height: 620px; animation-duration: 34s; border-color: rgba(255, 255, 255, 0.08); }
+        .orbit-two { width: 520px; height: 520px; animation-duration: 26s; border-color: rgba(226, 232, 240, 0.8); }
+        .orbit-three { width: 620px; height: 620px; animation-duration: 34s; border-color: rgba(209, 213, 219, 0.9); }
 
         .hero-orbit::after {
             content: "";
@@ -616,7 +589,7 @@
             height: 12px;
             border-radius: 50%;
             background: var(--accent);
-            box-shadow: 0 0 20px rgba(255, 184, 28, 0.8);
+            box-shadow: 0 0 20px rgba(250, 204, 21, 0.9);
         }
 
         .scanlines {
@@ -624,10 +597,10 @@
             inset: 0;
             z-index: 30;
             pointer-events: none;
-            background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(148,163,184,0.16) 1px, transparent 1px);
             background-size: 100% 3px;
             mix-blend-mode: soft-light;
-            opacity: 0.35;
+            opacity: 0.18;
         }
 
         @keyframes orbitSpin {
@@ -646,27 +619,27 @@
         }
 
         @keyframes auroraShift {
-            0% { filter: hue-rotate(0deg); opacity: 0.4; }
-            100% { filter: hue-rotate(20deg); opacity: 0.65; }
+            0% { filter: hue-rotate(0deg); opacity: 0.5; }
+            100% { filter: hue-rotate(12deg); opacity: 0.9; }
         }
 
         .command-strip {
             display: flex;
             gap: 12px;
-            background: rgba(15, 23, 42, 0.75);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(148, 163, 184, 0.8);
             border-radius: 999px;
             padding: 8px 22px;
             margin-bottom: 18px;
             text-transform: uppercase;
             letter-spacing: 0.28em;
             font-size: 10px;
-            color: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            color: var(--text-muted);
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.22);
         }
 
         .command-strip .brand {
-            color: var(--accent);
+            color: var(--brand-navy);
         }
 
         .brand-pill-row {
@@ -679,13 +652,13 @@
 
         .brand-pill {
             border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(148, 163, 184, 0.8);
             padding: 6px 16px;
             font-size: 12px;
             letter-spacing: 0.2em;
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(248, 250, 252, 0.96);
             text-transform: uppercase;
-            color: var(--text-main);
+            color: var(--brand-navy);
         }
 
         .ptc-watermark {
@@ -695,7 +668,7 @@
             transform: translateX(-50%);
             font-size: 120px;
             font-family: 'Space Grotesk', system-ui, sans-serif;
-            color: rgba(255, 255, 255, 0.04);
+            color: rgba(148, 163, 184, 0.18);
             letter-spacing: 0.4em;
             pointer-events: none;
             text-transform: uppercase;
@@ -711,15 +684,15 @@
         }
 
         .brand-grid span {
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(148, 163, 184, 0.7);
             border-radius: 12px;
             padding: 10px;
             text-align: center;
             font-size: 12px;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: var(--text-main);
-            background: rgba(255, 255, 255, 0.02);
+            color: var(--brand-navy);
+            background: rgba(248, 250, 252, 0.96);
         }
 
         @media (max-width: 768px) {
@@ -865,7 +838,7 @@
             truckColorPrimary: '#ffb81c',
             truckColorBody: '#0b1220',
             truckHighlight: '#ffe8a3',
-            bgColor: '#030508',
+            bgColor: '#f7f9fc',
             truckSpeed: 14,
             baseSpawnRate: 1400,
             gravity: 1.24,
@@ -985,7 +958,8 @@
 
         function createTruck() {
             const x = render.canvas.width / 2;
-            const y = render.canvas.height - 80;
+            const y = render.canvas.height - 120; // raised so full truck is visible
+
             const scale = 1.25;
 
             const chassis = Bodies.rectangle(x, y, 200 * scale, 30 * scale, { render: { visible: false } });
@@ -1020,21 +994,23 @@
             const width = render.canvas.width;
             const height = render.canvas.height;
 
+            // Light warehouse background
             ctx.save();
             const gradient = ctx.createLinearGradient(0, 0, 0, height);
-            gradient.addColorStop(0, '#050915');
-            gradient.addColorStop(0.4, '#05070b');
-            gradient.addColorStop(1, '#02030a');
+            gradient.addColorStop(0, '#f9fafb');
+            gradient.addColorStop(0.45, '#e5ecf5');
+            gradient.addColorStop(1, '#d0d9e8');
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, width, height);
             ctx.restore();
 
+            // Subtle "warehouse horizon"
             ctx.save();
-            ctx.fillStyle = '#070b10';
+            ctx.fillStyle = '#cbd5e1';
             ctx.beginPath();
             ctx.moveTo(0, height);
             for (let i = 0; i <= width; i += 80) {
-                const h = (Math.sin(i * 0.01) * 30) + (Math.cos(i * 0.04) * 18) + 140;
+                const h = 100 + (Math.sin(i * 0.01) * 12) + (Math.cos(i * 0.04) * 8);
                 ctx.lineTo(i, height - h);
             }
             ctx.lineTo(width, height);
@@ -1042,8 +1018,21 @@
             ctx.fill();
             ctx.restore();
 
+            // Concrete floor strip
+            ctx.save();
+            ctx.fillStyle = '#e5e7eb';
+            ctx.fillRect(0, height - 80, width, 80);
+            ctx.strokeStyle = '#cbd5e1';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(0, height - 80);
+            ctx.lineTo(width, height - 80);
+            ctx.stroke();
+            ctx.restore();
+
             const bodies = Composite.allBodies(world);
 
+            // Falling items (parts & hazards)
             bodies.forEach(body => {
                 if (body.label === 'debris' || body.label === 'hazard') {
                     ctx.save();
@@ -1060,22 +1049,21 @@
 
                         const g = ctx.createRadialGradient(0, -radius * 0.4, radius * 0.2, 0, 0, radius * 1.2);
                         if (isHazard) {
-                            g.addColorStop(0, '#ffb3a8');
+                            g.addColorStop(0, '#fecaca');
                             g.addColorStop(0.4, '#dc2626');
                             g.addColorStop(1, '#7c1e16');
                         } else {
-                            g.addColorStop(0, '#fdfcfb');
+                            g.addColorStop(0, '#fefce8');
                             g.addColorStop(0.35, '#ffb81c');
                             g.addColorStop(1, '#8c5e17');
                         }
 
                         ctx.fillStyle = g;
-                        ctx.beginPath();
                         drawRoundedRect(ctx, -size / 2, -size / 2, size, size, radius * 0.4);
                         ctx.fill();
 
-                        ctx.globalAlpha = 0.12;
-                        ctx.strokeStyle = isHazard ? '#ffdad4' : '#ffe1b6';
+                        ctx.globalAlpha = 0.14;
+                        ctx.strokeStyle = isHazard ? '#fecaca' : '#fef9c3';
                         ctx.lineWidth = 1;
                         ctx.strokeRect(-size / 2 + 3, -size / 2 + 3, size - 6, size - 6);
                         ctx.globalAlpha = 1;
@@ -1085,6 +1073,7 @@
                 }
             });
 
+            // Particles
             for (let i = particles.length - 1; i >= 0; i--) {
                 let p = particles[i];
                 p.x += p.vx;
@@ -1101,6 +1090,7 @@
                 ctx.fill();
             }
 
+            // Floating text
             ctx.font = "600 20px 'Space Grotesk', system-ui, sans-serif";
             for (let i = floatingTexts.length - 1; i >= 0; i--) {
                 let t = floatingTexts[i];
@@ -1116,20 +1106,22 @@
             }
             ctx.globalAlpha = 1;
 
+            // Truck
             if (truck) {
                 ctx.save();
                 ctx.translate(truck.position.x, truck.position.y);
-                ctx.rotate(truck.angle * 0.8);
+                ctx.rotate(truck.angle * 0.6);
                 const w = 260;
                 const h = 70;
 
+                // Shadow
                 ctx.save();
-                ctx.translate(0, 38);
+                ctx.translate(0, 42);
                 const s = ctx.createRadialGradient(0, 0, 10, 0, 0, 120);
-                s.addColorStop(0, 'rgba(0,0,0,0.5)');
-                s.addColorStop(1, 'rgba(0,0,0,0)');
+                s.addColorStop(0, 'rgba(15,23,42,0.28)');
+                s.addColorStop(1, 'rgba(15,23,42,0)');
                 ctx.fillStyle = s;
-                ctx.ellipse(0, 0, w * 0.5, 18, 0, 0, Math.PI * 2);
+                ctx.ellipse(0, 0, w * 0.55, 18, 0, 0, Math.PI * 2);
                 ctx.fill();
                 ctx.restore();
 
@@ -1138,7 +1130,7 @@
                 ctx.fill();
 
                 ctx.fillStyle = CONFIG.truckColorPrimary;
-                ctx.globalAlpha = 0.95;
+                ctx.globalAlpha = 0.96;
                 ctx.fillRect(-w * 0.54, -h * 0.85, w * 0.53, 10);
                 ctx.globalAlpha = 1;
                 ctx.fillRect(-w * 0.55, -h * 0.8, 8, h * 0.9);
@@ -1155,12 +1147,12 @@
                 ctx.save();
                 ctx.translate(w * 0.16, -h * 0.8);
                 ctx.fillStyle = CONFIG.truckHighlight;
-                ctx.globalAlpha = 0.9;
+                ctx.globalAlpha = 0.95;
                 drawRoundedRect(ctx, 0, 0, w * 0.18, h * 0.5, 10);
                 ctx.fill();
                 ctx.restore();
 
-                ctx.strokeStyle = 'rgba(255,255,255,0.22)';
+                ctx.strokeStyle = 'rgba(255,255,255,0.32)';
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 ctx.moveTo(-w * 0.1, 0);
@@ -1170,21 +1162,21 @@
                 function drawWheel(xOffset) {
                     ctx.save();
                     ctx.translate(xOffset, h * 0.35);
-                    ctx.fillStyle = '#05070b';
+                    ctx.fillStyle = '#111827';
                     ctx.beginPath();
                     ctx.arc(0, 0, 24, 0, Math.PI * 2);
                     ctx.fill();
 
                     const radial = ctx.createRadialGradient(0, -6, 4, 0, 0, 24);
-                    radial.addColorStop(0, '#1f2933');
-                    radial.addColorStop(0.5, '#0b1119');
-                    radial.addColorStop(1, '#020409');
+                    radial.addColorStop(0, '#4b5563');
+                    radial.addColorStop(0.5, '#111827');
+                    radial.addColorStop(1, '#020617');
                     ctx.fillStyle = radial;
                     ctx.beginPath();
                     ctx.arc(0, 0, 20, 0, Math.PI * 2);
                     ctx.fill();
 
-                    ctx.fillStyle = '#d0d4df';
+                    ctx.fillStyle = '#e5e7eb';
                     ctx.beginPath();
                     ctx.arc(0, 0, 7, 0, Math.PI * 2);
                     ctx.fill();
@@ -1274,7 +1266,7 @@
 
             Body.setPosition(truck, {
                 x: Math.max(140, Math.min(render.canvas.width - 140, truck.position.x)),
-                y: render.canvas.height - 60
+                y: render.canvas.height - 120
             });
         });
 
@@ -1285,8 +1277,11 @@
                 const bodyA = pair.bodyA;
                 const bodyB = pair.bodyB;
 
-                const item = (bodyA.label === 'debris' || bodyA.label === 'hazard') ? bodyA :
-                             (bodyB.label === 'debris' || bodyB.label === 'hazard') ? bodyB : null;
+                const item = (bodyA.label === 'debris' || bodyA.label === 'hazard')
+                    ? bodyA
+                    : (bodyB.label === 'debris' || bodyB.label === 'hazard')
+                        ? bodyB
+                        : null;
 
                 if (!item) return;
 
@@ -1295,17 +1290,17 @@
                 if (other.label === 'truck_sensor') {
                     if (item.label === 'debris') {
                         createExplosion(item.position.x, item.position.y, '#ffb81c');
-                        createFloatingText(item.position.x - 18, item.position.y - 40, "+10", "#6adc87");
+                        createFloatingText(item.position.x - 18, item.position.y - 40, "+10", "#16a34a");
                         Composite.remove(world, item);
                         updateScore(10);
                     } else {
                         createExplosion(item.position.x, item.position.y, '#dc2626');
-                        createFloatingText(item.position.x - 40, item.position.y - 40, "SCRAP FLAGGED", "#ffb3a8");
+                        createFloatingText(item.position.x - 40, item.position.y - 40, "SCRAP FLAGGED", "#b91c1c");
                         Composite.remove(world, item);
                         loseLife();
                     }
                 } else if (other.label === 'ground') {
-                    createExplosion(item.position.x, item.position.y, '#8d9aa7');
+                    createExplosion(item.position.x, item.position.y, '#9ca3af');
                     Composite.remove(world, item);
                     if (item.label === 'debris') {
                         loseLife();
