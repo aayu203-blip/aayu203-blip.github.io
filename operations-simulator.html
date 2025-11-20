@@ -36,11 +36,51 @@
             color: var(--text-main);
         }
 
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(255, 184, 28, 0.08), transparent 55%),
+                        radial-gradient(circle at 80% 10%, rgba(14, 165, 233, 0.08), transparent 45%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><g fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"><path d="M0 20 H160"/><path d="M0 40 H160"/><path d="M0 60 H160"/><path d="M0 80 H160"/><path d="M0 100 H160"/><path d="M0 120 H160"/><path d="M0 140 H160"/><path d="M20 0 V160"/><path d="M40 0 V160"/><path d="M60 0 V160"/><path d="M80 0 V160"/><path d="M100 0 V160"/><path d="M120 0 V160"/><path d="M140 0 V160"/></g></svg>');
+            opacity: 0.35;
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+
         #canvas-container {
             width: 100vw;
             height: 100vh;
             position: relative;
             background: radial-gradient(circle at top, #050b16, #010308 65%);
+            z-index: 1;
+        }
+
+        #canvas-container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(255, 184, 28, 0.05), transparent),
+                        linear-gradient(-120deg, rgba(14, 165, 233, 0.04), transparent);
+            pointer-events: none;
+            animation: auroraShift 8s ease-in-out infinite alternate;
+        }
+
+        #canvas-container::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            mix-blend-mode: multiply;
+            pointer-events: none;
         }
 
         /* UI Overlay */
@@ -55,6 +95,26 @@
             z-index: 20;
             color: var(--text-main);
             backdrop-filter: blur(12px);
+        }
+
+        .ui-screen > *:not(.hero-orbit) {
+            position: relative;
+            z-index: 2;
+        }
+
+        #start-screen {
+            text-align: center;
+            padding: 40px 20px;
+            overflow: hidden;
+        }
+
+        #start-screen::after {
+            content: "";
+            position: absolute;
+            inset: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 32px;
+            pointer-events: none;
         }
 
         .hidden { display: none !important; }
@@ -96,11 +156,115 @@
             text-align: center;
             line-height: 1.6;
             font-size: 14px;
+            position: relative;
+            z-index: 2;
         }
 
         .start-info strong {
             color: var(--text-main);
             font-weight: 600;
+        }
+
+        .meta-badge {
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--accent);
+            border: 1px solid rgba(255, 184, 28, 0.35);
+            border-radius: 999px;
+            padding: 10px 22px;
+            margin-bottom: 18px;
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            background: rgba(11, 18, 32, 0.6);
+            box-shadow: 0 0 20px rgba(255, 184, 28, 0.18);
+        }
+
+        .meta-badge span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: pulseDot 1.8s ease-in-out infinite;
+        }
+
+        .intel-row {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .intel-card {
+            background: rgba(5, 7, 11, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 16px 20px;
+            min-width: 150px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+        }
+
+        .intel-card::after {
+            content: "";
+            position: absolute;
+            inset: -80% auto auto -30%;
+            width: 160%;
+            height: 160%;
+            background: radial-gradient(circle, rgba(255, 184, 28, 0.18), transparent 55%);
+            animation: sweep 6s linear infinite;
+        }
+
+        .intel-card span,
+        .intel-card strong,
+        .intel-card small {
+            position: relative;
+            z-index: 2;
+        }
+
+        .intel-card span {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--text-muted);
+        }
+
+        .intel-card strong {
+            display: block;
+            font-size: 28px;
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            margin: 6px 0;
+            color: var(--accent);
+        }
+
+        .intel-card small {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .systems-pulse {
+            display: inline-flex;
+            gap: 12px;
+            align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 16px rgba(255, 184, 28, 0.8);
+            animation: pulseDot 1.4s ease-in-out infinite;
         }
 
         /* HUD */
@@ -116,6 +280,16 @@
             padding: 18px 36px;
             box-sizing: border-box;
             background: linear-gradient(to bottom, rgba(1,1,2,0.92), transparent);
+            position: relative;
+        }
+
+        #hud-layer::after {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            pointer-events: none;
         }
 
         .hud-panel { text-align: left; }
@@ -176,6 +350,8 @@
             letter-spacing: 0.18em;
             transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
             box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+            position: relative;
+            overflow: hidden;
         }
 
         button:hover {
@@ -380,6 +556,66 @@
             margin-top: 4px;
             letter-spacing: 0.14em;
             text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-orbit {
+            position: absolute;
+            border: 1px solid rgba(255, 184, 28, 0.18);
+            border-radius: 50%;
+            animation: orbitSpin 18s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .orbit-one { width: 420px; height: 420px; }
+        .orbit-two { width: 520px; height: 520px; animation-duration: 26s; border-color: rgba(147, 197, 253, 0.2); }
+        .orbit-three { width: 620px; height: 620px; animation-duration: 34s; border-color: rgba(255, 255, 255, 0.08); }
+
+        .hero-orbit::after {
+            content: "";
+            position: absolute;
+            top: -6px;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 14px rgba(255, 184, 28, 0.7);
+        }
+
+        .scanlines {
+            position: fixed;
+            inset: 0;
+            z-index: 30;
+            pointer-events: none;
+            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 100% 3px;
+            mix-blend-mode: soft-light;
+            opacity: 0.35;
+        }
+
+        @keyframes orbitSpin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            40% { transform: scale(1.4); opacity: 1; }
+        }
+
+        @keyframes sweep {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes auroraShift {
+            0% { filter: hue-rotate(0deg); opacity: 0.4; }
+            100% { filter: hue-rotate(20deg); opacity: 0.65; }
         }
 
         @media (max-width: 768px) {
@@ -404,10 +640,37 @@
     <div id="level-popup" class="level-popup">THROUGHPUT BOOST</div>
 
     <div id="start-screen" class="ui-screen">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="hero-orbit orbit-three"></div>
         <img id="game-logo" src="" alt="Parts Trading Company" style="display:none;">
         <div id="fallback-logo" class="fallback-logo">PARTS TRADING COMPANY</div>
 
         <div class="tagline">Official Fleet Console</div>
+        <div class="meta-badge"><span></span> Live Terminal · Dock 07A</div>
+
+        <div class="intel-row">
+            <div class="intel-card">
+                <span>Cargo Sync</span>
+                <strong id="intel-sync">100%</strong>
+                <small>Manifest aligned</small>
+            </div>
+            <div class="intel-card">
+                <span>Fleet Health</span>
+                <strong id="intel-health">3/3</strong>
+                <small>Integrity nominal</small>
+            </div>
+            <div class="intel-card">
+                <span>Dispatch Tempo</span>
+                <strong id="intel-tempo">100%</strong>
+                <small>Acceleration armed</small>
+            </div>
+        </div>
+
+        <div class="systems-pulse">
+            <span class="pulse-dot"></span>
+            Systems Ready – Press Enter or click to launch
+        </div>
 
         <div class="start-info">
             <strong>Objective:</strong> Align every inbound load with the Parts Trading manifest.<br>
@@ -424,7 +687,7 @@
         </div>
 
         <button class="cta-pulse" onclick="startGame()">Initiate Simulation</button>
-        <div class="control-hint">Use ← → or A / D to steer</div>
+        <div class="control-hint">Use ← → or A / D to steer · Press Enter to launch</div>
     </div>
 
     <div id="game-over-screen" class="ui-screen hidden">
@@ -464,10 +727,11 @@
 
     <div class="brand-logo-small">Parts Trading Company © 2025</div>
     <div id="canvas-container"></div>
+    <div class="scanlines"></div>
 
     <script>
         const ASSETS = {
-            logo: "https://www.partstradingco.com/assets/images/ptc-logo.png?v=1",
+            logo: "/assets/images/ptc-logo.png?v=1",
             parts: [],
             hazards: []
         };
@@ -531,6 +795,24 @@
 
         let particles = [];
         let floatingTexts = [];
+
+        function drawRoundedRect(ctx, x, y, width, height, radius) {
+            const r = Math.max(0, Math.min(radius, Math.abs(width) / 2, Math.abs(height) / 2));
+            const right = x + width;
+            const bottom = y + height;
+
+            ctx.beginPath();
+            ctx.moveTo(x + r, y);
+            ctx.lineTo(right - r, y);
+            ctx.quadraticCurveTo(right, y, right, y + r);
+            ctx.lineTo(right, bottom - r);
+            ctx.quadraticCurveTo(right, bottom, right - r, bottom);
+            ctx.lineTo(x + r, bottom);
+            ctx.quadraticCurveTo(x, bottom, x, bottom - r);
+            ctx.lineTo(x, y + r);
+            ctx.quadraticCurveTo(x, y, x + r, y);
+            ctx.closePath();
+        }
 
         function createExplosion(x, y, color) {
             for (let i = 0; i < 8; i++) {
@@ -664,7 +946,7 @@
 
                         ctx.fillStyle = g;
                         ctx.beginPath();
-                        ctx.roundRect(-size / 2, -size / 2, size, size, radius * 0.4);
+                        drawRoundedRect(ctx, -size / 2, -size / 2, size, size, radius * 0.4);
                         ctx.fill();
 
                         ctx.globalAlpha = 0.12;
@@ -727,8 +1009,7 @@
                 ctx.restore();
 
                 ctx.fillStyle = CONFIG.truckColorBody;
-                ctx.beginPath();
-                ctx.roundRect(-w * 0.55, -h * 0.6, w * 0.55, h * 0.7, 12);
+                drawRoundedRect(ctx, -w * 0.55, -h * 0.6, w * 0.55, h * 0.7, 12);
                 ctx.fill();
 
                 ctx.fillStyle = CONFIG.truckColorPrimary;
@@ -739,21 +1020,18 @@
                 ctx.fillRect(-w * 0.06, -h * 0.8, 8, h * 0.9);
 
                 ctx.fillStyle = CONFIG.truckColorBody;
-                ctx.beginPath();
-                ctx.roundRect(-w * 0.15, -h * 0.3, w * 0.48, h * 0.6, 14);
+                drawRoundedRect(ctx, -w * 0.15, -h * 0.3, w * 0.48, h * 0.6, 14);
                 ctx.fill();
 
                 ctx.fillStyle = CONFIG.truckColorPrimary;
-                ctx.beginPath();
-                ctx.roundRect(w * 0.08, -h * 1.0, w * 0.34, h * 1.2, 16);
+                drawRoundedRect(ctx, w * 0.08, -h * 1.0, w * 0.34, h * 1.2, 16);
                 ctx.fill();
 
                 ctx.save();
                 ctx.translate(w * 0.16, -h * 0.8);
                 ctx.fillStyle = CONFIG.truckHighlight;
                 ctx.globalAlpha = 0.9;
-                ctx.beginPath();
-                ctx.roundRect(0, 0, w * 0.18, h * 0.5, 10);
+                drawRoundedRect(ctx, 0, 0, w * 0.18, h * 0.5, 10);
                 ctx.fill();
                 ctx.restore();
 
@@ -922,8 +1200,22 @@
             leaderboard: document.getElementById('leaderboard-list'),
             inputName: document.getElementById('player-name'),
             btnContinue: document.getElementById('btn-continue'),
-            popup: document.getElementById('level-popup')
+            popup: document.getElementById('level-popup'),
+            intelSync: document.getElementById('intel-sync'),
+            intelHealth: document.getElementById('intel-health'),
+            intelTempo: document.getElementById('intel-tempo')
         };
+
+        setInterval(() => {
+            if (!state.isPlaying && els.intelSync) {
+                const drift = (96 + Math.random() * 3).toFixed(1);
+                els.intelSync.textContent = `${drift}%`;
+            }
+            if (!state.isPlaying && els.intelTempo) {
+                const tempo = 100 + Math.round(Math.sin(Date.now() / 700) * 4);
+                els.intelTempo.textContent = `${tempo}%`;
+            }
+        }, 1600);
 
         function updateLivesUI() {
             els.lives.innerHTML = "";
@@ -934,10 +1226,22 @@
             }
         }
 
+        function updateIntelPanels() {
+            if (els.intelHealth) {
+                const liveValue = Math.max(0, state.lives);
+                els.intelHealth.textContent = `${liveValue}/${CONFIG.maxLives}`;
+            }
+            if (els.intelTempo && state.isPlaying) {
+                const liveTempo = Math.round(state.timeScale * 100);
+                els.intelTempo.textContent = `${liveTempo}%`;
+            }
+        }
+
         function updateUI() {
             els.score.textContent = state.score.toLocaleString();
             els.level.textContent = Math.round(state.timeScale * 100) + "%";
             updateLivesUI();
+            updateIntelPanels();
         }
 
         function increaseDifficulty() {
@@ -1047,6 +1351,7 @@
             const runner = Runner.create();
             Runner.run(runner, engine);
             updateLivesUI();
+            updateIntelPanels();
         }
 
         function startGame() {
@@ -1074,7 +1379,13 @@
         }
 
         document.addEventListener('keydown', (e) => {
-            if (!state.isPlaying && e.key === 'R') {
+            if (!state.isPlaying && (e.key === 'Enter' || e.code === 'Space')) {
+                if (document.activeElement === els.inputName) return;
+                e.preventDefault();
+                startGame();
+                return;
+            }
+            if (!state.isPlaying && e.key && e.key.toUpperCase() === 'R') {
                 localStorage.removeItem('ptc_scores');
                 loadLeaderboard();
             }
