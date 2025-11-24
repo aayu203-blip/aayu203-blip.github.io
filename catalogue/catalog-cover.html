@@ -88,7 +88,7 @@
             margin-bottom: 0;
             position: relative;
             top: 20px; /* Move down 6-8px for optical centering */
-            margin-left: 28px; /* Move RIGHT by 20-35px to align with master margin */
+            margin-left: 46px; /* Move RIGHT by 18-24px more (was 28px, now 46px) to align with slogan/list margin */
         }
         .est-year {
             font-family: 'Oswald', sans-serif;
@@ -222,15 +222,20 @@
             left: 0;
             right: 0;
             z-index: 20;
-            padding: 50px 10mm 20mm calc(18mm + 30px); /* Increase height by 10-12% and shift DOWN slightly - centered vertically in fade */
+            padding: 90px 10mm 20mm calc(18mm + 30px); /* Move slogan DOWN by 40-55px (was 50px, now 90px) for proper breathing room */
             margin-top: 0;
         }
-        /* Lists section - separate from hero image, black background */
+        /* Lists section - separate from hero image, TRUE BLACK background */
         .lists-section {
-            background: var(--dark-bg);
+            background: #000000; /* Pure black, not grey */
             padding: 0;
             position: relative;
             z-index: 25;
+            /* Add noise/grain texture to match hero zone */
+            background-image: 
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E"),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 0%, transparent 30%);
+            background-blend-mode: overlay;
         }
         .lists-content {
             padding: 17px 10mm 17px calc(18mm + 30px); /* Reduce block height by 15-18% (was 20px, now 17px = 15% reduction) */
@@ -256,7 +261,7 @@
         .section-divider {
             height: 1px;
             background: rgba(255,255,255,0.15);
-            margin-top: 12px;
+            margin-top: 52px; /* Move down by 40px (was 12px, now 52px) to match slogan movement */
             margin-bottom: 26px;
         }
         /* Info Grid */
