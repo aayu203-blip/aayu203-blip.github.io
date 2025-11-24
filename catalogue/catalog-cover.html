@@ -91,11 +91,11 @@
             margin: 0;
         }
         .logo-image {
-            height: 24mm; /* A5 appropriate size */
+            height: 32mm; /* Larger for stronger branding */
             width: auto;
-            max-width: 80mm;
+            max-width: 95mm;
             object-fit: contain;
-            filter: drop-shadow(0 2px 4px rgba(255, 194, 14, 0.3));
+            filter: drop-shadow(0 4px 8px rgba(255, 194, 14, 0.35));
         }
         .company-subline {
             color: var(--ptc-gold);
@@ -133,17 +133,17 @@
         }
         .exca-silhouette {
             position: absolute;
-            bottom: -6%;
-            right: -18%;
-            width: 140%;
+            bottom: -4%;
+            right: -20%;
+            width: 160%;
             height: 100%;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center bottom;
-            opacity: 0.42;
+            opacity: 0.5;
             mix-blend-mode: hard-light;
-            filter: grayscale(100%) contrast(160%) brightness(0.26) blur(0.9px);
-            transform: translate3d(6%, 4%, 0) scale(1.04);
+            filter: grayscale(100%) contrast(180%) brightness(0.32) blur(0.6px);
+            transform: translate3d(4%, 3%, 0) scale(1.08);
             z-index: 1;
             pointer-events: none;
         }
@@ -190,27 +190,26 @@
             padding-bottom: 5px;
         }
         .section-title {
-            color: rgba(255,255,255,0.78);
+            color: rgba(255,255,255,0.9);
             font-family: 'Oswald', sans-serif;
-            font-size: 9px;
+            font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 0.28em;
-            margin-bottom: 8px;
+            letter-spacing: 0.32em;
+            margin-bottom: 10px;
         }
         .list-text {
-            color: #F4F4F4;
+            color: #fff;
             font-weight: 600;
-            font-size: 9px; /* A5 Size */
-            line-height: 1.6;
+            font-size: 11px; /* A5 Size */
+            line-height: 1.8;
+            letter-spacing: 0.05em;
         }
-        .check-item { display: flex; align-items: center; margin-bottom: 4px; }
-        .check-icon {
-            width: 12px; height: 12px;
-            display: inline-flex; justify-content: center; align-items: center;
-            margin-right: 6px;
-            color: var(--ptc-gold);
-            font-weight: 700;
-            font-size: 10px;
+        .list-text span {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .list-text span:last-child {
+            margin-bottom: 0;
         }
         /* Footer */
         .footer-band {
@@ -265,7 +264,7 @@
         <!-- HERO SECTION -->
         <div class="hero-image">
             <div class="exca-silhouette" aria-hidden="true"
-                 style="background-image: url('/catalogue-2025/images/silhouettes/exca_silhouette.svg');"></div>
+                 style="background-image: url('images/silhouettes/exca_silhouette.svg');"></div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <div class="gold-border">
@@ -281,12 +280,12 @@
                     <div>
                         <div class="section-title">Inventory Focus</div>
                         <div class="list-text">
-                            <div class="check-item"><div class="check-icon">✔</div>Excavator Parts</div>
-                            <div class="check-item"><div class="check-icon">✔</div>Hydraulic Pumps</div>
-                            <div class="check-item"><div class="check-icon">✔</div>Undercarriage</div>
-                            <div class="check-item"><div class="check-icon">✔</div>Engine Parts</div>
-                            <div class="check-item"><div class="check-icon">✔</div>Transmission Parts</div>
-                            <div class="check-item"><div class="check-icon">✔</div>Filters &amp; Consumables</div>
+                            <span>Excavator Parts</span>
+                            <span>Hydraulic Pumps</span>
+                            <span>Undercarriage</span>
+                            <span>Engine Parts</span>
+                            <span>Transmission Parts</span>
+                            <span>Filters &amp; Consumables</span>
                         </div>
                     </div>
                     <!-- Brands -->
@@ -294,16 +293,16 @@
                         <div>
                             <div class="section-title">Equipment We Support</div>
                             <div class="list-text">
-                                VOLVO • SCANIA<br/>
-                                KOMATSU • CAT<br/>
-                                HITACHI
+                                <span>VOLVO • SCANIA</span>
+                                <span>KOMATSU • CAT</span>
+                                <span>HITACHI</span>
                             </div>
                         </div>
                         <div style="margin-top:16px;">
                             <div class="section-title">Brands We Deal In</div>
                             <div class="list-text">
-                                LUK • FAG • WABCO<br/>
-                                MANN+HUMMEL • BOSCH
+                                <span>LUK • FAG • WABCO</span>
+                                <span>MANN+HUMMEL • BOSCH</span>
                             </div>
                         </div>
                     </div>
