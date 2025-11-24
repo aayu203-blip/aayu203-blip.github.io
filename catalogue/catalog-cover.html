@@ -100,9 +100,10 @@
         .hero-image {
             background-image: 
                 linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.2) 100%),
-                url('/catalogue-2025/images/hero-photo.jpg'); /* Replace with your image */
+                url('/catalogue-2025/images/hero-photo.jpg');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             flex: 1;
             position: relative;
             overflow: hidden;
@@ -178,7 +179,7 @@
             font-weight: 700;
             color: #fff;
             font-size: 45px; /* ~3% reduction for balance */
-            line-height: 0.84; /* Reduced by 3-4px equivalent */
+            line-height: 1.0; /* Increased from 0.84 - less tight spacing */
             margin: 0;
             letter-spacing: -0.01em;
         }
