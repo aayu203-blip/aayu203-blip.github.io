@@ -72,7 +72,7 @@
             z-index: 30;
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center; /* Center align items vertically for EST. 1956 alignment */
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         .user-logo-placeholder {
@@ -96,7 +96,8 @@
             color: #fff;
             font-weight: 700;
             letter-spacing: 0.02em;
-            margin-top: 66px; /* Moved down by 6-12px */
+            margin-top: 0; /* Centered with logo via flexbox align-items: center */
+            align-self: center; /* Ensure center alignment with logo */
         }
         /* Hero Area - Photo Background - Only covers slogan area, fades out before lists */
         .hero-image {
