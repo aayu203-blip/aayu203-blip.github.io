@@ -63,24 +63,11 @@
             z-index: 50;
             mix-blend-mode: overlay;
         }
-        /* 2. The Faint Tech Grid (More visible for industrial aesthetic) */
-        .tech-grid {
-            position: absolute;
-            inset: 0;
-            background-size: 42px 42px; /* 40-45px spacing */
-            background-image:
-                linear-gradient(to right, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
-            pointer-events: none;
-            z-index: 15;
-            opacity: 0.20; /* Increased to 20% for clear visibility */
-            mix-blend-mode: normal; /* Normal blend for crisp lines */
-        }
         /* --- LAYOUT SECTIONS --- */
         /* Header */
         .top-bar {
             background: #000;
-            padding: 1mm 12mm 1mm 12mm; /* Further reduced height by ~15px equivalent */
+            padding: 0.8mm 12mm 0.8mm 12mm; /* Reduced height by 20-25% */
             z-index: 30;
             display: flex;
             justify-content: space-between;
@@ -92,14 +79,14 @@
             margin-top: 0;
         }
         .logo-image {
-            height: 43mm; /* +12-15% increase from 38mm */
+            height: 45mm; /* +15-18% increase for dominance */
             width: auto;
-            max-width: 120mm;
+            max-width: 125mm;
             object-fit: contain;
             filter: drop-shadow(0 5px 10px rgba(255, 194, 14, 0.35));
             margin-bottom: 0;
             position: relative;
-            top: 8px; /* Balanced vertical placement */
+            top: 14px; /* Move down 6-8px for optical centering */
         }
         .est-year {
             font-family: 'Oswald', sans-serif;
@@ -107,45 +94,78 @@
             color: #fff;
             font-weight: 700;
             letter-spacing: 0.02em;
-            margin-top: 60px; /* Moved down by 6px for better alignment */
+            margin-top: 66px; /* Moved down by 6-12px */
         }
-        /* Hero Area */
+        /* Hero Area - Photo Background */
         .hero-image {
-            background: radial-gradient(circle at center, #1f1f1f 0%, #000000 100%);
+            background-image: url('/catalogue-2025/images/hero-photo.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
             flex: 1;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            /* Add vertical gradient (top darker → middle lighter) */
+            background-image: 
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.2) 100%),
+                url('/catalogue-2025/images/hero-photo.jpg');
         }
-        .exca-silhouette {
-            position: absolute;
-            bottom: 2%; /* Moved down 25px from -4% */
-            right: -10%; /* Shifted right slightly */
-            width: 115%; /* Bleed off page */
-            height: 100%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center bottom;
-            opacity: 0.55; /* Increased to 55% for clear visibility */
-            mix-blend-mode: hard-light;
-            filter: grayscale(100%) contrast(160%) brightness(0.32) blur(0.8px); /* Slightly increased contrast and brightness */
-            z-index: 1;
-            pointer-events: none;
-        }
-        /* Gradient Overlay to ensure white text pops */
-        .hero-overlay {
+        /* Left-to-Right Fade (covers 35-40% of left side) */
+        .hero-fade-left {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,1) 10%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0.0) 80%);
-            z-index: 2;
+            background: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.90) 0%,
+                rgba(0, 0, 0, 0.75) 35%,
+                rgba(0, 0, 0, 0.45) 42%,
+                rgba(0, 0, 0, 0.15) 50%,
+                transparent 60%
+            );
+            z-index: 3;
+            pointer-events: none;
+            mask-image: radial-gradient(ellipse 800px 100% at left center, black 0%, transparent 60%);
+            -webkit-mask-image: radial-gradient(ellipse 800px 100% at left center, black 0%, transparent 60%);
+        }
+        /* Bottom-to-Top Fade (darkens bottom-left area for lists) */
+        .hero-fade-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 35%;
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.80) 0%,
+                rgba(0, 0, 0, 0.60) 30%,
+                rgba(0, 0, 0, 0.30) 60%,
+                transparent 100%
+            );
+            z-index: 4;
+            pointer-events: none;
+            mask-image: radial-gradient(ellipse 120% 400px at bottom left, black 0%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 120% 400px at bottom left, black 0%, transparent 70%);
+        }
+        /* Tech Grid overlay */
+        .tech-grid {
+            position: absolute;
+            inset: 0;
+            background-size: 42px 42px;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            pointer-events: none;
+            z-index: 16; /* Above fades, below text */
+            opacity: 0.07; /* 6-8% opacity */
+            mix-blend-mode: normal;
         }
         .hero-content {
             position: relative;
             z-index: 20;
-            padding: 0 10mm 10mm calc(18mm + 26px); /* Move right by 10px (was +16px, now +26px) */
-            margin-top: -110px; /* Move block up by 40-55px (was -80px, now -110px) */
+            padding: 0 10mm 10mm calc(18mm + 30px); /* Move right by 8-12px */
+            margin-top: -120px; /* Move block up by 40-55px */
         }
         /* Typography & Layout elements */
         .gold-border {
@@ -153,13 +173,14 @@
             padding-left: 18px;
             display: inline-block;
             margin-bottom: 16px;
+            height: fit-content; /* Shorten bar to align with text block height */
         }
         .headline {
             font-family: 'Oswald', sans-serif;
             font-weight: 700;
             color: #fff;
-            font-size: 47px; /* Slight 2-3% reduction from 48px */
-            line-height: 0.88; /* tighter industrial stack */
+            font-size: 45px; /* ~3% reduction for balance */
+            line-height: 0.84; /* Reduced by 3-4px equivalent */
             margin: 0;
             letter-spacing: -0.01em;
         }
@@ -177,6 +198,9 @@
             gap: 18px;
             padding: 0 0 0 0;
             align-items: flex-start;
+            background: rgba(0, 0, 0, 0.25); /* Slightly darken area behind lists */
+            padding: 8px 12px;
+            border-radius: 2px;
         }
         .section-title {
             color: #B5B5B5;
@@ -211,7 +235,7 @@
         .footer-band {
             background: var(--ptc-gold);
             color: #000;
-            padding: 40px 10mm 28px 10mm; /* +6px top padding */
+            padding: 46px 10mm 28px 10mm; /* Increased top padding by 6-10px */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -248,9 +272,6 @@
     <div class="cover-container">
         <!-- Textures -->
         <div class="texture-overlay"></div>
-        <!-- Requested: Faint Gray Lines (Tech Grid) -->
-        <div class="tech-grid"></div>
-        
         <!-- TOP BAR -->
         <div class="top-bar">
             <div>
@@ -263,16 +284,16 @@
 
         <!-- HERO SECTION -->
         <div class="hero-image">
-            <div class="exca-silhouette" aria-hidden="true"
-                 style="background-image: url('/catalogue-2025/images/silhouettes/exca_silhouette_option_b.svg');"></div>
-            <div class="hero-overlay"></div>
+            <div class="hero-fade-left"></div>
+            <div class="hero-fade-bottom"></div>
+            <div class="tech-grid"></div>
             <div class="hero-content">
                 <div class="gold-border">
                     <h2 class="headline">
                         IF YOU HAVE<br>
                         <span class="gold">EARTHMOVERS</span>,<br>
                         WE HAVE<br>
-                        THE <span class="gold">PARTS.</span>
+                        <span class="gold">PARTS.</span>
                     </h2>
                 </div>
                 <div class="section-divider"></div>
@@ -291,12 +312,17 @@
                         </div>
                     </div>
                     <div>
-                        <div class="section-title">Spare Parts We Supply</div>
+                        <div class="section-title">Equipment We Support</div>
                         <div class="list-text">
-                            <span>Volvo • Scania</span>
-                            <span>Komatsu • Caterpillar</span>
-                            <span>Hitachi • Kobelco</span>
-                            <span>Hyundai • SANY • Liugong</span>
+                            <span>Volvo</span>
+                            <span>Scania</span>
+                            <span>Komatsu</span>
+                            <span>Caterpillar</span>
+                            <span>Hitachi</span>
+                            <span>Kobelco</span>
+                            <span>Hyundai</span>
+                            <span>SANY</span>
+                            <span>Liugong</span>
                         </div>
                     </div>
                 </div>
