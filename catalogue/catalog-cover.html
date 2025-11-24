@@ -79,7 +79,9 @@
         .user-logo-placeholder {
             margin: 0;
             margin-top: 0;
-            display: inline-block;
+            margin-bottom: 0;
+            padding: 0;
+            display: block;
             line-height: 0; /* Remove invisible line-height space */
             vertical-align: top; /* Align to top, no extra space */
         }
@@ -90,8 +92,9 @@
             object-fit: contain;
             object-position: center top; /* Crop invisible space from top */
             filter: drop-shadow(0 5px 10px rgba(255, 194, 14, 0.25)); /* Reduced glow by 10-15% */
+            margin: 0;
             margin-bottom: 0;
-            margin-left: 0; /* Remove margin, handled by parent container */
+            padding: 0;
             display: block;
             position: relative;
             top: 10px; /* Reduced top offset since we're trimming invisible space */
@@ -104,11 +107,12 @@
             color: #fff;
             font-weight: 700;
             letter-spacing: 0.02em;
-            margin-top: 2px; /* Directly after logo with just 2px space */
-            margin-bottom: 0;
+            margin: 0;
+            margin-top: 0; /* Stick directly to logo - no space */
             padding: 0;
             display: block;
             text-align: center; /* Center-align text */
+            line-height: 1; /* Tight line height */
         }
         /* Hero Area - Photo Background - Only covers slogan area, fades out before lists */
         .hero-image {
@@ -363,11 +367,11 @@
         <div class="texture-overlay"></div>
         <!-- TOP BAR -->
         <div class="top-bar">
-            <div style="display: flex; flex-direction: column; align-items: flex-start; margin-left: 46px;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; margin-left: 46px; gap: 0;">
                 <div class="user-logo-placeholder">
                     <img src="/catalogue-2025/images/logos/ptc-logo.png" alt="PTC Parts Trading Company" class="logo-image">
                 </div>
-                <div class="est-year" style="align-self: center; margin-left: 0;">EST. 1956</div>
+                <div class="est-year" style="align-self: center; margin-left: 0; margin-top: 0;">EST. 1956</div>
             </div>
         </div>
 
