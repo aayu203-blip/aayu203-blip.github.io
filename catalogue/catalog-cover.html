@@ -328,111 +328,114 @@
         .list-text span:last-child {
             margin-bottom: 0;
         }
-        /* Footer - Premium 3-column layout */
+        /* Footer - Print-optimized 3-column layout for A4 */
         .footer-band {
             background: var(--ptc-gold);
             color: #000;
-            padding: 24px calc(18mm + 30px) 8mm calc(18mm + 30px); /* Align left margin with logo/slogan */
+            padding: 8mm calc(18mm + 30px) 6mm calc(18mm + 30px); /* Print-friendly padding, align left margin with logo/slogan */
             display: grid;
-            grid-template-columns: auto 1fr auto; /* Better column sizing: QR left, Address center expands, Contact right */
-            gap: 12mm; /* Reduced gap for better fit on A4 */
-            align-items: start; /* Align to top for better vertical alignment */
+            grid-template-columns: 45mm 1fr 50mm; /* Fixed widths for QR and Contact, Address fills remaining space */
+            gap: 8mm; /* Print-optimized gap */
+            align-items: start;
             z-index: 30;
             height: 38mm; /* 12-14% of page height for proper anchor */
-            margin-top: auto; /* Push footer to bottom */
-            margin-bottom: 0; /* No margin - printer margin handled by container padding */
+            margin-top: auto;
+            margin-bottom: 0;
         }
         /* Column 1 - Left: QR + URL */
         .footer-left {
             display: flex;
             align-items: flex-start;
-            gap: 8px;
-            padding-top: 4px; /* Add vertical spacing */
+            gap: 3mm; /* Print-friendly spacing */
         }
         .qr-box {
             background: #000;
             color: var(--ptc-gold);
-            padding: 6px;
-            border-radius: 2px;
+            padding: 2mm;
+            border-radius: 1px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
         }
         .qr-box i {
-            width: 32px !important; /* QR code needs to be bigger and scannable */
-            height: 32px !important;
+            width: 12mm !important; /* Print-sized QR code (scannable when printed) */
+            height: 12mm !important;
         }
         .scan-text {
             display: flex;
             flex-direction: column;
-            gap: 4px; /* Increased spacing for readability */
+            gap: 1mm;
+            justify-content: center;
         }
         .scan-text .muted {
             font-family: 'Inter', sans-serif;
-            font-size: 10px;
+            font-size: 8pt; /* Print-friendly pt units */
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.4em; /* Tracking +40 */
-            color: #1f1f1f; /* Grey for labels */
-            opacity: 1;
+            letter-spacing: 0.3em;
+            color: #1f1f1f;
+            line-height: 1.2;
         }
         .scan-text .site {
             font-family: 'Inter', sans-serif;
-            font-size: 12px;
-            font-weight: 600; /* Medium 500-600 */
-            color: #0a0a0a; /* Near-black for details */
+            font-size: 10pt; /* Print-friendly pt units */
+            font-weight: 700;
+            color: #000000;
+            line-height: 1.3;
         }
         /* Column 2 - Center: Address */
         .footer-center {
             display: flex;
             flex-direction: column;
             text-align: center;
-            gap: 4px; /* Increased spacing for readability */
-            padding-top: 4px; /* Add vertical spacing */
+            gap: 1mm;
+            justify-content: center;
         }
         .address-label {
             font-family: 'Inter', sans-serif;
-            font-size: 10px;
+            font-size: 8pt; /* Print-friendly pt units */
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.4em; /* Tracking +40 */
-            color: #1f1f1f; /* Grey for labels */
-            margin-bottom: 3px; /* Tightened */
+            letter-spacing: 0.3em;
+            color: #1f1f1f;
+            margin-bottom: 1mm;
+            line-height: 1.2;
         }
         .address-line {
             font-family: 'Inter', sans-serif;
-            font-size: 12px; /* Standardized to 12px */
-            font-weight: 600; /* Medium 500-600 */
-            line-height: 1.3; /* Tighter */
-            color: #0a0a0a; /* Near-black for details */
+            font-size: 9pt; /* Print-friendly pt units */
+            font-weight: 600;
+            line-height: 1.4;
+            color: #000000;
         }
         /* Column 3 - Right: Email + Tel */
         .footer-right {
             display: flex;
             flex-direction: column;
             text-align: right;
-            gap: 10px; /* Increased spacing for readability */
-            padding-top: 4px; /* Add vertical spacing */
+            gap: 2mm;
+            justify-content: center;
         }
         .contact-item {
             display: flex;
             flex-direction: column;
-            gap: 3px; /* Increased spacing for readability */
+            gap: 0.5mm;
         }
         .contact-label {
             font-family: 'Inter', sans-serif;
-            font-size: 10px;
+            font-size: 8pt; /* Print-friendly pt units */
             font-weight: 500;
-            letter-spacing: 0.4em; /* Tracking +40 */
+            letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: #1f1f1f; /* Grey for labels */
-            opacity: 1;
+            color: #1f1f1f;
+            line-height: 1.2;
         }
         .contact-value {
             font-family: 'Inter', sans-serif;
-            font-size: 12px; /* Standardized to 12px */
-            font-weight: 600; /* Medium 500-600 */
-            color: #0a0a0a; /* Near-black for details */
+            font-size: 9pt; /* Print-friendly pt units */
+            font-weight: 600;
+            color: #000000;
+            line-height: 1.3;
         }
     </style>
 </head>
