@@ -80,7 +80,7 @@
         /* Header */
         .top-bar {
             background: #000;
-            padding: 3mm 10mm 3mm 10mm; /* Reduced by 25-30% for tighter header */
+            padding: 2mm 10mm 2mm 10mm; /* Further reduced header height */
             z-index: 30;
             display: flex;
             justify-content: space-between;
@@ -89,17 +89,18 @@
         }
         .user-logo-placeholder {
             margin: 0;
-            margin-top: -20px; /* Move entire block UP by 20px */
+            margin-top: -10px; /* Slightly up for tighter header */
         }
         .logo-image {
-            height: 40mm; /* Reduced for proper proportions */
+            height: 38mm; /* Slightly smaller for better proportions */
             width: auto;
             max-width: 110mm;
             object-fit: contain;
             filter: drop-shadow(0 5px 10px rgba(255, 194, 14, 0.35));
+            margin-bottom: 0;
         }
         .slogan {
-            margin-top: 4px; /* Tight 4px gap - logo and slogan stick together */
+            margin-top: 1px; /* Minimal gap - logo and slogan stick together */
             font-size: 13.5px;
             color: #D6D6D6;
             font-weight: 600;
