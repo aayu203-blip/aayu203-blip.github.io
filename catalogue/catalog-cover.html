@@ -13,6 +13,7 @@
         @page {
             size: A4;
             margin: 0;
+            margin-bottom: 5mm; /* Add bottom margin for printer */
         }
         @media print {
             body {
@@ -329,13 +330,14 @@
         .footer-band {
             background: var(--ptc-gold);
             color: #000;
-            padding: 46px 10mm 28px 10mm; /* Increased top padding by 6-10px */
+            padding: 52px 10mm 8mm 10mm; /* Increased top padding to shift content higher, reduced bottom padding for printer margin */
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 30;
-            height: 30mm; /* A4 footer height */
+            height: 42mm; /* Increased footer height from 30mm to 42mm */
             margin-top: auto; /* Push footer to bottom */
+            margin-bottom: 5mm; /* Add bottom margin for printer */
         }
         .qr-box {
             background: #000;
