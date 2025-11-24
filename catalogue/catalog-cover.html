@@ -111,7 +111,7 @@
             font-weight: 900;
             letter-spacing: 0.02em;
             margin: 0;
-            margin-top: 4px; /* Add space between logo and EST */
+            margin-top: 8px; /* Increased space between logo and EST */
             padding: 0;
             display: block;
             text-align: center; /* Center-align text */
@@ -332,14 +332,13 @@
         .footer-band {
             background: var(--ptc-gold);
             color: #000;
-            padding: 28px calc(18mm + 30px) 8mm calc(18mm + 30px); /* Align left margin with logo/slogan, add top padding */
-            padding-top: 30px; /* Add 20-30px top padding so text doesn't touch yellow edge */
+            padding: 24px calc(18mm + 30px) 8mm calc(18mm + 30px); /* Align left margin with logo/slogan */
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
-            gap: 20mm; /* Equal column spacing */
-            align-items: center;
+            grid-template-columns: auto 1fr auto; /* Better column sizing: QR left, Address center expands, Contact right */
+            gap: 12mm; /* Reduced gap for better fit on A4 */
+            align-items: start; /* Align to top for better vertical alignment */
             z-index: 30;
-            height: 38mm; /* Increased back to 12-14% of page height (was 26mm, now 38mm) for proper anchor */
+            height: 38mm; /* 12-14% of page height for proper anchor */
             margin-top: auto; /* Push footer to bottom */
             margin-bottom: 0; /* No margin - printer margin handled by container padding */
         }
@@ -353,13 +352,15 @@
         .qr-box {
             background: #000;
             color: var(--ptc-gold);
-            padding: 5px;
+            padding: 6px;
             border-radius: 2px;
             display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         .qr-box i {
-            width: 16px !important; /* All icons 14-16px max */
-            height: 16px !important;
+            width: 32px !important; /* QR code needs to be bigger and scannable */
+            height: 32px !important;
         }
         .scan-text {
             display: flex;
@@ -445,7 +446,7 @@
                 <div class="user-logo-placeholder">
                     <img src="/catalogue-2025/images/logos/ptc-logo.png" alt="PTC Parts Trading Company" class="logo-image">
                 </div>
-                <div class="est-year" style="align-self: center; margin-left: 0; margin-top: -126px; position: relative;">EST. 1956</div>
+                <div class="est-year" style="align-self: center; margin-left: 0; margin-top: -115px; position: relative;">EST. 1956</div>
             </div>
         </div>
 
