@@ -53,6 +53,7 @@
             display: flex;
             flex-direction: column;
             box-shadow: 0 20px 50px rgba(0,0,0,0.6); /* Premium shadow */
+            padding-bottom: 5mm; /* Printer margin - inside container so everything fits in A4 */
         }
         /* --- TEXTURE & EFFECTS --- */
         
@@ -337,7 +338,7 @@
             z-index: 30;
             height: 42mm; /* Increased footer height from 30mm to 42mm */
             margin-top: auto; /* Push footer to bottom */
-            margin-bottom: 5mm; /* Add bottom margin for printer */
+            margin-bottom: 0; /* No margin - printer margin handled by container padding */
         }
         .qr-box {
             background: #000;
