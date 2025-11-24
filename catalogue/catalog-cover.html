@@ -327,66 +327,101 @@
         .list-text span:last-child {
             margin-bottom: 0;
         }
-        /* Footer */
+        /* Footer - Premium 3-column layout */
         .footer-band {
             background: var(--ptc-gold);
             color: #000;
-            padding: 52px 10mm 8mm 10mm; /* Increased top padding to shift content higher, reduced bottom padding for printer margin */
-            display: flex;
-            justify-content: space-between;
+            padding: 38px 10mm 8mm 10mm; /* Reduced top padding - footer 10-15% smaller */
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
+            gap: 20mm; /* Equal column spacing */
             align-items: center;
             z-index: 30;
-            height: 42mm; /* Increased footer height from 30mm to 42mm */
+            height: 36mm; /* Reduced by 15% (was 42mm, now 36mm) */
             margin-top: auto; /* Push footer to bottom */
             margin-bottom: 0; /* No margin - printer margin handled by container padding */
+        }
+        /* Column 1 - Left: QR + URL */
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .qr-box {
             background: #000;
             color: var(--ptc-gold);
-            padding: 8px;
+            padding: 6px;
             border-radius: 2px;
             display: inline-flex;
         }
         .qr-box i {
-            width: 42px !important; /* Bigger QR code: 32px -> 42px */
-            height: 42px !important;
+            width: 36px !important; /* Reduced by 15% (was 42px, now 36px) */
+            height: 36px !important;
         }
-        .scan-text { margin-left: 10px; display: flex; flex-direction: column; }
-        .scan-text .muted {
-            font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; /* Bigger font: 8px -> 10px */
-            opacity: 0.85;
-        }
-        .scan-text .site { font-size: 14px; font-weight: 900; } /* Bigger font: 11px -> 14px */
-        .footer-contact {
+        .scan-text {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            text-align: right;
+            gap: 2px;
         }
-        .contact-row {
+        .scan-text .muted {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            opacity: 0.85;
+        }
+        .scan-text .site {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 700; /* Bold for URL */
+        }
+        /* Column 2 - Center: Address */
+        .footer-center {
             display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            justify-content: flex-end;
+            flex-direction: column;
+            text-align: center;
+            gap: 2px;
         }
-        .contact-row i {
-            width: 18px;
-            height: 18px;
+        .address-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            opacity: 0.85;
+            margin-bottom: 4px;
+        }
+        .address-line {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        /* Column 3 - Right: Email + Tel */
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            text-align: right;
+            gap: 8px;
+        }
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
         }
         .contact-label {
-            font-family: 'Noto Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             font-size: 10px;
-            font-weight: 800;
+            font-weight: 500;
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            display: block;
             opacity: 0.85;
         }
         .contact-value {
-            font-family: 'Noto Sans', sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -459,38 +494,35 @@
             </div>
         </div>
 
-        <!-- FOOTER -->
+        <!-- FOOTER - Premium 3-column layout -->
         <div class="footer-band">
-            <div style="display:flex; align-items:center;">
+            <!-- Column 1 - Left: QR + URL -->
+            <div class="footer-left">
                 <div class="qr-box">
-                    <i data-lucide="qr-code" style="width:42px;height:42px;"></i>
+                    <i data-lucide="qr-code"></i>
                 </div>
                 <div class="scan-text">
-                    <span class="muted">Scan for Catalogue</span>
+                    <span class="muted">SCAN FOR CATALOGUE</span>
                     <span class="site">www.partstrading.com</span>
                 </div>
             </div>
-            <div class="footer-contact">
-                <div class="contact-row">
-                    <i data-lucide="mail"></i>
-                    <div>
-                        <span class="contact-label">Email</span>
-                        <span class="contact-value">parts@partstrading.com</span>
-                    </div>
+            
+            <!-- Column 2 - Center: Address (2 lines) -->
+            <div class="footer-center">
+                <div class="address-label">ADDRESS</div>
+                <div class="address-line">PARTS TRADING COMPANY</div>
+                <div class="address-line">VIJAY CHAMBERS, 1ST FLOOR,<br>OPP. DREAMLAND CINEMA, MUMBAI</div>
+            </div>
+            
+            <!-- Column 3 - Right: Email + Tel -->
+            <div class="footer-right">
+                <div class="contact-item">
+                    <span class="contact-label">EMAIL</span>
+                    <span class="contact-value">parts@partstrading.com</span>
                 </div>
-                <div class="contact-row">
-                    <i data-lucide="map-pin"></i>
-                    <div>
-                        <span class="contact-label">Address</span>
-                        <span class="contact-value">PARTS TRADING COMPANY, VIJAY CHAMBERS, 1st FLOOR, OPP. DREAMLAND CINEMA, MUMBAI</span>
-                    </div>
-                </div>
-                <div class="contact-row">
-                    <i data-lucide="phone"></i>
-                    <div>
-                        <span class="contact-label">Tel</span>
-                        <span class="contact-value">40755999 (32 LINES)</span>
-                    </div>
+                <div class="contact-item">
+                    <span class="contact-label">TEL</span>
+                    <span class="contact-value">40755999 (32 LINES)</span>
                 </div>
             </div>
         </div>
