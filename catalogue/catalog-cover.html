@@ -76,7 +76,7 @@
             display: flex;
             flex-direction: column; /* Stack logo and EST. 1956 vertically */
             align-items: flex-start;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: none; /* Remove border for seamless fade into image */
         }
         .user-logo-placeholder {
             margin: 0;
@@ -129,24 +129,25 @@
             justify-content: flex-end;
             margin-top: 0; /* Start immediately after header - no gap */
         }
-        /* Top Fade - Black to transparent, smooth merge with header */
+        /* Top Fade - Black to transparent, seamless merge with header */
         .hero-fade-top {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 28mm; /* Covers 20-22% of 120mm image height = ~26mm */
+            height: 35mm; /* Extended fade for seamless transition */
             background: linear-gradient(
                 to bottom,
                 rgba(0, 0, 0, 1) 0%,
-                rgba(0, 0, 0, 0.7) 40%,
-                rgba(0, 0, 0, 0.3) 70%,
+                rgba(0, 0, 0, 0.95) 20%,
+                rgba(0, 0, 0, 0.75) 40%,
+                rgba(0, 0, 0, 0.4) 65%,
                 transparent 100%
             );
             z-index: 4;
             pointer-events: none;
-            mask-image: radial-gradient(ellipse 120% 400px at top center, black 0%, transparent 100%);
-            -webkit-mask-image: radial-gradient(ellipse 120% 400px at top center, black 0%, transparent 100%);
+            mask-image: radial-gradient(ellipse 120% 450px at top center, black 0%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 120% 450px at top center, black 0%, transparent 100%);
         }
         /* Bottom Fade - Black to transparent to black, smooth merge with lists section */
         .hero-fade-bottom-image {
