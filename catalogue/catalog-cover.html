@@ -357,12 +357,36 @@
             opacity: 0.85;
         }
         .scan-text .site { font-size: 14px; font-weight: 900; } /* Bigger font: 11px -> 14px */
-        .edition-block { text-align: right; }
-        .edition-block .big {
-            font-family: 'Noto Sans', sans-serif; font-size: 42px; font-weight: 900; line-height: 0.95; display: block; letter-spacing: -0.02em; /* Zurich Extended Bold style - bigger: 30px -> 42px */
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: right;
         }
-        .edition-block .small {
-            font-family: 'Noto Sans', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; display: block; margin-top: 4px; /* Match Global font and increase size */
+        .contact-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+        .contact-row i {
+            width: 18px;
+            height: 18px;
+        }
+        .contact-label {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            display: block;
+            opacity: 0.85;
+        }
+        .contact-value {
+            font-family: 'Noto Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            display: block;
         }
     </style>
 </head>
@@ -376,7 +400,7 @@
                 <div class="user-logo-placeholder">
                     <img src="/catalogue-2025/images/logos/ptc-logo.png" alt="PTC Parts Trading Company" class="logo-image">
                 </div>
-                <div class="est-year" style="align-self: center; margin-left: 0; margin-top: -85px; position: relative;">EST. 1956</div>
+                <div class="est-year" style="align-self: center; margin-left: 0; margin-top: -110px; position: relative;">EST. 1956</div>
             </div>
         </div>
 
@@ -446,9 +470,28 @@
                     <span class="site">www.partstrading.com</span>
                 </div>
             </div>
-            <div class="edition-block">
-                <span class="big">GLOBAL</span>
-                <span class="small">Parts Edition</span>
+            <div class="footer-contact">
+                <div class="contact-row">
+                    <i data-lucide="mail"></i>
+                    <div>
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value">parts@partstrading.com</span>
+                    </div>
+                </div>
+                <div class="contact-row">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <span class="contact-label">Address</span>
+                        <span class="contact-value">PARTS TRADING COMPANY, VIJAY CHAMBERS, 1st FLOOR, OPP. DREAMLAND CINEMA, MUMBAI</span>
+                    </div>
+                </div>
+                <div class="contact-row">
+                    <i data-lucide="phone"></i>
+                    <div>
+                        <span class="contact-label">Tel</span>
+                        <span class="contact-value">40755999 (32 LINES)</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
