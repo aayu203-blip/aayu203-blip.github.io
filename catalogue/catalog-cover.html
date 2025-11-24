@@ -6,6 +6,7 @@
     <title>PTC Catalogue - Global Parts Edition</title>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* --- PRINT SETTINGS --- */
@@ -68,6 +69,7 @@
         .top-bar {
             background: #000;
             padding: 0.8mm 12mm 0.8mm 12mm; /* Reduced height by 20-25% */
+            padding-top: calc(0.8mm - 40px); /* Shift logo and EST up by 40px */
             height: auto; /* Auto height to accommodate logo and EST. 1956 */
             min-height: auto; /* Remove fixed min-height - let content determine height */
             z-index: 30;
@@ -342,21 +344,21 @@
             display: inline-flex;
         }
         .qr-box i {
-            width: 32px !important; /* 30-40% bigger: 24px -> 32px */
-            height: 32px !important;
+            width: 42px !important; /* Bigger QR code: 32px -> 42px */
+            height: 42px !important;
         }
         .scan-text { margin-left: 10px; display: flex; flex-direction: column; }
         .scan-text .muted {
-            font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; /* Reduced from 0.26em */
+            font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; /* Bigger font: 8px -> 10px */
             opacity: 0.85;
         }
-        .scan-text .site { font-size: 11px; font-weight: 900; }
+        .scan-text .site { font-size: 14px; font-weight: 900; } /* Bigger font: 11px -> 14px */
         .edition-block { text-align: right; }
         .edition-block .big {
-            font-family: 'Oswald', sans-serif; font-size: 30px; font-weight: 700; line-height: 0.95; display: block;
+            font-family: 'Noto Sans', sans-serif; font-size: 42px; font-weight: 900; line-height: 0.95; display: block; letter-spacing: -0.02em; /* Zurich Extended Bold style - bigger: 30px -> 42px */
         }
         .edition-block .small {
-            font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.26em; display: block; margin-top: 2px;
+            font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.26em; display: block; margin-top: 2px; /* Bigger: 9px -> 11px */
         }
     </style>
 </head>
@@ -433,7 +435,7 @@
         <div class="footer-band">
             <div style="display:flex; align-items:center;">
                 <div class="qr-box">
-                    <i data-lucide="qr-code" style="width:32px;height:32px;"></i>
+                    <i data-lucide="qr-code" style="width:42px;height:42px;"></i>
                 </div>
                 <div class="scan-text">
                     <span class="muted">Scan for Catalogue</span>
