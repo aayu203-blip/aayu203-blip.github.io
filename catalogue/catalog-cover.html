@@ -83,10 +83,11 @@
             width: auto;
             max-width: 125mm;
             object-fit: contain;
-            filter: drop-shadow(0 5px 10px rgba(255, 194, 14, 0.35));
+            filter: drop-shadow(0 5px 10px rgba(255, 194, 14, 0.25)); /* Reduced glow by 10-15% */
             margin-bottom: 0;
             position: relative;
-            top: 14px; /* Move down 6-8px for optical centering */
+            top: 20px; /* Move down 6-8px for optical centering */
+            margin-left: 28px; /* Move RIGHT by 20-35px to align with master margin */
         }
         .est-year {
             font-family: 'Oswald', sans-serif;
@@ -99,10 +100,10 @@
         /* Hero Area - Photo Background */
         .hero-image {
             background-image: 
-                linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.15) 100%),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.08) 50%, rgba(0, 0, 0, 0.2) 100%),
                 url('/catalogue-2025/images/hero-photo.jpg');
-            background-size: cover;
-            background-position: center;
+            background-size: 110%; /* Zoom out slightly to show both machines - don't zoom too much */
+            background-position: 45% center; /* Shift left by 7-12% to show both machines better */
             background-repeat: no-repeat;
             flex: 1;
             position: relative;
@@ -117,16 +118,32 @@
             inset: 0;
             background: linear-gradient(
                 to right,
-                rgba(0, 0, 0, 0.85) 0%,
-                rgba(0, 0, 0, 0.70) 35%,
-                rgba(0, 0, 0, 0.40) 42%,
-                rgba(0, 0, 0, 0.10) 50%,
+                rgba(0, 0, 0, 0.92) 0%,
+                rgba(0, 0, 0, 0.82) 35%,
+                rgba(0, 0, 0, 0.50) 42%,
+                rgba(0, 0, 0, 0.15) 50%,
                 transparent 60%
             );
             z-index: 3;
             pointer-events: none;
-            mask-image: radial-gradient(ellipse 800px 100% at left center, black 0%, transparent 60%);
-            -webkit-mask-image: radial-gradient(ellipse 800px 100% at left center, black 0%, transparent 60%);
+            mask-image: radial-gradient(ellipse 900px 110% at left center, black 0%, transparent 60%);
+            -webkit-mask-image: radial-gradient(ellipse 900px 110% at left center, black 0%, transparent 60%);
+        }
+        /* Right-to-Left Fade (fades right side where it touches list area) */
+        .hero-fade-right {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to left,
+                rgba(0, 0, 0, 0.78) 0%,
+                rgba(0, 0, 0, 0.55) 25%,
+                rgba(0, 0, 0, 0.25) 45%,
+                transparent 65%
+            );
+            z-index: 3;
+            pointer-events: none;
+            mask-image: radial-gradient(ellipse 800px 500px at right center, black 0%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 800px 500px at right center, black 0%, transparent 70%);
         }
         /* Bottom-to-Top Fade (darkens bottom-left area for lists) */
         .hero-fade-bottom {
@@ -134,18 +151,18 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 35%;
+            height: 40%;
             background: linear-gradient(
                 to top,
-                rgba(0, 0, 0, 0.75) 0%,
-                rgba(0, 0, 0, 0.55) 30%,
-                rgba(0, 0, 0, 0.25) 60%,
+                rgba(0, 0, 0, 0.82) 0%,
+                rgba(0, 0, 0, 0.65) 30%,
+                rgba(0, 0, 0, 0.35) 60%,
                 transparent 100%
             );
             z-index: 4;
             pointer-events: none;
-            mask-image: radial-gradient(ellipse 120% 400px at bottom left, black 0%, transparent 70%);
-            -webkit-mask-image: radial-gradient(ellipse 120% 400px at bottom left, black 0%, transparent 70%);
+            mask-image: radial-gradient(ellipse 130% 450px at bottom left, black 0%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 130% 450px at bottom left, black 0%, transparent 75%);
         }
         /* Tech Grid overlay */
         .tech-grid {
@@ -163,8 +180,8 @@
         .hero-content {
             position: relative;
             z-index: 20;
-            padding: 0 10mm 10mm calc(18mm + 30px); /* Move right by 8-12px */
-            margin-top: -120px; /* Move block up by 40-55px */
+            padding: 0 10mm 10mm calc(18mm + 30px); /* Master margin alignment */
+            margin-top: -110px; /* Move up by 10-15px (was -120px) */
         }
         /* Typography & Layout elements */
         .gold-border {
@@ -178,8 +195,8 @@
             font-family: 'Oswald', sans-serif;
             font-weight: 700;
             color: #fff;
-            font-size: 45px; /* ~3% reduction for balance */
-            line-height: 1.0; /* Increased from 0.84 - less tight spacing */
+            font-size: 44px; /* ~3% reduction for balance */
+            line-height: 0.91; /* Reduced by 3-4px equivalent (from 1.0) */
             margin: 0;
             letter-spacing: -0.01em;
         }
@@ -195,11 +212,12 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 18px;
-            padding: 0 0 0 0;
             align-items: flex-start;
             background: rgba(0, 0, 0, 0.25); /* Slightly darken area behind lists */
             padding: 8px 12px;
             border-radius: 2px;
+            margin-top: -30px; /* Move columns up by 25-35px */
+            margin-left: -8px; /* Shift left by 3-5% to align with master margin */
         }
         .section-title {
             color: #B5B5B5;
@@ -284,6 +302,7 @@
         <!-- HERO SECTION -->
         <div class="hero-image">
             <div class="hero-fade-left"></div>
+            <div class="hero-fade-right"></div>
             <div class="hero-fade-bottom"></div>
             <div class="tech-grid"></div>
             <div class="hero-content">
@@ -299,7 +318,7 @@
                 <div class="info-grid">
                     <!-- Inventory -->
                     <div>
-                        <div class="section-title">Inventory</div>
+                        <div class="section-title">INVENTORY</div>
                         <div class="list-text">
                             <span>Excavator Parts</span>
                             <span>Hydraulic Pumps</span>
@@ -311,7 +330,7 @@
                         </div>
                     </div>
                     <div>
-                        <div class="section-title">Equipment We Support</div>
+                        <div class="section-title">EQUIPMENT WE SUPPORT</div>
                         <div class="list-text">
                             <span>Volvo</span>
                             <span>Scania</span>
