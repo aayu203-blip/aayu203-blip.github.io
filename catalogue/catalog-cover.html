@@ -328,111 +328,122 @@
         .list-text span:last-child {
             margin-bottom: 0;
         }
-        /* Footer - Print-optimized 3-column layout for A4 */
+        /* Footer - Premium 3-column grid with equal widths for A4 print */
         .footer-band {
             background: var(--ptc-gold);
             color: #000;
-            padding: 8mm calc(18mm + 30px) 6mm calc(18mm + 30px); /* Print-friendly padding, align left margin with logo/slogan */
+            padding: 12mm calc(18mm + 30px) 8mm calc(18mm + 30px); /* Align left margin with logo/slogan, increased top padding */
             display: grid;
-            grid-template-columns: 45mm 1fr 50mm; /* Fixed widths for QR and Contact, Address fills remaining space */
-            gap: 8mm; /* Print-optimized gap */
-            align-items: start;
+            grid-template-columns: 1fr 1fr 1fr; /* 3 equal width columns */
+            gap: 8mm; /* Equal spacing between columns */
+            align-items: center; /* All blocks aligned to same baseline */
             z-index: 30;
-            height: 38mm; /* 12-14% of page height for proper anchor */
+            height: 45mm; /* Increased by 18% (was 38mm, now 45mm) for breathing room */
             margin-top: auto;
             margin-bottom: 0;
+        }
+        /* Common footer column styling */
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content within column */
+            justify-content: center;
         }
         /* Column 1 - Left: QR + URL */
         .footer-left {
             display: flex;
-            align-items: flex-start;
-            gap: 3mm; /* Print-friendly spacing */
+            flex-direction: column;
+            align-items: center; /* Centered within its column */
+            gap: 5mm; /* 14-20px between QR and label */
         }
         .qr-box {
             background: #000;
             color: var(--ptc-gold);
-            padding: 2mm;
+            padding: 2.5mm;
             border-radius: 1px;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
         }
         .qr-box i {
-            width: 12mm !important; /* Print-sized QR code (scannable when printed) */
-            height: 12mm !important;
+            width: 14mm !important; /* Print-sized QR code (scannable) */
+            height: 14mm !important;
         }
         .scan-text {
             display: flex;
             flex-direction: column;
-            gap: 1mm;
-            justify-content: center;
+            gap: 2mm; /* 6-8px between label + URL */
+            align-items: center;
+            text-align: center;
         }
         .scan-text .muted {
             font-family: 'Inter', sans-serif;
-            font-size: 8pt; /* Print-friendly pt units */
+            font-size: 10px;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.8em; /* Letterspacing +80 */
             color: #1f1f1f;
             line-height: 1.2;
         }
         .scan-text .site {
             font-family: 'Inter', sans-serif;
-            font-size: 10pt; /* Print-friendly pt units */
+            font-size: 13px; /* 12-13px bold */
             font-weight: 700;
             color: #000000;
             line-height: 1.3;
         }
-        /* Column 2 - Center: Address */
+        /* Column 2 - Center: Address (5 clean lines) */
         .footer-center {
             display: flex;
             flex-direction: column;
             text-align: center;
-            gap: 1mm;
-            justify-content: center;
+            align-items: center;
+            gap: 1mm; /* Consistent spacing */
         }
         .address-label {
             font-family: 'Inter', sans-serif;
-            font-size: 8pt; /* Print-friendly pt units */
+            font-size: 10px;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.8em; /* Match other labels */
             color: #1f1f1f;
-            margin-bottom: 1mm;
+            margin-bottom: 2mm; /* Consistent label spacing (6-8px) */
             line-height: 1.2;
         }
         .address-line {
             font-family: 'Inter', sans-serif;
-            font-size: 9pt; /* Print-friendly pt units */
+            font-size: 10px; /* Consistent size */
             font-weight: 600;
             line-height: 1.4;
             color: #000000;
+            text-transform: capitalize; /* No all caps, just capitalize */
         }
         /* Column 3 - Right: Email + Tel */
         .footer-right {
             display: flex;
             flex-direction: column;
             text-align: right;
-            gap: 2mm;
-            justify-content: center;
+            align-items: flex-end; /* Right-aligned within column */
+            gap: 3mm; /* 6-10px spacing between items */
         }
         .contact-item {
             display: flex;
             flex-direction: column;
-            gap: 0.5mm;
+            gap: 2mm; /* Consistent label spacing (6-8px) */
+            align-items: flex-end;
         }
         .contact-label {
             font-family: 'Inter', sans-serif;
-            font-size: 8pt; /* Print-friendly pt units */
+            font-size: 10px;
             font-weight: 500;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.8em; /* Match other labels */
             text-transform: uppercase;
             color: #1f1f1f;
             line-height: 1.2;
         }
         .contact-value {
             font-family: 'Inter', sans-serif;
-            font-size: 9pt; /* Print-friendly pt units */
+            font-size: 10px; /* Consistent size */
             font-weight: 600;
             color: #000000;
             line-height: 1.3;
@@ -508,9 +519,9 @@
             </div>
         </div>
 
-        <!-- FOOTER - Premium 3-column layout -->
+        <!-- FOOTER - Premium 3-column grid with equal widths -->
         <div class="footer-band">
-            <!-- Column 1 - Left: QR + URL -->
+            <!-- Column 1 - Left: QR + URL (centered) -->
             <div class="footer-left">
                 <div class="qr-box">
                     <i data-lucide="qr-code"></i>
@@ -521,14 +532,16 @@
                 </div>
             </div>
             
-            <!-- Column 2 - Center: Address (2 lines) -->
+            <!-- Column 2 - Center: Address (5 clean lines, centered) -->
             <div class="footer-center">
                 <div class="address-label">ADDRESS</div>
-                <div class="address-line">PARTS TRADING COMPANY</div>
-                <div class="address-line">VIJAY CHAMBERS, 1ST FLOOR,<br>OPP. DREAMLAND CINEMA, MUMBAI</div>
+                <div class="address-line">Parts Trading Company</div>
+                <div class="address-line">Vijay Chambers, 1st Floor</div>
+                <div class="address-line">Opp. Dreamland Cinema</div>
+                <div class="address-line">Mumbai</div>
             </div>
             
-            <!-- Column 3 - Right: Email + Tel -->
+            <!-- Column 3 - Right: Email + Tel (right-aligned) -->
             <div class="footer-right">
                 <div class="contact-item">
                     <span class="contact-label">EMAIL</span>
@@ -536,7 +549,7 @@
                 </div>
                 <div class="contact-item">
                     <span class="contact-label">TEL</span>
-                    <span class="contact-value">40755999 (32 LINES)</span>
+                    <span class="contact-value">40755999 (32 lines)</span>
                 </div>
             </div>
         </div>
