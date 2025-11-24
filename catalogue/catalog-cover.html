@@ -107,10 +107,11 @@
         .est-year {
             font-family: 'Noto Sans', sans-serif; /* Match Global font */
             font-size: 18px;
-            color: #fff;
+            color: var(--ptc-gold); /* Same gold color as logo */
             font-weight: 900;
             letter-spacing: 0.02em;
             margin: 0;
+            margin-top: 4px; /* Add space between logo and EST */
             padding: 0;
             display: block;
             text-align: center; /* Center-align text */
@@ -331,13 +332,14 @@
         .footer-band {
             background: var(--ptc-gold);
             color: #000;
-            padding: 28px calc(18mm + 30px) 6mm calc(18mm + 30px); /* Align left margin with logo/slogan (18mm + 30px = 46px) */
+            padding: 28px calc(18mm + 30px) 8mm calc(18mm + 30px); /* Align left margin with logo/slogan, add top padding */
+            padding-top: 30px; /* Add 20-30px top padding so text doesn't touch yellow edge */
             display: grid;
             grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns */
             gap: 20mm; /* Equal column spacing */
             align-items: center;
             z-index: 30;
-            height: 26mm; /* Reduced by 28% (was 36mm, now 26mm) - slim like a stamp */
+            height: 38mm; /* Increased back to 12-14% of page height (was 26mm, now 38mm) for proper anchor */
             margin-top: auto; /* Push footer to bottom */
             margin-bottom: 0; /* No margin - printer margin handled by container padding */
         }
@@ -346,6 +348,7 @@
             display: flex;
             align-items: flex-start;
             gap: 8px;
+            padding-top: 4px; /* Add vertical spacing */
         }
         .qr-box {
             background: #000;
@@ -361,7 +364,7 @@
         .scan-text {
             display: flex;
             flex-direction: column;
-            gap: 1px; /* Tightened by 30% */
+            gap: 4px; /* Increased spacing for readability */
         }
         .scan-text .muted {
             font-family: 'Inter', sans-serif;
@@ -383,7 +386,8 @@
             display: flex;
             flex-direction: column;
             text-align: center;
-            gap: 1px; /* Tightened by 30% */
+            gap: 4px; /* Increased spacing for readability */
+            padding-top: 4px; /* Add vertical spacing */
         }
         .address-label {
             font-family: 'Inter', sans-serif;
@@ -406,12 +410,13 @@
             display: flex;
             flex-direction: column;
             text-align: right;
-            gap: 6px; /* Tightened by 25% (was 8px) */
+            gap: 10px; /* Increased spacing for readability */
+            padding-top: 4px; /* Add vertical spacing */
         }
         .contact-item {
             display: flex;
             flex-direction: column;
-            gap: 1px; /* Tightened by 30% */
+            gap: 3px; /* Increased spacing for readability */
         }
         .contact-label {
             font-family: 'Inter', sans-serif;
