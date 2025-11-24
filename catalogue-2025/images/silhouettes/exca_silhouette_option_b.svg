@@ -1,0 +1,30 @@
+<svg viewBox="0 0 1400 850" xmlns="http://www.w3.org/2000/svg">
+  <!-- Option B: European-style excavator silhouette -->
+  <g fill="#000000">
+    <!-- undercarriage -->
+    <path d="M160 540h760v80H160z"/>
+    <rect x="200" y="620" width="680" height="40"/>
+    <!-- track rollers -->
+    <circle cx="260" cy="600" r="20"/>
+    <circle cx="360" cy="600" r="20"/>
+    <circle cx="460" cy="600" r="20"/>
+    <circle cx="560" cy="600" r="20"/>
+    <circle cx="660" cy="600" r="20"/>
+    <circle cx="760" cy="600" r="20"/>
+    <!-- upper frame -->
+    <path d="M220 420h460c70 0 120 40 120 100v20H220z"/>
+    <!-- cab -->
+    <path d="M280 320h220l80 120H260z"/>
+    <path d="M310 350h150l60 90H310z"/>
+    <!-- counterweight -->
+    <path d="M220 460h-60c-40 0-70 30-70 70h130z"/>
+    <!-- boom -->
+    <path d="M560 360l210-180 200 40-20 70-170-20-140 130z"/>
+    <!-- stick -->
+    <path d="M930 250l280 170-30 60-290-150z"/>
+    <!-- bucket -->
+    <path d="M1210 390l150 100-40 120-160-60z"/>
+    <path d="M1310 470l70 40-10 30-80-30z"/>
+  </g>
+</svg>
+
