@@ -354,7 +354,7 @@
         .list-text span:last-child {
             margin-bottom: 0;
         }
-        /* Footer - Premium 3-column layout */
+        /* Footer - Premium 3-column layout with WhatsApp */
         .footer-band {
             background: var(--ptc-gold);
             color: #000;
@@ -364,7 +364,7 @@
             gap: 10mm; /* Spacing between columns */
             align-items: center; /* Vertically center align all columns */
             z-index: 30;
-            height: 50mm; /* 16-18% of page height (297mm * 0.17 = ~50mm) - taller footer */
+            height: 65mm; /* Increased height to accommodate WhatsApp contacts */
             margin-top: auto;
             margin-bottom: 0;
         }
@@ -374,7 +374,7 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: center; /* Vertically center content within column */
-            gap: 8px; /* Space between rows */
+            gap: 6px; /* Space between rows - reduced for compact layout */
         }
         /* Footer section title */
         .footer-title {
@@ -408,7 +408,7 @@
             display: flex;
             align-items: center;
             gap: 6px; /* Spacing between icon and text */
-            margin-bottom: 6px; /* Row spacing 6-10px */
+            margin-bottom: 4px; /* Row spacing - reduced for compact layout */
         }
         .footer-item:last-child {
             margin-bottom: 0;
@@ -469,10 +469,23 @@
             display: flex;
             align-items: center;
             gap: 6px;
-            margin-bottom: 4px;
+            margin-bottom: 3px; /* Tighter spacing for WhatsApp contacts */
         }
         .footer-whatsapp-item:last-child {
             margin-bottom: 0;
+        }
+        .footer-whatsapp-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            color: rgba(0, 0, 0, 0.85);
+        }
+        .footer-whatsapp-icon svg {
+            width: 16px;
+            height: 16px;
+            stroke: rgba(0, 0, 0, 0.85) !important;
+            stroke-width: 1.5px !important;
+            fill: none !important;
         }
     </style>
 </head>
@@ -552,7 +565,7 @@
             </div>
         </div>
 
-        <!-- FOOTER - Premium 3-column layout -->
+        <!-- FOOTER - Premium 3-column layout with WhatsApp -->
         <div class="footer-band">
             <!-- Column 1 - QR Code -->
             <div class="footer-column">
@@ -571,7 +584,7 @@
                 </div>
             </div>
             
-            <!-- Column 3 - Contact + Website -->
+            <!-- Column 3 - Contact + Website + WhatsApp -->
             <div class="footer-column">
                 <div class="footer-item">
                     <i data-lucide="mail" class="footer-item-icon"></i>
@@ -584,6 +597,27 @@
                 <div class="footer-item">
                     <i data-lucide="globe" class="footer-item-icon"></i>
                     <div class="footer-body">www.partstrading.com</div>
+                </div>
+                <!-- WhatsApp Contacts -->
+                <div class="footer-whatsapp-item">
+                    <i data-lucide="message-circle" class="footer-whatsapp-icon"></i>
+                    <div class="footer-body">Lalit 9821040207</div>
+                </div>
+                <div class="footer-whatsapp-item">
+                    <i data-lucide="message-circle" class="footer-whatsapp-icon"></i>
+                    <div class="footer-body">Vinesh 9821037990</div>
+                </div>
+                <div class="footer-whatsapp-item">
+                    <i data-lucide="message-circle" class="footer-whatsapp-icon"></i>
+                    <div class="footer-body">Sanjeev 9869949651</div>
+                </div>
+                <div class="footer-whatsapp-item">
+                    <i data-lucide="message-circle" class="footer-whatsapp-icon"></i>
+                    <div class="footer-body">Jinaal 9892005009</div>
+                </div>
+                <div class="footer-whatsapp-item">
+                    <i data-lucide="message-circle" class="footer-whatsapp-icon"></i>
+                    <div class="footer-body">Aayush 9820259953</div>
                 </div>
             </div>
         </div>
