@@ -101,14 +101,12 @@
             gap: 12mm 15mm;
             margin-bottom: 8mm;
         }
-        /* Logo Container */
+        /* Logo Container - No background, let logos float */
         .logo-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.05); /* Subtle white background */
             padding: 8mm 6mm;
-            border-radius: 2px;
             min-height: 25mm;
         }
         .logo-item-large {
@@ -128,17 +126,18 @@
             letter-spacing: 0.05em;
             margin-top: 4mm;
         }
-        /* Product Visual - Bottom Right */
+        /* Product Visual - Bottom Right, overlaps with logos */
         .product-visual {
             position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 45%;
+            bottom: -10mm;
+            right: -5mm;
+            width: 50%;
             height: auto;
-            max-height: 60mm;
+            max-height: 70mm;
             object-fit: contain;
-            opacity: 0.85;
-            z-index: 5; /* Behind logos */
+            opacity: 0.75;
+            z-index: 3; /* Behind logos but visible */
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
         }
         /* Yellow Divider Line */
         .yellow-divider {
