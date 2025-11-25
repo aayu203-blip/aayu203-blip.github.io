@@ -450,25 +450,20 @@
             color: rgba(0, 0, 0, 0.85);
             line-height: 1.3;
         }
-        /* Address text - single line */
+        /* Address text - multi-line format */
         .footer-address-text {
             font-family: 'Inter', sans-serif;
             font-size: 11px;
             font-weight: 500;
             color: rgba(0, 0, 0, 0.85);
             line-height: 1.4;
-            white-space: nowrap; /* Force single line - no wrapping */
         }
         .footer-address-primary {
-            display: inline; /* Keep on same line */
+            display: block; /* On its own line */
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.03em;
-        }
-        /* Address column - wider to accommodate single line */
-        .footer-column:nth-child(2) {
-            min-width: 0; /* Allow column to grow */
-            flex: 1.3; /* Wider to fit single line address */
+            margin-bottom: 2px; /* Small space before address lines */
         }
         /* WhatsApp contact styling */
         .footer-whatsapp-item {
@@ -572,7 +567,10 @@
                 <div class="footer-item">
                     <i data-lucide="map-pin" class="footer-item-icon"></i>
                     <div class="footer-address-text">
-                        <span class="footer-address-primary">Parts Trading Company</span> Vijay Chambers, 1st Floor, Opp. Dreamland Cinema, Mumbai
+                        <span class="footer-address-primary">Parts Trading Company</span>
+                        Vijay Chambers, 1st Floor<br>
+                        Opp. Dreamland Cinema<br>
+                        Mumbai
                     </div>
                 </div>
             </div>
