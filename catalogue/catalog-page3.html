@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>PTC Catalogue - Stability & Control</title>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;600;700;900&display=swap" rel="stylesheet">
     <style>
         /* --- PRINT SETTINGS --- */
         @page {
@@ -76,25 +75,29 @@
             opacity: 0.07;
             mix-blend-mode: normal;
         }
-        /* Content Area */
+        /* Content Area - HIGH Z-INDEX for visibility */
         .page-content {
             flex: 1;
-            padding: 80px; /* Consistent margins */
+            padding: 80px;
             position: relative;
-            z-index: 20;
+            z-index: 100; /* High z-index so content is visible */
             display: flex;
             flex-direction: column;
         }
-        /* Page Header */
+        /* Page Header with Gold Bar */
         .page-header {
             font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            font-size: 72px; /* 72-78px range */
+            font-weight: 900; /* Heavy */
+            font-size: 75px; /* 72-78px range */
             color: var(--ptc-gold);
             line-height: 1;
             margin-bottom: 60px;
             text-transform: uppercase;
             letter-spacing: -0.02em;
+            position: relative;
+            padding-left: 26px; /* 8px border + 18px padding */
+            border-left: 8px solid var(--ptc-gold);
+            display: inline-block;
         }
         /* Quadrant Grid - 2x2 */
         .quadrant-grid {
@@ -109,22 +112,25 @@
             padding: 60px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
         }
-        /* Quadrant Header */
+        /* Quadrant Header with Gold Bar */
         .quadrant-header {
             font-family: 'Oswald', sans-serif;
-            font-weight: 700;
+            font-weight: 700; /* Bold */
             font-size: 36px; /* 34-38px range */
             color: #FFFFFF;
             line-height: 1.1;
+            padding-left: 26px; /* 8px border + 18px padding */
+            border-left: 8px solid var(--ptc-gold);
+            display: inline-block;
         }
         /* Quadrant Description */
         .quadrant-description {
             font-family: 'Inter', sans-serif;
             font-weight: 400;
             font-size: 13px;
-            color: #D8D8D8;
+            color: #D8D8D8; /* Light grey for visibility */
             line-height: 1.6;
         }
         /* Logos Container in Quadrant */
@@ -133,58 +139,30 @@
             flex-wrap: wrap;
             gap: 15px;
             align-items: center;
-            margin-top: 10px;
+            margin-top: 5px;
         }
         .logo-item {
             height: 25px;
             width: auto;
+            max-width: 100px;
             filter: brightness(0) invert(1); /* White logos */
             opacity: 0.9;
         }
         /* Product Image in Quadrant */
         .quadrant-image {
             width: 100%;
-            max-width: 150px;
+            max-width: 180px;
             height: auto;
             object-fit: contain;
-            margin-top: 15px;
+            margin-top: 10px;
+            background: #000000; /* Black background */
+            padding: 15px;
+            border-radius: 4px;
             filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
-        }
-        /* Footer - Matching Page 1 */
-        .footer-band {
-            background: var(--ptc-gold);
-            color: #000;
-            padding: 46px 10mm 28px 10mm;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 30;
-            height: 30mm;
-            margin-top: auto;
-        }
-        .qr-box {
-            background: #000;
-            color: var(--ptc-gold);
-            padding: 8px;
-            border-radius: 2px;
-            display: inline-flex;
-        }
-        .qr-box i {
-            width: 32px !important;
-            height: 32px !important;
-        }
-        .scan-text { margin-left: 10px; display: flex; flex-direction: column; }
-        .scan-text .muted {
-            font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em;
-            opacity: 0.85;
-        }
-        .scan-text .site { font-size: 11px; font-weight: 900; }
-        .edition-block { text-align: right; }
-        .edition-block .big {
-            font-family: 'Oswald', sans-serif; font-size: 30px; font-weight: 700; line-height: 0.95; display: block;
-        }
-        .edition-block .small {
-            font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.26em; display: block; margin-top: 2px;
+            /* Vignette effect */
+            box-shadow: 
+                inset 0 0 60px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(255, 194, 14, 0.1);
         }
     </style>
 </head>
@@ -196,7 +174,7 @@
         
         <!-- Page Content -->
         <div class="page-content">
-            <!-- Page Header -->
+            <!-- Page Header with Gold Bar -->
             <h1 class="page-header">STABILITY & CONTROL</h1>
             
             <!-- Quadrant Grid 2x2 -->
@@ -208,9 +186,9 @@
                         Wear-resistant undercarriage systems and hardened ground-engaging tools engineered for severe abrasion environments.
                     </p>
                     <div class="quadrant-logos">
-                        <img src="/website_assets/logos/k-track_logo.png" alt="K-Track" class="logo-item" style="height: 35px;">
+                        <img src="/website_assets/logos/k-track_logo.png" alt="K-Track" class="logo-item" style="height: 35px;" onerror="this.style.display='none'">
                     </div>
-                    <img src="/catalogue-2025/images/products/Excavator Track Chain.png" alt="Track Chain" class="quadrant-image">
+                    <img src="/catalogue-2025/images/products/Excavator Track Chain.png" alt="Track Chain" class="quadrant-image" onerror="this.style.display='none'">
                 </div>
                 
                 <!-- Quadrant 2: Hydraulic & Heavy Spares (Top-Right) -->
@@ -220,11 +198,11 @@
                         High-performance replacement pumps, swing motors and cylinder heads designed for consistent hydraulic output.
                     </p>
                     <div class="quadrant-logos">
-                        <img src="/website_assets/logos/cgr_ghinassi_logo.png" alt="CGR Ghinassi" class="logo-item">
-                        <img src="/website_assets/logos/gb_ricambi_logo.png" alt="GB Ricambi" class="logo-item">
-                        <img src="/website_assets/logos/costex_ctp_logo.png" alt="CTP" class="logo-item">
+                        <img src="/website_assets/logos/cgr_ghinassi_logo.png" alt="CGR Ghinassi" class="logo-item" onerror="this.style.display='none'">
+                        <img src="/website_assets/logos/gb_ricambi_logo.png" alt="GB Ricambi" class="logo-item" onerror="this.style.display='none'">
+                        <img src="/website_assets/logos/costex_ctp_logo.png" alt="CTP" class="logo-item" onerror="this.style.display='none'">
                     </div>
-                    <img src="/catalogue-2025/images/products/Hydraulic Pump.png" alt="Hydraulic Pump" class="quadrant-image">
+                    <img src="/catalogue-2025/images/products/Hydraulic Pump.png" alt="Hydraulic Pump" class="quadrant-image" onerror="this.style.display='none'">
                 </div>
                 
                 <!-- Quadrant 3: Climate Control / A/C (Bottom-Left) -->
@@ -234,11 +212,11 @@
                         Premium air-conditioning components for reliable cooling in demanding operating conditions.
                     </p>
                     <div class="quadrant-logos">
-                        <img src="/website_assets/logos/denso_logo.png" alt="Denso" class="logo-item">
-                        <img src="/website_assets/logos/valeo_logo.png" alt="Valeo" class="logo-item">
-                        <img src="/website_assets/logos/sanden_logo.png" alt="Sanden" class="logo-item">
+                        <img src="/website_assets/logos/denso_logo.png" alt="Denso" class="logo-item" onerror="this.style.display='none'">
+                        <img src="/website_assets/logos/valeo_logo.png" alt="Valeo" class="logo-item" onerror="this.style.display='none'">
+                        <img src="/website_assets/logos/sanden_logo.png" alt="Sanden" class="logo-item" onerror="this.style.display='none'">
                     </div>
-                    <img src="/catalogue-2025/images/products/AC Compressor.png" alt="A/C Compressor" class="quadrant-image">
+                    <img src="/catalogue-2025/images/products/AC Compressor.png" alt="A/C Compressor" class="quadrant-image" onerror="this.style.display='none'">
                 </div>
                 
                 <!-- Quadrant 4: Seals, Brakes & Bearings (Bottom-Right) -->
@@ -248,33 +226,12 @@
                         Critical consumables including seal kits, brake valves and high-precision hub bearings.
                     </p>
                     <div class="quadrant-logos">
-                        <img src="/website_assets/logos/wabco_logo.png" alt="WABCO" class="logo-item">
+                        <img src="/website_assets/logos/wabco_logo.png" alt="WABCO" class="logo-item" onerror="this.style.display='none'">
                     </div>
-                    <img src="/catalogue-2025/images/products/Bearing.png" alt="Bearing" class="quadrant-image">
+                    <img src="/catalogue-2025/images/products/Bearing.png" alt="Bearing" class="quadrant-image" onerror="this.style.display='none'">
                 </div>
-            </div>
-        </div>
-        
-        <!-- Footer - Matching Page 1 -->
-        <div class="footer-band">
-            <div style="display:flex; align-items:center;">
-                <div class="qr-box">
-                    <i data-lucide="qr-code" style="width:32px;height:32px;"></i>
-                </div>
-                <div class="scan-text">
-                    <span class="muted">Scan for Catalogue</span>
-                    <span class="site">www.partstrading.com</span>
-                </div>
-            </div>
-            <div class="edition-block">
-                <span class="big">GLOBAL</span>
-                <span class="small">Parts Edition</span>
             </div>
         </div>
     </div>
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>
-

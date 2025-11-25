@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>PTC Catalogue - Power & Performance</title>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;600;700;900&display=swap" rel="stylesheet">
     <style>
         /* --- PRINT SETTINGS --- */
         @page {
@@ -76,43 +75,52 @@
             opacity: 0.07;
             mix-blend-mode: normal;
         }
-        /* Content Area */
+        /* Content Area - HIGH Z-INDEX for visibility */
         .page-content {
             flex: 1;
-            padding: 80px 80px 0 80px; /* Left margin 80px, right margin 80px, top spacing */
+            padding: 80px 80px 80px 80px;
             position: relative;
-            z-index: 20;
+            z-index: 100; /* High z-index so content is visible */
+            overflow-y: auto;
         }
-        /* Page Header */
+        /* Page Header with Gold Bar */
         .page-header {
             font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            font-size: 72px; /* 72-78px range */
+            font-weight: 900; /* Heavy */
+            font-size: 75px; /* 72-78px range */
             color: var(--ptc-gold);
             line-height: 1;
             margin-bottom: 60px;
             text-transform: uppercase;
             letter-spacing: -0.02em;
+            position: relative;
+            padding-left: 26px; /* 8px border + 18px padding */
+            border-left: 8px solid var(--ptc-gold);
+            display: inline-block;
         }
         /* Section Container */
         .section {
-            margin-bottom: 80px; /* 80-100px between sections */
+            margin-bottom: 90px; /* 80-100px between sections */
         }
-        /* Section Header */
+        /* Section Header with Gold Bar */
         .section-header {
             font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            font-size: 44px; /* 42-48px range */
+            font-weight: 700; /* Bold */
+            font-size: 45px; /* 42-48px range */
             color: #FFFFFF;
             line-height: 1.1;
             margin-bottom: 20px;
+            padding-left: 26px; /* 8px border + 18px padding */
+            border-left: 8px solid var(--ptc-gold);
+            display: inline-block;
         }
         /* Section Content Wrapper */
         .section-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
-            align-items: center;
+            align-items: start;
+            margin-top: 30px;
         }
         /* Text Content */
         .text-content {
@@ -124,30 +132,46 @@
             font-family: 'Inter', sans-serif;
             font-weight: 400;
             font-size: 14px;
-            color: #D8D8D8;
+            color: #D8D8D8; /* Light grey for visibility */
             line-height: 1.6;
             margin-bottom: 30px;
         }
-        /* Logos Container */
+        /* Logos Container - positioned below sub-header */
         .logos-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             align-items: center;
+            margin-bottom: 30px;
+            margin-top: 10px;
         }
         .logo-item {
-            height: 30px;
+            height: 28px;
             width: auto;
+            max-width: 120px;
             filter: brightness(0) invert(1); /* White logos */
             opacity: 0.9;
         }
-        /* Product Image */
+        /* Product Image Container */
+        .product-image-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        /* Product Image with premium styling */
         .product-image {
             width: 100%;
             height: auto;
-            max-height: 200mm;
+            max-height: 180mm;
             object-fit: contain;
+            background: #000000; /* Black background */
+            padding: 20px;
+            border-radius: 4px;
             filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
+            /* Vignette effect */
+            box-shadow: 
+                inset 0 0 80px rgba(0, 0, 0, 0.6),
+                0 0 40px rgba(255, 194, 14, 0.1);
         }
         /* Section 2 - Reversed Layout */
         .section-reversed .section-content {
@@ -155,42 +179,6 @@
         }
         .section-reversed .section-content > * {
             direction: ltr;
-        }
-        /* Footer - Matching Page 1 */
-        .footer-band {
-            background: var(--ptc-gold);
-            color: #000;
-            padding: 46px 10mm 28px 10mm;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 30;
-            height: 30mm;
-            margin-top: auto;
-        }
-        .qr-box {
-            background: #000;
-            color: var(--ptc-gold);
-            padding: 8px;
-            border-radius: 2px;
-            display: inline-flex;
-        }
-        .qr-box i {
-            width: 32px !important;
-            height: 32px !important;
-        }
-        .scan-text { margin-left: 10px; display: flex; flex-direction: column; }
-        .scan-text .muted {
-            font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em;
-            opacity: 0.85;
-        }
-        .scan-text .site { font-size: 11px; font-weight: 900; }
-        .edition-block { text-align: right; }
-        .edition-block .big {
-            font-family: 'Oswald', sans-serif; font-size: 30px; font-weight: 700; line-height: 0.95; display: block;
-        }
-        .edition-block .small {
-            font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.26em; display: block; margin-top: 2px;
         }
     </style>
 </head>
@@ -202,7 +190,7 @@
         
         <!-- Page Content -->
         <div class="page-content">
-            <!-- Page Header -->
+            <!-- Page Header with Gold Bar -->
             <h1 class="page-header">POWER & PERFORMANCE</h1>
             
             <!-- Section 1: Engine & Turbo Systems -->
@@ -210,23 +198,24 @@
                 <h2 class="section-header">Precision Engine Engineering</h2>
                 <div class="section-content">
                     <div class="text-content">
+                        <!-- Logos positioned below header -->
+                        <div class="logos-container">
+                            <img src="/website_assets/logos/mahle_logo.png" alt="Mahle" class="logo-item" onerror="this.style.display='none'">
+                            <img src="/website_assets/logos/borgwarner_logo.png" alt="BorgWarner" class="logo-item" onerror="this.style.display='none'">
+                            <img src="/website_assets/logos/isuzu_logo.png" alt="Isuzu" class="logo-item" onerror="this.style.display='none'">
+                            <img src="/website_assets/logos/garrett_logo.png" alt="Garrett" class="logo-item" onerror="this.style.display='none'">
+                        </div>
+                        <!-- Body Text -->
                         <p class="body-text">
                             PTC supplies OEM-grade engine components engineered for long service life and consistent performance.
                         </p>
                         <p class="body-text">
                             Our inventory includes pistons, liners, overhaul kits and advanced turbocharging systems built for demanding fleets.
                         </p>
-                        <div class="logos-container">
-                            <img src="/website_assets/logos/mahle_logo.png" alt="Mahle" class="logo-item">
-                            <img src="/website_assets/logos/borgwarner_logo.png" alt="BorgWarner" class="logo-item">
-                            <img src="/website_assets/logos/isuzu_logo.png" alt="Isuzu" class="logo-item">
-                            <img src="/website_assets/logos/garrett_logo.png" alt="Garrett" class="logo-item">
-                            <img src="/website_assets/logos/borgwarner_logo.png" alt="IHI/Schwitzer" class="logo-item">
-                        </div>
                     </div>
-                    <div>
-                        <img src="/catalogue-2025/images/products/Piston.png" alt="Piston & Liner Kit" class="product-image">
-                        <img src="/catalogue-2025/images/products/Turbocharger.png" alt="Turbocharger" class="product-image" style="margin-top: 20px;">
+                    <div class="product-image-container">
+                        <img src="/catalogue-2025/images/products/Piston.png" alt="Piston & Liner Kit" class="product-image" onerror="this.style.display='none'">
+                        <img src="/catalogue-2025/images/products/Turbocharger.png" alt="Turbocharger" class="product-image" onerror="this.style.display='none'">
                     </div>
                 </div>
             </div>
@@ -235,47 +224,28 @@
             <div class="section section-reversed">
                 <h2 class="section-header">Transmission & Drive Logic</h2>
                 <div class="section-content">
-                    <div>
-                        <img src="/catalogue-2025/images/products/Transmission Gears.png" alt="Transmission Gears" class="product-image">
-                        <img src="/catalogue-2025/images/products/Clutch Disc.png" alt="Clutch" class="product-image" style="margin-top: 20px;">
+                    <div class="product-image-container">
+                        <img src="/catalogue-2025/images/products/Transmission Gears.png" alt="Transmission Gears" class="product-image" onerror="this.style.display='none'">
+                        <img src="/catalogue-2025/images/products/Clutch Disc.png" alt="Clutch" class="product-image" onerror="this.style.display='none'">
                     </div>
                     <div class="text-content">
+                        <!-- Logos positioned below header -->
+                        <div class="logos-container">
+                            <img src="/website_assets/logos/dana_spicer_logo.png" alt="Dana Spicer" class="logo-item" onerror="this.style.display='none'">
+                            <img src="/website_assets/logos/luk_logo.png" alt="LuK" class="logo-item" onerror="this.style.display='none'">
+                            <img src="/website_assets/logos/dayco_logo.png" alt="Dayco" class="logo-item" onerror="this.style.display='none'">
+                        </div>
+                        <!-- Body Text -->
                         <p class="body-text">
                             Precision drivetrain components covering axles, clutches, bearings and belt systems.
                         </p>
                         <p class="body-text">
                             Reliable performance across hauling, construction and long-route operations.
                         </p>
-                        <div class="logos-container">
-                            <img src="/website_assets/logos/dana_spicer_logo.png" alt="Dana Spicer" class="logo-item">
-                            <img src="/website_assets/logos/luk_logo.png" alt="LuK" class="logo-item">
-                            <img src="/website_assets/logos/dayco_logo.png" alt="Dayco" class="logo-item">
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Footer - Matching Page 1 -->
-        <div class="footer-band">
-            <div style="display:flex; align-items:center;">
-                <div class="qr-box">
-                    <i data-lucide="qr-code" style="width:32px;height:32px;"></i>
-                </div>
-                <div class="scan-text">
-                    <span class="muted">Scan for Catalogue</span>
-                    <span class="site">www.partstrading.com</span>
-                </div>
-            </div>
-            <div class="edition-block">
-                <span class="big">GLOBAL</span>
-                <span class="small">Parts Edition</span>
-            </div>
-        </div>
     </div>
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>
-
