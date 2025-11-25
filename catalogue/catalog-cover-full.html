@@ -160,22 +160,22 @@
         /* Fade overlays for text readability */
         .fade-overlay-top {
             position: absolute;
-            top: 0;
+            top: 125px; /* Start after header (header height is 125px) */
             left: 0;
             right: 0;
-            height: 180px; /* Cover header area */
+            height: 180px;
             background: linear-gradient(
                 to bottom,
-                rgba(0, 0, 0, 0.7) 0%,
-                rgba(0, 0, 0, 0.4) 50%,
-                rgba(0, 0, 0, 0.2) 100%
+                rgba(0, 0, 0, 0.3) 0%,
+                rgba(0, 0, 0, 0.1) 50%,
+                transparent 100%
             );
             z-index: 2;
             pointer-events: none;
         }
         .fade-overlay-left {
             position: absolute;
-            top: 0;
+            top: 125px; /* Start after header (header height is 125px) */
             left: 0;
             bottom: 38mm; /* Match full-page-image */
             width: 45%;
