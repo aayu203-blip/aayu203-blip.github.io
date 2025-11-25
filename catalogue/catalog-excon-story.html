@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PTC - EXCON 2025 Invitation</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* --- GLOBAL VARS --- */
+        :root {
+            --ptc-gold: #FFC20E;
+            --dark-bg: #000000;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        /* WhatsApp Story Container - 1080 x 1920 pixels */
+        .story-container {
+            width: 1080px;
+            height: 1920px;
+            background-color: #000000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Top Section - EXCON Invitation */
+        .top-section {
+            padding: 100px 60px 80px 60px;
+            text-align: center;
+            z-index: 100;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .excon-title {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 64px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+        .excon-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 36px;
+            color: #FFFFFF;
+            letter-spacing: 1.5px;
+            line-height: 1.3;
+        }
+        /* Center Section - Catalog Cover (scaled and centered) */
+        .center-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 20px;
+            overflow: hidden;
+            min-height: 0;
+        }
+        .catalog-wrapper {
+            width: 100%;
+            height: 100%;
+            max-width: 1000px;
+            transform: scale(0.96);
+            transform-origin: center;
+        }
+        /* Bottom Section - Stall Information */
+        .bottom-section {
+            padding: 80px 60px 100px 60px;
+            text-align: center;
+            z-index: 100;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .visit-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 40px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+        .stall-info {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 80px;
+            color: var(--ptc-gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+        .stall-location {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 72px;
+            color: var(--ptc-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 1.1;
+        }
+        /* Embed the catalog cover in a scaled container */
+        .catalog-wrapper iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="story-container">
+        <!-- Top Section - EXCON Invitation -->
+        <div class="top-section">
+            <h1 class="excon-title">INVITATION FOR</h1>
+            <h1 class="excon-title">EXCON 2025</h1>
+            <p class="excon-subtitle">9-13 December • BIEC, Bengaluru</p>
+        </div>
+        
+        <!-- Center Section - Catalog Cover -->
+        <div class="center-section">
+            <div class="catalog-wrapper">
+                <iframe src="/catalogue-2025/catalog-cover.html" title="PTC Catalog Cover" scrolling="no"></iframe>
+            </div>
+        </div>
+        
+        <!-- Bottom Section - Stall Information -->
+        <div class="bottom-section">
+            <p class="visit-text">VISIT OUR STALL</p>
+            <p class="stall-info">HALL 5 LL</p>
+            <p class="stall-location">STALL B 22</p>
+        </div>
+    </div>
+</body>
+</html>
