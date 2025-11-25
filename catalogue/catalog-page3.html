@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PTC Catalogue - Stability & Control</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- PRINT SETTINGS --- */
+        @page {
+            size: A4;
+            margin: 0;
+            margin-bottom: 5mm;
+        }
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: none;
+            }
+            .page-container {
+                box-shadow: none;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+            }
+        }
+        /* --- GLOBAL VARS --- */
+        :root {
+            --ptc-gold: #FFC20E;
+            --dark-bg: #000000;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #555;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            align-items: center;
+        }
+        /* A4 Container (210mm x 297mm) */
+        .page-container {
+            width: 210mm; 
+            height: 297mm;
+            background-color: #000000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            padding-top: 5mm;
+            padding-bottom: 5mm;
+        }
+        /* Film Grain */
+        .texture-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 50;
+            mix-blend-mode: overlay;
+        }
+        /* Tech Grid overlay */
+        .tech-grid {
+            position: absolute;
+            inset: 0;
+            background-size: 42px 42px;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            pointer-events: none;
+            z-index: 16;
+            opacity: 0.07;
+            mix-blend-mode: normal;
+        }
+        /* Content Area */
+        .page-content {
+            flex: 1;
+            padding: 80px; /* Consistent margins */
+            position: relative;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Page Header */
+        .page-header {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 72px; /* 72-78px range */
+            color: var(--ptc-gold);
+            line-height: 1;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        /* Quadrant Grid - 2x2 */
+        .quadrant-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 60px;
+            flex: 1;
+        }
+        /* Quadrant */
+        .quadrant {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        /* Quadrant Header */
+        .quadrant-header {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 36px; /* 34-38px range */
+            color: #FFFFFF;
+            line-height: 1.1;
+        }
+        /* Quadrant Description */
+        .quadrant-description {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            color: #D8D8D8;
+            line-height: 1.6;
+        }
+        /* Logos Container in Quadrant */
+        .quadrant-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .logo-item {
+            height: 25px;
+            width: auto;
+            filter: brightness(0) invert(1); /* White logos */
+            opacity: 0.9;
+        }
+        /* Product Image in Quadrant */
+        .quadrant-image {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            object-fit: contain;
+            margin-top: 15px;
+            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
+        }
+        /* Footer - Matching Page 1 */
+        .footer-band {
+            background: var(--ptc-gold);
+            color: #000;
+            padding: 46px 10mm 28px 10mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 30;
+            height: 30mm;
+            margin-top: auto;
+        }
+        .qr-box {
+            background: #000;
+            color: var(--ptc-gold);
+            padding: 8px;
+            border-radius: 2px;
+            display: inline-flex;
+        }
+        .qr-box i {
+            width: 32px !important;
+            height: 32px !important;
+        }
+        .scan-text { margin-left: 10px; display: flex; flex-direction: column; }
+        .scan-text .muted {
+            font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em;
+            opacity: 0.85;
+        }
+        .scan-text .site { font-size: 11px; font-weight: 900; }
+        .edition-block { text-align: right; }
+        .edition-block .big {
+            font-family: 'Oswald', sans-serif; font-size: 30px; font-weight: 700; line-height: 0.95; display: block;
+        }
+        .edition-block .small {
+            font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.26em; display: block; margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Textures -->
+        <div class="texture-overlay"></div>
+        <div class="tech-grid"></div>
+        
+        <!-- Page Content -->
+        <div class="page-content">
+            <!-- Page Header -->
+            <h1 class="page-header">STABILITY & CONTROL</h1>
+            
+            <!-- Quadrant Grid 2x2 -->
+            <div class="quadrant-grid">
+                <!-- Quadrant 1: Undercarriage & GET (Top-Left) -->
+                <div class="quadrant">
+                    <h2 class="quadrant-header">Built for Tough Terrain</h2>
+                    <p class="quadrant-description">
+                        Wear-resistant undercarriage systems and hardened ground-engaging tools engineered for severe abrasion environments.
+                    </p>
+                    <div class="quadrant-logos">
+                        <img src="/website_assets/logos/k-track_logo.png" alt="K-Track" class="logo-item" style="height: 35px;">
+                    </div>
+                    <img src="/catalogue-2025/images/products/Excavator Track Chain.png" alt="Track Chain" class="quadrant-image">
+                </div>
+                
+                <!-- Quadrant 2: Hydraulic & Heavy Spares (Top-Right) -->
+                <div class="quadrant">
+                    <h2 class="quadrant-header">Hydraulic Reliability</h2>
+                    <p class="quadrant-description">
+                        High-performance replacement pumps, swing motors and cylinder heads designed for consistent hydraulic output.
+                    </p>
+                    <div class="quadrant-logos">
+                        <img src="/website_assets/logos/cgr_ghinassi_logo.png" alt="CGR Ghinassi" class="logo-item">
+                        <img src="/website_assets/logos/gb_ricambi_logo.png" alt="GB Ricambi" class="logo-item">
+                        <img src="/website_assets/logos/costex_ctp_logo.png" alt="CTP" class="logo-item">
+                    </div>
+                    <img src="/catalogue-2025/images/products/Hydraulic Pump.png" alt="Hydraulic Pump" class="quadrant-image">
+                </div>
+                
+                <!-- Quadrant 3: Climate Control / A/C (Bottom-Left) -->
+                <div class="quadrant">
+                    <h2 class="quadrant-header">Cabin Comfort</h2>
+                    <p class="quadrant-description">
+                        Premium air-conditioning components for reliable cooling in demanding operating conditions.
+                    </p>
+                    <div class="quadrant-logos">
+                        <img src="/website_assets/logos/denso_logo.png" alt="Denso" class="logo-item">
+                        <img src="/website_assets/logos/valeo_logo.png" alt="Valeo" class="logo-item">
+                        <img src="/website_assets/logos/sanden_logo.png" alt="Sanden" class="logo-item">
+                    </div>
+                    <img src="/catalogue-2025/images/products/AC Compressor.png" alt="A/C Compressor" class="quadrant-image">
+                </div>
+                
+                <!-- Quadrant 4: Seals, Brakes & Bearings (Bottom-Right) -->
+                <div class="quadrant">
+                    <h2 class="quadrant-header">Seals, Brakes & Bearings</h2>
+                    <p class="quadrant-description">
+                        Critical consumables including seal kits, brake valves and high-precision hub bearings.
+                    </p>
+                    <div class="quadrant-logos">
+                        <img src="/website_assets/logos/wabco_logo.png" alt="WABCO" class="logo-item">
+                    </div>
+                    <img src="/catalogue-2025/images/products/Bearing.png" alt="Bearing" class="quadrant-image">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer - Matching Page 1 -->
+        <div class="footer-band">
+            <div style="display:flex; align-items:center;">
+                <div class="qr-box">
+                    <i data-lucide="qr-code" style="width:32px;height:32px;"></i>
+                </div>
+                <div class="scan-text">
+                    <span class="muted">Scan for Catalogue</span>
+                    <span class="site">www.partstrading.com</span>
+                </div>
+            </div>
+            <div class="edition-block">
+                <span class="big">GLOBAL</span>
+                <span class="small">Parts Edition</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
