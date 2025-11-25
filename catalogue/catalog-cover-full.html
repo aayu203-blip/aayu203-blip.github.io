@@ -84,7 +84,7 @@
         /* --- LAYOUT SECTIONS --- */
         /* Header - Now transparent/overlay on image */
         .top-bar {
-            background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+            background: transparent; /* Fully transparent - no overlay box */
             padding: 0.8mm 12mm 0.8mm 12mm;
             padding-top: 31px;
             height: 125px;
@@ -235,12 +235,15 @@
         .lists-section {
             background: transparent; /* Transparent - image shows through */
             padding: 0;
-            position: relative;
+            position: absolute;
+            bottom: 38mm; /* Position just above footer (footer is 38mm tall) */
+            left: 0;
+            right: 0;
             z-index: 25;
             margin-bottom: 0;
         }
         .lists-content {
-            padding: 17px 10mm 20px calc(18mm + 30px);
+            padding: 17px 10mm 20px calc(18mm + 30px); /* Same padding as original */
         }
         /* Typography & Layout elements */
         .gold-border {
@@ -269,7 +272,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 18px;
             align-items: flex-start;
-            background: rgba(0, 0, 0, 0.4); /* Semi-transparent background for readability */
+            background: transparent; /* No translucent box */
             padding: 7px 12px;
             border-radius: 2px;
             margin-top: 8px;
