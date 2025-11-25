@@ -6,6 +6,7 @@
     <title>PTC Catalogue - Our Profile</title>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         /* --- PRINT SETTINGS --- */
         @page {
@@ -54,252 +55,393 @@
             padding-top: 5mm;
             padding-bottom: 5mm;
         }
-        /* Tech Grid overlay - clearer than Page 1 */
+        /* Film Grain - Matching Page 1 */
+        .texture-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 50;
+            mix-blend-mode: overlay;
+        }
+        /* Tech Grid overlay - Matching Page 1 (6-8% opacity) */
         .tech-grid {
             position: absolute;
             inset: 0;
             background-size: 42px 42px;
             background-image:
-                linear-gradient(to right, rgba(255, 255, 255, 0.20) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.20) 1px, transparent 1px);
+                linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
             pointer-events: none;
-            z-index: 5;
-            opacity: 0.20; /* 18-22% opacity - slightly clearer than cover */
+            z-index: 16;
+            opacity: 0.07; /* 6-8% opacity - matching Page 1 */
             mix-blend-mode: normal;
         }
-        /* Machinery silhouette - right side */
-        .machinery-silhouette {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 40%;
-            height: 70%;
-            opacity: 0.06; /* 5-7% opacity */
-            background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80'); /* Freely available stock image - excavator */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            filter: grayscale(100%) contrast(200%) brightness(20%);
-            z-index: 1;
-            pointer-events: none;
-            mask-image: linear-gradient(to left, transparent 30%, black 70%);
-            -webkit-mask-image: linear-gradient(to left, transparent 30%, black 70%);
-        }
-        /* Main content area */
-        .main-content {
+        /* Header - Matching Page 1 */
+        .top-bar {
+            background: #000;
+            padding: 0.8mm 12mm 0.8mm 12mm;
+            padding-top: 31px;
+            height: 125px; /* Same as Page 1 */
+            min-height: 125px;
+            z-index: 30;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: relative;
-            z-index: 10;
-            padding: 40px calc(18mm + 30px) 75px calc(18mm + 30px); /* Top spacing tighter than Page 1, bottom 70-80px */
-            flex: 1;
+        }
+        .logo-wrapper {
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
+            margin-left: 48px; /* Match Page 1 margin */
+            gap: 0;
         }
-        /* Header - OUR PROFILE */
-        .page-header {
-            margin-bottom: 28px; /* 22-28px below header */
+        .logo-image {
+            height: 24mm; /* Same as Page 1 */
+            width: auto;
+            max-width: 50mm;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 10px rgba(255, 194, 14, 0.25));
+            margin: 0;
+            position: relative;
+            top: 12px; /* Match Page 1 positioning */
+        }
+        /* Right side header - OUR PROFILE */
+        .page-header-right {
             display: flex;
             align-items: center;
             gap: 18px;
+            margin-right: 52px; /* Match Page 1 right margin */
         }
-        .gold-bar {
+        .header-gold-bar {
             width: 6px;
-            height: 65px; /* 60-70px height */
+            height: 60px; /* Same height as Page 1 slogan bar */
             background: var(--ptc-gold);
             flex-shrink: 0;
         }
-        .page-title {
+        .page-header-title {
             font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            font-size: 46px; /* 44-48px range, using 46px */
+            font-weight: 700; /* Condensed Bold */
+            font-size: 44px; /* Large, impactful */
             color: #FFFFFF;
-            letter-spacing: 1px; /* +1 letter spacing */
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin: 0;
             line-height: 1;
         }
-        /* Body text block */
+        /* Main content area - Two column layout */
+        .main-content-wrapper {
+            flex: 1;
+            display: flex;
+            gap: 40px; /* Space between columns */
+            padding: 40px calc(18mm + 30px) 120px calc(18mm + 30px); /* Top 40px, bottom 120-150px, matching Page 1 margins */
+            position: relative;
+            z-index: 10;
+        }
+        /* Left column - Profile text */
+        .profile-column {
+            width: 46%; /* 46% of page width */
+            display: flex;
+            flex-direction: column;
+        }
         .profile-text {
-            max-width: 60%; /* 58-60% of page width */
             font-family: 'Inter', sans-serif;
-            font-size: 14.5px; /* 14-15px range, using 14.5px */
-            font-weight: 400; /* Regular */
-            color: #D6D6D6;
-            line-height: 1.55; /* 1.52-1.58 range */
-            margin-bottom: 40px;
+            font-size: 12.75px; /* 12.5-13px range */
+            font-weight: 400;
+            color: #EBEBEB; /* 90% white */
+            line-height: 1.6; /* 160% */
         }
         .profile-text p {
-            margin: 0 0 13px 0; /* 12-14px paragraph spacing */
+            margin: 0 0 20px 0; /* 18-22px spacing between paragraphs */
         }
         .profile-text p:last-child {
             margin-bottom: 0;
         }
-        .profile-text strong {
-            font-weight: 600;
-            color: #FFFFFF;
+        /* Right column - Strengths grid */
+        .strengths-column {
+            width: 54%; /* Remaining space */
+            display: flex;
+            align-items: flex-start;
         }
-        /* Section header - OUR CORE STRENGTHS */
-        .section-header {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 600; /* Semi-Bold */
-            font-size: 27px; /* 26-28px range, using 27px */
-            color: #FFFFFF;
-            margin-bottom: 26px; /* 24-26px margin-bottom */
-            position: relative;
-            display: inline-block;
-        }
-        .section-header::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 55px; /* 50-60px width */
-            height: 3px;
-            background: var(--ptc-gold);
-        }
-        /* Strengths grid - 2 columns */
         .strengths-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 18px 20px; /* 14-18px vertical, horizontal spacing */
-            max-width: 60%; /* Match text column width */
+            gap: 36px 20px; /* 32-40px vertical, horizontal spacing */
+            width: 100%;
+            max-width: 85%; /* Keep grid from going too far right */
         }
-        /* Strength item */
-        .strength-item {
+        /* Strength card */
+        .strength-card {
             display: flex;
-            gap: 12px; /* 10-14px spacing between icon and heading */
+            flex-direction: column;
             align-items: flex-start;
         }
         .strength-icon {
-            width: 23px; /* 22-24px size */
-            height: 23px;
-            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            margin-bottom: 8px; /* Icon-heading spacing */
             color: var(--ptc-gold);
         }
         .strength-icon svg,
         .strength-icon {
-            width: 23px;
-            height: 23px;
+            width: 24px;
+            height: 24px;
             stroke: var(--ptc-gold) !important;
             stroke-width: 1.5px !important;
             fill: none !important;
             color: var(--ptc-gold) !important;
         }
-        .strength-icon svg path {
-            stroke: var(--ptc-gold) !important;
-            stroke-width: 1.5px !important;
-            fill: none !important;
-        }
-        .strength-content {
-            flex: 1;
-        }
         .strength-heading {
             font-family: 'Oswald', sans-serif;
-            font-size: 15.5px; /* 15-16px range */
-            font-weight: 600;
+            font-weight: 700; /* Condensed Bold */
+            font-size: 16px;
             color: #FFFFFF;
             text-transform: uppercase;
-            line-height: 0.95;
-            margin: 0 0 6px 0;
+            line-height: 1.2;
+            margin: 0 0 6px 0; /* Heading-body spacing 4-6px */
         }
         .strength-description {
             font-family: 'Inter', sans-serif;
-            font-size: 12.5px; /* 12-13px range */
+            font-size: 12px;
             font-weight: 400;
-            color: #C8C8C8; /* Light grey */
+            color: rgba(255, 255, 255, 0.8); /* 80% white */
             line-height: 1.4;
             margin: 0;
             display: -webkit-box;
-            -webkit-line-clamp: 2; /* Max 2 lines */
+            -webkit-line-clamp: 3; /* Max 2-2.5 lines, using 3 for safety */
             -webkit-box-orient: vertical;
             overflow: hidden;
+        }
+        /* Footer - Matching Page 1 exactly */
+        .footer-band {
+            background: var(--ptc-gold);
+            height: 38mm; /* Same as Page 1 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px calc(18mm + 30px) 10px calc(18mm + 30px); /* Match Page 1 */
+            gap: 3px;
+            position: relative;
+            z-index: 20;
+        }
+        .footer-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            justify-content: center;
+        }
+        /* Footer QR Code */
+        .footer-qr {
+            width: 16mm;
+            height: 16mm;
+            background: #FFFFFF;
+            padding: 2px;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer-qr img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        /* Footer text with inline icon */
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 3px;
+        }
+        .footer-item:last-child {
+            margin-bottom: 0;
+        }
+        /* Footer icons */
+        .footer-item-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            color: rgba(0, 0, 0, 0.85);
+        }
+        .footer-item-icon svg,
+        .footer-item-icon {
+            width: 16px;
+            height: 16px;
+            stroke: rgba(0, 0, 0, 0.85) !important;
+            stroke-width: 1.5px !important;
+            fill: none !important;
+            color: rgba(0, 0, 0, 0.85) !important;
+        }
+        .footer-item-icon svg path {
+            stroke: rgba(0, 0, 0, 0.85) !important;
+            stroke-width: 1.5px !important;
+            fill: none !important;
+        }
+        /* Footer body text */
+        .footer-body {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.85);
+            line-height: 1.3;
+        }
+        /* Footer website URL */
+        .footer-url {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.85);
+            line-height: 1.3;
+        }
+        /* Address text */
+        .footer-address-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.85);
+            line-height: 1.4;
+        }
+        .footer-address-primary {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 2px;
+        }
+        /* WhatsApp contact styling */
+        .footer-whatsapp-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 4px;
+        }
+        .footer-whatsapp-item:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
     <div class="page-container">
-        <!-- Tech Grid overlay -->
+        <!-- Textures -->
+        <div class="texture-overlay"></div>
+        
+        <!-- Tech Grid -->
         <div class="tech-grid"></div>
         
-        <!-- Machinery silhouette - right side -->
-        <div class="machinery-silhouette"></div>
+        <!-- TOP BAR - Matching Page 1 -->
+        <div class="top-bar">
+            <div class="logo-wrapper">
+                <img src="/catalogue-2025/images/logos/ptc-logo.png" alt="PTC Parts Trading Company" class="logo-image">
+            </div>
+            
+            <!-- Right side header -->
+            <div class="page-header-right">
+                <div class="header-gold-bar"></div>
+                <h1 class="page-header-title">OUR PROFILE</h1>
+            </div>
+        </div>
         
-        <!-- Main content -->
-        <div class="main-content">
-            <!-- Header: OUR PROFILE -->
-            <div class="page-header">
-                <div class="gold-bar"></div>
-                <h1 class="page-title">OUR PROFILE</h1>
+        <!-- Main content - Two column layout -->
+        <div class="main-content-wrapper">
+            <!-- Left column - Profile text -->
+            <div class="profile-column">
+                <div class="profile-text">
+                    <p>Parts Trading Company (PTC) was established in 1956 by the company's first-generation leadership, during a period of rapid expansion in India's earthmoving and transport sectors. From these origins, PTC has developed into a third-generation, multi-brand components supplier serving construction, mining and heavy-transport operators across the country.</p>
+                    
+                    <p>Over the decades, the company has built deep technical familiarity with Volvo, Scania, Komatsu, Caterpillar and Hitachi equipment. This understanding spans hydraulic assemblies, engine groups, electrical harnessing, transmission systems and undercarriage components used across demanding field applications.</p>
+                    
+                    <p>PTC operates with a structured stocking model, a dependable global sourcing network and a technical team trained to accurately identify components for both legacy and modern machinery. The company's approach remains consistent: reduce downtime, ensure compatibility and deliver components that support long-term fleet reliability.</p>
+                </div>
             </div>
             
-            <!-- Profile text -->
-            <div class="profile-text">
-                <p>Parts Trading Company (PTC) was established in <strong>1956</strong> by the current leadership's grandfather, with a focus on supplying critical components for the first wave of earthmoving and transport equipment entering India.</p>
-                
-                <p>Over the past seven decades, PTC has evolved into a third-generation, multi-brand parts supplier recognised for technical accuracy, dependable stocking and longstanding industry relationships.</p>
-                
-                <p>With deep familiarity across <strong>Volvo</strong>, <strong>Scania</strong>, <strong>Komatsu</strong>, <strong>Caterpillar</strong> and <strong>Hitachi</strong> equipment, the company has built its reputation on understanding machine systems at a granular level. This includes <strong>hydraulic</strong> assemblies, <strong>engine</strong> groups, <strong>electrical</strong> harnessing, <strong>transmission</strong> systems and undercarriage components used across a wide range of applications in construction, mining and bulk transport.</p>
-                
-                <p>PTC operates with a structured stocking methodology, an established global sourcing network and a technical team capable of identifying the correct parts for both legacy and modern equipment. The company's approach remains consistent: minimise downtime, ensure compatibility and supply components that maintain long-term reliability.</p>
-            </div>
-            
-            <!-- Section: OUR CORE STRENGTHS -->
-            <h2 class="section-header">OUR CORE STRENGTHS</h2>
-            
-            <!-- Strengths grid -->
-            <div class="strengths-grid">
-                <!-- Strength 1 -->
-                <div class="strength-item">
-                    <div class="strength-icon">
-                        <i data-lucide="users"></i>
-                    </div>
-                    <div class="strength-content">
-                        <h3 class="strength-heading">Three Generations of Industry Knowledge</h3>
+            <!-- Right column - Strengths grid (2x2) -->
+            <div class="strengths-column">
+                <div class="strengths-grid">
+                    <!-- Top-left: Three-Generation Industry Expertise -->
+                    <div class="strength-card">
+                        <div class="strength-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h3 class="strength-heading">Three-Generation Industry Expertise</h3>
                         <p class="strength-description">A legacy of machine understanding and component familiarity built over nearly seventy years.</p>
                     </div>
-                </div>
-                
-                <!-- Strength 2 -->
-                <div class="strength-item">
-                    <div class="strength-icon">
-                        <i data-lucide="target"></i>
-                    </div>
-                    <div class="strength-content">
-                        <h3 class="strength-heading">Technical Precision</h3>
-                        <p class="strength-description">Accurate part matching across hydraulic, engine, driveline and electrical systems based on system-level understanding.</p>
-                    </div>
-                </div>
-                
-                <!-- Strength 3 -->
-                <div class="strength-item">
-                    <div class="strength-icon">
-                        <i data-lucide="layers"></i>
-                    </div>
-                    <div class="strength-content">
+                    
+                    <!-- Top-right: Multi-Brand Capability -->
+                    <div class="strength-card">
+                        <div class="strength-icon">
+                            <i data-lucide="layers"></i>
+                        </div>
                         <h3 class="strength-heading">Multi-Brand Capability</h3>
                         <p class="strength-description">Expertise and inventory coverage across Volvo, Scania, Komatsu, Caterpillar, Hitachi and other major equipment manufacturers.</p>
                     </div>
-                </div>
-                
-                <!-- Strength 4 -->
-                <div class="strength-item">
-                    <div class="strength-icon">
-                        <i data-lucide="package"></i>
+                    
+                    <!-- Bottom-left: Technical Precision -->
+                    <div class="strength-card">
+                        <div class="strength-icon">
+                            <i data-lucide="target"></i>
+                        </div>
+                        <h3 class="strength-heading">Technical Precision</h3>
+                        <p class="strength-description">Accurate part matching across hydraulic, engine, driveline and electrical systems based on system-level understanding.</p>
                     </div>
-                    <div class="strength-content">
+                    
+                    <!-- Bottom-right: Purpose-Built Stocking / Modern Infrastructure -->
+                    <div class="strength-card">
+                        <div class="strength-icon">
+                            <i data-lucide="package"></i>
+                        </div>
                         <h3 class="strength-heading">Purpose-Built Stocking</h3>
-                        <p class="strength-description">Inventory aligned to real-world demand patterns, including critical-failure items, high-wear components and fast-moving parts.</p>
+                        <p class="strength-description">Inventory aligned to real-world demand patterns, including critical-failure items, high-wear components and fast-moving parts, supported by modern digital infrastructure.</p>
                     </div>
                 </div>
-                
-                <!-- Strength 5 -->
-                <div class="strength-item">
-                    <div class="strength-icon">
-                        <i data-lucide="cpu"></i>
+            </div>
+        </div>
+        
+        <!-- FOOTER - Matching Page 1 exactly -->
+        <div class="footer-band">
+            <!-- Column 1 - QR Code -->
+            <div class="footer-column">
+                <div class="footer-qr">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.PartsTrading.Com" alt="QR Code" />
+                </div>
+            </div>
+            
+            <!-- Column 2 - Address -->
+            <div class="footer-column">
+                <div class="footer-item">
+                    <i data-lucide="map-pin" class="footer-item-icon"></i>
+                    <div class="footer-address-text">
+                        <span class="footer-address-primary">Parts Trading Company</span>
+                        Vijay Chambers, 1st Floor<br>
+                        Opp. Dreamland Cinema<br>
+                        Mumbai 400 004
                     </div>
-                    <div class="strength-content">
-                        <h3 class="strength-heading">Modern Infrastructure</h3>
-                        <p class="strength-description">Digital part identification, structured sourcing, and organised warehousing led by third-generation management.</p>
-                    </div>
+                </div>
+            </div>
+            
+            <!-- Column 3 - Contact + Website + WhatsApp -->
+            <div class="footer-column">
+                <div class="footer-item">
+                    <i data-lucide="mail" class="footer-item-icon"></i>
+                    <div class="footer-body">parts@partstrading.com</div>
+                </div>
+                <div class="footer-item">
+                    <i data-lucide="globe" class="footer-item-icon"></i>
+                    <div class="footer-body">www.partstrading.com</div>
+                </div>
+                <div class="footer-item">
+                    <i data-lucide="phone" class="footer-item-icon"></i>
+                    <div class="footer-body">022407 55999 (32 lines)</div>
+                </div>
+                <div class="footer-item">
+                    <i data-lucide="message-circle" class="footer-item-icon"></i>
+                    <div class="footer-body">98210 37990</div>
+                </div>
+                <div class="footer-item">
+                    <i data-lucide="message-circle" class="footer-item-icon"></i>
+                    <div class="footer-body">98920 05009</div>
                 </div>
             </div>
         </div>
