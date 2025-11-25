@@ -77,12 +77,331 @@
             min-height: 0;
         }
         .catalog-wrapper {
-            width: 100%;
-            height: 100%;
-            max-width: 1000px;
-            transform: scale(0.96);
+            width: 794px; /* A4 width in pixels at 96 DPI */
+            height: 1123px; /* A4 height in pixels at 96 DPI */
+            transform: scale(0.85); /* Scale down to fit nicely */
             transform-origin: center;
         }
+        
+        /* Embedded Catalog Cover Styles - Copy from catalog-cover.html */
+        .cover-container {
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Import all catalog cover styles here - abbreviated for space */
+        .texture-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 50;
+            mix-blend-mode: overlay;
+        }
+        .top-bar {
+            background: #000;
+            padding: 0.8mm 12mm 0.8mm 12mm;
+            padding-top: 31px;
+            height: 125px;
+            min-height: 125px;
+            z-index: 30;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+        }
+        .user-logo-placeholder {
+            margin: 0;
+            padding: 0;
+            display: block;
+            line-height: 0;
+        }
+        .logo-image {
+            height: 24mm;
+            width: auto;
+            max-width: 50mm;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 10px rgba(255, 194, 14, 0.25));
+            position: relative;
+            top: 12px;
+            transform: scale(1.05);
+        }
+        .heritage-block {
+            position: absolute;
+            top: 31px;
+            right: 52px;
+            z-index: 35;
+            text-align: right;
+            max-width: 240px;
+        }
+        .heritage-block .heritage-line {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.88);
+            letter-spacing: -0.8px;
+            line-height: 0.9;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+        .heritage-block .heritage-gold {
+            color: rgba(255, 255, 255, 0.88);
+        }
+        .heritage-block .heritage-subtitle {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 13px;
+            color: var(--ptc-gold);
+            letter-spacing: 3px;
+            line-height: 1.2;
+            margin: 0;
+            margin-top: 4px;
+            padding: 0;
+            display: block;
+            text-transform: none;
+        }
+        .hero-image {
+            background-image: url('/catalogue-2025/images/hero-photo.jpg');
+            background-size: 110%;
+            background-position: 45% -75px;
+            background-repeat: no-repeat;
+            height: 165mm;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            margin-top: 0;
+        }
+        .hero-fade-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40mm;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 15%, rgba(0, 0, 0, 0.65) 30%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0.15) 70%, transparent 100%);
+            z-index: 4;
+            pointer-events: none;
+        }
+        .hero-fade-bottom-image {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 55mm;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.15) 10%, rgba(0, 0, 0, 0.35) 25%, rgba(0, 0, 0, 0.55) 45%, rgba(0, 0, 0, 0.75) 65%, rgba(0, 0, 0, 0.9) 85%, rgba(0, 0, 0, 1) 100%);
+            z-index: 5;
+            pointer-events: none;
+            mask-image: radial-gradient(ellipse 150% 600px at bottom center, black 0%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 150% 600px at bottom center, black 0%, transparent 100%);
+        }
+        .hero-fade-left {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.85) 30%, rgba(0, 0, 0, 0.70) 40%, rgba(0, 0, 0, 0.50) 45%, rgba(0, 0, 0, 0.25) 50%, transparent 60%);
+            z-index: 3;
+            pointer-events: none;
+            mask-image: radial-gradient(ellipse 1000px 120% at left center, black 0%, transparent 65%);
+            -webkit-mask-image: radial-gradient(ellipse 1000px 120% at left center, black 0%, transparent 65%);
+        }
+        .hero-fade-right {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.55) 25%, rgba(0, 0, 0, 0.25) 45%, transparent 65%);
+            z-index: 3;
+            pointer-events: none;
+            mask-image: radial-gradient(ellipse 800px 500px at right center, black 0%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 800px 500px at right center, black 0%, transparent 70%);
+        }
+        .hero-fade-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.65) 30%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
+            z-index: 4;
+            pointer-events: none;
+            mask-image: radial-gradient(ellipse 130% 450px at bottom left, black 0%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 130% 450px at bottom left, black 0%, transparent 75%);
+        }
+        .tech-grid {
+            position: absolute;
+            inset: 0;
+            background-size: 42px 42px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            pointer-events: none;
+            z-index: 16;
+            opacity: 0.07;
+            mix-blend-mode: normal;
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 20;
+            padding: 133px 10mm 20mm calc(18mm + 30px);
+            margin-top: 0;
+        }
+        .gold-border {
+            border-left: 8px solid var(--ptc-gold);
+            padding-left: 18px;
+            display: inline-block;
+            margin-bottom: 16px;
+            height: fit-content;
+        }
+        .headline {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            font-size: 44px;
+            line-height: 0.91;
+            margin: 0;
+            letter-spacing: -0.01em;
+        }
+        .headline .gold { color: var(--ptc-gold); }
+        .lists-section {
+            background: #000000;
+            padding: 0;
+            position: relative;
+            z-index: 25;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E"), linear-gradient(to bottom, rgba(0, 0, 0, 0.10) 0%, transparent 10%);
+            background-blend-mode: overlay;
+            margin-bottom: 0;
+        }
+        .lists-content {
+            padding: 17px 10mm 20px calc(18mm + 30px);
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            align-items: flex-start;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 7px 12px;
+            border-radius: 2px;
+            margin-top: 8px;
+            margin-left: -8px;
+        }
+        .section-title {
+            color: #B5B5B5;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            margin-bottom: 4px;
+            margin-top: 0;
+        }
+        .list-text {
+            color: #E6E6E6;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 1.38;
+            letter-spacing: 0.01em;
+        }
+        .list-text span {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .list-text span:last-child {
+            margin-bottom: 0;
+        }
+        .footer-band {
+            background: var(--ptc-gold);
+            color: #000;
+            padding: 12px calc(18mm + 30px) 10px calc(18mm + 30px);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10mm;
+            align-items: center;
+            z-index: 30;
+            height: 38mm;
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 3px;
+        }
+        .footer-qr {
+            width: 80px;
+            height: 80px;
+            background: #FFFFFF;
+            padding: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 6px;
+        }
+        .footer-qr img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 3px;
+        }
+        .footer-item:last-child {
+            margin-bottom: 0;
+        }
+        .footer-item-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            color: rgba(0, 0, 0, 0.85);
+        }
+        .footer-item-icon svg,
+        .footer-item-icon {
+            width: 16px;
+            height: 16px;
+            stroke: rgba(0, 0, 0, 0.85) !important;
+            stroke-width: 1.5px !important;
+            fill: none !important;
+            color: rgba(0, 0, 0, 0.85) !important;
+        }
+        .footer-item-icon svg path {
+            stroke: rgba(0, 0, 0, 0.85) !important;
+            stroke-width: 1.5px !important;
+            fill: none !important;
+        }
+        .footer-body {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.85);
+            line-height: 1.3;
+        }
+        .footer-address-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.85);
+            line-height: 1.4;
+        }
+        .footer-address-primary {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 2px;
+        }
+        
         /* Bottom Section - Stall Information */
         .bottom-section {
             padding: 80px 60px 100px 60px;
@@ -120,13 +439,6 @@
             letter-spacing: 3px;
             line-height: 1.1;
         }
-        /* Embed the catalog cover in a scaled container */
-        .catalog-wrapper iframe {
-            border: none;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
     </style>
 </head>
 <body>
@@ -138,10 +450,131 @@
             <p class="excon-subtitle">9-13 December • BIEC, Bengaluru</p>
         </div>
         
-        <!-- Center Section - Catalog Cover -->
+        <!-- Center Section - Catalog Cover Embedded Directly -->
         <div class="center-section">
             <div class="catalog-wrapper">
-                <iframe src="/catalogue-2025/catalog-cover.html" title="PTC Catalog Cover" scrolling="no"></iframe>
+                <div class="cover-container">
+                    <!-- Textures -->
+                    <div class="texture-overlay"></div>
+                    <!-- TOP BAR -->
+                    <div class="top-bar">
+                        <div style="display: flex; flex-direction: column; align-items: flex-start; margin-left: 48px; gap: 0; position: relative;">
+                            <div class="user-logo-placeholder">
+                                <img src="/catalogue-2025/images/logos/ptc-logo.png" alt="PTC Parts Trading Company" class="logo-image">
+                            </div>
+                        </div>
+                        <!-- Heritage Block - Top Right -->
+                        <div class="heritage-block">
+                            <div class="heritage-line">HEAVY DUTY</div>
+                            <div class="heritage-line">LEGACY<span class="heritage-gold">.</span></div>
+                            <div class="heritage-subtitle">Since 1956</div>
+                        </div>
+                    </div>
+
+                    <!-- HERO SECTION -->
+                    <div class="hero-image">
+                        <div class="hero-fade-top"></div>
+                        <div class="hero-fade-left"></div>
+                        <div class="hero-fade-right"></div>
+                        <div class="hero-fade-bottom"></div>
+                        <div class="hero-fade-bottom-image"></div>
+                        <div class="tech-grid"></div>
+                        <div class="hero-content">
+                            <div class="gold-border">
+                                <h2 class="headline">
+                                    IF YOU HAVE<br>
+                                    <span class="gold">EARTHMOVERS</span>,<br>
+                                    WE HAVE<br>
+                                    <span class="gold">PARTS.</span>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LISTS SECTION -->
+                    <div class="lists-section">
+                        <div class="lists-content">
+                            <div class="info-grid">
+                                <!-- Inventory -->
+                                <div>
+                                    <div class="section-title">INVENTORY</div>
+                                    <div class="list-text">
+                                        <span>Hydraulic Pumps</span>
+                                        <span>Hydraulic Components</span>
+                                        <span>Engine Components</span>
+                                        <span>Transmission Components</span>
+                                        <span>Undercarriage</span>
+                                        <span>Electrical &amp; Sensors</span>
+                                        <span>Filters &amp; Consumables</span>
+                                        <span>Seals &amp; Gaskets</span>
+                                        <span>Cooling System Components</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="section-title">EQUIPMENT WE SUPPORT</div>
+                                    <div class="list-text">
+                                        <span>Volvo</span>
+                                        <span>Scania</span>
+                                        <span>Komatsu</span>
+                                        <span>Caterpillar</span>
+                                        <span>Hitachi</span>
+                                        <span>Kobelco</span>
+                                        <span>Hyundai</span>
+                                        <span>SANY</span>
+                                        <span>Liugong</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FOOTER -->
+                    <div class="footer-band">
+                        <!-- Column 1 - QR Code -->
+                        <div class="footer-column">
+                            <div class="footer-qr">
+                                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.PartsTrading.Com" alt="QR Code" />
+                            </div>
+                        </div>
+                        
+                        <!-- Column 2 - Address -->
+                        <div class="footer-column">
+                            <div class="footer-item">
+                                <i data-lucide="map-pin" class="footer-item-icon"></i>
+                                <div class="footer-address-text">
+                                    <span class="footer-address-primary">Parts Trading Company</span>
+                                    Vijay Chambers, 1st Floor<br>
+                                    Opp. Dreamland Cinema<br>
+                                    Mumbai 400 004
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Column 3 - Contact + Website + WhatsApp -->
+                        <div class="footer-column">
+                            <div class="footer-item">
+                                <i data-lucide="mail" class="footer-item-icon"></i>
+                                <div class="footer-body">parts@partstrading.com</div>
+                            </div>
+                            <div class="footer-item">
+                                <i data-lucide="globe" class="footer-item-icon"></i>
+                                <div class="footer-body">www.partstrading.com</div>
+                            </div>
+                            <div class="footer-item">
+                                <i data-lucide="phone" class="footer-item-icon"></i>
+                                <div class="footer-body">022407 55999 (32 lines)</div>
+                            </div>
+                            <div class="footer-item">
+                                <i data-lucide="message-circle" class="footer-item-icon"></i>
+                                <div class="footer-body">98210 37990</div>
+                            </div>
+                            <div class="footer-item">
+                                <i data-lucide="message-circle" class="footer-item-icon"></i>
+                                <div class="footer-body">98920 05009</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -152,5 +585,8 @@
             <p class="stall-location">STALL B 22</p>
         </div>
     </div>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
