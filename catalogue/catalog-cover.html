@@ -70,10 +70,10 @@
         /* Header */
         .top-bar {
             background: #000;
-            padding: 0.8mm 12mm 0.8mm 12mm; /* Reduced height by 20-25% */
-            padding-top: calc(0.8mm - 70px); /* Shift logo up by 70px to reduce blank space */
-            height: auto; /* Auto height to accommodate logo and heritage block */
-            min-height: 80px; /* Increased by ~10% to fit heritage block cleanly */
+            padding: 0.8mm 12mm 0.8mm 12mm;
+            padding-top: 40px; /* 36-44px range for logo top margin - compact header */
+            height: 200px; /* Compact header height: 180-220px range, using 200px */
+            min-height: 200px;
             z-index: 30;
             display: flex;
             flex-direction: column;
@@ -101,26 +101,26 @@
             padding: 0;
             display: block;
             position: relative;
-            top: -35px; /* Allow portion of logo to go outside page - increased negative value */
+            top: 0; /* Logo positioned within header padding - moved DOWN by 12-18px from -35px */
             /* Trim invisible space - show only actual logo content */
             transform: scale(1.05); /* Slight scale to crop edges if needed */
         }
-        /* Heritage Block - Top Right Corner */
+        /* Heritage Block - Top Right Corner (Compact Badge) */
         .heritage-block {
             position: absolute;
-            top: 56px; /* 48-64px range, using 56px for balance */
+            top: 36px; /* 32-40px range, using 36px - moved UP to keep header compact */
             right: 50px; /* 44-56px range, using 50px for balance */
             z-index: 35;
             text-align: right;
-            line-height: 0.88; /* Tight, industrial line-height */
+            max-width: 240px; /* Maximum block width */
         }
         .heritage-block .heritage-line {
             font-family: 'Oswald', sans-serif;
             font-weight: 700;
-            font-size: 29px; /* 65% of 44px headline = 28.6px, rounded to 29px */
+            font-size: 44px; /* 65% of main slogan size, matching Option B spec */
             color: #FFFFFF; /* Pure white */
-            letter-spacing: -1px; /* Slightly tightened tracking */
-            line-height: 0.88;
+            letter-spacing: -0.8px; /* Tightened tracking */
+            line-height: 0.95; /* Tight, industrial line-height */
             margin: 0;
             padding: 0;
             display: block;
@@ -128,12 +128,12 @@
         .heritage-block .heritage-subtitle {
             font-family: 'Oswald', sans-serif;
             font-weight: 500;
-            font-size: 20px; /* 68% of 29px = 19.7px, rounded to 20px */
+            font-size: 22px; /* Option B spec size */
             color: rgba(255, 255, 255, 0.85); /* 85% opacity white */
-            letter-spacing: 5px; /* +5 tracking */
+            letter-spacing: 3px; /* +3px tracking */
             line-height: 1.2;
             margin: 0;
-            margin-top: 2px; /* Small spacing after LEGACY. */
+            margin-top: 6px; /* Spacing after LEGACY. */
             padding: 0;
             display: block;
             text-transform: none; /* Sentence case */
@@ -142,7 +142,7 @@
         .hero-image {
             background-image: url('/catalogue-2025/images/hero-photo.jpg');
             background-size: 110%; /* Zoom out slightly to show both machines - don't zoom too much */
-            background-position: 45% -100px; /* Lift image upward by 80-120px (was 'top', now -100px) */
+            background-position: 45% -135px; /* Lifted UP by 25-35px (was -100px, now -135px) for better fade blend */
             background-repeat: no-repeat;
             height: 120mm; /* Hero image only covers slogan area, not lists */
             position: relative;
@@ -263,7 +263,7 @@
             left: 0;
             right: 0;
             z-index: 20;
-            padding: 115px 10mm 20mm calc(18mm + 30px); /* Move slogan DOWN by 20-30px more (was 90px, now 115px) */
+            padding: 133px 10mm 20mm calc(18mm + 30px); /* Moved slogan DOWN by 18px (from 115px to 133px) to reduce black space above and connect with machinery */
             margin-top: 0;
         }
         /* Lists section - separate from hero image, TRUE BLACK background with soft fade */
@@ -471,12 +471,11 @@
                     <img src="/catalogue-2025/images/logos/ptc-logo.png" alt="PTC Parts Trading Company" class="logo-image">
                 </div>
             </div>
-            <!-- Heritage Block - Top Right -->
+            <!-- Heritage Block - Top Right (Compact Badge) -->
             <div class="heritage-block">
-                <div class="heritage-line">HEAVY</div>
-                <div class="heritage-line">DUTY</div>
+                <div class="heritage-line">HEAVY DUTY</div>
                 <div class="heritage-line">LEGACY.</div>
-                <div class="heritage-subtitle">Since 1956.</div>
+                <div class="heritage-subtitle">Since 1956</div>
             </div>
         </div>
 
