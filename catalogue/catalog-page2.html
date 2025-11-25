@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PTC Catalogue - Our Profile</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- PRINT SETTINGS --- */
+        @page {
+            size: A4;
+            margin: 0;
+            margin-bottom: 5mm;
+        }
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: none;
+            }
+            .page-container {
+                box-shadow: none;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+            }
+        }
+        /* --- GLOBAL VARS --- */
+        :root {
+            --ptc-gold: #FFC20E;
+            --dark-bg: #000000;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #555;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            align-items: center;
+        }
+        /* A4 Container (210mm x 297mm) */
+        .page-container {
+            width: 210mm; 
+            height: 297mm;
+            background-color: #000000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            padding-top: 5mm;
+            padding-bottom: 5mm;
+        }
+        /* Tech Grid overlay - clearer than Page 1 */
+        .tech-grid {
+            position: absolute;
+            inset: 0;
+            background-size: 42px 42px;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.20) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.20) 1px, transparent 1px);
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0.20; /* 18-22% opacity - slightly clearer than cover */
+            mix-blend-mode: normal;
+        }
+        /* Machinery silhouette - right side */
+        .machinery-silhouette {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40%;
+            height: 70%;
+            opacity: 0.06; /* 5-7% opacity */
+            background-image: url('/catalogue-2025/images/hero-photo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: grayscale(100%) contrast(200%) brightness(20%);
+            z-index: 1;
+            pointer-events: none;
+            mask-image: linear-gradient(to left, transparent 30%, black 70%);
+            -webkit-mask-image: linear-gradient(to left, transparent 30%, black 70%);
+        }
+        /* Main content area */
+        .main-content {
+            position: relative;
+            z-index: 10;
+            padding: 40px calc(18mm + 30px) 75px calc(18mm + 30px); /* Top spacing tighter than Page 1, bottom 70-80px */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Header - OUR PROFILE */
+        .page-header {
+            margin-bottom: 28px; /* 22-28px below header */
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .gold-bar {
+            width: 6px;
+            height: 65px; /* 60-70px height */
+            background: var(--ptc-gold);
+            flex-shrink: 0;
+        }
+        .page-title {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 46px; /* 44-48px range, using 46px */
+            color: #FFFFFF;
+            letter-spacing: 1px; /* +1 letter spacing */
+            margin: 0;
+            line-height: 1;
+        }
+        /* Body text block */
+        .profile-text {
+            max-width: 60%; /* 58-60% of page width */
+            font-family: 'Inter', sans-serif;
+            font-size: 14.5px; /* 14-15px range, using 14.5px */
+            font-weight: 400; /* Regular */
+            color: #D6D6D6;
+            line-height: 1.55; /* 1.52-1.58 range */
+            margin-bottom: 40px;
+        }
+        .profile-text p {
+            margin: 0 0 13px 0; /* 12-14px paragraph spacing */
+        }
+        .profile-text p:last-child {
+            margin-bottom: 0;
+        }
+        .profile-text strong {
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+        /* Section header - OUR CORE STRENGTHS */
+        .section-header {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600; /* Semi-Bold */
+            font-size: 27px; /* 26-28px range, using 27px */
+            color: #FFFFFF;
+            margin-bottom: 26px; /* 24-26px margin-bottom */
+            position: relative;
+            display: inline-block;
+        }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 55px; /* 50-60px width */
+            height: 3px;
+            background: var(--ptc-gold);
+        }
+        /* Strengths grid - 2 columns */
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 20px; /* 14-18px vertical, horizontal spacing */
+            max-width: 60%; /* Match text column width */
+        }
+        /* Strength item */
+        .strength-item {
+            display: flex;
+            gap: 12px; /* 10-14px spacing between icon and heading */
+            align-items: flex-start;
+        }
+        .strength-icon {
+            width: 23px; /* 22-24px size */
+            height: 23px;
+            flex-shrink: 0;
+            color: var(--ptc-gold);
+            stroke-width: 1.5px;
+        }
+        .strength-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--ptc-gold);
+            stroke-width: 1.5px;
+            fill: none;
+        }
+        .strength-content {
+            flex: 1;
+        }
+        .strength-heading {
+            font-family: 'Oswald', sans-serif;
+            font-size: 15.5px; /* 15-16px range */
+            font-weight: 600;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            line-height: 0.95;
+            margin: 0 0 6px 0;
+        }
+        .strength-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 12.5px; /* 12-13px range */
+            font-weight: 400;
+            color: #C8C8C8; /* Light grey */
+            line-height: 1.4;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* Max 2 lines */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Tech Grid overlay -->
+        <div class="tech-grid"></div>
+        
+        <!-- Machinery silhouette - right side -->
+        <div class="machinery-silhouette"></div>
+        
+        <!-- Main content -->
+        <div class="main-content">
+            <!-- Header: OUR PROFILE -->
+            <div class="page-header">
+                <div class="gold-bar"></div>
+                <h1 class="page-title">OUR PROFILE</h1>
+            </div>
+            
+            <!-- Profile text -->
+            <div class="profile-text">
+                <p>Parts Trading Company (PTC) was established in <strong>1956</strong> by the current leadership's grandfather, with a focus on supplying critical components for the first wave of earthmoving and transport equipment entering India.</p>
+                
+                <p>Over the past seven decades, PTC has evolved into a third-generation, multi-brand parts supplier recognised for technical accuracy, dependable stocking and longstanding industry relationships.</p>
+                
+                <p>With deep familiarity across <strong>Volvo</strong>, <strong>Scania</strong>, <strong>Komatsu</strong>, <strong>Caterpillar</strong> and <strong>Hitachi</strong> equipment, the company has built its reputation on understanding machine systems at a granular level. This includes <strong>hydraulic</strong> assemblies, <strong>engine</strong> groups, <strong>electrical</strong> harnessing, <strong>transmission</strong> systems and undercarriage components used across a wide range of applications in construction, mining and bulk transport.</p>
+                
+                <p>PTC operates with a structured stocking methodology, an established global sourcing network and a technical team capable of identifying the correct parts for both legacy and modern equipment. The company's approach remains consistent: minimise downtime, ensure compatibility and supply components that maintain long-term reliability.</p>
+            </div>
+            
+            <!-- Section: OUR CORE STRENGTHS -->
+            <h2 class="section-header">OUR CORE STRENGTHS</h2>
+            
+            <!-- Strengths grid -->
+            <div class="strengths-grid">
+                <!-- Strength 1 -->
+                <div class="strength-item">
+                    <div class="strength-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <div class="strength-content">
+                        <h3 class="strength-heading">Three Generations of Industry Knowledge</h3>
+                        <p class="strength-description">A legacy of machine understanding and component familiarity built over nearly seventy years.</p>
+                    </div>
+                </div>
+                
+                <!-- Strength 2 -->
+                <div class="strength-item">
+                    <div class="strength-icon">
+                        <i data-lucide="target"></i>
+                    </div>
+                    <div class="strength-content">
+                        <h3 class="strength-heading">Technical Precision</h3>
+                        <p class="strength-description">Accurate part matching across hydraulic, engine, driveline and electrical systems based on system-level understanding.</p>
+                    </div>
+                </div>
+                
+                <!-- Strength 3 -->
+                <div class="strength-item">
+                    <div class="strength-icon">
+                        <i data-lucide="layers"></i>
+                    </div>
+                    <div class="strength-content">
+                        <h3 class="strength-heading">Multi-Brand Capability</h3>
+                        <p class="strength-description">Expertise and inventory coverage across Volvo, Scania, Komatsu, Caterpillar, Hitachi and other major equipment manufacturers.</p>
+                    </div>
+                </div>
+                
+                <!-- Strength 4 -->
+                <div class="strength-item">
+                    <div class="strength-icon">
+                        <i data-lucide="package"></i>
+                    </div>
+                    <div class="strength-content">
+                        <h3 class="strength-heading">Purpose-Built Stocking</h3>
+                        <p class="strength-description">Inventory aligned to real-world demand patterns, including critical-failure items, high-wear components and fast-moving parts.</p>
+                    </div>
+                </div>
+                
+                <!-- Strength 5 -->
+                <div class="strength-item">
+                    <div class="strength-icon">
+                        <i data-lucide="cpu"></i>
+                    </div>
+                    <div class="strength-content">
+                        <h3 class="strength-heading">Modern Infrastructure</h3>
+                        <p class="strength-description">Digital part identification, structured sourcing, and organised warehousing led by third-generation management.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
