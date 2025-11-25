@@ -34,6 +34,16 @@
             overflow: hidden;
             box-shadow: 0 20px 50px rgba(0,0,0,0.6);
         }
+        /* Yellow Strip on Left Edge */
+        .yellow-strip {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4mm;
+            background: var(--ptc-gold);
+            z-index: 10;
+        }
         /* Textures */
         .texture-overlay {
             position: absolute;
@@ -54,172 +64,215 @@
             z-index: 16;
             opacity: 0.07;
         }
-        /* Page Header - Fixed height */
-        .page-header {
+        /* Safe Zone - 15mm from edges */
+        .safe-zone {
             position: absolute;
-            top: 25mm;
-            left: 12mm;
+            top: 15mm;
+            left: 19mm; /* 15mm + 4mm yellow strip */
+            right: 15mm;
+            bottom: 15mm;
             z-index: 100;
+        }
+        /* Section A: Engine Systems - Top 55% */
+        .section-a {
+            position: absolute;
+            top: 15mm;
+            left: 19mm;
+            right: 15mm;
+            height: 148.35mm; /* 55% of 297mm - 30mm (top/bottom safe zones) = 55% of 267mm = ~147mm */
+            z-index: 100;
+        }
+        /* Section A Header */
+        .section-a-header {
             font-family: 'Oswald', sans-serif;
             font-weight: 900;
-            font-size: 65px;
+            font-size: 68px;
             color: var(--ptc-gold);
             line-height: 0.9;
+            margin-bottom: 12mm;
             text-transform: uppercase;
-            letter-spacing: -0.02em;
-            padding-left: 26px;
-            border-left: 8px solid var(--ptc-gold);
+            letter-spacing: -0.01em;
         }
-        /* Section 1 - Engine & Turbo - Top half */
-        .section-1 {
-            position: absolute;
-            top: 75mm; /* After header */
-            left: 12mm;
-            right: 12mm;
-            height: 105mm; /* Half of remaining space */
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-        }
-        /* Section 2 - Transmission - Bottom half */
-        .section-2 {
-            position: absolute;
-            top: 192mm; /* Section 1 ends at 75+105=180mm, gap of 12mm */
-            left: 12mm;
-            right: 12mm;
-            height: 93mm; /* Fits exactly to bottom */
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-        }
-        .section-header {
-            font-family: 'Oswald', sans-serif;
-            font-weight: 700;
-            font-size: 38px;
-            color: #FFFFFF;
-            line-height: 1.1;
-            margin-bottom: 6mm;
-            padding-left: 26px;
-            border-left: 8px solid var(--ptc-gold);
-            display: inline-block;
-        }
-        .section-content {
+        /* Brand Wall Grid - 2 rows x 3 columns */
+        .brand-wall-3col {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 20mm;
-            align-items: start;
-            flex: 1;
-            min-height: 0;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 12mm 15mm;
+            margin-bottom: 8mm;
         }
-        .text-content {
+        /* Logo Container */
+        .logo-container {
             display: flex;
-            flex-direction: column;
-            gap: 6mm;
-        }
-        .logos-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6mm;
             align-items: center;
-            margin-bottom: 6mm;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05); /* Subtle white background */
+            padding: 8mm 6mm;
+            border-radius: 2px;
+            min-height: 25mm;
         }
-        .logo-item {
-            height: 18px;
+        .logo-item-large {
+            max-width: 100%;
+            max-height: 18mm;
             width: auto;
-            max-width: 85px;
-            filter: brightness(0) invert(1);
-            opacity: 0.95;
+            height: auto;
             object-fit: contain;
+            filter: brightness(0) invert(1); /* White logos */
         }
-        .body-text {
+        /* Parts List - Small Text */
+        .parts-list {
             font-family: 'Inter', sans-serif;
             font-weight: 400;
-            font-size: 11px;
-            color: #D8D8D8;
-            line-height: 1.5;
-            margin: 0;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.05em;
+            margin-top: 4mm;
         }
-        .product-image-container {
-            display: flex;
-            flex-direction: column;
-            gap: 6mm;
-            height: 100%;
-        }
-        .product-image {
-            width: 100%;
+        /* Product Visual - Bottom Right */
+        .product-visual {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 45%;
             height: auto;
-            max-height: 46%;
+            max-height: 60mm;
             object-fit: contain;
-            background: #000000;
-            padding: 6mm;
-            border-radius: 4px;
-            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.8));
-            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.6);
+            opacity: 0.85;
+            z-index: 5; /* Behind logos */
         }
-        /* Reversed layout for section 2 */
-        .section-2 .section-content {
-            direction: rtl;
+        /* Yellow Divider Line */
+        .yellow-divider {
+            position: absolute;
+            top: 163.35mm; /* Section A ends here */
+            left: 19mm;
+            right: 15mm;
+            height: 2mm;
+            background: var(--ptc-gold);
+            z-index: 100;
         }
-        .section-2 .section-content > * {
-            direction: ltr;
+        /* Section B: Transmission - Bottom 45% */
+        .section-b {
+            position: absolute;
+            top: 175.35mm; /* After divider (163.35 + 2mm divider + 10mm gap) */
+            left: 19mm;
+            right: 15mm;
+            bottom: 15mm;
+            z-index: 100;
+        }
+        /* Section B Header - Right Aligned */
+        .section-b-header {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 900;
+            font-size: 68px;
+            color: var(--ptc-gold);
+            line-height: 0.9;
+            margin-bottom: 12mm;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            text-align: right;
+        }
+        /* Section B Content Grid */
+        .section-b-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15mm;
+            height: calc(100% - 80px);
+        }
+        /* Product Visual Left */
+        .product-visual-left {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0.85;
+            z-index: 5;
+        }
+        /* Brand Wall Right - 2 rows x 2 columns */
+        .brand-wall-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 12mm;
         }
     </style>
 </head>
 <body>
     <div class="page-container">
+        <!-- Yellow Strip on Left Edge -->
+        <div class="yellow-strip"></div>
+        
+        <!-- Textures -->
         <div class="texture-overlay"></div>
         <div class="tech-grid"></div>
         
-        <h1 class="page-header">POWER & PERFORMANCE</h1>
-        
-        <!-- Section 1: Engine & Turbo -->
-        <div class="section-1">
-            <h2 class="section-header">Precision Engine Engineering</h2>
-            <div class="section-content">
-                <div class="text-content">
-                    <div class="logos-container">
-                        <img src="/catalogue-2025/images/logos/brands/mahle.png" alt="Mahle" class="logo-item">
-                        <img src="/catalogue-2025/images/logos/brands/schitzer.png" alt="Schwitzer/BorgWarner" class="logo-item">
-                        <img src="/catalogue-2025/images/logos/brands/Isuzu.svg" alt="Isuzu" class="logo-item">
-                        <img src="/catalogue-2025/images/logos/brands/garrett-logo-png_seeklogo-489181.png" alt="Garrett" class="logo-item">
-                        <img src="/catalogue-2025/images/logos/brands/IHI.jpeg" alt="IHI" class="logo-item">
-                        <img src="/catalogue-2025/images/logos/brands/ks-450-logo.png" alt="KS Kolbenschmidt" class="logo-item">
-                    </div>
-                    <p class="body-text">
-                        PTC supplies OEM-grade engine components engineered for long service life and consistent performance.
-                    </p>
-                    <p class="body-text">
-                        Our inventory includes pistons, liners, overhaul kits and advanced turbocharging systems built for demanding fleets.
-                    </p>
+        <!-- Section A: Engine & Turbo (Top 55%) -->
+        <div class="section-a">
+            <h1 class="section-a-header">ENGINE & TURBO</h1>
+            
+            <!-- Brand Wall - 2 rows x 3 columns -->
+            <div class="brand-wall-3col">
+                <div class="logo-container">
+                    <img src="/catalogue-2025/images/logos/brands/Isuzu.svg" alt="Isuzu" class="logo-item-large">
                 </div>
-                <div class="product-image-container">
-                    <img src="/catalogue-2025/images/products/Piston.png" alt="Piston" class="product-image">
-                    <img src="/catalogue-2025/images/products/Turbocharger.png" alt="Turbocharger" class="product-image">
+                <div class="logo-container">
+                    <img src="/catalogue-2025/images/logos/brands/mahle.png" alt="Mahle" class="logo-item-large">
+                </div>
+                <div class="logo-container">
+                    <img src="/catalogue-2025/images/logos/brands/ks-450-logo.png" alt="KS Kolbenschmidt" class="logo-item-large">
+                </div>
+                <div class="logo-container">
+                    <img src="/catalogue-2025/images/logos/brands/garrett-logo-png_seeklogo-489181.png" alt="Garrett" class="logo-item-large">
+                </div>
+                <div class="logo-container">
+                    <img src="/catalogue-2025/images/logos/brands/IHI.jpeg" alt="IHI" class="logo-item-large">
+                </div>
+                <div class="logo-container">
+                    <img src="/catalogue-2025/images/logos/brands/schitzer.png" alt="BorgWarner" class="logo-item-large">
                 </div>
             </div>
+            
+            <!-- Parts List -->
+            <div class="parts-list">
+                Pistons • Liners • Rings • Turbochargers • Overhaul Kits
+            </div>
+            
+            <!-- Product Visual - Bottom Right -->
+            <img src="/catalogue-2025/images/products/Piston.png" alt="Piston" class="product-visual">
         </div>
         
-        <!-- Section 2: Transmission -->
-        <div class="section-2">
-            <h2 class="section-header">Transmission & Drive Logic</h2>
-            <div class="section-content">
-                <div class="product-image-container">
-                    <img src="/catalogue-2025/images/products/Transmission Gears.png" alt="Transmission" class="product-image">
-                    <img src="/catalogue-2025/images/products/Clutch Disc.png" alt="Clutch" class="product-image">
+        <!-- Yellow Divider Line -->
+        <div class="yellow-divider"></div>
+        
+        <!-- Section B: Transmission & Drivetrain (Bottom 45%) -->
+        <div class="section-b">
+            <h1 class="section-b-header">TRANSMISSION & DRIVETRAIN</h1>
+            
+            <div class="section-b-content">
+                <!-- Product Visual Left -->
+                <div style="position: relative;">
+                    <img src="/catalogue-2025/images/products/Transmission Gears.png" alt="Transmission" class="product-visual-left">
                 </div>
-                <div class="text-content">
-                    <div class="logos-container">
-                        <img src="/catalogue-2025/images/logos/brands/spicer-parts-logo-png_seeklogo-409478.png" alt="Dana Spicer" class="logo-item">
-                        <img src="/catalogue-2025/images/logos/brands/LuK_logo.svg.png" alt="LuK" class="logo-item">
-                        <img src="/catalogue-2025/images/logos/brands/INA_logo.svg" alt="INA" class="logo-item">
-                        <img src="/catalogue-2025/images/logos/brands/dayco-vector-logo.png" alt="Dayco" class="logo-item">
+                
+                <!-- Brand Wall Right - 2 rows x 2 columns -->
+                <div>
+                    <div class="brand-wall-2col">
+                        <div class="logo-container">
+                            <img src="/catalogue-2025/images/logos/brands/spicer-parts-logo-png_seeklogo-409478.png" alt="Dana Spicer" class="logo-item-large">
+                        </div>
+                        <div class="logo-container">
+                            <img src="/catalogue-2025/images/logos/brands/LuK_logo.svg.png" alt="LuK" class="logo-item-large">
+                        </div>
+                        <div class="logo-container">
+                            <img src="/catalogue-2025/images/logos/brands/INA_logo.svg" alt="INA" class="logo-item-large">
+                        </div>
+                        <div class="logo-container">
+                            <img src="/catalogue-2025/images/logos/brands/dayco-vector-logo.png" alt="Dayco" class="logo-item-large">
+                        </div>
                     </div>
-                    <p class="body-text">
-                        Precision drivetrain components covering axles, clutches, bearings and belt systems.
-                    </p>
-                    <p class="body-text">
-                        Reliable performance across hauling, construction and long-route operations.
-                    </p>
+                    
+                    <!-- Parts List -->
+                    <div class="parts-list" style="margin-top: 8mm; text-align: right;">
+                        Axles • Gears • Clutches • Bearings • Tensioners
+                    </div>
                 </div>
             </div>
         </div>
