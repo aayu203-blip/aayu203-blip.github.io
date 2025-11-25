@@ -417,9 +417,21 @@
             width: 16px; /* Thin line icons */
             height: 16px;
             flex-shrink: 0;
-            stroke: rgba(0, 0, 0, 0.85); /* 80-90% opacity black */
-            stroke-width: 1.5px;
-            fill: none;
+            color: rgba(0, 0, 0, 0.85); /* 80-90% opacity black */
+        }
+        .footer-item-icon svg,
+        .footer-item-icon {
+            width: 16px;
+            height: 16px;
+            stroke: rgba(0, 0, 0, 0.85) !important; /* 80-90% opacity black */
+            stroke-width: 1.5px !important;
+            fill: none !important;
+            color: rgba(0, 0, 0, 0.85) !important;
+        }
+        .footer-item-icon svg path {
+            stroke: rgba(0, 0, 0, 0.85) !important;
+            stroke-width: 1.5px !important;
+            fill: none !important;
         }
         /* Footer body text */
         .footer-body {
