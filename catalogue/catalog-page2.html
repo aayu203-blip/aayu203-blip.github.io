@@ -73,13 +73,13 @@
             bottom: 15mm;
             z-index: 100;
         }
-        /* Section A: Engine Systems - Top 55% */
+        /* Section A: Engine Systems - Top 52% (adjusted for better balance) */
         .section-a {
             position: absolute;
             top: 15mm;
             left: 19mm;
             right: 15mm;
-            height: 148.35mm; /* 55% of 297mm - 30mm (top/bottom safe zones) = 55% of 267mm = ~147mm */
+            height: 140mm; /* Slightly reduced for better balance with Section B */
             z-index: 100;
         }
         /* Section A Header */
@@ -111,13 +111,13 @@
         }
         .logo-item-large {
             max-width: 100%;
-            max-height: 18mm;
+            max-height: 20mm; /* Consistent sizing - slightly larger */
             width: auto;
-            height: auto;
+            height: 20mm; /* Fixed height for perfect consistency */
             object-fit: contain;
             filter: brightness(0) invert(1); /* White logos */
         }
-        /* Parts List - Small Text */
+        /* Parts List - Small Text with Gold Bullets */
         .parts-list {
             font-family: 'Inter', sans-serif;
             font-weight: 400;
@@ -125,6 +125,10 @@
             color: rgba(255, 255, 255, 0.6);
             letter-spacing: 0.05em;
             margin-top: 4mm;
+        }
+        .parts-list .bullet {
+            color: var(--ptc-gold);
+            margin: 0 4px;
         }
         /* Product Visual - Bottom Right, overlaps with logos */
         .product-visual {
@@ -139,10 +143,27 @@
             z-index: 3; /* Behind logos but visible */
             filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
         }
+        /* Product Visual Fade Overlay - blends image with logos */
+        .product-visual-fade {
+            position: absolute;
+            bottom: -10mm;
+            right: -5mm;
+            width: 50%;
+            height: 60mm;
+            background: linear-gradient(
+                to left,
+                transparent 0%,
+                rgba(0, 0, 0, 0.2) 30%,
+                rgba(0, 0, 0, 0.5) 60%,
+                rgba(0, 0, 0, 0.8) 100%
+            );
+            z-index: 4;
+            pointer-events: none;
+        }
         /* Yellow Divider Line - Thicker for more impact */
         .yellow-divider {
             position: absolute;
-            top: 163.35mm; /* Section A ends here */
+            top: 155mm; /* Section A ends here (15mm + 140mm) */
             left: 19mm;
             right: 15mm;
             height: 3mm;
@@ -150,10 +171,10 @@
             z-index: 100;
             box-shadow: 0 2px 8px rgba(255, 194, 14, 0.3);
         }
-        /* Section B: Transmission - Bottom 45% */
+        /* Section B: Transmission - Bottom 48% (adjusted for better balance) */
         .section-b {
             position: absolute;
-            top: 175.35mm; /* After divider (163.35 + 2mm divider + 10mm gap) */
+            top: 167mm; /* After divider (155mm + 3mm divider + 9mm gap) */
             left: 19mm;
             right: 15mm;
             bottom: 15mm;
@@ -185,6 +206,23 @@
             object-fit: contain;
             opacity: 0.85;
             z-index: 5;
+        }
+        /* Product Visual Left Fade Overlay */
+        .product-visual-left-fade {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                transparent 0%,
+                rgba(0, 0, 0, 0.3) 40%,
+                rgba(0, 0, 0, 0.7) 80%,
+                rgba(0, 0, 0, 0.9) 100%
+            );
+            z-index: 6;
+            pointer-events: none;
         }
         /* Brand Wall Right - 2 rows x 2 columns */
         .brand-wall-2col {
@@ -232,11 +270,12 @@
             
             <!-- Parts List -->
             <div class="parts-list">
-                Pistons • Liners • Rings • Turbochargers • Overhaul Kits
+                Pistons<span class="bullet">•</span>Liners<span class="bullet">•</span>Rings<span class="bullet">•</span>Turbochargers<span class="bullet">•</span>Overhaul Kits
             </div>
             
             <!-- Product Visual - Bottom Right -->
             <img src="/catalogue-2025/images/products/Piston.png" alt="Piston" class="product-visual">
+            <div class="product-visual-fade"></div>
         </div>
         
         <!-- Yellow Divider Line -->
@@ -250,6 +289,7 @@
                 <!-- Product Visual Left -->
                 <div style="position: relative;">
                     <img src="/catalogue-2025/images/products/Transmission Gears.png" alt="Transmission" class="product-visual-left">
+                    <div class="product-visual-left-fade"></div>
                 </div>
                 
                 <!-- Brand Wall Right - 2 rows x 2 columns -->
@@ -271,7 +311,7 @@
                     
                     <!-- Parts List -->
                     <div class="parts-list" style="margin-top: 8mm; text-align: right;">
-                        Axles • Gears • Clutches • Bearings • Tensioners
+                        Axles<span class="bullet">•</span>Gears<span class="bullet">•</span>Clutches<span class="bullet">•</span>Bearings<span class="bullet">•</span>Tensioners
                     </div>
                 </div>
             </div>
