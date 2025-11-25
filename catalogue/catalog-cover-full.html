@@ -72,7 +72,7 @@
         /* --- TEXTURE & EFFECTS --- */
         .texture-overlay {
             position: absolute;
-            top: 0;
+            top: 125px; /* Start after header to keep image consistent */
             left: 0;
             right: 0;
             bottom: 38mm; /* Match full-page-image */
@@ -132,15 +132,16 @@
             font-family: 'Oswald', sans-serif;
             font-weight: 700;
             font-size: 30px;
-            color: rgba(255, 255, 255, 0.88); /* Match original opacity */
+            color: rgba(255, 255, 255, 0.95); /* Slightly brighter for contrast on image */
             letter-spacing: -0.8px;
             line-height: 0.9;
             margin: 0;
             padding: 0;
             display: block;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for readability */
         }
         .heritage-block .heritage-gold {
-            color: rgba(255, 255, 255, 0.88); /* Match original - white period */
+            color: rgba(255, 255, 255, 0.95);
         }
         .heritage-block .heritage-subtitle {
             font-family: 'Oswald', sans-serif;
@@ -154,6 +155,7 @@
             padding: 0;
             display: block;
             text-transform: none;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         /* Fade overlays for text readability */
         .fade-overlay-top {
@@ -206,7 +208,7 @@
         /* Tech Grid overlay */
         .tech-grid {
             position: absolute;
-            top: 0;
+            top: 125px; /* Start after header to keep image consistent */
             left: 0;
             right: 0;
             bottom: 38mm; /* Match full-page-image */
