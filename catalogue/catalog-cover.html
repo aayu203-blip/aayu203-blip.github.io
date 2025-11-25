@@ -108,8 +108,8 @@
         /* Heritage Block - Top Right Corner (Compact Badge) */
         .heritage-block {
             position: absolute;
-            top: 36px; /* 32-40px range, using 36px - moved UP to keep header compact */
-            right: 50px; /* 44-56px range, using 50px for balance */
+            top: -4px; /* Moved UP by 40px (from 36px to -4px) - badge bottom ~18-22px above header edge */
+            right: 60px; /* Increased to 56-64px range, using 60px for premium spacing */
             z-index: 35;
             text-align: right;
             max-width: 240px; /* Maximum block width */
@@ -117,10 +117,10 @@
         .heritage-block .heritage-line {
             font-family: 'Oswald', sans-serif;
             font-weight: 700;
-            font-size: 44px; /* 65% of main slogan size, matching Option B spec */
+            font-size: 38px; /* Reduced by 20-25% (from 44px to 38px) - makes it secondary, not competing */
             color: #FFFFFF; /* Pure white */
             letter-spacing: -0.8px; /* Tightened tracking */
-            line-height: 0.95; /* Tight, industrial line-height */
+            line-height: 0.9; /* Tightened line-height for compact brand stamp look */
             margin: 0;
             padding: 0;
             display: block;
@@ -128,12 +128,12 @@
         .heritage-block .heritage-subtitle {
             font-family: 'Oswald', sans-serif;
             font-weight: 500;
-            font-size: 22px; /* Option B spec size */
+            font-size: 18px; /* Reduced by 20-25% (from 22px to 18px) */
             color: rgba(255, 255, 255, 0.85); /* 85% opacity white */
             letter-spacing: 3px; /* +3px tracking */
             line-height: 1.2;
             margin: 0;
-            margin-top: 6px; /* Spacing after LEGACY. */
+            margin-top: 8px; /* Reduced gap (6-8px range, using 8px) - anchors the block */
             padding: 0;
             display: block;
             text-transform: none; /* Sentence case */
