@@ -362,7 +362,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr; /* 3 equal width columns */
             gap: 10mm; /* Spacing between columns */
-            align-items: start;
+            align-items: center; /* Vertically center align all columns */
             z-index: 30;
             height: 50mm; /* 16-18% of page height (297mm * 0.17 = ~50mm) - taller footer */
             margin-top: auto;
@@ -373,6 +373,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            justify-content: center; /* Vertically center content within column */
             gap: 8px; /* Space between rows */
         }
         /* Footer section title */
@@ -537,12 +538,11 @@
 
         <!-- FOOTER - Premium 3-column layout -->
         <div class="footer-band">
-            <!-- Column 1 - Catalogue -->
+            <!-- Column 1 - QR Code -->
             <div class="footer-column">
                 <div class="footer-qr">
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.partstrading.com/catalogue" alt="QR Code" />
                 </div>
-                <div class="footer-url">www.partstrading.com</div>
             </div>
             
             <!-- Column 2 - Address -->
@@ -558,7 +558,7 @@
                 </div>
             </div>
             
-            <!-- Column 3 - Contact -->
+            <!-- Column 3 - Contact + Website -->
             <div class="footer-column">
                 <div class="footer-item">
                     <i data-lucide="mail" class="footer-item-icon"></i>
@@ -567,6 +567,10 @@
                 <div class="footer-item">
                     <i data-lucide="phone" class="footer-item-icon"></i>
                     <div class="footer-body">40755999 (32 lines)</div>
+                </div>
+                <div class="footer-item">
+                    <i data-lucide="globe" class="footer-item-icon"></i>
+                    <div class="footer-body">www.partstrading.com</div>
                 </div>
             </div>
         </div>
