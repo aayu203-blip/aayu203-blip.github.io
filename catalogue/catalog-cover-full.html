@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PTC Catalogue - Global Parts Edition (Full Image)</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* --- PRINT SETTINGS --- */
+        @page {
+            size: A4;
+            margin: 0;
+            margin-bottom: 5mm;
+        }
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: none;
+            }
+            .cover-container {
+                box-shadow: none;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+            }
+        }
+        /* --- GLOBAL VARS --- */
+        :root {
+            --ptc-gold: #FFC20E;
+            --dark-bg: #000000;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #555;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            align-items: center;
+        }
+        /* A4 Container (210mm x 297mm) */
+        .cover-container {
+            width: 210mm; 
+            height: 297mm;
+            background-color: #000000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            padding-top: 5mm;
+            padding-bottom: 5mm;
+        }
+        /* --- FULL PAGE IMAGE BACKGROUND (Header + Hero + Lists) --- */
+        .full-page-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 38mm; /* Stop before footer (footer height is 38mm) */
+            background-image: url('/catalogue-2025/images/Untitled%20design%20(10).png');
+            background-size: cover;
+            background-position: right top;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+        /* --- TEXTURE & EFFECTS --- */
+        .texture-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 38mm; /* Match full-page-image */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 50;
+            mix-blend-mode: overlay;
+        }
+        /* --- LAYOUT SECTIONS --- */
+        /* Header - Now transparent/overlay on image */
+        .top-bar {
+            background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+            padding: 0.8mm 12mm 0.8mm 12mm;
+            padding-top: 31px;
+            height: 125px;
+            min-height: 125px;
+            z-index: 30;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-bottom: none;
+            position: relative;
+        }
+        .user-logo-placeholder {
+            margin: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+            display: block;
+            line-height: 0;
+        }
+        .logo-image {
+            height: 24mm;
+            width: auto;
+            max-width: 50mm;
+            object-fit: contain;
+            object-position: center top;
+            filter: drop-shadow(0 5px 10px rgba(255, 194, 14, 0.25));
+            margin: 0;
+            margin-bottom: 0;
+            padding: 0;
+            display: block;
+            position: relative;
+            top: 12px;
+            transform: scale(1.05);
+        }
+        /* Heritage Block - Top Right Corner */
+        .heritage-block {
+            position: absolute;
+            top: 31px;
+            right: 52px;
+            z-index: 35;
+            text-align: right;
+            max-width: 240px;
+        }
+        .heritage-block .heritage-line {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.95); /* Slightly brighter for contrast on image */
+            letter-spacing: -0.8px;
+            line-height: 0.9;
+            margin: 0;
+            padding: 0;
+            display: block;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for readability */
+        }
+        .heritage-block .heritage-gold {
+            color: rgba(255, 255, 255, 0.95);
+        }
+        .heritage-block .heritage-subtitle {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 13px;
+            color: var(--ptc-gold);
+            letter-spacing: 3px;
+            line-height: 1.2;
+            margin: 0;
+            margin-top: 4px;
+            padding: 0;
+            display: block;
+            text-transform: none;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        /* Fade overlays for text readability */
+        .fade-overlay-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 180px; /* Cover header area */
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.7) 0%,
+                rgba(0, 0, 0, 0.4) 50%,
+                rgba(0, 0, 0, 0.2) 100%
+            );
+            z-index: 2;
+            pointer-events: none;
+        }
+        .fade-overlay-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 38mm; /* Match full-page-image */
+            width: 45%;
+            background: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.75) 0%,
+                rgba(0, 0, 0, 0.5) 40%,
+                rgba(0, 0, 0, 0.25) 60%,
+                transparent 80%
+            );
+            z-index: 3;
+            pointer-events: none;
+        }
+        .fade-overlay-bottom {
+            position: absolute;
+            bottom: 38mm; /* Above footer */
+            left: 0;
+            right: 0;
+            height: 120mm; /* Cover lists area */
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.8) 0%,
+                rgba(0, 0, 0, 0.5) 30%,
+                rgba(0, 0, 0, 0.2) 60%,
+                transparent 100%
+            );
+            z-index: 4;
+            pointer-events: none;
+        }
+        /* Tech Grid overlay */
+        .tech-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 38mm; /* Match full-page-image */
+            background-size: 42px 42px;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            pointer-events: none;
+            z-index: 16;
+            opacity: 0.07;
+            mix-blend-mode: normal;
+        }
+        /* Hero Content - Slogan */
+        .hero-content {
+            position: absolute;
+            bottom: 140mm; /* Position above lists */
+            left: 0;
+            right: 0;
+            z-index: 20;
+            padding: 133px 10mm 20mm calc(18mm + 30px);
+            margin-top: 0;
+        }
+        /* Lists section - Now overlay on image instead of separate background */
+        .lists-section {
+            background: transparent; /* Transparent - image shows through */
+            padding: 0;
+            position: relative;
+            z-index: 25;
+            margin-bottom: 0;
+        }
+        .lists-content {
+            padding: 17px 10mm 20px calc(18mm + 30px);
+        }
+        /* Typography & Layout elements */
+        .gold-border {
+            border-left: 8px solid var(--ptc-gold);
+            padding-left: 18px;
+            display: inline-block;
+            margin-bottom: 16px;
+            height: fit-content;
+        }
+        .headline {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            font-size: 44px;
+            line-height: 0.91;
+            margin: 0;
+            letter-spacing: -0.01em;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); /* Add shadow for readability on image */
+        }
+        .headline .gold { 
+            color: var(--ptc-gold); 
+        }
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            align-items: flex-start;
+            background: rgba(0, 0, 0, 0.4); /* Semi-transparent background for readability */
+            padding: 7px 12px;
+            border-radius: 2px;
+            margin-top: 8px;
+            margin-left: -8px;
+        }
+        .section-title {
+            color: #B5B5B5;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            margin-bottom: 4px;
+            margin-top: 0;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        .info-grid > div:first-child .section-title,
+        .info-grid > div:last-child .section-title {
+            margin-bottom: 4px;
+        }
+        .list-text {
+            color: #E6E6E6;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 1.38;
+            letter-spacing: 0.01em;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+        }
+        .list-text span {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .list-text span:last-child {
+            margin-bottom: 0;
+        }
+        /* Footer - Premium 3-column layout (Separate - not on image) */
+        .footer-band {
+            background: var(--ptc-gold);
+            color: #000;
+            padding: 12px calc(18mm + 30px) 10px calc(18mm + 30px);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10mm;
+            align-items: center;
+            z-index: 30;
+            height: 38mm;
+            margin-top: auto;
+            margin-bottom: 0;
+            position: relative; /* Ensure it stays at bottom */
+        }
+        /* Footer column */
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 3px;
+        }
+        /* Footer section title */
+        .footer-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.85);
+            line-height: 1.2;
+            margin-bottom: 4px;
+            text-transform: none;
+        }
+        /* Footer QR code */
+        .footer-qr {
+            width: 80px;
+            height: 80px;
+            background: #FFFFFF;
+            padding: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 6px;
+        }
+        .footer-qr img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        /* Footer text with inline icon */
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 3px;
+        }
+        .footer-item:last-child {
+            margin-bottom: 0;
+        }
+        /* Footer icons - inline with text */
+        .footer-item-icon {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            color: rgba(0, 0, 0, 0.85);
+        }
+        .footer-item-icon svg,
+        .footer-item-icon {
+            width: 16px;
+            height: 16px;
+            stroke: rgba(0, 0, 0, 0.85) !important;
+            stroke-width: 1.5px !important;
+            fill: none !important;
+            color: rgba(0, 0, 0, 0.85) !important;
+        }
+        .footer-item-icon svg path {
+            stroke: rgba(0, 0, 0, 0.85) !important;
+            stroke-width: 1.5px !important;
+            fill: none !important;
+        }
+        /* Footer body text */
+        .footer-body {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.85);
+            line-height: 1.3;
+        }
+        /* Footer website URL */
+        .footer-url {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            color: rgba(0, 0, 0, 0.85);
+            line-height: 1.3;
+        }
+        /* Address text - multi-line format */
+        .footer-address-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.85);
+            line-height: 1.4;
+        }
+        .footer-address-primary {
+            display: block;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 2px;
+        }
+        /* WhatsApp contact styling */
+        .footer-whatsapp-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 4px;
+        }
+        .footer-whatsapp-item:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="cover-container">
+        <!-- Full Page Image Background (covers header + hero + lists) -->
+        <div class="full-page-image"></div>
+        
+        <!-- Fade Overlays for Text Readability -->
+        <div class="fade-overlay-top"></div>
+        <div class="fade-overlay-left"></div>
+        <div class="fade-overlay-bottom"></div>
+        
+        <!-- Textures -->
+        <div class="texture-overlay"></div>
+        <div class="tech-grid"></div>
+        
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; margin-left: 48px; gap: 0; position: relative;">
+                <div class="user-logo-placeholder">
+                    <img src="/catalogue-2025/images/logos/ptc-logo.png" alt="PTC Parts Trading Company" class="logo-image">
+                </div>
+            </div>
+            <!-- Heritage Block - Top Right (Compact Badge) -->
+            <div class="heritage-block">
+                <div class="heritage-line">HEAVY DUTY</div>
+                <div class="heritage-line">LEGACY<span class="heritage-gold">.</span></div>
+                <div class="heritage-subtitle">Since 1956</div>
+            </div>
+        </div>
+
+        <!-- HERO CONTENT - Slogan -->
+        <div class="hero-content">
+            <div class="gold-border">
+                <h2 class="headline">
+                    IF YOU HAVE<br>
+                    <span class="gold">EARTHMOVERS</span>,<br>
+                    WE HAVE<br>
+                    <span class="gold">PARTS.</span>
+                </h2>
+            </div>
+        </div>
+
+        <!-- LISTS SECTION - Overlay on image -->
+        <div class="lists-section">
+            <div class="lists-content">
+                <div class="info-grid">
+                    <!-- Inventory -->
+                    <div>
+                        <div class="section-title">INVENTORY</div>
+                        <div class="list-text">
+                            <span>Hydraulic Pumps</span>
+                            <span>Hydraulic Components</span>
+                            <span>Engine Components</span>
+                            <span>Transmission Components</span>
+                            <span>Undercarriage</span>
+                            <span>Electrical &amp; Sensors</span>
+                            <span>Filters &amp; Consumables</span>
+                            <span>Seals &amp; Gaskets</span>
+                            <span>Cooling System Components</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="section-title">EQUIPMENT WE SUPPORT</div>
+                        <div class="list-text">
+                            <span>Volvo</span>
+                            <span>Scania</span>
+                            <span>Komatsu</span>
+                            <span>Caterpillar</span>
+                            <span>Hitachi</span>
+                            <span>Kobelco</span>
+                            <span>Hyundai</span>
+                            <span>SANY</span>
+                            <span>Liugong</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER - Premium 3-column layout (Separate - not on image) -->
+        <div class="footer-band">
+            <!-- Column 1 - QR Code -->
+            <div class="footer-column">
+                <div class="footer-qr">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.PartsTrading.Com" alt="QR Code" />
+                </div>
+            </div>
+            
+            <!-- Column 2 - Address -->
+            <div class="footer-column">
+                <div class="footer-item">
+                    <i data-lucide="map-pin" class="footer-item-icon"></i>
+                    <div class="footer-address-text">
+                        <span class="footer-address-primary">Parts Trading Company</span>
+                        Vijay Chambers, 1st Floor<br>
+                        Opp. Dreamland Cinema<br>
+                        Mumbai 400 004
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Column 3 - Contact + Website + WhatsApp -->
+            <div class="footer-column">
+                <div class="footer-item">
+                    <i data-lucide="mail" class="footer-item-icon"></i>
+                    <div class="footer-body">parts@partstrading.com</div>
+                </div>
+                <div class="footer-item">
+                    <i data-lucide="globe" class="footer-item-icon"></i>
+                    <div class="footer-body">www.partstrading.com</div>
+                </div>
+                <div class="footer-item">
+                    <i data-lucide="phone" class="footer-item-icon"></i>
+                    <div class="footer-body">022407 55999 (32 lines)</div>
+                </div>
+                <div class="footer-item">
+                    <i data-lucide="message-circle" class="footer-item-icon"></i>
+                    <div class="footer-body">98210 37990</div>
+                </div>
+                <div class="footer-item">
+                    <i data-lucide="message-circle" class="footer-item-icon"></i>
+                    <div class="footer-body">98920 05009</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
