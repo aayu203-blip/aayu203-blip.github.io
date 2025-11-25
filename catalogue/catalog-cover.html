@@ -101,7 +101,7 @@
             padding: 0;
             display: block;
             position: relative;
-            top: 0; /* Logo positioned within header padding - aligns to grid baseline */
+            top: 8px; /* Moved down to vertically center align with heritage text */
             /* Trim invisible space - show only actual logo content */
             transform: scale(1.05); /* Slight scale to crop edges if needed */
         }
@@ -171,25 +171,27 @@
             z-index: 4;
             pointer-events: none;
         }
-        /* Bottom Fade - Fade to lists section, smooth merge */
+        /* Bottom Fade - Stronger fade to lists section, smooth merge - no harsh line */
         .hero-fade-bottom-image {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            height: 40mm; /* Extended fade for seamless transition to lists section */
+            height: 55mm; /* Extended fade for smoother transition - stronger fade, no harsh line */
             background: linear-gradient(
                 to bottom,
                 transparent 0%,
-                rgba(0, 0, 0, 0.2) 20%,
-                rgba(0, 0, 0, 0.5) 50%,
-                rgba(0, 0, 0, 0.75) 75%,
+                rgba(0, 0, 0, 0.15) 10%,
+                rgba(0, 0, 0, 0.35) 25%,
+                rgba(0, 0, 0, 0.55) 45%,
+                rgba(0, 0, 0, 0.75) 65%,
+                rgba(0, 0, 0, 0.9) 85%,
                 rgba(0, 0, 0, 1) 100% /* Full black at bottom to merge with lists */
             );
             z-index: 5;
             pointer-events: none;
-            mask-image: radial-gradient(ellipse 120% 450px at bottom center, black 0%, transparent 100%);
-            -webkit-mask-image: radial-gradient(ellipse 120% 450px at bottom center, black 0%, transparent 100%);
+            mask-image: radial-gradient(ellipse 150% 600px at bottom center, black 0%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 150% 600px at bottom center, black 0%, transparent 100%);
         }
         /* Left-to-Right Fade (covers 40-45% of left side) - Stronger + Wider */
         .hero-fade-left {
