@@ -71,14 +71,15 @@
         .top-bar {
             background: #000;
             padding: 0.8mm 12mm 0.8mm 12mm; /* Reduced height by 20-25% */
-            padding-top: calc(0.8mm - 70px); /* Shift logo and EST up by 70px to reduce blank space */
-            height: auto; /* Auto height to accommodate logo and EST. 1956 */
-            min-height: auto; /* Remove fixed min-height - let content determine height */
+            padding-top: calc(0.8mm - 70px); /* Shift logo up by 70px to reduce blank space */
+            height: auto; /* Auto height to accommodate logo and heritage block */
+            min-height: 80px; /* Increased by ~10% to fit heritage block cleanly */
             z-index: 30;
             display: flex;
-            flex-direction: column; /* Stack logo and EST. 1956 vertically */
+            flex-direction: column;
             align-items: flex-start;
             border-bottom: none; /* Remove border for seamless fade into image */
+            position: relative; /* For absolute positioning of heritage block */
         }
         .user-logo-placeholder {
             margin: 0;
@@ -104,19 +105,38 @@
             /* Trim invisible space - show only actual logo content */
             transform: scale(1.05); /* Slight scale to crop edges if needed */
         }
-        .est-year {
-            font-family: 'Noto Sans', sans-serif; /* Match Global font */
-            font-size: 18px;
-            color: var(--ptc-gold); /* Same gold color as logo */
-            font-weight: 400; /* Not bold */
-            letter-spacing: 0.02em;
+        /* Heritage Block - Top Right Corner */
+        .heritage-block {
+            position: absolute;
+            top: 56px; /* 48-64px range, using 56px for balance */
+            right: 50px; /* 44-56px range, using 50px for balance */
+            z-index: 35;
+            text-align: right;
+            line-height: 0.88; /* Tight, industrial line-height */
+        }
+        .heritage-block .heritage-line {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 29px; /* 65% of 44px headline = 28.6px, rounded to 29px */
+            color: #FFFFFF; /* Pure white */
+            letter-spacing: -1px; /* Slightly tightened tracking */
+            line-height: 0.88;
             margin: 0;
-            margin-top: 8px; /* Increased space between logo and EST */
             padding: 0;
             display: block;
-            text-align: center; /* Center-align text */
-            line-height: 1; /* Tight line height */
-            /* Position right after "PARTS TRADING COMPANY" text in logo (where green circle is) */
+        }
+        .heritage-block .heritage-subtitle {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 20px; /* 68% of 29px = 19.7px, rounded to 20px */
+            color: rgba(255, 255, 255, 0.85); /* 85% opacity white */
+            letter-spacing: 5px; /* +5 tracking */
+            line-height: 1.2;
+            margin: 0;
+            margin-top: 2px; /* Small spacing after LEGACY. */
+            padding: 0;
+            display: block;
+            text-transform: none; /* Sentence case */
         }
         /* Hero Area - Photo Background - Only covers slogan area, fades out before lists */
         .hero-image {
@@ -450,7 +470,13 @@
                 <div class="user-logo-placeholder">
                     <img src="/catalogue-2025/images/logos/ptc-logo.png" alt="PTC Parts Trading Company" class="logo-image">
                 </div>
-                <div class="est-year" style="align-self: center; margin-left: 0; margin-top: -115px; position: relative;">EST. 1956</div>
+            </div>
+            <!-- Heritage Block - Top Right -->
+            <div class="heritage-block">
+                <div class="heritage-line">HEAVY</div>
+                <div class="heritage-line">DUTY</div>
+                <div class="heritage-line">LEGACY.</div>
+                <div class="heritage-subtitle">Since 1956.</div>
             </div>
         </div>
 
