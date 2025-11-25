@@ -10,7 +10,6 @@
         @page {
             size: A4;
             margin: 0;
-            margin-bottom: 5mm;
         }
         @media print {
             body {
@@ -40,18 +39,17 @@
             min-height: 100vh;
             align-items: center;
         }
-        /* A4 Container (210mm x 297mm) */
+        /* A4 Container - EXACT A4 DIMENSIONS */
         .page-container {
             width: 210mm; 
-            height: 297mm;
+            height: 297mm; /* EXACT A4 height */
             background-color: #000000;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            padding-top: 5mm;
-            padding-bottom: 5mm;
+            /* NO padding - content fits exactly in A4 */
         }
         /* Film Grain */
         .texture-overlay {
@@ -75,105 +73,116 @@
             opacity: 0.07;
             mix-blend-mode: normal;
         }
-        /* Content Area - HIGH Z-INDEX for visibility */
+        /* Content Area - fits within A4 */
         .page-content {
-            flex: 1;
-            padding: 80px 80px 80px 80px;
+            padding: 50px 80px 50px 80px; /* Top/bottom reduced to fit A4 */
             position: relative;
-            z-index: 100; /* High z-index so content is visible */
-            overflow-y: auto;
+            z-index: 100;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
         }
         /* Page Header with Gold Bar */
         .page-header {
             font-family: 'Oswald', sans-serif;
-            font-weight: 900; /* Heavy */
-            font-size: 75px; /* 72-78px range */
+            font-weight: 900;
+            font-size: 72px;
             color: var(--ptc-gold);
-            line-height: 1;
-            margin-bottom: 60px;
+            line-height: 0.9;
+            margin-bottom: 40px;
             text-transform: uppercase;
             letter-spacing: -0.02em;
-            position: relative;
-            padding-left: 26px; /* 8px border + 18px padding */
+            padding-left: 26px;
             border-left: 8px solid var(--ptc-gold);
             display: inline-block;
         }
+        /* Sections Container */
+        .sections-wrapper {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 35px;
+            flex: 1;
+            min-height: 0;
+        }
         /* Section Container */
         .section {
-            margin-bottom: 90px; /* 80-100px between sections */
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
         }
         /* Section Header with Gold Bar */
         .section-header {
             font-family: 'Oswald', sans-serif;
-            font-weight: 700; /* Bold */
-            font-size: 45px; /* 42-48px range */
+            font-weight: 700;
+            font-size: 42px;
             color: #FFFFFF;
             line-height: 1.1;
-            margin-bottom: 20px;
-            padding-left: 26px; /* 8px border + 18px padding */
+            margin-bottom: 15px;
+            padding-left: 26px;
             border-left: 8px solid var(--ptc-gold);
             display: inline-block;
         }
-        /* Section Content Wrapper */
+        /* Section Content - Better grid */
         .section-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
             align-items: start;
-            margin-top: 30px;
+            flex: 1;
+            min-height: 0;
         }
         /* Text Content */
         .text-content {
             display: flex;
             flex-direction: column;
+            gap: 15px;
+        }
+        /* Logos Container */
+        .logos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .logo-item {
+            height: 24px;
+            width: auto;
+            max-width: 100px;
+            filter: brightness(0) invert(1);
+            opacity: 0.95;
+            object-fit: contain;
         }
         /* Body Text */
         .body-text {
             font-family: 'Inter', sans-serif;
             font-weight: 400;
-            font-size: 14px;
-            color: #D8D8D8; /* Light grey for visibility */
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        /* Logos Container - positioned below sub-header */
-        .logos-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items: center;
-            margin-bottom: 30px;
-            margin-top: 10px;
-        }
-        .logo-item {
-            height: 28px;
-            width: auto;
-            max-width: 120px;
-            filter: brightness(0) invert(1); /* White logos */
-            opacity: 0.9;
+            font-size: 13px;
+            color: #D8D8D8;
+            line-height: 1.5;
+            margin: 0;
         }
         /* Product Image Container */
         .product-image-container {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
+            height: 100%;
         }
-        /* Product Image with premium styling */
+        /* Product Image */
         .product-image {
             width: 100%;
             height: auto;
-            max-height: 180mm;
+            max-height: 45%;
             object-fit: contain;
-            background: #000000; /* Black background */
-            padding: 20px;
+            background: #000000;
+            padding: 15px;
             border-radius: 4px;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
-            /* Vignette effect */
-            box-shadow: 
-                inset 0 0 80px rgba(0, 0, 0, 0.6),
-                0 0 40px rgba(255, 194, 14, 0.1);
+            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.8));
+            box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
         }
-        /* Section 2 - Reversed Layout */
+        /* Reversed layout for section 2 */
         .section-reversed .section-content {
             direction: rtl;
         }
@@ -184,64 +193,59 @@
 </head>
 <body>
     <div class="page-container">
-        <!-- Textures -->
         <div class="texture-overlay"></div>
         <div class="tech-grid"></div>
         
-        <!-- Page Content -->
         <div class="page-content">
-            <!-- Page Header with Gold Bar -->
             <h1 class="page-header">POWER & PERFORMANCE</h1>
             
-            <!-- Section 1: Engine & Turbo Systems -->
-            <div class="section">
-                <h2 class="section-header">Precision Engine Engineering</h2>
-                <div class="section-content">
-                    <div class="text-content">
-                        <!-- Logos positioned below header -->
-                        <div class="logos-container">
-                            <img src="/website_assets/logos/mahle_logo.png" alt="Mahle" class="logo-item" onerror="this.style.display='none'">
-                            <img src="/website_assets/logos/borgwarner_logo.png" alt="BorgWarner" class="logo-item" onerror="this.style.display='none'">
-                            <img src="/website_assets/logos/isuzu_logo.png" alt="Isuzu" class="logo-item" onerror="this.style.display='none'">
-                            <img src="/website_assets/logos/garrett_logo.png" alt="Garrett" class="logo-item" onerror="this.style.display='none'">
+            <div class="sections-wrapper">
+                <!-- Section 1: Engine & Turbo Systems -->
+                <div class="section">
+                    <h2 class="section-header">Precision Engine Engineering</h2>
+                    <div class="section-content">
+                        <div class="text-content">
+                            <div class="logos-container">
+                                <img src="/website_assets/logos/mahle_logo.png" alt="Mahle" class="logo-item">
+                                <img src="/website_assets/logos/borgwarner_logo.png" alt="BorgWarner/Schwitzer" class="logo-item">
+                                <img src="/website_assets/logos/isuzu_logo.png" alt="Isuzu" class="logo-item">
+                                <img src="/website_assets/logos/garrett_logo.png" alt="Garrett" class="logo-item">
+                            </div>
+                            <p class="body-text">
+                                PTC supplies OEM-grade engine components engineered for long service life and consistent performance.
+                            </p>
+                            <p class="body-text">
+                                Our inventory includes pistons, liners, overhaul kits and advanced turbocharging systems built for demanding fleets.
+                            </p>
                         </div>
-                        <!-- Body Text -->
-                        <p class="body-text">
-                            PTC supplies OEM-grade engine components engineered for long service life and consistent performance.
-                        </p>
-                        <p class="body-text">
-                            Our inventory includes pistons, liners, overhaul kits and advanced turbocharging systems built for demanding fleets.
-                        </p>
-                    </div>
-                    <div class="product-image-container">
-                        <img src="/catalogue-2025/images/products/Piston.png" alt="Piston & Liner Kit" class="product-image" onerror="this.style.display='none'">
-                        <img src="/catalogue-2025/images/products/Turbocharger.png" alt="Turbocharger" class="product-image" onerror="this.style.display='none'">
+                        <div class="product-image-container">
+                            <img src="/catalogue-2025/images/products/Piston.png" alt="Piston & Liner Kit" class="product-image">
+                            <img src="/catalogue-2025/images/products/Turbocharger.png" alt="Turbocharger" class="product-image">
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Section 2: Drivetrain & Transmission -->
-            <div class="section section-reversed">
-                <h2 class="section-header">Transmission & Drive Logic</h2>
-                <div class="section-content">
-                    <div class="product-image-container">
-                        <img src="/catalogue-2025/images/products/Transmission Gears.png" alt="Transmission Gears" class="product-image" onerror="this.style.display='none'">
-                        <img src="/catalogue-2025/images/products/Clutch Disc.png" alt="Clutch" class="product-image" onerror="this.style.display='none'">
-                    </div>
-                    <div class="text-content">
-                        <!-- Logos positioned below header -->
-                        <div class="logos-container">
-                            <img src="/website_assets/logos/dana_spicer_logo.png" alt="Dana Spicer" class="logo-item" onerror="this.style.display='none'">
-                            <img src="/website_assets/logos/luk_logo.png" alt="LuK" class="logo-item" onerror="this.style.display='none'">
-                            <img src="/website_assets/logos/dayco_logo.png" alt="Dayco" class="logo-item" onerror="this.style.display='none'">
+                
+                <!-- Section 2: Drivetrain & Transmission -->
+                <div class="section section-reversed">
+                    <h2 class="section-header">Transmission & Drive Logic</h2>
+                    <div class="section-content">
+                        <div class="product-image-container">
+                            <img src="/catalogue-2025/images/products/Transmission Gears.png" alt="Transmission Gears" class="product-image">
+                            <img src="/catalogue-2025/images/products/Clutch Disc.png" alt="Clutch" class="product-image">
                         </div>
-                        <!-- Body Text -->
-                        <p class="body-text">
-                            Precision drivetrain components covering axles, clutches, bearings and belt systems.
-                        </p>
-                        <p class="body-text">
-                            Reliable performance across hauling, construction and long-route operations.
-                        </p>
+                        <div class="text-content">
+                            <div class="logos-container">
+                                <img src="/website_assets/logos/dana_spicer_logo.png" alt="Dana Spicer" class="logo-item">
+                                <img src="/website_assets/logos/luk_logo.png" alt="LuK" class="logo-item">
+                                <img src="/website_assets/logos/dayco_logo.png" alt="Dayco" class="logo-item">
+                            </div>
+                            <p class="body-text">
+                                Precision drivetrain components covering axles, clutches, bearings and belt systems.
+                            </p>
+                            <p class="body-text">
+                                Reliable performance across hauling, construction and long-route operations.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
