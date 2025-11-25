@@ -84,7 +84,7 @@
         /* --- LAYOUT SECTIONS --- */
         /* Header - Now transparent/overlay on image */
         .top-bar {
-            background: transparent; /* Fully transparent - no overlay box */
+            background: none !important; /* Absolutely no background */
             padding: 0.8mm 12mm 0.8mm 12mm;
             padding-top: 31px;
             height: 125px;
@@ -95,6 +95,8 @@
             align-items: flex-start;
             border-bottom: none;
             position: relative;
+            box-shadow: none !important; /* No shadows */
+            opacity: 1 !important; /* Full opacity */
         }
         .user-logo-placeholder {
             margin: 0;
@@ -157,21 +159,9 @@
             text-transform: none;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
-        /* Fade overlays for text readability */
+        /* Fade overlays for text readability - REMOVED from header area */
         .fade-overlay-top {
-            position: absolute;
-            top: 125px; /* Start after header (header height is 125px) */
-            left: 0;
-            right: 0;
-            height: 180px;
-            background: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0.3) 0%,
-                rgba(0, 0, 0, 0.1) 50%,
-                transparent 100%
-            );
-            z-index: 2;
-            pointer-events: none;
+            display: none; /* Completely remove to keep header area consistent */
         }
         .fade-overlay-left {
             position: absolute;
@@ -440,7 +430,7 @@
         <div class="full-page-image"></div>
         
         <!-- Fade Overlays for Text Readability -->
-        <div class="fade-overlay-top"></div>
+        <!-- fade-overlay-top removed to keep header area consistent -->
         <div class="fade-overlay-left"></div>
         <div class="fade-overlay-bottom"></div>
         
