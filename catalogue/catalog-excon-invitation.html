@@ -208,37 +208,53 @@
             vertical-align: middle;
         }
         
-        /* QR Code - Bottom Left */
-        .qr-section {
+        /* Website - Bottom Left */
+        .website-section {
             position: absolute;
             bottom: 80px;
             left: 80px;
             z-index: 10;
         }
-        .qr-code {
-            width: 180px;
-            height: 180px;
-            background: #FFFFFF;
-            padding: 8px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .qr-code img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        .qr-website {
+        .website-text {
             font-family: 'Inter', sans-serif;
             font-weight: 600; /* Semibold */
             font-size: 32px;
-            color: #FFFFFF;
+            color: var(--ptc-gold); /* Yellow */
             text-align: left;
             margin: 0;
             padding: 0;
+        }
+        
+        /* Equipment Section - Bottom */
+        .equipment-section {
+            position: absolute;
+            bottom: 80px;
+            right: 80px;
+            z-index: 10;
+            text-align: right;
+        }
+        .equipment-title {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            color: #B5B5B5;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            margin-bottom: 12px;
+        }
+        .equipment-list {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 22px;
+            color: #E6E6E6;
+            line-height: 1.4;
+        }
+        .equipment-list span {
+            display: block;
+            margin-bottom: 4px;
+        }
+        .equipment-list span:last-child {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -290,12 +306,25 @@
             </div>
         </div>
         
-        <!-- QR Code - Bottom Left -->
-        <div class="qr-section">
-            <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.PartsTrading.Com" alt="QR Code" />
+        <!-- Website - Bottom Left -->
+        <div class="website-section">
+            <p class="website-text">www.partstrading.com</p>
+        </div>
+        
+        <!-- Equipment Section - Bottom Right -->
+        <div class="equipment-section">
+            <div class="equipment-title">EQUIPMENT WE SUPPORT</div>
+            <div class="equipment-list">
+                <span>Volvo</span>
+                <span>Scania</span>
+                <span>Komatsu</span>
+                <span>Caterpillar</span>
+                <span>Hitachi</span>
+                <span>Kobelco</span>
+                <span>Hyundai</span>
+                <span>SANY</span>
+                <span>Liugong</span>
             </div>
-            <p class="qr-website">www.partstrading.com</p>
         </div>
     </div>
 </body>
