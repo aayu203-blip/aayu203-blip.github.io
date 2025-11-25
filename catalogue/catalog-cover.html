@@ -53,6 +53,7 @@
             display: flex;
             flex-direction: column;
             box-shadow: 0 20px 50px rgba(0,0,0,0.6); /* Premium shadow */
+            padding-top: 5mm; /* Printing margin at top */
             padding-bottom: 5mm; /* Printer margin - inside container so everything fits in A4 */
         }
         /* --- TEXTURE & EFFECTS --- */
@@ -101,7 +102,7 @@
             padding: 0;
             display: block;
             position: relative;
-            top: 8px; /* Moved down to vertically center align with heritage text */
+            top: 12px; /* Moved down further for better vertical center alignment with heritage text */
             /* Trim invisible space - show only actual logo content */
             transform: scale(1.05); /* Slight scale to crop edges if needed */
         }
@@ -117,7 +118,7 @@
         .heritage-block .heritage-line {
             font-family: 'Oswald', sans-serif;
             font-weight: 700;
-            font-size: 34px; /* 32-36px range, using 34px - heritage tag, not rival headline */
+            font-size: 30px; /* Shrunk slightly (from 34px) - subtle, luxury, zero competition with slogan */
             color: rgba(255, 255, 255, 0.88); /* 85-90% opacity white - subtle heritage stamp */
             letter-spacing: -0.8px; /* Tightened tracking */
             line-height: 0.9; /* Compact line-height */
@@ -125,10 +126,13 @@
             padding: 0;
             display: block;
         }
+        .heritage-block .heritage-gold {
+            color: var(--ptc-gold); /* Yellow/gold period - heritage stamp hint */
+        }
         .heritage-block .heritage-subtitle {
             font-family: 'Oswald', sans-serif;
             font-weight: 500;
-            font-size: 15px; /* 14-16px range, using 15px - quiet and subtle */
+            font-size: 13px; /* Shrunk slightly (from 15px) - quiet and subtle */
             color: rgba(255, 255, 255, 0.88); /* 85-90% opacity white */
             letter-spacing: 3px; /* +3px tracking */
             line-height: 1.2;
@@ -476,7 +480,7 @@
             <!-- Heritage Block - Top Right (Compact Badge) -->
             <div class="heritage-block">
                 <div class="heritage-line">HEAVY DUTY</div>
-                <div class="heritage-line">LEGACY.</div>
+                <div class="heritage-line">LEGACY<span class="heritage-gold">.</span></div>
                 <div class="heritage-subtitle">Since 1956</div>
             </div>
         </div>
