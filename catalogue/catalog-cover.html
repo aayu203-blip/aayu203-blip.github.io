@@ -459,10 +459,15 @@
             line-height: 1.4;
         }
         .footer-address-primary {
-            display: block;
+            display: inline; /* Keep on same line */
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.03em;
+        }
+        /* Address column - wider to accommodate single line */
+        .footer-column:nth-child(2) {
+            min-width: 0; /* Allow column to grow */
+            flex: 1.2; /* Slightly wider than other columns */
         }
         /* WhatsApp contact styling */
         .footer-whatsapp-item {
@@ -566,7 +571,7 @@
                 <div class="footer-item">
                     <i data-lucide="map-pin" class="footer-item-icon"></i>
                     <div class="footer-address-text">
-                        <span class="footer-address-primary">Parts Trading Company</span>, Vijay Chambers, 1st Floor, Opp. Dreamland Cinema, Mumbai
+                        <span class="footer-address-primary">Parts Trading Company</span> Vijay Chambers, 1st Floor, Opp. Dreamland Cinema, Mumbai
                     </div>
                 </div>
             </div>

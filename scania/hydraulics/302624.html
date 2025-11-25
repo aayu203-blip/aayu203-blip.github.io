@@ -401,7 +401,7 @@
 <div class="flex-shrink-0">
 <a class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300" href="/">
 <img alt="PTC Parts Trading Company" class="h-36 w-auto transition-all duration-300" id="nav-logo" src="/assets/images/ptc-logo.png?v=1"/>
-</a>
+                </a>
 </div>
 </div>
 <div class="hidden md:flex items-center space-x-2">
@@ -1175,7 +1175,7 @@ function validateQuantity(el) {
         msg.textContent = '';
         btn.textContent = 'Get Quote';
     }
-        checkFormValidity();
+    checkFormValidity();
 }
 
 function validateLocation(el) {
@@ -1184,7 +1184,7 @@ function validateLocation(el) {
         const h = new Date().getHours();
         dispatchInfo.textContent = h >= 9 && h < 14 ? `Order within ${14-h}h for same-day dispatch` : 'Next dispatch tomorrow';
     } else dispatchInfo.textContent = '';
-    checkFormValidity();
+        checkFormValidity();
 }
 
 function validateContact(el) {
