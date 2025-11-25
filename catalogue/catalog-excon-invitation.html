@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PTC - EXCON 2025 Invitation</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* --- GLOBAL VARS --- */
+        :root {
+            --ptc-gold: #FFC20E;
+            --dark-bg: #000000;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        /* WhatsApp Invitation Container - 1:1 (1080 x 1080 pixels) */
+        .invitation-container {
+            width: 1080px;
+            height: 1080px;
+            background-color: #000000;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Technical Grid */
+        .tech-grid {
+            position: absolute;
+            inset: 0;
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0.06; /* 5-7% opacity */
+            mix-blend-mode: normal;
+        }
+        
+        /* Background Image with Fades */
+        .background-image {
+            position: absolute;
+            inset: 0;
+            background-image: url('/catalogue-2025/images/hero-photo.jpg');
+            background-size: cover;
+            background-position: right center; /* Align right - machine in right 55% */
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+        /* Left fade - covers ~45% from left */
+        .fade-left {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.85) 0%,
+                rgba(0, 0, 0, 0.70) 30%,
+                rgba(0, 0, 0, 0.50) 40%,
+                rgba(0, 0, 0, 0.25) 45%,
+                transparent 55%
+            );
+            z-index: 2;
+            pointer-events: none;
+        }
+        /* Subtle top fade - 10-15% */
+        .fade-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 20%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.15) 0%,
+                rgba(0, 0, 0, 0.08) 50%,
+                transparent 100%
+            );
+            z-index: 3;
+            pointer-events: none;
+        }
+        
+        /* Header Section */
+        .header-section {
+            height: 140px;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 48px 64px 0 64px;
+        }
+        /* PTC Logo */
+        .logo-wrapper {
+            display: flex;
+            align-items: flex-start;
+        }
+        .logo-image {
+            width: 240px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(255, 194, 14, 0.15));
+        }
+        /* Heritage Block - Right Side */
+        .heritage-block {
+            text-align: right;
+        }
+        .heritage-line {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 28px;
+            color: #FFFFFF;
+            line-height: 0.86; /* 82-90% range */
+            margin: 0;
+            padding: 0;
+            text-transform: uppercase;
+        }
+        .heritage-subtitle {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: #FFFFFF;
+            letter-spacing: 2px;
+            margin-top: 4px;
+            text-transform: none; /* Sentence case */
+        }
+        
+        /* Main Content Area */
+        .main-content {
+            flex: 1;
+            position: relative;
+            z-index: 10;
+            padding: 0 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 180px; /* ~20-24% down from canvas (216-259px, using 180px + header 140px = 320px total ~30%) */
+        }
+        
+        /* Slogan Block */
+        .slogan-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            margin-bottom: 36px;
+        }
+        .gold-bar {
+            width: 12px;
+            background: var(--ptc-gold);
+            flex-shrink: 0;
+            height: auto;
+            align-self: stretch;
+        }
+        .slogan-text {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 900; /* Heavy */
+            font-size: 85px; /* 82-88px range */
+            line-height: 0.89; /* 86-92% range */
+            color: #FFFFFF;
+            letter-spacing: -0.02em;
+            max-width: 40%; /* Fits within left 40% of canvas */
+        }
+        .slogan-text .gold {
+            color: var(--ptc-gold);
+        }
+        
+        /* Exhibition Details */
+        .exhibition-details {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600; /* Semibold */
+            font-size: 34px; /* 32-36px range */
+            color: #EDEDED;
+            line-height: 1.2; /* 120% */
+            max-width: 40%;
+        }
+        .exhibition-details p {
+            margin: 0;
+        }
+        
+        /* Footer - Gold Bar */
+        .footer-section {
+            height: 150px;
+            background: var(--ptc-gold);
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0;
+            align-items: center;
+            padding: 0 40px;
+        }
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        /* Column 1 - Catalogue Access */
+        .footer-qr {
+            width: 120px;
+            height: 120px;
+            background: #FFFFFF;
+            padding: 6px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .footer-qr img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .footer-qr-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500; /* Medium */
+            font-size: 26px;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.05em; /* 4-6% tracking */
+            margin-top: 4px;
+        }
+        .footer-url {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600; /* Semibold */
+            font-size: 27px; /* 26-28px range */
+            color: #000000;
+        }
+        
+        /* Column 2 - Address */
+        .footer-location-icon {
+            width: 36px;
+            height: 36px;
+            color: #000000;
+            margin-bottom: 6px;
+        }
+        .footer-location-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #000000;
+            stroke-width: 1.5px;
+            fill: none;
+        }
+        .footer-address {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400; /* Regular */
+            font-size: 27px; /* 26-28px range */
+            color: #000000;
+            line-height: 1.2; /* 120% */
+            text-align: center;
+        }
+        .footer-address p {
+            margin: 0;
+        }
+        
+        /* Column 3 - Contact */
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        .footer-contact-item:last-child {
+            margin-bottom: 0;
+        }
+        .footer-contact-icon {
+            width: 34px; /* 32-36px range */
+            height: 34px;
+            color: #000000;
+            flex-shrink: 0;
+        }
+        .footer-contact-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #000000;
+            stroke-width: 1.5px;
+            fill: none;
+        }
+        .footer-contact-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600; /* Semibold */
+            font-size: 27px; /* 26-28px range */
+            color: #000000;
+        }
+        .footer-column-right {
+            align-items: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-container">
+        <!-- Background Image -->
+        <div class="background-image"></div>
+        <div class="fade-left"></div>
+        <div class="fade-top"></div>
+        
+        <!-- Technical Grid -->
+        <div class="tech-grid"></div>
+        
+        <!-- Header Section -->
+        <div class="header-section">
+            <!-- Left - PTC Logo -->
+            <div class="logo-wrapper">
+                <img src="/catalogue-2025/images/logos/ptc-logo.png" alt="PTC Parts Trading Company" class="logo-image">
+            </div>
+            
+            <!-- Right - Heritage Block -->
+            <div class="heritage-block">
+                <div class="heritage-line">HEAVY</div>
+                <div class="heritage-line">DUTY</div>
+                <div class="heritage-line">LEGACY.</div>
+                <div class="heritage-subtitle">Since 1956.</div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Slogan Block -->
+            <div class="slogan-wrapper">
+                <div class="gold-bar"></div>
+                <h1 class="slogan-text">
+                    IF YOU HAVE<br>
+                    <span class="gold">EARTHMOVERS</span>,<br>
+                    WE HAVE<br>
+                    <span class="gold">PARTS.</span>
+                </h1>
+            </div>
+            
+            <!-- Exhibition Details -->
+            <div class="exhibition-details">
+                <p>Visit us at EXCON 2025</p>
+                <p>Booth A3.112</p>
+                <p>9–13 December, Bengaluru</p>
+            </div>
+        </div>
+        
+        <!-- Footer - Gold Bar -->
+        <div class="footer-section">
+            <!-- Column 1 - Catalogue Access -->
+            <div class="footer-column">
+                <div class="footer-qr">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.PartsTrading.Com" alt="QR Code" />
+                </div>
+                <div class="footer-qr-label">Catalogue</div>
+                <div class="footer-url">www.partstrading.com</div>
+            </div>
+            
+            <!-- Column 2 - Address -->
+            <div class="footer-column">
+                <i data-lucide="map-pin" class="footer-location-icon"></i>
+                <div class="footer-address">
+                    <p>Parts Trading Company</p>
+                    <p>Vijay Chambers, 1st Floor</p>
+                    <p>Opp. Dreamland Cinema</p>
+                    <p>Mumbai</p>
+                </div>
+            </div>
+            
+            <!-- Column 3 - Contact -->
+            <div class="footer-column footer-column-right">
+                <div class="footer-contact-item">
+                    <i data-lucide="mail" class="footer-contact-icon"></i>
+                    <div class="footer-contact-text">parts@partstrading.com</div>
+                </div>
+                <div class="footer-contact-item">
+                    <i data-lucide="phone" class="footer-contact-icon"></i>
+                    <div class="footer-contact-text">40755999 (32 lines)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
