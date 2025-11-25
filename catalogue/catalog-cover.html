@@ -71,9 +71,9 @@
         .top-bar {
             background: #000;
             padding: 0.8mm 12mm 0.8mm 12mm;
-            padding-top: 40px; /* 36-44px range for logo top margin - compact header */
-            height: 200px; /* Compact header height: 180-220px range, using 200px */
-            min-height: 200px;
+            padding-top: 37px; /* 34-40px range for logo top margin - premium compact header */
+            height: 140px; /* Shrunk to 70% of 200px - premium compact masthead */
+            min-height: 140px;
             z-index: 30;
             display: flex;
             flex-direction: column;
@@ -90,9 +90,9 @@
             line-height: 0; /* Remove invisible line-height space */
         }
         .logo-image {
-            height: 67.5mm; /* 50% bigger (was 45mm, now 67.5mm = 45mm * 1.5) */
+            height: 42mm; /* Reduced to 60-65% of 67.5mm (was too big) - restored old premium size */
             width: auto;
-            max-width: 125mm;
+            max-width: 80mm; /* Proportional to height reduction */
             object-fit: contain;
             object-position: center top; /* Crop invisible space from top */
             filter: drop-shadow(0 5px 10px rgba(255, 194, 14, 0.25)); /* Reduced glow by 10-15% */
@@ -101,15 +101,15 @@
             padding: 0;
             display: block;
             position: relative;
-            top: 0; /* Logo positioned within header padding - moved DOWN by 12-18px from -35px */
+            top: 0; /* Logo positioned within header padding - aligns to grid baseline */
             /* Trim invisible space - show only actual logo content */
             transform: scale(1.05); /* Slight scale to crop edges if needed */
         }
-        /* Heritage Block - Top Right Corner (Compact Badge) */
+        /* Heritage Block - Top Right Corner (Quiet Badge) */
         .heritage-block {
             position: absolute;
-            top: 36px; /* 32-40px range, using 36px - moved UP to keep header compact */
-            right: 50px; /* 44-56px range, using 50px for balance */
+            bottom: 8px; /* Aligned horizontally with bottom of PTC logo text baseline */
+            right: calc(18mm + 30px); /* Aligned to right column grid (same as lists/email) */
             z-index: 35;
             text-align: right;
             max-width: 240px; /* Maximum block width */
@@ -117,10 +117,10 @@
         .heritage-block .heritage-line {
             font-family: 'Oswald', sans-serif;
             font-weight: 700;
-            font-size: 44px; /* 65% of main slogan size, matching Option B spec */
-            color: #FFFFFF; /* Pure white */
+            font-size: 32px; /* Reduced from 44px - quiet whisper, not competing with slogan */
+            color: rgba(255, 255, 255, 0.85); /* 85% opacity white - subtle */
             letter-spacing: -0.8px; /* Tightened tracking */
-            line-height: 0.95; /* Tight, industrial line-height */
+            line-height: 0.88; /* Compact line-height */
             margin: 0;
             padding: 0;
             display: block;
@@ -128,12 +128,12 @@
         .heritage-block .heritage-subtitle {
             font-family: 'Oswald', sans-serif;
             font-weight: 500;
-            font-size: 22px; /* Option B spec size */
+            font-size: 16px; /* Reduced from 22px - quiet and subtle */
             color: rgba(255, 255, 255, 0.85); /* 85% opacity white */
             letter-spacing: 3px; /* +3px tracking */
             line-height: 1.2;
             margin: 0;
-            margin-top: 6px; /* Spacing after LEGACY. */
+            margin-top: 4px; /* Tight spacing after LEGACY. */
             padding: 0;
             display: block;
             text-transform: none; /* Sentence case */
@@ -142,7 +142,7 @@
         .hero-image {
             background-image: url('/catalogue-2025/images/hero-photo.jpg');
             background-size: 110%; /* Zoom out slightly to show both machines - don't zoom too much */
-            background-position: 45% -135px; /* Lifted UP by 25-35px (was -100px, now -135px) for better fade blend */
+            background-position: 45% -75px; /* Moved DOWN by 60px (from -135px to -75px) - excavator arm doesn't kiss header */
             background-repeat: no-repeat;
             height: 120mm; /* Hero image only covers slogan area, not lists */
             position: relative;
@@ -152,7 +152,7 @@
             justify-content: flex-end;
             margin-top: 0; /* Start immediately after header - no gap */
         }
-        /* Top Fade - Black to transparent, seamless merge with header */
+        /* Top Fade - Subtle black to transparent, seamless merge with header */
         .hero-fade-top {
             position: absolute;
             top: 0;
@@ -161,10 +161,10 @@
             height: 35mm; /* Extended fade for seamless transition */
             background: linear-gradient(
                 to bottom,
-                rgba(0, 0, 0, 1) 0%,
-                rgba(0, 0, 0, 0.95) 20%,
-                rgba(0, 0, 0, 0.75) 40%,
-                rgba(0, 0, 0, 0.4) 65%,
+                rgba(0, 0, 0, 0.4) 0%, /* Subtle 35-40% opacity start - not painted black */
+                rgba(0, 0, 0, 0.35) 20%,
+                rgba(0, 0, 0, 0.25) 40%,
+                rgba(0, 0, 0, 0.15) 65%,
                 transparent 100%
             );
             z-index: 4;
@@ -172,7 +172,7 @@
             mask-image: radial-gradient(ellipse 120% 450px at top center, black 0%, transparent 100%);
             -webkit-mask-image: radial-gradient(ellipse 120% 450px at top center, black 0%, transparent 100%);
         }
-        /* Bottom Fade - Black to transparent to black, smooth merge with lists section */
+        /* Bottom Fade - Subtle black to transparent, smooth merge with lists section */
         .hero-fade-bottom-image {
             position: absolute;
             bottom: 0;
@@ -182,9 +182,9 @@
             background: linear-gradient(
                 to bottom,
                 transparent 0%,
-                rgba(0, 0, 0, 0.2) 30%,
-                rgba(0, 0, 0, 0.6) 60%,
-                rgba(0, 0, 0, 1) 100%
+                rgba(0, 0, 0, 0.15) 30%,
+                rgba(0, 0, 0, 0.35) 60%,
+                rgba(0, 0, 0, 0.45) 100% /* Subtle 35-45% opacity - not painted black */
             );
             z-index: 5;
             pointer-events: none;
@@ -358,7 +358,7 @@
             gap: 8mm; /* Equal spacing between columns */
             align-items: start; /* Start from top for baseline alignment */
             z-index: 30;
-            height: 40mm; /* Reduced by 11% (was 45mm, now 40mm = ~11-12% of page height) */
+            height: 34mm; /* Reduced by 15% (from 40mm to 34mm) - premium compact footer, not landing page */
             margin-top: auto;
             margin-bottom: 0;
         }
@@ -466,7 +466,7 @@
         <div class="texture-overlay"></div>
         <!-- TOP BAR -->
         <div class="top-bar">
-            <div style="display: flex; flex-direction: column; align-items: flex-start; margin-left: 46px; gap: 0; position: relative;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; margin-left: calc(18mm + 30px); gap: 0; position: relative;">
                 <div class="user-logo-placeholder">
                     <img src="/catalogue-2025/images/logos/ptc-logo.png" alt="PTC Parts Trading Company" class="logo-image">
                 </div>
