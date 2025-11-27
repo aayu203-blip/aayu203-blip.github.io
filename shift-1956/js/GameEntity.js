@@ -1,7 +1,7 @@
 import { Config } from './Config.js';
 
 export class Truck extends PIXI.Container {
-    constructor(texture) {
+    constructor(texture, wheelsMeta = []) {
         super();
         this.sprite = new PIXI.Sprite(texture);
         this.sprite.anchor.set(0.5, 1);
@@ -10,13 +10,25 @@ export class Truck extends PIXI.Container {
         this.vx = 0;
         this.ax = 0;
         this.pointerEase = 0.12;
+        this.textureDimensions = { width: texture.width, height: texture.height };
+        this.wheels = wheelsMeta.map((meta) => this.createWheel(meta));
+    }
+
+    createWheel(meta) {
+        const wheel = new PIXI.Sprite(meta.texture);
+        wheel.anchor.set(0.5);
+        wheel.scale.set(Config.truckScale);
+        wheel.x = (meta.center.x - this.textureDimensions.width / 2) * Config.truckScale;
+        wheel.y = (meta.center.y - this.textureDimensions.height) * Config.truckScale;
+        this.addChild(wheel);
+        return wheel;
     }
 
     update(delta, input) {
         if (input.pointerActive && typeof input.pointerX === 'number') {
             const offset = input.pointerX - this.x;
-            this.vx = offset * this.pointerEase * delta;
-            this.x += this.vx;
+            this.vx = offset * this.pointerEase;
+            this.x += this.vx * delta;
         } else {
             if (input.left) this.ax = -Config.truckSpeed;
             else if (input.right) this.ax = Config.truckSpeed;
@@ -29,6 +41,10 @@ export class Truck extends PIXI.Container {
         }
         const targetRotation = (this.vx / Config.truckMaxSpeed) * Config.truckTilt;
         this.rotation += (targetRotation - this.rotation) * 0.1;
+        const spin = this.vx * Config.wheelSpinRate * delta;
+        this.wheels.forEach((wheel) => {
+            wheel.rotation += spin;
+        });
     }
 }
 

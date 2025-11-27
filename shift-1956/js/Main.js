@@ -19,6 +19,11 @@ let announcerPayloadEl;
 let announcerDetailEl;
 let introPlayed = false;
 
+const WHEEL_LAYOUT = [
+    { center: { x: 223, y: 318 }, size: 170 },
+    { center: { x: 845, y: 314 }, size: 190 }
+];
+
 const inputState = { left: false, right: false, pointerActive: false, pointerX: null };
 
 export async function initGame() {
@@ -59,7 +64,20 @@ function setupScene() {
     partsContainer = new PIXI.Container();
     app.stage.addChild(partsContainer);
 
-    truck = new Truck(texturesRef[GameAssets.truck]);
+    const truckTexture = texturesRef[GameAssets.truck];
+    const wheelsMeta = WHEEL_LAYOUT.map(({ center, size }) => {
+        const frame = new PIXI.Rectangle(
+            Math.round(center.x - size / 2),
+            Math.round(center.y - size / 2),
+            Math.round(size),
+            Math.round(size)
+        );
+        return {
+            texture: new PIXI.Texture(truckTexture.baseTexture, frame),
+            center: { ...center }
+        };
+    });
+    truck = new Truck(truckTexture, wheelsMeta);
     truck.x = app.screen.width / 2;
     truck.y = app.screen.height - 60;
     app.stage.addChild(truck);
