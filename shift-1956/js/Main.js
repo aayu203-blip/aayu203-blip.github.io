@@ -7,7 +7,6 @@ let app;
 let truck;
 let particles;
 let backgroundLayer;
-let bloomLayer;
 let partsContainer;
 let texturesRef;
 let parts = [];
@@ -46,12 +45,6 @@ function setupScene() {
     backgroundLayer.tileScale.set(app.screen.height / bgTexture.height);
     app.stage.addChild(backgroundLayer);
 
-    bloomLayer = new PIXI.TilingSprite(PIXI.Texture.WHITE, app.screen.width, app.screen.height);
-    bloomLayer.tint = 0x1b2c57;
-    bloomLayer.alpha = 0.08;
-    bloomLayer.blendMode = PIXI.BLEND_MODES.ADD;
-    app.stage.addChild(bloomLayer);
-
     const vignette = new PIXI.Graphics();
     vignette.beginFill(0x000000, 0.7);
     vignette.drawRect(0, 0, app.screen.width, app.screen.height);
@@ -86,8 +79,6 @@ function resizeScene(bgTexture) {
     backgroundLayer.height = app.screen.height;
     const scale = app.screen.height / bgTexture.height;
     backgroundLayer.tileScale.set(scale);
-    bloomLayer.width = app.screen.width;
-    bloomLayer.height = app.screen.height;
 }
 
 function setupInput() {
@@ -145,7 +136,6 @@ function gameLoop(delta) {
     if (truck.x < 100) truck.x = 100;
     if (truck.x > app.screen.width - 100) truck.x = app.screen.width - 100;
     backgroundLayer.tilePosition.x -= truck.vx * Config.parallax.tunnel;
-    bloomLayer.tilePosition.x -= truck.vx * Config.parallax.bloom;
     spawnTimer += delta;
     let currentRate = Config.spawnRates.start;
     if (time < 35) currentRate = Config.spawnRates.mid;
@@ -196,10 +186,14 @@ function pickWeighted(list) {
 }
 
 function checkCollision(truckEntity, part) {
-    const bucketY = truckEntity.y - truckEntity.height * 0.6;
-    const dx = Math.abs(truckEntity.x - part.x);
-    const dy = Math.abs(bucketY - part.y);
-    return dx < 100 && dy < 50;
+    const truckBounds = truckEntity.getBounds();
+    const partBounds = part.getBounds();
+    return (
+        truckBounds.x < partBounds.x + partBounds.width &&
+        truckBounds.x + truckBounds.width > partBounds.x &&
+        truckBounds.y < partBounds.y + partBounds.height &&
+        truckBounds.y + truckBounds.height > partBounds.y
+    );
 }
 
 function handleCatch(part) {

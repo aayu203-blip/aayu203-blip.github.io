@@ -5,7 +5,7 @@ export class Truck extends PIXI.Container {
         super();
         this.sprite = new PIXI.Sprite(texture);
         this.sprite.anchor.set(0.5, 1);
-        this.sprite.scale.set(0.8);
+        this.sprite.scale.set(Config.truckScale);
         this.addChild(this.sprite);
         this.vx = 0;
         this.ax = 0;

@@ -5,12 +5,12 @@ export const Config = {
     gravity: 12,
     truckSpeed: 1.5,
     truckFriction: 0.92,
+    truckScale: 0.6,
     truckMaxSpeed: 25,
     truckTilt: 0.15,
     streakThreshold: 3,
     parallax: {
-        tunnel: 0.12,
-        bloom: 0.18
+        tunnel: 0.12
     },
     ambient: {
         dustInterval: 45,
