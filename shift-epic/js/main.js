@@ -4,8 +4,8 @@ const CONFIG = {
     truckSpeed: 0.8,
     truckFriction: 0.94,
     spawnRate: 60, // frames
-    partScale: 1.0,
-    truckScale: 1.0,
+    partScale: 0.6,
+    truckScale: 0.8,
     duration: 45 // seconds
 };
 
