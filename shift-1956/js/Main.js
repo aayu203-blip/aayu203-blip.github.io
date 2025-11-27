@@ -20,8 +20,11 @@ let announcerDetailEl;
 let introPlayed = false;
 let lives = Config.lives;
 let speedStageIndex = 0;
+let prizeAchieved = false;
 let livesDisplayEl;
 let speedIndicatorEl;
+let prizeDisplayEl;
+let prizeStatusEl;
 
 const SPEED_LABELS = ['STAGE 1 · STABLE', 'STAGE 2 · SURGE', 'STAGE 3 · CRITICAL'];
 
@@ -51,9 +54,12 @@ function setupScene() {
     announcerDetailEl = document.getElementById('announcer-detail');
     livesDisplayEl = document.getElementById('lives-display');
     speedIndicatorEl = document.getElementById('speed-indicator');
+    prizeDisplayEl = document.getElementById('prize-display');
+    prizeStatusEl = document.getElementById('prize-status');
     resetAnnouncer();
     updateLivesDisplay(true);
     setSpeedIndicator(0, true);
+    updatePrizeDisplay(true);
 
     const bgTexture = texturesRef[GameAssets.background];
     backgroundLayer = new PIXI.TilingSprite(bgTexture, app.screen.width, app.screen.height);
@@ -144,6 +150,7 @@ function startGame() {
     streak = 0;
     lives = Config.lives;
     speedStageIndex = 0;
+    prizeAchieved = false;
     parts.forEach((p) => partsContainer.removeChild(p));
     parts = [];
     document.getElementById('overlay-screen').classList.remove('active');
@@ -151,6 +158,7 @@ function startGame() {
     resetAnnouncer();
     updateLivesDisplay(true);
     setSpeedIndicator(speedStageIndex, true);
+    updatePrizeDisplay(true);
     const timerInterval = setInterval(() => {
         if (gameState !== 'PLAYING') {
             clearInterval(timerInterval);
@@ -243,11 +251,13 @@ function handleCatch(part) {
     if (part.type === 'good') {
         streak++;
         const multiplier = streak >= Config.streakThreshold ? (streak > Config.streakThreshold + 2 ? 2 : 1.5) : 1;
-        const value = Math.round((part.meta?.score || 50) * multiplier);
+        const baseScore = part.meta?.score ?? Config.baseScore;
+        const value = Math.round(baseScore * multiplier);
         score += value;
         particles.createExplosion(part.x, part.y, part.meta?.particleColor || 0xffd400);
         pulseHUD('score-panel');
         announcePart(part.meta, value, multiplier);
+        updatePrizeDisplay();
     } else {
         score += part.meta?.damage || -100;
         streak = 0;
@@ -342,6 +352,30 @@ function setSpeedIndicator(stageIndex, instant = false) {
     speedIndicatorEl.classList.remove('flash');
     if (!instant) {
         speedIndicatorEl.classList.add('flash');
+    }
+}
+
+function updatePrizeDisplay(initial = false) {
+    if (!prizeDisplayEl || !prizeStatusEl) return;
+    const target = Config.prizeScore;
+    prizeDisplayEl.innerText = `${Math.min(score, target)} / ${target}`;
+    if (score >= target) {
+        prizeStatusEl.innerText = 'REWARD READY';
+        prizeStatusEl.classList.add('prize-achieved');
+        if (!prizeAchieved && !initial) {
+            prizeAchieved = true;
+            gsap.fromTo(
+                '.prize-panel',
+                { scale: 1.05 },
+                { scale: 1, duration: 0.5, ease: 'back.out(2)' }
+            );
+            announcerPayloadEl.innerText = 'PRIZE UNLOCKED';
+            announcerDetailEl.innerText = 'CLAIM AT BOOTH';
+        }
+    } else {
+        prizeStatusEl.innerText = `REWARD READY AT ${target}`;
+        prizeStatusEl.classList.remove('prize-achieved');
+        if (initial) prizeAchieved = false;
     }
 }
 

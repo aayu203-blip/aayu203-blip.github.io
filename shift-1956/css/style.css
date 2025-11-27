@@ -65,9 +65,6 @@ body {
     position: absolute;
     bottom: 35px;
     left: 40px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
     padding: 18px 24px;
     background: rgba(5, 5, 5, 0.85);
     border: 1px solid rgba(255, 194, 14, 0.35);
@@ -76,7 +73,7 @@ body {
 }
 
 .brand-logo {
-    width: 140px;
+    width: 160px;
     height: auto;
 }
 
@@ -111,6 +108,22 @@ body {
 
 .time-panel {
     right: 330px;
+}
+
+.prize-panel {
+    right: 640px;
+    width: 240px;
+}
+
+.prize-status {
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    color: var(--text-soft);
+    margin-top: 6px;
+}
+
+.prize-achieved {
+    color: var(--ptc-gold);
 }
 
 .lives-panel {
