@@ -27,7 +27,8 @@ body {
 
 .tech-grid,
 .noise-overlay,
-.scanlines {
+.scanlines,
+.ptc-watermark {
     position: absolute;
     inset: 0;
     pointer-events: none;
@@ -54,10 +55,32 @@ body {
     z-index: 12;
 }
 
+.ptc-watermark {
+    background-image: url('../assets/ptc-logo.svg');
+    background-size: 240px;
+    background-repeat: repeat;
+    opacity: 0.04;
+    z-index: 3;
+}
+
 #ui-layer {
     position: absolute;
     inset: 0;
     z-index: 5;
+    pointer-events: none;
+}
+
+.hero-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 40px;
+    letter-spacing: 0.6em;
+    font-size: 12px;
+    background: rgba(5, 5, 5, 0.8);
+    border-bottom: 1px solid rgba(255, 194, 14, 0.2);
+    text-transform: uppercase;
     pointer-events: none;
 }
 
@@ -126,35 +149,9 @@ body {
     color: var(--ptc-gold);
 }
 
-.lives-panel {
-    left: 40px;
-    top: 40px;
-    text-align: left;
-}
-
-.lives {
-    font-family: 'Oswald', sans-serif;
-    font-size: 32px;
-    letter-spacing: 0.35em;
-}
-
-.life-loss {
-    animation: pulse-life 0.4s ease;
-}
-
-@keyframes pulse-life {
-    from {
-        transform: scale(1.05);
-        color: var(--ptc-gold);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-
 .speed-indicator {
     position: absolute;
-    top: 120px;
+    top: 80px;
     left: 40px;
     padding: 10px 20px;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -392,5 +389,42 @@ button:hover {
         flex-direction: column;
         align-items: flex-start;
     }
+}
+
+#prize-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s;
+}
+
+#prize-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#prize-overlay .content {
+    text-align: center;
+    padding: 50px 80px;
+    border: 1px solid var(--ptc-gold);
+    background: rgba(8, 8, 12, 0.95);
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.9);
+}
+
+#prize-overlay img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+#prize-overlay h2 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.4em;
+    margin: 10px 0;
 }
 

@@ -22,14 +22,12 @@
     </div>
     <div class="tech-grid"></div>
     <div class="noise-overlay"></div>
+    <div class="ptc-watermark"></div>
     <div id="game-container"></div>
     <div id="ui-layer">
+        <div class="hero-strip">PARTS TRADING COMPANY · VOLVO · SCANIA · KOMATSU · CAT</div>
         <div class="brand-corner">
             <img src="assets/ptc-logo.svg" alt="Parts Trading Company" class="brand-logo">
-        </div>
-        <div class="hud-panel lives-panel">
-            <div class="label">HAUL HEALTH</div>
-            <div class="lives" id="lives-display">●●●</div>
         </div>
         <div class="speed-indicator" id="speed-indicator">STAGE 1 · STABLE</div>
         <div class="hud-panel prize-panel">
@@ -57,6 +55,14 @@
                 <p>CAPTURE PREMIUM PARTS. DODGE SCRAP.</p>
                 <button id="start-btn">INITIATE SHIFT</button>
                 <div id="final-score" class="hidden">SHIFT COMPLETE<br>SCORE: <span id="final-score-val">0</span></div>
+            </div>
+        </div>
+        <div id="prize-overlay">
+            <div class="content">
+                <img src="assets/ptc-logo.svg" alt="PTC Badge">
+                <h2>SHIFT WINNER</h2>
+                <p>Prize unlocked at <span id="prize-overlay-score">0</span> pts</p>
+                <button id="prize-continue">RESUME SHIFT</button>
             </div>
         </div>
     </div>

@@ -10,7 +10,6 @@ export const Config = {
     truckTilt: 0.15,
     wheelSpinRate: 0.02,
     streakThreshold: 3,
-    lives: 3,
     baseScore: 150,
     prizeScore: 2500,
     parallax: {

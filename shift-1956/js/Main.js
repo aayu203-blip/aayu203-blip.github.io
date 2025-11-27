@@ -18,15 +18,36 @@ let spawnTimer = 0;
 let announcerPayloadEl;
 let announcerDetailEl;
 let introPlayed = false;
-let lives = Config.lives;
 let speedStageIndex = 0;
 let prizeAchieved = false;
-let livesDisplayEl;
 let speedIndicatorEl;
 let prizeDisplayEl;
 let prizeStatusEl;
+let prizeOverlayEl;
+let prizeOverlayScoreEl;
+let prizeContinueBtn;
+let shiftTimer = null;
+let calloutIndex = 0;
 
 const SPEED_LABELS = ['STAGE 1 · STABLE', 'STAGE 2 · SURGE', 'STAGE 3 · CRITICAL'];
+const CALL_OUTS = [
+    {
+        title: 'VOLVO A40 TURBO CORE',
+        detail: 'PTC PRECISION · SWEDISH HAUL FLEET READY'
+    },
+    {
+        title: 'SCANIA HYDRAULIC SEAL KIT',
+        detail: 'PTC STOCK · ZERO-DOWNTIME COMMITMENT'
+    },
+    {
+        title: 'KOMATSU CHARGE COOLER',
+        detail: 'PTC GLOBAL · 24H DISPATCH ASSURED'
+    },
+    {
+        title: 'CAT FINAL DRIVE ASSEMBLY',
+        detail: 'PTC TESTED · HEAVY EARTHMOVING PAYLOAD'
+    }
+];
 
 const WHEEL_LAYOUT = [
     { center: { x: 223, y: 318 }, size: 170 },
@@ -52,14 +73,16 @@ export async function initGame() {
 function setupScene() {
     announcerPayloadEl = document.getElementById('announcer-payload');
     announcerDetailEl = document.getElementById('announcer-detail');
-    livesDisplayEl = document.getElementById('lives-display');
     speedIndicatorEl = document.getElementById('speed-indicator');
     prizeDisplayEl = document.getElementById('prize-display');
     prizeStatusEl = document.getElementById('prize-status');
+    prizeOverlayEl = document.getElementById('prize-overlay');
+    prizeOverlayScoreEl = document.getElementById('prize-overlay-score');
+    prizeContinueBtn = document.getElementById('prize-continue');
     resetAnnouncer();
-    updateLivesDisplay(true);
     setSpeedIndicator(0, true);
     updatePrizeDisplay(true);
+    prizeContinueBtn?.addEventListener('click', resumeShift);
 
     const bgTexture = texturesRef[GameAssets.background];
     backgroundLayer = new PIXI.TilingSprite(bgTexture, app.screen.width, app.screen.height);
@@ -148,26 +171,18 @@ function startGame() {
     score = 0;
     time = Config.duration;
     streak = 0;
-    lives = Config.lives;
     speedStageIndex = 0;
     prizeAchieved = false;
+    calloutIndex = 0;
+    prizeOverlayEl?.classList.remove('active');
     parts.forEach((p) => partsContainer.removeChild(p));
     parts = [];
     document.getElementById('overlay-screen').classList.remove('active');
     updateHUD();
     resetAnnouncer();
-    updateLivesDisplay(true);
     setSpeedIndicator(speedStageIndex, true);
     updatePrizeDisplay(true);
-    const timerInterval = setInterval(() => {
-        if (gameState !== 'PLAYING') {
-            clearInterval(timerInterval);
-            return;
-        }
-        time--;
-        if (time <= 0) endGame();
-        updateHUD();
-    }, 1000);
+    startTimer();
 }
 
 function gameLoop(delta) {
@@ -256,20 +271,14 @@ function handleCatch(part) {
         score += value;
         particles.createExplosion(part.x, part.y, part.meta?.particleColor || 0xffd400);
         pulseHUD('score-panel');
-        announcePart(part.meta, value, multiplier);
+        announcePart(value);
         updatePrizeDisplay();
     } else {
-        score += part.meta?.damage || -100;
+        score = Math.max(0, score + (part.meta?.damage || -100));
         streak = 0;
-        lives -= 1;
-        updateLivesDisplay();
         particles.createExplosion(part.x, part.y, part.meta?.particleColor || 0xff0000);
         shakeScreen();
         announceHazard(part.meta);
-        if (lives <= 0) {
-            endGame();
-            return;
-        }
     }
     updateHUD();
 }
@@ -296,12 +305,12 @@ function shakeScreen() {
     gsap.to(app.stage, { x: 0, duration: 0.05, delay: 0.3 });
 }
 
-function announcePart(meta = {}, value, multiplier) {
+function announcePart(value) {
     if (!announcerPayloadEl) return;
-    const label = meta.label || 'PREMIUM PART';
-    const detail = `+${value} pts • x${multiplier.toFixed(1)} streak`;
-    announcerPayloadEl.innerText = label.toUpperCase();
-    announcerDetailEl.innerText = detail.toUpperCase();
+    const callout = CALL_OUTS[calloutIndex];
+    calloutIndex = (calloutIndex + 1) % CALL_OUTS.length;
+    announcerPayloadEl.innerText = callout.title.toUpperCase();
+    announcerDetailEl.innerText = `${callout.detail} · +${value} PTS`.toUpperCase();
     gsap.fromTo(
         '#part-announcer',
         { y: 20, opacity: 0.6 },
@@ -313,8 +322,7 @@ function announceHazard(meta = {}) {
     if (!announcerPayloadEl) return;
     const label = meta.label || 'SCRAP IMPACT';
     announcerPayloadEl.innerText = `${label.toUpperCase()}`;
-    const lifeText = lives > 0 ? `${lives} LIVES REMAINING` : 'SYSTEM FAILURE';
-    announcerDetailEl.innerText = lifeText;
+    announcerDetailEl.innerText = 'ROCKFALL · HOLD COURSE';
     gsap.fromTo(
         '#part-announcer',
         { x: 10, opacity: 0.7 },
@@ -330,20 +338,9 @@ function announceHazard(meta = {}) {
 
 function resetAnnouncer() {
     if (!announcerPayloadEl) return;
-    announcerPayloadEl.innerText = 'CALIBRATING';
-    announcerDetailEl.innerText = 'AWAITING COMMAND';
-}
-
-function updateLivesDisplay(initial = false) {
-    if (!livesDisplayEl) return;
-    const filled = '●'.repeat(Math.max(lives, 0));
-    const empty = '○'.repeat(Math.max(Config.lives - lives, 0));
-    livesDisplayEl.innerText = filled + empty;
-    if (!initial) {
-        livesDisplayEl.classList.remove('life-loss');
-        void livesDisplayEl.offsetWidth;
-        livesDisplayEl.classList.add('life-loss');
-    }
+    const callout = CALL_OUTS[0];
+    announcerPayloadEl.innerText = callout.title.toUpperCase();
+    announcerDetailEl.innerText = callout.detail.toUpperCase();
 }
 
 function setSpeedIndicator(stageIndex, instant = false) {
@@ -364,19 +361,46 @@ function updatePrizeDisplay(initial = false) {
         prizeStatusEl.classList.add('prize-achieved');
         if (!prizeAchieved && !initial) {
             prizeAchieved = true;
-            gsap.fromTo(
-                '.prize-panel',
-                { scale: 1.05 },
-                { scale: 1, duration: 0.5, ease: 'back.out(2)' }
-            );
-            announcerPayloadEl.innerText = 'PRIZE UNLOCKED';
-            announcerDetailEl.innerText = 'CLAIM AT BOOTH';
+            gsap.fromTo('.prize-panel', { scale: 1.05 }, { scale: 1, duration: 0.5, ease: 'back.out(2)' });
+            pauseShiftForPrize();
         }
     } else {
         prizeStatusEl.innerText = `REWARD READY AT ${target}`;
         prizeStatusEl.classList.remove('prize-achieved');
         if (initial) prizeAchieved = false;
     }
+}
+
+function startTimer() {
+    if (shiftTimer) clearInterval(shiftTimer);
+    shiftTimer = setInterval(() => {
+        if (gameState !== 'PLAYING') return;
+        time--;
+        if (time <= 0) {
+            endGame();
+        } else {
+            updateHUD();
+        }
+    }, 1000);
+}
+
+function pauseShiftForPrize() {
+    gameState = 'PAUSED';
+    if (shiftTimer) {
+        clearInterval(shiftTimer);
+        shiftTimer = null;
+    }
+    prizeOverlayScoreEl.innerText = score;
+    prizeOverlayEl.classList.add('active');
+    announcerPayloadEl.innerText = 'PRIZE UNLOCKED';
+    announcerDetailEl.innerText = 'CLAIM AT PTC DESK';
+}
+
+function resumeShift() {
+    if (gameState !== 'PAUSED') return;
+    prizeOverlayEl.classList.remove('active');
+    gameState = 'PLAYING';
+    startTimer();
 }
 
 function runIntro() {
@@ -399,10 +423,16 @@ function runIntro() {
 
 function endGame() {
     gameState = 'END';
+    if (shiftTimer) {
+        clearInterval(shiftTimer);
+        shiftTimer = null;
+    }
+    prizeOverlayEl?.classList.remove('active');
     document.getElementById('overlay-screen').classList.add('active');
     document.getElementById('start-btn').innerText = 'PLAY AGAIN';
     document.getElementById('final-score').classList.remove('hidden');
     document.getElementById('final-score-val').innerText = score;
-    announceHazard({ label: lives <= 0 ? 'SYSTEM FAILURE' : 'SHIFT COMPLETE', damage: score });
+    announcerPayloadEl.innerText = 'SHIFT COMPLETE';
+    announcerDetailEl.innerText = 'PTC · THANK YOU';
 }
 
