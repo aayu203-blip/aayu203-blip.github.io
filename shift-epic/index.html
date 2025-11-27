@@ -1,113 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>PTC | Shift Command 1956</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PTC COMMAND | SHIFT 1956</title>
+    
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Unica+One&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- STYLES -->
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script type="module" src="js/main.js" defer></script>
-</head>
 
+    <!-- PIXI.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
 <body>
-    <div class="bg-layer">
-        <img src="assets/background.jpg" alt="PTC open pit" class="bg-image" />
-        <div class="bg-watermark"></div>
-        <div class="bg-pulse" id="bg-pulse"></div>
+
+    <!-- LOADING SCREEN -->
+    <div id="boot-sequence">
+        <div class="boot-content">
+            <img src="assets/ptc-logo.png" alt="PTC Logo" class="boot-logo">
+            <div class="boot-text">INITIALIZING GRAVITY LINE...</div>
+            <div class="boot-bar"><div class="boot-fill" id="loader-bar"></div></div>
+            <div class="boot-log" id="boot-log">SYSTEM CHECK: OK</div>
+        </div>
     </div>
 
-    <div id="ui-frame">
-        <header class="command-bar">
-            <div class="command-cell">
-                <div class="command-title">PTC COMMAND DECK</div>
-                <div class="command-sub">1956 PROTOCOL</div>
-            </div>
-            <div class="command-timer">
-                <div class="timer-ring">
-                    <svg viewBox="0 0 120 120">
-                        <circle cx="60" cy="60" r="52" class="timer-bg" />
-                        <circle cx="60" cy="60" r="52" class="timer-progress" id="timer-progress" />
-                    </svg>
-                    <div class="timer-value" id="timer-value">45</div>
+    <!-- GAME LAYER -->
+    <div id="viewport"></div>
+
+    <!-- UI LAYER (HTML Overlay) -->
+    <div id="hud">
+        <!-- TOP HEADER -->
+        <header class="top-deck">
+            <div class="brand-unit">
+                <img src="assets/ptc-logo.png" alt="PTC" class="brand-icon">
+                <div class="brand-info">
+                    <div class="brand-name">PARTS TRADING COMPANY</div>
+                    <div class="brand-sub">EST. 1956 · GLOBAL SUPPLY</div>
                 </div>
-                <div class="timer-label">FLOW CYCLE</div>
             </div>
-            <div class="command-reward">
-                <div class="reward-column">
-                    <div class="reward-fill" id="reward-fill"></div>
-                </div>
-                <div class="reward-copy">
-                    <div class="reward-label">REWARD CLEARANCE</div>
-                    <div class="reward-target" id="reward-target">0 / 1000</div>
+            
+            <div class="live-ticker">
+                <div class="ticker-label">LIVE FEED</div>
+                <div class="ticker-content">
+                    <div class="ticker-track" id="news-ticker">
+                        AWAITING INPUT · SYSTEM READY · HEAVY DUTY COMPONENTS ONLY · AUTHORIZE PREMIUM PARTS · AVOID CONTAMINANTS
+                    </div>
                 </div>
             </div>
         </header>
 
-        <div class="ticker">
-            <div class="ticker-track" id="ticker-track"></div>
-            <div class="ticker-alert" id="ticker-alert"></div>
+        <!-- CENTER RETICLE (Optional decorative) -->
+        <div class="focus-reticle"></div>
+
+        <!-- BOTTOM DASHBOARD -->
+        <footer class="control-deck">
+            
+            <!-- LEFT: LIVES / INTEGRITY -->
+            <div class="panel status-panel">
+                <div class="panel-label">FLEET HEALTH</div>
+                <div class="integrity-meter">
+                    <div class="life-pip active"></div>
+                    <div class="life-pip active"></div>
+                    <div class="life-pip active"></div>
+                </div>
+                <div class="status-text" id="status-readout">SYSTEM NOMINAL</div>
+            </div>
+
+            <!-- CENTER: TIMER -->
+            <div class="panel timer-panel">
+                <div class="panel-label">SHIFT DURATION</div>
+                <div class="timer-digits" id="timer-display">45.00</div>
+            </div>
+
+            <!-- RIGHT: SCORE / VALUE -->
+            <div class="panel value-panel">
+                <div class="panel-label">SHIFT VALUE</div>
+                <div class="score-digits" id="score-display">0000</div>
+                <div class="multiplier" id="streak-display">FLOW STABILITY: 100%</div>
+            </div>
+
+        </footer>
+        
+        <!-- INTRO / GAMEOVER OVERLAY -->
+        <div id="modal-overlay" class="active">
+            <div class="modal-content">
+                <h1 class="modal-title">SHIFT 1956</h1>
+                <p class="modal-desc">AUTHORIZE INBOUND PARTS. REJECT DEBRIS.</p>
+                <button id="action-btn">INITIATE SEQUENCE</button>
+            </div>
         </div>
 
-        <div id="game-container"></div>
-
-        <section class="console">
-            <div class="console-card">
-                <div class="console-label">SHIFT VALUE</div>
-                <div class="console-value" id="shift-value">0000</div>
-                <div class="console-sub" id="flow-stability">FLOW STABILITY ×1.0</div>
-            </div>
-            <div class="console-card">
-                <div class="console-label">PAYLOAD ACTIVE</div>
-                <div class="payload-display">
-                    <div class="payload-thumb" id="payload-thumb"></div>
-                    <div class="payload-info">
-                        <div class="payload-name" id="payload-name">—</div>
-                        <div class="payload-desc" id="payload-desc">Awaiting authorization</div>
-                    </div>
-                </div>
-            </div>
-            <div class="console-card">
-                <div class="console-label">REWARD STATUS</div>
-                <div class="console-value small" id="reward-status">STANDING BY</div>
-                <div class="console-sub">Present screen when authorized</div>
-            </div>
-        </section>
     </div>
 
-    <section id="splash-screen">
-        <div class="splash-card">
-            <img src="assets/ptc-logo.svg" alt="PTC crest">
-            <h1>SHIFT COMMAND 1956</h1>
-            <p>You are operating the PTC Gravity Line. Authorize premium components, avoid fault clusters, reach reward
-                clearance.</p>
-            <ul>
-                <li>Tap / Arrow keys to steer the hauler</li>
-                <li>Catch authorized payloads to build <strong>Shift Value</strong></li>
-                <li>Fault clusters deduct value but never end the shift</li>
-            </ul>
-            <button id="start-shift">INITIATE SHIFT</button>
-        </div>
-    </section>
+    <!-- SCANLINES / VIGNETTE -->
+    <div class="screen-fx"></div>
 
-    <section id="prize-overlay">
-        <div class="prize-card">
-            <div class="prize-emblem">
-                <img src="assets/ptc-logo.svg" alt="PTC">
-            </div>
-            <p class="prize-label">PTC REWARD AUTHORIZED</p>
-            <p class="prize-value">SHIFT VALUE <span id="prize-score">0</span></p>
-            <p class="prize-instructions">Present this screen at the PTC desk to claim your token.</p>
-            <button id="prize-continue">RESUME SHIFT</button>
-        </div>
-    </section>
+    <script type="module" src="js/main.js"></script>
 </body>
-
 </html>
-
