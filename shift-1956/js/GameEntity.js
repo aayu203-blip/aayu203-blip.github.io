@@ -26,6 +26,7 @@ export class Truck extends PIXI.Container {
         mask.endFill();
         wheelSprite.mask = mask;
         wheel.addChild(mask);
+        mask.visible = false;
         wheel.addChild(wheelSprite);
         wheel.x = (meta.center.x - this.textureDimensions.width / 2) * Config.truckScale;
         wheel.y = (meta.center.y - this.textureDimensions.height) * Config.truckScale;
@@ -71,8 +72,12 @@ export class FallingPart extends PIXI.Container {
         sprite.scale.set(targetScale);
         if (this.type === 'bad') {
             const glow = new PIXI.Graphics();
-            glow.beginFill(Config.hazardBackdropColor, 0.35);
-            glow.drawCircle(0, 0, texture.width * targetScale * 0.45);
+            glow.beginFill(Config.hazardBackdropColor, 0.4);
+            const radius =
+                (texture.width || texture.height) *
+                targetScale *
+                (Config.hazardBackdropRadius || 0.35);
+            glow.drawCircle(0, 0, radius);
             glow.endFill();
             this.addChild(glow);
         }

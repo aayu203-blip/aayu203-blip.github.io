@@ -16,8 +16,9 @@ export const Config = {
         tunnel: 0.12
     },
     partScale: 0.55,
-    hazardScale: 0.48,
+    hazardScale: 0.42,
     hazardBackdropColor: 0xff2f01,
+    hazardBackdropRadius: 0.38,
     ambient: {
         dustInterval: 45,
         dustLimit: 30
@@ -46,8 +47,24 @@ export const GameAssets = {
         { texture: 'assets/part_8.png', label: 'Stator Gear', score: 50, weight: 1.2, particleColor: partPalette }
     ],
     badParts: [
-        { texture: 'assets/rock.png', label: 'Rockfall', damage: -120, weight: 1.4, particleColor: 0xff2f01, type: 'bad' },
-        { texture: 'assets/beam.png', label: 'Bent Beam', damage: -90, weight: 0.9, particleColor: 0xff6200, type: 'bad' }
+        {
+            texture: 'assets/rock.png',
+            label: 'Rockfall',
+            damage: -120,
+            weight: 1.4,
+            particleColor: 0xff2f01,
+            type: 'bad',
+            scale: 0.45
+        },
+        {
+            texture: 'assets/beam.png',
+            label: 'Bent Beam',
+            damage: -90,
+            weight: 0.9,
+            particleColor: 0xff6200,
+            type: 'bad',
+            scale: 0.35
+        }
     ]
 };
 
