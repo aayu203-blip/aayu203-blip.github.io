@@ -15,9 +15,18 @@ export class Truck extends PIXI.Container {
     }
 
     createWheel(meta) {
-        const wheel = new PIXI.Sprite(meta.texture);
-        wheel.anchor.set(0.5);
-        wheel.scale.set(Config.truckScale);
+        const wheel = new PIXI.Container();
+        const wheelSprite = new PIXI.Sprite(meta.texture);
+        wheelSprite.anchor.set(0.5);
+        wheelSprite.scale.set(Config.truckScale);
+        const maskRadius = (meta.size * Config.truckScale) / 2;
+        const mask = new PIXI.Graphics();
+        mask.beginFill(0xffffff);
+        mask.drawCircle(0, 0, maskRadius);
+        mask.endFill();
+        wheelSprite.mask = mask;
+        wheel.addChild(mask);
+        wheel.addChild(wheelSprite);
         wheel.x = (meta.center.x - this.textureDimensions.width / 2) * Config.truckScale;
         wheel.y = (meta.center.y - this.textureDimensions.height) * Config.truckScale;
         this.addChild(wheel);
@@ -48,16 +57,27 @@ export class Truck extends PIXI.Container {
     }
 }
 
-export class FallingPart extends PIXI.Sprite {
+export class FallingPart extends PIXI.Container {
     constructor(texture, meta, startX) {
-        super(texture);
-        this.anchor.set(0.5);
-        this.x = startX;
-        this.y = -100;
+        super();
         this.meta = meta;
         this.type = meta?.type || 'good';
-        this.rotSpeed = (Math.random() - 0.5) * 0.1;
-        this.scale.set(0.6);
+        this.x = startX;
+        this.y = -100;
+        const targetScale =
+            meta?.scale || (this.type === 'bad' ? Config.hazardScale : Config.partScale);
+        const sprite = new PIXI.Sprite(texture);
+        sprite.anchor.set(0.5);
+        sprite.scale.set(targetScale);
+        if (this.type === 'bad') {
+            const glow = new PIXI.Graphics();
+            glow.beginFill(Config.hazardBackdropColor, 0.35);
+            glow.drawCircle(0, 0, texture.width * targetScale * 0.45);
+            glow.endFill();
+            this.addChild(glow);
+        }
+        this.addChild(sprite);
+        this.rotSpeed = (Math.random() - 0.5) * 0.08;
     }
 
     update(delta, speedMultiplier) {

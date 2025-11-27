@@ -113,6 +113,63 @@ body {
     right: 330px;
 }
 
+.lives-panel {
+    left: 40px;
+    top: 40px;
+    text-align: left;
+}
+
+.lives {
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.35em;
+}
+
+.life-loss {
+    animation: pulse-life 0.4s ease;
+}
+
+@keyframes pulse-life {
+    from {
+        transform: scale(1.05);
+        color: var(--ptc-gold);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.speed-indicator {
+    position: absolute;
+    top: 120px;
+    left: 40px;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(10px);
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.4em;
+    color: var(--text-soft);
+    transition: transform 0.3s;
+    pointer-events: none;
+}
+
+.speed-indicator.flash {
+    animation: flash-speed 0.6s ease;
+}
+
+@keyframes flash-speed {
+    0% {
+        transform: scale(1.1);
+        color: var(--ptc-gold);
+    }
+    100% {
+        transform: scale(1);
+        color: var(--text-soft);
+    }
+}
+
 .label {
     font-size: 12px;
     letter-spacing: 0.5em;

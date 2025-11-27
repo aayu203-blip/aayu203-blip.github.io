@@ -9,18 +9,23 @@ export const Config = {
     truckMaxSpeed: 25,
     truckTilt: 0.15,
     wheelSpinRate: 0.02,
+    wheelSpinRate: 0.02,
     streakThreshold: 3,
+    lives: 3,
     parallax: {
         tunnel: 0.12
     },
+    partScale: 0.55,
+    hazardScale: 0.48,
+    hazardBackdropColor: 0xff2f01,
     ambient: {
         dustInterval: 45,
         dustLimit: 30
     },
     spawnRates: {
-        start: 80,
-        mid: 60,
-        end: 35
+        start: 90,
+        mid: 70,
+        end: 55
     }
 };
 

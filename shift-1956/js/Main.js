@@ -18,6 +18,12 @@ let spawnTimer = 0;
 let announcerPayloadEl;
 let announcerDetailEl;
 let introPlayed = false;
+let lives = Config.lives;
+let speedStageIndex = 0;
+let livesDisplayEl;
+let speedIndicatorEl;
+
+const SPEED_LABELS = ['STAGE 1 · STABLE', 'STAGE 2 · SURGE', 'STAGE 3 · CRITICAL'];
 
 const WHEEL_LAYOUT = [
     { center: { x: 223, y: 318 }, size: 170 },
@@ -43,7 +49,11 @@ export async function initGame() {
 function setupScene() {
     announcerPayloadEl = document.getElementById('announcer-payload');
     announcerDetailEl = document.getElementById('announcer-detail');
+    livesDisplayEl = document.getElementById('lives-display');
+    speedIndicatorEl = document.getElementById('speed-indicator');
     resetAnnouncer();
+    updateLivesDisplay(true);
+    setSpeedIndicator(0, true);
 
     const bgTexture = texturesRef[GameAssets.background];
     backgroundLayer = new PIXI.TilingSprite(bgTexture, app.screen.width, app.screen.height);
@@ -132,11 +142,15 @@ function startGame() {
     score = 0;
     time = Config.duration;
     streak = 0;
+    lives = Config.lives;
+    speedStageIndex = 0;
     parts.forEach((p) => partsContainer.removeChild(p));
     parts = [];
     document.getElementById('overlay-screen').classList.remove('active');
     updateHUD();
     resetAnnouncer();
+    updateLivesDisplay(true);
+    setSpeedIndicator(speedStageIndex, true);
     const timerInterval = setInterval(() => {
         if (gameState !== 'PLAYING') {
             clearInterval(timerInterval);
@@ -155,9 +169,14 @@ function gameLoop(delta) {
     if (truck.x > app.screen.width - 100) truck.x = app.screen.width - 100;
     backgroundLayer.tilePosition.x -= truck.vx * Config.parallax.tunnel;
     spawnTimer += delta;
+    const stage = getSpeedStage(time);
     let currentRate = Config.spawnRates.start;
-    if (time < 35) currentRate = Config.spawnRates.mid;
-    if (time < 15) currentRate = Config.spawnRates.end;
+    if (stage === 1) currentRate = Config.spawnRates.mid;
+    if (stage === 2) currentRate = Config.spawnRates.end;
+    if (stage !== speedStageIndex) {
+        speedStageIndex = stage;
+        setSpeedIndicator(stage);
+    }
     if (spawnTimer > currentRate) {
         spawnPart();
         spawnTimer = 0;
@@ -179,8 +198,14 @@ function gameLoop(delta) {
 
 function speedMultiplier(timeLeft) {
     if (timeLeft > 35) return 1.0;
-    if (timeLeft > 15) return 1.3;
-    return 1.6;
+    if (timeLeft > 15) return 1.15;
+    return 1.3;
+}
+
+function getSpeedStage(timeLeft) {
+    if (timeLeft <= 15) return 2;
+    if (timeLeft <= 35) return 1;
+    return 0;
 }
 
 function spawnPart() {
@@ -226,9 +251,15 @@ function handleCatch(part) {
     } else {
         score += part.meta?.damage || -100;
         streak = 0;
+        lives -= 1;
+        updateLivesDisplay();
         particles.createExplosion(part.x, part.y, part.meta?.particleColor || 0xff0000);
         shakeScreen();
         announceHazard(part.meta);
+        if (lives <= 0) {
+            endGame();
+            return;
+        }
     }
     updateHUD();
 }
@@ -272,7 +303,8 @@ function announceHazard(meta = {}) {
     if (!announcerPayloadEl) return;
     const label = meta.label || 'SCRAP IMPACT';
     announcerPayloadEl.innerText = `${label.toUpperCase()}`;
-    announcerDetailEl.innerText = (meta.damage || -100).toString() + ' pts';
+    const lifeText = lives > 0 ? `${lives} LIVES REMAINING` : 'SYSTEM FAILURE';
+    announcerDetailEl.innerText = lifeText;
     gsap.fromTo(
         '#part-announcer',
         { x: 10, opacity: 0.7 },
@@ -290,6 +322,27 @@ function resetAnnouncer() {
     if (!announcerPayloadEl) return;
     announcerPayloadEl.innerText = 'CALIBRATING';
     announcerDetailEl.innerText = 'AWAITING COMMAND';
+}
+
+function updateLivesDisplay(initial = false) {
+    if (!livesDisplayEl) return;
+    const filled = '●'.repeat(Math.max(lives, 0));
+    const empty = '○'.repeat(Math.max(Config.lives - lives, 0));
+    livesDisplayEl.innerText = filled + empty;
+    if (!initial) {
+        livesDisplayEl.classList.remove('life-loss');
+        void livesDisplayEl.offsetWidth;
+        livesDisplayEl.classList.add('life-loss');
+    }
+}
+
+function setSpeedIndicator(stageIndex, instant = false) {
+    if (!speedIndicatorEl) return;
+    speedIndicatorEl.innerText = SPEED_LABELS[stageIndex];
+    speedIndicatorEl.classList.remove('flash');
+    if (!instant) {
+        speedIndicatorEl.classList.add('flash');
+    }
 }
 
 function runIntro() {
@@ -316,6 +369,6 @@ function endGame() {
     document.getElementById('start-btn').innerText = 'PLAY AGAIN';
     document.getElementById('final-score').classList.remove('hidden');
     document.getElementById('final-score-val').innerText = score;
-    announceHazard({ label: 'SHIFT COMPLETE', damage: score });
+    announceHazard({ label: lives <= 0 ? 'SYSTEM FAILURE' : 'SHIFT COMPLETE', damage: score });
 }
 
