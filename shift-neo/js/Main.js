@@ -50,8 +50,8 @@ const CALL_OUTS = [
 ];
 
 const WHEEL_LAYOUT = [
-    { center: { x: 223, y: 318 }, size: 170 },
-    { center: { x: 845, y: 314 }, size: 190 }
+    { center: { x: 980, y: 1350 }, size: 520 },
+    { center: { x: 3780, y: 1350 }, size: 520 }
 ];
 
 const inputState = { left: false, right: false, pointerActive: false, pointerX: null };
