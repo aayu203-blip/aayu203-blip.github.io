@@ -1,0 +1,430 @@
+:root {
+    --ptc-gold: #ffc20e;
+    --ptc-ink: #050505;
+    --ptc-graphite: #101018;
+    --glass: rgba(8, 8, 12, 0.85);
+    --border: rgba(255, 194, 14, 0.35);
+    --text-soft: rgba(255, 255, 255, 0.7);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    background: radial-gradient(circle at 20% 20%, #1a1a24, #020204 70%);
+}
+
+#game-container {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.tech-grid,
+.noise-overlay,
+.scanlines,
+.ptc-watermark {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.tech-grid {
+    background-size: 48px 48px;
+    background-image:
+        linear-gradient(transparent 47px, rgba(255, 255, 255, 0.05) 48px),
+        linear-gradient(90deg, transparent 47px, rgba(255, 255, 255, 0.05) 48px);
+    opacity: 0.4;
+}
+
+.noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23noise)' opacity='0.18'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    opacity: 0.4;
+}
+
+.scanlines {
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%);
+    background-size: 100% 4px;
+    z-index: 12;
+}
+
+.ptc-watermark {
+    background-image: url('../assets/ptc-logo.svg');
+    background-size: 240px;
+    background-repeat: repeat;
+    opacity: 0.04;
+    z-index: 3;
+}
+
+#ui-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.hero-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 40px;
+    letter-spacing: 0.6em;
+    font-size: 12px;
+    background: rgba(5, 5, 5, 0.8);
+    border-bottom: 1px solid rgba(255, 194, 14, 0.2);
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.brand-corner {
+    position: absolute;
+    bottom: 35px;
+    left: 40px;
+    padding: 18px 24px;
+    background: rgba(5, 5, 5, 0.85);
+    border: 1px solid rgba(255, 194, 14, 0.35);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.brand-logo {
+    width: 160px;
+    height: auto;
+}
+
+.brand-meta .logo-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.4em;
+}
+
+.brand-meta .sub-text {
+    font-size: 13px;
+    letter-spacing: 0.4em;
+    color: var(--text-soft);
+    margin-top: 6px;
+}
+
+.hud-panel {
+    position: absolute;
+    top: 40px;
+    background: var(--glass);
+    padding: 18px 36px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(18px);
+    text-align: right;
+}
+
+.score-panel {
+    right: 40px;
+}
+
+.time-panel {
+    right: 330px;
+}
+
+.prize-panel {
+    right: 640px;
+    width: 240px;
+}
+
+.prize-status {
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    color: var(--text-soft);
+    margin-top: 6px;
+}
+
+.prize-achieved {
+    color: var(--ptc-gold);
+}
+
+.speed-indicator {
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(5, 5, 5, 0.8);
+    backdrop-filter: blur(10px);
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.4em;
+    color: var(--text-soft);
+    transition: transform 0.3s;
+    pointer-events: none;
+}
+
+.speed-indicator.flash {
+    animation: flash-speed 0.6s ease;
+}
+
+@keyframes flash-speed {
+    0% {
+        transform: scale(1.1);
+        color: var(--ptc-gold);
+    }
+    100% {
+        transform: scale(1);
+        color: var(--text-soft);
+    }
+}
+
+.label {
+    font-size: 12px;
+    letter-spacing: 0.5em;
+    color: var(--text-soft);
+    margin-bottom: 6px;
+}
+
+.value {
+    font-family: 'Oswald', sans-serif;
+    font-size: 54px;
+    letter-spacing: 0.08em;
+    color: white;
+    text-shadow: 0 0 18px rgba(255, 255, 255, 0.28);
+}
+
+.ticker-panel {
+    position: absolute;
+    bottom: 35px;
+    right: 40px;
+    width: 360px;
+    padding: 18px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(3, 3, 3, 0.8);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.ticker-label {
+    font-size: 11px;
+    letter-spacing: 0.5em;
+    color: var(--text-soft);
+    margin-bottom: 6px;
+}
+
+.ticker-payload {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    letter-spacing: 0.08em;
+}
+
+.ticker-detail {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: var(--ptc-gold);
+    margin-top: 4px;
+}
+
+#streak-badge {
+    position: absolute;
+    top: 150px;
+    right: 50px;
+    font-size: 62px;
+    font-family: 'Oswald', sans-serif;
+    color: var(--ptc-gold);
+    text-shadow: 0 0 30px rgba(255, 194, 14, 0.7);
+    transform: rotate(-7deg);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+#overlay-screen {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+#overlay-screen.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.content {
+    text-align: center;
+    border: 1px solid var(--ptc-gold);
+    padding: 60px;
+    background: rgba(8, 8, 12, 0.95);
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.9);
+    width: min(560px, 90vw);
+}
+
+h1 {
+    font-size: clamp(52px, 7vw, 84px);
+    margin: 0 0 20px 0;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.2em;
+}
+
+p {
+    font-size: 18px;
+    letter-spacing: 0.4em;
+    color: var(--text-soft);
+    margin: 0;
+}
+
+button {
+    background: var(--ptc-gold);
+    color: #050505;
+    border: none;
+    padding: 16px 60px;
+    font-size: 22px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.3em;
+    pointer-events: auto;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+#loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 15% 15%, rgba(255, 194, 14, 0.12), rgba(0, 0, 0, 0.96));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+}
+
+#loading-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.loader-content {
+    text-align: center;
+    padding: 50px 90px;
+    border: 1px solid var(--ptc-gold);
+    background: rgba(5, 5, 5, 0.85);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.loader-logo {
+    width: 160px;
+    margin-bottom: 24px;
+}
+
+.loader-ring {
+    width: 100px;
+    height: 100px;
+    border: 6px solid rgba(255, 194, 14, 0.18);
+    border-top-color: var(--ptc-gold);
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    animation: spin 1.1s linear infinite;
+}
+
+.loader-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.4em;
+    margin-bottom: 10px;
+}
+
+.loader-progress {
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    color: var(--ptc-gold);
+    letter-spacing: 0.2em;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 1100px) {
+    .hud-panel {
+        position: static;
+        margin: 20px;
+        display: inline-block;
+    }
+
+    .score-panel {
+        right: auto;
+    }
+
+    .time-panel {
+        right: auto;
+    }
+
+    #streak-badge {
+        top: 240px;
+        right: 40px;
+    }
+
+    .brand-corner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+#prize-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s;
+}
+
+#prize-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#prize-overlay .content {
+    text-align: center;
+    padding: 50px 80px;
+    border: 1px solid var(--ptc-gold);
+    background: rgba(8, 8, 12, 0.95);
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.9);
+}
+
+#prize-overlay img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+#prize-overlay h2 {
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.4em;
+    margin: 10px 0;
+}
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Parts Trading Company | Shift 1956</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div id="loading-overlay">
+        <div class="loader-content">
+            <img src="assets/ptc-logo.png" alt="Parts Trading Company Logo" class="loader-logo">
+            <div class="loader-ring"></div>
+            <div class="loader-label">CALIBRATING SHIFT • 0%</div>
+            <div class="loader-progress">0%</div>
+        </div>
+    </div>
+    <div class="tech-grid"></div>
+    <div class="noise-overlay"></div>
+    <div class="ptc-watermark"></div>
+    <div id="game-container"></div>
+    <div id="ui-layer">
+        <div class="hero-strip">PARTS TRADING COMPANY · VOLVO · SCANIA · KOMATSU · CAT</div>
+        <div class="brand-corner">
+            <img src="assets/ptc-logo.png" alt="Parts Trading Company" class="brand-logo">
+        </div>
+        <div class="speed-indicator" id="speed-indicator">STAGE 1 · STABLE</div>
+        <div class="hud-panel prize-panel">
+            <div class="label">PRIZE TARGET</div>
+            <div class="value" id="prize-display">0 / 2500</div>
+            <div class="prize-status" id="prize-status">REWARD READY AT 2500</div>
+        </div>
+        <div class="hud-panel score-panel">
+            <div class="label">SHIFT VALUE</div>
+            <div class="value" id="score-display">0</div>
+        </div>
+        <div class="hud-panel time-panel">
+            <div class="label">SHIFT TIME</div>
+            <div class="value" id="time-display">00:45</div>
+        </div>
+        <div id="part-announcer" class="ticker-panel">
+            <div class="ticker-label">ACTIVE PAYLOAD</div>
+            <div class="ticker-payload" id="announcer-payload">CALIBRATING</div>
+            <div class="ticker-detail" id="announcer-detail">Awaiting command</div>
+        </div>
+        <div id="streak-badge" class="hidden">x1.0</div>
+        <div id="overlay-screen" class="active">
+            <div class="content">
+                <h1 class="glitch-text">SHIFT 1956</h1>
+                <p>CAPTURE PREMIUM PARTS. DODGE SCRAP.</p>
+                <button id="start-btn">INITIATE SHIFT</button>
+                <div id="final-score" class="hidden">SHIFT COMPLETE<br>SCORE: <span id="final-score-val">0</span></div>
+            </div>
+        </div>
+        <div id="prize-overlay">
+            <div class="content">
+                <img src="assets/ptc-logo.png" alt="PTC Badge">
+                <h2>SHIFT WINNER</h2>
+                <p>Prize unlocked at <span id="prize-overlay-score">0</span> pts</p>
+                <button id="prize-continue">RESUME SHIFT</button>
+            </div>
+        </div>
+    </div>
+    <div class="scanlines"></div>
+    <script type="module">
+        import { initGame } from './js/Main.js';
+        initGame();
+    </script>
+</body>
+</html>
+
