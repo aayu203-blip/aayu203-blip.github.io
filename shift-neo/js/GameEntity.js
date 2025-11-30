@@ -6,6 +6,7 @@ export class Truck extends PIXI.Container {
         this.sprite = new PIXI.Sprite(texture);
         this.sprite.anchor.set(0.5, 1);
         this.sprite.scale.set(Config.truckScale);
+        this.sprite.zIndex = 0;
         this.addChild(this.sprite);
         this.vx = 0;
         this.ax = 0;
@@ -23,9 +24,12 @@ export class Truck extends PIXI.Container {
         const scaleFactor = desiredDiameter / baseDiameter;
         wheelSprite.scale.set(scaleFactor);
         wheel.addChild(wheelSprite);
+        // Position wheels relative to truck body center, accounting for anchor point
         wheel.x = (meta.center.x - this.textureDimensions.width / 2) * Config.truckScale;
         wheel.y = (meta.center.y - this.textureDimensions.height) * Config.truckScale;
+        // Ensure wheels render on top
         this.addChild(wheel);
+        wheel.zIndex = 10;
         return wheel;
     }
 
