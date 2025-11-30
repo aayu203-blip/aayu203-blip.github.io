@@ -22,14 +22,6 @@ export class Truck extends PIXI.Container {
         const desiredDiameter = (meta.size || baseDiameter) * Config.truckScale;
         const scaleFactor = desiredDiameter / baseDiameter;
         wheelSprite.scale.set(scaleFactor);
-        const maskRadius = desiredDiameter / 2;
-        const mask = new PIXI.Graphics();
-        mask.beginFill(0xffffff);
-        mask.drawCircle(0, 0, maskRadius);
-        mask.endFill();
-        wheelSprite.mask = mask;
-        wheel.addChild(mask);
-        mask.visible = false;
         wheel.addChild(wheelSprite);
         wheel.x = (meta.center.x - this.textureDimensions.width / 2) * Config.truckScale;
         wheel.y = (meta.center.y - this.textureDimensions.height) * Config.truckScale;

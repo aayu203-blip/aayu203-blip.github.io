@@ -5,7 +5,7 @@ export const Config = {
     gravity: 12,
     truckSpeed: 1.5,
     truckFriction: 0.92,
-    truckScale: 0.38,
+    truckScale: 0.5,
     truckMaxSpeed: 25,
     truckTilt: 0.15,
     wheelSpinRate: 0.02,
@@ -16,7 +16,7 @@ export const Config = {
         tunnel: 0.12
     },
     partScale: 0.5,
-    hazardScale: 0.35,
+    hazardScale: 0.5,
     hazardBackdropColor: 0xff2f01,
     hazardBackdropRadius: 0.38,
     ambient: {
