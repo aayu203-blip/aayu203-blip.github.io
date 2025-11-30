@@ -16,7 +16,7 @@ export const Config = {
         tunnel: 0.12
     },
     partScale: 0.5,
-    hazardScale: 0.5,
+    hazardScale: 0.25,
     hazardBackdropColor: 0xff2f01,
     hazardBackdropRadius: 0.38,
     ambient: {
@@ -55,7 +55,7 @@ export const GameAssets = {
             weight: 1.2,
             particleColor: 0xff2f01,
             type: 'bad',
-            scale: 0.45
+            scale: 0.25
         }
     ]
 };
