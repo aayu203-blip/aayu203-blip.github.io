@@ -129,10 +129,6 @@
             z-index: 35;
             text-align: right;
             max-width: 240px;
-            padding: 12px 16px 12px 16px;
-            background: rgba(0, 0, 0, 0.65); /* Dark vignette background for print visibility */
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
         .heritage-block .heritage-line {
             font-family: 'Oswald', sans-serif;
@@ -144,7 +140,7 @@
             margin: 0;
             padding: 0;
             display: block;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for readability */
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9); /* Stronger shadow for readability */
         }
         .heritage-block .heritage-gold {
             color: rgba(255, 255, 255, 0.95);
@@ -161,7 +157,7 @@
             padding: 0;
             display: block;
             text-transform: none;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9); /* Stronger shadow for readability */
         }
         /* Fade overlays for text readability */
         .fade-overlay-top {
@@ -218,7 +214,7 @@
         /* Hero Content - Slogan */
         .hero-content {
             position: absolute;
-            bottom: 140mm; /* Original position - high up against the sky near boom pivot */
+            bottom: 150mm; /* Nudged up slightly to clear hydraulic arm */
             left: 0;
             right: 0;
             z-index: 20;
