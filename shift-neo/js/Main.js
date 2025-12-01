@@ -54,7 +54,20 @@ const WHEEL_LAYOUT = [
     { center: { x: 3722, y: 1414 }, size: 907 }
 ];
 
-const inputState = { left: false, right: false, pointerActive: false, pointerX: null };
+// Input is split into keyboard and gamepad channels, then merged each frame
+const inputState = {
+    keyboardLeft: false,
+    keyboardRight: false,
+    gamepadLeft: false,
+    gamepadRight: false,
+    left: false,
+    right: false,
+    pointerActive: false,
+    pointerX: null
+};
+
+// Track active gamepad if the browser exposes connection events
+let activeGamepadIndex = null;
 
 export async function initGame() {
     app = new PIXI.Application({
@@ -134,12 +147,12 @@ function resizeScene(bgTexture) {
 
 function setupInput() {
     window.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft' || e.key === 'a') inputState.left = true;
-        if (e.key === 'ArrowRight' || e.key === 'd') inputState.right = true;
+        if (e.key === 'ArrowLeft' || e.key === 'a') inputState.keyboardLeft = true;
+        if (e.key === 'ArrowRight' || e.key === 'd') inputState.keyboardRight = true;
     });
     window.addEventListener('keyup', (e) => {
-        if (e.key === 'ArrowLeft' || e.key === 'a') inputState.left = false;
-        if (e.key === 'ArrowRight' || e.key === 'd') inputState.right = false;
+        if (e.key === 'ArrowLeft' || e.key === 'a') inputState.keyboardLeft = false;
+        if (e.key === 'ArrowRight' || e.key === 'd') inputState.keyboardRight = false;
     });
     const handlePointer = (e) => {
         const rect = app.view.getBoundingClientRect();
@@ -157,6 +170,22 @@ function setupInput() {
     });
     window.addEventListener('pointerleave', () => {
         inputState.pointerActive = false;
+    });
+
+    // GAMEPAD (PS4 / DualShock) INPUT EVENTS – optional, we still poll as a fallback
+    window.addEventListener('gamepadconnected', (e) => {
+        const gp = e.gamepad;
+        if (gp.mapping === 'standard') {
+            activeGamepadIndex = gp.index;
+        } else if (activeGamepadIndex === null) {
+            activeGamepadIndex = gp.index;
+        }
+    });
+
+    window.addEventListener('gamepaddisconnected', (e) => {
+        if (activeGamepadIndex === e.gamepad.index) {
+            activeGamepadIndex = null;
+        }
     });
 }
 
@@ -181,6 +210,12 @@ function startGame() {
 
 function gameLoop(delta) {
     if (gameState !== 'PLAYING') return;
+
+    // Refresh gamepad state and merge with keyboard each frame
+    applyGamepadInput();
+    inputState.left = inputState.keyboardLeft || inputState.gamepadLeft;
+    inputState.right = inputState.keyboardRight || inputState.gamepadRight;
+
     truck.update(delta, inputState);
     if (truck.x < 100) truck.x = 100;
     if (truck.x > app.screen.width - 100) truck.x = app.screen.width - 100;
@@ -211,6 +246,45 @@ function gameLoop(delta) {
         }
     }
     particles.update(delta);
+}
+
+function applyGamepadInput() {
+    // Reset gamepad channel each frame
+    inputState.gamepadLeft = false;
+    inputState.gamepadRight = false;
+
+    if (typeof navigator.getGamepads !== 'function') return;
+
+    const pads = navigator.getGamepads ? navigator.getGamepads() : [];
+    let gp = null;
+
+    if (activeGamepadIndex !== null && pads[activeGamepadIndex]) {
+        gp = pads[activeGamepadIndex];
+    }
+
+    if (!gp) {
+        // Fallback: pick the first connected pad
+        for (const p of pads) {
+            if (p && p.connected) {
+                gp = p;
+                break;
+            }
+        }
+    }
+
+    if (!gp) return;
+
+    const threshold = 0.25;
+    const axisX = gp.axes && gp.axes.length > 0 ? gp.axes[0] : 0;
+
+    const dpadLeft = gp.buttons && gp.buttons[14] ? gp.buttons[14].pressed : false;
+    const dpadRight = gp.buttons && gp.buttons[15] ? gp.buttons[15].pressed : false;
+
+    const stickLeft = axisX < -threshold;
+    const stickRight = axisX > threshold;
+
+    inputState.gamepadLeft = dpadLeft || stickLeft;
+    inputState.gamepadRight = dpadRight || stickRight;
 }
 
 function speedMultiplier(timeLeft) {
