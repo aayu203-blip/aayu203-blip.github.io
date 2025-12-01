@@ -5,13 +5,13 @@ export const Config = {
     gravity: 12,
     truckSpeed: 1.5,
     truckFriction: 0.92,
-    truckScale: 0.2,
+    truckScale: 0.15,
     truckMaxSpeed: 25,
     truckTilt: 0.15,
     wheelSpinRate: 0.02,
     streakThreshold: 3,
     baseScore: 150,
-    prizeScore: 2500,
+    prizeScore: 1000,
     parallax: {
         tunnel: 0.12
     },
@@ -33,8 +33,8 @@ export const Config = {
 const partPalette = 0xffd400;
 
 export const GameAssets = {
-    truck: 'assets/truck_body.png',
-    truckWheel: 'assets/truck_wheel.png',
+    truck: 'assets/dumper_new.png',
+    truckWheel: 'assets/tire_new.png',
     background: 'assets/bg_tunnel.jpg',
     goodParts: [
         { texture: 'assets/part_0.png', label: 'Turbo Core', score: 150, weight: 1.2, particleColor: partPalette },
