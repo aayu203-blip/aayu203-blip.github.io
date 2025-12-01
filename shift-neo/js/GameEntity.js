@@ -26,10 +26,12 @@ export class Truck extends PIXI.Container {
         const scaleFactor = desiredDiameter / baseDiameter;
         wheelSprite.scale.set(scaleFactor);
         wheel.addChild(wheelSprite);
-        // Position wheels relative to truck body center, accounting for anchor point (0.5, 1)
-        // Truck anchor is center-bottom, so we need to offset from center
+        // Position wheels relative to truck body
+        // Truck sprite anchor is (0.5, 1) = center-bottom, so:
+        // - x: offset from center (center.x - width/2)
+        // - y: offset from bottom (center.y - height), but since anchor is at bottom, y goes negative upward
         wheel.x = (meta.center.x - this.textureDimensions.width / 2) * Config.truckScale;
-        wheel.y = (meta.center.y - this.textureDimensions.height) * Config.truckScale;
+        wheel.y = -(this.textureDimensions.height - meta.center.y) * Config.truckScale;
         // Ensure wheels render on top
         this.addChild(wheel);
         wheel.zIndex = 10;
