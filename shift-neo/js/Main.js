@@ -51,12 +51,11 @@ const CALL_OUTS = [
 
 // Wheel positions to align with yellow circles on dumper body
 // Image is 2000x1598, truck anchor is center-bottom (0.5, 1)
-// Yellow circles are on lower chassis - estimate positions:
-// Front wheel: ~25% from left, ~92% from top (near bottom of chassis)
-// Rear wheel: ~75% from left, ~92% from top (near bottom of chassis)
+// Yellow circles are on the truck body chassis - need to be much higher up
+// Moving Y coordinates significantly higher (smaller Y = higher on image)
 const WHEEL_LAYOUT = [
-    { center: { x: 500, y: 1470 }, size: 500 },   // Front wheel - align with front yellow circle
-    { center: { x: 1500, y: 1470 }, size: 550 }  // Rear wheel - align with rear yellow circle
+    { center: { x: 500, y: 1200 }, size: 500 },   // Front wheel - align with front yellow circle
+    { center: { x: 1500, y: 1200 }, size: 550 }  // Rear wheel - align with rear yellow circle
 ];
 
 // Input is split into keyboard and gamepad channels, then merged each frame
