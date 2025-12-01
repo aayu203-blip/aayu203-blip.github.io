@@ -26,18 +26,14 @@ export class Truck extends PIXI.Container {
         const scaleFactor = desiredDiameter / baseDiameter;
         wheelSprite.scale.set(scaleFactor);
         wheel.addChild(wheelSprite);
-        // Position wheels relative to truck body
-        // Truck sprite anchor is (0.5, 1) = center-bottom, so y=0 is at bottom of sprite
-        // Wheel center.y is measured from top of image (0 = top, height = bottom)
+        // Position wheels to align with yellow circles on truck body
+        // Truck sprite anchor is (0.5, 1) = center-bottom
+        // In truck container: x=0 is center, y=0 is bottom, negative y goes upward
         wheel.x = (meta.center.x - this.textureDimensions.width / 2) * Config.truckScale;
-        // Convert image Y coordinate (from top) to truck container Y (from bottom, negative = up)
-        // If center.y is near the bottom of the image, distanceFromBottom is small, wheel.y should be slightly negative
+        // Convert image Y (from top) to truck container Y (from bottom)
+        // Yellow circles are on the chassis, near the bottom of the image
         const distanceFromBottom = this.textureDimensions.height - meta.center.y;
         wheel.y = -distanceFromBottom * Config.truckScale;
-        
-        // Debug: If wheels are too low, we need to move them up (more negative)
-        // Add an offset to move wheels up to align with yellow circles on truck body
-        wheel.y -= 50 * Config.truckScale; // Move wheels up by 50px (scaled)
         // Ensure wheels render on top
         this.addChild(wheel);
         wheel.zIndex = 10;
