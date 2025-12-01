@@ -50,8 +50,8 @@ const CALL_OUTS = [
 ];
 
 const WHEEL_LAYOUT = [
-    { center: { x: 450, y: 1450 }, size: 600 },
-    { center: { x: 1550, y: 1450 }, size: 650 }
+    { center: { x: 450, y: 1550 }, size: 600 },
+    { center: { x: 1550, y: 1550 }, size: 650 }
 ];
 
 // Input is split into keyboard and gamepad channels, then merged each frame
