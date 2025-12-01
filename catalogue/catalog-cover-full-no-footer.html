@@ -218,12 +218,12 @@
             left: 0;
             right: 0;
             z-index: 20;
-            padding: 133px 10mm 20mm calc(18mm + 30px);
+            padding: 133px 10mm 20mm calc(18mm + 30px - 10.5mm); /* Moved left by 5% (10.5mm) */
             margin-top: 0;
         }
         /* Typography & Layout elements */
         .gold-border {
-            border-left: 8px solid var(--ptc-gold);
+            border-left: 10px solid var(--ptc-gold); /* Increased by 25% from 8px to 10px */
             padding-left: 18px;
             display: inline-block;
             margin-bottom: 16px;
@@ -259,20 +259,21 @@
         }
         .bottom-tagline {
             font-family: 'Inter', sans-serif;
-            font-size: 12px;
+            font-size: 13px; /* Increased by 1pt from 12px */
             font-weight: 700; /* Bold */
             color: #ffffff;
             line-height: 1.4;
+            letter-spacing: 0.05em; /* Premium letter spacing (+50 tracking) */
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
             margin: 0;
         }
         .bottom-website {
             font-family: 'Inter', sans-serif;
-            font-size: 11px;
+            font-size: 12px; /* Increased by 1pt from 11px, 1pt smaller than tagline */
             font-weight: 400; /* Regular/thin */
             color: #ffffff;
             line-height: 1.4;
-            letter-spacing: 0.08em; /* Letter spacing for elegant look */
+            letter-spacing: 0.05em; /* Premium letter spacing (+50 tracking) */
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
             margin: 0;
         }
@@ -293,7 +294,7 @@
         
         <!-- TOP BAR -->
         <div class="top-bar">
-            <div style="display: flex; flex-direction: column; align-items: flex-start; margin-left: 48px; gap: 0; position: relative;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start; margin-left: calc(48px - 28px); gap: 0; position: relative;">
                 <div class="user-logo-placeholder">
                     <img src="/catalogue-2025/images/logos/ptc-logo.png" alt="PTC Parts Trading Company" class="logo-image">
                 </div>
