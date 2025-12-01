@@ -19,12 +19,15 @@ export class Truck extends PIXI.Container {
         const wheel = new PIXI.Container();
         const wheelSprite = new PIXI.Sprite(meta.texture);
         wheelSprite.anchor.set(0.5);
-        const baseDiameter = meta.texture?.width || meta.size || 1;
+        // Use actual texture width for base diameter
+        const baseDiameter = meta.texture.width || meta.size || 1;
+        // Scale wheel to match truck scale proportionally
         const desiredDiameter = (meta.size || baseDiameter) * Config.truckScale;
         const scaleFactor = desiredDiameter / baseDiameter;
         wheelSprite.scale.set(scaleFactor);
         wheel.addChild(wheelSprite);
-        // Position wheels relative to truck body center, accounting for anchor point
+        // Position wheels relative to truck body center, accounting for anchor point (0.5, 1)
+        // Truck anchor is center-bottom, so we need to offset from center
         wheel.x = (meta.center.x - this.textureDimensions.width / 2) * Config.truckScale;
         wheel.y = (meta.center.y - this.textureDimensions.height) * Config.truckScale;
         // Ensure wheels render on top
