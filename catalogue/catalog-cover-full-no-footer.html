@@ -184,7 +184,7 @@
             bottom: 0; /* Extended to bottom */
             left: 0;
             right: 0;
-            height: 140mm; /* Cover bottom area including lists */
+            height: 80mm; /* Cover bottom area for bottom section */
             background: linear-gradient(
                 to top,
                 rgba(0, 0, 0, 0.8) 0%,
@@ -214,26 +214,12 @@
         /* Hero Content - Slogan */
         .hero-content {
             position: absolute;
-            bottom: 140mm; /* Position above lists */
+            bottom: 60mm; /* Centered position without lists */
             left: 0;
             right: 0;
             z-index: 20;
             padding: 133px 10mm 20mm calc(18mm + 30px);
             margin-top: 0;
-        }
-        /* Lists section - Now overlay on image */
-        .lists-section {
-            background: transparent; /* Transparent - image shows through */
-            padding: 0;
-            position: absolute;
-            bottom: 50mm; /* Position above bottom section */
-            left: 0;
-            right: 0;
-            z-index: 25;
-            margin-bottom: 0;
-        }
-        .lists-content {
-            padding: 17px 10mm 20px calc(18mm + 30px); /* Same padding as original */
         }
         /* Typography & Layout elements */
         .gold-border {
@@ -255,49 +241,6 @@
         }
         .headline .gold { 
             color: var(--ptc-gold); 
-        }
-        /* Info Grid */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-            align-items: flex-start;
-            background: transparent; /* No translucent box */
-            padding: 7px 12px;
-            border-radius: 2px;
-            margin-top: 8px;
-            margin-left: -8px;
-        }
-        .section-title {
-            color: #B5B5B5;
-            font-family: 'Oswald', sans-serif;
-            font-weight: 600;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            margin-bottom: 4px;
-            margin-top: 0;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
-        }
-        .info-grid > div:first-child .section-title,
-        .info-grid > div:last-child .section-title {
-            margin-bottom: 4px;
-        }
-        .list-text {
-            color: #E6E6E6;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 1.38;
-            letter-spacing: 0.01em;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
-        }
-        .list-text span {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .list-text span:last-child {
-            margin-bottom: 0;
         }
         /* Bottom Section - Centered tagline and website */
         .bottom-section {
@@ -372,43 +315,6 @@
                     WE HAVE<br>
                     <span class="gold">PARTS.</span>
                 </h2>
-            </div>
-        </div>
-
-        <!-- LISTS SECTION - Overlay on image -->
-        <div class="lists-section">
-            <div class="lists-content">
-                <div class="info-grid">
-                    <!-- Inventory -->
-                    <div>
-                        <div class="section-title">INVENTORY</div>
-                        <div class="list-text">
-                            <span>Hydraulic Pumps</span>
-                            <span>Hydraulic Components</span>
-                            <span>Engine Components</span>
-                            <span>Transmission Components</span>
-                            <span>Undercarriage</span>
-                            <span>Electrical &amp; Sensors</span>
-                            <span>Filters &amp; Consumables</span>
-                            <span>Seals &amp; Gaskets</span>
-                            <span>Cooling System Components</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="section-title">EQUIPMENT WE SUPPORT</div>
-                        <div class="list-text">
-                            <span>Volvo</span>
-                            <span>Scania</span>
-                            <span>Komatsu</span>
-                            <span>Caterpillar</span>
-                            <span>Hitachi</span>
-                            <span>Kobelco</span>
-                            <span>Hyundai</span>
-                            <span>SANY</span>
-                            <span>Liugong</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
