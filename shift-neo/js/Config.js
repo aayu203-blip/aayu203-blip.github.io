@@ -33,8 +33,8 @@ export const Config = {
 const partPalette = 0xffd400;
 
 export const GameAssets = {
-    truck: 'assets/dumper_new.png',
-    truckWheel: 'assets/tire_new.png',
+    truck: 'assets/dumper_optimized.png',
+    truckWheel: 'assets/tire_optimized.png',
     background: 'assets/bg_tunnel.jpg',
     goodParts: [
         { texture: 'assets/part_0.png', label: 'Turbo Core', score: 150, weight: 1.2, particleColor: partPalette },
