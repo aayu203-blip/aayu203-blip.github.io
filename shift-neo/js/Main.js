@@ -50,11 +50,11 @@ const CALL_OUTS = [
 ];
 
 // Wheel positions calibrated via wheel-calibrator.html
-// Front wheel: x: 1484, y: 1067, size: 290
-// Rear wheel: x: 684, y: 1067, size: 290
+// Front wheel: x: 1484, y: 1067, size: 435 (50% larger than 290)
+// Rear wheel: x: 684, y: 1067, size: 435 (50% larger than 290)
 const WHEEL_LAYOUT = [
-    { center: { x: 1484, y: 1067 }, size: 290 },   // Front wheel
-    { center: { x: 684, y: 1067 }, size: 290 }     // Rear wheel
+    { center: { x: 1484, y: 1067 }, size: 435 },   // Front wheel
+    { center: { x: 684, y: 1067 }, size: 435 }     // Rear wheel
 ];
 
 // Input is split into keyboard and gamepad channels, then merged each frame
