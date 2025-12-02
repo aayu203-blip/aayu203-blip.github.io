@@ -13,10 +13,30 @@
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
                 background: none;
+                margin: 0;
+                padding: 0;
             }
             .invitation-container {
                 box-shadow: none;
                 margin: 0;
+                width: 1080px;
+                height: 1080px;
+                /* Ensure high-quality rendering for print */
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            /* Ensure images print at high quality with smooth rendering */
+            img {
+                image-rendering: auto;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                max-width: 100%;
+                height: auto;
+            }
+            /* Ensure background images print at high quality */
+            .background-image {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
         }
         @media screen {
