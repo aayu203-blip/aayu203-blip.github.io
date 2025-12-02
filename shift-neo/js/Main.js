@@ -323,13 +323,26 @@ function pickWeighted(list) {
 }
 
 function checkCollision(truckEntity, part) {
-    const truckBounds = truckEntity.getBounds();
+    // Use only the truck body sprite bounds (not including wheels)
+    // Calculate bounds manually: sprite has anchor (0.5, 1) = center-bottom
+    const sprite = truckEntity.sprite;
+    const spriteWidth = sprite.width;
+    const spriteHeight = sprite.height;
+    // Sprite's world position: container position + sprite local position (0, 0 due to anchor)
+    const truckWorldX = truckEntity.x;
+    const truckWorldY = truckEntity.y;
+    // Bounds: left = center - width/2, right = center + width/2, top = bottom - height, bottom = bottom
+    const truckLeft = truckWorldX - spriteWidth / 2;
+    const truckRight = truckWorldX + spriteWidth / 2;
+    const truckTop = truckWorldY - spriteHeight;
+    const truckBottom = truckWorldY;
+    
     const partBounds = part.getBounds();
     return (
-        truckBounds.x < partBounds.x + partBounds.width &&
-        truckBounds.x + truckBounds.width > partBounds.x &&
-        truckBounds.y < partBounds.y + partBounds.height &&
-        truckBounds.y + truckBounds.height > partBounds.y
+        truckLeft < partBounds.x + partBounds.width &&
+        truckRight > partBounds.x &&
+        truckTop < partBounds.y + partBounds.height &&
+        truckBottom > partBounds.y
     );
 }
 
