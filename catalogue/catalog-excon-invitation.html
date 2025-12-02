@@ -149,10 +149,15 @@
             align-items: flex-start;
         }
         .logo-image {
-            width: 400px; /* Even bigger logo */
+            width: 499px; /* Use native logo width for maximum crispness */
             height: auto;
             object-fit: contain;
-            /* No filter - keep logo original */
+            /* Optimize for crisp rendering */
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: auto;
+            /* Force hardware acceleration for better rendering */
+            transform: translateZ(0);
+            will-change: transform;
         }
         /* Heritage Block - Right Side */
         .heritage-block {
