@@ -26,7 +26,7 @@
         }
         /* --- GLOBAL VARS --- */
         :root {
-            --ptc-gold: #FFC20E;
+            --ptc-gold: #DA9100;
             --dark-bg: #000000;
         }
         * {
@@ -147,6 +147,7 @@
             margin: 0;
             padding: 0;
             text-transform: uppercase;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
         .heritage-legacy {
             font-family: 'Oswald', sans-serif;
@@ -157,6 +158,7 @@
             margin: 0;
             padding: 0;
             text-transform: uppercase;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
         .heritage-since {
             font-family: 'Oswald', sans-serif;
@@ -167,6 +169,7 @@
             letter-spacing: 0.1em; /* +10% tracking */
             margin-top: 4px;
             text-transform: uppercase;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
         
         /* Main Headline Block */
@@ -208,12 +211,16 @@
             line-height: 1.3; /* 130% */
             margin: 0;
             padding: 0;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
         .invitation-text p {
             margin: 0 0 4px 0;
         }
         .invitation-text p:last-child {
             margin-bottom: 0;
+        }
+        .small-caps {
+            font-variant: small-caps;
         }
         .invitation-bullet {
             display: inline-block;
@@ -236,7 +243,7 @@
             font-family: 'Inter', sans-serif; /* Back to original font */
             font-weight: 600; /* Semibold - original */
             font-size: 32px; /* Original size */
-            color: rgba(255, 194, 14, 0.80); /* Yellow with 80% opacity */
+            color: rgba(218, 145, 0, 0.80); /* Yellow with 80% opacity */
             text-align: left;
             margin: 0;
             padding: 0;
@@ -304,7 +311,7 @@
         <!-- Invitation Block -->
         <div class="invitation-block">
             <div class="invitation-text">
-                <p>Visit Us at EXCON 2025</p>
+                <p>Visit <span class="small-caps">Us</span> at EXCON 2025</p>
                 <p>
                     Hall 5 LL <span class="invitation-bullet"></span> Stall B 22
                 </p>
