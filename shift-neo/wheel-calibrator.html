@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>PTC Dumper Wheel Calibrator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            margin: 0;
+            background: #050505;
+            color: #f5f5f5;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #toolbar {
+            padding: 8px 16px;
+            background: #111;
+            border-bottom: 1px solid #333;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            font-size: 13px;
+        }
+        #toolbar span {
+            white-space: nowrap;
+        }
+        #toolbar strong {
+            font-weight: 600;
+            color: #ffd400;
+        }
+        #viewport {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+        }
+        canvas {
+            border: 1px solid #333;
+            background: #000;
+        }
+        .swatch {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 4px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div id="toolbar">
+        <span><strong>PTC DUMPER WHEEL CALIBRATION</strong></span>
+        <span>Image size: <span id="img-size">—</span></span>
+        <span>Last click: <span id="click-pos">—</span></span>
+        <span>Active wheel:
+            <span class="swatch" id="front-swatch" style="background:#ffd400;"></span>
+            <span id="active-wheel-label">FRONT</span>
+        </span>
+        <span>Front wheel: <span id="front-data">x: —, y: —, size: —</span></span>
+        <span>Rear wheel: <span id="rear-data">x: —, y: —, size: —</span></span>
+        <span>Instructions: Click where the wheel should sit. Press <strong>Space</strong> to toggle Front/Rear.</span>
+    </div>
+    <div id="viewport">
+        <canvas id="calib-canvas"></canvas>
+    </div>
+
+    <script>
+        const imgPath = 'assets/dumper_optimized.png';
+        const wheelPath = 'assets/tire_optimized.png';
+
+        const canvas = document.getElementById('calib-canvas');
+        const ctx = canvas.getContext('2d');
+
+        const imgSizeEl = document.getElementById('img-size');
+        const clickPosEl = document.getElementById('click-pos');
+        const frontDataEl = document.getElementById('front-data');
+        const rearDataEl = document.getElementById('rear-data');
+        const activeWheelLabel = document.getElementById('active-wheel-label');
+        const frontSwatch = document.getElementById('front-swatch');
+
+        let baseImage = new Image();
+        let wheelImage = new Image();
+        let imgLoaded = false;
+        let wheelLoaded = false;
+
+        const state = {
+            imgWidth: 0,
+            imgHeight: 0,
+            activeWheel: 'front', // 'front' or 'rear'
+            front: { x: null, y: null, size: null },
+            rear: { x: null, y: null, size: null },
+        };
+
+        function drawScene() {
+            if (!imgLoaded) return;
+            canvas.width = state.imgWidth;
+            canvas.height = state.imgHeight;
+
+            // Clear
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw truck
+            ctx.drawImage(baseImage, 0, 0);
+
+            // Grid
+            ctx.save();
+            ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+            ctx.lineWidth = 1;
+            const step = 100;
+            for (let x = 0; x <= canvas.width; x += step) {
+                ctx.beginPath();
+                ctx.moveTo(x + 0.5, 0);
+                ctx.lineTo(x + 0.5, canvas.height);
+                ctx.stroke();
+                ctx.fillStyle = 'rgba(255,255,255,0.25)';
+                ctx.font = '10px system-ui';
+                ctx.fillText(x.toString(), x + 2, 10);
+            }
+            for (let y = 0; y <= canvas.height; y += step) {
+                ctx.beginPath();
+                ctx.moveTo(0, y + 0.5);
+                ctx.lineTo(canvas.width, y + 0.5);
+                ctx.stroke();
+                ctx.fillStyle = 'rgba(255,255,255,0.25)';
+                ctx.font = '10px system-ui';
+                ctx.fillText(y.toString(), 2, y - 2);
+            }
+            ctx.restore();
+
+            // Draw saved wheel positions
+            drawWheelMarker(state.front, 'rgba(255,212,0,0.7)');
+            drawWheelMarker(state.rear, 'rgba(0,200,255,0.7)');
+        }
+
+        function drawWheelMarker(wheel, color) {
+            if (!wheel || wheel.x == null || wheel.y == null || !wheel.size) return;
+            const radius = wheel.size / 2;
+            ctx.save();
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(wheel.x, wheel.y, radius, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.restore();
+        }
+
+        function updateWheelDisplay() {
+            const f = state.front;
+            const r = state.rear;
+            frontDataEl.textContent =
+                `x: ${f.x ?? '—'}, y: ${f.y ?? '—'}, size: ${f.size ?? '—'}`;
+            rearDataEl.textContent =
+                `x: ${r.x ?? '—'}, y: ${r.y ?? '—'}, size: ${r.size ?? '—'}`;
+        }
+
+        function setActiveWheel(which) {
+            state.activeWheel = which;
+            activeWheelLabel.textContent = which.toUpperCase();
+            if (which === 'front') {
+                frontSwatch.style.background = '#ffd400';
+            } else {
+                frontSwatch.style.background = '#00c8ff';
+            }
+        }
+
+        baseImage.onload = () => {
+            state.imgWidth = baseImage.width;
+            state.imgHeight = baseImage.height;
+            imgSizeEl.textContent = `${state.imgWidth} × ${state.imgHeight}`;
+            imgLoaded = true;
+            drawScene();
+        };
+        baseImage.src = imgPath;
+
+        wheelImage.onload = () => {
+            wheelLoaded = true;
+        };
+        wheelImage.src = wheelPath;
+
+        canvas.addEventListener('click', (e) => {
+            if (!imgLoaded) return;
+            const rect = canvas.getBoundingClientRect();
+            const x = Math.round((e.clientX - rect.left) * (canvas.width / rect.width));
+            const y = Math.round((e.clientY - rect.top) * (canvas.height / rect.height));
+            clickPosEl.textContent = `x: ${x}, y: ${y}`;
+
+            const current = state.activeWheel === 'front' ? state.front : state.rear;
+            current.x = x;
+            current.y = y;
+            current.size = wheelImage.width || 300;
+
+            updateWheelDisplay();
+            drawScene();
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                setActiveWheel(state.activeWheel === 'front' ? 'rear' : 'front');
+            }
+        });
+
+        setActiveWheel('front');
+    </script>
+</body>
+</html>
+
+
