@@ -23,6 +23,9 @@
             gap: 24px;
             font-size: 13px;
         }
+        #size-slider {
+            width: 160px;
+        }
         #toolbar span {
             white-space: nowrap;
         }
@@ -61,7 +64,11 @@
         </span>
         <span>Front wheel: <span id="front-data">x: —, y: —, size: —</span></span>
         <span>Rear wheel: <span id="rear-data">x: —, y: —, size: —</span></span>
-        <span>Instructions: Click where the wheel should sit. Press <strong>Space</strong> to toggle Front/Rear.</span>
+        <span>
+            Size:
+            <input id="size-slider" type="range" min="100" max="900" step="10" value="500" />
+        </span>
+        <span>Instructions: Click where the wheel should sit. Use the slider to adjust size. Press <strong>Space</strong> to toggle Front/Rear.</span>
     </div>
     <div id="viewport">
         <canvas id="calib-canvas"></canvas>
@@ -80,6 +87,7 @@
         const rearDataEl = document.getElementById('rear-data');
         const activeWheelLabel = document.getElementById('active-wheel-label');
         const frontSwatch = document.getElementById('front-swatch');
+        const sizeSlider = document.getElementById('size-slider');
 
         let baseImage = new Image();
         let wheelImage = new Image();
@@ -164,6 +172,10 @@
             } else {
                 frontSwatch.style.background = '#00c8ff';
             }
+            // Sync slider with active wheel's size
+            const current = which === 'front' ? state.front : state.rear;
+            const fallback = wheelImage.width || 500;
+            sizeSlider.value = current.size || fallback;
         }
 
         baseImage.onload = () => {
@@ -177,6 +189,15 @@
 
         wheelImage.onload = () => {
             wheelLoaded = true;
+            // Initialize default sizes when wheel texture is ready
+            const baseSize = wheelImage.width || 500;
+            state.front.size = baseSize;
+            state.rear.size = baseSize;
+            sizeSlider.min = Math.round(baseSize * 0.25);
+            sizeSlider.max = Math.round(baseSize * 1.5);
+            sizeSlider.value = baseSize;
+            updateWheelDisplay();
+            drawScene();
         };
         wheelImage.src = wheelPath;
 
@@ -190,7 +211,8 @@
             const current = state.activeWheel === 'front' ? state.front : state.rear;
             current.x = x;
             current.y = y;
-            current.size = wheelImage.width || 300;
+            // Use current slider value for size
+            current.size = parseInt(sizeSlider.value, 10) || (wheelImage.width || 300);
 
             updateWheelDisplay();
             drawScene();
@@ -201,6 +223,13 @@
                 e.preventDefault();
                 setActiveWheel(state.activeWheel === 'front' ? 'rear' : 'front');
             }
+        });
+
+        sizeSlider.addEventListener('input', () => {
+            const current = state.activeWheel === 'front' ? state.front : state.rear;
+            current.size = parseInt(sizeSlider.value, 10);
+            updateWheelDisplay();
+            drawScene();
         });
 
         setActiveWheel('front');
