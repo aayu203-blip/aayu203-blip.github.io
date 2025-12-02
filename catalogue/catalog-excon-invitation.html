@@ -149,7 +149,7 @@
             align-items: flex-start;
         }
         .logo-image {
-            width: 499px; /* Use native logo width for maximum crispness */
+            width: 400px; /* Display size - 2x image will render at 2x resolution */
             height: auto;
             object-fit: contain;
             /* Optimize for crisp rendering */
@@ -314,7 +314,10 @@
         <div class="header-section">
             <!-- Left - PTC Logo -->
             <div class="logo-wrapper">
-                <img src="/catalogue-2025/images/logos/ptc-logo.png" alt="PTC Parts Trading Company" class="logo-image">
+                <img src="/catalogue-2025/images/logos/ptc-logo.png" 
+                     srcset="/catalogue-2025/images/logos/ptc-logo.png 1x, /catalogue-2025/images/logos/ptc-logo@2x.png 2x"
+                     alt="PTC Parts Trading Company" 
+                     class="logo-image">
             </div>
             
             <!-- Right - Heritage Block -->
