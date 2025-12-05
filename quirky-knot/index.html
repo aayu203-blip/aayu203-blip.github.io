@@ -28,9 +28,6 @@
     <!-- Babel Standalone for JSX transformation -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
-    <!-- Framer Motion from CDN -->
-    <script src="https://unpkg.com/framer-motion@11.0.0/dist/framer-motion.umd.js"></script>
-    
     <style>
         body {
             margin: 0;
@@ -45,11 +42,24 @@
 <body>
     <div id="root"></div>
 
-    <script type="text/babel">
-        const { useState, useEffect, useRef } = React;
-        // Framer Motion UMD exposes as window.motion or window.framerMotion
-        const MotionLib = window.motion || window.framerMotion || {};
-        const { motion, AnimatePresence } = MotionLib;
+    <!-- Load Framer Motion first, then run app -->
+    <script type="module">
+        import { motion } from 'https://cdn.skypack.dev/framer-motion@11';
+        window.motion = motion;
+        
+        // Now execute the main app script
+        const scriptTag = document.querySelector('#app-script');
+        if (scriptTag) {
+            const babelScript = document.createElement('script');
+            babelScript.type = 'text/babel';
+            babelScript.textContent = scriptTag.textContent;
+            document.body.appendChild(babelScript);
+        }
+    </script>
+
+    <script id="app-script" type="text/plain">
+        const { useState, useEffect } = React;
+        const { motion } = window;
 
         const REEL_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split("");
 
@@ -247,9 +257,16 @@
             );
         }
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<QUIRKYKnotCompare />);
+        // Wait for motion to be available, then render
+        const checkAndRender = () => {
+            if (window.motion) {
+                const root = ReactDOM.createRoot(document.getElementById('root'));
+                root.render(<QUIRKYKnotCompare />);
+            } else {
+                setTimeout(checkAndRender, 50);
+            }
+        };
+        checkAndRender();
     </script>
 </body>
 </html>
-
