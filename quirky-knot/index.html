@@ -42,19 +42,23 @@
 <body>
     <div id="root"></div>
 
-    <!-- Load Framer Motion first, then run app -->
+    <!-- Load Framer Motion and then initialize app -->
     <script type="module">
-        import { motion } from 'https://cdn.skypack.dev/framer-motion@11';
-        window.motion = motion;
-        
-        // Now execute the main app script
-        const scriptTag = document.querySelector('#app-script');
-        if (scriptTag) {
-            const babelScript = document.createElement('script');
-            babelScript.type = 'text/babel';
-            babelScript.textContent = scriptTag.textContent;
-            document.body.appendChild(babelScript);
+        async function init() {
+            // Import Framer Motion
+            const { motion } = await import('https://cdn.skypack.dev/framer-motion@11');
+            window.motion = motion;
+            
+            // Now load and execute the app script
+            const appScript = document.getElementById('app-script');
+            if (appScript) {
+                const babelScript = document.createElement('script');
+                babelScript.type = 'text/babel';
+                babelScript.textContent = appScript.textContent;
+                document.body.appendChild(babelScript);
+            }
         }
+        init();
     </script>
 
     <script id="app-script" type="text/plain">
@@ -257,16 +261,9 @@
             );
         }
 
-        // Wait for motion to be available, then render
-        const checkAndRender = () => {
-            if (window.motion) {
-                const root = ReactDOM.createRoot(document.getElementById('root'));
-                root.render(<QUIRKYKnotCompare />);
-            } else {
-                setTimeout(checkAndRender, 50);
-            }
-        };
-        checkAndRender();
+        // Render the app
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<QUIRKYKnotCompare />);
     </script>
 </body>
 </html>
