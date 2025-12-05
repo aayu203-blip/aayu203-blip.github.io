@@ -45,20 +45,48 @@
     <!-- Load Framer Motion and then initialize app -->
     <script type="module">
         async function init() {
-            // Import Framer Motion
-            const { motion } = await import('https://cdn.skypack.dev/framer-motion@11');
-            window.motion = motion;
-            
-            // Now load and execute the app script
-            const appScript = document.getElementById('app-script');
-            if (appScript) {
-                const babelScript = document.createElement('script');
-                babelScript.type = 'text/babel';
-                babelScript.textContent = appScript.textContent;
-                document.body.appendChild(babelScript);
+            try {
+                // Import Framer Motion
+                const framerMotion = await import('https://cdn.skypack.dev/framer-motion@11');
+                window.motion = framerMotion.motion;
+                window.AnimatePresence = framerMotion.AnimatePresence;
+                
+                // Signal that motion is ready
+                window.motionReady = true;
+                if (window.onMotionReady) {
+                    window.onMotionReady();
+                }
+            } catch (error) {
+                console.error('Failed to load Framer Motion:', error);
             }
         }
         init();
+    </script>
+
+    <script>
+        // Wait for motion to be ready, then load the app
+        function loadApp() {
+            if (window.motionReady && window.motion) {
+                const appScript = document.getElementById('app-script');
+                if (appScript) {
+                    const babelScript = document.createElement('script');
+                    babelScript.type = 'text/babel';
+                    babelScript.textContent = appScript.textContent;
+                    document.body.appendChild(babelScript);
+                }
+            } else {
+                setTimeout(loadApp, 50);
+            }
+        }
+        
+        // Try to load immediately if already ready
+        if (window.motionReady) {
+            loadApp();
+        } else {
+            window.onMotionReady = loadApp;
+            // Fallback timeout
+            setTimeout(loadApp, 2000);
+        }
     </script>
 
     <script id="app-script" type="text/plain">
