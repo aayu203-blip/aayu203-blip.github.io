@@ -128,21 +128,22 @@
 
         const SlotLetter = ({ char, spinning, seq, duration = 0.6, settled, style = {} }) => {
             const height = 48;
+            const MotionDiv = window.motion ? window.motion.div : 'div';
 
             return (
                 <div className="relative overflow-hidden" style={{ height }}>
-                    <motion.div
-                        initial={{ y: 0 }}
-                        animate={{
+                    {React.createElement(MotionDiv, {
+                        initial: { y: 0 },
+                        animate: {
                             y: settled ? 0 : -((seq.length - 1) * height),
-                        }}
-                        transition={{
+                        },
+                        transition: {
                             y: { type: "spring", stiffness: 700, damping: 28, duration },
-                        }}
-                        className="leading-none"
-                        style={{ ...style }}
-                    >
-                        {seq.map((c, i) => (
+                        },
+                        className: "leading-none",
+                        style: { ...style }
+                    },
+                        seq.map((c, i) => (
                             <div
                                 key={i}
                                 className="h-12 flex items-center justify-center text-2xl font-extrabold select-none"
@@ -150,8 +151,8 @@
                             >
                                 {c}
                             </div>
-                        ))}
-                    </motion.div>
+                        ))
+                    )}
                 </div>
             );
         };
