@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIRKY Knot - Animation Comparison | Parts Trading Company</title>
+    <meta name="description" content="Interactive animation comparison tool showcasing text reveal effects with Framer Motion">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://partstrading.com/quirky-knot/">
+    <meta property="og:title" content="QUIRKY Knot - Animation Comparison">
+    <meta property="og:description" content="Interactive animation comparison tool showcasing text reveal effects">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://partstrading.com/quirky-knot/">
+    <meta property="twitter:title" content="QUIRKY Knot - Animation Comparison">
+    <meta property="twitter:description" content="Interactive animation comparison tool showcasing text reveal effects">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- React and ReactDOM from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel Standalone for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- Framer Motion from CDN -->
+    <script src="https://unpkg.com/framer-motion@11.0.0/dist/framer-motion.umd.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+        // Framer Motion UMD exposes as window.motion or window.framerMotion
+        const MotionLib = window.motion || window.framerMotion || {};
+        const { motion, AnimatePresence } = MotionLib;
+
+        const REEL_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split("");
+
+        const getSpinSequence = (fromChar, toChar, spins = 6) => {
+            const seq = [];
+            for (let i = 0; i < spins; i++) {
+                seq.push(REEL_CHARS[Math.floor(Math.random() * REEL_CHARS.length)]);
+            }
+            seq.push(toChar);
+            return seq;
+        };
+
+        function usePrefersReducedMotion() {
+            const [prefersReduced, setPrefersReduced] = useState(false);
+            useEffect(() => {
+                const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+                setPrefersReduced(mq.matches);
+                const handler = () => setPrefersReduced(mq.matches);
+                try { 
+                    mq.addEventListener('change', handler); 
+                } catch(e) { 
+                    mq.addListener(handler); 
+                }
+                return () => { 
+                    try { 
+                        mq.removeEventListener('change', handler); 
+                    } catch(e) { 
+                        mq.removeListener(handler); 
+                    } 
+                };
+            }, []);
+            return prefersReduced;
+        }
+
+        const SlotLetter = ({ char, spinning, seq, duration = 0.6, settled, style = {} }) => {
+            const height = 48;
+
+            return (
+                <div className="relative overflow-hidden" style={{ height }}>
+                    <motion.div
+                        initial={{ y: 0 }}
+                        animate={{
+                            y: settled ? 0 : -((seq.length - 1) * height),
+                        }}
+                        transition={{
+                            y: { type: "spring", stiffness: 700, damping: 28, duration },
+                        }}
+                        className="leading-none"
+                        style={{ ...style }}
+                    >
+                        {seq.map((c, i) => (
+                            <div
+                                key={i}
+                                className="h-12 flex items-center justify-center text-2xl font-extrabold select-none"
+                                style={{ height }}
+                            >
+                                {c}
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
+            );
+        };
+
+        const SingleLetterReveal = ({ base = "QUIRKY", from = "Name", to = "Knot", speed = 0.5, easing = [0.2, 0.9, 0.2, 1], onDone }) => {
+            const letters = from.split("");
+            const target = to.split("");
+            const [sequences] = useState(() => letters.map((l, i) => getSpinSequence(l, target[i] || " ", 6)));
+            const [settledMap, setSettledMap] = useState(() => letters.map(() => false));
+            const prefersReduced = usePrefersReducedMotion();
+
+            useEffect(() => {
+                let timers = [];
+                letters.forEach((_, idx) => {
+                    const delay = idx * (speed * 800);
+                    const t = setTimeout(() => {
+                        setSettledMap(prev => {
+                            const next = [...prev];
+                            next[idx] = true;
+                            return next;
+                        });
+                    }, delay);
+                    timers.push(t);
+                });
+
+                const finishDelay = letters.length * (speed * 800) + 400;
+                const fin = setTimeout(() => onDone && onDone(), finishDelay);
+                timers.push(fin);
+
+                return () => timers.forEach(t => clearTimeout(t));
+            }, []);
+
+            return (
+                <div className="p-6 rounded-2xl shadow-2xl bg-gradient-to-br from-white to-slate-50 max-w-xl">
+                    <div className="text-center mb-4 text-slate-600">Single-letter reveal (one letter stops, then next)</div>
+                    <div className="flex items-center justify-center gap-4 font-sans">
+                        <div className="text-3xl font-extrabold tracking-wide">{base}</div>
+                        <div className="flex gap-2 bg-white/60 p-2 rounded-md shadow-inner items-center">
+                            {letters.map((l, i) => (
+                                <div key={i} className="w-12 h-12 flex items-center justify-center">
+                                    <SlotLetter
+                                        char={target[i]}
+                                        seq={sequences[i]}
+                                        settled={settledMap[i] || prefersReduced}
+                                        duration={speed}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const ContinuousStopReveal = ({ base = "QUIRKY", from = "Name", to = "Knot", speed = 0.5, order = [0,1,2,3], onDone }) => {
+            const letters = from.split("");
+            const target = to.split("");
+            const [sequences] = useState(() => letters.map((l, i) => getSpinSequence(l, target[i] || " ", 20)));
+            const [settled, setSettled] = useState(() => letters.map(() => false));
+            const prefersReduced = usePrefersReducedMotion();
+
+            useEffect(() => {
+                let timers = [];
+                order.forEach((pos, idx) => {
+                    const delay = 500 + idx * (speed * 300);
+                    const t = setTimeout(() => {
+                        setSettled(prev => {
+                            const next = [...prev];
+                            next[pos] = true;
+                            return next;
+                        });
+                    }, delay);
+                    timers.push(t);
+                });
+
+                const finishDelay = 500 + order.length * (speed * 300) + 400;
+                const fin = setTimeout(() => onDone && onDone(), finishDelay);
+                timers.push(fin);
+
+                return () => timers.forEach(t => clearTimeout(t));
+            }, []);
+
+            return (
+                <div className="p-6 rounded-2xl shadow-2xl bg-gradient-to-br from-white to-slate-50 max-w-xl">
+                    <div className="text-center mb-4 text-slate-600">All letters spin — each stops one-by-one</div>
+                    <div className="flex items-center justify-center gap-4 font-sans">
+                        <div className="text-3xl font-extrabold tracking-wide">{base}</div>
+                        <div className="flex gap-2 bg-white/60 p-2 rounded-md shadow-inner items-center">
+                            {letters.map((l, i) => (
+                                <div key={i} className="w-12 h-12 flex items-center justify-center">
+                                    <SlotLetter
+                                        char={target[i]}
+                                        seq={sequences[i]}
+                                        settled={settled[i] || prefersReduced}
+                                        duration={speed}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        function QUIRKYKnotCompare() {
+            const [speed, setSpeed] = useState(0.55);
+            const [showConfetti, setShowConfetti] = useState(true);
+
+            return (
+                <div className="min-h-screen p-8 bg-gradient-to-b from-slate-100 to-white flex flex-col gap-6">
+                    <header className="flex items-center justify-between">
+                        <h1 className="text-2xl font-extrabold">QUIRKY Knot — animation compare</h1>
+                        <div className="flex items-center gap-3">
+                            <label className="text-sm text-slate-600">speed</label>
+                            <input 
+                                type="range" 
+                                min="0.2" 
+                                max="1.4" 
+                                step="0.05" 
+                                value={speed} 
+                                onChange={e => setSpeed(parseFloat(e.target.value))} 
+                            />
+                        </div>
+                    </header>
+
+                    <main className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <SingleLetterReveal speed={speed} onDone={() => {}} />
+                        <ContinuousStopReveal speed={speed} order={[0,1,2,3]} onDone={() => {}} />
+                    </main>
+
+                    <footer className="text-sm text-slate-500">
+                        Tips included in code comments: adjustable easing, reduce-motion support, copy-paste React + Tailwind. Use Framer Motion for extra polish (glow, scale on settle, particle confetti hooks).
+                    </footer>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<QUIRKYKnotCompare />);
+    </script>
+</body>
+</html>
+
