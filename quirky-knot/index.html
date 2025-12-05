@@ -261,9 +261,16 @@
             );
         }
 
-        // Render the app
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<QUIRKYKnotCompare />);
+        // Wait for motion to be available, then render
+        const renderApp = () => {
+            if (window.motion && window.motion.div) {
+                const root = ReactDOM.createRoot(document.getElementById('root'));
+                root.render(<QUIRKYKnotCompare />);
+            } else {
+                setTimeout(renderApp, 100);
+            }
+        };
+        renderApp();
     </script>
 </body>
 </html>
