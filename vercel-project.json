@@ -1,0 +1,16 @@
+{
+  "projectId": "",
+  "orgId": "",
+  "settings": {
+    "framework": "nextjs",
+    "rootDirectory": "weaver-game",
+    "buildCommand": "npm run build",
+    "outputDirectory": ".next",
+    "installCommand": "npm install",
+    "devCommand": "npm run dev",
+    "env": {
+      "GEMINI_API_KEY": "AIzaSyBBb94IbmgKmnRG6FJRcTlnfP2NQZrnMU0"
+    }
+  }
+}
+
