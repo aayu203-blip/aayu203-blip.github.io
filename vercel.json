@@ -1,10 +1,27 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "weaver-game/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/weaver/(.*)",
+      "dest": "/weaver-game/$1"
+    },
+    {
+      "src": "/weaver",
+      "dest": "/weaver-game"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
   "cleanUrls": true,
   "trailingSlash": false,
-  "buildCommand": "cd weaver-game && npm install && npm run build",
-  "outputDirectory": "weaver-game/.next",
-  "installCommand": "cd weaver-game && npm install",
-  "framework": "nextjs",
   "headers": [
     {
       "source": "/(.*)",
@@ -18,12 +35,6 @@
           "value": "nosniff"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/weaver/:path*",
-      "destination": "/weaver-game/.next/:path*"
     }
   ]
 }
