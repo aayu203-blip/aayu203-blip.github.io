@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/weaver',
-  assetPrefix: '/weaver',
+  // basePath removed - deploying as standalone project
 }
 
 module.exports = nextConfig
