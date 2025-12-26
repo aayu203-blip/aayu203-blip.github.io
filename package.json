@@ -1,0 +1,13 @@
+{
+  "name": "parts-trading-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd weaver-game && npm install && npm run build",
+    "dev": "cd weaver-game && npm run dev"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+

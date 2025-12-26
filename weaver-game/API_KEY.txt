@@ -1,0 +1,4 @@
+GEMINI_API_KEY=AIzaSyBBb94IbmgKmnRG6FJRcTlnfP2NQZrnMU0
+
+Use this API key when setting up environment variables in Vercel.
+

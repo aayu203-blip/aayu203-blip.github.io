@@ -1,10 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "buildCommand": "cd weaver-game && npm install && npm run build",
-  "outputDirectory": "weaver-game/.next",
-  "installCommand": "cd weaver-game && npm install",
-  "framework": "nextjs",
   "headers": [
     {
       "source": "/(.*)",
@@ -22,8 +18,13 @@
   ],
   "rewrites": [
     {
+      "source": "/weaver",
+      "destination": "https://YOUR-WEAVER-DEPLOYMENT-URL.vercel.app/weaver"
+    },
+    {
       "source": "/weaver/:path*",
-      "destination": "/weaver-game/.next/:path*"
+      "destination": "https://YOUR-WEAVER-DEPLOYMENT-URL.vercel.app/weaver/:path*"
     }
   ]
 }
+
