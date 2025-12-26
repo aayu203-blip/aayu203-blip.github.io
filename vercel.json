@@ -18,12 +18,12 @@
   ],
   "rewrites": [
     {
-      "source": "/weaver",
-      "destination": "https://aayu203-blip-github-io.vercel.app/weaver"
-    },
-    {
       "source": "/weaver/:path*",
       "destination": "https://aayu203-blip-github-io.vercel.app/weaver/:path*"
+    },
+    {
+      "source": "/weaver",
+      "destination": "https://aayu203-blip-github-io.vercel.app/weaver"
     }
   ]
 }
