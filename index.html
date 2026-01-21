@@ -420,10 +420,12 @@
 <script src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" type="text/javascript"></script>
 <script type="text/javascript">
     (function() {
-        emailjs.init("s6jWMEYpe-XNRS88_");
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init("s6jWMEYpe-XNRS88_");
+        }
     })();
 </script>
 <!-- Google reCAPTCHA v3 -->
@@ -3927,18 +3929,15 @@ Please provide a quote and availability.`;
                 // Try to use EmailJS if configured
                 if (typeof emailjs !== 'undefined') {
                     console.log('EmailJS is available, attempting to send email...');
-                    console.log('Form data will be sent directly to EmailJS');
                     
-                    // Use the newer EmailJS syntax
-                    emailjs.sendForm('service_zizi36t', 'template_yesevuc', form)
+                    // Use the newer EmailJS syntax with explicit public key for robustness
+                    emailjs.sendForm('service_zizi36t', 'template_yesevuc', form, 's6jWMEYpe-XNRS88_')
                         .then(function(response) {
                             console.log('EmailJS success:', response);
                             showSuccessMessage(submitButton, originalText, form);
                         }, function(error) {
                             console.error('EmailJS error details:', error);
-                            console.error('Error text:', error.text);
-                            console.error('Error status:', error.status);
-                            alert('EmailJS error: ' + (error.text || 'Unknown error'));
+                            alert('EmailJS error: ' + (error.text || error.message || 'Unknown error'));
                             fallbackEmailMethod(formData, submitButton, originalText, form);
                         });
                 } else {
@@ -3947,7 +3946,7 @@ Please provide a quote and availability.`;
                 }
             } catch (error) {
                 console.error('General email sending error:', error);
-                alert('Email sending error: ' + (error.message || 'Unknown error'));
+                alert('Email sending error: ' + (error.message || error.toString() || 'Unknown error'));
                 fallbackEmailMethod(formData, submitButton, originalText, form);
             }
         }

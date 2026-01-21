@@ -34,3 +34,6 @@ npm-debug.log*
 
 # Node modules (if any)
 node_modules/
+
+# Exclude local backup
+BACKUP_BEFORE_ENRICHMENT/
