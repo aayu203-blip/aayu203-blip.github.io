@@ -1,0 +1,48 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Excavator Side Profile Silhouette - Print Ready -->
+  
+  <!-- Main Body & Cab -->
+  <path d="M 180 280 L 220 260 L 380 260 L 420 280 L 420 360 L 400 380 L 200 380 L 180 360 Z" fill="#000000"/>
+  
+  <!-- Engine Housing -->
+  <path d="M 180 380 L 420 380 L 420 460 L 400 480 L 200 480 L 180 460 Z" fill="#000000"/>
+  
+  <!-- Cab Detail -->
+  <path d="M 240 280 L 360 280 L 360 340 L 340 360 L 260 360 L 240 340 Z" fill="#000000"/>
+  
+  <!-- Tracks (Base) -->
+  <path d="M 160 480 L 440 480 L 440 520 L 420 520 L 420 500 L 400 500 L 200 500 L 180 500 L 180 520 L 160 520 Z" fill="#000000"/>
+  
+  <!-- Track Segments -->
+  <rect x="200" y="485" width="35" height="30" fill="#000000"/>
+  <rect x="255" y="485" width="35" height="30" fill="#000000"/>
+  <rect x="310" y="485" width="35" height="30" fill="#000000"/>
+  <rect x="365" y="485" width="35" height="30" fill="#000000"/>
+  
+  <!-- Boom Pivot -->
+  <circle cx="300" cy="420" r="22" fill="#000000"/>
+  
+  <!-- Main Boom -->
+  <path d="M 318 405 L 520 240 L 555 265 L 545 300 L 340 430 Z" fill="#000000"/>
+  
+  <!-- Boom Cylinder -->
+  <ellipse cx="425" cy="335" rx="12" ry="85" fill="#000000"/>
+  
+  <!-- Stick/Arm -->
+  <path d="M 545 265 L 720 360 L 745 395 L 730 415 L 530 300 Z" fill="#000000"/>
+  
+  <!-- Stick Cylinder -->
+  <ellipse cx="625" cy="335" rx="10" ry="70" fill="#000000"/>
+  
+  <!-- Bucket Linkage -->
+  <path d="M 730 395 L 790 420 L 800 445 L 780 455 L 745 415 Z" fill="#000000"/>
+  
+  <!-- Bucket (raised position ~25°) -->
+  <path d="M 790 420 L 920 390 L 955 425 L 955 500 L 930 510 L 905 485 L 800 445 Z" fill="#000000"/>
+  
+  <!-- Bucket Teeth -->
+  <path d="M 905 425 L 955 425 L 955 435 L 915 435 L 915 440 L 960 440 L 960 445 L 920 445 L 920 450 L 965 450 L 965 455 L 925 455 L 925 460 L 970 460 L 970 465 L 930 465 L 930 470 L 935 470 L 935 475 L 925 475 L 925 480 L 915 480 L 915 485 L 905 485 Z" fill="#000000"/>
+  
+  <!-- Bucket Cylinder -->
+  <ellipse cx="870" cy="415" rx="8" ry="50" fill="#000000"/>
+</svg>

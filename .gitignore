@@ -1,0 +1,22 @@
+# Ignore legacy generated static sites
+volvo/
+scania/
+ar/
+es/
+fr/
+hi/
+ru/
+zh/
+blog/
+*.html
+
+# Ignore large data files (unless essential seed data)
+# data/
+# site_output/
+
+# System
+.DS_Store
+node_modules/
+.env
+.venv/
+__pycache__/

@@ -1,0 +1,18 @@
+# Requirements for AI Image Generation Script
+# Install with: pip3 install -r requirements-images.txt
+
+openai>=1.0.0
+Pillow>=10.0.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+
+
+
+
+
+
+
+
+
+

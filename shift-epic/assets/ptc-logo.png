@@ -1,0 +1,16 @@
+
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- P - Top Stroke -->
+  <path d="M50 50 H170 L160 70 H50 Z" fill="#1A147B" />
+  <!-- T - Top Stroke -->
+  <path d="M190 50 H310 L300 70 H190 Z" fill="#1A147B" />
+  <!-- C - Top Stroke -->
+  <path d="M330 50 H450 C460 50 470 60 470 70 H330 Z" fill="#1A147B" />
+  
+  <!-- P - Bottom Stroke -->
+  <path d="M50 100 H140 C150 100 160 110 160 120 H50 Z" fill="#C01718" />
+  <!-- T - Bottom Stroke -->
+  <path d="M190 100 H270 C280 100 290 110 290 120 H190 Z" fill="#C01718" />
+  <!-- C - Bottom Stroke -->
+  <path d="M330 120 C330 110 340 100 350 100 H470 C460 100 450 110 450 120 Z" fill="#C01718" />
+</svg>

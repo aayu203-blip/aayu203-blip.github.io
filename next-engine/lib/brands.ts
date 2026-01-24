@@ -1,0 +1,60 @@
+export const MACHINERY_BRANDS = [
+    // Tier 1: Major Brands (Have Data)
+    { name: 'Volvo', slug: 'volvo', logo: '🔵', partCount: 8500, tier: 1 },
+    { name: 'Scania', slug: 'scania', logo: '🔴', partCount: 7200, tier: 1 },
+    { name: 'Caterpillar', slug: 'caterpillar', logo: '🟡', partCount: 3100, tier: 1 },
+    { name: 'Komatsu', slug: 'komatsu', logo: '🟠', partCount: 1800, tier: 1 },
+    { name: 'John Deere', slug: 'john-deere', logo: '🟢', partCount: 700, tier: 1 },
+
+    // Tier 2: Major Brands (Expand Later)
+    { name: 'JCB', slug: 'jcb', logo: '🟡', partCount: 0, tier: 2 },
+    { name: 'Hitachi', slug: 'hitachi', logo: '🔴', partCount: 0, tier: 2 },
+    { name: 'Liebherr', slug: 'liebherr', logo: '🔵', partCount: 0, tier: 2 },
+    { name: 'Doosan', slug: 'doosan', logo: '🔵', partCount: 0, tier: 2 },
+    { name: 'Hyundai', slug: 'hyundai', logo: '🔵', partCount: 0, tier: 2 },
+    { name: 'Kobelco', slug: 'kobelco', logo: '🟠', partCount: 0, tier: 2 },
+    { name: 'Bobcat', slug: 'bobcat', logo: '⚪', partCount: 0, tier: 2 },
+    { name: 'Case', slug: 'case', logo: '🔴', partCount: 0, tier: 2 },
+    { name: 'New Holland', slug: 'new-holland', logo: '🔵', partCount: 0, tier: 2 },
+    { name: 'Kubota', slug: 'kubota', logo: '🟠', partCount: 0, tier: 2 },
+    { name: 'Terex', slug: 'terex', logo: '🟢', partCount: 0, tier: 2 },
+    { name: 'Manitou', slug: 'manitou', logo: '🔴', partCount: 0, tier: 2 },
+    { name: 'Sany', slug: 'sany', logo: '🔴', partCount: 0, tier: 2 },
+    { name: 'XCMG', slug: 'xcmg', logo: '🟡', partCount: 0, tier: 2 },
+    { name: 'Zoomlion', slug: 'zoomlion', logo: '🟢', partCount: 0, tier: 2 },
+    { name: 'Tadano', slug: 'tadano', logo: '🔵', partCount: 0, tier: 2 },
+    { name: 'Grove', slug: 'grove', logo: '🟡', partCount: 0, tier: 2 },
+    { name: 'Manitowoc', slug: 'manitowoc', logo: '🔴', partCount: 0, tier: 2 },
+    { name: 'Link-Belt', slug: 'link-belt', logo: '🟠', partCount: 0, tier: 2 },
+    { name: 'Sumitomo', slug: 'sumitomo', logo: '🔵', partCount: 0, tier: 2 },
+    { name: 'Yanmar', slug: 'yanmar', logo: '🔴', partCount: 0, tier: 2 },
+    { name: 'Perkins', slug: 'perkins', logo: '🟢', partCount: 0, tier: 2 },
+    { name: 'Cummins', slug: 'cummins', logo: '🔴', partCount: 0, tier: 2 },
+    { name: 'Detroit Diesel', slug: 'detroit-diesel', logo: '🔵', partCount: 0, tier: 2 },
+    { name: 'MAN', slug: 'man', logo: '🔵', partCount: 0, tier: 2 },
+    { name: 'Mercedes-Benz', slug: 'mercedes-benz', logo: '⚪', partCount: 0, tier: 2 },
+    { name: 'Iveco', slug: 'iveco', logo: '🔵', partCount: 0, tier: 2 },
+    { name: 'DAF', slug: 'daf', logo: '🔵', partCount: 0, tier: 2 },
+    { name: 'Renault Trucks', slug: 'renault-trucks', logo: '🟡', partCount: 0, tier: 2 },
+    { name: 'Mack Trucks', slug: 'mack-trucks', logo: '🟡', partCount: 0, tier: 2 },
+    { name: 'Freightliner', slug: 'freightliner', logo: '⚪', partCount: 0, tier: 2 },
+    { name: 'Kenworth', slug: 'kenworth', logo: '🔴', partCount: 0, tier: 2 },
+    { name: 'Peterbilt', slug: 'peterbilt', logo: '🔴', partCount: 0, tier: 2 },
+    { name: 'International', slug: 'international', logo: '🔵', partCount: 0, tier: 2 },
+    { name: 'Western Star', slug: 'western-star', logo: '⚪', partCount: 0, tier: 2 },
+];
+
+export const TRENDING_PARTS = [
+    { id: 1, partNumber: '1521725', brand: 'Volvo', name: 'Oil Filter', searches: 342 },
+    { id: 2, partNumber: '2977059', brand: 'Scania', name: 'Brake Pad Set', searches: 287 },
+    { id: 3, partNumber: '24343180', brand: 'Volvo', name: 'Fuel Filter', searches: 219 },
+    { id: 4, partNumber: '1453761', brand: 'Scania', name: 'Hydraulic Pump', searches: 198 },
+    { id: 5, partNumber: '600-211-1340', brand: 'Komatsu', name: 'Air Filter', searches: 176 },
+];
+
+export const LIVE_ACTIVITY = [
+    { id: 1, action: 'shipped', part: 'Volvo 1521725', destination: 'Dubai', time: '2 min ago' },
+    { id: 2, action: 'quoted', part: 'Scania Brake Kit', destination: 'Mumbai', time: '5 min ago' },
+    { id: 3, action: 'shipped', part: 'CAT Hydraulic Pump', destination: 'Singapore', time: '12 min ago' },
+    { id: 4, action: 'quoted', part: 'Komatsu Filter Set', destination: 'Riyadh', time: '18 min ago' },
+];

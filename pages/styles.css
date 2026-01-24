@@ -1,0 +1,619 @@
+/* Smooth scrolling */
+body {
+  scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth;
+  -moz-scroll-behavior: smooth;
+  -ms-scroll-behavior: smooth;
+}
+
+/* Exit CTA Modal */
+.exit-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.exit-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.exit-modal-content {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.exit-modal.show .exit-modal-content {
+  transform: scale(1);
+}
+
+.exit-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.exit-modal-close:hover {
+  color: #333;
+}
+
+/* Legacy Modal Animations */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Hero Section Styles */
+.hero-gradient {
+  background: linear-gradient(135deg, #1f2937 0%, #374151 50%, #4b5563 100%);
+  position: relative;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  z-index: 2;
+}
+
+/* Animation elements above video */
+.particle {
+  z-index: 3;
+}
+
+.floating-shape {
+  z-index: 3;
+}
+
+.pattern-line {
+  z-index: 3;
+}
+
+.horizontal-line {
+  z-index: 3;
+}
+
+/* Text glow effect */
+.text-glow {
+  text-shadow: 0 0 20px rgba(251, 191, 36, 0.5), 0 0 40px rgba(251, 191, 36, 0.3);
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Animation classes */
+.animate-float-random {
+  animation: floatRandom 8s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: floatMedium 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: floatFast 4s ease-in-out infinite;
+}
+
+.animate-pattern-slide {
+  animation: patternSlide 6s linear infinite;
+}
+
+.animate-horizontal-line {
+  animation: horizontalLine 6s linear infinite;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 1s ease-out forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+/* Keyframe animations */
+@keyframes floatRandom {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(20px, -15px) rotate(90deg); }
+  75% { transform: translate(-15px, -10px) rotate(270deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes floatMedium {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes floatFast {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes patternSlide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+@keyframes horizontalLine {
+  0% { transform: translateX(-150%); opacity: 0; }
+  15% { opacity: 0.6; }
+  85% { opacity: 0.6; }
+  100% { transform: translateX(100vw); opacity: 0; }
+}
+
+@keyframes slideInLeft {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { transform: scale(1); }
+}
+
+/* Horizontal line styles */
+.horizontal-line {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 184, 28, 0.15) 20%, rgba(255, 184, 28, 0.4) 50%, rgba(255, 184, 28, 0.15) 80%, transparent 100%);
+  pointer-events: none;
+  box-shadow: 0 0 4px rgba(255, 184, 28, 0.2);
+  opacity: 0;
+}
+
+/* Equipment cycler styles */
+.equipment-cycler {
+  display: inline-block;
+  min-width: 450px;
+  text-align: left;
+}
+
+/* Tagline container */
+.tagline-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tagline-word {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  transition: opacity 0.5s ease;
+}
+
+.tagline-word.visible {
+  opacity: 1;
+}
+
+/* Premium Brands Carousel Styles */
+#premium-brands-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/* Legacy year circle styles */
+.legacy-year-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fbbf24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Form input styles */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #1f2937;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(251, 191, 36, 0.3);
+}
+
+/* Contact card styles */
+.contact-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Site footer styles */
+.site-footer {
+  background: #1f2937;
+  color: #9ca3af;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.site-footer .disclaimer {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+/* WhatsApp float button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 80px; /* Positioned to the left of back-to-top button */
+  background: #25d366;
+  color: white;
+  width: 50px; /* Same size as back-to-top button */
+  height: 50px; /* Same size as back-to-top button */
+  border-radius: 50%;
+  text-align: center;
+  font-size: 24px; /* Slightly smaller icon to fit better */
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #fbbf24;
+  color: #1f2937;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  border: none;
+  cursor: pointer;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #f59e0b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+}
+
+/* Text gradient effect */
+.text-gradient {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Very light yellow background */
+.bg-verylight-yellow {
+  background-color: #fffef6;
+}
+
+/* Brand image styles */
+.brand-img {
+  transition: all 0.5s ease;
+}
+
+/* Category card hover effects */
+.category-card {
+  transition: all 0.5s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ accordion styles */
+.faq-content {
+  transition: all 0.3s ease;
+}
+
+/* Search suggestions styles */
+#search-suggestions {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#search-suggestions div:hover {
+  background-color: #fef3c7;
+}
+
+/* Premium brands carousel navigation - Transparent Overlay Buttons */
+#premium-brands-carousel-left,
+#premium-brands-carousel-right {
+  width: 60px;
+  height: 60px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+#premium-brands-carousel-left:hover,
+#premium-brands-carousel-right:hover {
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+  border-color: rgba(251, 191, 36, 0.7);
+}
+
+#premium-brands-carousel-left:active,
+#premium-brands-carousel-right:active {
+  transform: translateY(-50%) scale(0.98);
+}
+
+/* Subtle glassy effect on hover */
+#premium-brands-carousel-left:hover .absolute,
+#premium-brands-carousel-right:hover .absolute {
+  animation: subtleShimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes subtleShimmer {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(100%) skewX(-12deg);
+  }
+}
+
+/* Responsive adjustments for carousel buttons */
+@media (max-width: 768px) {
+  #premium-brands-carousel-left,
+  #premium-brands-carousel-right {
+    width: 55px;
+    height: 55px;
+  }
+  
+  #premium-brands-carousel-left {
+    left: 2px;
+  }
+  
+  #premium-brands-carousel-right {
+    right: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  #premium-brands-carousel-left,
+  #premium-brands-carousel-right {
+    width: 50px;
+    height: 50px;
+  }
+  
+  #premium-brands-carousel-left {
+    left: 1px;
+  }
+  
+  #premium-brands-carousel-right {
+    right: 1px;
+  }
+}
+
+/* Hero stats animation fix */
+.hero-stats {
+  /* Remove forced visibility to allow natural animation */
+}
+
+/* Ensure AOS animations work properly */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+/* Help and shipping popup styles */
+#help-popup,
+#shipping-popup {
+  transition: all 0.3s ease;
+  position: fixed;
+  z-index: 40;
+}
+
+#help-popup {
+  bottom: 2rem;
+  left: 1.5rem;
+  max-width: 20rem;
+}
+
+#shipping-popup {
+  bottom: 80px; /* Positioned above the buttons */
+  right: 20px; /* Aligned with the right edge */
+  max-width: 280px; /* Larger width to fit text in one line */
+  padding: 10px 16px; /* Larger padding */
+  font-size: 0.9rem; /* Slightly larger text */
+  line-height: 1.3; /* Better line height */
+  border-radius: 8px; /* Smaller border radius */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .equipment-cycler {
+    min-width: 300px;
+    font-size: 0.9rem;
+  }
+  
+  .tagline-container {
+    flex-direction: column;
+  }
+  
+  .whatsapp-float {
+    bottom: 20px;
+    right: 70px; /* Adjusted for mobile */
+    width: 45px; /* Slightly smaller on mobile */
+    height: 45px;
+    font-size: 20px;
+  }
+  
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px; /* Same size as WhatsApp button on mobile */
+    height: 45px;
+  }
+  
+  #help-popup {
+    bottom: 1rem;
+    left: 1rem;
+    max-width: 16rem;
+  }
+  
+  #shipping-popup {
+    bottom: 70px; /* Positioned above the buttons on mobile */
+    right: 20px; /* Aligned with the right edge */
+    max-width: 240px; /* Larger on mobile to fit text */
+    padding: 8px 12px; /* Larger padding on mobile */
+    font-size: 0.85rem; /* Larger text on mobile */
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+}
+
+@media (max-width: 480px) {
+  .equipment-cycler {
+    min-width: 250px;
+    font-size: 0.8rem;
+  }
+  
+  .contact-card {
+    padding: 20px;
+  }
+  
+  .exit-modal-content {
+    padding: 20px;
+    margin: 20px;
+  }
+} 

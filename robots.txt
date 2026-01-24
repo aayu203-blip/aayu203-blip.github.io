@@ -1,0 +1,44 @@
+User-agent: *
+Allow: /
+
+# Main Sitemap Index (references all other sitemaps)
+Sitemap: https://partstrading.com/sitemap.xml
+
+# Individual Sitemaps (also accessible directly)
+Sitemap: https://partstrading.com/sitemap-main.xml
+Sitemap: https://partstrading.com/sitemap-blog.xml
+Sitemap: https://partstrading.com/sitemap-products-1.xml
+Sitemap: https://partstrading.com/sitemap-products-2.xml
+Sitemap: https://partstrading.com/sitemap-products-3.xml
+
+# Allow all search engines to crawl the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Crawl delay (optional - helps with server load)
+Crawl-delay: 1
+
+# Disallow temporary files and scripts
+Disallow: /tmp/
+Disallow: /backup_checkpoints/
+Disallow: /*.py$
+Disallow: /*.sh$
+Disallow: /.git/
+Disallow: /.DS_Store
+Disallow: /EXPERIMENTS/
+Disallow: /documentation/

@@ -1,0 +1,29 @@
+DATABASE CLEANING REPORT
+================================================================================
+
+STATISTICS:
+- Original entries: 2698
+- Duplicate conflicts found: 32
+- Entries removed: 42
+- Final clean database: 2656 entries
+- Data quality improvement: 1.6% reduction in duplicates
+
+VALIDATION METHODOLOGY:
+1. Folder structure match (highest priority - +100 points)
+2. Description-category keyword alignment (+10 points per match)
+3. Description detail/length (more detailed = higher score)
+4. Application specified (+5 points)
+5. Avoid generic "Miscellaneous" (+15 points)
+
+HIGH CONFIDENCE REMOVALS (18 parts):
+Parts where validation score difference was > 20 points
+- Clear folder structure matches
+- Strong description-category alignment
+
+UNCERTAIN CASES (14 parts):
+Score differences < 20 points - relied on folder structure priority
+Parts: 1629169, 1629549, 20390840, 20442252, 20475040, 20488052, 20703965, 20712530, 21376743, 21583806, 22412256, 22768927, 3090924, 3093230
+
+REMOVED DUPLICATE INDICES:
+[1691, 1702, 1744, 1753, 1787, 1789, 1793, 1821, 1841, 1853, 1904, 1915, 1930, 1937, 1944, 1965, 1967, 1976, 2050, 2052, 2120, 2200, 2272, 2281, 2285, 2287, 2308, 2322, 2335, 2349, 2353, 2354, 2357, 2367, 2371, 2391, 2398, 2431, 2494, 2520, 2600, 2651]
+

@@ -1,0 +1,30 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/weaver",
+      "destination": "https://YOUR-WEAVER-DEPLOYMENT-URL.vercel.app/weaver"
+    },
+    {
+      "source": "/weaver/:path*",
+      "destination": "https://YOUR-WEAVER-DEPLOYMENT-URL.vercel.app/weaver/:path*"
+    }
+  ]
+}
+

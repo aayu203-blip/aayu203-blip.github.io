@@ -1,0 +1,24 @@
+{
+  "name": "ptc_website_complete",
+  "version": "1.0.0",
+  "description": "A modern, responsive website for Parts Trading Company - India's premier supplier of Volvo spare parts and heavy equipment components since 1956.",
+  "main": "new_partDatabase.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aayu203-blip/aayu203-blip.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aayu203-blip/aayu203-blip.github.io/issues"
+  },
+  "homepage": "https://github.com/aayu203-blip/aayu203-blip.github.io#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.1.18"
+  }
+}
