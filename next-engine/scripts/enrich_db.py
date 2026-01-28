@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).parent.parent
 INPUT_FILE = BASE_DIR / "full_dataset.jsonl"
 OUTPUT_FILE = BASE_DIR / "data" / "enriched_specs.json"
 MODEL_NAME = 'gemini-2.0-flash'
-RPM_LIMIT = 15  # Free tier safe limit
+RPM_LIMIT = 120  # Paid tier: ~2 requests/second
 SLEEP_TIME = 60 / RPM_LIMIT
 
 # --- PROMPT ---
@@ -83,12 +83,16 @@ def main():
             if key not in enriched_db:
                 to_process.append((key, p))
         
-        if not to_process:
-            print("✅ All known parts enriched. Sleeping 60s...")
+            print(f"✅ All known parts enriched. Sleeping 60s...")
             time.sleep(60)
             continue
             
-        print(f"🚀 Found {len(to_process)} unenriched parts.")
+        if not to_process:
+            print(f"✅ All known parts enriched. Sleeping 60s...")
+            time.sleep(60)
+            continue
+            
+        print(f"🚀 Found {len(to_process)} unenriched parts. Processing at max speed...")
         
         # PRIORITIZE: Volvo > Scania > CAT > Komatsu > Generic
         def priority_score(item):
@@ -102,8 +106,9 @@ def main():
 
         to_process.sort(key=priority_score)
         
-        # Enriched the top 200, then re-scan
-        batch = to_process[:200]
+        # Enriched the top batch
+        batch_size = 200
+        batch = to_process[:batch_size]
         print(f"🎯 Processing batch of {len(batch)} (Prioritizing {batch[0][1].get('brand')})...")
 
         for key, part in batch:
@@ -126,10 +131,10 @@ def main():
                 # Save to memory
                 enriched_db[key] = result
                 
-                # Persist to disk immediately (append-like behavior via overwrite)
+                # Persist enriched data
                 with open(OUTPUT_FILE, 'w') as f:
                     json.dump(enriched_db, f, indent=2)
-                    
+                
                 print(" Done.")
                 time.sleep(SLEEP_TIME)
                 

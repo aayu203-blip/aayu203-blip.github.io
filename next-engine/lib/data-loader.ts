@@ -131,6 +131,18 @@ export async function getPartsByBrand(brandName: string): Promise<Part[]> {
 
 export function getDisplayName(part: Part): string {
     if (!part) return "Unknown Part";
-    if (part.name && part.name !== "Unknown Part") return part.name;
-    return `${part.brand} ${part.partNumber}`;
+
+    // Naming Strategy: [Part Number] [Brand] [Enriched Application/Raw Name]
+    // Example: "1521725 Volvo Oil Filter Housing"
+
+    let descriptiveName = part.name;
+
+    // If we have an enriched "Application" (e.g. "Rock Drill Buffer Ring"), use it.
+    // Otherwise check if raw name is generic ("Ring") and try to make it better? 
+    // For now we rely on the enriched application if present.
+    if (part.application && part.application.length < 50) {
+        descriptiveName = part.application;
+    }
+
+    return `${part.partNumber} ${part.brand} ${descriptiveName}`.trim();
 }
