@@ -1,0 +1,23 @@
+{
+    "HomePage": {
+        "title": "[ NEXGEN ]",
+        "subTitle": "Global Heavy Machinery Index",
+        "nav": {
+            "uploadBom": "Upload BOM",
+            "trackOrder": "Track Order",
+            "signIn": "Sign In"
+        },
+        "hero": {
+            "placeholder": "Search Part Number (e.g. 1R-0716)..."
+        },
+        "footer": {
+            "brands": "Brands Index",
+            "machines": "Machine Types",
+            "regions": "Regions"
+        }
+    },
+    "Common": {
+        "requestQuote": "Request Quote",
+        "downloadSpec": "Download Spec Sheet"
+    }
+}

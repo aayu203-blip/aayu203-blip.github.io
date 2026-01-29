@@ -1,0 +1,23 @@
+{
+    "HomePage": {
+        "title": "[ NEXGEN ]",
+        "subTitle": "Índice Global de Maquinaria Pesada",
+        "nav": {
+            "uploadBom": "Subir Lista (BOM)",
+            "trackOrder": "Rastrear Orden",
+            "signIn": "Iniciar Sesión"
+        },
+        "hero": {
+            "placeholder": "Buscar Número de Parte (ej. 1R-0716)..."
+        },
+        "footer": {
+            "brands": "Índice de Marcas",
+            "machines": "Tipos de Máquinas",
+            "regions": "Regiones"
+        }
+    },
+    "Common": {
+        "requestQuote": "Solicitar Cotización",
+        "downloadSpec": "Descargar Ficha Técnica"
+    }
+}
