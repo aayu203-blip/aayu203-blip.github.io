@@ -151,43 +151,95 @@ export default function Home() {
             We don&apos;t sell photos. We sell specs.
           </h2>
 
-          {/* The Spec Card */}
-          <div className="max-w-2xl mx-auto bg-white shadow-xl border border-slate-200 p-8 text-left relative transform hover:-translate-y-1 transition-transform duration-300">
-            {/* Decorative Clip */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-2 bg-slate-200 rounded-b-md"></div>
+          {/* The Spec Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
 
-            <div className="flex justify-between items-start mb-8">
-              <div>
-                <div className="text-xs font-mono text-slate-500 mb-1">PART NUMBER</div>
-                <h3 className="text-4xl font-black text-slate-900 tracking-tight">CATERPILLAR 1R-0716</h3>
+            {/* CARD 1: CATERPILLAR FILTER */}
+            <div className="bg-white shadow-xl border border-slate-200 p-8 relative transform hover:-translate-y-1 transition-transform duration-300">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-yellow-400 rounded-b-md"></div>
+              <div className="mb-6">
+                <div className="text-[10px] font-mono text-slate-500 uppercase">Oil Filter</div>
+                <h3 className="text-2xl font-black text-slate-900 tracking-tight mt-1">CAT 1R-0716</h3>
               </div>
-              <div className="bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 border border-emerald-200 rounded-full">
-                VERIFIED
+              <div className="space-y-3 mb-6">
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-xs font-bold text-slate-400 uppercase">Thread</span>
+                  <span className="font-mono text-sm font-bold text-slate-700">1-14 UNS-2B</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-xs font-bold text-slate-400 uppercase">Efficiency</span>
+                  <span className="font-mono text-sm font-bold text-slate-700">98% @ 4μm</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-xs font-bold text-slate-400 uppercase">Height</span>
+                  <span className="font-mono text-sm font-bold text-slate-700">175mm</span>
+                </div>
               </div>
+              <Link href="/p/cat-1r-0716">
+                <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold h-10 rounded-sm text-xs">
+                  VIEW SPECS
+                </Button>
+              </Link>
             </div>
 
-            <div className="grid grid-cols-2 gap-px bg-slate-200 border border-slate-200 mb-8">
-              <div className="bg-white p-4">
-                <div className="text-[10px] uppercase font-bold text-slate-400">Thread Size</div>
-                <div className="font-mono text-sm">1-14 UNS-2B</div>
+            {/* CARD 2: VOLVO PUMP (Featured) */}
+            <div className="bg-white shadow-2xl border-2 border-[#005EB8] p-8 relative transform hover:-translate-y-1 transition-transform duration-300 scale-105 z-10">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-2 bg-[#005EB8] rounded-b-md"></div>
+              <div className="absolute top-4 right-4 bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 border border-emerald-200 rounded-full">
+                IN STOCK
               </div>
-              <div className="bg-white p-4">
-                <div className="text-[10px] uppercase font-bold text-slate-400">Efficiency Rating</div>
-                <div className="font-mono text-sm">98% @ 4 Microns</div>
+              <div className="mb-6">
+                <div className="text-[10px] font-mono text-[#005EB8] uppercase">Hydraulic Pump</div>
+                <h3 className="text-3xl font-black text-slate-900 tracking-tight mt-1">VOLVO 14524125</h3>
               </div>
-              <div className="bg-white p-4">
-                <div className="text-[10px] uppercase font-bold text-slate-400">Height</div>
-                <div className="font-mono text-sm">175mm</div>
+              <div className="space-y-3 mb-8">
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-xs font-bold text-slate-400 uppercase">Machine</span>
+                  <span className="font-mono text-sm font-bold text-slate-700">EC360B / EC460B</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-xs font-bold text-slate-400 uppercase">Flow Rate</span>
+                  <span className="font-mono text-sm font-bold text-slate-700">2x 280 L/min</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-xs font-bold text-slate-400 uppercase">Pressure</span>
+                  <span className="font-mono text-sm font-bold text-slate-700">34.3 MPa</span>
+                </div>
               </div>
-              <div className="bg-white p-4">
-                <div className="text-[10px] uppercase font-bold text-slate-400">Stock Availability</div>
-                <div className="font-mono text-sm text-[#005EB8] font-bold">32 Global Locations</div>
-              </div>
+              <Link href="/p/volvo-14524125">
+                <Button className="w-full bg-[#005EB8] hover:bg-blue-700 text-white font-bold h-12 rounded-sm shadow-lg shadow-blue-900/10">
+                  GET PRICING
+                </Button>
+              </Link>
             </div>
 
-            <Button className="w-full bg-[#005EB8] hover:bg-blue-700 text-white font-bold h-12 rounded-sm">
-              {common('downloadSpec')} (MOCK)
-            </Button>
+            {/* CARD 3: KOMATSU TOOTH */}
+            <div className="bg-white shadow-xl border border-slate-200 p-8 relative transform hover:-translate-y-1 transition-transform duration-300">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-slate-400 rounded-b-md"></div>
+              <div className="mb-6">
+                <div className="text-[10px] font-mono text-slate-500 uppercase">GET Tooth</div>
+                <h3 className="text-2xl font-black text-slate-900 tracking-tight mt-1">KOMATSU 205-70-19570</h3>
+              </div>
+              <div className="space-y-3 mb-6">
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-xs font-bold text-slate-400 uppercase">Type</span>
+                  <span className="font-mono text-sm font-bold text-slate-700">Standard Long (RC)</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-xs font-bold text-slate-400 uppercase">Weight</span>
+                  <span className="font-mono text-sm font-bold text-slate-700">6.4 kg</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-100 pb-2">
+                  <span className="text-xs font-bold text-slate-400 uppercase">System</span>
+                  <span className="font-mono text-sm font-bold text-slate-700">PC200 Series</span>
+                </div>
+              </div>
+              <Link href="/p/komatsu-205-70-19570">
+                <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold h-10 rounded-sm text-xs">
+                  VIEW SPECS
+                </Button>
+              </Link>
+            </div>
 
           </div>
         </div>
