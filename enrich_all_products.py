@@ -24,12 +24,15 @@ Part Details:
 - Category: {category}
 - Application: {application}
 
+
 INSTRUCTIONS:
-1. Write a 50-60 word 'marketing_description' focusing on durability, OEM quality, and performance. Use professional tone.
-2. Write 4 bullet points for 'features'. Focus on materials (e.g., "Heat-treated alloy"), precision ("OEM tolerances"), and reliability.
-3. DO NOT GUESS SPECIFIC NUMBERS. If you do not know the exact thread size, weight, or dimensions, DO NOT INVENT THEM.
-4. Output specific measurements ONLY if you are 100% certain based on your internal knowledge of this standard part. Otherwise set 'measurements' to null.
-5. Return ONLY valid JSON.
+1. Write a 50-60 word 'marketing_description' focusing on durability, OEM quality, and performance.
+2. Write 4 bullet points for 'features'. Focus on materials and precision.
+3. **CRITICAL: IDENTIFY CROSS-REFERENCES.**
+   - If this part has known OEM or Aftermarket cross-reference numbers (e.g., Wabco, Bosch, Mann), list them.
+   - Return a list of objects: [{"brand": "Wabco", "part_number": "..."}].
+   - If you are <98% sure, return empty list []. DO NOT GUESS.
+4. Output specific measurements ONLY if you are 100% certain.
 
 JSON FORMAT:
 {{
@@ -37,6 +40,9 @@ JSON FORMAT:
   "features": ["...", "...", "...", "..."],
   "application": "...",
   "part_label": "...",
+  "cross_references": [
+      {{"brand": "...", "part_number": "..."}}
+  ],
   "measurements": "..." (or null)
 }}
 """

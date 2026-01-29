@@ -64,132 +64,138 @@ export async function getPartsCount(): Promise<number> {
 
 // --- MAIN LOADER ---
 export async function getParts(locale: string = 'en'): Promise<Part[]> {
-    if (CACHED_DB.length > 0) {
-        if (locale === 'en') return CACHED_DB;
-        return CACHED_DB.map(part => ({
-            ...part,
-            name: translateTitle(part.name, locale),
-            category: translateTerm(part.category, locale),
-        }));
-    }
-
-    console.log("🔥 Loading God Mode Database...");
-
-    // 1. Load AI Enrichment Data (The "Brain")
-    let enrichedSpecs: Record<string, any> = {};
     try {
-        // Changed to normalized 'enriched_product_data.json'
-        const enrichedPath = path.join(process.cwd(), 'data', 'enriched_product_data.json');
-        if (fs.existsSync(enrichedPath)) {
-            const raw = fs.readFileSync(enrichedPath, 'utf-8');
-            enrichedSpecs = JSON.parse(raw);
-            console.log(`✅ Loaded ${Object.keys(enrichedSpecs).length} AI-Enriched Specs.`);
+        if (CACHED_DB.length > 0) {
+            if (locale === 'en') return CACHED_DB;
+            return CACHED_DB.map(part => ({
+                ...part,
+                name: translateTitle(part.name, locale),
+                category: translateTerm(part.category, locale),
+            }));
         }
-    } catch (e) {
-        console.error("⚠️ Failed to load AI Specs:", e);
-    }
 
-    // 2. Process Static DB
-    const staticParts: Part[] = (STATIC_DB as any[]).map(p => {
-        // Enrichment Key is just Part Number in the new format
-        const partNum = p.partNumber || p.id;
-        const enrichment = enrichedSpecs[partNum];
+        console.log("🔥 Loading God Mode Database...");
 
-        // Extract Cross Refs for Search
-        const xRefs = enrichment?.cross_references || [];
-        const xRefNums = xRefs.map((x: any) => x.part_number);
-
-        return {
-            id: `static-${p.id}`,
-            partNumber: partNum,
-            brand: p.brand || "Volvo",
-            // Use AI Label if available, else static
-            name: enrichment?.part_label || p.name,
-            description: enrichment?.description || p.description || "",
-            stock: 10,
-            price: "On Request",
-            category: p.category || "Uncategorized",
-            compatibility: p.compatibility || [],
-
-            // New Cross Reference Fields
-            oem_cross_references: xRefs,
-            cross_reference_numbers: xRefNums,
-
-            // AI Features joined as spec if available
-            technical_specs: enrichment ? {
-                "Application": enrichment.application,
-                "Key Features": (enrichment.features || []).join(", ")
-            } : undefined,
-            source: "static"
-        };
-    });
-
-    // 3. Process Harvested DB (JSONL)
-    let harvestedParts: Part[] = [];
-    try {
-        const livePath = path.join(process.cwd(), 'data', 'full_dataset.jsonl');
-        if (fs.existsSync(livePath)) {
-            const fileContent = fs.readFileSync(livePath, 'utf-8');
-            harvestedParts = fileContent.split('\n')
-                .filter(line => line.trim().length > 0)
-                .map((line, idx) => {
-                    try {
-                        const raw = JSON.parse(line);
-                        // Normalize Brand
-                        let brand = "Generic";
-                        const lowerComp = (raw.compatibility || "").toLowerCase();
-                        if (lowerComp.includes("volvo")) brand = "Volvo";
-                        else if (lowerComp.includes("scania")) brand = "Scania";
-                        else if (lowerComp.includes("cat")) brand = "CAT";
-                        else if (lowerComp.includes("komatsu")) brand = "Komatsu";
-                        else if (lowerComp.includes("hitachi")) brand = "Hitachi";
-                        else if (lowerComp.includes("beml")) brand = "BEML";
-                        else if (lowerComp.includes("hyundai")) brand = "Hyundai";
-                        else if (lowerComp.includes("sany")) brand = "Sany";
-                        else if (lowerComp.includes("liugong")) brand = "Liugong";
-                        else if (lowerComp.includes("mait")) brand = "Mait";
-                        else if (lowerComp.includes("soilmec")) brand = "Soilmec";
-
-                        if (brand === "Generic") return null; // Strict Quality Control
-
-                        const partNumber = raw.part_number || "unknown";
-
-                        // Check Enrichment
-                        const enrichment = enrichedSpecs[partNumber];
-
-                        // Extract Cross Refs for Search
-                        const xRefs = enrichment?.cross_references || [];
-                        const xRefNums = xRefs.map((x: any) => x.part_number);
-
-                        return {
-                            id: `harvest-${idx}`,
-                            partNumber: partNumber,
-                            brand: brand,
-                            name: enrichment?.part_label || raw.name || "Industrial Component",
-                            description: enrichment?.description || raw.marketing_description || raw.description || "Authentic aftermarket part.",
-                            stock: 50, // Simulation
-                            price: "On Request",
-                            category: "Engine Parts", // TODO: AI Categorization
-                            compatibility: raw.compatibility ? [raw.compatibility] : [],
-                            oem_cross_references: xRefs,
-                            cross_reference_numbers: xRefNums,
-                            technical_specs: enrichment ? {
-                                "Application": enrichment.application,
-                                "Key Features": (enrichment.features || []).join(", ")
-                            } : undefined,
-                            source: "harvest"
-                        };
-                    } catch (e) { return null; }
-                })
-                .filter(p => p !== null) as Part[];
+        // 1. Load AI Enrichment Data (The "Brain")
+        let enrichedSpecs: Record<string, any> = {};
+        try {
+            // Changed to normalized 'enriched_product_data.json'
+            const enrichedPath = path.join(process.cwd(), 'data', 'enriched_product_data.json');
+            if (fs.existsSync(enrichedPath)) {
+                const raw = fs.readFileSync(enrichedPath, 'utf-8');
+                enrichedSpecs = JSON.parse(raw);
+                console.log(`✅ Loaded ${Object.keys(enrichedSpecs).length} AI-Enriched Specs.`);
+            }
+        } catch (e) {
+            console.error("⚠️ Failed to load AI Specs:", e);
         }
-    } catch (e) {
-        console.error("⚠️ Failed to load Harvest Data:", e);
-    }
 
-    CACHED_DB = [...staticParts, ...harvestedParts];
-    console.log(`✅ Loaded ${CACHED_DB.length} parts into memory.`);
-    return CACHED_DB;
+        // 2. Process Static DB
+        const staticParts: Part[] = (STATIC_DB as any[]).map(p => {
+            // Enrichment Key is just Part Number in the new format
+            const partNum = p.partNumber || p.id;
+            const enrichment = enrichedSpecs[partNum];
+
+            // Extract Cross Refs for Search
+            const xRefs = enrichment?.cross_references || [];
+            const xRefNums = xRefs.map((x: any) => x.part_number);
+
+            return {
+                id: `static-${p.id}`,
+                partNumber: partNum,
+                brand: p.brand || "Volvo",
+                // Use AI Label if available, else static
+                name: enrichment?.part_label || p.name,
+                description: enrichment?.description || p.description || "",
+                stock: 10,
+                price: "On Request",
+                category: p.category || "Uncategorized",
+                compatibility: p.compatibility || [],
+
+                // New Cross Reference Fields
+                oem_cross_references: xRefs,
+                cross_reference_numbers: xRefNums,
+
+                // AI Features joined as spec if available
+                technical_specs: enrichment ? {
+                    "Application": enrichment.application,
+                    "Key Features": (enrichment.features || []).join(", ")
+                } : undefined,
+                source: "static"
+            };
+        });
+
+        // 3. Process Harvested DB (JSONL)
+        let harvestedParts: Part[] = [];
+        try {
+            const livePath = path.join(process.cwd(), 'data', 'full_dataset.jsonl');
+            if (fs.existsSync(livePath)) {
+                const fileContent = fs.readFileSync(livePath, 'utf-8');
+                harvestedParts = fileContent.split('\n')
+                    .filter(line => line.trim().length > 0)
+                    .map((line, idx) => {
+                        try {
+                            const raw = JSON.parse(line);
+                            // Normalize Brand
+                            let brand = "Generic";
+                            const lowerComp = (raw.compatibility || "").toLowerCase();
+                            if (lowerComp.includes("volvo")) brand = "Volvo";
+                            else if (lowerComp.includes("scania")) brand = "Scania";
+                            else if (lowerComp.includes("cat")) brand = "CAT";
+                            else if (lowerComp.includes("komatsu")) brand = "Komatsu";
+                            else if (lowerComp.includes("hitachi")) brand = "Hitachi";
+                            else if (lowerComp.includes("beml")) brand = "BEML";
+                            else if (lowerComp.includes("hyundai")) brand = "Hyundai";
+                            else if (lowerComp.includes("sany")) brand = "Sany";
+                            else if (lowerComp.includes("liugong")) brand = "Liugong";
+                            else if (lowerComp.includes("mait")) brand = "Mait";
+                            else if (lowerComp.includes("soilmec")) brand = "Soilmec";
+
+                            if (brand === "Generic") return null; // Strict Quality Control
+
+                            const partNumber = raw.part_number || "unknown";
+
+                            // Check Enrichment
+                            const enrichment = enrichedSpecs[partNumber];
+
+                            // Extract Cross Refs for Search
+                            const xRefs = enrichment?.cross_references || [];
+                            const xRefNums = xRefs.map((x: any) => x.part_number);
+
+                            return {
+                                id: `harvest-${idx}`,
+                                partNumber: partNumber,
+                                brand: brand,
+                                name: enrichment?.part_label || raw.name || "Industrial Component",
+                                description: enrichment?.description || raw.marketing_description || raw.description || "Authentic aftermarket part.",
+                                stock: 50, // Simulation
+                                price: "On Request",
+                                category: "Engine Parts", // TODO: AI Categorization
+                                compatibility: raw.compatibility ? [raw.compatibility] : [],
+                                oem_cross_references: xRefs,
+                                cross_reference_numbers: xRefNums,
+                                technical_specs: enrichment ? {
+                                    "Application": enrichment.application,
+                                    "Key Features": (enrichment.features || []).join(", ")
+                                } : undefined,
+                                source: "harvest"
+                            };
+                        } catch (e) { return null; }
+                    })
+                    .filter(p => p !== null) as Part[];
+            }
+        } catch (e) {
+            console.error("⚠️ Failed to load Harvest Data:", e);
+        }
+
+        CACHED_DB = [...staticParts, ...harvestedParts];
+        console.log(`✅ Loaded ${CACHED_DB.length} parts into memory.`);
+        return CACHED_DB;
+    } catch (error) {
+        console.error("🚨 CRITICAL: getParts() failed completely:", error);
+        // Return minimal fallback to prevent site crash
+        return [];
+    }
 }
 
 export async function getPartBySlug(brand: string, partNumber: string, locale: string = 'en'): Promise<Part | undefined> {
