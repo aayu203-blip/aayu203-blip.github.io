@@ -34,7 +34,7 @@ export async function getAllGuides(): Promise<Guide[]> {
     try {
         // Dynamic import to avoid build errors if file is missing initially
         // @ts-ignore
-        const generated = await import("../../data/generated_guides.json");
+        const generated = await import("../data/generated_guides.json");
         // Combine static fallback with generated content
         if (generated.default && Array.isArray(generated.default)) {
             return [...generated.default, ...GUIDES];
