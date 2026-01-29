@@ -3,8 +3,8 @@ import { routing } from './i18n/routing';
 
 export default createMiddleware(routing);
 
-// Match all pathnames except for
-// - … if they start with `/api`, `/_next` or `/_vercel`
-// - … the ones containing a dot (e.g. `favicon.ico`)
-matcher: ['/((?!api|_next|_vercel|sitemaps|sitemap.xml|sitemap-backup.xml|.*\\..*).*)']
+export const config = {
+    // Match only internationalized pathnames
+    // Exclude API, static assets (files with dots), and sitemap files explicitly
+    matcher: ['/((?!api|_next|_vercel|sitemaps|sitemap.xml|sitemap-backup.xml|.*\\..*).*)']
 };
