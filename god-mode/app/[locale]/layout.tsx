@@ -20,8 +20,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NexGen Index | Global Heavy Machinery Database",
-  description: "The definitive industrial index for heavy machinery parts. Verified specs for Volvo, CAT, Komatsu, and more.",
+  title: "Nexgen Spares | Global Heavy Machinery Parts Supplier",
+  description: "Premier supplier of verified spare parts for Volvo, CAT, Komatsu, and Scania. Factory-direct pricing and technical specs for excavators and loaders.",
 };
 
 export default async function RootLayout({

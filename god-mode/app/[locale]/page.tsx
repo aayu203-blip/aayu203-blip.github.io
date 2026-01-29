@@ -22,10 +22,10 @@ export default async function Home() {
           <div className="flex items-center gap-4">
             {/* Logo */}
             <div className="font-black text-2xl tracking-tighter text-slate-900">
-              [ NEXGEN ]
+              [ NEXGEN SPARES ]
             </div>
             <span className="text-xs font-medium text-slate-500 uppercase tracking-wide hidden sm:block border-l border-slate-300 pl-4 py-1">
-              Global Heavy Index
+              Global Heavy Machinery Spares
             </span>
           </div>
 
@@ -227,12 +227,11 @@ export default async function Home() {
       <footer className="bg-slate-900 text-white py-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
           <div>
-            <div className="font-black text-xl mb-6 tracking-tighter">[ NEXGEN ]</div>
+            <div className="font-black text-xl mb-6 tracking-tighter">[ NEXGEN SPARES ]</div>
             <p className="text-slate-400 text-sm leading-relaxed">
-              The definitive industrial index. Built for procurement officers, engineers, and fleet managers who need raw data, not marketing fluff.
+              The premier global supplier of heavy machinery parts. Verified components, technical accuracy, and rapid logistics for procurement teams worldwide.
             </p>
           </div>
-
           <div>
             <h4 className="font-bold text-slate-200 mb-6 uppercase text-xs tracking-wider">{t('footer.brands')}</h4>
             <ul className="space-y-2 text-sm text-slate-400">
