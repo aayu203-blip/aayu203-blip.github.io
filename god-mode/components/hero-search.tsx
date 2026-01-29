@@ -97,7 +97,7 @@ export function HeroSearch() {
 
     return (
         <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-8">
+            <h1 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-8">
                 {activeTab === "search" ? (
                     <>Input Part Number.<br />Get Global Specs.</>
                 ) : (
@@ -135,11 +135,11 @@ export function HeroSearch() {
             {/* PANEL: SEARCH */}
             {activeTab === "search" && (
                 <div ref={wrapperRef} className="relative group max-w-2xl bg-white z-50">
-                    <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+                    <div className="absolute inset-y-0 left-3 md:left-4 flex items-center pointer-events-none">
                         {isLoadingSuggestions ? (
-                            <Loader2 className="text-[#005EB8] animate-spin" size={20} />
+                            <Loader2 className="text-[#005EB8] animate-spin" size={18} />
                         ) : (
-                            <Search className="text-slate-400 group-focus-within:text-[#005EB8]" size={20} />
+                            <Search className="text-slate-400 group-focus-within:text-[#005EB8]" size={18} />
                         )}
                     </div>
                     <input
@@ -148,13 +148,13 @@ export function HeroSearch() {
                         onChange={(e) => setSearchText(e.target.value)}
                         onFocus={() => { if (suggestions.length > 0) setShowSuggestions(true); }}
                         onKeyDown={handleKeyDown}
-                        placeholder="Search 500,000+ specs (e.g. 1R-0716, Volvo EC210)..."
-                        className="w-full pl-12 pr-4 py-5 bg-white border-2 border-slate-300 rounded-none shadow-sm text-lg font-mono text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#005EB8] focus:ring-4 focus:ring-blue-500/10 transition-all border-t-0"
+                        placeholder="Search 500,000+ specs..."
+                        className="w-full pl-10 md:pl-12 pr-28 md:pr-36 py-3 md:py-5 bg-white border-2 border-slate-300 rounded-none shadow-sm text-base md:text-lg font-mono text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#005EB8] focus:ring-4 focus:ring-blue-500/10 transition-all border-t-0 truncate"
                     />
-                    <div className="absolute inset-y-2 right-2 flex items-center">
+                    <div className="absolute inset-y-1 md:inset-y-2 right-1 md:right-2 flex items-center">
                         <Button
                             onClick={handleSearch}
-                            className="h-full rounded-none bg-slate-900 hover:bg-slate-800 text-white font-bold px-6"
+                            className="h-full rounded-none bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 md:px-6 text-xs md:text-sm"
                         >
                             SEARCH
                         </Button>

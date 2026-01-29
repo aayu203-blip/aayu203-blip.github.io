@@ -46,12 +46,13 @@ export default function Home() {
       </div>
 
       {/* 3. HERO: THE WHITEBOARD */}
-      <section className="bg-graph-paper py-24 border-b border-slate-200 relative overflow-hidden">
+      {/* 3. HERO: THE WHITEBOARD */}
+      <section className="bg-graph-paper py-10 md:py-24 border-b border-slate-200 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <HeroSearch />
 
           {/* BULK PASTE / QUICK ACTION */}
-          <div className="mt-12">
+          <div className="mt-8 md:mt-12">
             <BulkPasteForm />
           </div>
         </div>
