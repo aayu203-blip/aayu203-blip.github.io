@@ -252,6 +252,12 @@ export async function getPartsByCategory(categorySlug: string, locale: string = 
 
 export async function getFeaturedParts(): Promise<Part[]> {
     const parts = await getParts();
+
+    // If we have fewer than 3 parts (minimal mode), just return what we have
+    if (parts.length < 3) {
+        return parts;
+    }
+
     // Specific high-quality parts for the homepage
     const targets = [
         { brand: "CAT", pn: "1R-0716" },
@@ -267,6 +273,11 @@ export async function getFeaturedParts(): Promise<Part[]> {
             p.partNumber.toUpperCase() === t.pn &&
             slugify(p.brand).includes(slugify(t.brand))
         );
+
+        // If not found, just use any part from that brand
+        if (!match) {
+            match = parts.find(p => slugify(p.brand).includes(slugify(t.brand)));
+        }
 
         // Fallback to purely static object if not found (Safety for Demo)
         if (!match) {
@@ -286,7 +297,18 @@ export async function getFeaturedParts(): Promise<Part[]> {
         }
         featured.push(match);
     }
-    return featured;
+
+    // If we still don't have 3 parts, fill with first available parts
+    while (featured.length < 3 && parts.length > 0) {
+        const nextPart = parts[featured.length];
+        if (nextPart && !featured.find(f => f.id === nextPart.id)) {
+            featured.push(nextPart);
+        } else {
+            break;
+        }
+    }
+
+    return featured.slice(0, 3);
 }
 
 import Fuse from 'fuse.js';
