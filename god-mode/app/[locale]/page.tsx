@@ -236,11 +236,17 @@ export default async function Home() {
           <div>
             <h4 className="font-bold text-slate-200 mb-6 uppercase text-xs tracking-wider">{t('footer.brands')}</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li><Link href="/brands/volvo" className="hover:text-white">Volvo Construction</Link></li>
-              <li><Link href="/brands/caterpillar" className="hover:text-white">Caterpillar Inc.</Link></li>
+              <li><Link href="/brands/volvo" className="hover:text-white">Volvo</Link></li>
+              <li><Link href="/brands/caterpillar" className="hover:text-white">Caterpillar (CAT)</Link></li>
               <li><Link href="/brands/komatsu" className="hover:text-white">Komatsu</Link></li>
-              <li><Link href="/brands/scania" className="hover:text-white">Scania Industrial</Link></li>
+              <li><Link href="/brands/scania" className="hover:text-white">Scania</Link></li>
               <li><Link href="/brands/hitachi" className="hover:text-white">Hitachi</Link></li>
+              <li><Link href="/brands/beml" className="hover:text-white">BEML</Link></li>
+              <li><Link href="/brands/hyundai" className="hover:text-white">Hyundai</Link></li>
+              <li><Link href="/brands/sany" className="hover:text-white">Sany</Link></li>
+              <li><Link href="/brands/liugong" className="hover:text-white">Liugong</Link></li>
+              <li><Link href="/brands/mait" className="hover:text-white">Mait</Link></li>
+              <li><Link href="/brands/soilmec" className="hover:text-white">Soilmec</Link></li>
             </ul>
           </div>
 

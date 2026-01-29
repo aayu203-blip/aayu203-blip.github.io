@@ -116,6 +116,13 @@ export async function getParts(): Promise<Part[]> {
                         else if (lowerComp.includes("scania")) brand = "Scania";
                         else if (lowerComp.includes("cat")) brand = "CAT";
                         else if (lowerComp.includes("komatsu")) brand = "Komatsu";
+                        else if (lowerComp.includes("hitachi")) brand = "Hitachi";
+                        else if (lowerComp.includes("beml")) brand = "BEML";
+                        else if (lowerComp.includes("hyundai")) brand = "Hyundai";
+                        else if (lowerComp.includes("sany")) brand = "Sany";
+                        else if (lowerComp.includes("liugong")) brand = "Liugong";
+                        else if (lowerComp.includes("mait")) brand = "Mait";
+                        else if (lowerComp.includes("soilmec")) brand = "Soilmec";
 
                         if (brand === "Generic") return null; // Strict Quality Control
 
