@@ -1,0 +1,23 @@
+{
+    "HomePage": {
+        "title": "[ NEXGEN SPARES ]",
+        "subTitle": "Fornecedor Global de Peças para Maquinaria Pesada",
+        "nav": {
+            "uploadBom": "Carregar BOM",
+            "trackOrder": "Rastrear Pedido",
+            "signIn": "Entrar"
+        },
+        "hero": {
+            "placeholder": "Buscar Número da Peça (ex. 1R-0716)..."
+        },
+        "footer": {
+            "brands": "Índice de Marcas",
+            "machines": "Tipos de Máquinas",
+            "regions": "Regiões"
+        }
+    },
+    "Common": {
+        "requestQuote": "Solicitar Cotação",
+        "downloadSpec": "Baixar Ficha Técnica"
+    }
+}

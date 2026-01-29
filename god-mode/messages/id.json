@@ -1,0 +1,23 @@
+{
+    "HomePage": {
+        "title": "[ NEXGEN SPARES ]",
+        "subTitle": "Pemasok Suku Cadang Alat Berat Global",
+        "nav": {
+            "uploadBom": "Unggah BOM",
+            "trackOrder": "Lacak Pesanan",
+            "signIn": "Masuk"
+        },
+        "hero": {
+            "placeholder": "Cari Nomor Suku Cadang (mis. 1R-0716)..."
+        },
+        "footer": {
+            "brands": "Indeks Merek",
+            "machines": "Jenis Mesin",
+            "regions": "Wilayah"
+        }
+    },
+    "Common": {
+        "requestQuote": "Minta Penawaran",
+        "downloadSpec": "Unduh Lembar Spesifikasi"
+    }
+}

@@ -12,8 +12,8 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props) {
-    const { slug } = await params;
-    const parts = await getPartsByBrand(slug);
+    const { slug, locale } = await params;
+    const parts = await getPartsByBrand(slug, locale);
 
     // Normalize slug to match taxonomy keys
     const taxonomyKey = slug.toLowerCase();
@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function BrandPage({ params }: Props) {
-    const { slug } = await params;
-    const parts = await getPartsByBrand(slug);
+    const { slug, locale } = await params;
+    const parts = await getPartsByBrand(slug, locale);
 
     // Normalize slug to match taxonomy keys
     const taxonomyKey = slug.toLowerCase();

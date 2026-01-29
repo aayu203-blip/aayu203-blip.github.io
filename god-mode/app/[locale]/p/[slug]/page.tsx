@@ -22,7 +22,7 @@ type Props = {
 export async function generateMetadata({ params }: Props) {
     const resolvedParams = await params;
     const { brand, partNumber } = parseSlug(resolvedParams.slug);
-    const parts = await getParts();
+    const parts = await getParts(resolvedParams.locale);
     const targetPart = parts.find(p =>
         p.partNumber && p.brand &&
         String(p.partNumber).toLowerCase().replace(/[^a-z0-9]/g, '') === partNumber.toLowerCase().replace(/[^a-z0-9]/g, '') &&
@@ -52,7 +52,7 @@ export default async function ProductPage({ params }: Props) {
     const { brand, partNumber } = parseSlug(resolvedParams.slug);
 
     // FETCH DATA
-    const parts = await getParts();
+    const parts = await getParts(resolvedParams.locale);
     const targetPart = parts.find(p =>
         p.partNumber && p.brand &&
         String(p.partNumber).toLowerCase().replace(/[^a-z0-9]/g, '') === partNumber.toLowerCase().replace(/[^a-z0-9]/g, '') &&

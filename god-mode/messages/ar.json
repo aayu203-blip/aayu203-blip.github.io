@@ -1,0 +1,23 @@
+{
+    "HomePage": {
+        "title": "[ NEXGEN SPARES ]",
+        "subTitle": "المورد العالمي لقطع غيار الآلات الثقيلة",
+        "nav": {
+            "uploadBom": "تحميل قائمة المواد",
+            "trackOrder": "تتبع الطلب",
+            "signIn": "تسجيل الدخول"
+        },
+        "hero": {
+            "placeholder": "بحث عن رقم القطعة (مثل 1R-0716)..."
+        },
+        "footer": {
+            "brands": "فهرس العلامات التجارية",
+            "machines": "أنواع الآلات",
+            "regions": "المناطق"
+        }
+    },
+    "Common": {
+        "requestQuote": "طلب عرض سعر",
+        "downloadSpec": "تحميل ورقة المواصفات"
+    }
+}

@@ -43,9 +43,18 @@ export function slugify(text: string): string {
         .replace(/-+$/, '');            // Trim - from end
 }
 
+import { translateTitle, translateTerm } from './dictionary';
+
 // --- MAIN LOADER ---
-export async function getParts(): Promise<Part[]> {
-    if (CACHED_DB.length > 0) return CACHED_DB;
+export async function getParts(locale: string = 'en'): Promise<Part[]> {
+    if (CACHED_DB.length > 0) {
+        if (locale === 'en') return CACHED_DB;
+        return CACHED_DB.map(part => ({
+            ...part,
+            name: translateTitle(part.name, locale),
+            category: translateTerm(part.category, locale),
+        }));
+    }
 
     console.log("🔥 Loading God Mode Database...");
 
@@ -166,8 +175,8 @@ export async function getParts(): Promise<Part[]> {
     return CACHED_DB;
 }
 
-export async function getPartBySlug(brand: string, partNumber: string): Promise<Part | undefined> {
-    const parts = await getParts();
+export async function getPartBySlug(brand: string, partNumber: string, locale: string = 'en'): Promise<Part | undefined> {
+    const parts = await getParts(locale);
     // Fuzzy-ish match
     return parts.find(p =>
         slugify(p.brand) === slugify(brand) &&
@@ -175,13 +184,13 @@ export async function getPartBySlug(brand: string, partNumber: string): Promise<
     );
 }
 
-export async function getPartsByBrand(brandSlug: string): Promise<Part[]> {
-    const parts = await getParts();
+export async function getPartsByBrand(brandSlug: string, locale: string = 'en'): Promise<Part[]> {
+    const parts = await getParts(locale);
     return parts.filter(p => slugify(p.brand) === slugify(brandSlug));
 }
 
-export async function getPartsByCategory(categorySlug: string): Promise<Part[]> {
-    const parts = await getParts();
+export async function getPartsByCategory(categorySlug: string, locale: string = 'en'): Promise<Part[]> {
+    const parts = await getParts(locale);
     // Fuzzy matching for category or compatibility
     const target = slugify(categorySlug);
     return parts.filter(p =>

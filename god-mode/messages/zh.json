@@ -1,0 +1,23 @@
+{
+    "HomePage": {
+        "title": "[ NEXGEN SPARES ]",
+        "subTitle": "全球重型机械零件供应商",
+        "nav": {
+            "uploadBom": "上传 BOM",
+            "trackOrder": "订单追踪",
+            "signIn": "登录"
+        },
+        "hero": {
+            "placeholder": "搜索零件编号 (例如 1R-0716)..."
+        },
+        "footer": {
+            "brands": "品牌索引",
+            "machines": "机械类型",
+            "regions": "地区"
+        }
+    },
+    "Common": {
+        "requestQuote": "获取报价",
+        "downloadSpec": "下载规格表"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "HomePage": {
+        "title": "[ NEXGEN SPARES ]",
+        "subTitle": "Fournisseur Mondial de Pièces pour Machinerie Lourde",
+        "nav": {
+            "uploadBom": "Télécharger BOM",
+            "trackOrder": "Suivi de Commande",
+            "signIn": "Connexion"
+        },
+        "hero": {
+            "placeholder": "Rechercher Numéro de Pièce (ex. 1R-0716)..."
+        },
+        "footer": {
+            "brands": "Index des Marques",
+            "machines": "Types de Machines",
+            "regions": "Régions"
+        }
+    },
+    "Common": {
+        "requestQuote": "Demander un Devis",
+        "downloadSpec": "Télécharger Fiche Technique"
+    }
+}

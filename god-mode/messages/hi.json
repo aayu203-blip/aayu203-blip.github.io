@@ -1,0 +1,23 @@
+{
+    "HomePage": {
+        "title": "[ NEXGEN SPARES ]",
+        "subTitle": "वैश्विक भारी मशीनरी स्पेयर पार्ट्स आपूर्तिकर्ता",
+        "nav": {
+            "uploadBom": "BOM अपलोड करें",
+            "trackOrder": "आर्डर ट्रैक करें",
+            "signIn": "साइन इन"
+        },
+        "hero": {
+            "placeholder": "पार्ट नंबर खोजें (उदा. 1R-0716)..."
+        },
+        "footer": {
+            "brands": "ब्रांड सूचकांक",
+            "machines": "मशीन प्रकार",
+            "regions": "क्षेत्र"
+        }
+    },
+    "Common": {
+        "requestQuote": "कोटेशन प्राप्त करें",
+        "downloadSpec": "स्पेक शीट डाउनलोड करें"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "HomePage": {
+        "title": "[ NEXGEN SPARES ]",
+        "subTitle": "世界の重機スペアパーツサプライヤー",
+        "nav": {
+            "uploadBom": "BOMをアップロード",
+            "trackOrder": "注文追跡",
+            "signIn": "サインイン"
+        },
+        "hero": {
+            "placeholder": "部品番号を検索 (例: 1R-0716)..."
+        },
+        "footer": {
+            "brands": "ブランド一覧",
+            "machines": "機械タイプ",
+            "regions": "地域"
+        }
+    },
+    "Common": {
+        "requestQuote": "見積もりを依頼",
+        "downloadSpec": "仕様書をダウンロード"
+    }
+}
