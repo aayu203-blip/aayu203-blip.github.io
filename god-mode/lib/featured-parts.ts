@@ -1,3 +1,5 @@
+import type { Part } from "./data-loader";
+
 export async function getFeaturedParts(): Promise<Part[]> {
     // HARDCODED FEATURED PARTS - No database lookups, guaranteed to work on Vercel
     const hardcodedParts: Part[] = [
