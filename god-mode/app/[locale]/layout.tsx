@@ -5,6 +5,7 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { GodModeProvider } from "@/components/god-mode-provider";
+import { SiteFooter } from "@/components/site-footer";
 import "../globals.css";
 
 import { AnalyticsProvider } from "@/components/analytics-provider";
@@ -53,12 +54,12 @@ export default async function RootLayout({
             posthogKey={process.env.NEXT_PUBLIC_POSTHOG_KEY}
             posthogHost={process.env.NEXT_PUBLIC_POSTHOG_HOST}
           >
-            <GodModeProvider>
-              {children}
-            </GodModeProvider>
-          </AnalyticsProvider>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+            {children}
+            <SiteFooter />
+          </GodModeProvider>
+        </AnalyticsProvider>
+      </NextIntlClientProvider>
+    </body>
+    </html >
   );
 }
