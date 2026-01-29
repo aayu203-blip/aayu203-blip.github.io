@@ -45,6 +45,23 @@ export function slugify(text: string): string {
 
 import { translateTitle, translateTerm } from './dictionary';
 
+export async function getPartsCount(): Promise<number> {
+    if (CACHED_DB.length > 0) return CACHED_DB.length;
+
+    // Quick load for count logic
+    const enrichedPath = path.join(process.cwd(), 'data', 'enriched_product_data.json');
+    let enrichedCount = 0;
+    try {
+        if (fs.existsSync(enrichedPath)) {
+            // Read only needed bytes or parse roughly
+            const raw = fs.readFileSync(enrichedPath, 'utf-8');
+            enrichedCount = Object.keys(JSON.parse(raw)).length;
+        }
+    } catch { }
+
+    return (STATIC_DB as any[]).length + enrichedCount;
+}
+
 // --- MAIN LOADER ---
 export async function getParts(locale: string = 'en'): Promise<Part[]> {
     if (CACHED_DB.length > 0) {
