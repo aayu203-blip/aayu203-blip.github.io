@@ -25,8 +25,14 @@ export default async function Home() {
   const t = await useTranslations('HomePage'); // Async in newer Next.js
   const common = await useTranslations('Common');
 
-  // Dynamic Data Fetch
-  const featuredParts = await getFeaturedParts();
+  // Dynamic Data Fetch with Error Handling
+  let featuredParts;
+  try {
+    featuredParts = await getFeaturedParts();
+  } catch (e) {
+    console.error("Failed to load featured parts", e);
+    featuredParts = [];
+  }
 
   return (
     <main className="min-h-screen bg-white text-slate-900 font-sans">
