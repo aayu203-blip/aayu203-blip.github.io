@@ -1,8 +1,5 @@
 import { getParts, slugify } from "@/lib/data-loader";
 import { MACHINE_CATALOG } from "@/lib/taxonomy";
-
-import { getParts, slugify } from "@/lib/data-loader";
-import { MACHINE_CATALOG } from "@/lib/taxonomy";
 import { MetadataRoute } from "next";
 
 export async function generateSitemaps() {
