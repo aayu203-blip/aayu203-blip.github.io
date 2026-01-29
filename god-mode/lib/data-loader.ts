@@ -1,17 +1,17 @@
 import fs from 'fs';
 import path from 'path';
 import STATIC_DB from '../data/parts-database.json';
+import Fuse from 'fuse.js';
 
 // --- TYPE DEFINITIONS ---
 import { Part, slugify } from './utils';
+import { translateTitle, translateTerm } from './dictionary';
 
 export type { Part }; // Re-export for convenience
 export { slugify };   // Re-export for convenience
 
 // --- CACHE (Server-Side Only) ---
 let CACHED_DB: Part[] = [];
-
-import { translateTitle, translateTerm } from './dictionary';
 
 export async function getPartsCount(): Promise<number> {
     if (CACHED_DB.length > 0) return CACHED_DB.length;
@@ -278,8 +278,6 @@ export async function getFeaturedParts(): Promise<Part[]> {
 
     return featured.slice(0, 3);
 }
-
-import Fuse from 'fuse.js';
 
 // God Mode Search (Fuse.js for Fuzzy Matching Phase 2)
 let FUSE_INSTANCE: Fuse<Part> | null = null;
