@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "prebuild": "npx tsx scripts/prebuild_sitemaps.ts",
+    "build": "npm run prebuild && next build",
     "start": "next start",
     "lint": "eslint"
   },
