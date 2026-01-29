@@ -5,6 +5,7 @@ import { HeroSearch } from "@/components/hero-search";
 import { BulkPasteForm } from "@/components/bulk-paste-form";
 import { useTranslations } from 'next-intl';
 import { getFeaturedParts, slugify, type Part } from "@/lib/data-loader";
+import { getFeaturedParts as getHardcodedFeaturedParts } from "@/lib/featured-parts";
 import { MobileContactBar } from "@/components/mobile-contact-bar";
 
 import { Metadata } from "next";
@@ -25,10 +26,10 @@ export default async function Home() {
   const t = await useTranslations('HomePage'); // Async in newer Next.js
   const common = await useTranslations('Common');
 
-  // Dynamic Data Fetch with Error Handling
+  // Use hardcoded featured parts to prevent Vercel OOM
   let featuredParts: Part[] = [];
   try {
-    featuredParts = await getFeaturedParts();
+    featuredParts = await getHardcodedFeaturedParts();
   } catch (e) {
     console.error("Failed to load featured parts", e);
     featuredParts = [];
