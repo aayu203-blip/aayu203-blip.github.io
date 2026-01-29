@@ -54,12 +54,13 @@ export default async function RootLayout({
             posthogKey={process.env.NEXT_PUBLIC_POSTHOG_KEY}
             posthogHost={process.env.NEXT_PUBLIC_POSTHOG_HOST}
           >
-            {children}
-            <SiteFooter />
-          </GodModeProvider>
-        </AnalyticsProvider>
-      </NextIntlClientProvider>
-    </body>
-    </html >
+            <GodModeProvider>
+              {children}
+              <SiteFooter />
+            </GodModeProvider>
+          </AnalyticsProvider>
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
