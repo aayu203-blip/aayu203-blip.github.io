@@ -5,9 +5,21 @@ import { HeroSearch } from "@/components/hero-search";
 import { BulkPasteForm } from "@/components/bulk-paste-form";
 import { useTranslations } from 'next-intl';
 import { getFeaturedParts, slugify, type Part } from "@/lib/data-loader";
-// ... imports ...
+import { MobileContactBar } from "@/components/mobile-contact-bar";
 
-// ... metadata ...
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Nexgen Spares | Global Heavy Machinery Parts Supplier",
+  description: "B2B parts supplier for Volvo, CAT, Komatsu, and Scania heavy equipment. Verified inventory, fast shipping to USA, India, & Middle East. Request a quote.",
+  openGraph: {
+    title: "Nexgen Spares - Global Heavy Machinery Index",
+    description: "Search 30,000+ verified aftermarket parts. Direct supplier for excavators, loaders, and dozers.",
+    type: "website",
+  }
+};
+
+
 
 export default async function Home() {
   const t = await useTranslations('HomePage'); // Async in newer Next.js
