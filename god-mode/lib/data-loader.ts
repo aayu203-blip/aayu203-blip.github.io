@@ -125,8 +125,10 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
             };
         });
 
-        // 3. Process Harvested DB (JSONL)
+        // 3. Process Harvested DB (JSONL) - DISABLED FOR MEMORY OPTIMIZATION
+        // TODO: Move to database or API endpoint for production
         let harvestedParts: Part[] = [];
+        /* TEMPORARILY DISABLED - CAUSES VERCEL OOM
         try {
             const livePath = path.join(process.cwd(), 'data', 'full_dataset.jsonl');
             if (fs.existsSync(livePath)) {
@@ -187,6 +189,7 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
         } catch (e) {
             console.error("⚠️ Failed to load Harvest Data:", e);
         }
+        */
 
         CACHED_DB = [...staticParts, ...harvestedParts];
         console.log(`✅ Loaded ${CACHED_DB.length} parts into memory.`);
