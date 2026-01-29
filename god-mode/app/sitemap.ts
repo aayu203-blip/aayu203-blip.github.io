@@ -1,17 +1,17 @@
-import { getParts, slugify } from "@/lib/data-loader";
+import { getParts, getPartsCount, slugify } from "@/lib/data-loader";
 import { MACHINE_CATALOG } from "@/lib/taxonomy";
 import { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 
 export async function generateSitemaps() {
-    const parts = await getParts();
-    const totalProducts = parts.length;
+    const totalProducts = await getPartsCount();
     // 10 locales * 4000 products = 40,000 URLs (Safe under 50k)
     const productsPerSitemap = 4000;
     const numSitemaps = Math.ceil(totalProducts / productsPerSitemap);
 
     // ID 0 = Static Pages + Brands + Machines
     // ID 1+ = Products Chunks
+
     return Array.from({ length: numSitemaps + 1 }, (_, i) => ({ id: i }));
 }
 
