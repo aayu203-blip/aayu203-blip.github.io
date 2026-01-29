@@ -4,10 +4,14 @@ import { Link } from '@/i18n/routing';
 import { HeroSearch } from "@/components/hero-search";
 import { BulkPasteForm } from "@/components/bulk-paste-form";
 import { useTranslations } from 'next-intl';
+import { getFeaturedParts, slugify } from "@/lib/data-loader";
 
-export default function Home() {
-  const t = useTranslations('HomePage');
-  const common = useTranslations('Common');
+export default async function Home() {
+  const t = await useTranslations('HomePage'); // Async in newer Next.js
+  const common = await useTranslations('Common');
+
+  // Dynamic Data Fetch
+  const featuredParts = await getFeaturedParts();
 
   return (
     <main className="min-h-screen bg-white text-slate-900 font-sans">
@@ -18,10 +22,10 @@ export default function Home() {
           <div className="flex items-center gap-4">
             {/* Logo */}
             <div className="font-black text-2xl tracking-tighter text-slate-900">
-              {t('title')}
+              [ NEXGEN ]
             </div>
             <span className="text-xs font-medium text-slate-500 uppercase tracking-wide hidden sm:block border-l border-slate-300 pl-4 py-1">
-              {t('subTitle')}
+              Global Heavy Index
             </span>
           </div>
 
@@ -45,7 +49,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 3. HERO: THE WHITEBOARD */}
       {/* 3. HERO: THE WHITEBOARD */}
       <section className="bg-graph-paper py-10 md:py-24 border-b border-slate-200 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -144,102 +147,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. DATA DENSITY SHOWCASE */}
+      {/* 5. DATA DENSITY SHOWCASE (DYNAMIC) */}
       <section className="bg-slate-50 py-24 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-2xl font-bold text-slate-900 mb-12">
             We don&apos;t sell photos. We sell specs.
           </h2>
 
-          {/* The Spec Grid */}
+          {/* DYNAMIC GRID */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
 
-            {/* CARD 1: CATERPILLAR FILTER */}
-            <div className="bg-white shadow-xl border border-slate-200 p-8 relative transform hover:-translate-y-1 transition-transform duration-300">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-yellow-400 rounded-b-md"></div>
-              <div className="mb-6">
-                <div className="text-[10px] font-mono text-slate-500 uppercase">Oil Filter</div>
-                <h3 className="text-2xl font-black text-slate-900 tracking-tight mt-1">CAT 1R-0716</h3>
-              </div>
-              <div className="space-y-3 mb-6">
-                <div className="flex justify-between border-b border-slate-100 pb-2">
-                  <span className="text-xs font-bold text-slate-400 uppercase">Thread</span>
-                  <span className="font-mono text-sm font-bold text-slate-700">1-14 UNS-2B</span>
-                </div>
-                <div className="flex justify-between border-b border-slate-100 pb-2">
-                  <span className="text-xs font-bold text-slate-400 uppercase">Efficiency</span>
-                  <span className="font-mono text-sm font-bold text-slate-700">98% @ 4μm</span>
-                </div>
-                <div className="flex justify-between border-b border-slate-100 pb-2">
-                  <span className="text-xs font-bold text-slate-400 uppercase">Height</span>
-                  <span className="font-mono text-sm font-bold text-slate-700">175mm</span>
-                </div>
-              </div>
-              <Link href="/p/cat-1r-0716">
-                <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold h-10 rounded-sm text-xs">
-                  VIEW SPECS
-                </Button>
-              </Link>
-            </div>
+            {featuredParts.map((part, idx) => (
+              <div key={part.id} className={cn(
+                "bg-white border-slate-200 p-8 relative transform hover:-translate-y-1 transition-transform duration-300 flex flex-col h-full",
+                idx === 1 ? "shadow-2xl border-2 border-[#005EB8] scale-105 z-10" : "shadow-xl border"
+              )}>
+                <div className={cn(
+                  "absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 rounded-b-md",
+                  idx === 0 ? "bg-yellow-400" : idx === 1 ? "active-brand-stripe w-24 h-2 bg-[#005EB8]" : "bg-slate-400"
+                )}></div>
 
-            {/* CARD 2: VOLVO PUMP (Featured) */}
-            <div className="bg-white shadow-2xl border-2 border-[#005EB8] p-8 relative transform hover:-translate-y-1 transition-transform duration-300 scale-105 z-10">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-2 bg-[#005EB8] rounded-b-md"></div>
-              <div className="absolute top-4 right-4 bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 border border-emerald-200 rounded-full">
-                IN STOCK
-              </div>
-              <div className="mb-6">
-                <div className="text-[10px] font-mono text-[#005EB8] uppercase">Hydraulic Pump</div>
-                <h3 className="text-3xl font-black text-slate-900 tracking-tight mt-1">VOLVO 14524125</h3>
-              </div>
-              <div className="space-y-3 mb-8">
-                <div className="flex justify-between border-b border-slate-100 pb-2">
-                  <span className="text-xs font-bold text-slate-400 uppercase">Machine</span>
-                  <span className="font-mono text-sm font-bold text-slate-700">EC360B / EC460B</span>
-                </div>
-                <div className="flex justify-between border-b border-slate-100 pb-2">
-                  <span className="text-xs font-bold text-slate-400 uppercase">Flow Rate</span>
-                  <span className="font-mono text-sm font-bold text-slate-700">2x 280 L/min</span>
-                </div>
-                <div className="flex justify-between border-b border-slate-100 pb-2">
-                  <span className="text-xs font-bold text-slate-400 uppercase">Pressure</span>
-                  <span className="font-mono text-sm font-bold text-slate-700">34.3 MPa</span>
-                </div>
-              </div>
-              <Link href="/p/volvo-14524125">
-                <Button className="w-full bg-[#005EB8] hover:bg-blue-700 text-white font-bold h-12 rounded-sm shadow-lg shadow-blue-900/10">
-                  GET PRICING
-                </Button>
-              </Link>
-            </div>
+                {idx === 1 && (
+                  <div className="absolute top-4 right-4 bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 border border-emerald-200 rounded-full">
+                    IN STOCK
+                  </div>
+                )}
 
-            {/* CARD 3: KOMATSU TOOTH */}
-            <div className="bg-white shadow-xl border border-slate-200 p-8 relative transform hover:-translate-y-1 transition-transform duration-300">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-slate-400 rounded-b-md"></div>
-              <div className="mb-6">
-                <div className="text-[10px] font-mono text-slate-500 uppercase">GET Tooth</div>
-                <h3 className="text-2xl font-black text-slate-900 tracking-tight mt-1">KOMATSU 205-70-19570</h3>
+                <div className="mb-6">
+                  <div className={cn("text-[10px] font-mono uppercase", idx === 1 ? "text-[#005EB8]" : "text-slate-500")}>
+                    {part.name}
+                  </div>
+                  <h3 className={cn("font-black text-slate-900 tracking-tight mt-1", idx === 1 ? "text-3xl" : "text-2xl")}>
+                    {part.brand} {part.partNumber}
+                  </h3>
+                </div>
+
+                <div className="space-y-3 mb-6 flex-grow">
+                  {/* Render Top 3 Specs if available */}
+                  {part.technical_specs && Object.entries(part.technical_specs).slice(0, 3).map(([key, val]) => (
+                    <div key={key} className="flex justify-between border-b border-slate-100 pb-2">
+                      <span className="text-xs font-bold text-slate-400 uppercase truncate pr-4">{key}</span>
+                      <span className="font-mono text-sm font-bold text-slate-700 text-right">{val}</span>
+                    </div>
+                  ))}
+                  {(!part.technical_specs || Object.keys(part.technical_specs).length === 0) && (
+                    <div className="text-xs text-slate-400 italic py-4">Specs loading...</div>
+                  )}
+                </div>
+
+                <div className="space-y-4">
+                  <Link href={`/p/${slugify(part.brand)}-${slugify(part.partNumber)}`} className="block w-full">
+                    <Button className={cn(
+                      "w-full font-bold rounded-sm h-12 uppercase tracking-wide",
+                      idx === 1 ?
+                        "bg-[#005EB8] hover:bg-blue-700 text-white shadow-lg shadow-blue-900/10" :
+                        "bg-slate-900 hover:bg-slate-800 text-white text-xs h-10"
+                    )}>
+                      {idx === 1 ? "Check Availability" : "View Specs"}
+                    </Button>
+                  </Link>
+
+                  {/* Deep Link to Brand */}
+                  <div className="text-center pt-2 border-t border-slate-100">
+                    <Link href={`/brands/${slugify(part.brand)}`} className="text-[10px] font-bold text-slate-400 hover:text-[#005EB8] uppercase tracking-wider flex items-center justify-center gap-1 group">
+                      View more {part.brand} parts
+                      <ArrowRight size={10} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+                </div>
+
               </div>
-              <div className="space-y-3 mb-6">
-                <div className="flex justify-between border-b border-slate-100 pb-2">
-                  <span className="text-xs font-bold text-slate-400 uppercase">Type</span>
-                  <span className="font-mono text-sm font-bold text-slate-700">Standard Long (RC)</span>
-                </div>
-                <div className="flex justify-between border-b border-slate-100 pb-2">
-                  <span className="text-xs font-bold text-slate-400 uppercase">Weight</span>
-                  <span className="font-mono text-sm font-bold text-slate-700">6.4 kg</span>
-                </div>
-                <div className="flex justify-between border-b border-slate-100 pb-2">
-                  <span className="text-xs font-bold text-slate-400 uppercase">System</span>
-                  <span className="font-mono text-sm font-bold text-slate-700">PC200 Series</span>
-                </div>
-              </div>
-              <Link href="/p/komatsu-205-70-19570">
-                <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold h-10 rounded-sm text-xs">
-                  VIEW SPECS
-                </Button>
-              </Link>
-            </div>
+            ))}
 
           </div>
         </div>
@@ -249,7 +227,7 @@ export default function Home() {
       <footer className="bg-slate-900 text-white py-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
           <div>
-            <div className="font-black text-xl mb-6 tracking-tighter">{t('title')}</div>
+            <div className="font-black text-xl mb-6 tracking-tighter">[ NEXGEN ]</div>
             <p className="text-slate-400 text-sm leading-relaxed">
               The definitive industrial index. Built for procurement officers, engineers, and fleet managers who need raw data, not marketing fluff.
             </p>
@@ -294,4 +272,9 @@ export default function Home() {
 
     </main>
   );
+}
+
+// Utility for styles
+function cn(...classes: (string | undefined | null | false)[]) {
+  return classes.filter(Boolean).join(' ');
 }
