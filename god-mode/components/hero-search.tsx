@@ -1,12 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Search, FileSpreadsheet, ArrowRight, MessageCircle } from "lucide-react";
+import { Search, FileSpreadsheet, ArrowRight, MessageCircle, Loader2 } from "lucide-react";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
-
+import Link from "next/link";
 import { useRouter } from "@/i18n/routing";
+
+type Suggestion = {
+    id: string;
+    partNumber: string;
+    brand: string;
+    name: string;
+    url: string;
+};
 
 export function HeroSearch() {
     const router = useRouter();
@@ -15,15 +23,58 @@ export function HeroSearch() {
     const [searchText, setSearchText] = useState("");
     const [isAnalyzing, setIsAnalyzing] = useState(false);
 
+    // Type-Ahead State
+    const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
+    const [showSuggestions, setShowSuggestions] = useState(false);
+    const [isLoadingSuggestions, setIsLoadingSuggestions] = useState(false);
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
     // Search Handler
     const handleSearch = () => {
         if (!searchText.trim()) return;
         router.push(`/search?q=${encodeURIComponent(searchText)}`);
+        setShowSuggestions(false);
     };
 
     const handleKeyDown = (e: React.KeyboardEvent) => {
         if (e.key === 'Enter') handleSearch();
     };
+
+    // Debounced Suggestion Fetcher
+    useEffect(() => {
+        const timer = setTimeout(async () => {
+            if (searchText.length >= 2) {
+                setIsLoadingSuggestions(true);
+                try {
+                    const res = await fetch(`/api/suggest?q=${encodeURIComponent(searchText)}`);
+                    const data = await res.json();
+                    setSuggestions(data.results || []);
+                    setShowSuggestions(true);
+                } catch (e) {
+                    console.error("Failed to fetch suggestions");
+                } finally {
+                    setIsLoadingSuggestions(false);
+                }
+            } else {
+                setSuggestions([]);
+                setShowSuggestions(false);
+            }
+        }, 300); // 300ms debounce
+
+        return () => clearTimeout(timer);
+    }, [searchText]);
+
+    // Click Outside Handler
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+                setShowSuggestions(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [wrapperRef]);
+
 
     // Bulk Handler
     const handleBulkQuote = () => {
@@ -83,14 +134,19 @@ export function HeroSearch() {
 
             {/* PANEL: SEARCH */}
             {activeTab === "search" && (
-                <div className="relative group max-w-2xl bg-white">
+                <div ref={wrapperRef} className="relative group max-w-2xl bg-white z-50">
                     <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
-                        <Search className="text-slate-400 group-focus-within:text-[#005EB8]" size={20} />
+                        {isLoadingSuggestions ? (
+                            <Loader2 className="text-[#005EB8] animate-spin" size={20} />
+                        ) : (
+                            <Search className="text-slate-400 group-focus-within:text-[#005EB8]" size={20} />
+                        )}
                     </div>
                     <input
                         type="text"
                         value={searchText}
                         onChange={(e) => setSearchText(e.target.value)}
+                        onFocus={() => { if (suggestions.length > 0) setShowSuggestions(true); }}
                         onKeyDown={handleKeyDown}
                         placeholder="Search 500,000+ specs (e.g. 1R-0716, Volvo EC210)..."
                         className="w-full pl-12 pr-4 py-5 bg-white border-2 border-slate-300 rounded-none shadow-sm text-lg font-mono text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#005EB8] focus:ring-4 focus:ring-blue-500/10 transition-all border-t-0"
@@ -103,6 +159,37 @@ export function HeroSearch() {
                             SEARCH
                         </Button>
                     </div>
+
+                    {/* TYPE-AHEAD DROPDOWN */}
+                    {showSuggestions && suggestions.length > 0 && (
+                        <div className="absolute top-full left-0 w-full bg-white border-2 border-[#005EB8] border-t-0 shadow-xl z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                            {suggestions.map((item) => (
+                                <Link
+                                    key={item.id}
+                                    href={item.url}
+                                    className="flex items-center justify-between px-4 py-3 hover:bg-blue-50 border-b border-slate-100 last:border-0 group transition-colors"
+                                    onClick={() => setShowSuggestions(false)}
+                                >
+                                    <div className="flex flex-col">
+                                        <span className="font-mono font-bold text-[#005EB8] text-lg">
+                                            {item.partNumber}
+                                        </span>
+                                        <div className="flex items-center gap-2 text-xs uppercase tracking-wider font-semibold text-slate-500 group-hover:text-slate-700">
+                                            <span className="bg-slate-100 px-1 rounded-sm">{item.brand}</span>
+                                            <span>{item.name}</span>
+                                        </div>
+                                    </div>
+                                    <ArrowRight size={16} className="text-slate-300 group-hover:text-[#005EB8] opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0" />
+                                </Link>
+                            ))}
+                            <div
+                                onClick={handleSearch}
+                                className="px-4 py-2 bg-slate-50 text-xs font-mono text-center text-slate-500 hover:text-[#005EB8] cursor-pointer hover:underline border-t border-slate-200"
+                            >
+                                VIEW ALL MATCHES FOR &quot;{searchText}&quot;
+                            </div>
+                        </div>
+                    )}
 
                     <div className="mt-4 flex gap-4 text-xs text-slate-500 font-medium">
                         <span>Try:</span>
