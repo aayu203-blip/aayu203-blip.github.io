@@ -4,7 +4,7 @@ import { Link } from '@/i18n/routing';
 import { HeroSearch } from "@/components/hero-search";
 import { BulkPasteForm } from "@/components/bulk-paste-form";
 import { useTranslations } from 'next-intl';
-import { getFeaturedParts, slugify, type Part } from "@/lib/data-loader";
+import { slugify, type Part } from "@/lib/utils";
 import { getFeaturedParts as getHardcodedFeaturedParts } from "@/lib/featured-parts";
 import { MobileContactBar } from "@/components/mobile-contact-bar";
 

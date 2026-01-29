@@ -3,45 +3,13 @@ import path from 'path';
 import STATIC_DB from '../data/parts-database.json';
 
 // --- TYPE DEFINITIONS ---
-export type Part = {
-    id: string;
-    // Core Identity
-    partNumber: string; // The "Hero"
-    brand: string;      // Normalized (Volvo, CAT, etc.)
-    name: string;       // Enriched Name or Raw Name
-    description: string;
+import { Part, slugify } from './utils';
 
-    // Commerce
-    stock: number;
-    price: number | "On Request";
-
-    // Taxonomy
-    category: string;
-    compatibility: string[];
-
-    // God Mode Specs
-    technical_specs?: Record<string, string | number>;
-
-    // Cross Reference Data (New)
-    oem_cross_references?: { brand: string, partNumber: string }[];
-    cross_reference_numbers?: string[]; // For Fuse.js Indexing
-
-    // Metadata
-    source: "static" | "harvest";
-};
+export type { Part }; // Re-export for convenience
+export { slugify };   // Re-export for convenience
 
 // --- CACHE (Server-Side Only) ---
 let CACHED_DB: Part[] = [];
-
-// --- HELPER: Slugify ---
-export function slugify(text: string): string {
-    return text.toString().toLowerCase()
-        .replace(/\s+/g, '-')           // Replace spaces with -
-        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
-        .replace(/^-+/, '')             // Trim - from start
-        .replace(/-+$/, '');            // Trim - from end
-}
 
 import { translateTitle, translateTerm } from './dictionary';
 

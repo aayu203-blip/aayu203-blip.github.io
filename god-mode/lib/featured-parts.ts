@@ -1,4 +1,4 @@
-import type { Part } from "./data-loader";
+import type { Part } from "./utils";
 
 export async function getFeaturedParts(): Promise<Part[]> {
     // HARDCODED FEATURED PARTS - No database lookups, guaranteed to work on Vercel
