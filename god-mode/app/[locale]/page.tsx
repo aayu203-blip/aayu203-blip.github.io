@@ -5,6 +5,7 @@ import { HeroSearch } from "@/components/hero-search";
 import { BulkPasteForm } from "@/components/bulk-paste-form";
 import { useTranslations } from 'next-intl';
 import { getFeaturedParts, slugify } from "@/lib/data-loader";
+import { MobileContactBar } from "@/components/mobile-contact-bar";
 
 export default async function Home() {
   const t = await useTranslations('HomePage'); // Async in newer Next.js
@@ -31,6 +32,10 @@ export default async function Home() {
 
           {/* Utility Nav */}
           <nav className="flex items-center gap-6 text-sm font-medium text-slate-600">
+            <a href="tel:+919820259953" className="hidden md:flex items-center gap-1.5 hover:text-[#005EB8] transition-colors">
+              <span className="text-lg">📞</span>
+              <span className="font-mono text-xs">+91 98202 59953</span>
+            </a>
             <Link href="#" className="hover:text-[#005EB8] transition-colors">{t('nav.uploadBom')}</Link>
             <Link href="#" className="hover:text-[#005EB8] transition-colors">{t('nav.trackOrder')}</Link>
             <Link href="#" className="hover:text-[#005EB8] transition-colors">{t('nav.signIn')}</Link>
@@ -274,6 +279,9 @@ export default async function Home() {
           Switch Region: <Link href="/" locale="en" className="underline hover:text-white mr-4">English (Global)</Link> <Link href="/" locale="es" className="underline hover:text-white">Español (LATAM)</Link>
         </div>
       </footer>
+
+      {/* Mobile Contact Bar */}
+      <MobileContactBar />
 
     </main>
   );
