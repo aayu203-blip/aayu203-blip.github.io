@@ -76,6 +76,31 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
 
         console.log("🔥 Loading God Mode Database...");
 
+        // VERCEL PRODUCTION MODE: Skip large file loading to prevent OOM
+        const isVercelProduction = process.env.VERCEL_ENV === 'production';
+        if (isVercelProduction) {
+            console.log("⚡ Running in Vercel production - using minimal dataset");
+            // Return only first 50 items from static DB to prevent memory issues
+            CACHED_DB = (STATIC_DB as any[]).slice(0, 50).map((p, idx) => ({
+                id: `static-${idx}`,
+                partNumber: p.partNumber || p.id,
+                brand: p.brand || "Volvo",
+                name: p.name,
+                description: p.description || "",
+                stock: 10,
+                price: "On Request" as const,
+                category: p.category || "Uncategorized",
+                compatibility: p.compatibility || [],
+                oem_cross_references: [],
+                cross_reference_numbers: [],
+                technical_specs: undefined,
+                source: "static" as const
+            }));
+            console.log(`✅ Loaded ${CACHED_DB.length} parts (minimal mode).`);
+            return CACHED_DB;
+        }
+
+        // DEVELOPMENT MODE: Full data loading
         // 1. Load AI Enrichment Data (The "Brain")
         let enrichedSpecs: Record<string, any> = {};
         try {
