@@ -54,7 +54,6 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
         if (CACHED_DB.length > 0) return CACHED_DB;
 
         // Optimistic Load for Vercel vs Dev
-        console.log(`[DEBUG] Loading parts from JSON (using fs)...`);
 
         const jsonPath = path.join(process.cwd(), 'data/parts-database.json');
         const fileContents = fs.readFileSync(jsonPath, 'utf-8');
@@ -102,11 +101,9 @@ export async function getPartBySlug(slugPath: string): Promise<Part | undefined>
  * Get Brand Data + Hub Logic
  */
 export async function getBrandData(slug: string): Promise<BrandData | undefined> {
-    console.log(`[DEBUG] getBrandData looking for: ${slug}`);
     const parts = await getParts();
     // Normalize slug (e.g. "caterpillar" vs "cat")
     const brandName = parts.find(p => slugify(p.brand) === slugify(slug))?.brand;
-    console.log(`[DEBUG] Found brand name: ${brandName}`);
 
     if (!brandName && !MACHINE_CATALOG[slugify(slug)]) return undefined;
 
