@@ -49,10 +49,6 @@ export function PartDetailView({ part, locale }: { part: Part, locale: string })
             answer: `This part is verified for fitment with ${part.compatibility?.slice(0, 3).join(', ') || "standard " + part.brand + " equipment"}. We recommend verifying your machine serial number with our engineering team via WhatsApp before ordering.`
         },
         {
-            question: "What is the warranty period?",
-            answer: "We offer a 6-month comprehensive warranty on this component, covering manufacturing defects and material failure."
-        },
-        {
             question: "How fast can you ship to my location?",
             answer: "We have stock ready for immediate dispatch. Express air freight (DHL/FedEx) typically reaches the USA, Middle East, and Europe within 3-5 business days."
         }
@@ -155,9 +151,9 @@ export function PartDetailView({ part, locale }: { part: Part, locale: string })
                             </div>
                             <div className="space-y-1">
                                 <div className="text-[10px] uppercase text-slate-400 font-bold tracking-wider flex items-center gap-1">
-                                    <ShieldCheck size={12} /> Warranty
+                                    <ShieldCheck size={12} /> Quality
                                 </div>
-                                <div className="font-mono text-sm font-bold text-slate-700">6 Months</div>
+                                <div className="font-mono text-sm font-bold text-slate-700">ISO Certified</div>
                             </div>
                             <div className="space-y-1">
                                 <div className="text-[10px] uppercase text-slate-400 font-bold tracking-wider flex items-center gap-1">
