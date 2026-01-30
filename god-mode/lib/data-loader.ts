@@ -82,7 +82,7 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
             ],
             technical_specs: p.technical_specs || undefined,
             source: "static"
-        }));
+        })).filter(p => p.partNumber.length > 2 && p.partNumber !== "Unknown"); // SANITIZE: Remove ghosts
 
         console.log(`[DEBUG] Loaded ${CACHED_DB.length} parts. Sample 0:`, CACHED_DB[0]);
         return CACHED_DB;
