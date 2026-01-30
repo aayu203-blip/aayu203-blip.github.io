@@ -214,8 +214,13 @@ export async function searchParts(query: string): Promise<{ results: Part[], dur
     const parts = await getParts();
     if (!FUSE_INSTANCE) {
         FUSE_INSTANCE = new Fuse(parts, {
-            keys: ['partNumber', 'brand', 'name', 'cross_reference_numbers'],
-            threshold: 0.3
+            keys: [
+                { name: 'partNumber', weight: 2 },
+                { name: 'brand', weight: 2 },
+                { name: 'name', weight: 1 },
+                { name: 'cross_reference_numbers', weight: 1 }
+            ],
+            threshold: 0.4
         });
     }
     const start = performance.now();
