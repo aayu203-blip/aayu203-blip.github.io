@@ -1,118 +1,170 @@
 import { BrandData } from "@/lib/data-loader";
-import { Button } from "@/components/ui/button";
-import { WhatsAppButton } from "@/components/whatsapp-button";
-import { ShieldCheck, Factory, Filter, ArrowRight, Tractor, ChevronDown } from "lucide-react";
-import Link from "next/link";
-import { slugify } from "@/lib/utils";
+import { Link } from '@/i18n/routing';
+import { ShieldCheck, Truck, ArrowRight, Settings, Wrench, FileText } from "lucide-react";
+import { HeroSearch } from "@/components/hero-search";
 
-type Props = {
-    brand: BrandData;
-    locale: string;
-};
+export function BrandLandingView({ brand, locale }: { brand: BrandData, locale: string }) {
 
-export function BrandLandingView({ brand, locale }: Props) {
+    // 1. DYNAMIC FAQ SCHEMA GENERATOR (Your SEO Upgrade #1A)
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": `Do you sell aftermarket parts for ${brand.name}?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `Yes, NexGen Spares stocks ${brand.totalParts}+ verified aftermarket parts for ${brand.name} excavators, loaders, and dozers. We ship globally.`
+                }
+            },
+            {
+                "@type": "Question",
+                "name": `Are these parts compatible with ${brand.name} OEM specs?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `Our parts are manufactured in Turkey and Korea to meet or exceed ${brand.name} OEM specifications. We offer a 100% fitment guarantee.`
+                }
+            }
+        ]
+    };
+
     return (
-        <main className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
+        <main className="min-h-screen bg-slate-50 font-sans">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
 
-            {/* HEADER */}
-            <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
-                <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                    <Link href="/" className="font-black text-xl tracking-tighter text-slate-900 hover:text-[#005EB8] transition-colors">
-                        [ NEXGEN SPARES ]
-                    </Link>
-                    <div className="flex items-center gap-2 text-xs font-mono text-slate-500">
-                        <span>OFFICIAL INDEX</span>
-                        <span>/</span>
-                        <span className="font-bold text-slate-900 uppercase">{brand.name}</span>
+            {/* HERO SECTION */}
+            <div className="bg-slate-900 text-white pt-16 pb-24 px-6 relative overflow-hidden">
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="flex items-center gap-3 mb-6">
+                        <span className="bg-[#005EB8] text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider rounded-sm">
+                            Authorized Index
+                        </span>
+                        <span className="text-slate-400 text-xs font-mono uppercase">
+                            {brand.totalParts.toLocaleString()} SKUs Available
+                        </span>
+                    </div>
+
+                    {/* SEMANTIC H1 (Your SEO Upgrade #1B) */}
+                    <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6">
+                        {brand.name} <span className="text-slate-500">Aftermarket Parts</span>
+                    </h1>
+
+                    <p className="text-lg text-slate-400 max-w-2xl mb-10 leading-relaxed">
+                        Direct procurement source for {brand.name} heavy machinery.
+                        Skip the dealer markup. Get OEM-quality hydraulics, engine components, and undercarriage shipped from our global hubs.
+                    </p>
+
+                    <div className="max-w-2xl">
+                        <HeroSearch />
                     </div>
                 </div>
-            </header>
 
-            {/* HERO */}
-            <section className="bg-white border-b border-slate-200 py-20 relative overflow-hidden">
-                <div className="max-w-7xl mx-auto px-6 relative z-10">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-                        <div>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#005EB8] text-white text-xs font-bold uppercase tracking-wider rounded-sm mb-6">
-                                <ShieldCheck size={14} />
-                                Verified Manufacturer
-                            </div>
-                            <h1 className="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter mb-6 uppercase">
-                                {brand.name}
-                            </h1>
-                            <p className="text-xl text-slate-600 max-w-2xl leading-relaxed">
-                                {brand.description}
-                                <br />
-                                <span className="text-sm font-mono mt-2 block text-slate-400">{brand.totalParts.toLocaleString()} Verified Parts Indexed.</span>
-                            </p>
+                {/* DECORATIVE BRAND WATERMARK */}
+                <div className="absolute -right-20 -bottom-20 text-[200px] font-black text-slate-800 opacity-20 pointer-events-none select-none uppercase leading-none">
+                    {brand.name}
+                </div>
+            </div>
 
-                            <div className="mt-8 flex flex-wrap gap-4">
-                                <WhatsAppButton
-                                    label={`Get Quote for ${brand.name}`}
-                                    className="h-12 px-8 text-base bg-[#F97316] hover:bg-orange-700 font-bold"
-                                />
-                                <Button variant="outline" className="h-12 px-8 text-base border-slate-300 text-slate-700 hover:text-[#005EB8]">
-                                    Download Catalog (PDF)
-                                </Button>
-                            </div>
-                        </div>
-
-                        {/* Decor */}
-                        <div className="hidden md:block opacity-5">
-                            <Factory size={300} strokeWidth={0.5} />
-                        </div>
+            {/* TRUST STRIP */}
+            <div className="bg-white border-b border-slate-200 py-4 px-6">
+                <div className="max-w-7xl mx-auto flex flex-wrap gap-6 md:gap-12 text-xs font-mono text-slate-600">
+                    <div className="flex items-center gap-2">
+                        <ShieldCheck className="text-[#005EB8]" size={16} />
+                        <span>Verified {brand.name} Fitment</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <Truck className="text-[#005EB8]" size={16} />
+                        <span>Exports to 12+ Countries</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <Wrench className="text-[#005EB8]" size={16} />
+                        <span>Technical Schematics Available</span>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            {/* MACHINE MODELS */}
-            {brand.machines && (
-                <section className="py-20 bg-white border-b border-slate-200">
-                    <div className="max-w-7xl mx-auto px-6">
-                        <h2 className="text-2xl font-bold text-slate-900 mb-2 flex items-center gap-2">
-                            <Tractor className="text-[#005EB8]" />
-                            Supported Equipment Models
+            {/* MAIN CONTENT GRID */}
+            <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+                {/* LEFT: CATEGORIES & MACHINES */}
+                <div className="lg:col-span-8 space-y-12">
+
+                    {/* POPULAR MACHINE MODELS (Internal Linking Goldmine) */}
+                    <section>
+                        <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                            <Settings className="text-[#005EB8]" size={20} />
+                            Popular {brand.name} Models Supported
                         </h2>
-                        <p className="text-slate-500 mb-12">Select your machine model to find compatible parts.</p>
-
-                        <div className="space-y-4">
-                            {Object.entries(brand.machines).map(([category, models]) => (
-                                <details key={category} className="group border border-slate-200 bg-slate-50 rounded-sm open:bg-white open:ring-1 open:ring-[#005EB8] transition-all">
-                                    <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                                        <div className="flex items-center gap-3">
-                                            <div className="h-8 w-8 bg-blue-100 text-[#005EB8] flex items-center justify-center rounded-sm font-bold text-xs ring-1 ring-blue-200">
-                                                {models.length}
-                                            </div>
-                                            <span className="font-bold text-lg text-slate-800 uppercase tracking-tight">{category}</span>
-                                        </div>
-                                        <ChevronDown className="text-slate-400 group-open:rotate-180 transition-transform" />
-                                    </summary>
-                                    <div className="px-6 pb-8 pt-2">
-                                        <div className="flex flex-wrap gap-2">
-                                            {models.map(model => (
-                                                <Link
-                                                    key={model}
-                                                    href={`/search?q=${brand.name}+${model}`}
-                                                    className="px-3 py-1.5 bg-white border border-slate-200 text-sm font-mono text-slate-600 hover:border-[#005EB8] hover:text-[#005EB8] hover:bg-blue-50 transition-colors rounded-sm"
-                                                >
-                                                    {model}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </details>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            {brand.popularModels.map(model => (
+                                <Link
+                                    key={model}
+                                    href={`/${brand.slug}/${model.toLowerCase()}`}
+                                    className="group bg-white border border-slate-200 p-4 hover:border-[#005EB8] hover:shadow-md transition-all rounded-sm flex justify-between items-center"
+                                >
+                                    <span className="font-mono font-bold text-slate-700">{model}</span>
+                                    <ArrowRight size={14} className="text-slate-300 group-hover:text-[#005EB8] group-hover:translate-x-1 transition-transform" />
+                                </Link>
                             ))}
                         </div>
-                    </div>
-                </section>
-            )}
+                    </section>
 
-            {/* CALL TO ACTION */}
-            <section className="py-20 bg-slate-50 text-center">
-                <h2 className="text-2xl font-bold text-slate-900 mb-4">Can't find your part?</h2>
-                <p className="mb-8">We have 60,000+ items that are not yet listed online.</p>
-                <WhatsAppButton label="Ask an Expert" />
-            </section>
+                    {/* LATEST PARTS FEED (Freshness Signal) */}
+                    <section>
+                        <h2 className="text-xl font-bold text-slate-900 mb-6">Recently Indexed {brand.name} Parts</h2>
+                        <div className="bg-white border border-slate-200 rounded-sm">
+                            {brand.recentParts.map((part, i) => (
+                                <div key={part.id} className={`p-4 flex justify-between items-center ${i !== brand.recentParts.length - 1 ? 'border-b border-slate-100' : ''}`}>
+                                    <div>
+                                        <Link href={`/p/${part.brand.toLowerCase()}-${part.partNumber.toLowerCase()}`} className="font-bold text-[#005EB8] hover:underline block">
+                                            {part.partNumber}
+                                        </Link>
+                                        <span className="text-xs text-slate-500 uppercase">{part.name}</span>
+                                    </div>
+                                    <span className="text-[10px] font-mono bg-slate-100 text-slate-600 px-2 py-1 rounded-sm">
+                                        In Stock
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                </div>
+
+                {/* RIGHT: PROBLEM-BASED SEO & GUIDES */}
+                <div className="lg:col-span-4 space-y-8">
+                    <div className="bg-blue-50 border border-blue-100 p-6 rounded-sm">
+                        <h3 className="font-bold text-blue-900 mb-4 flex items-center gap-2">
+                            <FileText size={18} />
+                            Maintenance Guides
+                        </h3>
+                        <ul className="space-y-3">
+                            {brand.guides.length > 0 ? brand.guides.map(guide => (
+                                <li key={guide.slug}>
+                                    <Link href={`/guides/${guide.slug}`} className="text-sm text-slate-700 hover:text-[#005EB8] hover:underline block leading-snug">
+                                        {guide.title}
+                                    </Link>
+                                </li>
+                            )) : (
+                                <li className="text-sm text-slate-400 italic">No guides available yet.</li>
+                            )}
+                        </ul>
+                    </div>
+
+                    {/* SEO CONTENT BLOCK (Text for Google) */}
+                    <div className="text-sm text-slate-500 space-y-4 leading-relaxed border-t border-slate-200 pt-6">
+                        <p>
+                            <strong>Reliable {brand.name} Supply Chain:</strong> NexGen Spares provides a verified alternative to the official dealer network. We source directly from OEM-tier manufacturers used by {brand.name} assembly lines.
+                        </p>
+                        <p>
+                            Whether you are repairing a <strong>{brand.popularModels[0]}</strong> hydraulic pump or rebuilding a <strong>{brand.popularModels[1]}</strong> engine, our index ensures you get the right spec, faster.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </main>
     );
 }
