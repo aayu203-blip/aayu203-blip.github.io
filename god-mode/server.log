@@ -1,0 +1,38 @@
+
+> god-mode@0.1.0 start
+> next start
+
+▲ Next.js 16.1.6
+- Local:         http://localhost:3000
+- Network:       http://192.168.29.192:3000
+
+✓ Starting...
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/aayush/Downloads/PTC Website/Working Website/EXPERIMENTS/PTC_Website_Complete/package-lock.json as the root directory.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
+ Detected additional lockfiles: 
+   * /Users/aayush/Downloads/PTC Website/Working Website/EXPERIMENTS/PTC_Website_Complete/god-mode/package-lock.json
+
+✓ Ready in 648ms
+[DEBUG] Loaded 17928 parts. Sample 0: {
+  id: 'cat-1r-0716',
+  partNumber: '1R-0716',
+  brand: 'Caterpillar',
+  name: 'Engine Oil Filter (Advanced High Efficiency)',
+  description: 'Standard Efficiency Engine Oil Filter. Advanced filtration system filters contaminants such as dirt and dust that can contaminate oil, causing premature engine wear and failure.',
+  stock: 10,
+  price: 'On Request',
+  category: 'Filters > Oil Filters',
+  compatibility: [ 'Excavator 320D', 'Dozer D6T', 'Grader 140M' ],
+  oem_cross_references: [],
+  cross_reference_numbers: [],
+  technical_specs: {
+    'Thread Size (Inch)': '1 1/8-16 - 2B',
+    'Height (mm)': '308',
+    'Diameter (mm)': '137',
+    'Filtration Rating': 'Absolute',
+    'Valve Type': 'Anti-Drainback'
+  },
+  source: 'static'
+}

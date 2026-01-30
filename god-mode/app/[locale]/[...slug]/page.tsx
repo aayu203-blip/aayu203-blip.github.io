@@ -10,6 +10,7 @@ import { getPartBySlug, getBrandData, getMachineData, getGuideBySlug } from "@/l
 
 type Props = {
     params: Promise<{ slug: string[]; locale: string }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 // 1. DYNAMIC METADATA GENERATION (Crucial for SEO)
@@ -52,9 +53,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // 2. THE TRAFFIC CONTROLLER
-export default async function UniversalPage({ params }: Props) {
+export default async function UniversalPage({ params, searchParams }: Props) {
     const { slug, locale } = await params;
+    const { q } = await searchParams; // Next.js 15 async searchParams
+
+    // Normalize slug logic
     const slugPath = slug.join('/'); // e.g., "volvo/ec210/hydraulic-pump" or "1R-0716"
+
+    // SPECIAL CASE: /search?q=Term
+    if (slug[0] === 'search' || q) {
+        const searchQuery = typeof q === 'string' ? q : slugPath;
+        return (
+            <main className="min-h-screen bg-slate-50">
+                <div className="bg-slate-900 py-8 px-6">
+                    <div className="max-w-4xl mx-auto">
+                        <HeroSearch />
+                    </div>
+                </div>
+
+                <div className="max-w-7xl mx-auto px-6 py-12">
+                    <SearchResultsView query={searchQuery} />
+                </div>
+            </main>
+        );
+    }
 
     // --- LAYER 1: EXACT MATCH LOOKUPS ---
 
@@ -104,7 +126,7 @@ export default async function UniversalPage({ params }: Props) {
             <div className="max-w-7xl mx-auto px-6 py-12">
                 <div className="mb-8">
                     <h1 className="text-2xl font-bold text-slate-900">
-                        Results for <span className="text-[#005EB8]">"{slug.join(' ')}"</span>
+                        Results for <span className="text-[#005EB8]">"{slugPath}"</span>
                     </h1>
                     <p className="text-slate-500 text-sm mt-1">
                         We couldn't find an exact page, so we searched our live index.

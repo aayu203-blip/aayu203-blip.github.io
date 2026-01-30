@@ -30,7 +30,7 @@ export function BrandLandingView({ brand, locale }: { brand: BrandData, locale: 
     };
 
     return (
-        <main className="min-h-screen bg-slate-50 font-sans">
+        <main className="min-h-screen bg-white font-sans">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

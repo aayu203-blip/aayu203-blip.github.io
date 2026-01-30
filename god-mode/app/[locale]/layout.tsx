@@ -8,6 +8,7 @@ import { GodModeProvider } from "@/components/god-mode-provider";
 import { SiteFooter } from "@/components/site-footer";
 import "../globals.css";
 
+import { SiteHeader } from "@/components/site-header";
 import { AnalyticsProvider } from "@/components/analytics-provider";
 
 const geistSans = Geist({
@@ -19,11 +20,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-export const metadata: Metadata = {
-  title: "Nexgen Spares | Global Heavy Machinery Parts Supplier",
-  description: "Premier supplier of verified spare parts for Volvo, CAT, Komatsu, and Scania. Factory-direct pricing and technical specs for excavators and loaders.",
-};
 
 export default async function RootLayout({
   children,
@@ -55,6 +51,7 @@ export default async function RootLayout({
             posthogHost={process.env.NEXT_PUBLIC_POSTHOG_HOST}
           >
             <GodModeProvider>
+              <SiteHeader />
               {children}
               <SiteFooter />
             </GodModeProvider>
