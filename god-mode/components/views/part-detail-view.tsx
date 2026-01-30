@@ -315,7 +315,8 @@ export function PartDetailView({ part, locale }: { part: Part, locale: string })
                                     <Copy className="text-[#005EB8] shrink-0" size={16} />
                                     <button
                                         onClick={() => {
-                                            navigator.clipboard.writeText(`https://nexgenspares.com/p/${part.slug || (part.brand + "-" + part.partNumber)}`);
+                                            const slug = slugify(part.brand + "-" + part.partNumber);
+                                            navigator.clipboard.writeText(`https://nexgenspares.com/p/${slug}`);
                                             setCopied(true);
                                             setTimeout(() => setCopied(false), 2000);
                                         }}
