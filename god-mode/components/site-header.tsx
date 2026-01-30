@@ -1,7 +1,7 @@
 import { Link } from '@/i18n/routing';
 import { MessageCircle } from "lucide-react";
 import { useTranslations } from 'next-intl';
-import { HeroSearch } from "@/components/hero-search";
+import { HeaderSearch } from "@/components/header-search";
 
 export function SiteHeader() {
     const t = useTranslations('HomePage');
@@ -18,8 +18,8 @@ export function SiteHeader() {
                     </span>
                 </div>
 
-                <div className="flex-1 max-w-2xl mx-8 hidden md:block">
-                    <HeroSearch />
+                <div className="flex-1 max-w-xl mx-8 hidden md:block">
+                    <HeaderSearch />
                 </div>
 
                 <nav className="flex items-center gap-6 text-sm font-medium text-slate-600">

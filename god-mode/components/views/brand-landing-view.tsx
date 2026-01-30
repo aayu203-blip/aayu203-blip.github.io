@@ -38,10 +38,6 @@ export function BrandLandingView({ brand, locale }: { brand: BrandData, locale: 
             {/* CLEAN TITLE SECTION */}
             <div className="bg-white pt-8 pb-8 px-6 border-b border-slate-100">
                 <div className="max-w-7xl mx-auto">
-                    <div className="flex items-center gap-2 mb-4 text-xs text-slate-500 font-mono uppercase">
-                        <span className="font-bold text-[#005EB8]">Authorized Catalog / {brand.name}</span>
-                    </div>
-
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div>
                             <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-2 text-slate-900">

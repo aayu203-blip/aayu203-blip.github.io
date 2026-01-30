@@ -15,13 +15,6 @@ export function MachineLandingView({ machine, locale }: { machine: MachineData, 
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                         <div>
-                            <div className="flex items-center gap-2 mb-2">
-                                <Link href={`/${machine.brand.toLowerCase()}`} className="text-xs font-bold text-slate-500 uppercase hover:text-[#005EB8]">
-                                    {machine.brand} Index
-                                </Link>
-                                <span className="text-slate-300">/</span>
-                                <span className="text-xs font-bold text-[#005EB8] uppercase">Model Catalog</span>
-                            </div>
                             <h1 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase">
                                 {machine.brand} {machine.model}
                             </h1>
