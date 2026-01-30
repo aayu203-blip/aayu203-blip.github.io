@@ -66,7 +66,7 @@ export function PartDetailView({ part, locale }: { part: Part, locale: string })
                 "@type": "Product",
                 "name": `${part.brand} ${part.partNumber} ${part.name} - Aftermarket Spare Part`,
                 "image": "https://nexgenspares.com/placeholder-part.jpg",
-                "description": `Buy verified aftermarket ${part.partNumber} ${part.name} for ${part.brand}. Compatible with ${part.compatibleModels?.join(', ')}. In stock with global shipping.`,
+                "description": `Buy verified aftermarket ${part.partNumber} ${part.name} for ${part.brand}. Compatible with ${part.compatibility?.join(', ')}. In stock with global shipping.`,
                 "sku": part.partNumber,
                 "brand": { "@type": "Brand", "name": part.brand },
                 "offers": {
