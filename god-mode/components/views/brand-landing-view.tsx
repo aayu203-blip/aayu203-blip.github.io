@@ -1,7 +1,6 @@
 import { BrandData } from "@/lib/data-loader";
 import { Link } from '@/i18n/routing';
 import { ShieldCheck, Truck, ArrowRight, Settings, Wrench, FileText } from "lucide-react";
-import { HeroSearch } from "@/components/hero-search";
 
 export function BrandLandingView({ brand, locale }: { brand: BrandData, locale: string }) {
 
@@ -36,36 +35,26 @@ export function BrandLandingView({ brand, locale }: { brand: BrandData, locale: 
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
 
-            {/* HERO SECTION */}
-            <div className="bg-slate-900 text-white pt-16 pb-24 px-6 relative overflow-hidden">
-                <div className="max-w-7xl mx-auto relative z-10">
-                    <div className="flex items-center gap-3 mb-6">
-                        <span className="bg-[#005EB8] text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider rounded-sm">
-                            Authorized Index
-                        </span>
-                        <span className="text-slate-400 text-xs font-mono uppercase">
-                            {brand.totalParts.toLocaleString()} SKUs Available
-                        </span>
+            {/* CLEAN TITLE SECTION */}
+            <div className="bg-white pt-8 pb-8 px-6 border-b border-slate-100">
+                <div className="max-w-7xl mx-auto">
+                    <div className="flex items-center gap-2 mb-4 text-xs text-slate-500 font-mono uppercase">
+                        <Link href="/" className="hover:text-[#005EB8]">Index</Link>
+                        <span>/</span>
+                        <span className="font-bold text-[#005EB8]">{brand.name}</span>
                     </div>
 
-                    {/* SEMANTIC H1 (Your SEO Upgrade #1B) */}
-                    <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-6">
-                        {brand.name} <span className="text-slate-500">Aftermarket Parts</span>
-                    </h1>
-
-                    <p className="text-lg text-slate-400 max-w-2xl mb-10 leading-relaxed">
-                        Direct procurement source for {brand.name} heavy machinery.
-                        Skip the dealer markup. Get OEM-quality hydraulics, engine components, and undercarriage shipped from our global hubs.
-                    </p>
-
-                    <div className="max-w-2xl">
-                        <HeroSearch />
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                        <div>
+                            <h1 className="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-2 text-slate-900">
+                                {brand.name} <span className="text-slate-400">Parts</span>
+                            </h1>
+                            <p className="text-slate-500 max-w-2xl leading-relaxed">
+                                {brand.totalParts.toLocaleString()} verified aftermarket SKUs for {brand.name} heavy machinery.
+                                Direct from OEM-tier manufacturers.
+                            </p>
+                        </div>
                     </div>
-                </div>
-
-                {/* DECORATIVE BRAND WATERMARK */}
-                <div className="absolute -right-20 -bottom-20 text-[200px] font-black text-slate-800 opacity-20 pointer-events-none select-none uppercase leading-none">
-                    {brand.name}
                 </div>
             </div>
 
