@@ -126,3 +126,4 @@ Here is a complete index of the available page types in the application.
 *   **Bulk Paste Tool**: On Homepage. Parses raw text lines -> Generates Bulk WhatsApp Quote.
 *   **Hero Search**: Type-ahead search with "God Mode" speed (<50ms).
 
+# Force redeploy - Fri Jan 30 13:47:45 IST 2026
