@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (part) {
         return {
             title: `${part.partNumber} ${part.name} | ${part.brand} Replacement`,
-            description: `Buy ${part.brand} ${part.partNumber} ${part.name}. In stock. Compatible with ${part.compatibleModels?.join(', ') || 'verified machines'}.`,
+            description: `Buy ${part.brand} ${part.partNumber} ${part.name}. In stock. Compatible with ${part.compatibility?.join(', ') || 'verified machines'}.`,
         };
     }
 
