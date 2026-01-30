@@ -70,7 +70,16 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
             category: p.category || "Uncategorized",
             compatibility: p.compatibility || [],
             oem_cross_references: p.oem_cross_references || [],
-            cross_reference_numbers: p.cross_reference_numbers || [],
+            cross_reference_numbers: [
+                ...(p.cross_reference_numbers || []),
+                // Extract "Alternate Part Numbers" from technical_specs if available (Safe Check)
+                ...(p.technical_specs?.["Alternate Part Numbers"] && typeof p.technical_specs["Alternate Part Numbers"] === 'string'
+                    ? p.technical_specs["Alternate Part Numbers"].split(',').map((s: string) => s.trim())
+                    : []),
+                ...(p.technical_specs?.["Cross-Reference Numbers"] && typeof p.technical_specs["Cross-Reference Numbers"] === 'string'
+                    ? p.technical_specs["Cross-Reference Numbers"].split(',').map((s: string) => s.trim())
+                    : [])
+            ],
             technical_specs: p.technical_specs || undefined,
             source: "static"
         }));
