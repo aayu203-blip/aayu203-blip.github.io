@@ -1,6 +1,7 @@
 import { Link } from '@/i18n/routing';
 import { MessageCircle } from "lucide-react";
 import { useTranslations } from 'next-intl';
+import { HeroSearch } from "@/components/hero-search";
 
 export function SiteHeader() {
     const t = useTranslations('HomePage');
@@ -17,6 +18,10 @@ export function SiteHeader() {
                     </span>
                 </div>
 
+                <div className="flex-1 max-w-2xl mx-8 hidden md:block">
+                    <HeroSearch />
+                </div>
+
                 <nav className="flex items-center gap-6 text-sm font-medium text-slate-600">
                     <a
                         href="https://wa.me/919820259953?text=Hi%20Nexgen,%20I%20need%20a%20quote%20for..."
@@ -24,15 +29,9 @@ export function SiteHeader() {
                         className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-4 py-2 rounded-sm font-bold transition-all shadow-sm"
                     >
                         <MessageCircle size={18} className="fill-white text-white" />
-                        <span className="hidden md:inline">WhatsApp for Instant Quote</span>
-                        <span className="md:hidden">Quote</span>
+                        <span className="hidden lg:inline">WhatsApp Quote</span>
+                        <span className="lg:hidden">Quote</span>
                     </a>
-
-                    <div className="hidden md:flex gap-6 items-center">
-                        {/* Redirecting broken links to Contact for now */}
-                        <Link href="/contact" className="hover:text-[#005EB8]">{t('nav.uploadBom')}</Link>
-                        <Link href="/contact" className="hover:text-[#005EB8]">{t('nav.signIn')}</Link>
-                    </div>
                 </nav>
             </div>
         </header>
