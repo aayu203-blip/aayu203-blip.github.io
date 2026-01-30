@@ -66,7 +66,6 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
             name: p.product_name || p.name || "Unknown Part",
             description: p.description || "",
             stock: 10,
-            stock: 10,
             price: "On Request" as "On Request",
             category: p.category || "Uncategorized",
             compatibility: p.compatibility || [],
@@ -82,7 +81,7 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
                     : [])
             ],
             technical_specs: p.technical_specs || undefined,
-            source: "static"
+            source: "static" as const
         })).filter(p => p.partNumber.length > 2 && p.partNumber !== "Unknown"); // SANITIZE: Remove ghosts
 
         console.log(`[DEBUG] Loaded ${CACHED_DB.length} parts. Sample 0:`, CACHED_DB[0]);
