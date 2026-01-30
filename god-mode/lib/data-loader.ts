@@ -210,8 +210,8 @@ export async function getGuideBySlug(slug: string): Promise<GuideData | undefine
 }
 
 // --- KEEPING OLD EXPORTS FOR COMPATIBILITY (Optional) ---
-export async function getPartsByBrand(brand: string) {
-    return (await getParts()).filter(p => slugify(p.brand) === slugify(brand));
+export async function getPartsByBrand(brand: string, locale: string = 'en') {
+    return (await getParts(locale)).filter(p => slugify(p.brand) === slugify(brand));
 }
 
 export async function getFeaturedParts(): Promise<Part[]> {
