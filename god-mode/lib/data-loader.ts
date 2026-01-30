@@ -59,7 +59,7 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
             id: p.id || `static-${idx}`,
             partNumber: p.part_number || p.partNumber || "Unknown",
             brand: p.brand || "Volvo",
-            name: p.product_name || p.name || "Unknown Part",
+            name: p.technical_specs?.["Part Name"] || p.product_name || p.name || "Unknown Part",
             description: p.description || "",
             stock: 10,
             price: "On Request" as "On Request",
