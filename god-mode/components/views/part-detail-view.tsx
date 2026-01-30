@@ -93,11 +93,12 @@ export function PartDetailView({ part, locale }: { part: Part, locale: string })
 
     return (
         <main className="min-h-screen bg-white pb-24 md:pb-0">
-            {/* 1. JSON-LD Injection */}
+            {/* 1. JSON-LD Injection & Dynamic Title */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
+            <title>{`${part.brand} ${part.partNumber} - ${part.name} | NexGen Spares`}</title>
 
             {/* 2. BREADCRUMBS */}
             <nav className="border-b border-slate-200 bg-slate-50 py-3 px-6 text-xs font-mono text-slate-500">
@@ -131,7 +132,7 @@ export function PartDetailView({ part, locale }: { part: Part, locale: string })
                                 )}
                             </div>
                             <h1 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tighter uppercase mb-2 leading-none">
-                                {part.brand} {part.partNumber} {part.name}
+                                {part.brand} {part.partNumber} - {part.name}
                             </h1>
                             <h2 className="text-lg text-slate-500 font-medium mt-2">
                                 Premium Aftermarket Replacement Part • Verified Fitment

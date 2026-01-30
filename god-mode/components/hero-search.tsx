@@ -194,7 +194,7 @@ export function HeroSearch() {
                     <div className="mt-4 flex gap-4 text-xs text-slate-500 font-medium">
                         <span>Try:</span>
                         <a href="/en/p/caterpillar-1r-0716" className="text-[#005EB8] hover:underline font-mono">1R-0716</a>
-                        <a href="/en/p/volvo-11110534" className="text-[#005EB8] hover:underline font-mono">11110534</a>
+                        <a href="/en/p/caterpillar-1r-0716" className="text-[#005EB8] hover:underline font-mono">1R-0716</a>
                     </div>
                 </div>
             )}
