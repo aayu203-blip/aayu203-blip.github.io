@@ -53,11 +53,8 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
     try {
         if (CACHED_DB.length > 0) return CACHED_DB;
 
-        // Optimistic Load for Vercel vs Dev
-
-        const jsonPath = path.join(process.cwd(), 'data/parts-database.json');
-        const fileContents = fs.readFileSync(jsonPath, 'utf-8');
-        const rawData = JSON.parse(fileContents);
+        // Use static import for Vercel compatibility (bundled at build time)
+        const rawData = STATIC_DB as any[];
 
         CACHED_DB = (rawData as any[]).map((p, idx) => ({
             id: p.id || `static-${idx}`,
@@ -84,7 +81,7 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
             source: "static" as const
         })).filter(p => p.partNumber.length > 2 && p.partNumber !== "Unknown"); // SANITIZE: Remove ghosts
 
-        console.log(`[DEBUG] Loaded ${CACHED_DB.length} parts. Sample 0:`, CACHED_DB[0]);
+        console.log(`[DATA-LOADER] Loaded ${CACHED_DB.length} parts from static import`);
         return CACHED_DB;
     } catch (error) {
         console.error("🚨 CRITICAL: getParts() failed", error);
