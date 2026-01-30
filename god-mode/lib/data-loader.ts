@@ -214,6 +214,10 @@ export async function getPartsByBrand(brand: string, locale: string = 'en') {
     return (await getParts(locale)).filter(p => slugify(p.brand) === slugify(brand));
 }
 
+export async function getPartsByCategory(category: string, locale: string = 'en') {
+    return (await getParts(locale)).filter(p => slugify(p.category) === slugify(category));
+}
+
 export async function getFeaturedParts(): Promise<Part[]> {
     const parts = await getParts();
     // ... simple implementation ...
