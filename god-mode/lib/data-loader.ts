@@ -54,10 +54,13 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
         if (CACHED_DB.length > 0) return CACHED_DB;
 
         // Optimistic Load for Vercel vs Dev
-        // For simplicity reusing the previous logic which seemed verified
-        // ... (preserving previous implementation logic if needed, but for "Hub" logic we assume full DB access or effective subset)
+        console.log(`[DEBUG] Loading parts from JSON (using fs)...`);
 
-        CACHED_DB = (STATIC_DB as any[]).map((p, idx) => ({
+        const jsonPath = path.join(process.cwd(), 'data/parts-database.json');
+        const fileContents = fs.readFileSync(jsonPath, 'utf-8');
+        const rawData = JSON.parse(fileContents);
+
+        CACHED_DB = (rawData as any[]).map((p, idx) => ({
             id: p.id || `static-${idx}`,
             partNumber: p.part_number || p.partNumber || "Unknown",
             brand: p.brand || "Volvo",
@@ -73,6 +76,7 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
             source: "static"
         }));
 
+        console.log(`[DEBUG] Loaded ${CACHED_DB.length} parts. Sample 0:`, CACHED_DB[0]);
         return CACHED_DB;
     } catch (error) {
         console.error("🚨 CRITICAL: getParts() failed", error);
@@ -98,9 +102,11 @@ export async function getPartBySlug(slugPath: string): Promise<Part | undefined>
  * Get Brand Data + Hub Logic
  */
 export async function getBrandData(slug: string): Promise<BrandData | undefined> {
+    console.log(`[DEBUG] getBrandData looking for: ${slug}`);
     const parts = await getParts();
     // Normalize slug (e.g. "caterpillar" vs "cat")
     const brandName = parts.find(p => slugify(p.brand) === slugify(slug))?.brand;
+    console.log(`[DEBUG] Found brand name: ${brandName}`);
 
     if (!brandName && !MACHINE_CATALOG[slugify(slug)]) return undefined;
 
