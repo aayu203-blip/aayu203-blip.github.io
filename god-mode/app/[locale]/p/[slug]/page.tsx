@@ -66,36 +66,7 @@ export default async function ProductPage({ params }: Props) {
     return (
         <main className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
 
-            {/* 1. HEADER: THE LAB BENCH (Keep consistent) */}
-            <header className="bg-white border-b-2 border-[#005EB8] sticky top-0 z-50 shadow-sm print:hidden">
-                <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                        <Link href="/" className="font-black text-2xl tracking-tighter text-slate-900">
-                            [ NEXGEN ]
-                        </Link>
-                        {/* Mini Search */}
-                        <div className="hidden md:flex items-center bg-slate-50 border border-slate-300 rounded-none px-3 py-1.5 w-80 focus-within:ring-2 focus-within:ring-[#005EB8] focus-within:border-[#005EB8]">
-                            <Search size={14} className="text-slate-400 mr-2" />
-                            <input
-                                type="text"
-                                placeholder="Search Part Number..."
-                                className="bg-transparent border-none outline-none text-sm text-slate-900 w-full font-mono placeholder:text-slate-400"
-                            />
-                        </div>
-                    </div>
 
-                    <div className="flex items-center gap-4">
-                        <ViewToggle />
-                        <div className="h-6 w-px bg-slate-200 mx-2 hidden sm:block"></div>
-                        <Button variant="ghost" size="sm" className="hidden sm:flex text-xs font-semibold text-slate-600 hover:text-[#005EB8]">
-                            <Printer size={14} className="mr-2" /> PRINT SPEC
-                        </Button>
-                        <Button variant="ghost" size="sm" className="hidden sm:flex text-xs font-semibold text-slate-600 hover:text-[#005EB8]">
-                            <Share2 size={14} className="mr-2" /> SHARE
-                        </Button>
-                    </div>
-                </div>
-            </header>
 
             {/* 2. MAIN CONTENT */}
             <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">

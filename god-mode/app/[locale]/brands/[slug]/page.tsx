@@ -50,19 +50,7 @@ export default async function BrandPage({ params }: Props) {
     return (
         <main className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
 
-            {/* 1. BRAND HEADER - OFFICIAL STYLE */}
-            <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
-                <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                    <Link href="/" className="font-black text-xl tracking-tighter text-slate-900 hover:text-[#005EB8] transition-colors">
-                        [ NEXGEN SPARES ]
-                    </Link>
-                    <div className="flex items-center gap-2 text-xs font-mono text-slate-500">
-                        <span>OFFICIAL INDEX</span>
-                        <span>/</span>
-                        <span className="font-bold text-slate-900 uppercase">{brandName}</span>
-                    </div>
-                </div>
-            </header>
+
 
             {/* 2. HERO: BRAND AUTHORITY */}
             <section className="bg-white border-b border-slate-200 py-20 relative overflow-hidden">
