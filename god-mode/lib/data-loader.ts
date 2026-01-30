@@ -28,11 +28,10 @@ export type BrandData = {
     slug: string;
     totalParts: number;
     description: string;
-    // machines: Record<string, string[]>; // Deprecated in favor of flat list for Hub
-    popularModels: string[]; // Added
-    recentParts: Part[]; // Added
-    examplePart: string; // Added
-    guides: GuideData[]; // Added
+    popularModels: string[];
+    recentParts: Part[];
+    examplePart: string;
+    guides: GuideData[];
 };
 
 export type MachineData = {
