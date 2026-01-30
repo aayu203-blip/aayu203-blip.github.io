@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Part } from "@/lib/utils";
+import { Part, slugify } from "@/lib/utils";
 import {
     MessageCircle,
     ShieldCheck,
@@ -28,7 +28,8 @@ function getWhatsAppLink(part: Part, context: string = "general") {
     } else if (context === 'price') {
         text += `I need a price quote for:\n\n*Part:* ${part.brand} ${part.partNumber}\n*Qty:* (type quantity)`;
     } else {
-        text += `I found this part on your site:\n\n*Part:* ${part.brand} ${part.partNumber}\n*Name:* ${part.name}\n*Link:* https://nexgenspares.com/p/${part.slug}\n\nIs this available?`;
+        const slug = part.brand && part.partNumber ? slugify(`${part.brand}-${part.partNumber}`) : 'part';
+        text += `I found this part on your site:\n\n*Part:* ${part.brand} ${part.partNumber}\n*Name:* ${part.name}\n*Link:* https://nexgenspares.com/p/${slug}\n\nIs this available?`;
     }
 
     return `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
@@ -45,7 +46,7 @@ export function PartDetailView({ part, locale }: { part: Part, locale: string })
     const faqs = [
         {
             question: `Is the ${part.partNumber} compatible with my ${part.brand} machine?`,
-            answer: `This part is verified for fitment with ${part.compatibleModels?.slice(0, 3).join(', ') || "standard " + part.brand + " equipment"}. We recommend verifying your machine serial number with our engineering team via WhatsApp before ordering.`
+            answer: `This part is verified for fitment with ${part.compatibility?.slice(0, 3).join(', ') || "standard " + part.brand + " equipment"}. We recommend verifying your machine serial number with our engineering team via WhatsApp before ordering.`
         },
         {
             question: "What is the warranty period?",
@@ -70,7 +71,7 @@ export function PartDetailView({ part, locale }: { part: Part, locale: string })
                 "brand": { "@type": "Brand", "name": part.brand },
                 "offers": {
                     "@type": "Offer",
-                    "url": `https://nexgenspares.com/p/${part.partNumber}`, // specific url
+                    "url": `https://nexgenspares.com/p/${slugify(part.brand + "-" + part.partNumber)}`, // specific url
                     "priceCurrency": "USD",
                     "availability": "https://schema.org/InStock",
                     "price": "0.00" // Call for price signal
@@ -218,11 +219,11 @@ export function PartDetailView({ part, locale }: { part: Part, locale: string })
                         </div>
 
                         {/* COMPATIBILITY & APPLICATIONS */}
-                        {part.compatibleModels && part.compatibleModels.length > 0 && (
+                        {part.compatibility && part.compatibility.length > 0 && (
                             <div>
                                 <h3 className="text-lg font-bold text-slate-900 mb-4">Compatible Equipment (Applications)</h3>
                                 <div className="flex flex-wrap gap-2 mb-4">
-                                    {part.compatibleModels.map(model => (
+                                    {part.compatibility.map(model => (
                                         <Link
                                             key={model}
                                             href={`/search?q=${part.brand}+${model}`}
