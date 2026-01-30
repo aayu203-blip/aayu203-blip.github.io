@@ -94,3 +94,35 @@ npm start
 
 ---
 **Maintained by:** NexGen Engineering Team
+
+---
+
+## 6. Page Index & Live Examples
+
+Here is a complete index of the available page types in the application.
+
+### core
+| Page Type | Route Pattern | Description | Data Source | Example URL (Production) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Homepage** | `/en` | The main landing page. "Digital Cleanroom" design. | Hardcoded (for speed) + `getFeaturedParts` | [nexgenspares.com/en](https://nexgenspares.com/en) |
+| **Search Results** | `/en/search?q=...` | Full-text fuzzy search results. | `Fuse.js` Index (Client-side) | [nexgenspares.com/en/search?q=filter](https://nexgenspares.com/en/search?q=filter) |
+| **Static Pages** | `/en/about`, `/en/contact` | Trust and logistics information. | Static MDX/TSX | [nexgenspares.com/en/about](https://nexgenspares.com/en/about) |
+
+### Commerce (Catalog)
+| Page Type | Route Pattern | Description | Data Source | Example URL (Production) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Product Detail** | `/en/p/[slug]` | The core PDP. technical specs, cross-refs, and WhatsApp CTA. | `parts-database.json` (Enriched) | [nexgenspares.com/en/p/cat-1r-0716](https://nexgenspares.com/en/p/cat-1r-0716) |
+| **Brand Index** | `/en/brands/[brand]` | Filtered list of parts for a specific OEM brand. | Filtered Database | [nexgenspares.com/en/brands/caterpillar](https://nexgenspares.com/en/brands/caterpillar) |
+| **Machine Index** | `/en/machines/[machine]` | Parts compatible with a specific machine model. | Filtered Database | [nexgenspares.com/en/machines/cat-320d](https://nexgenspares.com/en/machines/cat-320d) |
+| **Category Index** | `/en/category/[cat]` | *[Planned]* Filter by part type (e.g., "Filters"). | *Not yet implemented* | N/A |
+
+### Content (SEO)
+| Page Type | Route Pattern | Description | Data Source | Example URL (Production) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Guides Index** | `/en/guides` | List of all technical maintenance guides. | `generated_guides.json` | [nexgenspares.com/en/guides](https://nexgenspares.com/en/guides) |
+| **Guide Detail** | `/en/guides/[slug]` | Specific technical article with auto-linking to products. | `generated_guides.json` | [nexgenspares.com/en/guides/how-to-replace-cat-320d-filter](https://nexgenspares.com/en/guides/how-to-replace-cat-320d-filter) |
+
+### Functional Components
+*   **Bulk Paste Tool**: On Homepage. Parses raw text lines -> Generates Bulk WhatsApp Quote.
+*   **Hero Search**: Type-ahead search with "God Mode" speed (<50ms).
+
