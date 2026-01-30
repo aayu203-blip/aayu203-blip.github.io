@@ -127,79 +127,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 6. FOOTER */}
-      <footer className="bg-slate-900 text-slate-400 py-16 text-sm">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            <div className="space-y-4">
-              <div className="font-black text-xl tracking-tighter text-white">
-                [ NEXGEN SPARES ]
-              </div>
-              <p className="leading-relaxed text-slate-500">
-                Digital infrastructure for the global heavy machinery aftermarket. Connecting OEM specs with real-time inventory.
-              </p>
-              <div className="pt-4 mt-4 border-t border-slate-800">
-                <p className="text-xs text-slate-500 font-mono">
-                  <span className="text-emerald-500">✔</span> Sourced from OEM-grade manufacturers in Turkey, Korea, India & Europe.
-                  <br />
-                  <span className="text-emerald-500">✔</span> 100% Pre-dispatch Inspection.
-                </p>
-              </div>
-            </div>
 
-            <div>
-              <h4 className="font-bold text-white uppercase tracking-wider mb-4 text-xs">Platform</h4>
-              <ul className="space-y-2">
-                <li><Link href="/about" className="hover:text-[#005EB8]">About Us</Link></li>
-                <li><Link href="/catalogs" className="hover:text-[#005EB8]">Digital Catalogs</Link></li>
-                <li><Link href="/shipping" className="hover:text-[#005EB8]">Shipping Policy</Link></li>
-                <li><Link href="/terms" className="hover:text-[#005EB8]">Terms of Service</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-bold text-white uppercase tracking-wider mb-4 text-xs">Contact Operations</h4>
-              <ul className="space-y-3 font-mono text-xs">
-                <li className="flex items-center gap-3">
-                  <Phone size={14} />
-                  <span>+91 98202 59953</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Mail size={14} />
-                  <span>orders@nexgenspares.com</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <MapPin size={14} className="mt-0.5" />
-                  <span>Mumbai, Maharashtra<br />Shipping Globally</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-slate-800 p-6 rounded-sm border border-slate-700">
-              <h4 className="font-bold text-white mb-2">Stock Alerts</h4>
-              <p className="text-xs mb-4 text-slate-500">Get notified when hard-to-find parts enter our index.</p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="Enter email..."
-                  className="bg-slate-900 border border-slate-700 text-white px-3 py-2 text-xs w-full focus:outline-none focus:border-[#005EB8]"
-                />
-                <Button className="bg-[#005EB8] hover:bg-blue-700 h-auto py-2 px-3">
-                  <ChevronRight size={14} />
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-xs text-slate-600">
-            <p>© 2024 Nexgen Spares. All specifications property of respective OEMs.</p>
-            <div className="flex gap-4 mt-4 md:mt-0">
-              <span>Privacy</span>
-              <span>Sitemap</span>
-            </div>
-          </div>
-        </div>
-      </footer>
 
       <MobileContactBar />
     </main>
