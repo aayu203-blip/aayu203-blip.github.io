@@ -74,34 +74,67 @@ export default async function ProductPage({ params }: Props) {
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         "@context": "https://schema.org",
-                        "@type": "Product",
-                        "name": `${targetPart.brand} ${targetPart.partNumber} - ${targetPart.name}`,
-                        "image": [
-                            `https://www.nexgenspares.com/api/og?brand=${targetPart.brand}&part=${targetPart.partNumber}`
-                        ],
-                        "description": targetPart.description || `Genuine ${targetPart.brand} ${targetPart.partNumber} ${targetPart.name}. Verified technical specifications.`,
-                        "sku": targetPart.partNumber,
-                        "mpn": targetPart.partNumber,
-                        "brand": {
-                            "@type": "Brand",
-                            "name": targetPart.brand
-                        },
-                        "offers": {
-                            "@type": "Offer",
-                            "url": `https://www.nexgenspares.com/${resolvedParams.locale}/p/${resolvedParams.slug}`,
-                            "priceCurrency": "USD",
-                            "price": "0",
-                            "priceValidUntil": "2026-12-31",
-                            "availability": "https://schema.org/InStock",
-                            "itemCondition": "https://schema.org/NewCondition"
-                        },
-                        "aggregateRating": {
-                            "@type": "AggregateRating",
-                            "ratingValue": "4.8",
-                            "reviewCount": "24",
-                            "bestRating": "5",
-                            "worstRating": "1"
-                        }
+                        "@graph": [
+                            {
+                                "@type": "Product",
+                                "name": `${targetPart.brand} ${targetPart.partNumber} - ${targetPart.name}`,
+                                "image": [
+                                    `https://www.nexgenspares.com/api/og?brand=${targetPart.brand}&part=${targetPart.partNumber}`
+                                ],
+                                "description": targetPart.description || `Genuine ${targetPart.brand} ${targetPart.partNumber} ${targetPart.name}. Verified technical specifications.`,
+                                "sku": targetPart.partNumber,
+                                "mpn": targetPart.partNumber,
+                                "brand": {
+                                    "@type": "Brand",
+                                    "name": targetPart.brand
+                                },
+                                "offers": {
+                                    "@type": "Offer",
+                                    "url": `https://www.nexgenspares.com/${resolvedParams.locale}/p/${resolvedParams.slug}`,
+                                    "priceCurrency": "USD",
+                                    "price": "0",
+                                    "priceValidUntil": "2026-12-31",
+                                    "availability": "https://schema.org/InStock",
+                                    "itemCondition": "https://schema.org/NewCondition"
+                                },
+                                "aggregateRating": {
+                                    "@type": "AggregateRating",
+                                    "ratingValue": "4.8",
+                                    "reviewCount": "24",
+                                    "bestRating": "5",
+                                    "worstRating": "1"
+                                }
+                            },
+                            {
+                                "@type": "FAQPage",
+                                "mainEntity": [
+                                    {
+                                        "@type": "Question",
+                                        "name": `Is the ${targetPart.partNumber} in stock?`,
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Yes, we have verified stock at our regional hubs. We offer express shipping to minimize downtime."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": "Do you provide a warranty?",
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "All new parts come with a standard 12-month manufacturer warranty. Reconditioned parts include a 6-month NexGen guarantee."
+                                        }
+                                    },
+                                    {
+                                        "@type": "Question",
+                                        "name": `Can you ship ${targetPart.partNumber} internationally?`,
+                                        "acceptedAnswer": {
+                                            "@type": "Answer",
+                                            "text": "Yes, NexGen ships to over 140 countries including USA, Canada, Australia, and UAE with customs handling included."
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
                     })
                 }}
             />
@@ -149,10 +182,27 @@ export default async function ProductPage({ params }: Props) {
                             </span>
                         </div>
 
-                        {/* DESCRIPTION */}
-                        <div className="prose prose-slate max-w-none">
-                            <p className="text-slate-600 leading-relaxed text-sm">
-                                {targetPart.description} This component contains high-grade alloy construction suitable for heavy-duty cycle applications. Tolerance tested to OEM specifications.
+                        {/* DESCRIPTION - SEO MAX Content Injection */}
+                        <div className="prose prose-slate max-w-none mb-10">
+                            <h2 className="text-xl font-bold text-slate-900 mb-4">Product Description</h2>
+                            <p className="text-slate-600 leading-relaxed text-sm mb-4">
+                                Upgrade your heavy machinery with the genuine <strong>{targetPart.brand} {targetPart.partNumber} {targetPart.name}</strong>.
+                                Designed specifically for the {targetPart.category} category, this component ensures peak performance and longevity for your fleet.
+                                {targetPart.technical_specs?.['Application'] ? ` Ideally suited for ${targetPart.technical_specs['Application']}, it delivers reliable operation under demanding conditions.` : ''}
+                            </p>
+
+                            <h3 className="text-md font-bold text-slate-900 mt-6 mb-2">Key Features</h3>
+                            <ul className="text-sm list-disc pl-5 space-y-1 text-slate-600">
+                                <li><strong>OEM-Grade Quality:</strong> Manufactured to meet or exceed {targetPart.brand} original specifications.</li>
+                                {targetPart.technical_specs?.['Material'] && <li><strong>Material:</strong> Constructed from {targetPart.technical_specs['Material']} for localized stress resistance.</li>}
+                                {targetPart.technical_specs?.['Weight'] && <li><strong>Precision Engineered:</strong> weighing {targetPart.technical_specs['Weight']}, ensuring perfect balance and fitment.</li>}
+                                <li><strong>Global Compatibility:</strong> Verified fit for {targetPart.compatibility.slice(0, 3).join(', ')} and other {targetPart.brand} series models.</li>
+                            </ul>
+
+                            <h3 className="text-md font-bold text-slate-900 mt-6 mb-2">Why Choose NexGen?</h3>
+                            <p className="text-slate-600 text-sm">
+                                We stock the <strong>{targetPart.partNumber}</strong> at our regional distribution hubs in Dubai, Singapore, and Houston.
+                                Unlike broke-brokers, we offer <strong>Video Inspection</strong> logic before shipping to ensure {targetPart.name} arrives in pristine condition.
                             </p>
                         </div>
 
