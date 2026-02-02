@@ -55,30 +55,56 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
         // Use static import for Vercel compatibility (bundled at build time)
         const rawData = STATIC_DB as any[];
 
-        CACHED_DB = (rawData as any[]).map((p, idx) => ({
-            id: p.id || `static-${idx}`,
-            partNumber: p.part_number || p.partNumber || "Unknown",
-            brand: p.brand || "Volvo",
-            name: p.technical_specs?.["Part Name"] || p.technical_specs?.["Product Name"] || p.technical_specs?.["Product Type"] || p.product_name || p.name || "Unknown Part",
-            description: p.description || "",
-            stock: 10,
-            price: "On Request" as "On Request",
-            category: p.category || "Uncategorized",
-            compatibility: p.compatibility || [],
-            oem_cross_references: p.oem_cross_references || [],
-            cross_reference_numbers: [
-                ...(p.cross_reference_numbers || []),
-                // Extract "Alternate Part Numbers" from technical_specs if available (Safe Check)
-                ...(p.technical_specs?.["Alternate Part Numbers"] && typeof p.technical_specs["Alternate Part Numbers"] === 'string'
-                    ? p.technical_specs["Alternate Part Numbers"].split(',').map((s: string) => s.trim())
-                    : []),
-                ...(p.technical_specs?.["Cross-Reference Numbers"] && typeof p.technical_specs["Cross-Reference Numbers"] === 'string'
-                    ? p.technical_specs["Cross-Reference Numbers"].split(',').map((s: string) => s.trim())
-                    : [])
-            ],
-            technical_specs: p.technical_specs || undefined,
-            source: "static" as const
-        })).filter(p => p.partNumber.length > 2 && p.partNumber !== "Unknown"); // SANITIZE: Remove ghosts
+        CACHED_DB = (rawData as any[]).map((p, idx) => {
+            const partNumber = p.part_number || p.partNumber || "Unknown";
+            const brand = p.brand || "Volvo";
+
+            // Name Resolution Priority
+            let rawName = p.technical_specs?.["Part Name"] || p.technical_specs?.["Product Name"] || p.technical_specs?.["Product Type"] || p.product_name || p.name || "Unknown Part";
+
+            // GLOBAL NAME CLEANING
+            // 1. Strip Brand Prefix (e.g. "Volvo Filter" -> "Filter")
+            if (rawName.toLowerCase().startsWith(brand.toLowerCase())) {
+                rawName = rawName.substring(brand.length).trim();
+                rawName = rawName.replace(/^[-:]+\s*/, ""); // Remove leading punctuation
+            }
+
+            // 2. If name became empty or is just part number, try description
+            if (!rawName || rawName === partNumber || rawName.length < 3) {
+                if (p.description && p.description.length < 50) {
+                    rawName = p.description;
+                }
+            }
+
+            // 3. Last Resort
+            if (!rawName || rawName === partNumber) {
+                rawName = "Spare Part";
+            }
+
+            return {
+                id: p.id || `static-${idx}`,
+                partNumber: partNumber,
+                brand: brand,
+                name: rawName,
+                description: p.description || "",
+                stock: 10,
+                price: "On Request" as "On Request",
+                category: p.category || "Uncategorized",
+                compatibility: p.compatibility || [],
+                oem_cross_references: p.oem_cross_references || [],
+                cross_reference_numbers: [
+                    ...(p.cross_reference_numbers || []),
+                    ...(p.technical_specs?.["Alternate Part Numbers"] && typeof p.technical_specs["Alternate Part Numbers"] === 'string'
+                        ? p.technical_specs["Alternate Part Numbers"].split(',').map((s: string) => s.trim())
+                        : []),
+                    ...(p.technical_specs?.["Cross-Reference Numbers"] && typeof p.technical_specs["Cross-Reference Numbers"] === 'string'
+                        ? p.technical_specs["Cross-Reference Numbers"].split(',').map((s: string) => s.trim())
+                        : [])
+                ],
+                technical_specs: p.technical_specs || undefined,
+                source: "static" as const
+            };
+        }).filter(p => p.partNumber.length > 2 && p.partNumber !== "Unknown"); // SANITIZE: Remove ghosts
 
         console.log(`[DATA-LOADER] Loaded ${CACHED_DB.length} parts from static import`);
         return CACHED_DB;
