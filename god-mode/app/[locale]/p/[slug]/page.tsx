@@ -81,7 +81,7 @@ export default async function ProductPage({ params }: Props) {
                                 "image": [
                                     `https://www.nexgenspares.com/api/og?brand=${targetPart.brand}&part=${targetPart.partNumber}`
                                 ],
-                                "description": targetPart.description || `Genuine ${targetPart.brand} ${targetPart.partNumber} ${targetPart.name}. Verified technical specifications.`,
+                                "description": targetPart.description || `High-quality replacement for ${targetPart.brand} ${targetPart.partNumber} ${targetPart.name}. Verified technical specifications.`,
                                 "sku": targetPart.partNumber,
                                 "mpn": targetPart.partNumber,
                                 "brand": {
@@ -167,7 +167,7 @@ export default async function ProductPage({ params }: Props) {
                             </div>
                             <div className="hidden md:block text-right">
                                 <div className="text-[#005EB8] font-bold text-2xl font-mono tracking-tight">{targetPart.brand.toUpperCase()}</div>
-                                <div className="text-xs text-slate-400 font-mono uppercase tracking-wide">OEM GENUINE / REPLACEMENT</div>
+                                <div className="text-xs text-slate-400 font-mono uppercase tracking-wide">PREMIUM REPLACEMENT PART</div>
                             </div>
                         </div>
 
@@ -186,17 +186,17 @@ export default async function ProductPage({ params }: Props) {
                         <div className="prose prose-slate max-w-none mb-10">
                             <h2 className="text-xl font-bold text-slate-900 mb-4">Product Description</h2>
                             <p className="text-slate-600 leading-relaxed text-sm mb-4">
-                                Upgrade your heavy machinery with the genuine <strong>{targetPart.brand} {targetPart.partNumber} {targetPart.name}</strong>.
+                                Upgrade your heavy machinery with the reliable <strong>{targetPart.brand} {targetPart.partNumber} {targetPart.name}</strong> replacement.
                                 Designed specifically for the {targetPart.category} category, this component ensures peak performance and longevity for your fleet.
                                 {targetPart.technical_specs?.['Application'] ? ` Ideally suited for ${targetPart.technical_specs['Application']}, it delivers reliable operation under demanding conditions.` : ''}
                             </p>
 
                             <h3 className="text-md font-bold text-slate-900 mt-6 mb-2">Key Features</h3>
                             <ul className="text-sm list-disc pl-5 space-y-1 text-slate-600">
-                                <li><strong>OEM-Grade Quality:</strong> Manufactured to meet or exceed {targetPart.brand} original specifications.</li>
+                                <li><strong>Premium Quality:</strong> Manufactured to meet rigorous {targetPart.brand} compatibility standards.</li>
                                 {targetPart.technical_specs?.['Material'] && <li><strong>Material:</strong> Constructed from {targetPart.technical_specs['Material']} for localized stress resistance.</li>}
                                 {targetPart.technical_specs?.['Weight'] && <li><strong>Precision Engineered:</strong> weighing {targetPart.technical_specs['Weight']}, ensuring perfect balance and fitment.</li>}
-                                <li><strong>Global Compatibility:</strong> Verified fit for {targetPart.compatibility.slice(0, 3).join(', ')} and other {targetPart.brand} series models.</li>
+                                <li><strong>Global Compatibility:</strong> Verified suitable for {targetPart.compatibility.slice(0, 3).join(', ')} and other {targetPart.brand} series models.</li>
                             </ul>
 
                             <h3 className="text-md font-bold text-slate-900 mt-6 mb-2">Why Choose NexGen?</h3>
