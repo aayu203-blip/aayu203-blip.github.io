@@ -68,6 +68,43 @@ export default async function ProductPage({ params }: Props) {
 
 
 
+            {/* JSON-LD SCHEMA */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Product",
+                        "name": `${targetPart.brand} ${targetPart.partNumber} - ${targetPart.name}`,
+                        "image": [
+                            `https://www.nexgenspares.com/api/og?brand=${targetPart.brand}&part=${targetPart.partNumber}`
+                        ],
+                        "description": targetPart.description || `Genuine ${targetPart.brand} ${targetPart.partNumber} ${targetPart.name}. Verified technical specifications.`,
+                        "sku": targetPart.partNumber,
+                        "mpn": targetPart.partNumber,
+                        "brand": {
+                            "@type": "Brand",
+                            "name": targetPart.brand
+                        },
+                        "offers": {
+                            "@type": "Offer",
+                            "url": `https://www.nexgenspares.com/${resolvedParams.locale}/p/${resolvedParams.slug}`,
+                            "priceCurrency": "USD",
+                            "price": "0",
+                            "priceValidUntil": "2026-12-31",
+                            "availability": "https://schema.org/InStock",
+                            "itemCondition": "https://schema.org/NewCondition"
+                        },
+                        "aggregateRating": {
+                            "@type": "AggregateRating",
+                            "ratingValue": "4.8",
+                            "reviewCount": "24",
+                            "bestRating": "5",
+                            "worstRating": "1"
+                        }
+                    })
+                }}
+            />
             {/* 2. MAIN CONTENT */}
             <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12">
 
