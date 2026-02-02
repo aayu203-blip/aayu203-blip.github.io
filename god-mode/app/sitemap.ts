@@ -1,8 +1,10 @@
 import { MetadataRoute } from 'next'
 import { getParts } from '@/lib/data-loader'
+import { getAllPosts } from '@/lib/blog'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const parts = await getParts()
+    const posts = await getAllPosts()
     const baseUrl = 'https://nexgenspares.com'
 
     // Product pages (17,928 parts)
@@ -31,6 +33,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.85,
     }))
 
+    // Blog posts
+    const blogPages: MetadataRoute.Sitemap = posts.map(post => ({
+        url: `${baseUrl}/en/blog/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: 'monthly',
+        priority: 0.7,
+    }))
+
     // Static pages
     const staticPages: MetadataRoute.Sitemap = [
         {
@@ -46,6 +56,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.7,
         },
         {
+            url: `${baseUrl}/en/blog`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        },
+        {
             url: `${baseUrl}/en/search`,
             lastModified: new Date(),
             changeFrequency: 'daily',
@@ -53,5 +69,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         },
     ]
 
-    return [...staticPages, ...brandPages, ...machinePages, ...productPages]
+    return [...staticPages, ...brandPages, ...machinePages, ...blogPages, ...productPages]
 }
