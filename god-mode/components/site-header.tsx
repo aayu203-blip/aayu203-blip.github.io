@@ -24,7 +24,7 @@ export function SiteHeader() {
 
                 <nav className="flex items-center gap-6 text-sm font-medium text-slate-600">
                     <a
-                        href="https://wa.me/919820259953?text=Hi%20Nexgen,%20I%20need%20a%20quote%20for..."
+                        href="https://wa.me/919137151496?text=Hi%20Nexgen,%20I%20need%20a%20quote%20for..."
                         target="_blank"
                         className="flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white px-4 py-2 rounded-sm font-bold transition-all shadow-sm"
                     >

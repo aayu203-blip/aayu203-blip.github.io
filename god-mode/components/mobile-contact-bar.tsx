@@ -22,14 +22,14 @@ export function MobileContactBar() {
             <div className="flex items-center justify-between px-4 py-3">
                 <div className="flex gap-3 flex-1">
                     <a
-                        href="tel:+919820259953"
+                        href="tel:+919137151496"
                         className="flex-1 flex items-center justify-center gap-2 bg-[#005EB8] text-white py-3 rounded-sm font-bold text-sm hover:bg-blue-700 transition-colors"
                     >
                         <Phone size={18} />
                         Call Now
                     </a>
                     <a
-                        href="https://wa.me/919820259953"
+                        href="https://wa.me/919137151496"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 rounded-sm font-bold text-sm hover:bg-green-600 transition-colors"

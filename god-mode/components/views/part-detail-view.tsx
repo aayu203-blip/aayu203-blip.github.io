@@ -20,7 +20,7 @@ import { Link } from '@/i18n/routing';
 
 // --- HELPER: WhatsApp Message Generator ---
 function getWhatsAppLink(part: Part, context: string = "general") {
-    const phone = "919820259953";
+    const phone = "919137151496";
     let text = `Hi NexGen, `;
 
     if (context === 'fitment') {

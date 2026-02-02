@@ -76,7 +76,7 @@ export function MachineLandingView({ machine, locale }: { machine: MachineData, 
                         <p className="text-slate-400 text-sm">We have access to 15,000+ items not listed publicly.</p>
                     </div>
                     <a
-                        href={`https://wa.me/919820259953?text=I%20need%20parts%20for%20${machine.brand}%20${machine.model}`}
+                        href={`https://wa.me/919137151496?text=I%20need%20parts%20for%20${machine.brand}%20${machine.model}`}
                         className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 px-6 rounded-sm whitespace-nowrap"
                     >
                         WhatsApp Inquiry

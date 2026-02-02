@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = "971501234567"; // Replace with actual number
+export const WHATSAPP_NUMBER = "919137151496"; // Updated Contact Number
 
 interface WhatsAppLinkParams {
     text?: string;

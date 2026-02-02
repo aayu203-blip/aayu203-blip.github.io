@@ -67,7 +67,7 @@ export function ExitIntentModal({ productName, brandName }: ExitIntentModalProps
         ? `Hi, I'm interested in ${productName} (${brandName}). Can you send me the spec sheet?`
         : `Hi, I'm interested in getting a parts catalog. Can you help?`;
 
-    const whatsappUrl = `https://wa.me/919820259953?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/919137151496?text=${encodeURIComponent(whatsappMessage)}`;
 
     return (
         <>
