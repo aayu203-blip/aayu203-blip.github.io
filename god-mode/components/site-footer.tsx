@@ -15,6 +15,8 @@ export function SiteFooter() {
 
                     {/* LEGAL DISCLAIMER */}
                     <div className="p-4 bg-slate-800/50 border border-slate-700 rounded-sm">
+
+
                         <p className="text-[10px] text-slate-500 leading-normal">
                             <strong>DISCLAIMER:</strong> NexGen Spares is an independent supplier of aftermarket parts. All OEM names, trademarks, and part numbers (including Volvo, CAT, Komatsu, Scania) are for reference purposes only and do not imply affiliation or endorsement by the original equipment manufacturers.
                         </p>
@@ -52,10 +54,10 @@ export function SiteFooter() {
                 <div>
                     <h4 className="font-bold text-slate-200 mb-6 uppercase text-xs tracking-wider">{t('footer.regions')}</h4>
                     <ul className="space-y-2 text-sm text-slate-400">
-                        <li><Link href="#" className="hover:text-white">North America (USA/CAN)</Link></li>
-                        <li><Link href="#" className="hover:text-white">EMEA (Europe/Middle East)</Link></li>
-                        <li><Link href="#" className="hover:text-white">APAC (Asia Pacific)</Link></li>
-                        <li><Link href="#" className="hover:text-white">LATAM (South America)</Link></li>
+                        <li><Link href="/about" className="hover:text-white">North America (USA/CAN)</Link></li>
+                        <li><Link href="/about" className="hover:text-white">EMEA (Europe/Middle East)</Link></li>
+                        <li><Link href="/about" className="hover:text-white">APAC (Asia Pacific)</Link></li>
+                        <li><Link href="/about" className="hover:text-white">LATAM (South America)</Link></li>
                     </ul>
                 </div>
             </div>

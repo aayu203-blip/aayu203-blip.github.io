@@ -12,7 +12,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Volvo, CAT, Komatsu & Scania Spare Parts Supplier | Nexgen Spares India",
-  description: "Direct B2B supplier for heavy machinery parts. We stock 30,000+ verified aftermarket parts. Fast shipping to USA, Middle East & Africa. Get a quote in 30 mins.",
+  description: "Direct B2B supplier for heavy machinery parts. We stock 20,000+ verified aftermarket parts. Fast shipping to USA, Middle East & Africa. Get a quote in 30 mins.",
   openGraph: {
     title: "Nexgen Spares - Global Heavy Machinery Procurement",
     description: "Upload your BOM. Get a Quote. We source OEM-grade parts from Turkey, Korea, and India.",
@@ -186,7 +186,7 @@ function PartCard({ part, index }: { part: Part, index: number }) {
       <div className="bg-slate-50 p-3 mb-4 rounded-sm border border-slate-100 grid grid-cols-2 gap-2">
         <div className="text-[10px] text-slate-500 font-mono">
           <span className="block font-bold text-slate-700">Origin</span>
-          Turkey / Korea
+          {part.technical_specs?.['Origin'] || "Global Import"}
         </div>
         <div className="text-[10px] text-slate-500 font-mono">
           <span className="block font-bold text-slate-700">Lead Time</span>
@@ -194,7 +194,7 @@ function PartCard({ part, index }: { part: Part, index: number }) {
         </div>
         <div className="col-span-2 text-[10px] text-slate-500 font-mono border-t border-slate-200 pt-2 mt-1">
           <span className="font-bold text-slate-700 mr-1">Compatible:</span>
-          EC210 / EC240 / PC200-8
+          {part.compatibility.length > 0 ? part.compatibility.slice(0, 3).join(' / ') : "Universal Fit"}
         </div>
       </div>
 

@@ -66,7 +66,7 @@ export default async function AboutPage({ params }: Props) {
             <section className="bg-[#005EB8] text-white py-20">
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                     <div>
-                        <div className="text-4xl font-black mb-2">47,000+</div>
+                        <div className="text-4xl font-black mb-2">20,000+</div>
                         <div className="text-blue-200 text-sm font-mono uppercase tracking-widest">Parts Indexed</div>
                     </div>
                     <div>

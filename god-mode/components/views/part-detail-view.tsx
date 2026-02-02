@@ -54,48 +54,8 @@ export function PartDetailView({ part, locale }: { part: Part, locale: string })
         }
     ];
 
-    // JSON-LD Structured Data
-    const jsonLd = {
-        "@context": "https://schema.org/",
-        "@graph": [
-            {
-                "@type": "Product",
-                "name": `${part.brand} ${part.partNumber} ${part.name} - Aftermarket Spare Part`,
-                "image": "https://nexgenspares.com/placeholder-part.jpg",
-                "description": `Buy verified aftermarket ${part.partNumber} ${part.name} for ${part.brand}. Compatible with ${part.compatibility?.join(', ')}. In stock with global shipping.`,
-                "sku": part.partNumber,
-                "brand": { "@type": "Brand", "name": part.brand },
-                "offers": {
-                    "@type": "Offer",
-                    "url": `https://nexgenspares.com/p/${slugify(part.brand + "-" + part.partNumber)}`, // specific url
-                    "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock",
-                    "price": "0.00" // Call for price signal
-                }
-            },
-            {
-                "@type": "FAQPage",
-                "mainEntity": faqs.map(f => ({
-                    "@type": "Question",
-                    "name": f.question,
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": f.answer
-                    }
-                }))
-            }
-        ]
-    };
-
     return (
         <main className="min-h-screen bg-white pb-24 md:pb-0">
-            {/* 1. JSON-LD Injection & Dynamic Title */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <title>{`${part.brand} ${part.partNumber} - ${part.name} | NexGen Spares`}</title>
-
             {/* 2. BREADCRUMBS */}
             <nav className="border-b border-slate-200 bg-slate-50 py-3 px-6 text-xs font-mono text-slate-500">
                 <div className="max-w-7xl mx-auto flex items-center gap-2 overflow-x-auto">
@@ -141,7 +101,7 @@ export function PartDetailView({ part, locale }: { part: Part, locale: string })
                                 <div className="text-[10px] uppercase text-slate-400 font-bold tracking-wider flex items-center gap-1">
                                     <Globe size={12} /> Origin
                                 </div>
-                                <div className="font-mono text-sm font-bold text-slate-700">Turkey / Korea</div>
+                                <div className="font-mono text-sm font-bold text-slate-700">{part.technical_specs?.['Origin'] || "Global Import"}</div>
                             </div>
                             <div className="space-y-1">
                                 <div className="text-[10px] uppercase text-slate-400 font-bold tracking-wider flex items-center gap-1">
