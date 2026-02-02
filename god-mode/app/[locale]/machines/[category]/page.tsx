@@ -9,6 +9,26 @@ type Props = {
     params: Promise<{ category: string; locale: string }>
 };
 
+
+
+export async function generateMetadata({ params }: Props) {
+    const { category } = await params;
+    const categoryTitle = category.replace(/-/g, ' ').toUpperCase();
+
+    // Use a lightweight check or assumption to avoid fetching all parts if performance is key, 
+    // but fetching here is fine for SSG/ISR
+    const parts = await getPartsByCategory(category);
+
+    return {
+        title: `${categoryTitle} Parts Catalog | NexGen Spares`,
+        description: `Browse our inventory of ${categoryTitle} parts. ${parts.length > 0 ? `Over ${parts.length} verified components available.` : 'Request a quote for specific models.'} Shipping globally.`,
+        openGraph: {
+            title: `${categoryTitle} Replacement Parts`,
+            description: `Quality aftermarket parts for ${categoryTitle}. Verified fitment.`,
+        }
+    };
+}
+
 export default async function MachineCategoryPage({ params }: Props) {
     const { category } = await params;
     // Decode slug back to a displayable title (simple approximation)
