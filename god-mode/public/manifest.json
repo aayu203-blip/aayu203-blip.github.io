@@ -1,0 +1,54 @@
+{
+    "name": "NexGen Spares - Heavy Machinery Parts",
+    "short_name": "NexGen",
+    "description": "20,000+ verified parts for Caterpillar, Volvo, Komatsu, Scania heavy equipment. Fast global shipping.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#005EB8",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "business",
+        "productivity"
+    ],
+    "shortcuts": [
+        {
+            "name": "Search Parts",
+            "short_name": "Search",
+            "description": "Search for parts by number or name",
+            "url": "/search",
+            "icons": [
+                {
+                    "src": "/icon-192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
+            "name": "Browse Caterpillar",
+            "short_name": "CAT",
+            "description": "Browse Caterpillar parts",
+            "url": "/brands/caterpillar",
+            "icons": [
+                {
+                    "src": "/icon-192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ]
+}
