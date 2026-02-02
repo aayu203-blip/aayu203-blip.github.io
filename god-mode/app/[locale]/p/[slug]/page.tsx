@@ -1,8 +1,10 @@
 import { getParts, type Part } from "@/lib/data-loader";
+import { slugify } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { DownloadButton } from "@/components/download-button";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { ViewToggle } from "@/components/view-toggle";
+import { RelatedParts } from "@/components/related-parts";
 import { ShieldCheck, Truck, Search, ChevronRight, FileText, Printer, Share2 } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -131,6 +133,28 @@ export default async function ProductPage({ params }: Props) {
                                             "@type": "Answer",
                                             "text": "Yes, NexGen ships to over 140 countries including USA, Canada, Australia, and UAE with customs handling included."
                                         }
+                                    }
+                                ]
+                            },
+                            {
+                                "@type": "BreadcrumbList",
+                                "itemListElement": [
+                                    {
+                                        "@type": "ListItem",
+                                        "position": 1,
+                                        "name": "Home",
+                                        "item": "https://www.nexgenspares.com"
+                                    },
+                                    {
+                                        "@type": "ListItem",
+                                        "position": 2,
+                                        "name": targetPart.brand,
+                                        "item": `https://www.nexgenspares.com/${resolvedParams.locale}/brands/${slugify(targetPart.brand)}`
+                                    },
+                                    {
+                                        "@type": "ListItem",
+                                        "position": 3,
+                                        "name": targetPart.partNumber
                                     }
                                 ]
                             }
@@ -337,6 +361,9 @@ export default async function ProductPage({ params }: Props) {
                         </div>
                     </div>
                 </div>
+
+                {/* RELATED PARTS - SEO Internal Linking */}
+                <RelatedParts currentPart={targetPart} allParts={parts} />
             </div>
         </main>
     );
