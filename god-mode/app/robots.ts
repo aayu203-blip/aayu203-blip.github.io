@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/api/', '/admin/'],
         },
-        sitemap: 'https://nexgen-index.com/sitemap.xml',
+        sitemap: 'https://www.nexgenspares.com/sitemap.xml',
     };
 }
