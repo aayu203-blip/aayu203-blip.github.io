@@ -72,13 +72,77 @@ async function generate() {
         });
     });
 
-    // Machines
-    Object.entries(MACHINE_CATALOG).forEach(([brand, categories]) => {
-        Object.values(categories).flat().forEach((model: string) => {
-            LOCALES.forEach(locale => {
-                const modelSlug = slugify(`${brand}-${model}`);
-                xml0 += generateUrlEntry(`${BASE_URL}/${locale}/machines/${modelSlug}`, dateNow, 'monthly', '0.7');
+    // --- PRE-CALCULATE COUNTS ---
+    console.log("📊 Analyzing compatibility...");
+    const modelCounts = new Map<string, number>();
+    const categoryCounts = new Map<string, number>();
+
+    parts.forEach(p => {
+        // Model Counts
+        if (p.compatibility) {
+            p.compatibility.forEach(model => {
+                // Normalize: brand-model (e.g. caterpillar-16m)
+                // We don't verify strict brand pairing here, trusting data integrity or cleaning later
+                const key = slugify(model); // e.g. "16m", but data might be specific. 
+                // Actually, data loader compatibility is just "16M". 
+                // We need to match it to the catalog. 
+                // For global uniqueness, we might need brand, but for now let's just count raw model occurrences.
             });
+        }
+
+        // Category Counts
+        if (p.category) {
+            const catSlug = slugify(p.category);
+            categoryCounts.set(catSlug, (categoryCounts.get(catSlug) || 0) + 1);
+        }
+    });
+
+    // Helper: Exact Match Check (Slow but precise)
+    // We'll iterate the catalog and check if any part supports it.
+    const validMachines = new Set<string>(); // Stores "brand-model" keys
+
+    // Build efficient lookup
+    const partsByModel = new Map<string, boolean>();
+    parts.forEach(p => {
+        p.compatibility?.forEach(m => {
+            partsByModel.set(slugify(m), true);
+        });
+    });
+
+    // Machines & Categories
+    const validCategories = new Set<string>();
+
+    Object.entries(MACHINE_CATALOG).forEach(([brand, categories]) => {
+        Object.entries(categories).forEach(([categoryName, models]) => {
+            // Add Category (if it has parts?)
+            // We assume categories in catalog are valid if they map to parts.
+            // But let's just add all Catalog Categories as they are high-level landing pages.
+            // Actually, best to check if we have matching parts.
+            // Our Part.category might not match Catalog category names exactly.
+            // Let's add them anyway as they are good hubs.
+            validCategories.add(slugify(categoryName));
+
+            // Add Models
+            models.forEach((model: string) => {
+                // Check if we have parts for this model
+                // Model in catalog: "16M"
+                // Model in part.compatibility: "16M"
+                const modelSlug = slugify(model);
+                if (partsByModel.has(modelSlug)) {
+                    // It's valid!
+                    LOCALES.forEach(locale => {
+                        // URL: /brand/model (Universal Router)
+                        xml0 += generateUrlEntry(`${BASE_URL}/${locale}/${slugify(brand)}/${modelSlug}`, dateNow, 'monthly', '0.8');
+                    });
+                }
+            });
+        });
+    });
+
+    // Generate Category Sitemaps
+    validCategories.forEach(catSlug => {
+        LOCALES.forEach(locale => {
+            xml0 += generateUrlEntry(`${BASE_URL}/${locale}/machines/${catSlug}`, dateNow, 'weekly', '0.7');
         });
     });
 
