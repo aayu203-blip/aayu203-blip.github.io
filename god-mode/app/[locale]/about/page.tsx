@@ -38,7 +38,7 @@ export default async function AboutPage({ params }: Props) {
                         </div>
                         <h3 className="text-2xl font-bold mb-4">Verified Quality</h3>
                         <p className="text-slate-600 leading-relaxed">
-                            Every part in our "God Mode" database is cross-referenced with OEM schematics. Whether it's Genuine Volvo or Tier-1 Aftermarket, you know exactly what you're buying.
+                            Every part in our "God Mode" database is cross-referenced with OEM schematics. Whether it's Premium Replacement or Tier-1 Aftermarket, you know exactly what you're buying.
                         </p>
                     </div>
                     <div className="p-8 bg-white border border-slate-200 shadow-sm rounded-sm">

@@ -142,7 +142,7 @@ export default async function BrandPage({ params }: Props) {
                         {categories.map(cat => (
                             <Link
                                 key={cat}
-                                href="#"
+                                href={`/search?q=${brandName}+${cat}`}
                                 className="group bg-white p-6 border border-slate-200 shadow-sm hover:border-[#005EB8] hover:shadow-md transition-all"
                             >
                                 <div className="h-2 w-8 bg-slate-200 mb-4 group-hover:bg-[#005EB8] transition-colors"></div>

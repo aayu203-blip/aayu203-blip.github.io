@@ -106,7 +106,6 @@ export async function getParts(locale: string = 'en'): Promise<Part[]> {
             };
         }).filter(p => p.partNumber.length > 2 && p.partNumber !== "Unknown"); // SANITIZE: Remove ghosts
 
-        console.log(`[DATA-LOADER] Loaded ${CACHED_DB.length} parts from static import`);
         return CACHED_DB;
     } catch (error) {
         console.error("🚨 CRITICAL: getParts() failed", error);
