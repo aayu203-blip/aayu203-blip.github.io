@@ -42,26 +42,35 @@ export function HeroSearch() {
 
     // Debounced Suggestion Fetcher
     useEffect(() => {
+        const controller = new AbortController();
+        const signal = controller.signal;
+
         const timer = setTimeout(async () => {
             if (searchText.length >= 2) {
                 setIsLoadingSuggestions(true);
                 try {
-                    const res = await fetch(`/api/suggest?q=${encodeURIComponent(searchText)}`);
+                    const res = await fetch(`/api/suggest?q=${encodeURIComponent(searchText)}`, { signal });
+                    if (!res.ok) throw new Error("Fetch failed");
                     const data = await res.json();
                     setSuggestions(data.results || []);
                     setShowSuggestions(true);
-                } catch (e) {
-                    console.error("Failed to fetch suggestions");
+                } catch (e: any) {
+                    if (e.name !== "AbortError") {
+                        console.error("Failed to fetch suggestions");
+                    }
                 } finally {
-                    setIsLoadingSuggestions(false);
+                    if (!signal.aborted) setIsLoadingSuggestions(false);
                 }
             } else {
                 setSuggestions([]);
                 setShowSuggestions(false);
             }
-        }, 300); // 300ms debounce
+        }, 150); // Optimized to 150ms for snappier feel
 
-        return () => clearTimeout(timer);
+        return () => {
+            clearTimeout(timer);
+            controller.abort(); // Cancel previous request on new keystroke
+        };
     }, [searchText]);
 
     // Click Outside Handler
@@ -194,7 +203,7 @@ export function HeroSearch() {
                     <div className="mt-4 flex gap-4 text-xs text-slate-500 font-medium">
                         <span>Try:</span>
                         <a href="/en/p/caterpillar-1r-0716" className="text-[#005EB8] hover:underline font-mono">1R-0716</a>
-                        <a href="/en/p/caterpillar-1r-0716" className="text-[#005EB8] hover:underline font-mono">1R-0716</a>
+                        <a href="/en/p/volvo-21969323" className="text-[#005EB8] hover:underline font-mono">21969323</a>
                     </div>
                 </div>
             )}
