@@ -46,6 +46,21 @@ export async function generateMetadata({ params }: Props) {
             title: `${targetPart.partNumber} ${targetPart.brand} Specs`,
             description: `Verified specs for ${targetPart.brand} ${targetPart.partNumber}. In stock at 3 regional hubs.`,
             type: 'article',
+        },
+        alternates: {
+            canonical: `https://nexgenspares.com/${resolvedParams.locale}/p/${resolvedParams.slug}`,
+            languages: {
+                'en': `https://nexgenspares.com/en/p/${resolvedParams.slug}`,
+                'es': `https://nexgenspares.com/es/p/${resolvedParams.slug}`,
+                'fr': `https://nexgenspares.com/fr/p/${resolvedParams.slug}`,
+                'pt': `https://nexgenspares.com/pt/p/${resolvedParams.slug}`,
+                'id': `https://nexgenspares.com/id/p/${resolvedParams.slug}`,
+                'hi': `https://nexgenspares.com/hi/p/${resolvedParams.slug}`,
+                'ar': `https://nexgenspares.com/ar/p/${resolvedParams.slug}`,
+                'zh': `https://nexgenspares.com/zh/p/${resolvedParams.slug}`,
+                'ja': `https://nexgenspares.com/ja/p/${resolvedParams.slug}`,
+                'ru': `https://nexgenspares.com/ru/p/${resolvedParams.slug}`,
+            }
         }
     };
 }
