@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import createMiddleware from 'next-intl/middleware';
+import { routing } from './i18n/routing';
 
 // Simple in-memory rate limiter
 const rateLimit = new Map<string, { count: number; resetTime: number }>()
@@ -36,8 +38,8 @@ function checkRateLimit(key: string): boolean {
     return true
 }
 
-export function middleware(request: NextRequest) {
-    // Only rate limit API routes
+export default async function middleware(request: NextRequest) {
+    // 1. Rate Limit API Routes First
     if (request.nextUrl.pathname.startsWith('/api/')) {
         const key = getRateLimitKey(request)
 
@@ -47,11 +49,20 @@ export function middleware(request: NextRequest) {
                 { status: 429 }
             )
         }
+        // API routes don't use next-intl middleware, just return next()
+        // OR we can let them pass if we want localization in API, but usually not needed for pure data endpoints unless we access cookies.
+        return NextResponse.next();
     }
 
-    return NextResponse.next()
+    // 2. Handle Internationalization for all other routes
+    const handleI18n = createMiddleware(routing);
+    const response = handleI18n(request);
+
+    return response;
 }
 
 export const config = {
-    matcher: '/api/:path*',
-}
+    // Match only internationalized pathnames
+    // Skip all internal paths (_next, api, assets, favicon, etc.)
+    matcher: ['/((?!api|_next|.*\\..*).*)', '/']
+};

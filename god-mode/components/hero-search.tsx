@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Search, FileSpreadsheet, ArrowRight, MessageCircle, Loader2 } from "lucide-react";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { useRouter } from "@/i18n/routing";
+// import Link from "next/link"; // REMOVED - Using localized Link
+import { useRouter, Link } from "@/i18n/routing";
 
 type Suggestion = {
     id: string;

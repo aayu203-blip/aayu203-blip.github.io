@@ -5,6 +5,7 @@ import { DownloadButton } from "@/components/download-button";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 import { ViewToggle } from "@/components/view-toggle";
 import { RelatedParts } from "@/components/related-parts";
+import { ShippingEstimator } from "@/components/shipping-estimator";
 import { ShieldCheck, Truck, Search, ChevronRight, FileText, Printer, Share2 } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -342,7 +343,8 @@ export default async function ProductPage({ params }: Props) {
                                     <Truck size={14} />
                                     <span className="font-bold text-slate-700">Shipping Estimate:</span>
                                 </div>
-                                <p>Next Day Air to <span className="underline decoration-dotted">San Francisco, CA</span> available.</p>
+                                <ShippingEstimator />
+                                <p>Next Day Air available.</p>
                             </div>
 
                             <div className="mt-6 bg-blue-50 p-4 border border-blue-100 text-xs text-blue-900 mode-engineering-only">
