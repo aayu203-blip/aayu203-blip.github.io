@@ -1,7 +1,7 @@
 'use client'
 
 import { Part, slugify } from '@/lib/utils'
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
 import { ArrowRight } from 'lucide-react'
 
 export function RelatedParts({ currentPart, allParts }: {
