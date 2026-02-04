@@ -1,6 +1,6 @@
 export const MACHINERY_BRANDS = [
     // Tier 1: Major Brands (Have Data)
-    { name: 'Volvo', slug: 'volvo', logo: '🔵', partCount: 8500, tier: 1 },
+    { name: 'Volvo', slug: 'volvo', logo: '🔵', partCount: 1584, tier: 1 },
     { name: 'Scania', slug: 'scania', logo: '🔴', partCount: 7200, tier: 1 },
     { name: 'Caterpillar', slug: 'caterpillar', logo: '🟡', partCount: 3100, tier: 1 },
     { name: 'Komatsu', slug: 'komatsu', logo: '🟠', partCount: 1800, tier: 1 },

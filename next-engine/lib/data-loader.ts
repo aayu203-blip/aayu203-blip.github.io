@@ -27,7 +27,7 @@ export async function getParts(): Promise<Part[]> {
     // 1. Convert Static DB
     const staticParts = (STATIC_DB as any[]).map(p => ({
         id: `static-${p.id}`,
-        name: p.name,
+        name: p.name || p.product_name || "Unknown Part",
         partNumber: p.partNumber || p.id,
         brand: p.brand || "Volvo", // Default to Volvo if missing
         description: p.description || "",

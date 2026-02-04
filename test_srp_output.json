@@ -1,0 +1,19 @@
+[
+  {
+    "part_number": "11102474",
+    "url": "https://srp.com.tr/volvo/11102474",
+    "scraped_at": "2026-02-02 13:29:07",
+    "part_name": "DRIVE GEAR SET",
+    "volvo_oe_reference": "11102474",
+    "srp_part_number": "DGS-02474",
+    "weight": "72 KG",
+    "suitable_for": "Volvo OE Reference:",
+    "compatible_models": [
+      "L250G",
+      "L220F",
+      "L220D",
+      "L220G",
+      "L220E"
+    ]
+  }
+]
