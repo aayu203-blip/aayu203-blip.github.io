@@ -26,9 +26,9 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
     // Generate URLs for *ALL* locales for these parts
     const productPages: MetadataRoute.Sitemap = []
 
-    // DEBUG ENTRY (Temporary: Diagnose empty sitemap)
+    // DEBUG ENTRY (Refined diagnosis)
     productPages.push({
-        url: `${baseUrl}/debug/sitemap-${safeId}-total-${parts.length}-batch-${currentBatch.length}`,
+        url: `${baseUrl}/debug/sitemap-idTYPE-${typeof id}-val-${String(id)}-safe-${safeId}-total-${parts.length}-batch-${currentBatch.length}`,
         lastModified: new Date(),
         changeFrequency: 'daily',
         priority: 0.1,
