@@ -3,7 +3,7 @@ import { getParts, slugify } from '@/lib/data-loader'
 import { getAllPosts } from '@/lib/blog'
 import { routing } from '@/i18n/routing'
 
-const PARTS_PER_SITEMAP = 2500; // 2500 parts * 10 languages = 25,000 URLs (Safe under 50k limit)
+const PARTS_PER_SITEMAP = 500; // 500 parts * 10 languages = 5,000 URLs (Performance Optimized)
 
 export async function generateSitemaps() {
     const parts = await getParts()
