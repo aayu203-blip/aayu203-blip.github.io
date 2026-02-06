@@ -9,30 +9,25 @@ export async function generateSitemaps() {
     const parts = await getParts()
     const totalSitemaps = Math.ceil(parts.length / PARTS_PER_SITEMAP)
 
-    // Generate IDs: [{ id: 0 }, { id: 1 }, ...]
-    return Array.from({ length: totalSitemaps }, (_, i) => ({ id: i }))
+    // Generate IDs as STRINGS to ensure checking consistency
+    return Array.from({ length: totalSitemaps }, (_, i) => ({ id: i.toString() }))
 }
 
-export default async function sitemap({ id }: { id: number }): Promise<MetadataRoute.Sitemap> {
+export default async function sitemap({ id }: { id: string }): Promise<MetadataRoute.Sitemap> {
     const parts = await getParts()
     const baseUrl = 'https://nexgenspares.com'
 
+    // Robust ID parsing
+    const numericId = parseInt(id, 10);
+    const safeId = isNaN(numericId) ? 0 : numericId;
+
     // Slice data for this specific sitemap ID
-    const safeId = Number(id);
     const start = safeId * PARTS_PER_SITEMAP
     const end = start + PARTS_PER_SITEMAP
     const currentBatch = parts.slice(start, end)
 
     // Generate URLs for *ALL* locales for these parts
     const productPages: MetadataRoute.Sitemap = []
-
-    // DEBUG ENTRY (Refined diagnosis)
-    productPages.push({
-        url: `${baseUrl}/debug/sitemap-idTYPE-${typeof id}-val-${String(id)}-safe-${safeId}-total-${parts.length}-batch-${currentBatch.length}`,
-        lastModified: new Date(),
-        changeFrequency: 'daily',
-        priority: 0.1,
-    })
 
     for (const part of currentBatch) {
         for (const locale of routing.locales) {
