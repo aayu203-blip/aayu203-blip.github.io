@@ -18,12 +18,21 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
     const baseUrl = 'https://nexgenspares.com'
 
     // Slice data for this specific sitemap ID
-    const start = id * PARTS_PER_SITEMAP
+    const safeId = Number(id);
+    const start = safeId * PARTS_PER_SITEMAP
     const end = start + PARTS_PER_SITEMAP
     const currentBatch = parts.slice(start, end)
 
     // Generate URLs for *ALL* locales for these parts
     const productPages: MetadataRoute.Sitemap = []
+
+    // DEBUG ENTRY (Temporary: Diagnose empty sitemap)
+    productPages.push({
+        url: `${baseUrl}/debug/sitemap-${safeId}-total-${parts.length}-batch-${currentBatch.length}`,
+        lastModified: new Date(),
+        changeFrequency: 'daily',
+        priority: 0.1,
+    })
 
     for (const part of currentBatch) {
         for (const locale of routing.locales) {
