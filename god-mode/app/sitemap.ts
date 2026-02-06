@@ -40,8 +40,8 @@ export default async function sitemap({ id }: { id: string }): Promise<MetadataR
         }
     }
 
-    // Include Static Pages & Blog ONLY in the first sitemap (id 0) to avoid duplication
-    if (id === 0) {
+    // Include Static Pages & Blog ONLY in the first sitemap (safeId 0) to avoid duplication
+    if (safeId === 0) {
         const posts = await getAllPosts()
 
         // Blog Posts (Localized)
