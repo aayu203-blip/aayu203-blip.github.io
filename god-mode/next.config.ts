@@ -15,6 +15,16 @@ const nextConfig: NextConfig = {
   // Compression
   compress: true,
 
+  // Rewrites
+  async rewrites() {
+    return [
+      {
+        source: '/sitemap.xml',
+        destination: '/sitemap-index.xml',
+      },
+    ];
+  },
+
   // Headers for security and caching
   async headers() {
     return [
