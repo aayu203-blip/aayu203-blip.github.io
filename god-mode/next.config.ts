@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/sitemap.xml',
-        destination: '/sitemap-index.xml',
+        destination: '/api/sitemap-index',
       },
     ];
   },

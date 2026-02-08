@@ -1,5 +1,7 @@
 import { getParts } from '@/lib/data-loader';
 
+export const dynamic = 'force-dynamic'; // Ensure no caching issues
+
 const PARTS_PER_SITEMAP = 500;
 
 export async function GET() {
