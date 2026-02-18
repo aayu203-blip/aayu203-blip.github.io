@@ -411,7 +411,7 @@ def extract_metadata(html_text: str, part_number: str) -> dict:
     ptc_match = re.search(r'PTC\s+Number[: ]+([A-Za-z0-9-]+)', soup.get_text(" "))
     if ptc_match:
         ptc_number = ptc_match.group(1).strip()
-    if not ptc_number:
+    if not ptc_number or ptc_number == 'PTS2624':
         ptc_number = f'PTC{part_number}'
 
     table_data = {}
@@ -599,7 +599,7 @@ def render_html(context: dict) -> str:
             elif label == 'Alternate Part Numbers':
                 cells[i + 1].string = context['alternate']
             elif label == 'Measurements':
-                cells[i + 1].string = context['measurements']
+                cells[i + 1].string = context['measurements'] or '-'
             elif label == 'Category':
                 cells[i + 1].string = context['category_label']
 
@@ -661,6 +661,16 @@ def process_category(category_key: str) -> int:
         print(f"[skip] Directory missing: {dir_path}")
         return 0
     processed = 0
+
+    # Load enriched data if available
+    enriched_data = {}
+    try:
+        with open('enriched_product_data.json', 'r') as f:
+            enriched_data = json.load(f)
+            print("Loaded enriched data.")
+    except Exception as e:
+        print(f"No enriched data found or error loading: {e}")
+
     for html_path in sorted(dir_path.glob('*.html')):
         name = html_path.name
         if any(marker in name for marker in ('-modern', '-sku')):
@@ -691,6 +701,18 @@ def process_category(category_key: str) -> int:
             'page_title': f"Scania {metadata['part_label']} {part_number} | {cfg['category_label']} | PTC",
             'og_title': f"Scania {metadata['part_label']} {part_number}",
         }
+
+        # --- AI ENRICHMENT OVERRIDE ---
+        if part_number in enriched_data:
+            print(f"  [AI] Applying enriched data for {part_number}")
+            ed = enriched_data[part_number]
+            if 'description' in ed: context['description'] = ed['description']
+            if 'features' in ed: context['features'] = ed['features']
+            if 'application' in ed: context['application'] = ed['application']
+            if 'part_label' in ed: context['part_label'] = ed['part_label']
+            if 'measurements' in ed: context['measurements'] = ed['measurements']
+        # ------------------------------
+
         html_output = render_html(context)
         html_path.write_text(html_output, encoding='utf-8')
         processed += 1

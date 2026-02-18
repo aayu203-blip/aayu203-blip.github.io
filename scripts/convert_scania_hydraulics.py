@@ -39,7 +39,7 @@ def extract_source_metadata(html_text: str, part_number: str) -> dict:
     ptc_match = re.search(r'PTC\s+Number[: ]+([A-Za-z0-9-]+)', soup.get_text(" "))
     if ptc_match:
         ptc_number = ptc_match.group(1).strip()
-    if not ptc_number:
+    if not ptc_number or ptc_number == 'PTS2624':
         ptc_number = f'PTC{part_number}'
 
     table_data = {}
@@ -191,12 +191,12 @@ def render_html(context: dict) -> str:
     h1 = soup.find('h1')
     if h1:
         h1.string = f"Scania {part_label} {part_number}"
-    part_p = soup.find(string=re.compile('Part Number'))
-    if part_p and part_p.parent.name == 'p':
-        part_p.parent.string = f"Part Number: {part_number}"
-    ptc_p = soup.find(string=re.compile('PTC Number'))
-    if ptc_p and ptc_p.parent.name == 'p':
-        ptc_p.parent.string = f"PTC Number: {context['ptc_number']}"
+    part_p = soup.find(attrs={'data-part-number': True})
+    if part_p:
+        part_p.string = f"Part Number: {part_number}"
+    ptc_p = soup.find(attrs={'data-ptc-number': True})
+    if ptc_p:
+        ptc_p.string = f"PTC Number: {context['ptc_number']}"
     desc_p = soup.find('p', {'class': 'text-gray-700 leading-relaxed'})
     if desc_p:
         desc_p.string = context['description']
@@ -215,7 +215,7 @@ def render_html(context: dict) -> str:
             elif label == 'Alternate Part Numbers':
                 cells[i + 1].string = context['alternate']
             elif label == 'Measurements':
-                cells[i + 1].string = context['measurements']
+                cells[i + 1].string = context['measurements'] or '-'
 
     collapsed = soup.find('p', {'class': 'text-sm text-gray-700 mb-4 text-center'})
     if collapsed:
@@ -230,6 +230,14 @@ def render_html(context: dict) -> str:
     quote_btn = soup.find('button', {'id': 'submit-quote-btn'})
     if quote_btn:
         quote_btn['onclick'] = f"submitQuote('{part_number}', 'Scania {part_label} {part_number}', 'Scania', 'Hydraulic Systems & Connectors')"
+        quote_panel = quote_btn.find_parent('div', class_='premium-quote-panel')
+        if quote_panel:
+            cta_title = quote_panel.find('h3')
+            if cta_title:
+                cta_title.string = f"Scania {part_label} {part_number}"
+            cta_part = quote_panel.find('p', string=re.compile(r'Part #', re.IGNORECASE))
+            if cta_part:
+                cta_part.string = f"Part #{part_number}"
     whatsapp_float = soup.find('a', {'class': 'whatsapp-float'})
     if whatsapp_float:
         whatsapp_float['onclick'] = f"requestQuoteOnWhatsApp('{part_number}', 'Scania {part_label} {part_number}', 'Scania', 'Hydraulic Systems & Connectors', '{context['application']}')"
@@ -267,6 +275,15 @@ def main():
     if not BASE_TEMPLATE_PATH.exists():
         raise SystemExit('Base template missing; create templates/scania-hydraulics-base.html first.')
     processed = 0
+    # Load enriched data if available
+    enriched_data = {}
+    try:
+        with open('enriched_product_data.json', 'r') as f:
+            enriched_data = json.load(f)
+            print("Loaded enriched data.")
+    except Exception as e:
+        print(f"No enriched data found or error loading: {e}")
+
     for html_path in sorted(SCANIA_HYD_DIR.glob('*.html')):
         name = html_path.name
         if '-modern' in name or '-sku' in name or name == '302624.html':
@@ -291,6 +308,19 @@ def main():
             'page_title': f"Scania {metadata['part_label']} {part_number} | Hydraulic Systems & Connectors | PTC",
             'og_title': f"Scania {metadata['part_label']} {part_number} | Hydraulic Connectors",
         }
+
+
+        # --- AI ENRICHMENT OVERRIDE ---
+        if part_number in enriched_data:
+            print(f"  [AI] Applying enriched data for {part_number}")
+            ed = enriched_data[part_number]
+            if 'description' in ed: context['description'] = ed['description']
+            if 'features' in ed: context['features'] = ed['features']
+            if 'application' in ed: context['application'] = ed['application']
+            if 'part_label' in ed: context['part_label'] = ed['part_label']
+            if 'measurements' in ed: context['measurements'] = ed['measurements']
+        # ------------------------------
+
         html_output = render_html(context)
         html_path.write_text(html_output, encoding='utf-8')
         processed += 1
