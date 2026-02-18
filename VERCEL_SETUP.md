@@ -20,7 +20,7 @@ Since your main site is static HTML and weaver-game is Next.js, you need to conf
    - **Output Directory**: `weaver-game/.next`
 
 6. **Go to Settings → Environment Variables**
-   - Add: `GEMINI_API_KEY` = `AIzaSyBBb94IbmgKmnRG6FJRcTlnfP2NQZrnMU0`
+   - Add: `GEMINI_API_KEY` = `[YOUR_API_KEY_HERE]` (get from Google AI Studio)
    - Select all environments (Production, Preview, Development)
 
 7. **Redeploy** or push a new commit to trigger deployment
@@ -42,4 +42,5 @@ If the above doesn't work, deploy weaver-game as a separate Vercel project:
 Visit: **https://partstrading.com/weaver**
 
 The code is ready - just needs Vercel configuration! 🚀
+
 

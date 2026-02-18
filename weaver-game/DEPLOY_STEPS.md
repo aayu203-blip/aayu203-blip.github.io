@@ -1,7 +1,7 @@
 # 🚀 Deployment Steps for Weaver Game
 
-## Your API Key is Ready!
-API Key: `AIzaSyBBb94IbmgKmnRG6FJRcTlnfP2NQZrnMU0`
+## Your API Key
+Get your API key from Google AI Studio: https://aistudio.google.com/apikey
 
 ## Step 1: Deploy Weaver Game to Vercel
 
@@ -34,7 +34,7 @@ API Key: `AIzaSyBBb94IbmgKmnRG6FJRcTlnfP2NQZrnMU0`
    - Click "Environment Variables"
    - Add:
      - **Name:** `GEMINI_API_KEY`
-     - **Value:** `AIzaSyBBb94IbmgKmnRG6FJRcTlnfP2NQZrnMU0`
+     - **Value:** `[YOUR_API_KEY_HERE]` (get from Google AI Studio)
    - Select: ✅ Production, ✅ Preview, ✅ Development
    - Click "Add"
 
@@ -50,7 +50,7 @@ cd weaver-game
 npm install -g vercel
 vercel login
 vercel env add GEMINI_API_KEY production
-# When prompted, paste: AIzaSyBBb94IbmgKmnRG6FJRcTlnfP2NQZrnMU0
+# When prompted, paste: [YOUR_API_KEY_HERE] (get from Google AI Studio)
 vercel env add GEMINI_API_KEY preview
 # Paste the same key
 vercel env add GEMINI_API_KEY development

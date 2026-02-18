@@ -1,4 +1,6 @@
-GEMINI_API_KEY=AIzaSyBBb94IbmgKmnRG6FJRcTlnfP2NQZrnMU0
+GEMINI_API_KEY=[YOUR_API_KEY_HERE]
 
-Use this API key when setting up environment variables in Vercel.
+⚠️ SECURITY: Never commit API keys to version control!
+Get your API key from Google AI Studio: https://aistudio.google.com/apikey
+Set it as an environment variable in Vercel dashboard.
 

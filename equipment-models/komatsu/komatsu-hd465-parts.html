@@ -1185,7 +1185,7 @@ Disclaimer: All brand names, logos, images, and part numbers used on this websit
         function sendFormWithEmailJS(form, formData, submitButton, originalText) {
             try {
                 if (typeof emailjs !== 'undefined') {
-                    emailjs.sendForm('service_zizi36t', 'template_yesevuc', form)
+                    emailjs.sendForm('service_zizi36t', 'template_yesevuc', form, 's6jWMEYpe-XNRS88_')
                         .then(function(response) {
                             console.log('EmailJS success:', response);
                             showSuccessMessage(submitButton, originalText, form);

@@ -22,7 +22,7 @@ Since your main site is static HTML and weaver-game is Next.js, you need to conf
 3. **Settings** → **General** → **Root Directory**
 4. Set Root Directory to: `weaver-game`
 5. **Settings** → **Environment Variables**
-6. Add: `GEMINI_API_KEY` = `AIzaSyBBb94IbmgKmnRG6FJRcTlnfP2NQZrnMU0`
+6. Add: `GEMINI_API_KEY` = `[YOUR_API_KEY_HERE]` (get from Google AI Studio)
 7. Redeploy
 
 **Note:** This will make Vercel treat `weaver-game` as the root, so your static HTML files won't be served. 
@@ -56,4 +56,5 @@ Visit: **https://partstrading.com/weaver**
 ---
 
 **I recommend Option 2** - it's cleaner and allows both sites to work properly! 🚀
+
 

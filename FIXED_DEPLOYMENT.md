@@ -10,3 +10,6 @@ I removed the `basePath: '/weaver'` from next.config.js because the weaver-game 
 
 The deployment will auto-redeploy with the fix. Once it's done, the game will work at the root of that URL.
 
+
+
+

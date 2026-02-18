@@ -4,9 +4,10 @@
 
 2. **Make sure Environment Variable is set**:
    - Settings → Environment Variables
-   - `GEMINI_API_KEY` = `AIzaSyBBb94IbmgKmnRG6FJRcTlnfP2NQZrnMU0`
+   - `GEMINI_API_KEY` = `[YOUR_API_KEY_HERE]` (get from Google AI Studio)
 
 3. **That's it!** The build will work now.
 
 Everything is fixed and pushed. Just redeploy!
+
 

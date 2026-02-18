@@ -17,7 +17,7 @@
    - Click "Environment Variables" section
    - Click "Add"
    - Key: `GEMINI_API_KEY`
-   - Value: `AIzaSyBBb94IbmgKmnRG6FJRcTlnfP2NQZrnMU0`
+   - Value: `[YOUR_API_KEY_HERE]` (get from Google AI Studio)
    - Check: Production, Preview, Development
    - Click "Add"
 
@@ -32,4 +32,5 @@
 You'll need to add rewrites to your MAIN project (the one connected to partstrading.com) to route `/weaver` to this new deployment.
 
 But first, let's get this deployed! Follow the steps above. ✅
+
 

@@ -34,3 +34,15 @@ npm-debug.log*
 
 # Node modules (if any)
 node_modules/
+
+# API Keys and sensitive files
+*API_KEY*.txt
+*API_KEY*.json
+*api_key*.txt
+*api_key*.json
+.env
+.env.local
+.env.*.local
+*secret*
+*SECRET*
+vercel-project.json

@@ -24,7 +24,7 @@ Since `partstrading.com` is connected to this repository, you need to configure 
 6. Go to **Settings** → **Environment Variables**
 7. Add:
    - **Key**: `GEMINI_API_KEY`
-   - **Value**: `AIzaSyBBb94IbmgKmnRG6FJRcTlnfP2NQZrnMU0`
+   - **Value**: `[YOUR_API_KEY_HERE]` (get from Google AI Studio)
    - Select: ✅ Production, ✅ Preview, ✅ Development
    - Click **Save**
 
@@ -52,4 +52,5 @@ Once configured and deployed, the weaver game will be available at:
 - If `/weaver` returns 404, check that the Root Directory is set to `weaver-game` in Vercel settings
 - If API calls fail, verify the `GEMINI_API_KEY` environment variable is set
 - Check Vercel build logs to ensure the Next.js app builds successfully
+
 

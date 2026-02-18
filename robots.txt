@@ -10,6 +10,7 @@ Sitemap: https://partstrading.com/sitemap-blog.xml
 Sitemap: https://partstrading.com/sitemap-products-1.xml
 Sitemap: https://partstrading.com/sitemap-products-2.xml
 Sitemap: https://partstrading.com/sitemap-products-3.xml
+Sitemap: https://partstrading.com/sitemap-digital-empire.xml
 
 # Allow all search engines to crawl the site
 User-agent: Googlebot
