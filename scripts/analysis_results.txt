@@ -1,0 +1,62 @@
+--- Analyzing Model Clusters from parts-database.json ---
+Loaded 18724 parts.
+
+--- BRAND SUMMARY ---
+Caterpillar: 13833
+Scania: 1712
+Volvo: 1584
+Komatsu: 1499
+---------------------
+
+BRAND           | MODEL                | CATEGORY                       | COUNT
+--------------------------------------------------------------------------------
+Caterpillar     | Generic              |                                | 13833
+Komatsu         | Generic              |                                | 1499 
+Scania          | P410                 |                                | 558  
+Scania          | P410                 | General Accessories            | 398  
+Volvo           | Generic              | General Accessories            | 209  
+Volvo           | Generic              |                                | 178  
+Scania          | G440                 |                                | 176  
+Scania          | G440                 | General Accessories            | 140  
+Volvo           | FMX480               |                                | 123  
+Scania          | Generic              | General Accessories            | 87   
+Scania          | Generic              |                                | 80   
+Scania          | P440                 |                                | 80   
+Scania          | P440                 | General Accessories            | 77   
+Volvo           | FMX480               | General Accessories            | 70   
+Volvo           | Generic              | Fasteners & Hardware           | 45   
+Volvo           | Generic              | Drivetrain                     | 38   
+Volvo           | FMX500               |                                | 36   
+Volvo           | FMX500               | General Accessories            | 33   
+Volvo           | Generic              | Engine Components              | 26   
+Volvo           | Generic              | Electrical & Electronics       | 20   
+Scania          | P380                 | General Accessories            | 17   
+Scania          | P380                 |                                | 15   
+Volvo           | FMX 440 / FMX 460    |                                | 13   
+Volvo           | VOLVO FMX 460        |                                | 13   
+Volvo           | Generic              | Hydraulic Systems              | 11   
+Volvo           | T450D                | General Accessories            | 11   
+Volvo           | VOLVO FMX- 440/460   |                                | 10   
+Volvo           | VOLVO FMX-440/460    |                                | 9    
+Volvo           | T450D                | Drivetrain                     | 9    
+Volvo           | Generic              | Filtration & Maintenance       | 8    
+Volvo           | VOLVO FMX440 / 460 I SHIFT |                                | 8    
+Volvo           | L220F, L220D, L260H, L180E, L180, L150C, L150, L180C, L180H, L150G | Fasteners & Hardware           | 8    
+Scania          | G440Ht               | General Accessories            | 7    
+Volvo           | VOLVO FMX 440 I-SHIFT / VOLVO FMX 460 |                                | 7    
+Volvo           | T450D                | Fasteners & Hardware           | 7    
+Volvo           | G730, G940C, G780, G946C, G780B, G726, G710, G710B, G940, G736 | General Accessories            | 7    
+Scania          | P410                 | Hydraulics                     | 6    
+Scania          | P410                 | Transmission                   | 6    
+Volvo           | Generic              | Transmission                   | 6    
+Volvo           | FMX480               | Transmission                   | 6    
+Volvo           | VOLVO FMX 440 / VOLVO FMX 460 |                                | 6    
+Volvo           | L120D, L120C, L110F, L220F, L220D, L260H, L180E, L180, L150C, L150 | Fasteners & Hardware           | 6    
+Volvo           | L220H, L220F, L220D, L220G, L220E | General Accessories            | 6    
+Scania          | P440Ht               |                                | 5    
+Scania          | G440Ht               |                                | 5    
+Volvo           | VOLVO FMX-440/460    | General Accessories            | 5    
+Volvo           | VOLVO FMX 440 I SHIFT / VOLVO FMX 460 |                                | 5    
+Volvo           | G946B, G970, G960, G946, G940, G930, G940B, G976, G960B, G930B | Engine Components              | 5    
+Volvo           | L110F, L220F, L260H, L110G, L180H, L150G, L250G, L120F, L180F, L150H | Electrical & Electronics       | 5    
+Volvo           | C950E, C750D, L350F, C750E, C700B, C700C | General Accessories            | 5    

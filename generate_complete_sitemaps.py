@@ -121,6 +121,61 @@ def generate_equipment_sitemap():
         return count
     return 0
 
+def generate_landing_sitemaps():
+    """Generate sitemaps for special landing pages (Diagnostic, Intercept, Local)"""
+    urls = []
+    
+    # 1. Diagnostic Pages
+    diag_path = Path('pages/diagnostic')
+    if diag_path.exists():
+        for page in diag_path.glob('*.html'):
+            urls.append({
+                'loc': f'{BASE_URL}/pages/diagnostic/{page.name}',
+                'lastmod': TODAY,
+                'changefreq': 'weekly',
+                'priority': '0.8'
+            })
+
+    # 2. Intercept Pages (Competitor Cross-Reference)
+    intercept_path = Path('pages/intercept')
+    if intercept_path.exists():
+        for page in intercept_path.glob('*.html'):
+             urls.append({
+                'loc': f'{BASE_URL}/pages/intercept/{page.name}',
+                'lastmod': TODAY,
+                'changefreq': 'weekly',
+                'priority': '0.7'
+            })
+
+    # 3. Local Pages (Global Hubs)
+    local_path = Path('pages/local')
+    if local_path.exists():
+        for page in local_path.glob('*.html'):
+             urls.append({
+                'loc': f'{BASE_URL}/pages/local/{page.name}',
+                'lastmod': TODAY,
+                'changefreq': 'monthly',
+                'priority': '0.8'
+            })
+
+    # 4. Model Hub Pages
+    models_path = Path('pages/models')
+    if models_path.exists():
+        for page in models_path.glob('*.html'):
+             if page.name == "template_model.html": continue
+             urls.append({
+                'loc': f'{BASE_URL}/pages/models/{page.name}',
+                'lastmod': TODAY,
+                'changefreq': 'weekly',
+                'priority': '0.9'
+            })
+            
+    if urls:
+        count = create_sitemap_xml(urls, 'sitemap-landings.xml')
+        print(f"✓ sitemap-landings.xml: {count} URLs")
+        return count
+    return 0
+
 def generate_product_sitemaps():
     """Generate sitemaps for product pages (split into multiple files)"""
     # Collect all product URLs from various locations
@@ -257,6 +312,13 @@ def main():
     if count > 0:
         total_urls += count
         all_sitemaps.append('sitemap-models.xml')
+
+    # Generate landing pages sitemap (Diagnostic, Intercept, Local)
+    print("\nGenerating landing pages sitemap...")
+    count = generate_landing_sitemaps()
+    if count > 0:
+        total_urls += count
+        all_sitemaps.append('sitemap-landings.xml')
     
     # Generate product sitemaps
     print("\nGenerating product sitemaps...")

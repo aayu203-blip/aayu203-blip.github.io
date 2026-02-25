@@ -1,0 +1,62 @@
+--- Analyzing Model Clusters from parts-database.json ---
+Loaded 18724 parts.
+
+--- BRAND SUMMARY ---
+Caterpillar: 13833
+Scania: 1712
+Volvo: 1584
+Komatsu: 1499
+---------------------
+
+BRAND           | MODEL                | CATEGORY                       | COUNT
+--------------------------------------------------------------------------------
+Caterpillar     | Generic              |                                | 10937
+Komatsu         | Generic              |                                | 1078 
+Scania          | P410                 |                                | 559  
+Scania          | P410                 | General Accessories            | 398  
+Volvo           | Generic              | General Accessories            | 178  
+Scania          | G440                 |                                | 176  
+Volvo           | Generic              |                                | 144  
+Scania          | G440                 | General Accessories            | 140  
+Volvo           | FMX480               |                                | 123  
+Caterpillar     | 3306                 |                                | 98   
+Scania          | P440                 |                                | 80   
+Scania          | P440                 | General Accessories            | 77   
+Caterpillar     | 3116                 |                                | 72   
+Volvo           | FMX480               | General Accessories            | 70   
+Caterpillar     | 3208                 |                                | 69   
+Scania          | Generic              | General Accessories            | 68   
+Scania          | Generic              |                                | 58   
+Caterpillar     | C9                   |                                | 56   
+Caterpillar     | 3054                 |                                | 53   
+Caterpillar     | 3066                 |                                | 52   
+Volvo           | Generic              | Fasteners & Hardware           | 45   
+Caterpillar     | 3204                 |                                | 44   
+Volvo           | Generic              | Drivetrain                     | 38   
+Caterpillar     | 3054, 3056           |                                | 37   
+Volvo           | FMX500               |                                | 36   
+Caterpillar     | 3046                 |                                | 36   
+Volvo           | FMX500               | General Accessories            | 33   
+Caterpillar     | 3406                 |                                | 31   
+Caterpillar     | C13                  |                                | 31   
+Caterpillar     | C15                  |                                | 31   
+Caterpillar     | D342                 |                                | 31   
+Caterpillar     | 3508, 3508B, 3508C, 3512, 3512B, 3512C, 3516, 3516B, 3516C |                                | 31   
+Caterpillar     | 3304, 3306           |                                | 30   
+Caterpillar     | D353                 |                                | 28   
+Volvo           | Generic              | Engine Components              | 26   
+Caterpillar     | 3304                 |                                | 26   
+Caterpillar     | 3114, 3116           |                                | 26   
+Caterpillar     | D315                 |                                | 25   
+Caterpillar     | 3064, 3066           |                                | 25   
+Caterpillar     | 3408                 |                                | 24   
+Caterpillar     | 3406B                |                                | 23   
+Caterpillar     | 3208, 3208T          |                                | 23   
+Caterpillar     | 3204, 3208           |                                | 21   
+Volvo           | Generic              | Electrical & Electronics       | 20   
+Caterpillar     | C4.4                 |                                | 20   
+Caterpillar     | C7.1                 |                                | 19   
+Caterpillar     | 3412                 |                                | 19   
+Caterpillar     | 3406e                |                                | 19   
+Caterpillar     | 3508, 3512, 3516     |                                | 19   
+Caterpillar     | 3406, 3408, 3412     |                                | 18   

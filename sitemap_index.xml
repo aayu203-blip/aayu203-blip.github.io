@@ -2,26 +2,30 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://partstrading.com/sitemap-main.xml</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-02-17</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-blog.xml</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-02-17</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-models.xml</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-02-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-landings.xml</loc>
+    <lastmod>2026-02-17</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-products-1.xml</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-02-17</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-products-2.xml</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-02-17</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-products-3.xml</loc>
-    <lastmod>2025-11-17</lastmod>
+    <lastmod>2026-02-17</lastmod>
   </sitemap>
 </sitemapindex>

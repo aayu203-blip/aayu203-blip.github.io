@@ -11,12 +11,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 // --- HELPER ISOLATED ---
-function parseSlug(slug: string): { brand: string, partNumber: string } {
-    const parts = slug.split('-');
-    const brand = parts[0];
-    const partNumber = parts.slice(1).join('-');
-    return { brand, partNumber };
-}
+// Removed parseSlug to avoid mismatch. We now match by fully reconstructing the slug.
 
 type Props = {
     params: Promise<{ slug: string, locale: string }>
@@ -24,13 +19,14 @@ type Props = {
 
 export async function generateMetadata({ params }: Props) {
     const resolvedParams = await params;
-    const { brand, partNumber } = parseSlug(resolvedParams.slug);
     const parts = await getParts(resolvedParams.locale);
-    const targetPart = parts.find(p =>
-        p.partNumber && p.brand &&
-        String(p.partNumber).toLowerCase().replace(/[^a-z0-9]/g, '') === partNumber.toLowerCase().replace(/[^a-z0-9]/g, '') &&
-        String(p.brand).toLowerCase() === brand.toLowerCase()
-    );
+
+    // Robust Matching Strategy: Reconstruct slug for each part and compare
+    // This handles brands with spaces/hyphens correctly (e.g. "Mercedes-Benz" -> "mercedes-benz")
+    const targetPart = parts.find(p => {
+        const expectedSlug = `${slugify(p.brand)}-${slugify(p.partNumber)}`;
+        return expectedSlug === resolvedParams.slug;
+    });
 
     if (!targetPart) {
         return {
@@ -67,15 +63,15 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function ProductPage({ params }: Props) {
     const resolvedParams = await params;
-    const { brand, partNumber } = parseSlug(resolvedParams.slug);
 
     // FETCH DATA
     const parts = await getParts(resolvedParams.locale);
-    const targetPart = parts.find(p =>
-        p.partNumber && p.brand &&
-        String(p.partNumber).toLowerCase().replace(/[^a-z0-9]/g, '') === partNumber.toLowerCase().replace(/[^a-z0-9]/g, '') &&
-        String(p.brand).toLowerCase() === brand.toLowerCase()
-    );
+
+    // Robust Matching Strategy
+    const targetPart = parts.find(p => {
+        const expectedSlug = `${slugify(p.brand)}-${slugify(p.partNumber)}`;
+        return expectedSlug === resolvedParams.slug;
+    });
 
     if (!targetPart) {
         return notFound();
