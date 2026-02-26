@@ -8,7 +8,13 @@ hi/
 ru/
 zh/
 blog/
+
+# Ignore root-level generated HTML clutter but allow pages/ directory
 *.html
+!pages/**/*.html
+!pages/*.html
+!index.html
+!404.html
 
 # Ignore large data files (unless essential seed data)
 # data/
