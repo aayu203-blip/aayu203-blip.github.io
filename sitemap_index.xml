@@ -52,4 +52,28 @@
     <loc>https://partstrading.com/sitemap-intercept.xml</loc>
     <lastmod>2026-02-26</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-landings.xml</loc>
+    <lastmod>2026-02-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-models.xml</loc>
+    <lastmod>2026-02-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-blog.xml</loc>
+    <lastmod>2026-02-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-products-1.xml</loc>
+    <lastmod>2026-02-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-products-2.xml</loc>
+    <lastmod>2026-02-26</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-products-3.xml</loc>
+    <lastmod>2026-02-26</lastmod>
+  </sitemap>
 </sitemapindex>
