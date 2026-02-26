@@ -111,7 +111,7 @@ def get_tco_comparison():
                     <h4 class="font-bold text-gray-900 mb-3 flex items-center gap-2"><svg class="w-4 h-4 text-green-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> PTC Tier-1 Aftermarket (New)</h4>
                     <ul class="text-sm text-gray-800 space-y-2 font-medium">
                         <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> CNC Machined to Exact OEM Specs</li>
-                        <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Full 6-Month International Warranty</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Verified Aftermarket Reliability</li>
                         <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Eliminates unpredicted fleet downtime</li>
                     </ul>
                 </div>
