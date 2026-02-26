@@ -9,10 +9,8 @@ ru/
 zh/
 blog/
 
-# Ignore root-level generated HTML clutter but allow pages/ directory
+# Ignore root-level generated HTML clutter but allow index.html
 *.html
-!pages/**/*.html
-!pages/*.html
 !index.html
 !404.html
 
