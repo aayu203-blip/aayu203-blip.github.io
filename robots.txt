@@ -2,14 +2,7 @@ User-agent: *
 Allow: /
 
 # Main Sitemap Index (references all other sitemaps)
-Sitemap: https://partstrading.com/sitemap.xml
-
-# Individual Sitemaps (also accessible directly)
-Sitemap: https://partstrading.com/sitemap-main.xml
-Sitemap: https://partstrading.com/sitemap-blog.xml
-Sitemap: https://partstrading.com/sitemap-products-1.xml
-Sitemap: https://partstrading.com/sitemap-products-2.xml
-Sitemap: https://partstrading.com/sitemap-products-3.xml
+Sitemap: https://partstrading.com/sitemap_index.xml
 
 # Allow all search engines to crawl the site
 User-agent: Googlebot
