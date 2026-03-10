@@ -1,0 +1,5 @@
+venv/
+*.db
+*.csv
+oem_manuals/
+__pycache__/
