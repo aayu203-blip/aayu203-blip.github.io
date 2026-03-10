@@ -1,55 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://partstrading.com/sitemap-main-1.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <loc>https://partstrading.com/sitemap-main.xml</loc>
+    <lastmod>2026-03-10</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://partstrading.com/sitemap-main-2.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <loc>https://partstrading.com/sitemap-products-1.xml</loc>
+    <lastmod>2026-03-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-products-2.xml</loc>
+    <lastmod>2026-03-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-models.xml</loc>
+    <lastmod>2026-03-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-blog.xml</loc>
+    <lastmod>2026-03-10</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-landings.xml</loc>
+    <lastmod>2026-03-10</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-localized_es.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-10</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-localized_fr.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-10</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-localized_ru.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-10</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-localized_ar.xml</loc>
-    <lastmod>2026-02-26</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>https://partstrading.com/sitemap-localized_zh.xml</loc>
-    <lastmod>2026-02-26</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>https://partstrading.com/sitemap-localized_cn.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-10</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-localized_hi.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-10</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-localized_id.xml</loc>
-    <lastmod>2026-02-26</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>https://partstrading.com/sitemap-legacy_products.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-10</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-diagnostic.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-10</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://partstrading.com/sitemap-intercept.xml</loc>
-    <lastmod>2026-02-26</lastmod>
+    <lastmod>2026-03-10</lastmod>
   </sitemap>
 </sitemapindex>
