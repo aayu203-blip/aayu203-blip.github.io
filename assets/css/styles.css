@@ -631,3 +631,6 @@ nav #nav-logo img {
     margin: 20px;
   }
 } 
+
+/* Global anchor scroll padding */
+html { scroll-padding-top: 120px !important; }

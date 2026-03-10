@@ -171,7 +171,7 @@
     + '</div>';
 
   // ── CSS KEYFRAMES ──────────────────────────────────────────────────────────
-  var STYLE_HTML = '<style>'
+  var STYLE_HTML = '<style>html{scroll-padding-top:120px!important;}'
     + '@keyframes ptcPulse{0%{transform:scale(1);opacity:0.8;}70%{transform:scale(1.6);opacity:0;}100%{transform:scale(1.6);opacity:0;}}'
     + '#ptc-nav a:hover{color:#d97706!important;}'
     + '#ptc-footer a:hover{color:#facc15!important;}'

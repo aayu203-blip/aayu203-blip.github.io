@@ -834,7 +834,34 @@
 	<body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;">
 	
 
-	<nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
+	
+	<!-- Social Proof + Loss Aversion Bar -->
+	<div id="social-proof-bar" class="w-full bg-gray-900/95 border-t border-yellow-500/20 py-3 px-4 text-center z-30">
+		<div class="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-6 text-sm">
+			<span class="flex items-center gap-2 text-green-400 font-semibold">
+				<span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>
+				<span id="live-count">24 customers</span> contacted us today
+			</span>
+			<span class="text-gray-400">|</span>
+			<span class="text-yellow-400 font-semibold">⚡ Same-day dispatch before 3 PM IST</span>
+			<span class="text-gray-400">|</span>
+			<span class="text-red-400 font-semibold hidden md:inline">⏱ Equipment downtime costs ₹25,000–₹1,00,000/hour</span>
+		</div>
+	</div>
+	<script>
+	// Simulate live inquiry count (psychology: social proof)
+	(function() {
+		var base = 18 + Math.floor(Math.random() * 14);
+		var el = document.getElementById('live-count');
+		if (el) el.textContent = base + ' customers';
+		// Increment every 45-90s to look live
+		setInterval(function() {
+			base += Math.random() > 0.5 ? 1 : 0;
+			if (el) el.textContent = base + ' customers';
+		}, 60000 + Math.random() * 30000);
+	})();
+	</script>
+	<nav aria-label="Main Navigation" class="sticky top-0 w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
 	function updateNavColor() {
 	const scrollY = window.scrollY;
 	
@@ -960,32 +987,7 @@
 	</div>
 	</div>
 	</nav>
-	<!-- Social Proof + Loss Aversion Bar -->
-	<div id="social-proof-bar" class="w-full bg-gray-900/95 border-t border-yellow-500/20 py-3 px-4 text-center z-30">
-		<div class="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-6 text-sm">
-			<span class="flex items-center gap-2 text-green-400 font-semibold">
-				<span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>
-				<span id="live-count">24 customers</span> contacted us today
-			</span>
-			<span class="text-gray-400">|</span>
-			<span class="text-yellow-400 font-semibold">⚡ Same-day dispatch before 3 PM IST</span>
-			<span class="text-gray-400">|</span>
-			<span class="text-red-400 font-semibold hidden md:inline">⏱ Equipment downtime costs ₹25,000–₹1,00,000/hour</span>
-		</div>
-	</div>
-	<script>
-	// Simulate live inquiry count (psychology: social proof)
-	(function() {
-		var base = 18 + Math.floor(Math.random() * 14);
-		var el = document.getElementById('live-count');
-		if (el) el.textContent = base + ' customers';
-		// Increment every 45-90s to look live
-		setInterval(function() {
-			base += Math.random() > 0.5 ? 1 : 0;
-			if (el) el.textContent = base + ' customers';
-		}, 60000 + Math.random() * 30000);
-	})();
-	</script>
+	
 	
 	<section aria-label="Hero" class="hero-gradient relative min-h-screen flex items-center justify-center overflow-hidden pt-8 md:pt-20" data-aos="fade-in" id="home">
 	<video autoplay="" class="hero-video" loop="" muted="" playsinline="" preload="metadata" loading="lazy" poster="/assets/images/ptc-logo.png">
