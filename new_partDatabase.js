@@ -43318,3 +43318,16 @@ const partDatabase = [
     "OEM Part Nos": "3115312700"
   }
 ];
+
+
+// ── PTC Shared Components Auto-Loader ──────────────────────────────────────
+// This loads the shared nav, footer, WhatsApp floater, and geo-IP banner
+// on all product pages without modifying each individual page file.
+(function() {
+  if (document.getElementById('ptc-components-loaded')) return;
+  var s = document.createElement('script');
+  s.id = 'ptc-components-loaded';
+  s.src = '/assets/js/ptc-components.js';
+  s.defer = true;
+  (document.head || document.documentElement).appendChild(s);
+})();
