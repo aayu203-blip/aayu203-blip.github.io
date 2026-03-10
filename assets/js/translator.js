@@ -255,3 +255,13 @@ function rehydrateScripts() {
 
 // Start engine Let's go!
 document.addEventListener('DOMContentLoaded', bootInternationalization);
+
+// ── PTC Shared Components Auto-Loader ────────────────────────────────────────
+(function() {
+  if (document.getElementById('ptc-components-loaded')) return;
+  var s = document.createElement('script');
+  s.id = 'ptc-components-loaded';
+  s.src = '/assets/js/ptc-components.js';
+  s.defer = true;
+  (document.head || document.documentElement).appendChild(s);
+})();
