@@ -199,7 +199,7 @@
       // Check if page has no real nav
       var existingNavs = document.querySelectorAll('nav');
       if (existingNavs.length === 0) {
-        document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
+        if (!document.querySelector('nav')) { document.body.insertAdjacentHTML('afterbegin', NAV_HTML); }
         var navWa = document.getElementById('ptc-nav-wa');
         if (navWa) navWa.href = waUrl;
       }
@@ -211,7 +211,7 @@
 
     // Inject footer on non-homepage pages that don't have their own
     if (!isHomepage && !document.querySelector('footer')) {
-      document.body.insertAdjacentHTML('beforeend', FOOTER_HTML);
+      if (!document.querySelector('footer')) { document.body.insertAdjacentHTML('beforeend', FOOTER_HTML); }
     }
 
     // Geo IP detection
