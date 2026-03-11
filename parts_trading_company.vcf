@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Company;Parts Trading
+FN:Parts Trading Company
+ORG:Parts Trading Company
+TITLE:Heavy Equipment Parts Supplier
+TEL;TYPE=WORK,VOICE:+919821037990
+EMAIL;TYPE=PREF,INTERNET:parts@partstrading.com
+URL:https://partstrading.com
+END:VCARD
