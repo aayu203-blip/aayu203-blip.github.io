@@ -41,73 +41,8 @@
   var WA_NUM = '919821037990';
 
   // ── NAV HTML ───────────────────────────────────────────────────────────────
-  var NAV_HTML = '<nav id="ptc-nav" style="background:#fff;border-bottom:2px solid #fde047;box-shadow:0 2px 12px rgba(0,0,0,0.07);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:72px;position:sticky;top:0;z-index:100;">'
-    + '<a href="/" style="display:flex;align-items:center;text-decoration:none;">'
-    + '<img src="/assets/images/ptc-logo.png" alt="Parts Trading Company" style="height:52px;width:auto;" onerror="this.style.display=\'none\'">'
-    + '</a>'
-    + '<div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;">'
-    + '<a href="/" style="color:#374151;font-weight:600;font-size:0.875rem;text-decoration:none;">Home</a>'
-    + '<a href="/#brands" style="color:#374151;font-weight:600;font-size:0.875rem;text-decoration:none;">Brands</a>'
-    + '<a href="/#equipment-models" style="color:#374151;font-weight:600;font-size:0.875rem;text-decoration:none;">Equipment</a>'
-    + '<a href="/blog/" style="color:#374151;font-weight:600;font-size:0.875rem;text-decoration:none;">Blog</a>'
-    + '<a href="/#contact" style="color:#374151;font-weight:600;font-size:0.875rem;text-decoration:none;">Contact</a>'
-    + '<a id="ptc-nav-wa" href="#" target="_blank" style="background:#22c55e;color:#fff;font-weight:700;font-size:0.875rem;padding:0.5rem 1.1rem;border-radius:0.75rem;text-decoration:none;">WhatsApp</a>'
-    + '</div>'
-    + '</nav>';
+  var NAV_HTML = "<nav aria-label=\"Main Navigation\" class=\"sticky top-0 w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl\" x-data=\"{ mobileMenuOpen: false, scrolled: false }\" x-init=\"window.addEventListener('scroll', () => { scrolled = window.scrollY > 50; }); scrolled = window.scrollY > 50;\">\n\t<div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n\t<div class=\"flex justify-between items-center h-28\">\n\t<div class=\"flex items-center\">\n\t<div class=\"flex-shrink-0\">\n\t<a href=\"#home\" class=\"flex items-center space-x-4 hover:scale-105 transition-transform duration-300\">\n\t<img src=\"/assets/images/ptc-logo.png?v=1\" alt=\"PTC Parts Trading Company\" class=\"h-36 w-auto transition-all duration-300\" id=\"nav-logo\">\n\t</a>\n\t</div>\n\t</div>\n\t<div class=\"hidden md:flex items-center space-x-2\">\n\t<a class=\"nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-white\" href=\"#home\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">HOME</span>\n\t</a>\n\t<a class=\"nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-white\" href=\"#brands\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">BRANDS</span>\n\t</a>\n\t<a class=\"nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-white\" href=\"#equipment-models\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">MODELS</span>\n\t</a>\n\t<a class=\"nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-white\" href=\"#product-categories\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">PRODUCTS</span>\n\t</a>\n\t<a class=\"nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-white\" href=\"blog/index.html\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">BLOG</span>\n\t</a>\n\t<a class=\"nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-white\" href=\"#faq\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">FAQ</span>\n\t</a>\n\t<a class=\"group relative bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-6 py-4 rounded-2xl font-bold tracking-wide hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 border-2 border-yellow-300/50 flex items-center space-x-3\" href=\"#contact\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">CONTACT</span>\n\t</a>\n\t</div>\n\t<div class=\"md:hidden\">\n\t<button @click=\"mobileMenuOpen = !mobileMenuOpen\" aria-expanded=\"false\" aria-label=\"Toggle mobile menu\" class=\"p-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-yellow-400/50 transition-all duration-300 border-2 border-transparent drop-shadow-sm text-white\" x-bind:aria-expanded=\"mobileMenuOpen\">\n\t<svg class=\"h-7 w-7\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\" x-show=\"!mobileMenuOpen\">\n\t<path d=\"M4 6h16M4 12h16M4 18h16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<svg class=\"h-7 w-7\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\" x-show=\"mobileMenuOpen\">\n\t<path d=\"M6 18L18 6M6 6l12 12\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t</button>\n\t</div>\n\t</div>\n\t</div>\n\t<div class=\"md:hidden bg-white/98 backdrop-blur-xl border-t-2 border-yellow-300/60 shadow-2xl\" x-show=\"mobileMenuOpen\" x-transition:enter=\"transition ease-out duration-300\" x-transition:enter-end=\"opacity-100 transform translate-y-0\" x-transition:enter-start=\"opacity-0 transform -translate-y-4\" x-transition:leave=\"transition ease-in duration-200\" x-transition:leave-end=\"opacity-0 transform -translate-y-4\" x-transition:leave-start=\"opacity-100 transform translate-y-0\">\n\t<div class=\"px-6 py-6 space-y-3\">\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm\" :class=\"scrolled ? 'text-gray-900' : 'text-white'\" href=\"#home\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">HOME</span>\n\t</a>\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm\" :class=\"scrolled ? 'text-gray-900' : 'text-white'\" href=\"#brands\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">BRANDS</span>\n\t</a>\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm\" :class=\"scrolled ? 'text-gray-900' : 'text-white'\" href=\"#equipment-models\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">MODELS</span>\n\t</a>\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm\" :class=\"scrolled ? 'text-gray-900' : 'text-white'\" href=\"#product-categories\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">PRODUCTS</span>\n\t</a>\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm\" :class=\"scrolled ? 'text-gray-900' : 'text-white'\" href=\"blog/index.html\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">BLOG</span>\n\t</a>\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm\" :class=\"scrolled ? 'text-gray-900' : 'text-white'\" href=\"#faq\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">FAQ</span>\n\t</a>\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 rounded-2xl font-bold tracking-wide hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 border-2 border-yellow-300/50\" href=\"#contact\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">CONTACT</span>\n\t</a>\n\t</div>\n\t</div>\n\t</nav>";
 
-  // ── FOOTER HTML ────────────────────────────────────────────────────────────
-  var FOOTER_HTML = '<footer id="ptc-footer" style="background:#111827;color:#9ca3af;padding:3rem 1.5rem 2rem;">'
-    + '<div style="max-width:1200px;margin:0 auto;">'
-    + '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-bottom:2rem;">'
-    // Col 1
-    + '<div>'
-    + '<img src="/assets/images/ptc-logo.png" alt="Parts Trading Company" style="height:48px;margin-bottom:1rem;filter:brightness(0) invert(1);" onerror="this.style.display=\'none\'">'
-    + '<p style="font-size:0.875rem;line-height:1.6;">India\'s specialist heavy equipment parts supplier since 1956. 70+ years. 20,000+ parts in stock.</p>'
-    + '<p style="margin-top:0.75rem;font-size:0.8rem;">📍 Grant Road, Mumbai 400 007, India</p>'
-    + '</div>'
-    // Col 2
-    + '<div>'
-    + '<h3 style="color:#facc15;font-weight:700;font-size:0.9rem;margin-bottom:1rem;letter-spacing:0.05em;">QUICK LINKS</h3>'
-    + '<ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.85rem;">'
-    + '<li><a href="/" style="color:#9ca3af;text-decoration:none;hover:color:#facc15;">Home</a></li>'
-    + '<li><a href="/#brands" style="color:#9ca3af;text-decoration:none;">Brands We Support</a></li>'
-    + '<li><a href="/blog/" style="color:#9ca3af;text-decoration:none;">Blog & Guides</a></li>'
-    + '<li><a href="/underground-mining-parts-india.html" style="color:#9ca3af;text-decoration:none;">Underground Mining</a></li>'
-    + '<li><a href="/#contact" style="color:#9ca3af;text-decoration:none;">Contact Us</a></li>'
-    + '</ul>'
-    + '</div>'
-    // Col 3
-    + '<div>'
-    + '<h3 style="color:#facc15;font-weight:700;font-size:0.9rem;margin-bottom:1rem;letter-spacing:0.05em;">EXPORT MARKETS</h3>'
-    + '<ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;font-size:0.85rem;">'
-    + '<li><a href="/russia-heavy-equipment-parts.html" style="color:#9ca3af;text-decoration:none;">🇷🇺 Russia</a></li>'
-    + '<li><a href="/uae-heavy-equipment-parts.html" style="color:#9ca3af;text-decoration:none;">🇦🇪 UAE</a></li>'
-    + '<li><a href="/indonesia-heavy-equipment-parts.html" style="color:#9ca3af;text-decoration:none;">🇮🇩 Indonesia</a></li>'
-    + '<li><a href="/south-africa-heavy-equipment-parts.html" style="color:#9ca3af;text-decoration:none;">🇿🇦 South Africa</a></li>'
-    + '</ul>'
-    + '</div>'
-    // Col 4
-    + '<div>'
-    + '<h3 style="color:#facc15;font-weight:700;font-size:0.9rem;margin-bottom:1rem;letter-spacing:0.05em;">CONTACT</h3>'
-    + '<p style="font-size:0.85rem;margin-bottom:0.5rem;">📞 <a id="ptc-footer-tel" href="tel:+919821037990" style="color:#facc15;text-decoration:none;">+91 98210 37990</a></p>'
-    + '<p style="font-size:0.85rem;margin-bottom:0.5rem;">📧 <a href="mailto:sales@partstrading.com" style="color:#facc15;text-decoration:none;">sales@partstrading.com</a></p>'
-    + '<p style="font-size:0.85rem;margin-top:1rem;color:#6b7280;">Mon – Sat: 9 AM – 6 PM IST</p>'
-    + '</div>'
-    + '</div>'
-    + '<div style="border-top:1px solid #374151;padding-top:1.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;font-size:0.8rem;">'
-    + '<p>© 2026 Parts Trading Company (Mumbai) Pvt. Ltd. All rights reserved.</p>'
-    + '<div style="display:flex;gap:1rem;">'
-    + '<span>OEM &amp; Aftermarket Parts</span>'
-    + '<span>•</span>'
-    + '<span>Global Shipping</span>'
-    + '<span>•</span>'
-    + '<span>70+ Years</span>'
-    + '</div>'
-    + '</div>'
-    + '</div>'
-    + '</footer>';
-
-  // ── WHATSAPP FLOATER ───────────────────────────────────────────────────────
   var WA_FLOATER_HTML = '<a id="ptc-wa-float" href="#" target="_blank" rel="noopener" '
     + 'title="WhatsApp Parts Trading Company" '
     + 'style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;'
@@ -185,7 +120,7 @@
 
     // Always inject floater, geo banner, styles
     document.head.insertAdjacentHTML('beforeend', STYLE_HTML);
-    document.body.insertAdjacentHTML('beforeend', WA_FLOATER_HTML);
+    console.log('--- INJECTING WA FLOATER ---'); document.body.insertAdjacentHTML('beforeend', WA_FLOATER_HTML);
     document.body.insertAdjacentHTML('beforeend', GEO_BANNER_HTML);
 
     // Set WhatsApp links
@@ -199,7 +134,7 @@
       // Check if page has no real nav
       var existingNavs = document.querySelectorAll('nav');
       if (existingNavs.length === 0) {
-        if (!document.querySelector('nav')) { document.body.insertAdjacentHTML('afterbegin', NAV_HTML); }
+        var eNav = document.querySelector('nav'); if(eNav) eNav.remove(); document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
         var navWa = document.getElementById('ptc-nav-wa');
         if (navWa) navWa.href = waUrl;
       }
@@ -211,7 +146,7 @@
 
     // Inject footer on non-homepage pages that don't have their own
     if (!isHomepage && !document.querySelector('footer')) {
-      if (!document.querySelector('footer')) { document.body.insertAdjacentHTML('beforeend', FOOTER_HTML); }
+      var eFoot = document.querySelector('footer'); if(eFoot) eFoot.remove(); document.body.insertAdjacentHTML('beforeend', FOOTER_HTML);
     }
 
     // Geo IP detection

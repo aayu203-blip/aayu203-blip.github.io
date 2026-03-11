@@ -411,25 +411,25 @@
 	"@type": "ListItem",
 	"position": 1,
 	"name": "Volvo Parts",
-	"url": "/pages/volvo-categories.html"
+	"url": "/pages/hubs/brand-volvo.html"
 	},
 	{
 	"@type": "ListItem",
 	"position": 2,
 	"name": "Scania Parts",
-	"url": "/pages/scania-categories.html"
+	"url": "/pages/hubs/brand-scania.html"
 	},
 	{
 	"@type": "ListItem",
 	"position": 3,
 	"name": "Komatsu Parts",
-	"url": "/pages/komatsu-categories.html"
+	"url": "/pages/hubs/brand-komatsu.html"
 	},
 	{
 	"@type": "ListItem",
 	"position": 4,
 	"name": "CAT Parts",
-	"url": "/pages/cat-categories.html"
+	"url": "/pages/hubs/brand-cat.html"
 	},
 	{
 	"@type": "ListItem",
@@ -861,20 +861,7 @@
 		}, 60000 + Math.random() * 30000);
 	})();
 	</script>
-	<nav aria-label="Main Navigation" class="sticky top-0 w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
-	function updateNavColor() {
-	const scrollY = window.scrollY;
-	
-
-	// scrolled = true when over body content (past hero section)
-	scrolled = scrollY > 500; // Fixed threshold
-	console.log('Scroll:', scrollY, 'Scrolled:', scrolled);
-	}
-	
-
-	updateNavColor();
-	window.addEventListener('scroll', updateNavColor);
-	">
+	<nav aria-label="Main Navigation" class="sticky top-0 w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 50; }); scrolled = window.scrollY > 50;">
 	<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 	<div class="flex justify-between items-center h-28">
 	<div class="flex items-center">
@@ -1059,10 +1046,10 @@
 	<p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed overflow-hidden" data-aos="fade-up" data-aos-delay="600">
 	<span class="inline-block animate-slide-in-up" style="animation-delay: 1.3s;">Backed by 70 years of excellence</span>
 	<span class="inline-block animate-slide-in-up" style="animation-delay: 1.5s;"> in spare parts for
-	<a href="/pages/volvo-categories.html" class="underline decoration-yellow-300/30 hover:text-yellow-300 transition-colors">Volvo</a>,
-	<a href="/pages/scania-categories.html" class="underline decoration-yellow-300/30 hover:text-yellow-300 transition-colors">Scania</a>,
-	<a href="/pages/komatsu-categories.html" class="underline decoration-yellow-300/30 hover:text-yellow-300 transition-colors">Komatsu</a>,
-	<a href="/pages/cat-categories.html" class="underline decoration-yellow-300/30 hover:text-yellow-300 transition-colors">Caterpillar</a>,
+	<a href="/pages/hubs/brand-volvo.html" class="underline decoration-yellow-300/30 hover:text-yellow-300 transition-colors">Volvo</a>,
+	<a href="/pages/hubs/brand-scania.html" class="underline decoration-yellow-300/30 hover:text-yellow-300 transition-colors">Scania</a>,
+	<a href="/pages/hubs/brand-komatsu.html" class="underline decoration-yellow-300/30 hover:text-yellow-300 transition-colors">Komatsu</a>,
+	<a href="/pages/hubs/brand-cat.html" class="underline decoration-yellow-300/30 hover:text-yellow-300 transition-colors">Caterpillar</a>,
 	</span>
 	<span class="inline-block animate-slide-in-up" style="animation-delay: 1.7s;"> and other major heavy equipment brands</span>
 	<span class="inline-block animate-slide-in-up" style="animation-delay: 1.9s;"> — powering infrastructure, mining, and logistics</span>
@@ -1197,10 +1184,10 @@
 	<div class="mt-8 text-center">
 	<p class="text-gray-500 text-sm mb-3">Popular searches (5,000+ parts available):</p>
 	<div class="flex flex-wrap justify-center gap-2">
-	<button class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-yellow-100 hover:text-yellow-800 transition-colors duration-200" onclick="window.location.href='/pages/volvo-categories.html'">Volvo</button>
-	<button class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-yellow-100 hover:text-yellow-800 transition-colors duration-200" onclick="window.location.href='/pages/scania-categories.html'">Scania</button>
-	<button class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-yellow-100 hover:text-yellow-800 transition-colors duration-200" onclick="window.location.href='/pages/komatsu-categories.html'">Komatsu</button>
-	<button class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-yellow-100 hover:text-yellow-800 transition-colors duration-200" onclick="window.location.href='/pages/cat-categories.html'">Caterpillar</button>
+	<button class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-yellow-100 hover:text-yellow-800 transition-colors duration-200" onclick="window.location.href='/pages/hubs/brand-volvo.html'">Volvo</button>
+	<button class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-yellow-100 hover:text-yellow-800 transition-colors duration-200" onclick="window.location.href='/pages/hubs/brand-scania.html'">Scania</button>
+	<button class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-yellow-100 hover:text-yellow-800 transition-colors duration-200" onclick="window.location.href='/pages/hubs/brand-komatsu.html'">Komatsu</button>
+	<button class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-yellow-100 hover:text-yellow-800 transition-colors duration-200" onclick="window.location.href='/pages/hubs/brand-cat.html'">Caterpillar</button>
 	</div>
 	</div>
 	</div>
@@ -1240,19 +1227,19 @@
 	</div>
 	<div class="w-24 h-1 bg-yellow-400 mx-auto mb-8 rounded-full"></div>
 	<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-	<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="pages/volvo-categories.html" style="text-decoration:none;">
+	<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="pages/hubs/brand-volvo.html" style="text-decoration:none;">
 	<h3 class="text-2xl font-bold text-gray-900 mb-3 text-center leading-tight group-hover:text-yellow-600 transition-colors duration-300 flex items-center justify-center min-h-[3rem] px-2">VOLVO</h3>
 	<p class="text-gray-600 text-center text-xs leading-relaxed group-hover:text-gray-700 transition-colors duration-300 h-8 flex items-center justify-center">Trucks &amp; Excavators</p>
 	</a>
-	<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="pages/scania-categories.html" style="text-decoration:none;">
+	<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="pages/hubs/brand-scania.html" style="text-decoration:none;">
 	<h3 class="text-2xl font-bold text-gray-900 mb-3 text-center leading-tight group-hover:text-yellow-600 transition-colors duration-300 flex items-center justify-center min-h-[3rem] px-2">SCANIA</h3>
 	<p class="text-gray-600 text-center text-xs leading-relaxed group-hover:text-gray-700 transition-colors duration-300 h-8 flex items-center justify-center">Heavy Trucks</p>
 	</a>
-	<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="pages/komatsu-categories.html" style="text-decoration:none;">
+	<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="pages/hubs/brand-komatsu.html" style="text-decoration:none;">
 	<h3 class="text-2xl font-bold text-gray-900 mb-3 text-center leading-tight group-hover:text-yellow-600 transition-colors duration-300 flex items-center justify-center min-h-[3rem] px-2">KOMATSU</h3>
 	<p class="text-gray-600 text-center text-xs leading-relaxed group-hover:text-gray-700 transition-colors duration-300 h-8 flex items-center justify-center">Excavators &amp; Dozers</p>
 	</a>
-	<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="pages/cat-categories.html" style="text-decoration:none;">
+	<a class="category-card bg-white rounded-2xl shadow-md p-4 flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:bg-gradient-to-br hover:from-yellow-50 hover:to-amber-100 relative overflow-hidden min-h-[160px] group" href="pages/hubs/brand-cat.html" style="text-decoration:none;">
 	<h3 class="text-2xl font-bold text-gray-900 mb-3 text-center leading-tight group-hover:text-yellow-600 transition-colors duration-300 flex items-center justify-center min-h-[3rem] px-2">CAT</h3>
 	<p class="text-gray-600 text-center text-xs leading-relaxed group-hover:text-gray-700 transition-colors duration-300 h-8 flex items-center justify-center">Construction Equipment</p>
 	</a>
@@ -3561,238 +3548,41 @@
 	};
 	
 
-	function detectAndStoreUserLocation() {
-	/// Try IP-based geolocation first (no permission required)
-	fetch('https://ipapi.co/json/')
-	.then(response => response.json())
-	.then(data => {
-	userLocation = {
-	city: data.city || data.region || 'Mumbai',
-	country: data.country_name || 'India',
-	region: data.region || data.state || 'Maharashtra'
-	};
+	
 	
 
-	/// Update any existing city elements
-	const cityElement = document.getElementById('user-city');
-	if (cityElement) {
-	cityElement.textContent = userLocation.city;
-	}
+//
 	
 
-	/// Update WhatsApp buttons with location
-	updateWhatsAppButtons();
-	})
-	.catch(error => {
-	console.log('Could not detect location via IP:', error);
-	/// Fallback to major Indian cities
-	const cities = ['Mumbai', 'Delhi', 'Bangalore', 'Chennai', 'Hyderabad', 'Kolkata', 'Pune', 'Ahmedabad'];
-	userLocation = {
-	city: cities[Math.floor(Math.random() * cities.length)],
-	country: 'India',
-	region: 'Maharashtra'
-	};
-	
-
-	/// Update any existing city elements
-	const cityElement = document.getElementById('user-city');
-	if (cityElement) {
-	cityElement.textContent = userLocation.city;
-	}
-	
-
-	/// Update WhatsApp buttons with location
-	updateWhatsAppButtons();
-	});
-	}
-	
-
-	/// Generate WhatsApp URL with location
-	function generateWhatsAppURL(baseMessage, partNumber = '', partName = '', category = '', application = '') {
-	const locationInfo = `Location: ${userLocation.city}, ${userLocation.country}`;
-	let fullMessage = baseMessage;
-	
-
-	if (partNumber && partName) {
-	fullMessage = `Hi! I am interested in ${partNumber} - ${partName} (Part No: ${partNumber}). ${locationInfo}. Please provide a quote and availability.`;
-	} else if (baseMessage.includes('interested in')) {
-	fullMessage = `${baseMessage} ${locationInfo}. Please provide a quote and availability.`;
-	} else {
-	fullMessage = `${baseMessage} ${locationInfo}`;
-	}
-	
-
-	return `https://wa.me/919821037990?text=${encodeURIComponent(fullMessage)}`;
-	}
-	
-
-	/// Update all WhatsApp buttons with location
-	function updateWhatsAppButtons() {
-	/// Update floating WhatsApp button
-	const floatingWhatsAppBtn = document.querySelector('.whatsapp-float');
-	if (floatingWhatsAppBtn) {
-	floatingWhatsAppBtn.href = generateWhatsAppURL('Hi! I need assistance with parts inquiry');
-	}
-	
-
-	/// Update any other WhatsApp buttons on the page
-	const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
-	whatsappButtons.forEach(button => {
-	if (button.classList.contains('whatsapp-float')) return; // Skip floating button as it's handled above
-	
-
-	const currentHref = button.getAttribute('href');
-	if (currentHref && currentHref.includes('wa.me')) {
-	/// Extract existing message if any
-	const urlParams = new URLSearchParams(currentHref.split('?')[1] || '');
-	const existingText = urlParams.get('text') || '';
-	
-
-	if (existingText.includes('interested in')) {
-	button.href = generateWhatsAppURL(existingText);
-	} else {
-	button.href = generateWhatsAppURL('Hi! I need assistance with parts inquiry');
-	}
-	}
-	});
-	}
+//
 	
 
 	/// Initialize location detection when page loads
-	document.addEventListener('DOMContentLoaded', function() {
-	detectAndStoreUserLocation();
-	showShippingPopup();
-	showHelpPopup();
-	initExitIntent();
-	});
+	
 	
 
-	/// Show shipping popup
-	function showShippingPopup() {
-	const popup = document.getElementById('shipping-popup');
-	if (popup) {
-	/// Show popup after 3 seconds
-	setTimeout(() => {
-	popup.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-	popup.classList.add('opacity-100', 'scale-100');
-	}, 3000);
-	}
-	}
+//
 	
 
-	/// Show help popup
-	function showHelpPopup() {
-	const popup = document.getElementById('help-popup');
-	if (popup) {
-	/// Show popup after 30 seconds
-	setTimeout(() => {
-	popup.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-	popup.classList.add('opacity-100', 'scale-100');
-	}, 30000);
-	}
-	}
+//
 	
 
-	/// Close shipping popup
-	function closeShippingPopup() {
-	const popup = document.getElementById('shipping-popup');
-	if (popup) {
-	popup.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-	popup.classList.remove('opacity-100', 'scale-100');
-	}
-	}
+//
 	
 
-	/// Close help popup
-	function closeHelpPopup() {
-	const popup = document.getElementById('help-popup');
-	if (popup) {
-	popup.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-	popup.classList.remove('opacity-100', 'scale-100');
-	}
-	}
+//
 	
 
-	/// Exit Intent Modal Functions
-	function initExitIntent() {
-	let hasShownExitModal = false;
+//
 	
 
-	/// Track mouse leaving the window (exit intent)
-	document.addEventListener('mouseleave', function(e) {
-	if (e.clientY <= 0 && !hasShownExitModal) {
-	showExitModal();
-	hasShownExitModal = true;
-	}
-	});
+	
 	
 
-	/// Track navigation attempts (click only)
-	document.addEventListener('click', function(e) {
-	const target = e.target.closest('a');
-	if (target && target.href) {
-	const href = target.href;
-	const currentHost = window.location.hostname;
+	
 	
 
-	/// Check if it's an external link
-	if (href.startsWith('http') && !href.includes(currentHost)) {
-	if (!hasShownExitModal) {
-	e.preventDefault();
-	showExitModal();
-	hasShownExitModal = true;
-	}
-	}
-	}
-	});
 	
-
-	/// Track when user tries to close tab/window (disabled to prevent browser warnings)
-	// window.addEventListener('beforeunload', function(e) {
-	// if (!hasShownExitModal) {
-	// showExitModal();
-	// hasShownExitModal = true;
-	// e.preventDefault();
-	// e.returnValue = '';
-	// }
-	// });
-	}
-	
-
-	function showExitModal() {
-	const modal = document.getElementById('exitModal');
-	if (modal) {
-	modal.classList.add('show');
-	document.body.style.overflow = 'hidden';
-	}
-	}
-	
-
-	function closeExitModal() {
-	const modal = document.getElementById('exitModal');
-	if (modal) {
-	modal.classList.remove('show');
-	document.body.style.overflow = 'auto';
-	}
-	}
-	
-
-	function closeExitModalAndScroll() {
-	/// Close the modal
-	closeExitModal();
-	
-
-	/// Scroll to contact section after a short delay
-	setTimeout(() => {
-	const contactSection = document.getElementById('contact');
-	if (contactSection) {
-	contactSection.scrollIntoView({
-	behavior: 'smooth',
-	block: 'start'
-	});
-	}
-	}, 300);
-	}
 	/// Smooth typewriter effect animation for equipment cycling
 	function initTextCycling() {
 	const equipmentCycler = document.querySelector('.equipment-cycler');
@@ -3910,10 +3700,10 @@
 	<div class="text-center">
 	<p class="text-sm md:text-base text-gray-700 leading-relaxed max-w-5xl mx-auto">
 	<strong class="text-gray-900">India's Premier Heavy Equipment Parts Supplier:</strong>
-	Parts Trading Company is your trusted source for <a href="/pages/volvo-categories.html" class="text-yellow-600 hover:underline font-medium">Volvo truck parts</a>,
-	<a href="/pages/scania-categories.html" class="text-yellow-600 hover:underline font-medium">Scania spare parts</a>,
-	<a href="/pages/komatsu-categories.html" class="text-yellow-600 hover:underline font-medium">Komatsu excavator parts</a>, and
-	<a href="/pages/cat-categories.html" class="text-yellow-600 hover:underline font-medium">Caterpillar construction equipment parts</a> in Mumbai, India.
+	Parts Trading Company is your trusted source for <a href="/pages/hubs/brand-volvo.html" class="text-yellow-600 hover:underline font-medium">Volvo truck parts</a>,
+	<a href="/pages/hubs/brand-scania.html" class="text-yellow-600 hover:underline font-medium">Scania spare parts</a>,
+	<a href="/pages/hubs/brand-komatsu.html" class="text-yellow-600 hover:underline font-medium">Komatsu excavator parts</a>, and
+	<a href="/pages/hubs/brand-cat.html" class="text-yellow-600 hover:underline font-medium">Caterpillar construction equipment parts</a> in Mumbai, India.
 	We specialize in OEM and aftermarket spare parts for heavy-duty trucks, excavators, wheel loaders, bulldozers, and mining equipment.
 	With 70+ years of industry experience, we stock over 5,000 parts including brake systems, filters, transmission components, hydraulic parts, engine components, and undercarriage parts.
 	Serving construction companies, mining operations, logistics fleets, and equipment dealers across India's major mining states including Jharkhand, Chhattisgarh, Odisha, Rajasthan, Madhya Pradesh, Karnataka, Gujarat, Andhra Pradesh, Maharashtra, Tamil Nadu, and all major cities including Mumbai, Delhi, Bangalore, Chennai, Hyderabad, and Kolkata.
