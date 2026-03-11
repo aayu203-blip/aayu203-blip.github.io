@@ -113,6 +113,52 @@
     + '@media(max-width:640px){#ptc-nav div{gap:0.5rem;}#ptc-nav a{font-size:0.75rem;}}'
     + '</style>';
 
+  // ── FOOTER HTML ───────────────────────────────────────────────────────────
+  var FOOTER_HTML = '<footer id="ptc-footer" style="background:#111827;color:#9ca3af;padding:3rem 1.5rem 2rem;margin-top:2rem;">'
+    + '<div style="max-width:1280px;margin:0 auto;">'
+    + '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-bottom:2rem;">'
+    + '<div>'
+    + '<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" style="height:60px;margin-bottom:1rem;">'
+    + '<p style="color:#d1d5db;font-size:0.9rem;line-height:1.6;">India\'s trusted supplier of OEM &amp; aftermarket spare parts for heavy equipment. 70+ years of experience.</p>'
+    + '</div>'
+    + '<div>'
+    + '<h4 style="color:#facc15;font-weight:700;margin-bottom:1rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;">Quick Links</h4>'
+    + '<ul style="list-style:none;padding:0;margin:0;space-y:0.5rem;">'
+    + '<li><a href="https://partstrading.com/#brands" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Brands</a></li>'
+    + '<li><a href="https://partstrading.com/#equipment-models" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Equipment Models</a></li>'
+    + '<li><a href="https://partstrading.com/#product-categories" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Products</a></li>'
+    + '<li><a href="https://partstrading.com/blog/" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Blog</a></li>'
+    + '<li><a href="https://partstrading.com/#contact" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Contact Us</a></li>'
+    + '</ul>'
+    + '</div>'
+    + '<div>'
+    + '<h4 style="color:#facc15;font-weight:700;margin-bottom:1rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;">Contact</h4>'
+    + '<p style="color:#d1d5db;font-size:0.875rem;line-height:1.8;">Grant Road, Mumbai 400 007<br>'
+    + '<a href="tel:+919821037990" style="color:#facc15;">+91 98210 37990</a><br>'
+    + '<a href="tel:+912240755999" style="color:#facc15;">+91 22 4075 5999</a><br>'
+    + '<a href="mailto:parts@partstrading.com" style="color:#facc15;">parts@partstrading.com</a></p>'
+    + '</div>'
+    + '<div>'
+    + '<h4 style="color:#facc15;font-weight:700;margin-bottom:1rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;">Popular Brands</h4>'
+    + '<ul style="list-style:none;padding:0;margin:0;">'
+    + '<li><a href="https://partstrading.com/pages/hubs/brand-volvo.html" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Volvo Parts</a></li>'
+    + '<li><a href="https://partstrading.com/pages/hubs/brand-komatsu.html" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Komatsu Parts</a></li>'
+    + '<li><a href="https://partstrading.com/pages/hubs/brand-cat.html" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Caterpillar Parts</a></li>'
+    + '<li><a href="https://partstrading.com/pages/hubs/brand-hitachi.html" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Hitachi Parts</a></li>'
+    + '<li><a href="https://partstrading.com/pages/hubs/brand-scania.html" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Scania Parts</a></li>'
+    + '</ul>'
+    + '</div>'
+    + '</div>'
+    + '<div style="border-top:1px solid #374151;padding-top:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">'
+    + '<p style="font-size:0.8rem;color:#6b7280;margin:0;">&copy; 2025 Parts Trading Company Pvt. Ltd. All rights reserved.</p>'
+    + '<div style="display:flex;gap:1rem;">'
+    + '<a href="https://partstrading.com/pages/sitemap.html" style="color:#6b7280;font-size:0.8rem;text-decoration:none;">Sitemap</a>'
+    + '<a href="https://partstrading.com/#contact" style="color:#6b7280;font-size:0.8rem;text-decoration:none;">Privacy</a>'
+    + '</div>'
+    + '</div>'
+    + '</div>'
+    + '</footer>';
+
   // ── INJECTION LOGIC ────────────────────────────────────────────────────────
   function inject() {
     // Only inject if there is NO existing ptc-nav (homepage handles its own)
@@ -144,9 +190,10 @@
       if (navWaEl) navWaEl.href = waUrl;
     }
 
-    // Inject footer on non-homepage pages that don't have their own
-    if (!isHomepage && !document.querySelector('footer')) {
-      var eFoot = document.querySelector('footer'); if(eFoot) eFoot.remove(); document.body.insertAdjacentHTML('beforeend', FOOTER_HTML);
+    // Inject/replace footer on all non-homepage pages with the standard PTC footer
+    if (!isHomepage) {
+      var eFoot = document.querySelector('footer'); if(eFoot) eFoot.remove();
+      document.body.insertAdjacentHTML('beforeend', FOOTER_HTML);
     }
 
     // Geo IP detection
