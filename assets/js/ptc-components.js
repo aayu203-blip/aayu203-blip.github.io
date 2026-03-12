@@ -1,7 +1,7 @@
 /**
  * PTC Shared Components — injected into all pages
- * Handles: Nav, Footer, WhatsApp Floater, Geo-IP Delivery Banner, Search Link Logic
- * Version: 1.6
+ * Handles: Nav, Footer, WhatsApp Floater, Geo-IP Floating Bubble, Breadcrumbs, Search logic
+ * Version: 1.8
  */
 
 // Centralized link generation logic for search results
@@ -55,7 +55,7 @@ window.getProductPageLink = function (result) {
     return encodeURIComponent('Hi! I need heavy equipment spare parts. Can you help?');
   }
 
-  // ── NAV HTML (Black Text Enforced) ──────────────────────────────────────────
+  // ── NAV HTML ──────────────────────────────────────────────────────────────
   var NAV_HTML = '<nav aria-label="Main Navigation" class="sticky top-0 w-full z-50 bg-white shadow-lg border-b border-gray-200">'
     + '<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">'
     + '<div class="flex justify-between items-center h-28">'
@@ -88,18 +88,26 @@ window.getProductPageLink = function (result) {
     + '</a>'
     + '<div id="ptc-wa-pulse" style="position:fixed;bottom:2.5rem;right:2.5rem;z-index:9999998;width:70px;height:70px;border-radius:50%;background:rgba(37,211,102,0.3);animation:ptcPulse 2s infinite;pointer-events:none;"></div>';
 
-  var GEO_BANNER_HTML = '<div id="ptc-geo-banner" style="display:flex;position:fixed;bottom:0;left:0;width:100%;z-index:9999998;'
-    + 'background:rgba(17,24,39,0.98);backdrop-filter:blur(8px);color:#fff;padding:0.75rem 1rem;align-items:center;justify-content:center;'
-    + 'font-size:0.875rem;font-weight:600;box-shadow:0 -4px 20px rgba(0,0,0,0.4); border-top:2px solid #facc15; min-height: 50px;">'
-    + '<span id="ptc-geo-text">🌏 Shipping Worldwide — 30+ Countries</span>'
+  var GEO_BUBBLE_HTML = '<div id="ptc-geo-bubble" style="position:fixed;bottom:7.5rem;right:2.5rem;z-index:9999998;'
+    + 'background:rgba(17,24,39,0.95);backdrop-filter:blur(10px);color:#fff;padding:0.75rem 1rem; border-radius: 12px;'
+    + 'font-size:0.75rem;font-weight:700;box-shadow:0 10px 40px rgba(0,0,0,0.3); border:1px solid rgba(250,204,21,0.5);'
+    + 'display:none; transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1); opacity: 0; transform: translateY(20px); pointer-events: none;">'
+    + '<div style="display:flex; align-items:center; gap:8px;">'
+    + '<span id="ptc-geo-text">🌏 Fast Shipping Available</span>'
+    + '</div>'
+    + '<div style="position:absolute; bottom:-8px; right:25px; width:0; height:0; border-left:8px solid transparent; border-right:8px solid transparent; border-top:8px solid rgba(17,24,39,0.95);"></div>'
     + '</div>';
 
   var STYLE_HTML = '<style>html{scroll-padding-top:120px!important;}'
     + '@keyframes ptcPulse{0%{transform:scale(1);opacity:0.8;}70%{transform:scale(1.6);opacity:0;}100%{transform:scale(1.6);opacity:0;}}'
+    + '@keyframes ptcSlideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}'
     + '.nav-link:hover{color:#d97706!important;}'
     + '[id^="ptc-wa-"], .ptc-wa-btn { visibility: visible !important; opacity: 1 !important; display: flex !important; }'
-    + '#ptc-geo-banner { visibility: visible !important; display: flex !important; }'
-    + '@media (max-width: 768px) { #ptc-geo-banner { bottom: 85px !important; } }' // Protection for mobile WA bar
+    + '#ptc-geo-bubble { display: block !important; }'
+    + '.geo-visible { opacity: 1 !important; transform: translateY(0) !important; animation: ptcSlideUp 0.6s backwards; }'
+    + '.ptc-breadcrumb { margin: 1.5rem 0; font-size: 0.8rem; color: #6b7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }'
+    + '.ptc-breadcrumb a { color: #d97706; text-decoration: none; transition: color 0.2s; }'
+    + '.ptc-breadcrumb a:hover { color: #b45309; }'
     + '</style>';
 
   var FOOTER_HTML = '<div id="ptc-footer-container" style="clear:both; width: 100%;">'
@@ -109,6 +117,10 @@ window.getProductPageLink = function (result) {
     + '<div>'
     + '<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" style="height:60px;margin-bottom:1.5rem;">'
     + '<p style="color:#d1d5db;font-size:0.9rem;line-height:1.6;">India\'s trusted supplier of OEM &amp; aftermarket spare parts for heavy machinery globally.</p>'
+    + '<div style="margin-top:1.5rem; display:flex; gap:10px;">'
+    + '<span style="background:rgba(250,204,21,0.15); color:#facc15; padding:4px 10px; border-radius:6px; font-size:0.7rem; font-weight:700; border:1px solid rgba(250,204,21,0.3);">✓ GENUINE QUALITY</span>'
+    + '<span style="background:rgba(37,211,102,0.15); color:#25d366; padding:4px 10px; border-radius:6px; font-size:0.7rem; font-weight:700; border:1px solid rgba(37,211,102,0.3);">🚀 GLOBAL SHIPPING</span>'
+    + '</div>'
     + '</div>'
     + '<div>'
     + '<h4 style="color:#facc15;font-weight:700;margin-bottom:1.25rem;font-size:0.9rem;text-transform:uppercase;">Quick Links</h4>'
@@ -127,14 +139,15 @@ window.getProductPageLink = function (result) {
     + '</div>'
     + '</div>'
     + '<div style="border-top:1px solid #374151;padding-top:2rem;display:flex;justify-content:space-between;align-items:center;">'
-    + '<p style="font-size:0.8rem;color:#6b7280;">&copy; 2025 Parts Trading Company. All rights reserved.</p>'
+    + '<p style="font-size:0.8rem;color:#6b7280;">&copy; 2026 Parts Trading Company. All rights reserved.</p>'
     + '</div>'
     + '</div>'
     + '</footer>'
     + '</div>';
 
   function inject() {
-    var isHomepage = (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname.length < 2);
+    var path = window.location.pathname;
+    var isHomepage = (path === '/' || path === '/index.html' || path.length < 2);
 
     if (!document.getElementById('ptc-styles')) {
         var s = document.createElement('div');
@@ -144,7 +157,7 @@ window.getProductPageLink = function (result) {
     }
 
     if (!document.getElementById('ptc-wa-float')) document.body.insertAdjacentHTML('beforeend', WA_FLOATER_HTML);
-    if (!document.getElementById('ptc-geo-banner')) document.body.insertAdjacentHTML('beforeend', GEO_BANNER_HTML);
+    if (!document.getElementById('ptc-geo-bubble')) document.body.insertAdjacentHTML('beforeend', GEO_BUBBLE_HTML);
 
     var waMsg = getWAMessage();
     var waUrl = 'https://wa.me/' + WA_NUM + '?text=' + waMsg;
@@ -152,6 +165,7 @@ window.getProductPageLink = function (result) {
     if (floatEl) floatEl.href = waUrl;
 
     if (!isHomepage) {
+      // NAV
       if (!document.querySelector('nav[aria-label="Main Navigation"]')) {
         document.querySelectorAll('nav').forEach(function (n) {
            if (!n.classList.contains('mb-8') && !n.innerText.includes('/')) n.remove();
@@ -160,6 +174,7 @@ window.getProductPageLink = function (result) {
         document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
       }
 
+      // FOOTER
       if (!document.getElementById('ptc-footer')) {
         document.querySelectorAll('footer').forEach(function(f){
             var cur = f;
@@ -171,20 +186,49 @@ window.getProductPageLink = function (result) {
         });
         document.body.insertAdjacentHTML('beforeend', FOOTER_HTML);
       }
+
+      // BREADCRUMBS (Inject above the first H1 in main)
+      if (!document.querySelector('.ptc-breadcrumb')) {
+        var main = document.querySelector('main');
+        if (main) {
+           var h1 = main.querySelector('h1');
+           if (h1) {
+              var brand = 'Brands';
+              var partNo = '';
+              var filename = path.split('/').pop();
+              if (filename.includes('aftermarket-')) {
+                 var parts = filename.replace('.html', '').split('-');
+                 if (parts.length >= 3) {
+                    brand = parts[1].toUpperCase();
+                    partNo = parts.slice(2).join(' ').toUpperCase();
+                 }
+              }
+              var breadcrumbHTML = '<div class="ptc-breadcrumb max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">'
+                + '<a href="https://partstrading.com/">Home</a> &nbsp;/&nbsp; '
+                + '<a href="https://partstrading.com/#brands">' + brand + '</a>'
+                + (partNo ? ' &nbsp;/&nbsp; <span class="text-gray-900">' + partNo + '</span>' : '')
+                + '</div>';
+              h1.insertAdjacentHTML('beforebegin', breadcrumbHTML);
+           }
+        }
+      }
     }
 
-    // IP Banner Upgrade with City/Country
+    // IP Bubble Fade In
     setTimeout(function () {
+      var bubble = document.getElementById('ptc-geo-bubble');
       var el = document.getElementById('ptc-geo-text');
-      if (!el) return;
+      if (!bubble || !el) return;
+      
       fetch('https://ipapi.co/json/')
         .then(function (r) { return r.json(); })
         .then(function (data) {
           if (data && data.city && data.country_name) {
             el.innerHTML = '📦 Standard Shipping to <span style="color:#facc15;">' + data.city + ', ' + data.country_name + '</span>';
-          }
-        }).catch(function(){});
-    }, 1500);
+            bubble.classList.add('geo-visible');
+          } else { bubble.classList.add('geo-visible'); }
+        }).catch(function(){ bubble.classList.add('geo-visible'); });
+    }, 2500);
   }
 
   if (document.readyState === 'loading') {
