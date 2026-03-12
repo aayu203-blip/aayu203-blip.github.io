@@ -1,33 +1,55 @@
 /**
  * PTC Shared Components — injected into all pages
- * Handles: Nav, Footer, WhatsApp Floater, Geo-IP Delivery Banner
+ * Handles: Nav, Footer, WhatsApp Floater, Geo-IP Delivery Banner, Search Link Logic
  */
+
+// Centralized link generation logic for search results
+window.getProductPageLink = function (result) {
+  const brandRaw = (result.Brand || '').toString().trim();
+  const partNoRaw = (result["Part No"] || '').toString().trim();
+  if (!partNoRaw) return '#';
+
+  const brand = brandRaw.toLowerCase();
+  const partNo = partNoRaw.toUpperCase();
+
+  // 1. Try Path Index First (Most Accurate)
+  if (typeof window.productPathIndex === 'object' && window.productPathIndex !== null) {
+    const brandKey = `${brand}|${partNo}`;
+    const directPath = window.productPathIndex[brandKey] || window.productPathIndex[partNo];
+    if (directPath) return directPath;
+  }
+
+  // 2. Fallback to /pages/products/aftermarket-[brand]-[partNo].html
+  const brandSlug = brand.includes('caterpillar') ? 'cat' : brand.split(' ')[0];
+  return `/pages/products/aftermarket-${brandSlug}-${partNo.toLowerCase()}.html`;
+};
+
 (function () {
   'use strict';
 
   // ── Page context for pre-filled WhatsApp messages ──────────────────────────
   var PAGE_MESSAGES = {
-    'jcb-spare-parts':          'Hi! I need JCB spare parts.',
-    'doosan-spare-parts':       'Hi! I need Doosan excavator spare parts.',
-    'liebherr-spare-parts':     'Hi! I need Liebherr mining equipment parts.',
-    'atlas-copco-spare-parts':  'Hi! I need Atlas Copco drill/compressor parts.',
-    'wirtgen-spare-parts':      'Hi! I need Wirtgen / Vögele / Hamm road equipment parts.',
-    'terex-grove-crane-parts':  'Hi! I need Terex or Grove crane spare parts.',
-    'normet-spare-parts':       'Hi! I need Normet underground equipment parts.',
-    'volvo-ce-articulated-parts':'Hi! I need Volvo CE articulated hauler (A-series) parts.',
-    'bell-equipment-parts':     'Hi! I need Bell Equipment ADT (B25/B30) spare parts.',
-    'russia-heavy-equipment':   'Hi! I need heavy equipment parts for export to Russia.',
-    'indonesia-heavy-equipment':'Hi! I need heavy equipment parts for export to Indonesia.',
-    'uae-heavy-equipment':      'Hi! I need heavy equipment parts for UAE.',
-    'south-africa-heavy-equipment':'Hi! I need heavy equipment parts for South Africa.',
-    'jharkhand-heavy-equipment':'Hi! I need heavy equipment parts for a mine in Jharkhand.',
-    'odisha-heavy-equipment':   'Hi! I need heavy equipment parts for a mine in Odisha.',
-    'karnataka-heavy-equipment':'Hi! I need heavy equipment parts for a mine in Karnataka.',
-    'rajasthan-heavy-equipment':'Hi! I need heavy equipment parts for Rajasthan.',
+    'jcb-spare-parts': 'Hi! I need JCB spare parts.',
+    'doosan-spare-parts': 'Hi! I need Doosan excavator spare parts.',
+    'liebherr-spare-parts': 'Hi! I need Liebherr mining equipment parts.',
+    'atlas-copco-spare-parts': 'Hi! I need Atlas Copco drill/compressor parts.',
+    'wirtgen-spare-parts': 'Hi! I need Wirtgen / Vögele / Hamm road equipment parts.',
+    'terex-grove-crane-parts': 'Hi! I need Terex or Grove crane spare parts.',
+    'normet-spare-parts': 'Hi! I need Normet underground equipment parts.',
+    'volvo-ce-articulated-parts': 'Hi! I need Volvo CE articulated hauler (A-series) parts.',
+    'bell-equipment-parts': 'Hi! I need Bell Equipment ADT (B25/B30) spare parts.',
+    'russia-heavy-equipment': 'Hi! I need heavy equipment parts for export to Russia.',
+    'indonesia-heavy-equipment': 'Hi! I need heavy equipment parts for export to Indonesia.',
+    'uae-heavy-equipment': 'Hi! I need heavy equipment parts for UAE.',
+    'south-africa-heavy-equipment': 'Hi! I need heavy equipment parts for South Africa.',
+    'jharkhand-heavy-equipment': 'Hi! I need heavy equipment parts for a mine in Jharkhand.',
+    'odisha-heavy-equipment': 'Hi! I need heavy equipment parts for a mine in Odisha.',
+    'karnataka-heavy-equipment': 'Hi! I need heavy equipment parts for a mine in Karnataka.',
+    'rajasthan-heavy-equipment': 'Hi! I need heavy equipment parts for Rajasthan.',
     'underground-mining-parts': 'Hi! I need underground mining equipment parts (Epiroc/Sandvik/Normet).',
-    'blog':                     'Hi! I read your blog post and have a question about spare parts.',
-    'equipment-models':         'Hi! I need spare parts for my equipment. Can you help?',
-    'categories':               'Hi! I need spare parts from a specific category.',
+    'blog': 'Hi! I read your blog post and have a question about spare parts.',
+    'equipment-models': 'Hi! I need spare parts for my equipment. Can you help?',
+    'categories': 'Hi! I need spare parts from a specific category.',
   };
 
   function getWAMessage() {
@@ -45,11 +67,11 @@
 
   var WA_FLOATER_HTML = '<a id="ptc-wa-float" href="#" target="_blank" rel="noopener" '
     + 'title="WhatsApp Parts Trading Company" '
-    + 'style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;'
+    + 'style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:999999;'
     + 'background:#25d366;color:#fff;border-radius:50%;width:60px;height:60px;'
     + 'display:flex;align-items:center;justify-content:center;'
     + 'box-shadow:0 4px 20px rgba(37,211,102,0.5);'
-    + 'cursor:pointer;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;"'
+    + 'cursor:pointer;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s; visibility: visible !important; opacity: 1 !important;"'
     + 'onmouseover="this.style.transform=\'scale(1.12)\';this.style.boxShadow=\'0 6px 28px rgba(37,211,102,0.7)\'"'
     + 'onmouseout="this.style.transform=\'scale(1)\';this.style.boxShadow=\'0 4px 20px rgba(37,211,102,0.5)\'">'
     + '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">'
@@ -141,11 +163,17 @@
     + '<div>'
     + '<h4 style="color:#facc15;font-weight:700;margin-bottom:1rem;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.05em;">Popular Brands</h4>'
     + '<ul style="list-style:none;padding:0;margin:0;">'
-    + '<li><a href="https://partstrading.com/pages/hubs/brand-volvo.html" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Volvo Parts</a></li>'
-    + '<li><a href="https://partstrading.com/pages/hubs/brand-komatsu.html" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Komatsu Parts</a></li>'
-    + '<li><a href="https://partstrading.com/pages/hubs/brand-cat.html" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Caterpillar Parts</a></li>'
-    + '<li><a href="https://partstrading.com/pages/hubs/brand-hitachi.html" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Hitachi Parts</a></li>'
-    + '<li><a href="https://partstrading.com/pages/hubs/brand-scania.html" style="color:#9ca3af;text-decoration:none;font-size:0.875rem;">Scania Parts</a></li>'
+    + '<li><a href="https://partstrading.com/pages/hubs/brand-volvo.html" style="color: #6b7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color=\'#fbbf24\'" onmouseout="this.style.color=\'#6b7280\'">Volvo Parts</a></li>'
+    + '<li><a href="https://partstrading.com/pages/hubs/brand-komatsu.html" style="color: #6b7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color=\'#fbbf24\'" onmouseout="this.style.color=\'#6b7280\'">Komatsu Parts</a></li>'
+    + '<li><a href="https://partstrading.com/pages/hubs/brand-cat.html" style="color: #6b7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color=\'#fbbf24\'" onmouseout="this.style.color=\'#6b7280\'">Caterpillar Parts</a></li>'
+    + '<li><a href="https://partstrading.com/pages/hubs/brand-hitachi.html" style="color: #6b7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color=\'#fbbf24\'" onmouseout="this.style.color=\'#6b7280\'">Hitachi Parts</a></li>'
+    + '<li><a href="https://partstrading.com/pages/hubs/brand-scania.html" style="color: #6b7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color=\'#fbbf24\'" onmouseout="this.style.color=\'#6b7280\'">Scania Parts</a></li>'
+    + '<li><a href="https://partstrading.com/pages/hubs/brand-jcb.html" style="color: #6b7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color=\'#fbbf24\'" onmouseout="this.style.color=\'#6b7280\'">JCB Parts</a></li>'
+    + '<li><a href="https://partstrading.com/pages/hubs/brand-liebherr.html" style="color: #6b7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color=\'#fbbf24\'" onmouseout="this.style.color=\'#6b7280\'">Liebherr Parts</a></li>'
+    + '<li><a href="https://partstrading.com/atlas-copco-spare-parts-india.html" style="color: #6b7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color=\'#fbbf24\'" onmouseout="this.style.color=\'#6b7280\'">Atlas Copco</a></li>'
+    + '<li><a href="https://partstrading.com/doosan-spare-parts-india.html" style="color: #6b7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color=\'#fbbf24\'" onmouseout="this.style.color=\'#6b7280\'">Doosan Parts</a></li>'
+    + '<li><a href="https://partstrading.com/bell-equipment-parts.html" style="color: #6b7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color=\'#fbbf24\'" onmouseout="this.style.color=\'#6b7280\'">Bell Parts</a></li>'
+    + '<li><a href="https://partstrading.com/wirtgen-spare-parts-india.html" style="color: #6b7280; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color=\'#fbbf24\'" onmouseout="this.style.color=\'#6b7280\'">Wirtgen Parts</a></li>'
     + '</ul>'
     + '</div>'
     + '</div>'
@@ -175,32 +203,55 @@
     var floatEl = document.getElementById('ptc-wa-float');
     if (floatEl) floatEl.href = waUrl;
 
-    // Inject nav + footer only on non-homepage pages that don't have their own
-    if (!isHomepage && !document.getElementById('ptc-nav')) {
-      // Check if page has no real nav
-      var existingNavs = document.querySelectorAll('nav');
-      if (existingNavs.length === 0) {
-        var eNav = document.querySelector('nav'); if(eNav) eNav.remove(); document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
-        var navWa = document.getElementById('ptc-nav-wa');
-        if (navWa) navWa.href = waUrl;
-      }
-    } else if (!isHomepage) {
-      // Page has nav — just update the WA link in nav if present
-      var navWaEl = document.getElementById('ptc-nav-wa');
-      if (navWaEl) navWaEl.href = waUrl;
-    }
-
-    // Inject/replace footer on all non-homepage pages with the standard PTC footer
+    // Aggressively replace navigation and footer on non-homepage pages
     if (!isHomepage) {
-      var eFoot = document.querySelector('footer'); if(eFoot) eFoot.remove();
+      // 1. Handle Navigation
+      // Remove any existing nav except breadcrumbs (which usually have "breadcrumb" in class or are small)
+      // or simply remove the first nav if it looks like a header nav.
+      // Better: find any nav that doesn't have 'mb-8' (standard breadcrumb margin in our generated pages)
+      var navs = document.querySelectorAll('nav');
+      navs.forEach(function (n) {
+        // If it's the main header nav (usually sticky or has logo), remove it
+        if (n.querySelector('img') || n.classList.contains('sticky')) {
+          n.remove();
+        }
+      });
+
+      // Remove the top "Fleet Overhaul" bar if present
+      var topBar = document.querySelector('div.bg-gray-900.text-white.py-3.px-4');
+      if (topBar) topBar.remove();
+
+      // Inject standard NAV_HTML at the very top
+      document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
+      var navWa = document.getElementById('ptc-nav-wa');
+      if (navWa) navWa.href = waUrl;
+
+      // 2. Handle Footer
+      // Remove any existing footer, footer bottom sections, and maps/share blocks that follow it
+      var eFoot = document.querySelector('footer');
+      if (eFoot) {
+        // Try to remove everything from footer onwards to avoid "related parts in middle"
+        var current = eFoot;
+        var toRemove = [];
+        while (current) {
+          toRemove.push(current);
+          current = current.nextElementSibling;
+        }
+        toRemove.forEach(function (el) {
+          // Keep the scripts at the bottom!
+          if (el.tagName !== 'SCRIPT') el.remove();
+        });
+      }
+
+      // Inject standard FOOTER_HTML
       document.body.insertAdjacentHTML('beforeend', FOOTER_HTML);
     }
 
     // Geo IP detection
-    setTimeout(function() {
-      fetch('https://ipapi.co/json/', {signal: AbortSignal.timeout(5000)})
-        .then(function(r) { return r.json(); })
-        .then(function(data) {
+    setTimeout(function () {
+      fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(5000) })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
           var cc = (data && data.country_code) ? data.country_code : 'DEFAULT';
           var msg = COUNTRY_MESSAGES[cc] || COUNTRY_MESSAGES['DEFAULT'];
           var el = document.getElementById('ptc-geo-text');
@@ -209,14 +260,14 @@
           if (banner) {
             banner.style.display = 'block';
             // Auto-hide after 6 seconds
-            setTimeout(function() {
+            setTimeout(function () {
               if (banner) banner.style.opacity = '0';
               banner.style.transition = 'opacity 1s';
-              setTimeout(function() { banner.style.display = 'none'; }, 1000);
+              setTimeout(function () { banner.style.display = 'none'; }, 1000);
             }, 7000);
           }
         })
-        .catch(function() {
+        .catch(function () {
           // Silently fail — geo banner just won't show
         });
     }, 1500);

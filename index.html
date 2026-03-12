@@ -1951,7 +1951,8 @@
 						class="category-card kawasaki bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]">
 						<div
 							class="w-16 h-16 mb-4 flex items-center justify-center rounded-xl bg-red-50 border-2 border-red-200">
-							<span class="text-red-600 font-black text-xl">KAW</span></div>
+							<span class="text-red-600 font-black text-xl">KAW</span>
+						</div>
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Kawasaki</h3>
 						<p class="text-gray-600 text-center text-sm leading-relaxed">Hydraulic Systems</p>
 					</div>
@@ -1967,7 +1968,8 @@
 						class="category-card denso bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]">
 						<div
 							class="w-16 h-16 mb-4 flex items-center justify-center rounded-xl bg-blue-50 border-2 border-blue-200">
-							<span class="text-blue-700 font-black text-lg">DENSO</span></div>
+							<span class="text-blue-700 font-black text-lg">DENSO</span>
+						</div>
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">DENSO</h3>
 						<p class="text-gray-600 text-center text-sm leading-relaxed">Electrical Systems</p>
 					</div>
@@ -1975,7 +1977,8 @@
 						class="category-card mahle bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]">
 						<div
 							class="w-16 h-16 mb-4 flex items-center justify-center rounded-xl bg-orange-50 border-2 border-orange-200">
-							<span class="text-orange-700 font-black text-lg">MAHLE</span></div>
+							<span class="text-orange-700 font-black text-lg">MAHLE</span>
+						</div>
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">MAHLE</h3>
 						<p class="text-gray-600 text-center text-sm leading-relaxed">Engine Components</p>
 					</div>
@@ -1991,7 +1994,8 @@
 						class="category-card garrett bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]">
 						<div
 							class="w-16 h-16 mb-4 flex items-center justify-center rounded-xl bg-gray-100 border-2 border-gray-300">
-							<span class="text-gray-700 font-black text-lg">GTX</span></div>
+							<span class="text-gray-700 font-black text-lg">GTX</span>
+						</div>
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Garrett</h3>
 						<p class="text-gray-600 text-center text-sm leading-relaxed">Turbochargers</p>
 					</div>
@@ -6137,97 +6141,6 @@
 	</div>
 	`;
 			document.body.appendChild(modal);
-		}
-		/// Helper to get product page link (actual file path - guaranteed to work!)
-		function getProductPageLink(result) {
-			const brandRaw = (result["Brand"] || '').toString().trim();
-			const categoryRaw = (result["Category"] || '').toString().trim();
-			const partNoRaw = (result["Part No"] || '').toString().trim();
-			if (!partNoRaw) {
-				return '#';
-			}
-
-
-			const brand = brandRaw.toLowerCase();
-			const category = categoryRaw.toLowerCase();
-			const partNo = partNoRaw.toUpperCase();
-
-
-			if (typeof window.productPathIndex === 'object' && window.productPathIndex !== null) {
-				const brandKey = `${brand}|${partNo}`;
-				const directPath = window.productPathIndex[brandKey] || window.productPathIndex[partNo];
-				if (directPath) {
-					return directPath;
-				}
-			}
-
-
-			const brandFolder = brand.includes('volvo') ? 'volvo'
-				: brand.includes('scania') ? 'scania'
-					: brand.includes('komatsu') ? 'komatsu'
-						: brand.includes('cat') || brand.includes('caterpillar') ? 'cat'
-							: brand.includes('hitachi') ? 'hitachi'
-								: brand.includes('hyundai') ? 'hyundai'
-									: 'scania';
-
-
-			const categoryPriority = {
-				scania: {
-					'body & cabin': ['exterior'],
-					'brake & steering systems': ['suspension', 'braking'],
-					'drivetrain': ['transmission'],
-					'engine components': ['engine', 'fuel'],
-					'fasteners & hardware': ['hardware'],
-					'filtration & maintenance': ['filtration'],
-					'hydraulic connectors': ['hydraulics'],
-					'hydraulic systems': ['hydraulics'],
-					'miscellaneous': ['misc', 'filtration']
-				},
-				volvo: {
-					'body & cabin': ['braking', 'engine'],
-					'brake & steering systems': ['braking', 'suspension', 'engine'],
-					'drivetrain': ['braking', 'transmission', 'engine', 'suspension'],
-					'engine components': ['engine', 'braking'],
-					'fasteners & hardware': ['braking', 'engine'],
-					'filtration & maintenance': ['braking', 'engine', 'filtration'],
-					'hydraulic connectors': ['braking'],
-					'hydraulic systems': ['engine', 'braking'],
-					'miscellaneous': ['braking', 'engine']
-				}
-			};
-
-
-			const defaultFallback = {
-				scania: ['suspension', 'braking', 'engine', 'exterior', 'filtration', 'fuel', 'hydraulics', 'hardware', 'misc', 'transmission'],
-				volvo: ['braking', 'engine', 'suspension', 'transmission', 'filtration'],
-				komatsu: ['engine', 'hydraulics', 'braking', 'transmission'],
-				cat: ['engine', 'hydraulics', 'braking', 'transmission'],
-				hitachi: ['engine', 'hydraulics', 'braking'],
-				hyundai: ['engine', 'hydraulics', 'braking']
-			};
-
-
-			const candidates = [];
-			const categoryFolders = (categoryPriority[brandFolder] && categoryPriority[brandFolder][category]) || [];
-			categoryFolders.forEach(folder => candidates.push(`/${brandFolder}/${folder}/${partNo}.html`));
-			const fallbacks = defaultFallback[brandFolder] || [];
-			fallbacks.forEach(folder => candidates.push(`/${brandFolder}/${folder}/${partNo}.html`));
-
-			// Add modern high-probability patterns
-			candidates.push(`/pages/products/aftermarket-${brandFolder}-${partNo.toLowerCase()}.html`);
-			candidates.push(`/pages/products/aftermarket-${brandFolder}-${partNo.toUpperCase()}.html`);
-			candidates.push(`/products/${partNo}.html`, `/products/${partNo.toLowerCase()}.html`);
-
-
-			const seen = new Set();
-			for (const path of candidates) {
-				if (!seen.has(path)) {
-					seen.add(path);
-				}
-			}
-
-
-			return Array.from(seen)[0] || `/products/${partNo}.html`;
 		}
 
 
