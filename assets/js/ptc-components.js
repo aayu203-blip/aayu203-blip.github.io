@@ -63,23 +63,23 @@ window.getProductPageLink = function (result) {
   var WA_NUM = '919821037990';
 
   // ── NAV HTML ───────────────────────────────────────────────────────────────
-  var NAV_HTML = "<nav aria-label=\"Main Navigation\" class=\"sticky top-0 w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl\" x-data=\"{ mobileMenuOpen: false, scrolled: false }\" x-init=\"window.addEventListener('scroll', () => { scrolled = window.scrollY > 50; }); scrolled = window.scrollY > 50;\">\n\t<div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n\t<div class=\"flex justify-between items-center h-28\">\n\t<div class=\"flex items-center\">\n\t<div class=\"flex-shrink-0\">\n\t<a href=\"https://partstrading.com/#home\" class=\"flex items-center space-x-4 hover:scale-105 transition-transform duration-300\">\n\t<img src=\"/assets/images/ptc-logo.png?v=1\" alt=\"PTC Parts Trading Company\" class=\"h-36 w-auto transition-all duration-300\" id=\"nav-logo\">\n\t</a>\n\t</div>\n\t</div>\n\t<div class=\"hidden md:flex items-center space-x-2\">\n\t<a class=\"nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-white\" href=\"https://partstrading.com/#home\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">HOME</span>\n\t</a>\n\t<a class=\"nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-white\" href=\"https://partstrading.com/#brands\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">BRANDS</span>\n\t</a>\n\t<a class=\"nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-white\" href=\"https://partstrading.com/#equipment-models\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">MODELS</span>\n\t</a>\n\t<a class=\"nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-white\" href=\"https://partstrading.com/#product-categories\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">PRODUCTS</span>\n\t</a>\n\t<a class=\"nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-white\" href=\"https://partstrading.com/blog/\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">BLOG</span>\n\t</a>\n\t<a class=\"nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-white\" href=\"https://partstrading.com/#faq\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">FAQ</span>\n\t</a>\n\t<a class=\"group relative bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-6 py-4 rounded-2xl font-bold tracking-wide hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 border-2 border-yellow-300/50 flex items-center space-x-3\" href=\"https://partstrading.com/#contact\">\n\t<svg class=\"w-5 h-5 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">CONTACT</span>\n\t</a>\n\t</div>\n\t<div class=\"md:hidden\">\n\t<button @click=\"mobileMenuOpen = !mobileMenuOpen\" aria-expanded=\"false\" aria-label=\"Toggle mobile menu\" class=\"p-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-yellow-400/50 transition-all duration-300 border-2 border-transparent drop-shadow-sm text-white\" x-bind:aria-expanded=\"mobileMenuOpen\">\n\t<svg class=\"h-7 w-7\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\" x-show=\"!mobileMenuOpen\">\n\t<path d=\"M4 6h16M4 12h16M4 18h16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<svg class=\"h-7 w-7\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\" x-show=\"mobileMenuOpen\">\n\t<path d=\"M6 18L18 6M6 6l12 12\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t</button>\n\t</div>\n\t</div>\n\t</div>\n\t<div class=\"md:hidden bg-white/98 backdrop-blur-xl border-t-2 border-yellow-300/60 shadow-2xl\" x-show=\"mobileMenuOpen\" x-transition:enter=\"transition ease-out duration-300\" x-transition:enter-end=\"opacity-100 transform translate-y-0\" x-transition:enter-start=\"opacity-0 transform -translate-y-4\" x-transition:leave=\"transition ease-in duration-200\" x-transition:leave-end=\"opacity-0 transform -translate-y-4\" x-transition:leave-start=\"opacity-100 transform translate-y-0\">\n\t<div class=\"px-6 py-6 space-y-3\">\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm\" :class=\"scrolled ? 'text-gray-900' : 'text-white'\" href=\"https://partstrading.com/#home\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">HOME</span>\n\t</a>\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm\" :class=\"scrolled ? 'text-gray-900' : 'text-white'\" href=\"https://partstrading.com/#brands\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">BRANDS</span>\n\t</a>\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm\" :class=\"scrolled ? 'text-gray-900' : 'text-white'\" href=\"https://partstrading.com/#equipment-models\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">MODELS</span>\n\t</a>\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm\" :class=\"scrolled ? 'text-gray-900' : 'text-white'\" href=\"https://partstrading.com/#product-categories\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">PRODUCTS</span>\n\t</a>\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm\" :class=\"scrolled ? 'text-gray-900' : 'text-white'\" href=\"https://partstrading.com/blog/\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">BLOG</span>\n\t</a>\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm\" :class=\"scrolled ? 'text-gray-900' : 'text-white'\" href=\"https://partstrading.com/#faq\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">FAQ</span>\n\t</a>\n\t<a @click=\"mobileMenuOpen = false\" class=\"nav-link group flex items-center space-x-4 px-6 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 rounded-2xl font-bold tracking-wide hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 border-2 border-yellow-300/50\" href=\"https://partstrading.com/#contact\">\n\t<svg class=\"w-6 h-6 group-hover:scale-125 transition-transform duration-300\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\">\n\t<path d=\"M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path>\n\t</svg>\n\t<span class=\"font-bold tracking-wide\">CONTACT</span>\n\t</a>\n\t</div>\n\t</div>\n\t</nav>";
+  var NAV_HTML = "<nav aria-label=\"Main Navigation\" class=\"sticky top-0 w-full z-50 bg-white shadow-lg border-b border-gray-200\" x-data=\"{ mobileMenuOpen: false, scrolled: false }\" x-init=\"window.addEventListener('scroll', () => { scrolled = window.scrollY > 50; });\">\n\t<div class=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n\t<div class=\"flex justify-between items-center h-28\">\n\t<div class=\"flex items-center\">\n\t<div class=\"flex-shrink-0\">\n\t<a href=\"https://partstrading.com/#home\" class=\"flex items-center space-x-4 hover:scale-105 transition-transform duration-300\">\n\t<img src=\"/assets/images/ptc-logo.png?v=1\" alt=\"PTC Parts Trading Company\" class=\"h-32 w-auto\" id=\"nav-logo\">\n\t</a>\n\t</div>\n\t</div>\n\t<div class=\"hidden md:flex items-center space-x-2\">\n\t<a class=\"nav-link px-4 py-2 font-bold text-gray-900 hover:text-yellow-600 transition-colors\" href=\"https://partstrading.com/#home\">HOME</a>\n\t<a class=\"nav-link px-4 py-2 font-bold text-gray-900 hover:text-yellow-600 transition-colors\" href=\"https://partstrading.com/#brands\">BRANDS</a>\n\t<a class=\"nav-link px-4 py-2 font-bold text-gray-900 hover:text-yellow-600 transition-colors\" href=\"https://partstrading.com/#equipment-models\">MODELS</a>\n\t<a class=\"nav-link px-4 py-2 font-bold text-gray-900 hover:text-yellow-600 transition-colors\" href=\"https://partstrading.com/#product-categories\">PRODUCTS</a>\n\t<a class=\"nav-link px-4 py-2 font-bold text-gray-900 hover:text-yellow-600 transition-colors\" href=\"https://partstrading.com/blog/\">BLOG</a>\n\t<a class=\"nav-link px-4 py-2 font-bold text-gray-900 hover:text-yellow-600 transition-colors\" href=\"https://partstrading.com/#faq\">FAQ</a>\n\t<a class=\"ml-4 bg-yellow-400 text-gray-900 px-6 py-3 rounded-xl font-bold hover:bg-yellow-500 transition-all shadow-md\" href=\"https://partstrading.com/#contact\">CONTACT</a>\n\t</div>\n\t<div class=\"md:hidden\">\n\t<button @click=\"mobileMenuOpen = !mobileMenuOpen\" class=\"p-2 text-gray-900 focus:outline-none\">\n\t<svg class=\"h-8 w-8\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\" x-show=\"!mobileMenuOpen\"><path d=\"M4 6h16M4 12h16M4 18h16\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path></svg>\n\t<svg class=\"h-8 w-8\" fill=\"none\" stroke=\"currentColor\" viewbox=\"0 0 24 24\" x-show=\"mobileMenuOpen\"><path d=\"M6 18L18 6M6 6l12 12\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2.5\"></path></svg>\n\t</button>\n\t</div>\n\t</div>\n\t</div>\n\t<div class=\"md:hidden bg-white border-t border-gray-100\" x-show=\"mobileMenuOpen\" x-transition>\n\t<div class=\"px-4 py-4 space-y-2\">\n\t<a class=\"block px-4 py-3 font-bold text-gray-900 hover:bg-gray-50 rounded-lg\" href=\"https://partstrading.com/#home\">HOME</a>\n\t<a class=\"block px-4 py-3 font-bold text-gray-900 hover:bg-gray-50 rounded-lg\" href=\"https://partstrading.com/#brands\">BRANDS</a>\n\t<a class=\"block px-4 py-3 font-bold text-gray-900 hover:bg-gray-50 rounded-lg\" href=\"https://partstrading.com/#equipment-models\">MODELS</a>\n\t<a class=\"block px-4 py-3 font-bold text-gray-900 hover:bg-gray-50 rounded-lg\" href=\"https://partstrading.com/#product-categories\">PRODUCTS</a>\n\t<a class=\"block px-4 py-3 font-bold text-gray-900 hover:bg-gray-50 rounded-lg\" href=\"https://partstrading.com/blog/\">BLOG</a>\n\t<a class=\"block px-4 py-3 font-bold text-gray-900 hover:bg-gray-50 rounded-lg\" href=\"https://partstrading.com/#contact\">CONTACT</a>\n\t</div>\n\t</div>\n\t</nav>";
 
   var WA_FLOATER_HTML = '<a id="ptc-wa-float" href="#" target="_blank" rel="noopener" '
     + 'title="WhatsApp Parts Trading Company" '
-    + 'style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:999999;'
-    + 'background:#25d366;color:#fff;border-radius:50%;width:60px;height:60px;'
+    + 'style="position:fixed;bottom:2rem;right:2.5rem;z-index:9999999;'
+    + 'background:#25d366;color:#fff;border-radius:50%;width:70px;height:70px;'
     + 'display:flex;align-items:center;justify-content:center;'
-    + 'box-shadow:0 4px 20px rgba(37,211,102,0.5);'
-    + 'cursor:pointer;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s; visibility: visible !important; opacity: 1 !important;"'
-    + 'onmouseover="this.style.transform=\'scale(1.12)\';this.style.boxShadow=\'0 6px 28px rgba(37,211,102,0.7)\'"'
-    + 'onmouseout="this.style.transform=\'scale(1)\';this.style.boxShadow=\'0 4px 20px rgba(37,211,102,0.5)\'">'
-    + '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white">'
+    + 'box-shadow:0 8px 32px rgba(37,211,102,0.4);border:2px solid rgba(255,255,255,0.2);'
+    + 'cursor:pointer;text-decoration:none;transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); visibility: visible !important; opacity: 1 !important;"'
+    + 'onmouseover="this.style.transform=\'scale(1.1) translateY(-5px)\';this.style.boxShadow=\'0 12px 40px rgba(37,211,102,0.6)\'"'
+    + 'onmouseout="this.style.transform=\'scale(1) translateY(0)\';this.style.boxShadow=\'0 8px 32px rgba(37,211,102,0.4)\'">'
+    + '<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="white">'
     + '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>'
     + '</svg>'
     + '</a>'
-    + '<div id="ptc-wa-pulse" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:9998;'
-    + 'width:60px;height:60px;border-radius:50%;background:rgba(37,211,102,0.3);'
+    + '<div id="ptc-wa-pulse" style="position:fixed;bottom:2rem;right:2.5rem;z-index:9999998;'
+    + 'width:70px;height:70px;border-radius:50%;background:rgba(37,211,102,0.3);'
     + 'animation:ptcPulse 2s infinite;pointer-events:none;"></div>';
 
   // ── GEO-IP DELIVERY BANNER ─────────────────────────────────────────────────
@@ -118,13 +118,13 @@ window.getProductPageLink = function (result) {
     'DEFAULT': '🌏 Shipping Worldwide — 30+ Countries'
   };
 
-  var GEO_BANNER_HTML = '<div id="ptc-geo-banner" style="display:none;position:fixed;bottom:6rem;right:1.5rem;z-index:9990;'
-    + 'background:rgba(17,24,39,0.95);color:#fff;padding:0.6rem 1rem;border-radius:0.75rem;'
-    + 'font-size:0.8rem;font-weight:600;box-shadow:0 4px 16px rgba(0,0,0,0.3);'
-    + 'border-left:3px solid #facc15;max-width:220px;line-height:1.4;">'
+  var GEO_BANNER_HTML = '<div id="ptc-geo-banner" style="display:none;position:fixed;bottom:0;left:0;width:100%;z-index:9999998;'
+    + 'background:rgba(17,24,39,0.98);backdrop-filter:blur(8px);color:#fff;padding:0.75rem 1rem;text-align:center;'
+    + 'font-size:0.875rem;font-weight:600;box-shadow:0 -4px 20px rgba(0,0,0,0.4);'
+    + 'border-top:2px solid #facc15;transition:transform 0.5s ease-out;">'
     + '<span id="ptc-geo-text">🌏 Shipping Worldwide</span>'
-    + '<button onclick="document.getElementById(\'ptc-geo-banner\').style.display=\'none\'" '
-    + 'style="background:none;border:none;color:#9ca3af;cursor:pointer;float:right;margin-left:0.5rem;font-size:1rem;line-height:1;">×</button>'
+    + '<button onclick="document.getElementById(\'ptc-geo-banner\').style.transform=\'translateY(100%)\'" '
+    + 'style="background:none;border:none;color:#9ca3af;cursor:pointer;float:right;margin-left:0.5rem;font-size:1.25rem;line-height:1;">×</button>'
     + '</div>';
 
   // ── CSS KEYFRAMES ──────────────────────────────────────────────────────────
@@ -194,7 +194,7 @@ window.getProductPageLink = function (result) {
 
     // Always inject floater, geo banner, styles
     document.head.insertAdjacentHTML('beforeend', STYLE_HTML);
-    console.log('--- INJECTING WA FLOATER ---'); document.body.insertAdjacentHTML('beforeend', WA_FLOATER_HTML);
+    document.body.insertAdjacentHTML('beforeend', WA_FLOATER_HTML);
     document.body.insertAdjacentHTML('beforeend', GEO_BANNER_HTML);
 
     // Set WhatsApp links
@@ -203,34 +203,54 @@ window.getProductPageLink = function (result) {
     var floatEl = document.getElementById('ptc-wa-float');
     if (floatEl) floatEl.href = waUrl;
 
+    // 3. Inject Product Schema (Price on Request)
+    if (window.location.pathname.includes('/products/')) {
+      var schema = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "offers": {
+          "@type": "Offer",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "0.00",
+            "priceCurrency": "USD",
+            "valueAddedTaxIncluded": "false"
+          },
+          "price": "0.00",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "description": "Price on Request"
+        }
+      };
+      var script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(schema);
+      document.head.appendChild(script);
+    }
+
     // Aggressively replace navigation and footer on non-homepage pages
     if (!isHomepage) {
       // 1. Handle Navigation
-      // Remove any existing nav except breadcrumbs (which usually have "breadcrumb" in class or are small)
-      // or simply remove the first nav if it looks like a header nav.
-      // Better: find any nav that doesn't have 'mb-8' (standard breadcrumb margin in our generated pages)
       var navs = document.querySelectorAll('nav');
       navs.forEach(function (n) {
-        // If it's the main header nav (usually sticky or has logo), remove it
-        if (n.querySelector('img') || n.classList.contains('sticky')) {
-          n.remove();
+        if (n.querySelector('img') || n.classList.contains('sticky') || n.classList.contains('bg-white')) {
+          // Don't remove breadcrumbs (usually small margin)
+          if (!n.classList.contains('mb-8') && !n.innerText.includes('/')) {
+            n.remove();
+          }
         }
       });
 
       // Remove the top "Fleet Overhaul" bar if present
-      var topBar = document.querySelector('div.bg-gray-900.text-white.py-3.px-4');
+      var topBar = document.querySelector('div.bg-gray-900.text-white');
       if (topBar) topBar.remove();
 
       // Inject standard NAV_HTML at the very top
       document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
-      var navWa = document.getElementById('ptc-nav-wa');
-      if (navWa) navWa.href = waUrl;
 
       // 2. Handle Footer
-      // Remove any existing footer, footer bottom sections, and maps/share blocks that follow it
       var eFoot = document.querySelector('footer');
       if (eFoot) {
-        // Try to remove everything from footer onwards to avoid "related parts in middle"
         var current = eFoot;
         var toRemove = [];
         while (current) {
@@ -238,18 +258,15 @@ window.getProductPageLink = function (result) {
           current = current.nextElementSibling;
         }
         toRemove.forEach(function (el) {
-          // Keep the scripts at the bottom!
-          if (el.tagName !== 'SCRIPT') el.remove();
+          if (el && el.tagName !== 'SCRIPT') el.remove();
         });
       }
-
-      // Inject standard FOOTER_HTML
       document.body.insertAdjacentHTML('beforeend', FOOTER_HTML);
     }
 
     // Geo IP detection
     setTimeout(function () {
-      fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(5000) })
+      fetch('https://ipapi.co/json/')
         .then(function (r) { return r.json(); })
         .then(function (data) {
           var cc = (data && data.country_code) ? data.country_code : 'DEFAULT';
@@ -259,18 +276,14 @@ window.getProductPageLink = function (result) {
           var banner = document.getElementById('ptc-geo-banner');
           if (banner) {
             banner.style.display = 'block';
-            // Auto-hide after 6 seconds
+            banner.style.transform = 'translateY(100%)';
             setTimeout(function () {
-              if (banner) banner.style.opacity = '0';
-              banner.style.transition = 'opacity 1s';
-              setTimeout(function () { banner.style.display = 'none'; }, 1000);
-            }, 7000);
+              banner.style.transform = 'translateY(0)';
+            }, 100);
           }
         })
-        .catch(function () {
-          // Silently fail — geo banner just won't show
-        });
-    }, 1500);
+        .catch(function () { });
+    }, 2000);
   }
 
   // Run after DOM ready
