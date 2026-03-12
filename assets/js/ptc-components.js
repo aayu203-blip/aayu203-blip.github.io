@@ -1,7 +1,7 @@
 /**
  * PTC Shared Components — injected into all pages
  * Handles: Nav, Footer, WhatsApp Floater, Geo-IP Delivery Banner, Search Link Logic
- * Version: 1.3
+ * Version: 1.4
  */
 
 // Centralized link generation logic for search results
@@ -77,7 +77,7 @@ window.getProductPageLink = function (result) {
     + '</nav>';
 
   var WA_FLOATER_HTML = '<a id="ptc-wa-float" href="#" target="_blank" rel="noopener" '
-    + 'style="position:fixed;bottom:2rem;right:2.5rem;z-index:9999999;'
+    + 'style="position:fixed;bottom:2rem;right:2.5rem;z-index:9999999 !important;'
     + 'background:#25d366 !important;color:#fff !important;border-radius:50%;width:70px;height:70px;'
     + 'display:flex;align-items:center;justify-content:center;'
     + 'box-shadow:0 8px 32px rgba(37,211,102,0.4);border:2px solid rgba(255,255,255,0.2);'
@@ -95,10 +95,10 @@ window.getProductPageLink = function (result) {
     'DEFAULT': '🌏 Shipping Worldwide — 30+ Countries'
   };
 
-  var GEO_BANNER_HTML = '<div id="ptc-geo-banner" style="display:none;position:fixed;bottom:0;left:0;width:100%;z-index:9999998;'
+  var GEO_BANNER_HTML = '<div id="ptc-geo-banner" style="display:block;position:fixed;bottom:0;left:0;width:100%;z-index:9999998;'
     + 'background:rgba(17,24,39,0.98);backdrop-filter:blur(8px);color:#fff;padding:0.75rem 1rem;text-align:center;'
     + 'font-size:0.875rem;font-weight:600;box-shadow:0 -4px 20px rgba(0,0,0,0.4); border-top:2px solid #facc15;">'
-    + '<span id="ptc-geo-text">🌏 Shipping Worldwide</span>'
+    + '<span id="ptc-geo-text">🌏 Shipping Worldwide — 30+ Countries</span>'
     + '</div>';
 
   var STYLE_HTML = '<style>html{scroll-padding-top:120px!important;}'
@@ -176,7 +176,7 @@ window.getProductPageLink = function (result) {
       }
     }
 
-    // Geo IP
+    // Geo IP Update
     setTimeout(function () {
       if (!document.getElementById('ptc-geo-text')) return;
       fetch('https://ipapi.co/json/')
@@ -186,8 +186,6 @@ window.getProductPageLink = function (result) {
           var msg = COUNTRY_MESSAGES[cc] || COUNTRY_MESSAGES['DEFAULT'];
           var el = document.getElementById('ptc-geo-text');
           if (el) el.textContent = msg;
-          var banner = document.getElementById('ptc-geo-banner');
-          if (banner) banner.style.display = 'block';
         }).catch(function(){});
     }, 2000);
   }
