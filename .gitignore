@@ -9,8 +9,9 @@ ru/
 zh/
 blog/
 
-# Ignore root-level generated HTML clutter but allow index.html
-*.html
+# Allow .html files in subdirectories
+!**/*.html
+!search.html
 !index.html
 !404.html
 
