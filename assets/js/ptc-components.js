@@ -1,7 +1,7 @@
 /**
  * PTC Shared Components — injected into all pages
  * Handles: Nav, Footer, WhatsApp Floater, Geo-IP Delivery Banner, Search Link Logic
- * Version: 1.4
+ * Version: 1.6
  */
 
 // Centralized link generation logic for search results
@@ -25,6 +25,8 @@ window.getProductPageLink = function (result) {
 
 (function () {
   'use strict';
+
+  var WA_NUM = '919821037990';
 
   var PAGE_MESSAGES = {
     'jcb-spare-parts': 'Hi! I need JCB spare parts.',
@@ -53,8 +55,6 @@ window.getProductPageLink = function (result) {
     return encodeURIComponent('Hi! I need heavy equipment spare parts. Can you help?');
   }
 
-  var WA_NUM = '919821037990';
-
   // ── NAV HTML (Black Text Enforced) ──────────────────────────────────────────
   var NAV_HTML = '<nav aria-label="Main Navigation" class="sticky top-0 w-full z-50 bg-white shadow-lg border-b border-gray-200">'
     + '<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">'
@@ -77,7 +77,7 @@ window.getProductPageLink = function (result) {
     + '</nav>';
 
   var WA_FLOATER_HTML = '<a id="ptc-wa-float" href="#" target="_blank" rel="noopener" '
-    + 'style="position:fixed;bottom:2rem;right:2.5rem;z-index:9999999 !important;'
+    + 'style="position:fixed;bottom:2.5rem;right:2.5rem;z-index:9999999 !important;'
     + 'background:#25d366 !important;color:#fff !important;border-radius:50%;width:70px;height:70px;'
     + 'display:flex;align-items:center;justify-content:center;'
     + 'box-shadow:0 8px 32px rgba(37,211,102,0.4);border:2px solid rgba(255,255,255,0.2);'
@@ -86,24 +86,20 @@ window.getProductPageLink = function (result) {
     + '<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>'
     + '</svg>'
     + '</a>'
-    + '<div id="ptc-wa-pulse" style="position:fixed;bottom:2rem;right:2.5rem;z-index:9999998;width:70px;height:70px;border-radius:50%;background:rgba(37,211,102,0.3);animation:ptcPulse 2s infinite;pointer-events:none;"></div>';
+    + '<div id="ptc-wa-pulse" style="position:fixed;bottom:2.5rem;right:2.5rem;z-index:9999998;width:70px;height:70px;border-radius:50%;background:rgba(37,211,102,0.3);animation:ptcPulse 2s infinite;pointer-events:none;"></div>';
 
-  var COUNTRY_MESSAGES = {
-    'RU': '🇷🇺 Delivering to Russia', 'UA': '🇺🇦 Delivering to Ukraine',
-    'AE': '🇦🇪 Delivering to UAE', 'SA': '🇸🇦 Delivering to Saudi Arabia',
-    'IN': '🚀 Same-Day Dispatch from Mumbai',
-    'DEFAULT': '🌏 Shipping Worldwide — 30+ Countries'
-  };
-
-  var GEO_BANNER_HTML = '<div id="ptc-geo-banner" style="display:block;position:fixed;bottom:0;left:0;width:100%;z-index:9999998;'
-    + 'background:rgba(17,24,39,0.98);backdrop-filter:blur(8px);color:#fff;padding:0.75rem 1rem;text-align:center;'
-    + 'font-size:0.875rem;font-weight:600;box-shadow:0 -4px 20px rgba(0,0,0,0.4); border-top:2px solid #facc15;">'
+  var GEO_BANNER_HTML = '<div id="ptc-geo-banner" style="display:flex;position:fixed;bottom:0;left:0;width:100%;z-index:9999998;'
+    + 'background:rgba(17,24,39,0.98);backdrop-filter:blur(8px);color:#fff;padding:0.75rem 1rem;align-items:center;justify-content:center;'
+    + 'font-size:0.875rem;font-weight:600;box-shadow:0 -4px 20px rgba(0,0,0,0.4); border-top:2px solid #facc15; min-height: 50px;">'
     + '<span id="ptc-geo-text">🌏 Shipping Worldwide — 30+ Countries</span>'
     + '</div>';
 
   var STYLE_HTML = '<style>html{scroll-padding-top:120px!important;}'
     + '@keyframes ptcPulse{0%{transform:scale(1);opacity:0.8;}70%{transform:scale(1.6);opacity:0;}100%{transform:scale(1.6);opacity:0;}}'
     + '.nav-link:hover{color:#d97706!important;}'
+    + '[id^="ptc-wa-"], .ptc-wa-btn { visibility: visible !important; opacity: 1 !important; display: flex !important; }'
+    + '#ptc-geo-banner { visibility: visible !important; display: flex !important; }'
+    + '@media (max-width: 768px) { #ptc-geo-banner { bottom: 85px !important; } }' // Protection for mobile WA bar
     + '</style>';
 
   var FOOTER_HTML = '<div id="ptc-footer-container" style="clear:both; width: 100%;">'
@@ -140,7 +136,13 @@ window.getProductPageLink = function (result) {
   function inject() {
     var isHomepage = (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname.length < 2);
 
-    document.head.insertAdjacentHTML('beforeend', STYLE_HTML);
+    if (!document.getElementById('ptc-styles')) {
+        var s = document.createElement('div');
+        s.id = 'ptc-styles';
+        s.innerHTML = STYLE_HTML;
+        document.head.appendChild(s);
+    }
+
     if (!document.getElementById('ptc-wa-float')) document.body.insertAdjacentHTML('beforeend', WA_FLOATER_HTML);
     if (!document.getElementById('ptc-geo-banner')) document.body.insertAdjacentHTML('beforeend', GEO_BANNER_HTML);
 
@@ -150,44 +152,39 @@ window.getProductPageLink = function (result) {
     if (floatEl) floatEl.href = waUrl;
 
     if (!isHomepage) {
-      // Avoid duplicate navs
       if (!document.querySelector('nav[aria-label="Main Navigation"]')) {
-        var existingNavs = document.querySelectorAll('nav');
-        existingNavs.forEach(function (n) {
+        document.querySelectorAll('nav').forEach(function (n) {
            if (!n.classList.contains('mb-8') && !n.innerText.includes('/')) n.remove();
         });
-        var topBar = document.querySelector('div.bg-gray-900.text-white.py-3');
-        if (topBar) topBar.remove();
+        document.querySelectorAll('div.bg-gray-900.text-white.py-3').forEach(function(d){ d.remove(); });
         document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
       }
 
-      // Avoid duplicate footers
       if (!document.getElementById('ptc-footer')) {
-        var eFoot = document.querySelector('footer');
-        if (eFoot) {
-          var current = eFoot;
-          while (current) {
-            var next = current.nextElementSibling;
-            if (current.tagName !== 'SCRIPT') current.remove();
-            current = next;
-          }
-        }
+        document.querySelectorAll('footer').forEach(function(f){
+            var cur = f;
+            while(cur && cur.tagName !== 'SCRIPT' && !cur.id.includes('ptc-components')) {
+                var next = cur.nextElementSibling;
+                cur.remove();
+                cur = next;
+            }
+        });
         document.body.insertAdjacentHTML('beforeend', FOOTER_HTML);
       }
     }
 
-    // Geo IP Update
+    // IP Banner Upgrade with City/Country
     setTimeout(function () {
-      if (!document.getElementById('ptc-geo-text')) return;
+      var el = document.getElementById('ptc-geo-text');
+      if (!el) return;
       fetch('https://ipapi.co/json/')
         .then(function (r) { return r.json(); })
         .then(function (data) {
-          var cc = (data && data.country_code) ? data.country_code : 'DEFAULT';
-          var msg = COUNTRY_MESSAGES[cc] || COUNTRY_MESSAGES['DEFAULT'];
-          var el = document.getElementById('ptc-geo-text');
-          if (el) el.textContent = msg;
+          if (data && data.city && data.country_name) {
+            el.innerHTML = '📦 Standard Shipping to <span style="color:#facc15;">' + data.city + ', ' + data.country_name + '</span>';
+          }
         }).catch(function(){});
-    }, 2000);
+    }, 1500);
   }
 
   if (document.readyState === 'loading') {
