@@ -83,8 +83,8 @@ def polish_file_v8(file_path):
     content = content.replace('© 2025', '© 2026')
     content = content.replace('© Parts Trading Company', '© 2026 Parts Trading Company')
 
-    # 6. Cache Busting (v1.8)
-    content = re.sub(r'ptc-components\.js(\?v=[\d\.]+)?', 'ptc-components.js?v=1.8', content)
+    # 6. Cache Busting (v1.9)
+    content = re.sub(r'ptc-components\.js(\?v=[\d\.]+)?', 'ptc-components.js?v=1.9', content)
 
     # 7. Re-inject Isolated Related Parts Section with Force-Close Tags
     if '</main>' in content:

@@ -1,7 +1,7 @@
 /**
  * PTC Shared Components — injected into all pages
  * Handles: Nav, Footer, WhatsApp Floater, Geo-IP Floating Bubble, Breadcrumbs, Search logic
- * Version: 1.8
+ * Version: 1.9
  */
 
 // Centralized link generation logic for search results
@@ -108,38 +108,53 @@ window.getProductPageLink = function (result) {
     + '.ptc-breadcrumb { margin: 1.5rem 0; font-size: 0.8rem; color: #6b7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }'
     + '.ptc-breadcrumb a { color: #d97706; text-decoration: none; transition: color 0.2s; }'
     + '.ptc-breadcrumb a:hover { color: #b45309; }'
+    + '.footer-link { transition: all 0.3s; } .footer-link:hover { color: #facc15 !important; transform: translateX(5px); }'
     + '</style>';
 
-  var FOOTER_HTML = '<div id="ptc-footer-container" style="clear:both; width: 100%;">'
-    + '<footer id="ptc-footer" style="background:#111827;color:#9ca3af;padding:4rem 1.5rem 2rem;margin-top:4rem;clear:both;">'
-    + '<div style="max-width:1280px;margin:0 auto;">'
-    + '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:3rem;margin-bottom:3rem;">'
+  var FOOTER_HTML = '<div id="ptc-footer-container" style="clear:both; width: 100%; border-top: 1px solid rgba(0,0,0,0.05);">'
+    + '<footer id="ptc-footer" style="background:#0f172a; color:#cbd5e1; padding:5rem 1.5rem 3rem; margin-top:4rem; clear:both; position:relative; overflow:hidden;">'
+    + '<div style="position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, rgba(250,204,21,0.3), transparent);"></div>'
+    + '<div style="max-width:1280px; margin:0 auto; position:relative; z-index:1;">'
+    + '<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:4rem; margin-bottom:4rem;">'
     + '<div>'
-    + '<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" style="height:60px;margin-bottom:1.5rem;">'
-    + '<p style="color:#d1d5db;font-size:0.9rem;line-height:1.6;">India\'s trusted supplier of OEM &amp; aftermarket spare parts for heavy machinery globally.</p>'
-    + '<div style="margin-top:1.5rem; display:flex; gap:10px;">'
-    + '<span style="background:rgba(250,204,21,0.15); color:#facc15; padding:4px 10px; border-radius:6px; font-size:0.7rem; font-weight:700; border:1px solid rgba(250,204,21,0.3);">✓ GENUINE QUALITY</span>'
-    + '<span style="background:rgba(37,211,102,0.15); color:#25d366; padding:4px 10px; border-radius:6px; font-size:0.7rem; font-weight:700; border:1px solid rgba(37,211,102,0.3);">🚀 GLOBAL SHIPPING</span>'
+    + '<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" style="height:70px; margin-bottom:2rem; filter: brightness(0) invert(1);">'
+    + '<p style="color:#94a3b8; font-size:0.95rem; line-height:1.8; margin-bottom:2rem;">India\'s globally trusted partner for high-precision OEM and aftermarket heavy machinery parts. We serve mining, construction, and power sectors across 40+ countries.</p>'
+    + '<div style="display:flex; gap:15px;">'
+    + '<span style="background:rgba(250,204,21,0.1); color:#facc15; padding:6px 12px; border-radius:8px; font-size:0.75rem; font-weight:800; border:1px solid rgba(250,204,21,0.2);">ISO CERTIFIED OPS</span>'
+    + '<span style="background:rgba(255,255,255,0.05); color:#fff; padding:6px 12px; border-radius:8px; font-size:0.75rem; font-weight:800; border:1px solid rgba(255,255,255,0.1);">20+ YEARS EXP</span>'
     + '</div>'
     + '</div>'
     + '<div>'
-    + '<h4 style="color:#facc15;font-weight:700;margin-bottom:1.25rem;font-size:0.9rem;text-transform:uppercase;">Quick Links</h4>'
-    + '<ul style="list-style:none;padding:0;margin:0;line-height:2.2;">'
-    + '<li><a href="https://partstrading.com/#brands" style="color:#9ca3af;text-decoration:none;font-size:0.9rem;">Brands</a></li>'
-    + '<li><a href="https://partstrading.com/#equipment-models" style="color:#9ca3af;text-decoration:none;font-size:0.9rem;">Equipment Models</a></li>'
-    + '<li><a href="https://partstrading.com/#product-categories" style="color:#9ca3af;text-decoration:none;font-size:0.9rem;">Products</a></li>'
-    + '<li><a href="https://partstrading.com/blog/" style="color:#9ca3af;text-decoration:none;font-size:0.9rem;">Technical Blog</a></li>'
+    + '<h4 style="color:#fff; font-weight:800; margin-bottom:2rem; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em;">Solutions</h4>'
+    + '<ul style="list-style:none; padding:0; margin:0; line-height:2.4;">'
+    + '<li><a href="https://partstrading.com/#brands" class="footer-link" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; display:block;">Premium Brands</a></li>'
+    + '<li><a href="https://partstrading.com/#equipment-models" class="footer-link" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; display:block;">Equipment Series</a></li>'
+    + '<li><a href="https://partstrading.com/#product-categories" class="footer-link" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; display:block;">Major Components</a></li>'
+    + '<li><a href="https://partstrading.com/blog/" class="footer-link" style="color:#94a3b8; text-decoration:none; font-size:0.9rem; display:block;">Technical Analysis</a></li>'
     + '</ul>'
     + '</div>'
     + '<div>'
-    + '<h4 style="color:#facc15;font-weight:700;margin-bottom:1.25rem;font-size:0.9rem;text-transform:uppercase;">Contact Us</h4>'
-    + '<p style="color:#d1d5db;font-size:0.9rem;line-height:1.8;">Grant Road, Mumbai 400 007<br>'
-    + '<a href="tel:+919821037990" style="color:#facc15;text-decoration:none;font-weight:bold;">+91 98210 37990</a><br>'
-    + '<a href="mailto:parts@partstrading.com" style="color:#facc15;text-decoration:none;">parts@partstrading.com</a></p>'
+    + '<h4 style="color:#fff; font-weight:800; margin-bottom:2rem; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em;">Get in Touch</h4>'
+    + '<div style="margin-bottom:1.5rem; display:flex; align-items:flex-start; gap:12px;">'
+    + '<div style="color:#facc15; margin-top:4px;"><svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg></div>'
+    + '<div><p style="color:#fff; font-weight:600; font-size:0.9rem; margin:0;">Headquarters</p><p style="color:#94a3b8; font-size:0.85rem; margin-top:4px;">Grant Road, Mumbai<br>Maharashtra 400 007, India</p></div>'
+    + '</div>'
+    + '<div style="margin-bottom:1.5rem; display:flex; align-items:center; gap:12px;">'
+    + '<div style="color:#facc15;"><svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg></div>'
+    + '<div><a href="tel:+919821037990" style="color:#fff; font-weight:700; text-decoration:none; font-size:1rem;">+91 98210 37990</a></div>'
+    + '</div>'
+    + '<div style="display:flex; align-items:center; gap:12px;">'
+    + '<div style="color:#facc15;"><svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg></div>'
+    + '<div><a href="mailto:parts@partstrading.com" style="color:#fff; font-weight:600; text-decoration:none; font-size:0.9rem;">parts@partstrading.com</a></div>'
     + '</div>'
     + '</div>'
-    + '<div style="border-top:1px solid #374151;padding-top:2rem;display:flex;justify-content:space-between;align-items:center;">'
-    + '<p style="font-size:0.8rem;color:#6b7280;">&copy; 2026 Parts Trading Company. All rights reserved.</p>'
+    + '</div>'
+    + '<div style="border-top:1px solid rgba(255,255,255,0.05); padding-top:2.5rem; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:1.5rem;">'
+    + '<p style="font-size:0.85rem; color:#64748b; font-weight:500;">&copy; 2026 Parts Trading Company. Engineered for Reliability.</p>'
+    + '<div style="display:flex; gap:2rem;">'
+    + '<a href="https://partstrading.com/#contact" style="color:#64748b; text-decoration:none; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">Request Quote</a>'
+    + '<a href="https://partstrading.com/#brands" style="color:#64748b; text-decoration:none; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">Bulk Supply</a>'
+    + '</div>'
     + '</div>'
     + '</div>'
     + '</footer>'
@@ -187,7 +202,7 @@ window.getProductPageLink = function (result) {
         document.body.insertAdjacentHTML('beforeend', FOOTER_HTML);
       }
 
-      // BREADCRUMBS (Inject above the first H1 in main)
+      // BREADCRUMBS
       if (!document.querySelector('.ptc-breadcrumb')) {
         var main = document.querySelector('main');
         if (main) {
@@ -206,7 +221,7 @@ window.getProductPageLink = function (result) {
               var breadcrumbHTML = '<div class="ptc-breadcrumb max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">'
                 + '<a href="https://partstrading.com/">Home</a> &nbsp;/&nbsp; '
                 + '<a href="https://partstrading.com/#brands">' + brand + '</a>'
-                + (partNo ? ' &nbsp;/&nbsp; <span class="text-gray-900">' + partNo + '</span>' : '')
+                + (partNo ? ' &nbsp;/&nbsp; <span class="text-gray-900 font-bold">' + partNo + '</span>' : '')
                 + '</div>';
               h1.insertAdjacentHTML('beforebegin', breadcrumbHTML);
            }
