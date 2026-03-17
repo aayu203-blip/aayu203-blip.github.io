@@ -5475,10 +5475,7 @@
 	</div>
 	</div>
 	<div class="flex gap-3">
-	<a href="${esc(safeDetailsLink)}" class="group relative overflow-hidden flex-1 bg-white border border-yellow-200 text-gray-900 px-4 py-2.5 rounded-lg font-semibold hover:bg-yellow-50 transition-all duration-300 transform hover:scale-105 shadow-sm flex items-center justify-center gap-2 text-sm">
-	<svg class='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5l7 7-7 7'></path></svg>
-	View Details
-	</a>
+	${safeDetailsLink !== '#' ? `<a href="${esc(safeDetailsLink)}" class="group relative overflow-hidden flex-1 bg-white border border-yellow-200 text-gray-900 px-4 py-2.5 rounded-lg font-semibold hover:bg-yellow-50 transition-all duration-300 transform hover:scale-105 shadow-sm flex items-center justify-center gap-2 text-sm"><svg class='w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5l7 7-7 7'></path></svg>View Details</a>` : ''}
 	<a href="#contact" class="group relative overflow-hidden flex-1 bg-gradient-to-r from-yellow-400/90 to-yellow-500/90 backdrop-blur-xl border border-yellow-300/60 text-gray-900 px-4 py-2.5 rounded-lg font-semibold hover:from-yellow-500/95 hover:to-yellow-600/95 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-yellow-400/60 flex items-center justify-center gap-2 text-sm">
 	<div class="absolute inset-0 bg-yellow-400/30 blur-xl scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 	<div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
