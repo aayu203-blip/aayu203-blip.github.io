@@ -31,7 +31,8 @@ window.getProductPageLink = function (result) {
     if (directPath) return directPath;
   }
 
-  return null;
+  const brandSlug = brand.includes('caterpillar') ? 'cat' : brand.split(' ')[0];
+  return `/pages/aftermarket-${brandSlug}-${partNo.toLowerCase()}.html`;
 };
 
 (function () {
