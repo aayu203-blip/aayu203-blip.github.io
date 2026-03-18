@@ -23,7 +23,7 @@ window.getProductPageLink = function (result) {
   if (!partNoRaw) return '#';
 
   const brand  = brandRaw.toLowerCase();
-  const partNo = partNoRaw.toUpperCase();
+  const partNo = partNoRaw.replace(/^-+/, '').toUpperCase();
 
   if (typeof window.productPathIndex === 'object' && window.productPathIndex !== null) {
     const brandKey  = `${brand}|${partNo}`;
