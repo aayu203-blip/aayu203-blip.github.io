@@ -1,0 +1,54 @@
+User-agent: *
+Allow: /
+
+# Main Sitemap Index
+Sitemap: https://partstrading.com/sitemap_index.xml
+
+# Standard search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# AI crawlers — explicitly allowed for citation indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Training data scrapers — disallowed
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /

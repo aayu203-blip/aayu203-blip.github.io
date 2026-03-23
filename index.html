@@ -85,9 +85,9 @@
 	<link as="style"
 		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
 		rel="preload" />
-	<link as="script" href="https://cdn.tailwindcss.com/" rel="preload" />
+	<link rel="preload" as="style" href="/assets/css/tailwind.css" />
+	<link rel="stylesheet" href="/assets/css/tailwind.css" />
 	<link href="https://fonts.googleapis.com/" rel="dns-prefetch" />
-	<link href="https://cdn.tailwindcss.com/" rel="dns-prefetch" />
 	<link href="https://unpkg.com/" rel="dns-prefetch" />
 	<link href="https://www.google.com/" rel="dns-prefetch" />
 	<link href="https://cdn.jsdelivr.net/" rel="dns-prefetch" />
@@ -151,7 +151,7 @@
 	{
 	"@type": "Offer",
 	"itemOffered": {
-	"@type": "ProductCollection",
+	"@type": "ItemList",
 	"name": "Volvo, Scania, Komatsu, CAT, Hitachi, Kobelco Spare Parts Catalog",
 	"description": "18,000+ spare parts including brakes, filters, transmission parts for all major brands"
 	}
@@ -294,7 +294,7 @@
 	"aggregateRating": {
 	"@type": "AggregateRating",
 	"ratingValue": "4.8",
-	"reviewCount": "250",
+	"reviewCount": "3",
 	"bestRating": "5",
 	"worstRating": "1"
 	},
@@ -351,12 +351,6 @@
 	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;display=swap" />
 	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;display=swap"
 		rel="stylesheet" />
-	<script src="https://cdn.tailwindcss.com/"></script>
-	<script>
-		tailwind.config = {
-			theme: { extend: { colors: { 'verylight-yellow': '#FFFEF6' } } }
-		}
-	</script>
 	<script src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -762,7 +756,7 @@
 					<div class="flex-shrink-0">
 						<a href="#home"
 							class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-							<img src="/assets/images/ptc-logo.png?v=1" alt="PTC Parts Trading Company"
+							<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company - Heavy Equipment Spare Parts Mumbai"
 								class="h-36 w-auto transition-all duration-300" id="nav-logo">
 						</a>
 					</div>
@@ -1042,10 +1036,10 @@
 				</button>
 			</div>
 			<h1 class="text-5xl md:text-7xl font-extrabold text-yellow-400 text-shadow mb-10 !leading-[1.3]"
-				data-aos="fade-up" data-aos-delay="400">
+				data-aos="fade-up" data-aos-delay="300">
 				<div class="tagline-container">
 					<span class="inline-block animate-slide-in-left text-glow tagline-word"
-						style="animation-delay: 0.5s;">If you have</span>
+						style="animation-delay: 0.5s;">If you have </span>
 					<span class="hidden md:inline" style="display: inline-block; width: 15px;"></span>
 					<span class="equipment-cycler text-glow tagline-word"
 						style="animation-delay: 0.7s; opacity: 0; animation: slideInLeft 1s ease-out 0.7s forwards;">Earthmovers,</span>
@@ -1057,10 +1051,9 @@
 			</h1>
 			<p class="sr-only">If you have Earthmovers, We have the Parts.</p>
 			<p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed overflow-hidden"
-				data-aos="fade-up" data-aos-delay="600">
-				<span class="inline-block animate-slide-in-up" style="animation-delay: 1.3s;">Backed by 70 years of
-					excellence</span>
-				<span class="inline-block animate-slide-in-up" style="animation-delay: 1.5s;"> in spare parts for
+				data-aos="fade-up" data-aos-delay="300">
+				<span class="inline-block animate-slide-in-up" style="animation-delay: 1.3s;">In operation since 1956 — supplying spare parts for</span>
+				<span class="inline-block animate-slide-in-up" style="animation-delay: 1.5s;">
 					<a href="/pages/hubs/brand-volvo.html"
 						class="underline decoration-yellow-300/30 hover:text-yellow-300 transition-colors">Volvo</a>,
 					<a href="/pages/hubs/brand-scania.html"
@@ -1077,7 +1070,7 @@
 				<span class="inline-block animate-slide-in-up" style="animation-delay: 2.1s;"> across India and
 					beyond.</span>
 			</p>
-			<div class="flex flex-col sm:flex-row gap-6 justify-center" data-aos="fade-up" data-aos-delay="800">
+			<div class="flex flex-col sm:flex-row gap-6 justify-center" data-aos="fade-up" data-aos-delay="300">
 				<a class="group relative overflow-hidden bg-gradient-to-r from-green-500/60 to-green-600/60 backdrop-blur-xl border border-green-300/40 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:from-green-600/70 hover:to-green-700/70 hover:shadow-green-400/50"
 					href="https://wa.me/919821037990" rel="noopener noreferrer" style="min-width:220px;"
 					target="_blank">
@@ -1116,16 +1109,16 @@
 					</div>
 				</a>
 			</div>
-			<p class="text-sm text-gray-400 mt-4" data-aos="fade-up" data-aos-delay="900">
+			<p class="text-sm text-gray-400 mt-4" data-aos="fade-up" data-aos-delay="300">
 				or call us: <a href="tel:+919821037990" class="text-white hover:text-yellow-400 transition-colors duration-200 font-semibold">+91 98210 37990</a>
 			</p>
 			<div class="mt-2">
 				<p class="text-xs text-gray-400">
-					<a href="/pages/products/" class="hover:text-yellow-600 transition-colors">Browse all products</a>
+					<a href="/pages/" class="hover:text-yellow-600 transition-colors">Browse all products</a>
 				</p>
 			</div>
 			<div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto hero-stats" data-aos="fade-up"
-				data-aos-delay="1000" data-aos-duration="600">
+				data-aos-delay="300" data-aos-duration="600">
 				<div class="text-center">
 					<div class="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">18,000+</div>
 					<div class="text-gray-300 text-sm md:text-base">Parts in Inventory</div>
@@ -1272,11 +1265,10 @@
 		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 			<div class="text-center mb-16" data-aos="fade-up">
 				<h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-					World-Class <span class="text-gradient">Brands</span> We Represent
+					<span class="text-gradient">Brands</span> We Supply
 				</h2>
 				<p class="text-xl text-gray-600 max-w-3xl mx-auto">
-					Trusted partnerships with the world leading manufacturers of heavy equipment and automotive
-					components
+					Parts for Volvo, Scania, Komatsu, Caterpillar, Hitachi, Kobelco, and 15+ other heavy equipment and truck manufacturers
 				</p>
 			</div>
 			<div class="mb-16" data-aos="fade-up" data-aos-delay="200">
@@ -1286,7 +1278,7 @@
 				<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
 					<a class="category-card volvo bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]"
 						href="/pages/hubs/brand-volvo.html" style="text-decoration:none;">
-						<img alt="Volvo Logo"
+						<img alt="Volvo spare parts supplier India"
 							class="brand-img grayscale hover:grayscale-0 transition duration-300 w-16 h-16 mb-4 object-contain rounded-lg"
 							loading="lazy" src="assets/logos/volvo.svg" />
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Volvo</h3>
@@ -1294,7 +1286,7 @@
 					</a>
 					<a class="category-card scania bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]"
 						href="/pages/hubs/brand-scania.html" style="text-decoration:none;">
-						<img alt="Scania Logo"
+						<img alt="Scania truck spare parts supplier India"
 							class="brand-img grayscale hover:grayscale-0 transition duration-300 w-16 h-16 mb-4 object-contain rounded-lg"
 							loading="lazy" src="assets/logos/scania.svg" />
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Scania</h3>
@@ -1302,7 +1294,7 @@
 					</a>
 					<a class="category-card komatsu bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]"
 						href="/pages/hubs/brand-komatsu.html" style="text-decoration:none;">
-						<img alt="Komatsu Logo"
+						<img alt="Komatsu excavator spare parts supplier India"
 							class="brand-img grayscale hover:grayscale-0 transition duration-300 w-16 h-16 mb-4 object-contain rounded-lg"
 							loading="lazy" src="assets/logos/komatsu.svg" />
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Komatsu</h3>
@@ -1310,7 +1302,7 @@
 					</a>
 					<a class="category-card cat bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]"
 						href="/pages/hubs/brand-cat.html" style="text-decoration:none;">
-						<img alt="Caterpillar Logo"
+						<img alt="Caterpillar CAT spare parts supplier India"
 							class="brand-img grayscale hover:grayscale-0 transition duration-300 w-16 h-16 mb-4 object-contain rounded-lg"
 							loading="lazy" src="assets/logos/cat.svg" />
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Caterpillar</h3>
@@ -1318,7 +1310,7 @@
 					</a>
 					<a class="category-card hitachi bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]"
 						href="/pages/hubs/brand-hitachi.html" style="text-decoration:none;">
-						<img alt="Hitachi Logo"
+						<img alt="Hitachi excavator spare parts supplier India"
 							class="brand-img grayscale hover:grayscale-0 transition duration-300 w-16 h-16 mb-4 object-contain rounded-lg"
 							loading="lazy" src="assets/logos/hitachi.svg" />
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Hitachi</h3>
@@ -1326,7 +1318,7 @@
 					</a>
 					<a class="category-card kobelco bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]"
 						href="/pages/hubs/brand-kobelco.html" style="text-decoration:none;">
-						<img alt="Kobelco Logo"
+						<img alt="Kobelco excavator spare parts supplier India"
 							class="brand-img grayscale hover:grayscale-0 transition duration-300 w-16 h-16 mb-4 object-contain rounded-lg"
 							loading="lazy" src="assets/logos/kobelco.svg" />
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Kobelco</h3>
@@ -1345,7 +1337,7 @@
 				<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
 					<div
 						class="category-card kawasaki bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]">
-						<img alt="Kawasaki Logo"
+						<img alt="Kawasaki hydraulic spare parts"
 							class="brand-img grayscale hover:grayscale-0 transition duration-300 w-16 h-16 mb-4 object-contain rounded-lg"
 							loading="lazy" src="assets/logos/kawasaki.svg" />
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Kawasaki</h3>
@@ -1353,7 +1345,7 @@
 					</div>
 					<div
 						class="category-card wabco bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]">
-						<img alt="WABCO Logo"
+						<img alt="WABCO braking system parts"
 							class="brand-img grayscale hover:grayscale-0 transition duration-300 w-16 h-16 mb-4 object-contain rounded-lg"
 							loading="lazy" src="assets/logos/wabco.svg" />
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">WABCO</h3>
@@ -1361,7 +1353,7 @@
 					</div>
 					<div
 						class="category-card denso bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]">
-						<img alt="DENSO Logo"
+						<img alt="DENSO electrical parts for heavy equipment"
 							class="brand-img grayscale hover:grayscale-0 transition duration-300 w-16 h-16 mb-4 object-contain rounded-lg"
 							loading="lazy" src="assets/logos/denso.svg" />
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">DENSO</h3>
@@ -1369,7 +1361,7 @@
 					</div>
 					<div
 						class="category-card mahle bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]">
-						<img alt="MAHLE Logo"
+						<img alt="MAHLE engine components for heavy equipment"
 							class="brand-img grayscale hover:grayscale-0 transition duration-300 w-16 h-16 mb-4 object-contain rounded-lg"
 							loading="lazy" src="assets/logos/mahle.svg" />
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">MAHLE</h3>
@@ -1377,7 +1369,7 @@
 					</div>
 					<div
 						class="category-card valeo bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]">
-						<img alt="Valeo Logo"
+						<img alt="Valeo thermal system parts"
 							class="brand-img grayscale hover:grayscale-0 transition duration-300 w-16 h-16 mb-4 object-contain rounded-lg"
 							loading="lazy" src="assets/logos/valeo.svg" />
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">VALEO</h3>
@@ -1385,7 +1377,7 @@
 					</div>
 					<div
 						class="category-card garrett bg-white rounded-2xl shadow-md p-8 flex flex-col items-center text-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden min-h-[200px]">
-						<img alt="Garrett Logo"
+						<img alt="Garrett turbocharger parts for heavy equipment"
 							class="brand-img grayscale hover:grayscale-0 transition duration-300 w-16 h-16 mb-4 object-contain rounded-lg"
 							loading="lazy" src="assets/logos/garrett.svg" />
 						<h3 class="text-xl font-bold text-gray-900 mb-2 text-center">Garrett</h3>
@@ -2069,7 +2061,7 @@
 
 
 			<!-- Caterpillar Models -->
-			<div class="mb-8" data-aos="fade-up" data-aos-delay="400">
+			<div class="mb-8" data-aos="fade-up" data-aos-delay="300">
 				<details
 					class="bg-white rounded-3xl border border-yellow-100 shadow-md hover:shadow-xl transition-all duration-300 group">
 					<summary class="flex items-center justify-between p-8 cursor-pointer list-none">
@@ -2306,7 +2298,7 @@
 
 
 			<!-- BEML Models -->
-			<div class="mb-8" data-aos="fade-up" data-aos-delay="500">
+			<div class="mb-8" data-aos="fade-up" data-aos-delay="300">
 				<details
 					class="bg-white rounded-3xl border border-yellow-100 shadow-md hover:shadow-xl transition-all duration-300 group">
 					<summary class="flex items-center justify-between p-8 cursor-pointer list-none">
@@ -2459,7 +2451,7 @@
 
 
 			<!-- Hyundai Models -->
-			<div class="mb-8" data-aos="fade-up" data-aos-delay="600">
+			<div class="mb-8" data-aos="fade-up" data-aos-delay="300">
 				<details
 					class="bg-white rounded-3xl border border-yellow-100 shadow-md hover:shadow-xl transition-all duration-300 group">
 					<summary class="flex items-center justify-between p-8 cursor-pointer list-none">
@@ -2551,7 +2543,7 @@
 
 
 			<!-- Sany Models -->
-			<div class="mb-8" data-aos="fade-up" data-aos-delay="700">
+			<div class="mb-8" data-aos="fade-up" data-aos-delay="300">
 				<details
 					class="bg-white rounded-3xl border border-yellow-100 shadow-md hover:shadow-xl transition-all duration-300 group">
 					<summary class="flex items-center justify-between p-8 cursor-pointer list-none">
@@ -2640,7 +2632,7 @@
 
 
 			<!-- Hitachi Models -->
-			<div class="mb-8" data-aos="fade-up" data-aos-delay="800">
+			<div class="mb-8" data-aos="fade-up" data-aos-delay="300">
 				<details
 					class="bg-white rounded-3xl border border-yellow-100 shadow-md hover:shadow-xl transition-all duration-300 group">
 					<summary class="flex items-center justify-between p-8 cursor-pointer list-none">
@@ -2727,7 +2719,7 @@
 
 
 			<!-- LiuGong Models -->
-			<div class="mb-8" data-aos="fade-up" data-aos-delay="900">
+			<div class="mb-8" data-aos="fade-up" data-aos-delay="300">
 				<details
 					class="bg-white rounded-3xl border border-yellow-100 shadow-md hover:shadow-xl transition-all duration-300 group">
 					<summary class="flex items-center justify-between p-8 cursor-pointer list-none">
@@ -2809,7 +2801,7 @@
 
 
 			<!-- MAIT Models -->
-			<div class="mb-8" data-aos="fade-up" data-aos-delay="1000">
+			<div class="mb-8" data-aos="fade-up" data-aos-delay="300">
 				<details
 					class="bg-white rounded-3xl border border-yellow-100 shadow-md hover:shadow-xl transition-all duration-300 group">
 					<summary class="flex items-center justify-between p-8 cursor-pointer list-none">
@@ -2885,7 +2877,7 @@
 
 
 			<!-- Soilmec Models -->
-			<div class="mb-8" data-aos="fade-up" data-aos-delay="1100">
+			<div class="mb-8" data-aos="fade-up" data-aos-delay="300">
 				<details
 					class="bg-white rounded-3xl border border-yellow-100 shadow-md hover:shadow-xl transition-all duration-300 group">
 					<summary class="flex items-center justify-between p-8 cursor-pointer list-none">
@@ -2958,7 +2950,7 @@
 
 
 			<!-- Call to Action -->
-			<div class="text-center mt-8" data-aos="fade-up" data-aos-delay="1200">
+			<div class="text-center mt-8" data-aos="fade-up" data-aos-delay="300">
 				<div class="bg-white rounded-2xl p-8 border border-yellow-200 shadow-md">
 					<p class="text-gray-700 text-lg mb-6">
 						Don't see your specific equipment model? <span class="text-yellow-600 font-semibold">We likely
@@ -5112,6 +5104,11 @@
 			</div>
 			<div class="text-center text-gray-400">© Parts Trading Company. All rights reserved.</div>
 			<div class="text-sm text-gray-400 mt-2 text-center">GST: 27AAAFP1087E1ZG</div>
+			<div class="text-sm text-gray-400 mt-2 text-center space-x-4">
+				<a href="/privacy-policy.html" class="hover:text-yellow-400 transition-colors">Privacy Policy</a>
+				<span>·</span>
+				<a href="/terms.html" class="hover:text-yellow-400 transition-colors">Terms of Use</a>
+			</div>
 			<div class="disclaimer mt-4 text-center text-gray-400">
 				Disclaimer: All brand names, logos, images, and part numbers used on this website are for identification
 				and reference purposes only. Parts Trading Company is not affiliated with any original equipment
@@ -6084,7 +6081,7 @@
 				<div class="flex justify-between items-start mb-6">
 					<div>
 						<h2 class="text-3xl font-bold text-gray-900 mb-2">Our Legacy Since 1956</h2>
-						<p class="text-gray-600">Seven decades of excellence in heavy equipment parts</p>
+						<p class="text-gray-600">In continuous operation since 1956 — over 70 years supplying heavy equipment parts</p>
 					</div>
 					<button onclick="closeLegacyModal()"
 						class="text-gray-400 hover:text-gray-600 transition-colors duration-200">
