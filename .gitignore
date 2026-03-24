@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+*.DS_Store
+
+# Claude Code settings (local only)
+.claude/
+
+# Local dev / experiments
+Working Website/
+Portals/
+Back/
+cheesy-dreamscape/
+deployment/
+nexgen-spares/
+
+# Python
+*.py
+__pycache__/
+*.pyc
+*.pyo
+
+# Data files (local only)
+*.csv
+*.xlsx
+*.xls
+*.json.bak
+worker.log
+worker_output.log
+
+# Internal audit / planning docs (not for deployment)
+ACTION-PLAN.md
+AUDIT_PLAN.md
+FULL-AUDIT-REPORT.md
+Portals-Building-Guide.md
+
+# Other local files
+"July 30.html"
+parts_trading_company.vcf
+new_partDatabase.js
+
+# Logs
+*.log
