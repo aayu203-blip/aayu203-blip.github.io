@@ -5473,7 +5473,7 @@
 			console.log('[SEARCH] Injecting database script...');
 			return new Promise((resolve, reject) => {
 				const script = document.createElement('script');
-				script.src = '/new_partDatabase.js';
+				script.src = '/assets/js/new_partDatabase.js';
 				script.onload = () => {
 					console.log('[SEARCH] ✅ Database loaded:', partDatabase.length, 'parts');
 					resolve(partDatabase);
