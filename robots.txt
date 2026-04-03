@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /pages/aftermarket-
 
 # Main Sitemap Index
 Sitemap: https://partstrading.com/sitemap_index.xml

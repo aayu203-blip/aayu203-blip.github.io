@@ -360,12 +360,6 @@
 	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;display=swap" />
 	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;display=swap"
 		rel="stylesheet" />
-	<script src="https://cdn.tailwindcss.com/"></script>
-	<script>
-		tailwind.config = {
-			theme: { extend: { colors: { 'verylight-yellow': '#FFFEF6' } } }
-		}
-	</script>
 	<script src="https://unpkg.com/alpinejs@3.13.3/dist/cdn.min.js" defer></script>
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -440,59 +434,6 @@
 
 	<link href="/assets/css/styles.css" rel="stylesheet" />
 	<style>
-		.category-card {
-			position: relative;
-		}
-
-
-		.category-card .card-front,
-		.category-card .card-back {
-			transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
-		}
-
-
-		.category-card .card-front.hidden,
-		.category-card .card-back.hidden {
-			opacity: 0;
-			transform: scale(0.98);
-			pointer-events: none;
-			position: absolute;
-		}
-
-
-		.category-card .card-front:not(.hidden),
-		.category-card .card-back:not(.hidden) {
-			opacity: 1;
-			transform: scale(1);
-		}
-
-
-		/* Ensure consistent alignment across all cards */
-		.card-front {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			align-items: center;
-		}
-
-
-		.card-front h3 {
-			margin: 0;
-			height: 3rem;
-			/* Fixed height for all titles */
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			text-align: center;
-		}
-
-
-		.card-front p {
-			margin-top: auto;
-			margin-bottom: 0;
-		}
-	</style>
-	<style>
 		/* Mobile Optimization Fixes - Inline to ensure they work */
 		@media (max-width: 768px) {
 
@@ -503,7 +444,7 @@
 
 
 			/* Fix Trusted Since badge positioning - MOBILE ONLY */
-			.mb-8 {
+			.hero-gradient .mb-8 {
 				margin-top: 100px !important;
 				margin-bottom: 2rem !important;
 			}
@@ -534,7 +475,7 @@
 
 
 			/* Fix hero title sizing - MOBILE ONLY */
-			h1 {
+			.hero-gradient h1 {
 				font-size: 2.5rem !important;
 				line-height: 1.1 !important;
 			}
@@ -563,7 +504,7 @@
 
 
 			/* Fix hero description text */
-			p {
+			.hero-gradient p {
 				font-size: 1rem !important;
 				line-height: 1.4 !important;
 				padding: 0 10px !important;
@@ -596,11 +537,9 @@
 			}
 
 
-			/* Fix floating buttons positioning */
-
-
+			/* Fix floating buttons positioning — clear the sticky CTA bar (~60px) */
 			.back-to-top {
-				bottom: 15px !important;
+				bottom: 72px !important;
 				right: 15px !important;
 				width: 45px !important;
 				height: 45px !important;
@@ -638,7 +577,7 @@
 
 
 			/* Fix Trusted Since badge positioning */
-			.mb-8 {
+			.hero-gradient .mb-8 {
 				margin-top: 80px !important;
 				margin-bottom: 1.5rem !important;
 			}
@@ -673,12 +612,12 @@
 			}
 
 
-			h1 {
+			.hero-gradient h1 {
 				font-size: 2rem !important;
 			}
 
 
-			p {
+			.hero-gradient p {
 				font-size: 0.9rem !important;
 			}
 
@@ -719,28 +658,51 @@
 				pointer-events: auto !important;
 			}
 		}
-	</style>
 
 
-	<style>
+		/* Card flip transitions */
+		.category-card {
+			position: relative;
+		}
+
 		.category-card .card-front,
 		.category-card .card-back {
 			transition: opacity 0.3s ease, transform 0.3s ease;
 		}
-
 
 		.category-card .card-front.hidden,
 		.category-card .card-back.hidden {
 			opacity: 0;
 			transform: scale(0.95);
 			pointer-events: none;
+			position: absolute;
 		}
-
 
 		.category-card .card-front:not(.hidden),
 		.category-card .card-back:not(.hidden) {
 			opacity: 1;
 			transform: scale(1);
+		}
+
+		.card-front {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.card-front h3 {
+			margin: 0;
+			height: 3rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+		}
+
+		.card-front p {
+			margin-top: auto;
+			margin-bottom: 0;
 		}
 	</style>
 </head>
@@ -772,7 +734,7 @@
 						<a href="#home"
 							class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
 							<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company - Heavy Equipment Spare Parts Mumbai"
-								class="h-36 w-auto transition-all duration-300" id="nav-logo" width="180" height="48" loading="eager">
+								class="h-12 w-auto transition-all duration-300" id="nav-logo" width="180" height="48" loading="eager">
 						</a>
 					</div>
 				</div>
@@ -817,7 +779,7 @@
 						<span class="font-bold tracking-wide">PRODUCTS</span>
 					</a>
 					<a class="nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-white"
-						href="blog/index.html">
+						href="/blog/index.html">
 						<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none"
 							stroke="currentColor" viewBox="0 0 24 24">
 							<path
@@ -927,7 +889,7 @@
 				</a>
 				<a @click="mobileMenuOpen = false"
 					class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm"
-					:class="scrolled ? 'text-gray-900' : 'text-white'" href="blog/index.html">
+					:class="scrolled ? 'text-gray-900' : 'text-white'" href="/blog/index.html">
 					<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none"
 						stroke="currentColor" viewBox="0 0 24 24">
 						<path
@@ -4796,7 +4758,7 @@
 
 	<!-- Shipping Popup (Right Side) -->
 	<div id="shipping-popup"
-		class="fixed bottom-24 right-6 bg-gradient-to-r from-yellow-400/80 to-yellow-500/80 backdrop-blur-xl border border-yellow-300/50 rounded-lg shadow-2xl p-4 z-40 transform transition-all duration-300 opacity-0 scale-95 pointer-events-none">
+		class="fixed bottom-32 right-6 bg-gradient-to-r from-yellow-400/80 to-yellow-500/80 backdrop-blur-xl border border-yellow-300/50 rounded-lg shadow-2xl p-4 z-40 transform transition-all duration-300 opacity-0 scale-95 pointer-events-none">
 		<div class="flex items-center justify-between">
 			<div class="flex-1 min-w-0">
 				<p class="text-base font-bold text-gray-900 leading-tight">
