@@ -378,7 +378,7 @@ print(f"Fixed: {fixed}")
 
 ---
 
-### A12 — Fix 37 short "Komatsu Disc" titles ❌ TODO
+### A12 — Fix 37 short "Komatsu Disc" titles ✅ DONE (155 pages qualified: Brake Disc, Clutch Disc, etc.)
 **Severity:** LOW
 **Affected:** 37 pages — all `{pn} Komatsu Disc | PTC` format (~27 chars)
 **Problem:** "Disc" as sole product name is too generic. Needs qualifier (Clutch Disc, Friction Disc, etc.)
@@ -400,7 +400,7 @@ print(f"Fixed: {fixed}")
   - Option C: Add "Featured Products" carousels on each category page (increases from 60 to ~100 linked)
 **Dependencies:** Requires decision on page architecture. Defer until A1-A11 done.
 
-### B2 — index.html links to 0 products ❌ TODO
+### B2 — index.html links to 0 products ✅ DONE (12-product Featured Products section added)
 **Severity:** LOW
 **Fix:** Add "Featured Products" or "Recently Added" section with 8-12 product links to index.html.
 **After fix:** git add index.html && git commit -m "Add featured products section to homepage" && git push origin main
