@@ -417,11 +417,12 @@ print(f"Fixed: {fixed}")
 
 ---
 
-## PHASE D — MULTILINGUAL PAGES
-> From memory file: project_ptc_catalog_expansion.md
+## PHASE D — MULTILINGUAL PAGES ✅ DONE
 
-**Status:** Exists locally in `Working Website/` subdirectories (ar/, es/, fr/, hi/, ru/) but not deployed
-**Decision needed:** Whether to deploy multilingual versions. Requires hreflang tags if deployed.
+**Deployed:** 8 languages × 2,497 pages = 19,976 pages live at `/ar/`, `/es/`, `/fr/`, `/hi/`, `/kn/`, `/ml/`, `/ta/`, `/te/`
+**Hreflang fixed:** 2,497 English pages updated to correct subdirectory URLs; 49,015 English pages had broken hreflang stripped
+**Sitemaps rebuilt:** 72,778 total URLs (was 52,802)
+**Canonicals:** All lang pages point to `partstrading.com/{lang}/pages/products/{pn}.html`
 
 ---
 
