@@ -704,7 +704,54 @@
 			margin-top: auto;
 			margin-bottom: 0;
 		}
-	</style>
+	
+/* Exit Intent Modal */
+#exitModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+#exitModal.active {
+  display: flex;
+}
+.exit-modal-content {
+  position: relative;
+  max-width: 420px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  animation: modalSlideIn 0.3s ease;
+}
+@keyframes modalSlideIn {
+  from { opacity: 0; transform: translateY(-20px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.exit-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #6b7280;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.exit-modal-close:hover { background: #f3f4f6; color: #111; }
+</style>
 </head>
 
 <body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;">
@@ -734,7 +781,7 @@
 						<a href="#home"
 							class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
 							<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company - Heavy Equipment Spare Parts Mumbai"
-								class="h-12 w-auto transition-all duration-300" id="nav-logo" width="180" height="48" loading="eager">
+								class="h-20 w-auto transition-all duration-300" id="nav-logo" width="240" height="80" loading="eager">
 						</a>
 					</div>
 				</div>
@@ -6538,6 +6585,50 @@
 			}
 		}, { passive: true });
 	</script>
+
+<script>
+(function() {
+  var shown = false;
+  var dismissed = sessionStorage.getItem('exitDismissed');
+  if (dismissed) return;
+
+  function showModal() {
+    if (shown) return;
+    shown = true;
+    document.getElementById('exitModal').classList.add('active');
+  }
+
+  // Desktop: mouse leaves toward top of viewport (exit intent)
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY <= 20) showModal();
+  });
+
+  // Mobile: show after 45s of inactivity or on scroll back to top
+  var mobileTimer = setTimeout(function() {
+    if (!shown && window.innerWidth < 768) showModal();
+  }, 45000);
+
+  window.closeExitModal = function() {
+    document.getElementById('exitModal').classList.remove('active');
+    sessionStorage.setItem('exitDismissed', '1');
+  };
+
+  window.closeExitModalAndScroll = function() {
+    closeExitModal();
+  };
+
+  // Close on backdrop click
+  document.getElementById('exitModal').addEventListener('click', function(e) {
+    if (e.target === this) closeExitModal();
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeExitModal();
+  });
+})();
+</script>
+
 </body>
 
 </html>
