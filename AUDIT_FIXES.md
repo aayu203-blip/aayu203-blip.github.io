@@ -390,7 +390,7 @@ print(f"Fixed: {fixed}")
 
 ## PHASE B — SITE STRUCTURE FIXES
 
-### B1 — Product orphan problem: 99.4% not reachable from category pages ❌ TODO
+### B1 — Product orphan problem: 99.4% not reachable from category pages ✅ DONE (339 paginated listing pages created, all 51,396 products now linked)
 **Severity:** HIGH (future phase)
 **Affected:** 51,224 / 51,512 products not linked from any category hub page (only 288 linked)
 **Problem:** Category pages (`cat-categories.html` etc.) each show only 60 product links. Users browsing the site can only find products via the search bar. Google can crawl via sitemap, but PageRank cannot flow from the homepage to most products.
