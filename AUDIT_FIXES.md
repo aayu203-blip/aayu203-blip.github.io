@@ -19,7 +19,7 @@
 ## PHASE A — PRODUCT PAGE AUDIT FIXES
 > From the full audit (Phase 1 sampling + Phase 2 full scan + Phase 3 cross-linking) run on 2026-04-06.
 
-### A1 — Fix 351 canonical URLs with unencoded spaces ❌ TODO
+### A1 — Fix 351 canonical URLs with unencoded spaces ✅ DONE
 **Severity:** CRITICAL
 **Affected:** 351 files in `products/` with spaces in filenames (e.g. `381 975159-1.html`, `3808713, 3808699, 3827897.html`)
 **Problem:** Canonical URL contains literal space: `https://partstrading.com/products/381 975159-1` — invalid per RFC 3986. Google may not process these pages.
@@ -29,7 +29,7 @@
 
 ---
 
-### A2 — Fix 93 underscore-filename canonical path confusion ❌ TODO
+### A2 — Fix 93 underscore-filename canonical path confusion ✅ DONE
 **Severity:** CRITICAL
 **Affected:** 93 files in `products/` with `_` in filename (e.g. `205-63-X3111_205-63-X3101_205-63-03101.html`)
 **Problem:** Template converted `_` to `/` in canonical URL, producing `https://partstrading.com/products/205-63-X3111/205-63-X3101/205-63-03101` — a multi-level path that doesn't exist → 404 at canonical URL.
@@ -39,7 +39,7 @@
 
 ---
 
-### A3 — Remove/handle 93 apparel/garment pages ❌ TODO
+### A3 — Remove/handle 93 apparel/garment pages ✅ DONE (116 pages noindexed)
 **Severity:** HIGH
 **Affected:** 93 files — `FreddYshirt*.html`, `mechanicPant*.html`, `saFetYBoot*.html`, `saFetyShoe*.html`, `stPatricKshirt*.html`, etc.
 **Problem:** Clothing/apparel items branded as CAT parts with excavator compatibility text ("Fits Caterpillar 320C, 320D..."). Misleading schema. Schema integrity risk with Google.
@@ -101,7 +101,7 @@ print(f"Done. {len(batches)} sitemaps, {len(all_urls):,} URLs.")
 
 ---
 
-### A4 — Add BreadcrumbList JSON-LD to all 51,508 products/ pages ❌ TODO
+### A4 — Add BreadcrumbList JSON-LD to all 51,508 products/ pages ✅ DONE (already embedded in Product schema)
 **Severity:** HIGH
 **Affected:** 51,508 pages (all products/ pages — confirmed zero have BreadcrumbList JSON-LD)
 **Problem:** HTML breadcrumb nav exists on all pages, but no JSON-LD BreadcrumbList schema → Google cannot show breadcrumb trails in SERP rich results.
@@ -165,7 +165,7 @@ print(f"Fixed: {fixed:,}")
 
 ---
 
-### A5 — Fix "Spare Parts" fallback category on 6,778 pages ❌ TODO
+### A5 — Fix "Spare Parts" fallback category on 6,778 pages ✅ DONE (2,567 reclassified; 4,211 remain — genuinely uncategorizable)
 **Severity:** HIGH
 **Affected:** 6,778 pages with `"category": "Spare Parts"` in JSON-LD
 **Problem:** Generic category gives Google no ranking signal. Part names contain enough info to assign real categories.
@@ -227,7 +227,7 @@ def guess_category(name):
 
 ---
 
-### A6 — Fix ~200 truncated `...` category in title/og:title/JSON-LD ❌ TODO
+### A6 — Fix ~200 truncated `...` category in title/og:title/JSON-LD ✅ DONE (296 pages fixed)
 **Severity:** HIGH
 **Affected:** ~200 pages (mainly Volvo and Scania) with truncated category names like `Gearbox & Differential...`, `Hydraulic Systems & Co...`, `Steering And Suspensio...`, `Lighting And Exterior ...`
 **Problem:** Literal `...` in `<title>`, `og:title`, and JSON-LD `category` field. Broken display in Google SERP and social shares.
@@ -254,7 +254,7 @@ TRUNCATED_FIX = {
 
 ---
 
-### A7 — Normalize 57 fragmented category names → 44 canonical ones ❌ TODO
+### A7 — Normalize 57 fragmented category names → 44 canonical ones ✅ DONE (5,552 pages normalized)
 **Severity:** MEDIUM
 **Affected:** ~3,000 pages with duplicate/variant category names
 **Problem:** Same category split across multiple names dilutes SEO signal and confuses category listing pages.
@@ -292,7 +292,7 @@ CATEGORY_NORMALIZE = {
 
 ---
 
-### A8 — Fix 206 "Miscellaneous" category (Scania/Volvo pages) ❌ TODO
+### A8 — Fix 206 "Miscellaneous" category (Scania/Volvo pages) ✅ DONE (86 reclassified; 123 remain)
 **Severity:** MEDIUM
 **Affected:** 206 pages — mostly Scania and Volvo truck parts
 **Problem:** Scania/Volvo truck parts assigned "Miscellaneous" because guess_category() wasn't trained on truck part names.
@@ -311,7 +311,7 @@ if any(w in n for w in ['bogi', 'anchorage', 'mount', 'bracket', 'support']): re
 
 ---
 
-### A9 — Add H1 tags to 6 category hub pages ❌ TODO
+### A9 — Add H1 tags to 6 category hub pages ✅ DONE
 **Severity:** MEDIUM
 **Affected:** `pages/cat-categories.html`, `pages/komatsu-categories.html`, `pages/hitachi-categories.html`, `pages/scania-categories.html`, `pages/volvo-categories.html`, `pages/kobelco-categories.html`
 **Problem:** All 6 category hub pages are missing H1 tags. H1 is the most weighted on-page SEO element.
@@ -326,7 +326,7 @@ if any(w in n for w in ['bogi', 'anchorage', 'mount', 'bracket', 'support']): re
 
 ---
 
-### A10 — Fix 653 short meta descriptions (<120 chars) ❌ TODO
+### A10 — Fix 653 short meta descriptions (<120 chars) ✅ DONE (652 extended)
 **Severity:** MEDIUM
 **Affected:** 653 pages in `products/` with meta description under 120 characters
 **Problem:** Template hits short product/model names and runs out of content. Description cuts off mid-sentence.
@@ -353,7 +353,7 @@ print(f"Fixed: {fixed}")
 
 ---
 
-### A11 — Update brand name CAT → Caterpillar in JSON-LD ❌ TODO
+### A11 — Update brand name CAT → Caterpillar in JSON-LD ✅ DONE (20,735 pages)
 **Severity:** MEDIUM
 **Affected:** 20,735 pages with `"name": "CAT"` in brand field
 **Problem:** "Caterpillar" gets higher Google search volume than "CAT". JSON-LD brand.name influences entity recognition.
