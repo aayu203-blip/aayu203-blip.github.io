@@ -103,7 +103,13 @@
         nav {
             top: 0 !important;
         }
-    </style>
+    #exitModal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:1rem}
+#exitModal.active{display:flex}
+.exit-modal-content{position:relative;max-width:420px;width:100%;padding:2rem;text-align:center;animation:modalSlideIn 0.3s ease}
+@keyframes modalSlideIn{from{opacity:0;transform:translateY(-20px) scale(0.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+.exit-modal-close{position:absolute;top:.75rem;right:.75rem;background:none;border:none;font-size:1.5rem;color:#6b7280;cursor:pointer;width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s}
+.exit-modal-close:hover{background:#f3f4f6;color:#111}
+</style>
     <!-- Breadcrumb Structured Data -->
     <!-- Advanced Breadcrumb Structured Data -->
 
@@ -351,10 +357,7 @@
 <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
 </svg>
 </div>
-<div class="flex flex-col">
-                        <span class="text-2xl font-black leading-tight tracking-tight drop-shadow-sm transition-colors duration-300 text-gray-900" id="nav-logo">PARTS TRADING</span>
-                        <span class="text-sm font-bold leading-tight tracking-wide uppercase drop-shadow-sm transition-colors duration-300 text-yellow-600" id="nav-company">COMPANY</span>
-</div>
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
                 </a>
 </div>
 </div>
@@ -965,5 +968,7 @@ Please provide pricing and availability.`;
     </footer>
     
     <!-- FAQ Schema -->
+<div id="exitModal" class="exit-modal"><div class="exit-modal-content bg-white/95 backdrop-blur-xl border border-white/50 rounded-2xl shadow-2xl"><button class="exit-modal-close" onclick="closeExitModal()">&times;</button><div class="mb-5"><h2 class="text-2xl font-bold text-gray-900 mb-2">Before You Leave</h2><div class="w-16 h-1 bg-yellow-400 mx-auto rounded-full"></div></div><div class="mb-5"><div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-3"><p class="text-lg font-semibold text-gray-900 mb-1">Exclusive 2% Discount</p><p class="text-sm text-gray-700">As a valued visitor, you're eligible for an exclusive 2% discount on your first quote.</p></div><p class="text-sm text-gray-600 leading-relaxed">Parts Trading Company — trusted supplier of OEM and high-quality replacement parts since 1956. 95% of parts available for immediate dispatch across India.</p></div><div class="flex gap-3"><a href="https://wa.me/919821037990?text=Hi! I saw your 2% discount offer. Can I get a quote?" class="flex-1 inline-flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 text-sm"><svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7M12.22 1.85c-5.46 0-9.9 4.41-9.9 9.83 0 2.15.7 4.14 1.88 5.76L2.96 21.1l3.8-1.2a9.9 9.9 0 0 0 5.46 1.62c5.46 0 9.9-4.4 9.9-9.83a9.88 9.88 0 0 0-9.9-9.83m5.95 12.52c-.08-.12-.27-.19-.56-.33-.28-.14-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.14-.2.29-.75.93-.91 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43a8.64 8.64 0 0 1-1.6-1.98c-.18-.29-.03-.44.12-.58.13-.13.29-.34.43-.5.15-.17.2-.3.29-.48.1-.2.05-.36-.02-.5-.08-.15-.65-1.56-.9-2.13-.24-.58-.48-.48-.65-.48-.17 0-.37-.03-.56-.03-.2 0-.5.08-.77.36-.26.29-1 .98-1 2.4 0 1.4 1.03 2.76 1.17 2.96.14.19 2 3.17 4.93 4.32 2.94 1.15 2.94.77 3.47.72.53-.05 1.7-.7 1.95-1.36.24-.67.24-1.25.17-1.37"/></svg>WhatsApp</a><a href="/" class="flex-1 inline-flex items-center justify-center bg-yellow-400 text-gray-900 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-500 text-sm">Contact Us</a></div></div></div>
+<script>(function(){var shown=false;if(sessionStorage.getItem('exitDismissed'))return;function show(){if(shown)return;shown=true;document.getElementById('exitModal').classList.add('active');}document.addEventListener('mouseleave',function(e){if(e.clientY<=20)show();});setTimeout(function(){if(!shown&&window.innerWidth<768)show();},45000);window.closeExitModal=function(){document.getElementById('exitModal').classList.remove('active');sessionStorage.setItem('exitDismissed','1');};document.getElementById('exitModal').addEventListener('click',function(e){if(e.target===this)closeExitModal();});document.addEventListener('keydown',function(e){if(e.key==='Escape')closeExitModal();});})()</script>
 </body>
 </html>
