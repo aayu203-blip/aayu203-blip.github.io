@@ -19,6 +19,40 @@
 </script>
 </head>
 <body class="bg-gray-50 font-sans">
+<nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-24">
+      <div class="flex items-center">
+        <a href="/" class="flex items-center hover:scale-105 transition-transform duration-300">
+          <img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="288" height="96" loading="eager">
+        </a>
+      </div>
+      <div class="hidden md:flex items-center space-x-2">
+        <a class="px-5 py-3 font-bold text-gray-900 rounded-2xl hover:bg-yellow-50 transition-all" href="/">HOME</a>
+        <a class="px-5 py-3 font-bold text-gray-900 rounded-2xl hover:bg-yellow-50 transition-all" href="/#brands">BRANDS</a>
+        <a class="px-5 py-3 font-bold text-gray-900 rounded-2xl hover:bg-yellow-50 transition-all" href="/#equipment-models">MODELS</a>
+        <a class="px-5 py-3 font-bold text-gray-900 rounded-2xl hover:bg-yellow-50 transition-all" href="/pages/komatsu-categories.html">PRODUCTS</a>
+        <a class="px-5 py-3 font-bold text-gray-900 rounded-2xl hover:bg-yellow-50 transition-all" href="/blog/index.html">BLOG</a>
+        <a class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-gray-900 px-6 py-3 rounded-2xl font-bold hover:from-yellow-500 hover:to-yellow-600 transition-all shadow-lg" href="/#contact">CONTACT</a>
+      </div>
+      <div class="md:hidden">
+        <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Menu" class="p-3 rounded-xl text-gray-900">
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-yellow-200 px-4 py-3 space-y-1">
+    <a class="block px-4 py-2 font-bold text-gray-900 rounded-xl hover:bg-yellow-50" href="/">HOME</a>
+    <a class="block px-4 py-2 font-bold text-gray-900 rounded-xl hover:bg-yellow-50" href="/#brands">BRANDS</a>
+    <a class="block px-4 py-2 font-bold text-gray-900 rounded-xl hover:bg-yellow-50" href="/#equipment-models">MODELS</a>
+    <a class="block px-4 py-2 font-bold text-gray-900 rounded-xl hover:bg-yellow-50" href="/pages/komatsu-categories.html">PRODUCTS</a>
+    <a class="block px-4 py-2 font-bold text-gray-900 rounded-xl hover:bg-yellow-50" href="/blog/index.html">BLOG</a>
+    <a class="block px-4 py-2 font-bold text-gray-900 bg-yellow-400 rounded-xl" href="/#contact">CONTACT</a>
+  </div>
+</nav>
+<div style="height:6rem;"></div>
+
 <nav class="bg-white border-b px-4 py-3 flex items-center gap-2 text-sm text-gray-500">
   <a href="/" class="hover:text-yellow-600">Home</a> <span>/</span>
   <a href="/pages/volvo-categories.html" class="hover:text-yellow-600">Volvo Parts</a> <span>/</span>
@@ -766,5 +800,46 @@
     <a href="https://wa.me/919821037990" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-full">Get a Quote via WhatsApp</a>
   </div>
 </main>
+
+<footer class="bg-gray-900 text-gray-300 mt-16 py-12">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+    <div>
+      <img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-16 w-auto mb-4 brightness-0 invert">
+      <p>1st Floor, Vijay Chambers<br>Grant Road East, Mumbai 400004</p>
+      <p class="mt-1 text-gray-500">GST: 27AAAFP1087E1ZG &middot; Est. 1956</p>
+    </div>
+    <div>
+      <p class="font-bold text-white mb-3">Parts</p>
+      <ul class="space-y-1">
+        <li><a href="/pages/komatsu-categories.html" class="hover:text-yellow-400">Komatsu Parts</a></li>
+        <li><a href="/pages/cat-categories.html" class="hover:text-yellow-400">CAT Parts</a></li>
+        <li><a href="/pages/volvo-categories.html" class="hover:text-yellow-400">Volvo Parts</a></li>
+        <li><a href="/pages/scania-categories.html" class="hover:text-yellow-400">Scania Parts</a></li>
+        <li><a href="/pages/hitachi-categories.html" class="hover:text-yellow-400">Hitachi Parts</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold text-white mb-3">Company</p>
+      <ul class="space-y-1">
+        <li><a href="/about.html" class="hover:text-yellow-400">About PTC</a></li>
+        <li><a href="/blog/index.html" class="hover:text-yellow-400">Blog</a></li>
+        <li><a href="/#contact" class="hover:text-yellow-400">Contact</a></li>
+        <li><a href="/privacy-policy.html" class="hover:text-yellow-400">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold text-white mb-3">Contact</p>
+      <p>WhatsApp: +91-98210-37990</p>
+      <p>parts@partstrading.com</p>
+      <p class="mt-1 text-gray-500">Mon–Sat 9am–7pm IST</p>
+      <a href="https://wa.me/919821037990" class="inline-block mt-3 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-xs font-bold transition-colors">Chat on WhatsApp</a>
+    </div>
+  </div>
+  <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-xs max-w-7xl mx-auto px-4">
+    <p>&copy; 2026 Parts Trading Company. All rights reserved.</p>
+    <p class="mt-1">Disclaimer: All brand names and part numbers are for identification purposes only. PTC is not affiliated with any OEM unless stated.</p>
+  </div>
+</footer>
+
 </body>
 </html>
