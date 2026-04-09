@@ -114,16 +114,22 @@
                     "value": "0",
                     "currency": "INR"
                 },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "IN"
+      },
                 "deliveryTime": {
                     "@type": "ShippingDeliveryTime",
                     "handlingTime": {
                         "@type": "QuantitativeValue",
-                        "value": "1",
+                        "minValue": 1,
+          "maxValue": 3,
                         "unitCode": "DAY"
                     },
                     "transitTime": {
                         "@type": "QuantitativeValue",
-                        "value": "2",
+                        "minValue": 2,
+          "maxValue": 7,
                         "unitCode": "DAY"
                     }
                 }
@@ -336,12 +342,14 @@
                     "@type": "ShippingDeliveryTime",
                     "handlingTime": {
                         "@type": "QuantitativeValue",
-                        "value": "1",
+                        "minValue": 1,
+          "maxValue": 3,
                         "unitCode": "DAY"
                     },
                     "transitTime": {
                         "@type": "QuantitativeValue",
-                        "value": "2",
+                        "minValue": 2,
+          "maxValue": 7,
                         "unitCode": "DAY"
                     }
                 }
@@ -504,12 +512,14 @@
                     "@type": "ShippingDeliveryTime",
                     "handlingTime": {
                         "@type": "QuantitativeValue",
-                        "value": "1",
+                        "minValue": 1,
+          "maxValue": 3,
                         "unitCode": "DAY"
                     },
                     "transitTime": {
                         "@type": "QuantitativeValue",
-                        "value": "2",
+                        "minValue": 2,
+          "maxValue": 7,
                         "unitCode": "DAY"
                     }
                 }

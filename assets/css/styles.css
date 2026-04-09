@@ -1,7 +1,7 @@
 :root{--primary-color:#FFB81C;--secondary-color:#1F2937;--accent-color:#DC2626;--text-dark:#111827;--text-light:#6B7280;--bg-light:#F9FAFB;--bg-dark:#111827;}
 body{font-family:"Inter",sans-serif;color:var(--text-dark);scroll-behavior:smooth;overflow-x:hidden;}
 .nav-link{scroll-margin-top:5rem;}
-.hero-gradient{background:linear-gradient(135deg,#fef9c3 0%,#fde68a 100%,#fbbf24 100%);}
+.hero-gradient{background:linear-gradient(135deg,#111827 0%,#1f2937 100%);}
 .text-gradient{background:linear-gradient(135deg,#FFB81C 0%,#F59E0B 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .btn-primary{background:#FFB81C;color:var(--text-dark);font-weight:600;padding:1rem 2rem;border-radius:0.5rem;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.3s ease;border:none;cursor:pointer;text-decoration:none;}
 .btn-primary:hover{background:#F59E0B;transform:translateY(-2px);box-shadow:0 20px 40px rgba(255,184,28,0.3);}
