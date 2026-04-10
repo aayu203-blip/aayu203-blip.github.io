@@ -13,6 +13,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <meta property="og:title" content="Caterpillar Seals & O-Rings Parts | PTC"/>
 <meta property="og:url" content="https://partstrading.com/pages/cat-seals-o-rings-1.html"/>
+<meta property="og:image" content="https://partstrading.com/assets/images/ptc-logo.png">
 <meta property="og:type" content="website"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"CollectionPage","name":"Caterpillar Seals & O-Rings Parts","url":"https://partstrading.com/pages/cat-seals-o-rings-1.html","description":"Browse Caterpillar Seals & O-Rings aftermarket spare parts at Parts Trading Company.","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://partstrading.com/"},{"@type":"ListItem","position":2,"name":"Caterpillar Parts","item":"https://partstrading.com/pages/cat-categories.html"},{"@type":"ListItem","position":3,"name":"Seals & O-Rings","item":"https://partstrading.com/pages/cat-seals-o-rings-1.html"}]}}
@@ -58,6 +59,32 @@
   <a href="/pages/cat-categories.html" class="hover:text-yellow-600">Caterpillar Parts</a> <span>/</span>
   <span class="text-gray-800 font-medium">Seals & O-Rings</span>
 </nav>
+<div class="max-w-4xl mx-auto px-4 pt-4 pb-2">
+  <div class="relative">
+    <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0"/></svg>
+    <input type="text" id="ptcSearch" placeholder="Search by part number or description…"
+           class="w-full border-2 border-yellow-300 rounded-xl pl-11 pr-24 py-3 text-sm focus:outline-none focus:border-yellow-500 shadow-sm bg-white">
+    <span id="ptcCount" class="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-gray-400 font-medium"></span>
+  </div>
+</div>
+<script>
+(function(){
+  var inp=document.getElementById('ptcSearch');
+  var cnt=document.getElementById('ptcCount');
+  var links=Array.from(document.querySelectorAll('main .flex-col a'));
+  cnt.textContent=links.length+' parts';
+  inp.addEventListener('input',function(){
+    var q=this.value.trim().toLowerCase();
+    var n=0;
+    links.forEach(function(a){
+      var show=!q||a.textContent.toLowerCase().includes(q);
+      a.style.display=show?'':'none';
+      if(show)n++;
+    });
+    cnt.textContent=(q?n+' of ':'')+links.length+' parts';
+  });
+})();
+</script>
 <main class="max-w-4xl mx-auto px-4 py-8">
   <div class="mb-6">
     <h1 class="text-3xl font-bold text-gray-900 mb-1">Caterpillar Seals & O-Rings Parts</h1>
