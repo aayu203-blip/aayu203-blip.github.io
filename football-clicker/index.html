@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Manager Sim</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Portals SDK -->
+    <script src="https://portals-labs.github.io/portals-sdk/portals-sdk.js?v=10005456"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <span class="icon">⚽</span>
+                <span class="text">SimManager</span>
+            </div>
+            <nav class="nav-menu">
+                <div class="nav-item active" data-view="home">
+                    <span class="icon">🏠</span> Home
+                </div>
+                <div class="nav-item" data-view="squad">
+                    <span class="icon">👕</span> Squad
+                </div>
+                <div class="nav-item" data-view="league">
+                    <span class="icon">🏆</span> League
+                </div>
+                <div class="nav-item" data-view="transfers">
+                    <span class="icon">💸</span> Transfers
+                </div>
+                <div class="nav-item" data-view="settings">
+                    <span class="icon">⚙️</span> Settings
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="close-btn" class="close-btn-sidebar" onclick="PortalsSdk.closeIframe()">
+                    Exit Game
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-layout">
+            <!-- Top Header -->
+            <header class="top-bar">
+                <div class="status-group">
+                    <span class="label">Date</span>
+                    <span class="value" id="date-display">...</span>
+                </div>
+                <div class="status-group">
+                    <span class="label">Funds</span>
+                    <span class="value money" id="cash-display">...</span>
+                </div>
+                <div class="status-group">
+                    <span class="label">Fans</span>
+                    <span class="value" id="fans-display">...</span>
+                </div>
+                <div class="status-group">
+                    <span class="label">Energy</span>
+                    <span class="value energy" id="energy-display">...</span>
+                </div>
+            </header>
+
+            <!-- Views Container -->
+            <div id="app-content" class="content-area">
+
+                <!-- View: Home -->
+                <section id="view-home" class="view-section">
+                    <div class="row">
+                        <!-- Left Col -->
+                        <div class="col-8">
+                            <div class="card" id="next-match-card">
+                                <!-- Injected -->
+                            </div>
+
+                            <div class="actions-bar">
+                                <button class="action-btn primary" id="sim-match-btn">Simulate Next Match</button>
+                                <button class="action-btn secondary" id="train-btn">Train Squad (-20 Energy)</button>
+                            </div>
+                        </div>
+
+                        <!-- Right Col -->
+                        <div class="col-4">
+                            <div class="card">
+                                <h3>League Table</h3>
+                                <table class="mini-table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Team</th>
+                                            <th>P</th>
+                                            <th>Pts</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="league-table-body">
+                                        <!-- Injected -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- View: Squad -->
+                <section id="view-squad" class="view-section" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>First Team Squad</h3>
+                            <button class="small-btn">Auto-Pick</button>
+                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Pos</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>OVR</th>
+                                    <th>Stamina</th>
+                                </tr>
+                            </thead>
+                            <tbody id="squad-table-body">
+                                <!-- Injected -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- View: Match (Overlay) -->
+                <section id="view-match" class="view-section" style="display: none;">
+                    <div class="match-container">
+                        <div class="scoreboard">
+                            <h1 id="match-score">0 - 0</h1>
+                            <div class="timer">Live Simulation</div>
+                        </div>
+                        <div class="match-feed" id="match-feed">
+                            <!-- Commentary -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Other Views (Placeholder) -->
+                <section id="view-league" class="view-section" style="display: none;">
+                    <h2>Full League Table (Coming Soon)</h2>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/game.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+
+</html>

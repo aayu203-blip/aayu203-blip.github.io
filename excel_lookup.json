@@ -1,0 +1,8037 @@
+{
+  "21489991": {
+    "name": "AIR DRIER SOLENOID VALVE",
+    "category": "Air Brake and Drying Systems",
+    "part_numbers": [
+      "21489991"
+    ],
+    "cross_refs": "WABCO - 4324259202",
+    "application": ""
+  },
+  "1652857": {
+    "name": "RANGE CYLINDER",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "1652857",
+      "1656239"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1656239": {
+    "name": "RANGE CYLINDER",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "1652857",
+      "1656239"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21534097": {
+    "name": "BRAKE LINING FRONT",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "21534097",
+      "3095187"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3095187": {
+    "name": "BRAKE LINING FRONT",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "21534097",
+      "3095187"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "272905": {
+    "name": "BRAKE ADJUSTMENT FELT KIT",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "272905"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1696924": {
+    "name": "BRAKE ADJUSTMENT Z CAM",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "1696924"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8550977": {
+    "name": "BRAKE ADJUSTER RH",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "8550977",
+      "8550978"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8550978": {
+    "name": "BRAKE ADJUSTER RH",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "8550977",
+      "8550978"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1696449": {
+    "name": "BRAKE ADJUSTMENT ALLUMINIUM COVER",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "1696449"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21534385": {
+    "name": "BRAKE LINING REAR",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "21534385",
+      "3095189"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3095189": {
+    "name": "BRAKE LINING REAR",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "21534385",
+      "3095189"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1696925": {
+    "name": "BRAKE PINION Z CAM",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "1696925"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "276098": {
+    "name": "REVERSE LOCK RH GREEN",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "276098"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20569151": {
+    "name": "CLUTCH RELEASE BEARING",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "20569151"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3090997": {
+    "name": "BRAKE ADJUSTMENT PINION LH",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "3090997"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3090998": {
+    "name": "BRAKE ADJUSTMENT PINION RH",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "3090998"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20774299": {
+    "name": "AIR COMPRESSOR HEAD TWIN CYLINDER",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "20774299",
+      "21318075",
+      "21418150",
+      "21707608",
+      "22203109"
+    ],
+    "cross_refs": "WABCO - 9125129262 / WABCO - 9125129262",
+    "application": ""
+  },
+  "21318075": {
+    "name": "AIR COMPRESSOR HEAD TWIN CYLINDER",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "20774299",
+      "21318075",
+      "21418150",
+      "21707608",
+      "22203109"
+    ],
+    "cross_refs": "WABCO - 9125129262 / WABCO - 9125129262",
+    "application": ""
+  },
+  "21418150": {
+    "name": "AIR COMPRESSOR HEAD TWIN CYLINDER",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "20774299",
+      "21318075",
+      "21418150",
+      "21707608",
+      "22203109"
+    ],
+    "cross_refs": "WABCO - 9125129262 / WABCO - 9125129262",
+    "application": ""
+  },
+  "21707608": {
+    "name": "AIR COMPRESSOR HEAD TWIN CYLINDER",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "20774299",
+      "21318075",
+      "21418150",
+      "21707608",
+      "22203109"
+    ],
+    "cross_refs": "WABCO - 9125129262 / WABCO - 9125129262",
+    "application": ""
+  },
+  "22203109": {
+    "name": "AIR COMPRESSOR HEAD TWIN CYLINDER",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "20774299",
+      "21318075",
+      "21418150",
+      "21707608",
+      "22203109"
+    ],
+    "cross_refs": "WABCO - 9125129262 / WABCO - 9125129262",
+    "application": ""
+  },
+  "20835246": {
+    "name": "CLUTCH MASTER CYLINDER",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "20835246"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "272910": {
+    "name": "CROSS SHAFT",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "272910"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20997341": {
+    "name": "FUEL PUMP",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20997341"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20711178": {
+    "name": "KING PIN COVER",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20711178",
+      "20740393"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20740393": {
+    "name": "KING PIN COVER",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20711178",
+      "20740393"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3173150": {
+    "name": "RELAY VALVE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "3173150"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "276097": {
+    "name": "REVERSE LOCK LH RED",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "276097"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21041296": {
+    "name": "AIR FILTER INNER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21041296"
+    ],
+    "cross_refs": "MANN - cf 1510/1",
+    "application": ""
+  },
+  "1696450": {
+    "name": "GASKET",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "1696450"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1696444": {
+    "name": "BRAKE CAM SPRING",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "1696444",
+      "3097092"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3097092": {
+    "name": "BRAKE CAM SPRING",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "1696444",
+      "3097092"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21758906": {
+    "name": "CABIN AC FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21758906",
+      "8143691"
+    ],
+    "cross_refs": "MANN - CU2184",
+    "application": ""
+  },
+  "8143691": {
+    "name": "CABIN AC FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21758906",
+      "8143691"
+    ],
+    "cross_refs": "MANN - CU2184",
+    "application": ""
+  },
+  "1521527": {
+    "name": "TRANSMISSION FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "1521527",
+      "21479106",
+      "22023120",
+      "85108176"
+    ],
+    "cross_refs": "MANN - hu721 x",
+    "application": ""
+  },
+  "21479106": {
+    "name": "TRANSMISSION FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "1521527",
+      "21479106",
+      "22023120",
+      "85108176"
+    ],
+    "cross_refs": "MANN - hu721 x",
+    "application": ""
+  },
+  "22023120": {
+    "name": "TRANSMISSION FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "1521527",
+      "21479106",
+      "22023120",
+      "85108176"
+    ],
+    "cross_refs": "MANN - hu721 x",
+    "application": ""
+  },
+  "85108176": {
+    "name": "TRANSMISSION FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "1521527",
+      "21479106",
+      "22023120",
+      "85108176"
+    ],
+    "cross_refs": "MANN - hu721 x",
+    "application": ""
+  },
+  "250369": {
+    "name": "STEERING GEAR BOX",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "250369",
+      "250377"
+    ],
+    "cross_refs": "BOSCH - 8098955867",
+    "application": ""
+  },
+  "250377": {
+    "name": "STEERING GEAR BOX",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "250369",
+      "250377"
+    ],
+    "cross_refs": "BOSCH - 8098955867",
+    "application": ""
+  },
+  "3092465": {
+    "name": "TORQUE PLATE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "3092465",
+      "3092466"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3092466": {
+    "name": "TORQUE PLATE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "3092465",
+      "3092466"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20972915": {
+    "name": "AIR DRIER CARTRIDGE",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "20972915",
+      "21620181"
+    ],
+    "cross_refs": "MANN - tb1374 x",
+    "application": ""
+  },
+  "21620181": {
+    "name": "AIR DRIER CARTRIDGE",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "20972915",
+      "21620181"
+    ],
+    "cross_refs": "MANN - tb1374 x",
+    "application": ""
+  },
+  "21580956": {
+    "name": "CLUTCH SLAVE CYLINDER",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "21580956",
+      "22429963",
+      "22809232",
+      "23417523"
+    ],
+    "cross_refs": "LUK - 5100168100 - zf no - 6482000155 / ZF - 6482000155",
+    "application": ""
+  },
+  "22429963": {
+    "name": "CLUTCH SLAVE CYLINDER",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "21580956",
+      "22429963",
+      "22809232",
+      "23417523"
+    ],
+    "cross_refs": "LUK - 5100168100 - zf no - 6482000155 / ZF - 6482000155",
+    "application": ""
+  },
+  "22809232": {
+    "name": "CLUTCH SLAVE CYLINDER",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "21580956",
+      "22429963",
+      "22809232",
+      "23417523"
+    ],
+    "cross_refs": "LUK - 5100168100 - zf no - 6482000155 / ZF - 6482000155",
+    "application": ""
+  },
+  "23417523": {
+    "name": "CLUTCH SLAVE CYLINDER",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "21580956",
+      "22429963",
+      "22809232",
+      "23417523"
+    ],
+    "cross_refs": "LUK - 5100168100 - zf no - 6482000155 / ZF - 6482000155",
+    "application": ""
+  },
+  "20524584": {
+    "name": "CLUTCH SERVO",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "20524584",
+      "20524585",
+      "8171721"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20524585": {
+    "name": "CLUTCH SERVO",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "20524584",
+      "20524585",
+      "8171721"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8171721": {
+    "name": "CLUTCH SERVO",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "20524584",
+      "20524585",
+      "8171721"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1653156": {
+    "name": "CLUTCH PEDAL VALVE",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "1653156"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20751021": {
+    "name": "KING PIN KIT",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20751021"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21834199": {
+    "name": "AIR FILTER OUTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21834199",
+      "8149064"
+    ],
+    "cross_refs": "MANN - c311345/1",
+    "application": ""
+  },
+  "8149064": {
+    "name": "AIR FILTER OUTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21834199",
+      "8149064"
+    ],
+    "cross_refs": "MANN - c311345/1",
+    "application": ""
+  },
+  "21707132": {
+    "name": "BY PASS FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21707132",
+      "477556"
+    ],
+    "cross_refs": "MANN - wp 11 102/3",
+    "application": ""
+  },
+  "477556": {
+    "name": "BY PASS FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21707132",
+      "477556"
+    ],
+    "cross_refs": "MANN - wp 11 102/3",
+    "application": ""
+  },
+  "20367534": {
+    "name": "HAND BRAKE VALVE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "20367534"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3097299": {
+    "name": "PIN RETURN SPRING",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "3097299"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21110366": {
+    "name": "STEERING SERVO",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21110366",
+      "21488865"
+    ],
+    "cross_refs": "BOSCH - ks00000450 / ZF - 7685955628",
+    "application": ""
+  },
+  "21488865": {
+    "name": "STEERING SERVO",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21110366",
+      "21488865"
+    ],
+    "cross_refs": "BOSCH - ks00000450 / ZF - 7685955628",
+    "application": ""
+  },
+  "3094621": {
+    "name": "PISTON RING AIR COMPRESSOR, TWIN CYLINDER",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "3094621"
+    ],
+    "cross_refs": "WABCO - 9115019202",
+    "application": ""
+  },
+  "3150188": {
+    "name": "CAM ROLLER CLUTCH FORK",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "3150188"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20714187": {
+    "name": "COMPRESSOR HOSE",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "20714187"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21392404": {
+    "name": "STEERING FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21392404",
+      "349619"
+    ],
+    "cross_refs": "MANN - H601/4",
+    "application": ""
+  },
+  "349619": {
+    "name": "STEERING FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21392404",
+      "349619"
+    ],
+    "cross_refs": "MANN - H601/4",
+    "application": ""
+  },
+  "20580233": {
+    "name": "STEERING FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "20580233",
+      "21519716"
+    ],
+    "cross_refs": "MANN - h623",
+    "application": ""
+  },
+  "21519716": {
+    "name": "STEERING FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "20580233",
+      "21519716"
+    ],
+    "cross_refs": "MANN - h623",
+    "application": ""
+  },
+  "21170831": {
+    "name": "STEERING GEAR BOX REPAIR KIT",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21170831",
+      "21219953"
+    ],
+    "cross_refs": "BOSCH - 8098633542",
+    "application": ""
+  },
+  "21219953": {
+    "name": "STEERING GEAR BOX REPAIR KIT",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21170831",
+      "21219953"
+    ],
+    "cross_refs": "BOSCH - 8098633542",
+    "application": ""
+  },
+  "3092770": {
+    "name": "STEERING OIL DIPSTICK",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "3092770"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3090954": {
+    "name": "DUST COVER",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "3090954"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3093073": {
+    "name": "FOOT BRAKE VALVE KIT",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "3093073"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21710522": {
+    "name": "CLUTCH SOLENOID VALVE",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "21710522",
+      "21965253",
+      "22327063"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21965253": {
+    "name": "CLUTCH SOLENOID VALVE",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "21710522",
+      "21965253",
+      "22327063"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22327063": {
+    "name": "CLUTCH SOLENOID VALVE",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "21710522",
+      "21965253",
+      "22327063"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20884103": {
+    "name": "AIR DRIER ELECTRONIC",
+    "category": "Air Brake and Drying Systems",
+    "part_numbers": [
+      "20884103",
+      "21398254",
+      "21480094",
+      "21620172",
+      "85013131"
+    ],
+    "cross_refs": "WABCO - 4324251050",
+    "application": ""
+  },
+  "21398254": {
+    "name": "AIR DRIER ELECTRONIC",
+    "category": "Air Brake and Drying Systems",
+    "part_numbers": [
+      "20884103",
+      "21398254",
+      "21480094",
+      "21620172",
+      "85013131"
+    ],
+    "cross_refs": "WABCO - 4324251050",
+    "application": ""
+  },
+  "21480094": {
+    "name": "AIR DRIER ELECTRONIC",
+    "category": "Air Brake and Drying Systems",
+    "part_numbers": [
+      "20884103",
+      "21398254",
+      "21480094",
+      "21620172",
+      "85013131"
+    ],
+    "cross_refs": "WABCO - 4324251050",
+    "application": ""
+  },
+  "21620172": {
+    "name": "AIR DRIER ELECTRONIC",
+    "category": "Air Brake and Drying Systems",
+    "part_numbers": [
+      "20884103",
+      "21398254",
+      "21480094",
+      "21620172",
+      "85013131"
+    ],
+    "cross_refs": "WABCO - 4324251050",
+    "application": ""
+  },
+  "85013131": {
+    "name": "AIR DRIER ELECTRONIC",
+    "category": "Air Brake and Drying Systems",
+    "part_numbers": [
+      "20884103",
+      "21398254",
+      "21480094",
+      "21620172",
+      "85013131"
+    ],
+    "cross_refs": "WABCO - 4324251050",
+    "application": ""
+  },
+  "20559841": {
+    "name": "STEERING CYLINDER",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20559841"
+    ],
+    "cross_refs": "BOSCH - 8346955185",
+    "application": ""
+  },
+  "85126073": {
+    "name": "STEERING CYLINDER REPAIR KIT",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "85126073"
+    ],
+    "cross_refs": "BOSCH - 8346633504",
+    "application": ""
+  },
+  "85114317": {
+    "name": "STEERING SERVO",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21110366",
+      "85114317"
+    ],
+    "cross_refs": "ZF - 7685955791",
+    "application": ""
+  },
+  "21939948": {
+    "name": "STEERING SERVO I SHIFT",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21939948"
+    ],
+    "cross_refs": "BOSCH - ks00001720 / ZF - 7655955113",
+    "application": ""
+  },
+  "20589122": {
+    "name": "CHARGE AIR HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20589122",
+      "21312236"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21312236": {
+    "name": "CHARGE AIR HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20589122",
+      "21312236"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22768927": {
+    "name": "AC CONDENSER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22768927"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20855514": {
+    "name": "FAN HUB ASSY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20855514",
+      "20915050",
+      "21146752",
+      "21157196",
+      "21986056",
+      "21986107"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20915050": {
+    "name": "FAN HUB ASSY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20855514",
+      "20915050",
+      "21146752",
+      "21157196",
+      "21986056",
+      "21986107"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21146752": {
+    "name": "FAN HUB ASSY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20855514",
+      "20915050",
+      "21146752",
+      "21157196",
+      "21986056",
+      "21986107"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21157196": {
+    "name": "FAN HUB ASSY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20855514",
+      "20915050",
+      "21146752",
+      "21157196",
+      "21986056",
+      "21986107"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21986056": {
+    "name": "FAN HUB ASSY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20855514",
+      "20915050",
+      "21146752",
+      "21157196",
+      "21986056",
+      "21986107"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21986107": {
+    "name": "FAN HUB ASSY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20855514",
+      "20915050",
+      "21146752",
+      "21157196",
+      "21986056",
+      "21986107"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3183757": {
+    "name": "FAN SHROUD",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "3183757"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20555313": {
+    "name": "CONNECTING PIPE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20555313"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1549651": {
+    "name": "THERMOSTAT O RING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "1549651"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8171927": {
+    "name": "BUSHING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "8171927"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20479636": {
+    "name": "GASKET COOLANT PIPE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20479636"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521886": {
+    "name": "DISC SPRING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521886"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21351717": {
+    "name": "INJECTOR SLEEVE WITH O RING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21351717",
+      "276948"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "276948": {
+    "name": "INJECTOR SLEEVE WITH O RING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21351717",
+      "276948"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20589123": {
+    "name": "CHARGE AIR HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20589123",
+      "21312237"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21312237": {
+    "name": "CHARGE AIR HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20589123",
+      "21312237"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20523391": {
+    "name": "CHARGE REGULATOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20523391",
+      "20802191"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20802191": {
+    "name": "CHARGE REGULATOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20523391",
+      "20802191"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521930": {
+    "name": "COUNTER SHAFT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521930"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20744733": {
+    "name": "EXPANSION VALVE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20744733"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "490947": {
+    "name": "RECEIVER DRIER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "490947",
+      "20490947"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20490947": {
+    "name": "RECEIVER DRIER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "490947",
+      "20490947"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521917": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521917"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8171931": {
+    "name": "BALL SOCKET",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "8171931",
+      "8171932"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8171932": {
+    "name": "BALL SOCKET",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "8171931",
+      "8171932"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20430611": {
+    "name": "ALTERNATOR BELT 8PK",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20430611",
+      "22275091",
+      "22281893"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22275091": {
+    "name": "ALTERNATOR BELT 8PK",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20430611",
+      "22275091",
+      "22281893"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22281893": {
+    "name": "ALTERNATOR BELT 8PK",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20430611",
+      "22275091",
+      "22281893"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20981224": {
+    "name": "RADIATOR FAN",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20981224"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20542693": {
+    "name": "FAN RING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20542693"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1674584": {
+    "name": "FAN RUBBER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "1674584"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521879": {
+    "name": "ENGAGING RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521879"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521920": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521920",
+      "20588772",
+      "20858492",
+      "8171944",
+      "8172497"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20588772": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521920",
+      "20588772",
+      "20858492",
+      "8171944",
+      "8172497"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20858492": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521920",
+      "20588772",
+      "20858492",
+      "8171944",
+      "8172497"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8171944": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521920",
+      "20588772",
+      "20858492",
+      "8171944",
+      "8172497"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8172497": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521920",
+      "20588772",
+      "20858492",
+      "8171944",
+      "8172497"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20744939": {
+    "name": "WATER PUMP",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20744939",
+      "21468471",
+      "22197705",
+      "22902431"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21468471": {
+    "name": "WATER PUMP",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20744939",
+      "21468471",
+      "22197705",
+      "22902431"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22197705": {
+    "name": "WATER PUMP",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20744939",
+      "21468471",
+      "22197705",
+      "22902431"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22902431": {
+    "name": "WATER PUMP",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20744939",
+      "21468471",
+      "22197705",
+      "22902431"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20505543": {
+    "name": "WATER PUMP HOUSING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20505543",
+      "22195464"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22195464": {
+    "name": "WATER PUMP HOUSING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20505543",
+      "22195464"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21002880": {
+    "name": "CABLE GEAR SELECT (BLACK)",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21002880",
+      "21780708"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21780708": {
+    "name": "CABLE GEAR SELECT (BLACK)",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21002880",
+      "21780708"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21343579": {
+    "name": "CABLE GEAR SHIFT (GREY)",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21343579",
+      "21789707"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21789707": {
+    "name": "CABLE GEAR SHIFT (GREY)",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21343579",
+      "21789707"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20712530": {
+    "name": "FAN BELT",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20712530"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20487079": {
+    "name": "FAN BELT TENSIONER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20487079",
+      "21260406",
+      "21479276"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21260406": {
+    "name": "FAN BELT TENSIONER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20487079",
+      "21260406",
+      "21479276"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21479276": {
+    "name": "FAN BELT TENSIONER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20487079",
+      "21260406",
+      "21479276"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3173104": {
+    "name": "SAFETY VALVE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "3173104",
+      "8151922"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8151922": {
+    "name": "SAFETY VALVE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "3173104",
+      "8151922"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20521447": {
+    "name": "IDLER PULLEY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20521447",
+      "21153968",
+      "21393207",
+      "21766717"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21153968": {
+    "name": "IDLER PULLEY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20521447",
+      "21153968",
+      "21393207",
+      "21766717"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21393207": {
+    "name": "IDLER PULLEY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20521447",
+      "21153968",
+      "21393207",
+      "21766717"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21766717": {
+    "name": "IDLER PULLEY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20521447",
+      "21153968",
+      "21393207",
+      "21766717"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1656116": {
+    "name": "BEARING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1656116"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8171930": {
+    "name": "BEARING HOUSING KIT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "8171930"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20739751": {
+    "name": "ALTERNATOR BELT TENSIONER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20739751",
+      "20935521",
+      "21422765",
+      "3979979"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20935521": {
+    "name": "ALTERNATOR BELT TENSIONER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20739751",
+      "20935521",
+      "21422765",
+      "3979979"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21422765": {
+    "name": "ALTERNATOR BELT TENSIONER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20739751",
+      "20935521",
+      "21422765",
+      "3979979"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3979979": {
+    "name": "ALTERNATOR BELT TENSIONER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20739751",
+      "20935521",
+      "21422765",
+      "3979979"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1656264": {
+    "name": "DISTRIBUTOR PIPE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1656264"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "382565": {
+    "name": "DOWEL PIN",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "382565"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3199065": {
+    "name": "FLEXIBLE PIPE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "3199065"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21023285": {
+    "name": "FUEL FILTER HOUSING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21023285",
+      "21870628"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21870628": {
+    "name": "FUEL FILTER HOUSING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21023285",
+      "21870628"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20366306": {
+    "name": "COUNTER SHAFT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20366306"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20539764": {
+    "name": "COUNTER SHAFT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20539764"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521421": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521421"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521423": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521423"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20740344": {
+    "name": "RADIATOR LOWER HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20740344"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20549855": {
+    "name": "RADIATOR UPPER HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20549855",
+      "20968744",
+      "21258220"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20968744": {
+    "name": "RADIATOR UPPER HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20549855",
+      "20968744",
+      "21258220"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21258220": {
+    "name": "RADIATOR UPPER HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20549855",
+      "20968744",
+      "21258220"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20807510": {
+    "name": "OIL FILLER CAP",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20807510"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21229195": {
+    "name": "RADIATOR ASSY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21229195",
+      "21385165",
+      "22235310"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21385165": {
+    "name": "RADIATOR ASSY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21229195",
+      "21385165",
+      "22235310"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22235310": {
+    "name": "RADIATOR ASSY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21229195",
+      "21385165",
+      "22235310"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "36107": {
+    "name": "WATER SEPARATOR",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "36107",
+      "56107"
+    ],
+    "cross_refs": "MANN - 2040 sm",
+    "application": ""
+  },
+  "56107": {
+    "name": "WATER SEPARATOR",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "36107",
+      "56107"
+    ],
+    "cross_refs": "MANN - 2040 sm",
+    "application": ""
+  },
+  "1673541": {
+    "name": "ENGAGING RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1673541",
+      "20760515"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20760515": {
+    "name": "ENGAGING RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1673541",
+      "20760515"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20366826": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20366826"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20539766": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20539766"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20539768": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20539768"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20430678": {
+    "name": "SEALING RING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20430678"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20463750": {
+    "name": "THERMOSTAT",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20463750",
+      "20560249",
+      "21237213",
+      "21412639",
+      "21613426"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20560249": {
+    "name": "THERMOSTAT",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20463750",
+      "20560249",
+      "21237213",
+      "21412639",
+      "21613426"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21237213": {
+    "name": "THERMOSTAT",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20463750",
+      "20560249",
+      "21237213",
+      "21412639",
+      "21613426"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21412639": {
+    "name": "THERMOSTAT",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20463750",
+      "20560249",
+      "21237213",
+      "21412639",
+      "21613426"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21613426": {
+    "name": "THERMOSTAT",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20463750",
+      "20560249",
+      "21237213",
+      "21412639",
+      "21613426"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "14659238": {
+    "name": "A.C. COMPRESSOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "14659238",
+      "15082727"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "15082727": {
+    "name": "A.C. COMPRESSOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "14659238",
+      "15082727"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521900": {
+    "name": "OIL PUMP",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521900"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521452": {
+    "name": "NEEDLE BEARING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521452"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521438": {
+    "name": "SYNCHRONIZING CONE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521438",
+      "8171737"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8171737": {
+    "name": "SYNCHRONIZING CONE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521438",
+      "8171737"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22078082": {
+    "name": "BATTERY COVER",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "22078082"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521416": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521416",
+      "20776783"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20776783": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521416",
+      "20776783"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22239060": {
+    "name": "HEAD LIGHT",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "22239060",
+      "22239061"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22239061": {
+    "name": "HEAD LIGHT",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "22239060",
+      "22239061"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82266031": {
+    "name": "HEAD LAMP",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82266031",
+      "82449957"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82449957": {
+    "name": "HEAD LAMP",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82266031",
+      "82449957"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1656104": {
+    "name": "ROLLER BEARING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1656104"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1652948": {
+    "name": "LOCK RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1652948"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20488058": {
+    "name": "GEAR LEVER KNOB SINGLR SWITCH",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20488058",
+      "20488067"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20488067": {
+    "name": "GEAR LEVER KNOB SINGLR SWITCH",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20488058",
+      "20488067"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1672230": {
+    "name": "INHIBITOR VALVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1672230",
+      "8172628"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8172628": {
+    "name": "INHIBITOR VALVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1672230",
+      "8172628"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1004057": {
+    "name": "PLUNGER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1004057",
+      "1521870",
+      "8172433"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521870": {
+    "name": "PLUNGER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1004057",
+      "1521870",
+      "8172433"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8172433": {
+    "name": "PLUNGER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1004057",
+      "1521870",
+      "8172433"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1654088": {
+    "name": "NEEDLE BEARING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1654088"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "949656": {
+    "name": "O RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "949656"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1652841": {
+    "name": "WASHER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1652841"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1652176": {
+    "name": "THRUST WASHER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1652176"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20379349": {
+    "name": "GAS SPRING",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20379349"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82467991": {
+    "name": "CENTRE BUMPER",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82467991"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82266433": {
+    "name": "CORNER BUMPER",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82266433",
+      "82266440"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82266440": {
+    "name": "CORNER BUMPER",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82266433",
+      "82266440"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521589": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521589",
+      "1521915",
+      "20854432",
+      "8172640"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521915": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521589",
+      "1521915",
+      "20854432",
+      "8172640"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20854432": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521589",
+      "1521915",
+      "20854432",
+      "8172640"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8172640": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521589",
+      "1521915",
+      "20854432",
+      "8172640"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20854435": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20854435"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3192293": {
+    "name": "OIL PUMP SHAFT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "3192293"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20476025": {
+    "name": "OIL SEAL",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20476025"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1656129": {
+    "name": "ROLLER BEARING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1656129"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1652820": {
+    "name": "SEALING RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1652820",
+      "22328752"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22328752": {
+    "name": "SEALING RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1652820",
+      "22328752"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82310407": {
+    "name": "HEAD LAMP",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82310407",
+      "82310411"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82310411": {
+    "name": "HEAD LAMP",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82310407",
+      "82310411"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21001672": {
+    "name": "HEAD LIGHT",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "21001672",
+      "21001673"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21001673": {
+    "name": "HEAD LIGHT",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "21001672",
+      "21001673"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3192533": {
+    "name": "GEAR POSITION DETENT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "3192533"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1672231": {
+    "name": "INHIBITOR VALVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1672231"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20847116": {
+    "name": "PLUNGER KIT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20847116"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20766774": {
+    "name": "PLUNGER KIT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20766774",
+      "20845497",
+      "21140387",
+      "21141850"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20845497": {
+    "name": "PLUNGER KIT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20766774",
+      "20845497",
+      "21140387",
+      "21141850"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21140387": {
+    "name": "PLUNGER KIT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20766774",
+      "20845497",
+      "21140387",
+      "21141850"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21141850": {
+    "name": "PLUNGER KIT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20766774",
+      "20845497",
+      "21140387",
+      "21141850"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20775173": {
+    "name": "RELAY VALVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20775173",
+      "21740038"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21740038": {
+    "name": "RELAY VALVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20775173",
+      "21740038"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521890": {
+    "name": "PUSHER PLATE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521890"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82266404": {
+    "name": "GRILL",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82266404"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20917278": {
+    "name": "HAND PUMP",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20917278",
+      "3198844"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3198844": {
+    "name": "HAND PUMP",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20917278",
+      "3198844"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1652688": {
+    "name": "LOCK WASHER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1652688",
+      "20944716"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20944716": {
+    "name": "LOCK WASHER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1652688",
+      "20944716"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20772366": {
+    "name": "LOCKING CYLINDER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20772366",
+      "20783875"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20783875": {
+    "name": "LOCKING CYLINDER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20772366",
+      "20783875"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "71700": {
+    "name": "SELECTOR PIN",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "71700",
+      "8171700"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8171700": {
+    "name": "SELECTOR PIN",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "71700",
+      "8171700"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20904803": {
+    "name": "INPUT SHAFT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20904803"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521449": {
+    "name": "LOCK NUT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521449"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20452886": {
+    "name": "HEAD LIGHT COVER",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20452886",
+      "20452887"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20452887": {
+    "name": "HEAD LIGHT COVER",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20452886",
+      "20452887"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21520198": {
+    "name": "HEAD LIGHT COVER",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "21520198",
+      "21520214"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21520214": {
+    "name": "HEAD LIGHT COVER",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "21520198",
+      "21520214"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521596": {
+    "name": "ROLLER BEARING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521596"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521881": {
+    "name": "SIDE PLATE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521881",
+      "8172218"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8172218": {
+    "name": "SIDE PLATE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521881",
+      "8172218"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1069254": {
+    "name": "SYNCHRONIZING CONE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1069254"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20365902": {
+    "name": "GEAR END",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20365902"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20590252": {
+    "name": "RANGE CYLINDER COVER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20590252",
+      "21450362"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21450362": {
+    "name": "RANGE CYLINDER COVER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20590252",
+      "21450362"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3093230": {
+    "name": "RANGE CYLINER REPAIR KIT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "3093230"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20392751": {
+    "name": "DIESEL TANK CAP WITH KEY",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20392751",
+      "21584831",
+      "21776807",
+      "22335631"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21584831": {
+    "name": "DIESEL TANK CAP WITH KEY",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20392751",
+      "21584831",
+      "21776807",
+      "22335631"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21776807": {
+    "name": "DIESEL TANK CAP WITH KEY",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20392751",
+      "21584831",
+      "21776807",
+      "22335631"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22335631": {
+    "name": "DIESEL TANK CAP WITH KEY",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20392751",
+      "21584831",
+      "21776807",
+      "22335631"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20476049": {
+    "name": "GEAR LEVER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20476049"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20488052": {
+    "name": "GEAR LEVER KNOB DOUBLE SWITCH",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20488052"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20452847": {
+    "name": "FRAME",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20452847",
+      "20452848"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20452848": {
+    "name": "FRAME",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20452847",
+      "20452848"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82266039": {
+    "name": "HEAD LIGHT PROTECTOR",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82266039",
+      "82266040"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82266040": {
+    "name": "HEAD LIGHT PROTECTOR",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82266039",
+      "82266040"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20442252": {
+    "name": "CRADLE BUSH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20442252"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21838765": {
+    "name": "FLANGE SCREW FMX 440 SMALL",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21838765"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1629169": {
+    "name": "ANTIROLL BAR BUSH (D BUSH)",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "1629169"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21263821": {
+    "name": "BALL JOINT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21263821",
+      "3093647"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3093647": {
+    "name": "BALL JOINT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21263821",
+      "3093647"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20466804": {
+    "name": "CRADLE CONE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20466804",
+      "21178062",
+      "21363702"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21178062": {
+    "name": "CRADLE CONE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20466804",
+      "21178062",
+      "21363702"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21363702": {
+    "name": "CRADLE CONE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20466804",
+      "21178062",
+      "21363702"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21838766": {
+    "name": "FLANGE SCREW FMX 440 MEDIUM",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21838766"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20568367": {
+    "name": "RIM LOCK",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20568367",
+      "20568637"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20568637": {
+    "name": "RIM LOCK",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20568367",
+      "20568637"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21838764": {
+    "name": "FLANGE SCREW FMX440 BIG",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21838764"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20428166": {
+    "name": "ANTIROLLBAR BUSH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20428166"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1068228": {
+    "name": "FLANGE YOKE FRONT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1068228",
+      "20471436"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20471436": {
+    "name": "FLANGE YOKE FRONT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1068228",
+      "20471436"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20374698": {
+    "name": "BALL JOINT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20374698"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20375556": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20375556",
+      "20393187",
+      "21106952",
+      "22159737"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20393187": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20375556",
+      "20393187",
+      "21106952",
+      "22159737"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21106952": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20375556",
+      "20393187",
+      "21106952",
+      "22159737"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22159737": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20375556",
+      "20393187",
+      "21106952",
+      "22159737"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82446494": {
+    "name": "SIDE LAMP",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82446494",
+      "82446495"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82446495": {
+    "name": "SIDE LAMP",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82446494",
+      "82446495"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82423778": {
+    "name": "LAMP SHROUD",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82423778",
+      "82424434"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82424434": {
+    "name": "LAMP SHROUD",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82423778",
+      "82424434"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20953569": {
+    "name": "HEAD LIGHT SWITCH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20953569"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20827042": {
+    "name": "LAMP SHROUD",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20827042",
+      "20827044"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20827044": {
+    "name": "LAMP SHROUD",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20827042",
+      "20827044"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20453900": {
+    "name": "REAR FENDER",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20453900"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22318844": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "22318844",
+      "223188446"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "223188446": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "22318844",
+      "223188446"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21448461": {
+    "name": "OIL SEAL DIFFERENTIAL",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21448461"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3097999": {
+    "name": "BALL JOINT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "3097999",
+      "3986736",
+      "85103625",
+      "85119942"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3986736": {
+    "name": "BALL JOINT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "3097999",
+      "3986736",
+      "85103625",
+      "85119942"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "85103625": {
+    "name": "BALL JOINT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "3097999",
+      "3986736",
+      "85103625",
+      "85119942"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "85119942": {
+    "name": "BALL JOINT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "3097999",
+      "3986736",
+      "85103625",
+      "85119942"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1134955": {
+    "name": "BUSHING",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1134955",
+      "22139175"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22139175": {
+    "name": "BUSHING",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1134955",
+      "22139175"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20424046": {
+    "name": "WIPER SWITCH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20424046",
+      "20553740",
+      "20700930"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20553740": {
+    "name": "WIPER SWITCH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20424046",
+      "20553740",
+      "20700930"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20700930": {
+    "name": "WIPER SWITCH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20424046",
+      "20553740",
+      "20700930"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "84035947": {
+    "name": "WIPER-BLADE",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "84035947"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20703965": {
+    "name": "SADDLE RH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20703965"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1524838": {
+    "name": "SEAL",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1524838"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1651247": {
+    "name": "FLANGE YOKE(REAR)",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1651247"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1629550": {
+    "name": "ANCHORAGE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1629550"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20522934": {
+    "name": "REACTION ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20522934",
+      "21051052"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21051052": {
+    "name": "REACTION ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20522934",
+      "21051052"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "6031033": {
+    "name": "SHOCK ABSORBER REPAIR KIT",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "6031033",
+      "6031034"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "6031034": {
+    "name": "SHOCK ABSORBER REPAIR KIT",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "6031033",
+      "6031034"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20534905": {
+    "name": "FRONT HUB",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20534905",
+      "20535904",
+      "20581399",
+      "21024160",
+      "21024164",
+      "21024166"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20535904": {
+    "name": "FRONT HUB",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20534905",
+      "20535904",
+      "20581399",
+      "21024160",
+      "21024164",
+      "21024166"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20581399": {
+    "name": "FRONT HUB",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20534905",
+      "20535904",
+      "20581399",
+      "21024160",
+      "21024164",
+      "21024166"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21024160": {
+    "name": "FRONT HUB",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20534905",
+      "20535904",
+      "20581399",
+      "21024160",
+      "21024164",
+      "21024166"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21024164": {
+    "name": "FRONT HUB",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20534905",
+      "20535904",
+      "20581399",
+      "21024160",
+      "21024164",
+      "21024166"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21024166": {
+    "name": "FRONT HUB",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20534905",
+      "20535904",
+      "20581399",
+      "21024160",
+      "21024164",
+      "21024166"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20390836": {
+    "name": "HOLLOW SPRING",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20390836"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20515515": {
+    "name": "HUB BOLT WITH NUT FRONT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20515515",
+      "20551045",
+      "21303956"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20551045": {
+    "name": "HUB BOLT WITH NUT FRONT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20515515",
+      "20551045",
+      "21303956"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21303956": {
+    "name": "HUB BOLT WITH NUT FRONT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20515515",
+      "20551045",
+      "21303956"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "959265": {
+    "name": "ANCHORAGE SCREW",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "959265"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20382336": {
+    "name": "ANCHORAGE SLEEVE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20382336",
+      "21285922"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21285922": {
+    "name": "ANCHORAGE SLEEVE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20382336",
+      "21285922"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20390840": {
+    "name": "CABIN MOUNTING",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20390840"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20865937": {
+    "name": "COMPANION  FLANGE 61 TEETH GEARBOX",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20865937",
+      "22238210"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22238210": {
+    "name": "COMPANION  FLANGE 61 TEETH GEARBOX",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20865937",
+      "22238210"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20518632": {
+    "name": "OIL SEAL KIT FRONT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20518632"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "963162": {
+    "name": "CENTRE BOLT WITH NUT 2ND AXLE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "963162",
+      "963166"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "963166": {
+    "name": "CENTRE BOLT WITH NUT 2ND AXLE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "963162",
+      "963166"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "963181": {
+    "name": "CENTRE BOLT WITH NUT REAR AXLE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "963162",
+      "963166",
+      "963181",
+      "963184",
+      "971069"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "963184": {
+    "name": "CENTRE BOLT WITH NUT REAR AXLE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "963162",
+      "963166",
+      "963181",
+      "963184",
+      "971069"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "971069": {
+    "name": "CENTRE BOLT WITH NUT REAR AXLE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "963162",
+      "963166",
+      "963181",
+      "963184",
+      "971069"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1069140": {
+    "name": "COMPANION FLANGE WITHOUT COLLAR 21 TEETH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1069140",
+      "20706810",
+      "21581608",
+      "21612294",
+      "3152322"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20706810": {
+    "name": "COMPANION FLANGE WITHOUT COLLAR 21 TEETH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1069140",
+      "20706810",
+      "21581608",
+      "21612294",
+      "3152322"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21581608": {
+    "name": "COMPANION FLANGE WITHOUT COLLAR 21 TEETH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1069140",
+      "20706810",
+      "21581608",
+      "21612294",
+      "3152322"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21612294": {
+    "name": "COMPANION FLANGE WITHOUT COLLAR 21 TEETH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1069140",
+      "20706810",
+      "21581608",
+      "21612294",
+      "3152322"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3152322": {
+    "name": "COMPANION FLANGE WITHOUT COLLAR 21 TEETH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1069140",
+      "20706810",
+      "21581608",
+      "21612294",
+      "3152322"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "993079": {
+    "name": "CRADLE BOLT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "993079",
+      "996844"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "996844": {
+    "name": "CRADLE BOLT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "993079",
+      "996844"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3192819": {
+    "name": "HUB COVER",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "3192819"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20374831": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20374831",
+      "21252480",
+      "22159741"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21252480": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20374831",
+      "21252480",
+      "22159741"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22159741": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20374831",
+      "21252480",
+      "22159741"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3095043": {
+    "name": "OIL SEAL KIT REAR",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "3095043"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1672273": {
+    "name": "PROPELLOR SHAFT BOLT _ NUT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1672273"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20702095": {
+    "name": "REACTION ROD BUSH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20702095",
+      "273612"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "273612": {
+    "name": "REACTION ROD BUSH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20702095",
+      "273612"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20535207": {
+    "name": "REAR HUB",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20535207",
+      "20819804",
+      "20819806",
+      "20820402",
+      "21328177",
+      "21328181"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20819804": {
+    "name": "REAR HUB",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20535207",
+      "20819804",
+      "20819806",
+      "20820402",
+      "21328177",
+      "21328181"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20819806": {
+    "name": "REAR HUB",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20535207",
+      "20819804",
+      "20819806",
+      "20820402",
+      "21328177",
+      "21328181"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20820402": {
+    "name": "REAR HUB",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20535207",
+      "20819804",
+      "20819806",
+      "20820402",
+      "21328177",
+      "21328181"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21328177": {
+    "name": "REAR HUB",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20535207",
+      "20819804",
+      "20819806",
+      "20820402",
+      "21328177",
+      "21328181"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21328181": {
+    "name": "REAR HUB",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20535207",
+      "20819804",
+      "20819806",
+      "20820402",
+      "21328177",
+      "21328181"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21401675": {
+    "name": "ALTERNATOR -440",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21401675"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21232945": {
+    "name": "CLUTCH MASTER CYLINDER 440",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "21232945"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8189633": {
+    "name": "WIPER ARM 440",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "8189633"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "840820": {
+    "name": "V STAY KIT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "840820",
+      "20840820"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20840820": {
+    "name": "V STAY KIT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "840820",
+      "20840820"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1068247": {
+    "name": "UNIVERSAL JOINT CROSS REAR",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1068247"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20940495": {
+    "name": "SHACKLE PLATE THREADED",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20940495"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20442787": {
+    "name": "U-BOLT-REAR",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20442787",
+      "20442795",
+      "22143202",
+      "3987326"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20442795": {
+    "name": "U-BOLT-REAR",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20442787",
+      "20442795",
+      "22143202",
+      "3987326"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22143202": {
+    "name": "U-BOLT-REAR",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20442787",
+      "20442795",
+      "22143202",
+      "3987326"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3987326": {
+    "name": "U-BOLT-REAR",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20442787",
+      "20442795",
+      "22143202",
+      "3987326"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22070285": {
+    "name": "CABIN CYLINDER 440",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "22070285"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21882621": {
+    "name": "CABIN TILT PUMP",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21882621"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21615194": {
+    "name": "CLUTCH PLATE FMX 440",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "21615194"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3176539": {
+    "name": "AD BLUE TANK CAP",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "3176539"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21293367": {
+    "name": "OIL SUMP GASKET",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21293367"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20967831": {
+    "name": "HUB BEARING (FRONT) 400",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20967831"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20945984": {
+    "name": "SPRING BUSHING",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20945984",
+      "20959115"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20959115": {
+    "name": "SPRING BUSHING",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20945984",
+      "20959115"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3090924": {
+    "name": "LOAD SENSING VALVE REPAIR KIT",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "3090924"
+    ],
+    "cross_refs": "",
+    "application": "VOVLVO FM 400 / FMX 440 I SHIFT / FMX 460"
+  },
+  "20429148": {
+    "name": "BUMP-STOP",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20429148"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22078244": {
+    "name": "CLUTCH PLATE FMX 460",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "22078244"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21542660": {
+    "name": "SELF STARTER  440/460",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21542660"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20794342": {
+    "name": "SLEEVE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20794342"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22221048": {
+    "name": "SPRING BUSHING",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "22221048"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8189666": {
+    "name": "SPRING PEDAL",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "8189666",
+      "82252044",
+      "82332690"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82252044": {
+    "name": "SPRING PEDAL",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "8189666",
+      "82252044",
+      "82332690"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82332690": {
+    "name": "SPRING PEDAL",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "8189666",
+      "82252044",
+      "82332690"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21376743": {
+    "name": "SLEEVE NUT BIG",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21376743"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22412256": {
+    "name": "SLEEVE NUT SMALL",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "22412256"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20829503": {
+    "name": "V STAY",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20829503",
+      "21295227",
+      "22318834"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21295227": {
+    "name": "V STAY",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20829503",
+      "21295227",
+      "22318834"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22318834": {
+    "name": "V STAY",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20829503",
+      "21295227",
+      "22318834"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20976031": {
+    "name": "V STAY ASSY",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20976031",
+      "21492537",
+      "21513940",
+      "22318835"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21492537": {
+    "name": "V STAY ASSY",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20976031",
+      "21492537",
+      "21513940",
+      "22318835"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21513940": {
+    "name": "V STAY ASSY",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20976031",
+      "21492537",
+      "21513940",
+      "22318835"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22318835": {
+    "name": "V STAY ASSY",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20976031",
+      "21492537",
+      "21513940",
+      "22318835"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21175833": {
+    "name": "SHACKLE PLATE THREADED",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21175833"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20533294": {
+    "name": "SILENT BLOCK BUSH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20533294"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20864583": {
+    "name": "V-STAY-KIT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20864583"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20840815": {
+    "name": "V-STAY-SIDE-BUSH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20840815",
+      "3093630"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3093630": {
+    "name": "V-STAY-SIDE-BUSH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20840815",
+      "3093630"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21296849": {
+    "name": "ABS SENSOR",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21296849"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21619105": {
+    "name": "GAS SPRING 440",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "21619105"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3176540": {
+    "name": "WINDOW LIFT (RH)",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "3176540"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20779978": {
+    "name": "AC CLUTCH 400-440",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20779978"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22327072": {
+    "name": "CLUTCH SOLENOID VALVE",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "22327063",
+      "22327072"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22358797": {
+    "name": "APM ASSY -440",
+    "category": "Air Brake and Drying Systems",
+    "part_numbers": [
+      "22358797"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1629549": {
+    "name": "SPRING PLATE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1629549"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21302471": {
+    "name": "HUB COVER- 440",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21302471"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20717564": {
+    "name": "CLUTCH PLATE 400MM",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "20717564",
+      "20744252"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20744252": {
+    "name": "CLUTCH PLATE 400MM",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "20717564",
+      "20744252"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3092052": {
+    "name": "CABIN TILT PUMP KIT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "3092052"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21347087": {
+    "name": "SEAL CRANK SHAFT FRONT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21347087",
+      "85108423"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "85108423": {
+    "name": "SEAL CRANK SHAFT FRONT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21347087",
+      "85108423"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21446333": {
+    "name": "STAY",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21446333",
+      "22325247",
+      "3986433"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22325247": {
+    "name": "STAY",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21446333",
+      "22325247",
+      "3986433"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3986433": {
+    "name": "STAY",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21446333",
+      "22325247",
+      "3986433"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1628449": {
+    "name": "SUSPENSION BUFFER",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1628449"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21583794": {
+    "name": "RELAY VALVE \u2013 440",
+    "category": "Air Brake and Drying Systems",
+    "part_numbers": [
+      "21583794"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20393894": {
+    "name": "AIR DRYER MECHANICAL",
+    "category": "Air Brake and Drying Systems",
+    "part_numbers": [
+      "20393894"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20441481": {
+    "name": "SEAL CRANK SHAFT REAR",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20441481",
+      "85108352"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "85108352": {
+    "name": "SEAL CRANK SHAFT REAR",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20441481",
+      "85108352"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20940508": {
+    "name": "SHACKLE PLATE PLAIN",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20940508"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521944": {
+    "name": "PISTON ROD",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521944"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21232928": {
+    "name": "GEAR LEVER KNOB",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20488052",
+      "21232928"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20884121": {
+    "name": "AIR DRYER KIT",
+    "category": "Air Brake and Drying Systems",
+    "part_numbers": [
+      "20884121"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1696446": {
+    "name": "THRUST PIN",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "1696446"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20543071": {
+    "name": "EXHAUST MANIFOLD GASKET",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20543071"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "979020": {
+    "name": "BOLT, NUT & WASHER SET, PROPELLER SHAFT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1672273",
+      "979020"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1628953": {
+    "name": "LOAD SENSING VALVE",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "1628953",
+      "21962929"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21962929": {
+    "name": "LOAD SENSING VALVE",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "1628953",
+      "21962929"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21399626": {
+    "name": "EXPANSION TANK SENSOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21399626"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20806454": {
+    "name": "CLUTCH PRESSURE PLATE",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "20806454"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21094122": {
+    "name": "BRAKE DRUM FRONT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21094122",
+      "21451966"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21451966": {
+    "name": "BRAKE DRUM FRONT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21094122",
+      "21451966"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21986114": {
+    "name": "FAN HUB",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21986114",
+      "22719933"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22719933": {
+    "name": "FAN HUB",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21986114",
+      "22719933"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21107842": {
+    "name": "FOOT BRAKE VALVE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "21107842"
+    ],
+    "cross_refs": "WABCO - - 21107842",
+    "application": ""
+  },
+  "21063612": {
+    "name": "EVAPORATOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21063612"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1674918": {
+    "name": "EXPANSION TANK",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "1674918",
+      "23262062",
+      "3979764"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "23262062": {
+    "name": "EXPANSION TANK",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "1674918",
+      "23262062",
+      "3979764"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3979764": {
+    "name": "EXPANSION TANK",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "1674918",
+      "23262062",
+      "3979764"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1081328": {
+    "name": "DRAIN VALVE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1081328"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20366735": {
+    "name": "REVERSE GEAR HUB",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20366735"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21649619": {
+    "name": "RADIATOR ASSEMBLY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21649619",
+      "22374733",
+      "85020561"
+    ],
+    "cross_refs": "",
+    "application": "FOR FMX440 FMX460"
+  },
+  "22374733": {
+    "name": "RADIATOR ASSEMBLY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21649619",
+      "22374733",
+      "85020561"
+    ],
+    "cross_refs": "",
+    "application": "FOR FMX440 FMX460"
+  },
+  "85020561": {
+    "name": "RADIATOR ASSEMBLY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21649619",
+      "22374733",
+      "85020561"
+    ],
+    "cross_refs": "",
+    "application": "FOR FMX440 FMX460"
+  },
+  "20703964": {
+    "name": "SPRING BRACKET LH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20703964"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "951080": {
+    "name": "LOCK CIRCLIP",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "951080"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21102535": {
+    "name": "FRONT HUB WITH BEARING",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21102535",
+      "21102568"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21102568": {
+    "name": "FRONT HUB WITH BEARING",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21102535",
+      "21102568"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20869391": {
+    "name": "COVER, WATER SEPERATER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "20869391"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1674083": {
+    "name": "EXPANSION TANK CAP",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "1674083"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22526512": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "22526512"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20499470": {
+    "name": "ENGINE MOUNTING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20499470"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20452152": {
+    "name": "FOUR WAY VALVE",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "20452152"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1698126": {
+    "name": "DIAPHRAGM",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "1698126"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "85104250": {
+    "name": "DIAPHRAGM",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "85104250"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1652631": {
+    "name": "RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1652631"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21458307": {
+    "name": "OVERFLOW VALVE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21458307"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3090964": {
+    "name": "BRAKE DRUM REPAIR KIT",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "3090964"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21574984": {
+    "name": "ADBLUE INJECTOR / DOSAGE VALVE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21574984"
+    ],
+    "cross_refs": "BOSCH - - 21574984",
+    "application": ""
+  },
+  "22928430": {
+    "name": "CABIN CYLINDER",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "22070285",
+      "22928430"
+    ],
+    "cross_refs": "",
+    "application": "FOR FMX440 FMX460"
+  },
+  "3095195": {
+    "name": "BRAKE SHOE FRONT",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "3095195"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20410545": {
+    "name": "FOOT BRAKE VALVE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "20410545"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21649624": {
+    "name": "INTERCOOLER ASSEMBLY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21649624"
+    ],
+    "cross_refs": "",
+    "application": "FOR FMX440 FMX460"
+  },
+  "21271982": {
+    "name": "EXPANSION TANK SENSOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21271982"
+    ],
+    "cross_refs": "",
+    "application": "FOR FMX440 FMX460"
+  },
+  "21094123": {
+    "name": "BRAKE DRUM REAR",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21094123",
+      "21451967"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21451967": {
+    "name": "BRAKE DRUM REAR",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21094123",
+      "21451967"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "3095196": {
+    "name": "BRAKE SHOE REAR",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "3095196"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20740390": {
+    "name": "KING PIN COVER SMALL",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20740390"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20710008": {
+    "name": "STEERING BALL JOINT",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20710008"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22603162": {
+    "name": "STEERING BALL JOINT",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "22603162"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20578566": {
+    "name": "WHEEL NUT COVER",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20578566"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "984405": {
+    "name": "NUT, CRADLE BOLT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "984405"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20855371": {
+    "name": "EXHAUST MANIFOLD GASKET",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20855371"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20926019": {
+    "name": "AC BLOWER WITH HOUSING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20926019"
+    ],
+    "cross_refs": "",
+    "application": "FM400 - 440 - 460"
+  },
+  "20476719": {
+    "name": "PROPELLER SHAFT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20476719",
+      "22035432"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22035432": {
+    "name": "PROPELLER SHAFT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20476719",
+      "22035432"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "8171420": {
+    "name": "LOCK RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "8171420"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20941429": {
+    "name": "FLANGE SCREW",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20941429"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "14562325": {
+    "name": "GEAR PUMP 82L",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "14562325",
+      "5736815009"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "5736815009": {
+    "name": "GEAR PUMP 82L",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "14562325",
+      "5736815009"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "85102142": {
+    "name": "CLUTCH SERVO REPAIR KIT",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "85102142"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21337557": {
+    "name": "AIR FILTER SET",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21337557"
+    ],
+    "cross_refs": "",
+    "application": "FMX460"
+  },
+  "23105540": {
+    "name": "CLUTCH SERVO KIT",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "23105540"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21979816": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21979816"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "21979823": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21979823",
+      "22499139"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "22499139": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21979823",
+      "22499139"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "21396128": {
+    "name": "TEMPERATURE SESNOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21396128"
+    ],
+    "cross_refs": "",
+    "application": "FMX460"
+  },
+  "22085052": {
+    "name": "CLUTCH SERVO",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "22085052"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21175835": {
+    "name": "SHACKLE PLATE PLAIN",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21175835"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22283632": {
+    "name": "BEARING CONE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "22283632"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "22196494": {
+    "name": "OIL PUMP",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "22196494"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "21102685": {
+    "name": "HUB BEARING FRONT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21102685",
+      "21363714"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / FMX 460"
+  },
+  "21363714": {
+    "name": "HUB BEARING FRONT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21102685",
+      "21363714"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / FMX 460"
+  },
+  "20555319": {
+    "name": "ANCHORAGE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20555319"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1068253": {
+    "name": "U J CROSS",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "1068253"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22526507": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "22526507"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22851845": {
+    "name": "ADBLUE MODULE",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "22851845"
+    ],
+    "cross_refs": "BOSCH - - 0",
+    "application": ""
+  },
+  "21587366": {
+    "name": "BELT TENSIONER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21587366",
+      "21819687"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21819687": {
+    "name": "BELT TENSIONER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21587366",
+      "21819687"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21707055": {
+    "name": "AIR VALVE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21707055",
+      "21991154"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21991154": {
+    "name": "AIR VALVE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21707055",
+      "21991154"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22647976": {
+    "name": "GEAR CONTROL LEVER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "22647976"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "9125129352": {
+    "name": "AIR COMPRESSOR HEAD (TWIN CYL.)",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "9125129352"
+    ],
+    "cross_refs": "WABCO - nan",
+    "application": ""
+  },
+  "8172031": {
+    "name": "CLUTCH FORK",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "8172031"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "82473342": {
+    "name": "GAS SPRING",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "82473342"
+    ],
+    "cross_refs": "",
+    "application": "FMX460"
+  },
+  "20532224": {
+    "name": "SLIDING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20532224",
+      "22004974",
+      "22368562"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "22004974": {
+    "name": "SLIDING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20532224",
+      "22004974",
+      "22368562"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "22368562": {
+    "name": "SLIDING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20532224",
+      "22004974",
+      "22368562"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "21626057": {
+    "name": "BEARING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21626057"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "22766751": {
+    "name": "OUTPUT SHAFT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "22766751"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21997378": {
+    "name": "FRONT ENGINE MOUNTING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21997378"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20451178": {
+    "name": "CONNECTING PIPE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20451178",
+      "21021925"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21021925": {
+    "name": "CONNECTING PIPE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20451178",
+      "21021925"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "1521564": {
+    "name": "GASKET",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521564"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21862164": {
+    "name": "CHASSIS SHOCK ABSORBER REAR",
+    "category": "Shock Absorbers",
+    "part_numbers": [
+      "21862164"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21854537": {
+    "name": "STEERING CYLINDER",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21854537"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20760512": {
+    "name": "SLIDING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20760512",
+      "21994373"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "21994373": {
+    "name": "SLIDING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20760512",
+      "21994373"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "21446028": {
+    "name": "BALL JOINT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21446028"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21034006": {
+    "name": "REV COUNTER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21034006"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "21772668": {
+    "name": "RADIATOR FAN",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21772668"
+    ],
+    "cross_refs": "",
+    "application": "FMX460"
+  },
+  "22060506": {
+    "name": "FAN SHROUD",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22060506",
+      "22326468",
+      "23010567"
+    ],
+    "cross_refs": "",
+    "application": "FMX460"
+  },
+  "22326468": {
+    "name": "FAN SHROUD",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22060506",
+      "22326468",
+      "23010567"
+    ],
+    "cross_refs": "",
+    "application": "FMX460"
+  },
+  "23010567": {
+    "name": "FAN SHROUD",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22060506",
+      "22326468",
+      "23010567"
+    ],
+    "cross_refs": "",
+    "application": "FMX460"
+  },
+  "21416526": {
+    "name": "REAR ENGINE MOUNTING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21416526"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20532220": {
+    "name": "SYNCHRONIZER HUB",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20532220"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "22168430": {
+    "name": "INPUT SHAFT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "22168430",
+      "22352397"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "22352397": {
+    "name": "INPUT SHAFT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "22168430",
+      "22352397"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "3987121": {
+    "name": "BRAKE BOOSTER 1ST AXLE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "3987121",
+      "4231062010"
+    ],
+    "cross_refs": "WABCO - FOR VOLVO FM400 / FMX440 / FMX460",
+    "application": "VOLVO FM400 / FMX440 / FMX460"
+  },
+  "4231062010": {
+    "name": "BRAKE BOOSTER 1ST AXLE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "3987121",
+      "4231062010"
+    ],
+    "cross_refs": "WABCO - FOR VOLVO FM400 / FMX440 / FMX460",
+    "application": "VOLVO FM400 / FMX440 / FMX460"
+  },
+  "9254310920": {
+    "name": "BRAKE BOOSTER 2ND AXLE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "9254310920"
+    ],
+    "cross_refs": "WABCO - - 20533199",
+    "application": "VOLVO FM400"
+  },
+  "22219285": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "22219285"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "20483434": {
+    "name": "3RD SPEED GEAR 39T",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20483434"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "22871212": {
+    "name": "CABIN TILT PUMP",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "21882621",
+      "22871212"
+    ],
+    "cross_refs": "",
+    "application": "FOR FMX440 FMX460"
+  },
+  "20750350": {
+    "name": "CARBON BRUSH",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20750350"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "23508078": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "23508078"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21244695": {
+    "name": "GASKET",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21244695"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT"
+  },
+  "20532222": {
+    "name": "MAIN SHAFT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20532222"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 / 460 I SHIFT 23/23/28/37 T"
+  },
+  "20774294": {
+    "name": "AIR COMPRESSOR",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "20774294",
+      "22016995",
+      "9125120290"
+    ],
+    "cross_refs": "WABCO - - 20774294 / 22016995",
+    "application": ""
+  },
+  "22016995": {
+    "name": "AIR COMPRESSOR",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "20774294",
+      "22016995",
+      "9125120290"
+    ],
+    "cross_refs": "WABCO - - 20774294 / 22016995",
+    "application": ""
+  },
+  "9125120290": {
+    "name": "AIR COMPRESSOR",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "20774294",
+      "22016995",
+      "9125120290"
+    ],
+    "cross_refs": "WABCO - - 20774294 / 22016995",
+    "application": ""
+  },
+  "22101753": {
+    "name": "AIR COMPRESSOR",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "22101753",
+      "9125120310"
+    ],
+    "cross_refs": "WABCO - - 22101753",
+    "application": ""
+  },
+  "9125120310": {
+    "name": "AIR COMPRESSOR",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "22101753",
+      "9125120310"
+    ],
+    "cross_refs": "WABCO - - 22101753",
+    "application": ""
+  },
+  "21583806": {
+    "name": "UNLOADER VALVE KIT",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "21583806"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20507252": {
+    "name": "BATTERY COVER",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20507252",
+      "20541447"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20541447": {
+    "name": "BATTERY COVER",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20507252",
+      "20541447"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22430366": {
+    "name": "EXPANSION TANK",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22430366",
+      "22821828"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "22821828": {
+    "name": "EXPANSION TANK",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22430366",
+      "22821828"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21983651": {
+    "name": "A.C. BELT TENSIONER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21983651"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "14602245": {
+    "name": "A.C.CONDENSER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "14602245"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO EC 480"
+  },
+  "22191895": {
+    "name": "SEAL CRANKSHAFT",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22191895"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21969323": {
+    "name": "FILTER PROTECTION",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21969323"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "21225667": {
+    "name": "",
+    "category": "",
+    "part_numbers": [
+      "21225667"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "9254391100": {
+    "name": "BRAKE BOOSTER 3RD AXLE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "9254391100"
+    ],
+    "cross_refs": "WABCO - - 20533210",
+    "application": "VOLVO FM 400"
+  },
+  "21259899": {
+    "name": "CHARGE AIR HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21259899"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / FXM 460"
+  },
+  "22943669": {
+    "name": "BASE PLATE",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "22943669",
+      "23796624"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "23796624": {
+    "name": "BASE PLATE",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "22943669",
+      "23796624"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "22422785": {
+    "name": "BOOST PRESSURE SENSOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22422785"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 I-SHIFT / FMX 460"
+  },
+  "20544785": {
+    "name": "COUNTERSHAFT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20544785"
+    ],
+    "cross_refs": "",
+    "application": "FOR AT2612G AUTOMATIC GEARBOX"
+  },
+  "20898038": {
+    "name": "SENSOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20898038",
+      "21634021",
+      "22899626"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX460"
+  },
+  "21634021": {
+    "name": "SENSOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20898038",
+      "21634021",
+      "22899626"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX460"
+  },
+  "22899626": {
+    "name": "SENSOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20898038",
+      "21634021",
+      "22899626"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX460"
+  },
+  "9254990700": {
+    "name": "BRAKE BOOSTER 3RD AXLE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "9254990700"
+    ],
+    "cross_refs": "WABCO - - 21148785",
+    "application": "VOLVO FMX440 / FMX460"
+  },
+  "22392175": {
+    "name": "HUB COVER",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "22392175"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX460"
+  },
+  "4231090100": {
+    "name": "BRAKE BOOSTER 4TH AXLE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "4231090100"
+    ],
+    "cross_refs": "WABCO - - 3985253",
+    "application": "VOLVO FM 400 / FMX440 / FMX460"
+  },
+  "9254911600": {
+    "name": "BRAKE BOOSTER 2ND AXLE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "9254911600"
+    ],
+    "cross_refs": "WABCO - - 22080434",
+    "application": "VOLVO FMX440 / FMX460"
+  },
+  "21983655": {
+    "name": "FAN BELT TENSIONER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21983655"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "21891328": {
+    "name": "IDLER PULLEY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21891328"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "20398466": {
+    "name": "DOOR HANDLE LH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20398466",
+      "3175918",
+      "8191334"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "3175918": {
+    "name": "DOOR HANDLE LH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20398466",
+      "3175918",
+      "8191334"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "8191334": {
+    "name": "DOOR HANDLE LH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20398466",
+      "3175918",
+      "8191334"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "21648708": {
+    "name": "WATER PUMP",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21648708"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460 EURO 6"
+  },
+  "23126245": {
+    "name": "PARKING SWITCH",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "23126245"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "20725526": {
+    "name": "PRESSURE PLATE",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "20725526",
+      "20806454",
+      "23401400"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I SHIFT"
+  },
+  "23401400": {
+    "name": "PRESSURE PLATE",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "20725526",
+      "20806454",
+      "23401400"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I SHIFT"
+  },
+  "21615193": {
+    "name": "PRESSURE PLATE",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "21615193"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460 I SHIFT"
+  },
+  "21979813": {
+    "name": "REVERSE IDLER GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21979813",
+      "22763347"
+    ],
+    "cross_refs": "",
+    "application": "FOR AT2612G AUTOMATIC GEARBOX"
+  },
+  "22763347": {
+    "name": "REVERSE IDLER GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21979813",
+      "22763347"
+    ],
+    "cross_refs": "",
+    "application": "FOR AT2612G AUTOMATIC GEARBOX"
+  },
+  "2097111": {
+    "name": "EXHAUST HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "2097111"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "20442245": {
+    "name": "COVULATED HOSE / EXHAUST HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20442245"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "23003422": {
+    "name": "FAN RING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "23003422"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "20922305": {
+    "name": "CABIN  CYLINDER",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20922305",
+      "3198843"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400"
+  },
+  "3198843": {
+    "name": "CABIN  CYLINDER",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20922305",
+      "3198843"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400"
+  },
+  "20977111": {
+    "name": "FLEXIBLE PIPE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20977111"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I SHIFT / VOLVO FMX 460"
+  },
+  "21991157": {
+    "name": "AIR VALVE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "21991157"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX440 ISHIFT / FMX460"
+  },
+  "21312238": {
+    "name": "CHARGE AIR HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21312238"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I SHIFT / VOLVO FMX 460"
+  },
+  "21412848": {
+    "name": "APM FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21412848",
+      "22130454",
+      "22223804",
+      "23260134",
+      "23690622"
+    ],
+    "cross_refs": "KNORR - FOR VOLVO FMX440 I-SHIFT/ VOLVO FMX 460",
+    "application": "VOLVO FMX440 I-SHIFT/ VOLVO FMX 460"
+  },
+  "22130454": {
+    "name": "APM FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21412848",
+      "22130454",
+      "22223804",
+      "23260134",
+      "23690622"
+    ],
+    "cross_refs": "KNORR - FOR VOLVO FMX440 I-SHIFT/ VOLVO FMX 460",
+    "application": "VOLVO FMX440 I-SHIFT/ VOLVO FMX 460"
+  },
+  "22223804": {
+    "name": "APM FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21412848",
+      "22130454",
+      "22223804",
+      "23260134",
+      "23690622"
+    ],
+    "cross_refs": "KNORR - FOR VOLVO FMX440 I-SHIFT/ VOLVO FMX 460",
+    "application": "VOLVO FMX440 I-SHIFT/ VOLVO FMX 460"
+  },
+  "23260134": {
+    "name": "APM FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21412848",
+      "22130454",
+      "22223804",
+      "23260134",
+      "23690622"
+    ],
+    "cross_refs": "KNORR - FOR VOLVO FMX440 I-SHIFT/ VOLVO FMX 460",
+    "application": "VOLVO FMX440 I-SHIFT/ VOLVO FMX 460"
+  },
+  "23690622": {
+    "name": "APM FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "21412848",
+      "22130454",
+      "22223804",
+      "23260134",
+      "23690622"
+    ],
+    "cross_refs": "KNORR - FOR VOLVO FMX440 I-SHIFT/ VOLVO FMX 460",
+    "application": "VOLVO FMX440 I-SHIFT/ VOLVO FMX 460"
+  },
+  "20773853": {
+    "name": "COMPANION FLANGE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20773853",
+      "21369349",
+      "22238212"
+    ],
+    "cross_refs": "",
+    "application": "VOVLVO FM 400 / FMX 440 I SHIFT"
+  },
+  "21369349": {
+    "name": "COMPANION FLANGE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20773853",
+      "21369349",
+      "22238212"
+    ],
+    "cross_refs": "",
+    "application": "VOVLVO FM 400 / FMX 440 I SHIFT"
+  },
+  "22238212": {
+    "name": "COMPANION FLANGE",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20773853",
+      "21369349",
+      "22238212"
+    ],
+    "cross_refs": "",
+    "application": "VOVLVO FM 400 / FMX 440 I SHIFT"
+  },
+  "21505893": {
+    "name": "DOOR LOCK LH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "21505893"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "21505894": {
+    "name": "DOOR LOCK RH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "21505894"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "22794275": {
+    "name": "AIR COMPRESSOR HEAD",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "22794275",
+      "9125509362"
+    ],
+    "cross_refs": "WABCO - FOR VOLVO FMX 460",
+    "application": "VOLVO FMX 460"
+  },
+  "9125509362": {
+    "name": "AIR COMPRESSOR HEAD",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "22794275",
+      "9125509362"
+    ],
+    "cross_refs": "WABCO - FOR VOLVO FMX 460",
+    "application": "VOLVO FMX 460"
+  },
+  "9125120372": {
+    "name": "AIR COMPRESSOR HEAD REPAIR KIT",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "9125120372"
+    ],
+    "cross_refs": "WABCO - FOR VOLVO FMX 460 nan",
+    "application": "VOLVO FMX 460 NAN"
+  },
+  "20796744": {
+    "name": "SENSOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20796744",
+      "21634017"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX460"
+  },
+  "21634017": {
+    "name": "SENSOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20796744",
+      "21634017"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX460"
+  },
+  "3176909": {
+    "name": "STEERING CALBE WITH PEDAL",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "3176909",
+      "82378214"
+    ],
+    "cross_refs": "",
+    "application": "VOVLVO FM 400 / FMX 440 I SHIFT / FMX 460"
+  },
+  "82378214": {
+    "name": "STEERING CALBE WITH PEDAL",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "3176909",
+      "82378214"
+    ],
+    "cross_refs": "",
+    "application": "VOVLVO FM 400 / FMX 440 I SHIFT / FMX 460"
+  },
+  "21636161": {
+    "name": "STEERING OIL DIPSTICK",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21636161",
+      "3092770"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400 / FMX 440 I- SHIFT / FMX 460"
+  },
+  "20398467": {
+    "name": "DOOR HANDLE RH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20398467",
+      "3175919",
+      "8191335"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "3175919": {
+    "name": "DOOR HANDLE RH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20398467",
+      "3175919",
+      "8191335"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "8191335": {
+    "name": "DOOR HANDLE RH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20398467",
+      "3175919",
+      "8191335"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "21172373": {
+    "name": "SHOCK ABSORBER FRONT",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21172373"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "23381562": {
+    "name": "UREA FILTER / AD BLUE FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "23381562"
+    ],
+    "cross_refs": "BOSCH - FOR VOLVO FMX440 i-SHIFT / FMX 460",
+    "application": "VOLVO FMX440 I-SHIFT / FMX 460"
+  },
+  "1068946": {
+    "name": "CARRIER HUB",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1068946",
+      "1668458"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400"
+  },
+  "1668458": {
+    "name": "CARRIER HUB",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1068946",
+      "1668458"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400"
+  },
+  "22526498": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "22526498",
+      "23182156"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "23182156": {
+    "name": "LINK ROD",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "22526498",
+      "23182156"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "9735000470": {
+    "name": "QUICK RELEASE VALVE",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "9735000470"
+    ],
+    "cross_refs": "WABCO - - 3173152",
+    "application": "VOLVO FMX 460 /"
+  },
+  "21505102": {
+    "name": "ENGINE MOUNTING BRACKET",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21505102"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "11022": {
+    "name": "FUEL FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "11022"
+    ],
+    "cross_refs": "MANN - - 23879441",
+    "application": "VOLVO FMX 460 EURO 6"
+  },
+  "21900691": {
+    "name": "GEARBOX OIL COOLER / HEAT EXCHANGER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21900691",
+      "22630454",
+      "23653293"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "22630454": {
+    "name": "GEARBOX OIL COOLER / HEAT EXCHANGER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21900691",
+      "22630454",
+      "23653293"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "23653293": {
+    "name": "GEARBOX OIL COOLER / HEAT EXCHANGER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21900691",
+      "22630454",
+      "23653293"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "21472978": {
+    "name": "SOLENOID VALVE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21472978"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "20922589": {
+    "name": "DOOR CABLE",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "20922589"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 / VOLVO FMX 460"
+  },
+  "22562783": {
+    "name": "ANCHORAGE RH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "22562783"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I SHIFT / VOLVO FMX 460"
+  },
+  "21311067": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21311067"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400 / VOLVO FMX 440"
+  },
+  "22674901": {
+    "name": "BELT TENSIONER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22674901"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "21512541": {
+    "name": "T FORK",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21512541"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "20785448": {
+    "name": "BEARING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20785448"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "21278227": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21278227"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400 / FMX 440"
+  },
+  "21549016": {
+    "name": "BELT TENSIONER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21549016"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "20475101": {
+    "name": "GEAR CABLE SHIFT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20475101"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I -SHIFT / FMX 460"
+  },
+  "21911889": {
+    "name": "RADIATOR HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21911889",
+      "22273743",
+      "22560373"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I SHIFT / VOLVO FMX 460"
+  },
+  "22273743": {
+    "name": "RADIATOR HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21911889",
+      "22273743",
+      "22560373"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I SHIFT / VOLVO FMX 460"
+  },
+  "22560373": {
+    "name": "RADIATOR HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21911889",
+      "22273743",
+      "22560373"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I SHIFT / VOLVO FMX 460"
+  },
+  "20737310": {
+    "name": "RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20737310"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "3192951": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "3192951"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400 / VOLVO FMX 440"
+  },
+  "1069256": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1069256",
+      "20478726",
+      "20588775",
+      "8172414"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400 FMX 440"
+  },
+  "20478726": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1069256",
+      "20478726",
+      "20588775",
+      "8172414"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400 FMX 440"
+  },
+  "20588775": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1069256",
+      "20478726",
+      "20588775",
+      "8172414"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400 FMX 440"
+  },
+  "8172414": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1069256",
+      "20478726",
+      "20588775",
+      "8172414"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400 FMX 440"
+  },
+  "20478729": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20478729"
+    ],
+    "cross_refs": "",
+    "application": ""
+  },
+  "21751233": {
+    "name": "SYNCHRONIZER CONE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21751233"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "21278223": {
+    "name": "ENGAGING SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21278223"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400 FMX 440"
+  },
+  "1668452": {
+    "name": "ENGAGING RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1668452"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "21302576": {
+    "name": "SUN GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21302576"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "21110728": {
+    "name": "CROWN GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21110728"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460 /"
+  },
+  "3192575": {
+    "name": "PISTON",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "3192575"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "20483426": {
+    "name": "SEAL RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20483426"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "20806212": {
+    "name": "BEARING",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "20806212"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "21666546": {
+    "name": "WASHER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21666546"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "1524837": {
+    "name": "DISTRIBUTION DRIVE SHAFT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1524837"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "23861998": {
+    "name": "FUEL FILTER",
+    "category": "Air and Fluid Filtration Systems",
+    "part_numbers": [
+      "23861998"
+    ],
+    "cross_refs": "MANN - FOR VOLVO FMX 460 BS VI",
+    "application": "VOLVO FMX 460 BS VI"
+  },
+  "1069255": {
+    "name": "SYNCHRONIZING CONE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1069255"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400 FMX 440"
+  },
+  "22763337": {
+    "name": "REVERSE GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "22763337"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "22219353": {
+    "name": "GEAR 2ND SPEED 28T",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "22219353",
+      "22560442"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "22560442": {
+    "name": "GEAR 2ND SPEED 28T",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "22219353",
+      "22560442"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "8171338": {
+    "name": "NUT",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "8171338"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "21793022": {
+    "name": "BEARING",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "21793022"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "1524889": {
+    "name": "BEVEL GEAR",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "1524889"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "21511649": {
+    "name": "SELECTOR  FORK",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21511649"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "3192614": {
+    "name": "GASKET",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "3192614"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "22321904": {
+    "name": "SILENCER EXHAUST  HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22321904",
+      "23243882"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "23243882": {
+    "name": "SILENCER EXHAUST  HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22321904",
+      "23243882"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "22562782": {
+    "name": "ANCHORAGE LH",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "22562782"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I SHIFT / VOLVO FMX 460"
+  },
+  "21992993": {
+    "name": "SYNCHRONIZER CONE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21992993"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400 / FMX 440"
+  },
+  "21482856": {
+    "name": "SYNCHRONIZER RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21482856"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "23000371": {
+    "name": "FUEL FILTER HOUSING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "23000371",
+      "23100071"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460 BS 6"
+  },
+  "23100071": {
+    "name": "FUEL FILTER HOUSING",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "23000371",
+      "23100071"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460 BS 6"
+  },
+  "21016548": {
+    "name": "OIL TUBE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21016548"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "1668459": {
+    "name": "RETAINING RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1668459"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "1521422": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521422",
+      "20854437"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "20854437": {
+    "name": "GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521422",
+      "20854437"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "20562630": {
+    "name": "GASKET KIT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20562630"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "3152722": {
+    "name": "REVERSE GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "3152722"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "8171668": {
+    "name": "SPRING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "8171668"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "20475040": {
+    "name": "GEAR CALBE SELECT (BLACK)",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20475040"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "1521878": {
+    "name": "ENGAGING RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521878"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400 / FMX 440"
+  },
+  "20785252": {
+    "name": "GASKET KIT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20785252"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "3192573": {
+    "name": "PIN",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "3192573"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I-SHIFT / VOLVO FMX 460"
+  },
+  "22659301": {
+    "name": "ENGINE OIL DIPSTICK",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22659301"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 460"
+  },
+  "1521725": {
+    "name": "INTERMEDIATE PLATE",
+    "category": "Clutch and Transmission Components",
+    "part_numbers": [
+      "1521725"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FM 400"
+  },
+  "22250888": {
+    "name": "RADIATOR HOSE",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22250888"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX 440 I SHIFT / VOLVO FMX 460"
+  },
+  "1521406": {
+    "name": "MAIN SHAFT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1521406"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "21911585": {
+    "name": "GASKET KIT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21911585"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "22053130": {
+    "name": "AIR COMPRESSOR HOSE",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "22053130"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "3152527": {
+    "name": "RADIAL SHAFT SEAL",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "3152527"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "1524887": {
+    "name": "THRUST WASHER",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "1524887",
+      "20565923"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "20565923": {
+    "name": "THRUST WASHER",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "1524887",
+      "20565923"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "20503270": {
+    "name": "DIFFERENTIAL SIDE GEAR",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "20503270"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "23576707": {
+    "name": "AC COMPRESSOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "23576707",
+      "84472607"
+    ],
+    "cross_refs": "",
+    "application": "FMX 460 BS 6"
+  },
+  "84472607": {
+    "name": "AC COMPRESSOR",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "23576707",
+      "84472607"
+    ],
+    "cross_refs": "",
+    "application": "FMX 460 BS 6"
+  },
+  "21636544": {
+    "name": "GEARBOX HOUSING COVER",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21636544"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "23387865": {
+    "name": "ADBLUE PUMP ASSEMBLY",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "23387865"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-460 BS-6/EURO-6"
+  },
+  "20497205": {
+    "name": "GASKET",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20497205"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "22763327": {
+    "name": "COUNTER SHAFT F-SERIES",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "22763327"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "22771624": {
+    "name": "FCIOM UNIT",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22771624",
+      "23140886"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-460"
+  },
+  "23140886": {
+    "name": "FCIOM UNIT",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "22771624",
+      "23140886"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-460"
+  },
+  "1522259": {
+    "name": "HOUSING HALF",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "1522259"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "20774242": {
+    "name": "WHEEL SENSOR",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "20774242"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "21243844": {
+    "name": "BATTERY MAIN SWITCH",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "21243844"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "20523491": {
+    "name": "DIFFERENTIAL KIT",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "20523491"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "1524857": {
+    "name": "ROLLER BEARING",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "1524857"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "20791222": {
+    "name": "OIL SEAL",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20791222"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "21233969": {
+    "name": "GUIDE SLEEVE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21233969"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "22617667": {
+    "name": "DISCS KIT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "22617667"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "3092575": {
+    "name": "REPAIR KIT",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "3092575"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "23752821": {
+    "name": "HEAD LIGHT LH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "23752821"
+    ],
+    "cross_refs": "",
+    "application": "FMX 500"
+  },
+  "23574694": {
+    "name": "SYNCHRONIZER RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21482856",
+      "23574694"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "23752823": {
+    "name": "HEAD LIGHT RH",
+    "category": "Lighting and Exterior Body Components",
+    "part_numbers": [
+      "23752823"
+    ],
+    "cross_refs": "",
+    "application": "FMX 500"
+  },
+  "8171450": {
+    "name": "RADIAL SHAFT SEAL",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "8171450"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "20483578": {
+    "name": "GASKET",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20483578"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "20366316": {
+    "name": "GEAR",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "20366316"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "20503268": {
+    "name": "PINION GEAR",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "20503268"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "21114976": {
+    "name": "EBS MODULATOR",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "21114976",
+      "22225554"
+    ],
+    "cross_refs": "KNORR - - 22225554/21114976",
+    "application": "VOLVO FMX-460 / KNORR BREMSE K093192N50"
+  },
+  "22225554": {
+    "name": "EBS MODULATOR",
+    "category": "Braking System Components",
+    "part_numbers": [
+      "21114976",
+      "22225554"
+    ],
+    "cross_refs": "KNORR - - 22225554/21114976",
+    "application": "VOLVO FMX-460 / KNORR BREMSE K093192N50"
+  },
+  "21102706": {
+    "name": "WASHER",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "21102706"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "20810985": {
+    "name": "ENGINE OIL COOLER",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "20810985"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "184623": {
+    "name": "ROLLER BEARING",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "184623"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "21102702": {
+    "name": "WASHER",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "21102702"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "20777168": {
+    "name": "CROSS CLOUMNER",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20777168",
+      "82972285"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "82972285": {
+    "name": "CROSS CLOUMNER",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20777168",
+      "82972285"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "21302092": {
+    "name": "FORK ROD",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21302092"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "3176549": {
+    "name": "WINDOW MOTOR (LH)",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "3176549"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "3176550": {
+    "name": "WINDOW MOTOR (RH)",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "3176550"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "1524854": {
+    "name": "HOUSING HALF LH",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "1524854"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "21630898": {
+    "name": "FLYWHEEL",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21630898"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "23478777": {
+    "name": "STEERING OIL PIPE",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "23478777"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "21129681": {
+    "name": "COMPRESSOR HOSE",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "21129681"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "22336397": {
+    "name": "COMPRESSOR HOSE",
+    "category": "Compressed Air System Components",
+    "part_numbers": [
+      "22336397"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "21838161": {
+    "name": "ANTI ROLL BAR",
+    "category": "Chassis and Suspension Systems",
+    "part_numbers": [
+      "21838161"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "21364650": {
+    "name": "ENGING BRACKET",
+    "category": "Engine Parts and Cooling Parts",
+    "part_numbers": [
+      "21364650"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "21482847": {
+    "name": "SYNCHRONIZER CONE",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "21482847"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "20791305": {
+    "name": "SEALING RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20791305"
+    ],
+    "cross_refs": "",
+    "application": "FMX 440 / FMX 460"
+  },
+  "22537018": {
+    "name": "ABS SENSOR RING-REAR",
+    "category": "Miscellaneous Parts",
+    "part_numbers": [
+      "22537018"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX-440/460"
+  },
+  "20711957": {
+    "name": "FLYWHEEL RING GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20711957",
+      "471532",
+      "8193939"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "471532": {
+    "name": "FLYWHEEL RING GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20711957",
+      "471532",
+      "8193939"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "8193939": {
+    "name": "FLYWHEEL RING GEAR",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "20711957",
+      "471532",
+      "8193939"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "976055": {
+    "name": "O- RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "976055"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "1652917": {
+    "name": "SEEGER RING",
+    "category": "Transmission and Differential Components",
+    "part_numbers": [
+      "1652917"
+    ],
+    "cross_refs": "",
+    "application": "VOLVO FMX- 440/460"
+  },
+  "20851842": {
+    "name": "HD Idler Pulley (metal Grooved)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20851842"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FM / FMX Series, B7R, B9R, B11R"
+  },
+  "20515543": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20515543",
+      "20700787",
+      "20924200",
+      "21549016"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FM / FMX Series, B7R, B9R, B11R"
+  },
+  "20700787": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20515543",
+      "20700787",
+      "20924200",
+      "21549016"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FM / FMX Series, B7R, B9R, B11R"
+  },
+  "20924200": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20515543",
+      "20700787",
+      "20924200",
+      "21549016"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FM / FMX Series, B7R, B9R, B11R"
+  },
+  "3979980": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "3979980"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FM Series, B11R"
+  },
+  "21500149": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21500149"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B7R, B11 R, D7 Engine"
+  },
+  "20795604": {
+    "name": "HD Idler Pulley (metal)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20795604"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B7R, D7 Engine"
+  },
+  "1661878": {
+    "name": "HD Idler Pulley (metal)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1661878"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B7R, D7 Engine"
+  },
+  "21390528": {
+    "name": "HD Idler Pulley (metal)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21390528"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B7R, D7 Engine"
+  },
+  "21872220": {
+    "name": "HD Idler Pulley (metal)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21872220"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B7R, D7 Engine"
+  },
+  "20491753": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20491753",
+      "21631484",
+      "21155561",
+      "21145261"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FH Series, D7 Engine"
+  },
+  "21631484": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20491753",
+      "21631484",
+      "21155561",
+      "21145261"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FH Series, D7 Engine"
+  },
+  "21155561": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20491753",
+      "21631484",
+      "21155561",
+      "21145261"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FH Series, D7 Engine"
+  },
+  "21145261": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20491753",
+      "21631484",
+      "21155561",
+      "21145261"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FH Series, D7 Engine"
+  },
+  "20503093": {
+    "name": "HD Idler Pulley (Plastic)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20503093"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FH Series, D7 Engine"
+  },
+  "21422767": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21422767",
+      "20966526",
+      "20762020",
+      "21404578"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FM / FH Series"
+  },
+  "20966526": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21422767",
+      "20966526",
+      "20762020",
+      "21404578"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FM / FH Series"
+  },
+  "20762020": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21422767",
+      "20966526",
+      "20762020",
+      "21404578"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FM / FH Series"
+  },
+  "21404578": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21422767",
+      "20966526",
+      "20762020",
+      "21404578"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FM / FH Series"
+  },
+  "20747516": {
+    "name": "HD Idler Pulley (Plastic)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20747516",
+      "21574656",
+      "21676635",
+      "21753149"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B11R, FM / FH Series"
+  },
+  "21574656": {
+    "name": "HD Idler Pulley (Plastic)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20747516",
+      "21574656",
+      "21676635",
+      "21753149"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B11R, FM / FH Series"
+  },
+  "21676635": {
+    "name": "HD Idler Pulley (Plastic)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20747516",
+      "21574656",
+      "21676635",
+      "21753149"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B11R, FM / FH Series"
+  },
+  "21753149": {
+    "name": "HD Idler Pulley (Plastic)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "20747516",
+      "21574656",
+      "21676635",
+      "21753149"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B11R, FM / FH Series"
+  },
+  "8149855": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "8149855"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : FM / FH Series"
+  },
+  "22307251": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "22307251",
+      "21750781"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B8R"
+  },
+  "21750781": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "22307251",
+      "21750781"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B8R"
+  },
+  "3827501": {
+    "name": "HD Idler Pulley (Metal)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "3827501"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B9R"
+  },
+  "21576596": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21576596",
+      "20827109"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B9R"
+  },
+  "20827109": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21576596",
+      "20827109"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B9R"
+  },
+  "8086970": {
+    "name": "HD Idler Pulley (Plastic - Grooved)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "8086970",
+      "22923707"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B9R, FM Series"
+  },
+  "22923707": {
+    "name": "HD Idler Pulley (Plastic - Grooved)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "8086970",
+      "22923707"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B9R, FM Series"
+  },
+  "21719386": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "21719386"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : B11R, FM Series"
+  },
+  "15125350": {
+    "name": "HD Idler Pulley (metal)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "15125350"
+    ],
+    "cross_refs": "",
+    "application": "Volvo : Excavator EC380D, EC480"
+  },
+  "1870553": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1870553",
+      "2197391"
+    ],
+    "cross_refs": "",
+    "application": "Scania: P Series"
+  },
+  "2197391": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1870553",
+      "2197391"
+    ],
+    "cross_refs": "",
+    "application": "Scania: P Series"
+  },
+  "2191990": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "2191990",
+      "2197390",
+      "1870552",
+      "1779751"
+    ],
+    "cross_refs": "",
+    "application": "Scania: P Series"
+  },
+  "2197390": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "2191990",
+      "2197390",
+      "1870552",
+      "1779751"
+    ],
+    "cross_refs": "",
+    "application": "Scania: P Series"
+  },
+  "1870552": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "2191990",
+      "2197390",
+      "1870552",
+      "1779751"
+    ],
+    "cross_refs": "",
+    "application": "Scania: P Series"
+  },
+  "1779751": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "2191990",
+      "2197390",
+      "1870552",
+      "1779751"
+    ],
+    "cross_refs": "",
+    "application": "Scania: P Series"
+  },
+  "1779750": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1779750"
+    ],
+    "cross_refs": "",
+    "application": "Scania: P Series"
+  },
+  "1734901": {
+    "name": "HD Idler Pulley (metal Grooved)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1734901",
+      "2129404"
+    ],
+    "cross_refs": "",
+    "application": "Scania: P Series"
+  },
+  "2129404": {
+    "name": "HD Idler Pulley (metal Grooved)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1734901",
+      "2129404"
+    ],
+    "cross_refs": "",
+    "application": "Scania: P Series"
+  },
+  "1860734": {
+    "name": "HD Idler Pulley (metal)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1860734"
+    ],
+    "cross_refs": "",
+    "application": "Scania: P Series"
+  },
+  "1438743": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1438743"
+    ],
+    "cross_refs": "",
+    "application": "Scania: G Series"
+  },
+  "1354395": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1354395",
+      "1371788",
+      "1459988",
+      "1493670",
+      "1859654"
+    ],
+    "cross_refs": "",
+    "application": "Scania: G Series"
+  },
+  "1371788": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1354395",
+      "1371788",
+      "1459988",
+      "1493670",
+      "1859654"
+    ],
+    "cross_refs": "",
+    "application": "Scania: G Series"
+  },
+  "1459988": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1354395",
+      "1371788",
+      "1459988",
+      "1493670",
+      "1859654"
+    ],
+    "cross_refs": "",
+    "application": "Scania: G Series"
+  },
+  "1493670": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1354395",
+      "1371788",
+      "1459988",
+      "1493670",
+      "1859654"
+    ],
+    "cross_refs": "",
+    "application": "Scania: G Series"
+  },
+  "1859654": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1354395",
+      "1371788",
+      "1459988",
+      "1493670",
+      "1859654"
+    ],
+    "cross_refs": "",
+    "application": "Scania: G Series"
+  },
+  "1514086": {
+    "name": "HD Idler Pulley (Plastic)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "1514086"
+    ],
+    "cross_refs": "",
+    "application": "Scania: G Series"
+  },
+  "22898766": {
+    "name": "HD Idler Pulley (Metal)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "22898766",
+      "21737115"
+    ],
+    "cross_refs": "",
+    "application": "Volvo Eicher: HD Truck MDEP 5 & 8 (AC / Non-AC)"
+  },
+  "21737115": {
+    "name": "HD Idler Pulley (Metal)",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "22898766",
+      "21737115"
+    ],
+    "cross_refs": "",
+    "application": "Volvo Eicher: HD Truck MDEP 5 & 8 (AC / Non-AC)"
+  },
+  "22898761": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "22898761",
+      "21737112"
+    ],
+    "cross_refs": "",
+    "application": "Volvo Eicher: HD Truck MDEP 5 & 8 (AC application)"
+  },
+  "21737112": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "22898761",
+      "21737112"
+    ],
+    "cross_refs": "",
+    "application": "Volvo Eicher: HD Truck MDEP 5 & 8 (AC application)"
+  },
+  "22898763": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "22898763",
+      "21736917"
+    ],
+    "cross_refs": "",
+    "application": "Volvo Eicher: HD Truck MDEP 5 & 8 (Non-AC Application)"
+  },
+  "21736917": {
+    "name": "HD Accessory Tensioner",
+    "category": "Steering and Suspension Parts",
+    "part_numbers": [
+      "22898763",
+      "21736917"
+    ],
+    "cross_refs": "",
+    "application": "Volvo Eicher: HD Truck MDEP 5 & 8 (Non-AC Application)"
+  }
+}

@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --bg: #050505;
+    --fg: #33ff00;
+    /* Amber: #ffb000 also works well for retro */
+    --dim: #1a8000;
+    --warn: #ff3333;
+    --scanline-color: rgba(0, 0, 0, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    cursor: default;
+    /* Hide cursor for immersion? Or use crosshair */
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    height: 100vh;
+    overflow: hidden;
+    text-shadow: 0 0 2px var(--dim);
+    /* Phosphor glow */
+}
+
+/* CRT EFFECTS */
+.crt-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.6) 100%);
+    pointer-events: none;
+    z-index: 99;
+}
+
+.scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: repeating-linear-gradient(to bottom,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0) 2px,
+            rgba(0, 0, 0, 0.2) 3px,
+            rgba(0, 0, 0, 0.2) 4px);
+    pointer-events: none;
+    z-index: 98;
+}
+
+/* LAYOUT */
+.terminal {
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.label {
+    color: var(--dim);
+    margin-right: 10px;
+}
+
+.val.large {
+    font-size: 3em;
+    line-height: 1em;
+}
+
+.val.warning {
+    color: var(--warn);
+    text-shadow: 0 0 3px var(--warn);
+}
+
+hr.dashed {
+    border: none;
+    border-top: 1px dashed var(--dim);
+    margin: 20px 0;
+}
+
+.dashboard {
+    display: flex;
+    flex: 1;
+    gap: 40px;
+    min-height: 0;
+    /* Flex fix */
+}
+
+.col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.readout-box {
+    margin-bottom: 30px;
+}
+
+.subval {
+    color: var(--dim);
+}
+
+/* INTERACTIVE */
+.clickable,
+.action-link {
+    cursor: pointer;
+    background: rgba(51, 255, 0, 0.1);
+    display: inline-block;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border: 1px solid var(--dim);
+    transition: all 0.1s;
+}
+
+.action-link:hover {
+    background: var(--fg);
+    color: var(--bg);
+    text-shadow: none;
+}
+
+.action-link:active {
+    transform: translateY(2px);
+}
+
+/* ASSET LIST */
+.list-container {
+    overflow-y: auto;
+    flex: 1;
+    border: 1px solid var(--dim);
+    padding: 10px;
+}
+
+.asset-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px dotted var(--dim);
+}
+
+.asset-row.dimmed {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.asset-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.asset-name {
+    font-weight: bold;
+}
+
+.asset-cost {
+    color: var(--dim);
+    font-size: 0.9em;
+}
+
+.buy-btn {
+    cursor: pointer;
+    border: 1px solid var(--fg);
+    padding: 2px 8px;
+    font-size: 0.9em;
+}
+
+.buy-btn:hover {
+    background: var(--fg);
+    color: var(--bg);
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 20px;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000;
+    border-left: 1px solid var(--dim);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dim);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--fg);
+}

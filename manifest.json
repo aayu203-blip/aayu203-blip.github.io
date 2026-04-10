@@ -1,0 +1,25 @@
+{
+    "name": "Parts Trading Company - Volvo Spare Parts",
+    "short_name": "PTC Parts",
+    "description": "India's premier supplier of Volvo spare parts and heavy equipment components since 1956",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FFB81C",
+    "theme_color": "#FFB81C",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/images/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["business", "shopping"],
+    "lang": "en",
+    "dir": "ltr"
+}

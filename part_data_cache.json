@@ -1,0 +1,2695 @@
+{
+  "2611116": {
+    "part_number": "2611116",
+    "raw_name": "Buffer, engine mounting",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.27133"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "175266"
+      }
+    ]
+  },
+  "21285922": {
+    "part_number": "21285922",
+    "raw_name": "Bush, spacer bush",
+    "brand": "VOLVO",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.62153"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "175025"
+      }
+    ]
+  },
+  "1068228": {
+    "part_number": "1068228",
+    "raw_name": "Drive flange",
+    "brand": "VOLVO",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.34089"
+      }
+    ]
+  },
+  "809827": {
+    "part_number": "809827",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": [
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "27631"
+      }
+    ]
+  },
+  "1791182": {
+    "part_number": "1791182",
+    "raw_name": "Mounting, holder",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.11371"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "173436"
+      }
+    ]
+  },
+  "21489991": {
+    "part_number": "21489991",
+    "raw_name": "Repair kit",
+    "brand": "VOLVO",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.94466"
+      },
+      {
+        "supplier": "WABCO",
+        "part_no": "4324259202"
+      }
+    ]
+  },
+  "272905": {
+    "part_number": "272905",
+    "raw_name": "Gasket set, starter, repair kit",
+    "brand": "LISTER",
+    "cross_refs": [
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "176908"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.94131"
+      }
+    ]
+  },
+  "1696924": {
+    "part_number": "1696924",
+    "raw_name": "Repair kit",
+    "brand": "VOLVO",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.40151"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "30488"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "3192951": {
+    "part_number": "3192951",
+    "raw_name": "Synchronizer ring, synchromesh ring, synchromesh element",
+    "brand": "VOLVO",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.32920"
+      }
+    ]
+  },
+  "1069140": {
+    "part_number": "1069140",
+    "raw_name": "Shock absorber, flange, tie rod end",
+    "brand": "FORD",
+    "cross_refs": [
+      {
+        "supplier": "TRW",
+        "part_no": "JGM2826T"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.35262"
+      }
+    ]
+  },
+  "-23875437": {
+    "part_number": "-23875437",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": [
+      {
+        "supplier": "MAHLE",
+        "part_no": "Showing"
+      }
+    ]
+  },
+  "1004057": {
+    "part_number": "1004057",
+    "raw_name": "Ventilation Grille, Repair Kit",
+    "brand": "FORD",
+    "cross_refs": []
+  },
+  "1068247": {
+    "part_number": "1068247",
+    "raw_name": "Joint, Propeller Shaft Spider",
+    "brand": "VOLVO",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "3.59004"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "11548"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.34007"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1068250": {
+    "part_number": "1068250",
+    "raw_name": "Joint",
+    "brand": "IVECO",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "4.60390"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "14511"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1068253": {
+    "part_number": "1068253",
+    "raw_name": "Propeller Shaft Spider, Joint, Bearing, Repair Kit",
+    "brand": "FORD",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.34008"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1068946": {
+    "part_number": "1068946",
+    "raw_name": "Gearshift Sleeve, Gearbox Gear",
+    "brand": "VOLVO",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.32695"
+      }
+    ]
+  },
+  "1069254": {
+    "part_number": "1069254",
+    "raw_name": "Synchronizer Ring, Synchromesh Ring",
+    "brand": "VOLVO",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.32921"
+      }
+    ]
+  },
+  "1069255": {
+    "part_number": "1069255",
+    "raw_name": "Synchronizer Ring, Synchromesh Ring",
+    "brand": "VOLVO",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.32770"
+      }
+    ]
+  },
+  "1069256": {
+    "part_number": "1069256",
+    "raw_name": "Gearshift Sleeve",
+    "brand": "VOLVO",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.32791"
+      }
+    ]
+  },
+  "1081328": {
+    "part_number": "1081328",
+    "raw_name": "Water Drain Valve, Breather Valve",
+    "brand": "IVECO",
+    "cross_refs": [
+      {
+        "supplier": "WABCO",
+        "part_no": "934"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "06528"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.44031"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "103098"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1100799": {
+    "part_number": "1100799",
+    "raw_name": "Sensor",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.21608"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "178851"
+      }
+    ]
+  },
+  "11022": {
+    "part_number": "11022",
+    "raw_name": "Repair Set",
+    "brand": "PEUGEOT",
+    "cross_refs": [
+      {
+        "supplier": "MAHLE",
+        "part_no": "039"
+      }
+    ]
+  },
+  "1104069": {
+    "part_number": "1104069",
+    "raw_name": "Spacer, Thrust Washer",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.14496"
+      }
+    ]
+  },
+  "1104544": {
+    "part_number": "1104544",
+    "raw_name": "Brake Shoe",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18771"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "44388"
+      }
+    ]
+  },
+  "1104545": {
+    "part_number": "1104545",
+    "raw_name": "Brake Shoe",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18772"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "44387"
+      }
+    ]
+  },
+  "1107097": {
+    "part_number": "1107097",
+    "raw_name": "Seal",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.24061"
+      }
+    ]
+  },
+  "1114861": {
+    "part_number": "1114861",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1116481": {
+    "part_number": "1116481",
+    "raw_name": "Circlip",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.14503"
+      }
+    ]
+  },
+  "1118030": {
+    "part_number": "1118030",
+    "raw_name": "Driving Pinion, Ring Gear, Synchromesh Ring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.14285"
+      }
+    ]
+  },
+  "1122002": {
+    "part_number": "1122002",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": [
+      {
+        "supplier": "SWAG",
+        "part_no": "Showing"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "02634"
+      },
+      {
+        "supplier": "DELPHI",
+        "part_no": "LS1265"
+      }
+    ]
+  },
+  "1123476": {
+    "part_number": "1123476",
+    "raw_name": "Brake Hose, Hydraulic Pump",
+    "brand": "BMW",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18680"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1123477": {
+    "part_number": "1123477",
+    "raw_name": "Brake Hose",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18682"
+      }
+    ]
+  },
+  "1123479": {
+    "part_number": "1123479",
+    "raw_name": "Brake Hose",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18681"
+      }
+    ]
+  },
+  "1134955": {
+    "part_number": "1134955",
+    "raw_name": "Bearing Bush, Stabiliser Mounting, Stabilizer Silentblock, Sway Bar, Mounting",
+    "brand": "VOLVO",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.61078"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "11565"
+      },
+      {
+        "supplier": "SKF",
+        "part_no": "VKDCV"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "128680": {
+    "part_number": "128680",
+    "raw_name": "Oil Filter, Bush, Oil Filter, Silentblock/Spring Bush",
+    "brand": "MANITOU",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.25009"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "06437"
+      }
+    ]
+  },
+  "1300977": {
+    "part_number": "1300977",
+    "raw_name": "Cap, Shaft Seal",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.15114"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1301682": {
+    "part_number": "1301682",
+    "raw_name": "Wheel Bearing, Gearbox Bearing, Bearing",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "SKF",
+        "part_no": "VKHB"
+      },
+      {
+        "supplier": "FAG",
+        "part_no": "32016X"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16454"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "19771"
+      }
+    ]
+  },
+  "1302665": {
+    "part_number": "1302665",
+    "raw_name": "Synchromesh Blocking Element, Circlip",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.14486"
+      }
+    ]
+  },
+  "1302733": {
+    "part_number": "1302733",
+    "raw_name": "Spacer Bush, Spacer Ring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.14876"
+      }
+    ]
+  },
+  "1302857": {
+    "part_number": "1302857",
+    "raw_name": "Bearing, Bush",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16259"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "02203"
+      }
+    ]
+  },
+  "1303475": {
+    "part_number": "1303475",
+    "raw_name": "Membrane, Servo-Motor Diaphragm, Diaphragm",
+    "brand": "DAF",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "4.80161"
+      },
+      {
+        "supplier": "WABCO",
+        "part_no": "897"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1304645": {
+    "part_number": "1304645",
+    "raw_name": "Spring Retaining Pin",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18239"
+      }
+    ]
+  },
+  "1306259": {
+    "part_number": "1306259",
+    "raw_name": "Clutch, Side Window",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.22336"
+      },
+      {
+        "supplier": "NRF",
+        "part_no": "49652"
+      },
+      {
+        "supplier": "SACHS",
+        "part_no": "2100"
+      }
+    ]
+  },
+  "1306260": {
+    "part_number": "1306260",
+    "raw_name": "Side Window",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.22337"
+      }
+    ]
+  },
+  "1306573": {
+    "part_number": "1306573",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1306950": {
+    "part_number": "1306950",
+    "raw_name": "Connector, Hose, Door Catch, Intake Hose",
+    "brand": "FORD",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.22870"
+      },
+      {
+        "supplier": "GATES",
+        "part_no": "ANTK1246"
+      }
+    ]
+  },
+  "1309465": {
+    "part_number": "1309465",
+    "raw_name": "Spring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "10.13053"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "02208"
+      }
+    ]
+  },
+  "1313606": {
+    "part_number": "1313606",
+    "raw_name": "Pilot Bearing, Repair Kit, Crankshaft Bearings",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.10311"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "04515"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "46307"
+      },
+      {
+        "supplier": "SACHS",
+        "part_no": "1863"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "09971"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "46347"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1313738": {
+    "part_number": "1313738",
+    "raw_name": "Tie Rod End",
+    "brand": "CATERPILLAR",
+    "cross_refs": []
+  },
+  "1313854": {
+    "part_number": "1313854",
+    "raw_name": "Silencer, Brake Vent",
+    "brand": "IVECO",
+    "cross_refs": [
+      {
+        "supplier": "WABCO",
+        "part_no": "432"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18361"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "45257"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1313871": {
+    "part_number": "1313871",
+    "raw_name": "Relay Valve, Flywheel Toothed Ring, Ring Gear, Cylinder Head Cover",
+    "brand": "DAF",
+    "cross_refs": [
+      {
+        "supplier": "WABCO",
+        "part_no": "973"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "4.65012"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "5.40110"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "104349"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "101360"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1321727": {
+    "part_number": "1321727",
+    "raw_name": "Seal",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18188"
+      }
+    ]
+  },
+  "1322341": {
+    "part_number": "1322341",
+    "raw_name": "Rubber Buffer, Suspension Spring Fender",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.27353"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "18727"
+      }
+    ]
+  },
+  "1324366": {
+    "part_number": "1324366",
+    "raw_name": "Rubber Buffer, Suspension Spring Fender",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.27354"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "18728"
+      }
+    ]
+  },
+  "1324664": {
+    "part_number": "1324664",
+    "raw_name": "Brake Valve, Relay Valve",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "WABCO",
+        "part_no": "461"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18650"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "172106"
+      }
+    ]
+  },
+  "1324713": {
+    "part_number": "1324713",
+    "raw_name": "Stabiliser Mounting, Shock Absorber, Bearing, Joint Bearing",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.22412"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "173328"
+      }
+    ]
+  },
+  "1324793": {
+    "part_number": "1324793",
+    "raw_name": "Mounting Kit, Repair Kit, Washer",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.22901"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "175772"
+      }
+    ]
+  },
+  "1326547": {
+    "part_number": "1326547",
+    "raw_name": "Suspension Strut Mounting, Spring Bracket",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.25632"
+      }
+    ]
+  },
+  "1327878": {
+    "part_number": "1327878",
+    "raw_name": "Bearing, Gearbox Bearing, Mounting",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "SKF",
+        "part_no": "VKT"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.14216"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "104378"
+      }
+    ]
+  },
+  "1332275": {
+    "part_number": "1332275",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1332508": {
+    "part_number": "1332508",
+    "raw_name": "Synchromesh Blocking Element, Bolt",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.14297"
+      }
+    ]
+  },
+  "1333433": {
+    "part_number": "1333433",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1333733": {
+    "part_number": "1333733",
+    "raw_name": "Holder, Relay Valve",
+    "brand": "DAF",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.10870"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "46376"
+      },
+      {
+        "supplier": "WABCO",
+        "part_no": "973"
+      }
+    ]
+  },
+  "1334954": {
+    "part_number": "1334954",
+    "raw_name": "Synchromesh, Thrust Washer",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16034"
+      }
+    ]
+  },
+  "1335680": {
+    "part_number": "1335680",
+    "raw_name": "Air Filter, Secondary Air Filter, Air Filter",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.10925"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "48273"
+      }
+    ]
+  },
+  "1335744": {
+    "part_number": "1335744",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1337283": {
+    "part_number": "1337283",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1338019": {
+    "part_number": "1338019",
+    "raw_name": "Seal Ring, Shock Absorber Pivot O-Ring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.17103"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "09986"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1338267": {
+    "part_number": "1338267",
+    "raw_name": "Groove Nut, Nut, Gearbox Shaft Sleeve, Thermostat Housing",
+    "brand": "OPEL",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.15093"
+      }
+    ]
+  },
+  "1339660": {
+    "part_number": "1339660",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1340859": {
+    "part_number": "1340859",
+    "raw_name": "Brake Shaft, Fuel Filter",
+    "brand": "HITACHI",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18179"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "45561"
+      }
+    ]
+  },
+  "1343100": {
+    "part_number": "1343100",
+    "raw_name": "Joint Bearing, Cab Suspension Metal-Rubber Bush, Shock Absorber",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.22416"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "19200"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1343135": {
+    "part_number": "1343135",
+    "raw_name": "Spacer Sleeve, Spacer Bush",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.22459"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "47525"
+      }
+    ]
+  },
+  "1343144": {
+    "part_number": "1343144",
+    "raw_name": "Hose Connector",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.26122"
+      }
+    ]
+  },
+  "1343178": {
+    "part_number": "1343178",
+    "raw_name": "Nut, Kingpin Nut, Ring Gear Regulation Washer",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16243"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "196869"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1343372": {
+    "part_number": "1343372",
+    "raw_name": "Seal Ring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16284"
+      }
+    ]
+  },
+  "1343373": {
+    "part_number": "1343373",
+    "raw_name": "Bush",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16304"
+      }
+    ]
+  },
+  "1344190": {
+    "part_number": "1344190",
+    "raw_name": "Bearing Bush, Stabiliser Mounting, Link Stabilizer Repair Kit, Stabilizer Silentblock, Repair Kit, Mounting",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.27054"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "19140"
+      },
+      {
+        "supplier": "SKF",
+        "part_no": "VKDCV"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1344667": {
+    "part_number": "1344667",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1345205": {
+    "part_number": "1345205",
+    "raw_name": "Seal Ring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.19321"
+      }
+    ]
+  },
+  "1345206": {
+    "part_number": "1345206",
+    "raw_name": "Accessory Kit",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.19071"
+      }
+    ]
+  },
+  "1345279": {
+    "part_number": "1345279",
+    "raw_name": "Seal, Seal Ring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18233"
+      }
+    ]
+  },
+  "1349089": {
+    "part_number": "1349089",
+    "raw_name": "Seal, Seal Ring, Shaft Seal",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "21796"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.24258"
+      }
+    ]
+  },
+  "1352803": {
+    "part_number": "1352803",
+    "raw_name": "Seal Ring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.24307"
+      }
+    ]
+  },
+  "1353861": {
+    "part_number": "1353861",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1354079": {
+    "part_number": "1354079",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1354387": {
+    "part_number": "1354387",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1355381": {
+    "part_number": "1355381",
+    "raw_name": "Holder, Base",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.22495"
+      }
+    ]
+  },
+  "1357380": {
+    "part_number": "1357380",
+    "raw_name": "Bush, Cab Suspension Metal Bush",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.22456"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "39997"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1357711": {
+    "part_number": "1357711",
+    "raw_name": "Bearing, Wheel Bearing, Thermostat, Gearbox Bearing, Thermostat Housing",
+    "brand": "FORD",
+    "cross_refs": [
+      {
+        "supplier": "SKF",
+        "part_no": "VKT"
+      },
+      {
+        "supplier": "FAG",
+        "part_no": "30312A"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.14219"
+      },
+      {
+        "supplier": "GATES",
+        "part_no": "TH45190G1"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "13.42079"
+      },
+      {
+        "supplier": "NRF",
+        "part_no": "725000"
+      },
+      {
+        "supplier": "CONTINENTAL",
+        "part_no": "28.0200-4181.2"
+      },
+      {
+        "supplier": "DENSO",
+        "part_no": "DTM82512"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "19765"
+      },
+      {
+        "supplier": "VALEO",
+        "part_no": "819733"
+      }
+    ]
+  },
+  "1357950": {
+    "part_number": "1357950",
+    "raw_name": "Air Tank",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18394"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18394SP"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "106060"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1358497": {
+    "part_number": "1358497",
+    "raw_name": "Hydraulic Pump, Circlip, Retainer Ring",
+    "brand": "FORD",
+    "cross_refs": [
+      {
+        "supplier": "TRW",
+        "part_no": "JPR188"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.17069"
+      }
+    ]
+  },
+  "1360514": {
+    "part_number": "1360514",
+    "raw_name": "Nut",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.23290"
+      }
+    ]
+  },
+  "1360882": {
+    "part_number": "1360882",
+    "raw_name": "Wheel Bearing, Drive Axle Bearing, Bearing",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16464"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "172412"
+      },
+      {
+        "supplier": "SKF",
+        "part_no": "VKT"
+      }
+    ]
+  },
+  "1361459": {
+    "part_number": "1361459",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1361460": {
+    "part_number": "1361460",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1362693": {
+    "part_number": "1362693",
+    "raw_name": "Cover",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.21403"
+      }
+    ]
+  },
+  "1362721": {
+    "part_number": "1362721",
+    "raw_name": "Brake Shoe Bolt",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18184"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1363818": {
+    "part_number": "1363818",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1363870": {
+    "part_number": "1363870",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1363871": {
+    "part_number": "1363871",
+    "raw_name": "Liquid Separator Element",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "WABCO",
+        "part_no": "932"
+      }
+    ]
+  },
+  "1364575": {
+    "part_number": "1364575",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1365290": {
+    "part_number": "1365290",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1365573": {
+    "part_number": "1365573",
+    "raw_name": "Repair Kit, Gasket Set",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.31904"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "108375"
+      }
+    ]
+  },
+  "1365574": {
+    "part_number": "1365574",
+    "raw_name": "Repair Kit, Gasket Set",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.31905"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "104680"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1365594": {
+    "part_number": "1365594",
+    "raw_name": "Tab Washer",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.17068"
+      }
+    ]
+  },
+  "1366349": {
+    "part_number": "1366349",
+    "raw_name": "Oil Hose, Hose",
+    "brand": "FORD",
+    "cross_refs": [
+      {
+        "supplier": "GATES",
+        "part_no": "EMH385"
+      }
+    ]
+  },
+  "1366847": {
+    "part_number": "1366847",
+    "raw_name": "Window Regulator",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.22358"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "36218"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1366848": {
+    "part_number": "1366848",
+    "raw_name": "Window Regulator, Radiator Hose",
+    "brand": "FORD",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.22359"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1367303": {
+    "part_number": "1367303",
+    "raw_name": "Wear Plate",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16389"
+      }
+    ]
+  },
+  "1367406": {
+    "part_number": "1367406",
+    "raw_name": "Connector, Plug Connector",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.00887"
+      }
+    ]
+  },
+  "1367630": {
+    "part_number": "1367630",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1368061": {
+    "part_number": "1368061",
+    "raw_name": "Gasket, Seal",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.12269"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "100247"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1368497": {
+    "part_number": "1368497",
+    "raw_name": "Overflow Valve, Valve",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "106875"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.12831"
+      }
+    ]
+  },
+  "1368694": {
+    "part_number": "1368694",
+    "raw_name": "Wheel Stud, Wheel Bolts",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.17039"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "198706"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1369724": {
+    "part_number": "1369724",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1369863": {
+    "part_number": "1369863",
+    "raw_name": "Hose Connector, Connector",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.26123"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "06814"
+      }
+    ]
+  },
+  "1369865": {
+    "part_number": "1369865",
+    "raw_name": "Hose Connector",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.26128"
+      }
+    ]
+  },
+  "1371836": {
+    "part_number": "1371836",
+    "raw_name": "Spring Clamp Nut",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.62593"
+      }
+    ]
+  },
+  "1372898": {
+    "part_number": "1372898",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1375227": {
+    "part_number": "1375227",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1375391": {
+    "part_number": "1375391",
+    "raw_name": "Hose, Hydraulic Hose",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.19180"
+      }
+    ]
+  },
+  "1376357": {
+    "part_number": "1376357",
+    "raw_name": "Pulley",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.19196"
+      }
+    ]
+  },
+  "1377471": {
+    "part_number": "1377471",
+    "raw_name": "Top Strut Mounting, Repair Kit, Mounting, Anti-Friction Bearing, Suspension Strut Mounting, Dust Cover Kit, Suspension Strut Support Mount",
+    "brand": "FORD",
+    "cross_refs": [
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "30842"
+      },
+      {
+        "supplier": "SACHS",
+        "part_no": "802"
+      },
+      {
+        "supplier": "FAG",
+        "part_no": "814"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "172371"
+      },
+      {
+        "supplier": "TRW",
+        "part_no": "JSB130"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "102538"
+      },
+      {
+        "supplier": "DELPHI",
+        "part_no": "BSJ20027"
+      },
+      {
+        "supplier": "DELPHI",
+        "part_no": "BSJ10106"
+      },
+      {
+        "supplier": "GATES",
+        "part_no": "SUS1763"
+      }
+    ]
+  },
+  "1377472": {
+    "part_number": "1377472",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1377739": {
+    "part_number": "1377739",
+    "raw_name": "Spring Shackle, Spring Bracket",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.25000"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "1001749"
+      }
+    ]
+  },
+  "1379383": {
+    "part_number": "1379383",
+    "raw_name": "Valve, Breather Screw/-Valve",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.11351"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "101343"
+      }
+    ]
+  },
+  "1379425": {
+    "part_number": "1379425",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1381251": {
+    "part_number": "1381251",
+    "raw_name": "Sensor",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.21129"
+      }
+    ]
+  },
+  "1383468": {
+    "part_number": "1383468",
+    "raw_name": "Rivet",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18730"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "194455"
+      }
+    ]
+  },
+  "1384761": {
+    "part_number": "1384761",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1385209": {
+    "part_number": "1385209",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1385410": {
+    "part_number": "1385410",
+    "raw_name": "Indicator, Lens",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "HELLA",
+        "part_no": "9EL"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.21473"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "194133"
+      }
+    ]
+  },
+  "1386104": {
+    "part_number": "1386104",
+    "raw_name": "Wear Plate",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16372"
+      }
+    ]
+  },
+  "1386105": {
+    "part_number": "1386105",
+    "raw_name": "Seal Ring, Axle Stub Seal Ring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16373"
+      }
+    ]
+  },
+  "1386106": {
+    "part_number": "1386106",
+    "raw_name": "Union Nut",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.25434"
+      }
+    ]
+  },
+  "1386107": {
+    "part_number": "1386107",
+    "raw_name": "Pressure Disc",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.25466"
+      }
+    ]
+  },
+  "1386227": {
+    "part_number": "1386227",
+    "raw_name": "Seal Ring, Repait Kit, Axle Stub Seal Ring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16395"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "45621"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "45631"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1386406": {
+    "part_number": "1386406",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1387007": {
+    "part_number": "1387007",
+    "raw_name": "Nut",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.12254"
+      }
+    ]
+  },
+  "1387155": {
+    "part_number": "1387155",
+    "raw_name": "Indicator, Pressure Hose, Indicator Lamp, Lens",
+    "brand": "DAF",
+    "cross_refs": [
+      {
+        "supplier": "HELLA",
+        "part_no": "9EL"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "5.41901"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.21472"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "194125"
+      }
+    ]
+  },
+  "1387576": {
+    "part_number": "1387576",
+    "raw_name": "Nut",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.25585"
+      }
+    ]
+  },
+  "1390211": {
+    "part_number": "1390211",
+    "raw_name": "Gasket",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.24256"
+      }
+    ]
+  },
+  "1390243": {
+    "part_number": "1390243",
+    "raw_name": "Nut, Spring Clamp Nut",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.25433"
+      }
+    ]
+  },
+  "1391162": {
+    "part_number": "1391162",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1391742": {
+    "part_number": "1391742",
+    "raw_name": "Tightening Strap, Fixing Strap",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18407"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "174264"
+      }
+    ]
+  },
+  "1392073": {
+    "part_number": "1392073",
+    "raw_name": "Nut, Axle Nut",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.17074"
+      }
+    ]
+  },
+  "1392074": {
+    "part_number": "1392074",
+    "raw_name": "Nut, Axle Nut",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.17073"
+      }
+    ]
+  },
+  "1392084": {
+    "part_number": "1392084",
+    "raw_name": "Gearbox Seal/Leak Stopper, Oil Trap",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.17291"
+      }
+    ]
+  },
+  "1393390": {
+    "part_number": "1393390",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1393617": {
+    "part_number": "1393617",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1393641": {
+    "part_number": "1393641",
+    "raw_name": "Water Trap, Housing",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.12280"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "171980"
+      }
+    ]
+  },
+  "1395828": {
+    "part_number": "1395828",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1397406": {
+    "part_number": "1397406",
+    "raw_name": "Flaring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.52300"
+      }
+    ]
+  },
+  "1398116": {
+    "part_number": "1398116",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1398294": {
+    "part_number": "1398294",
+    "raw_name": "Gear",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.10244"
+      }
+    ]
+  },
+  "1398639": {
+    "part_number": "1398639",
+    "raw_name": "Screw",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.12519"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "1003492"
+      }
+    ]
+  },
+  "1398640": {
+    "part_number": "1398640",
+    "raw_name": "Screw, Rectifier",
+    "brand": "DAF",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.12518"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "1003569"
+      }
+    ]
+  },
+  "1400131": {
+    "part_number": "1400131",
+    "raw_name": "Bumper",
+    "brand": "OPEL",
+    "cross_refs": []
+  },
+  "1401839": {
+    "part_number": "1401839",
+    "raw_name": "Steel Strap",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.27072"
+      }
+    ]
+  },
+  "1403463": {
+    "part_number": "1403463",
+    "raw_name": "Water Drain Valve",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "4.30029"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "103098"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18376"
+      }
+    ]
+  },
+  "1403808": {
+    "part_number": "1403808",
+    "raw_name": "Knuckle Repair Kit",
+    "brand": "SCANIA",
+    "cross_refs": []
+  },
+  "1403855": {
+    "part_number": "1403855",
+    "raw_name": "Oil Dipstick",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.19162"
+      }
+    ]
+  },
+  "1404230": {
+    "part_number": "1404230",
+    "raw_name": "Bumper",
+    "brand": "OPEL",
+    "cross_refs": []
+  },
+  "1404352": {
+    "part_number": "1404352",
+    "raw_name": "Spring Mounting, Mounting",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16391"
+      }
+    ]
+  },
+  "1405797": {
+    "part_number": "1405797",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1405803": {
+    "part_number": "1405803",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1406463": {
+    "part_number": "1406463",
+    "raw_name": "Windscreen",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.22344"
+      }
+    ]
+  },
+  "1407551": {
+    "part_number": "1407551",
+    "raw_name": "Gasket, Oil Seal, Gearbox Gasket",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.14639"
+      }
+    ]
+  },
+  "1408139": {
+    "part_number": "1408139",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1408172": {
+    "part_number": "1408172",
+    "raw_name": "Wheel Bearing, Gearbox Bearing",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "FAG",
+        "part_no": "33207"
+      },
+      {
+        "supplier": "SKF",
+        "part_no": "VKHB"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.65151"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "47990"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1408178": {
+    "part_number": "1408178",
+    "raw_name": "Bearing",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16670"
+      }
+    ]
+  },
+  "1408202": {
+    "part_number": "1408202",
+    "raw_name": "Housing",
+    "brand": "SCANIA",
+    "cross_refs": []
+  },
+  "1408485": {
+    "part_number": "1408485",
+    "raw_name": "Spacer Bush, Spacer Ring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.17342"
+      }
+    ]
+  },
+  "1409318": {
+    "part_number": "1409318",
+    "raw_name": "Piston Ring Set, Piston Ring Kit, Compressor Ring, Compressor Piston",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "2.94038"
+      },
+      {
+        "supplier": "MAHLE",
+        "part_no": "145"
+      }
+    ]
+  },
+  "1411244": {
+    "part_number": "1411244",
+    "raw_name": "Relay Valve",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18657"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "47678"
+      },
+      {
+        "supplier": "WABCO",
+        "part_no": "973"
+      }
+    ]
+  },
+  "1411353": {
+    "part_number": "1411353",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "141163": {
+    "part_number": "141163",
+    "raw_name": "Bush",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18203"
+      }
+    ]
+  },
+  "1412298": {
+    "part_number": "1412298",
+    "raw_name": "Camshaft Bushes",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.33215"
+      },
+      {
+        "supplier": "MAHLE",
+        "part_no": "061"
+      }
+    ]
+  },
+  "1413893": {
+    "part_number": "1413893",
+    "raw_name": "Exhaust Pipe",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.12647"
+      }
+    ]
+  },
+  "1413934": {
+    "part_number": "1413934",
+    "raw_name": "Seal Ring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.27424"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "103731"
+      }
+    ]
+  },
+  "1414580": {
+    "part_number": "1414580",
+    "raw_name": "Screw Plug, Filler Cap",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.14545"
+      }
+    ]
+  },
+  "1414583": {
+    "part_number": "1414583",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1414595": {
+    "part_number": "1414595",
+    "raw_name": "Gasket",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.24442"
+      }
+    ]
+  },
+  "1421021": {
+    "part_number": "1421021",
+    "raw_name": "Air Filter, Air Filter",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.10282"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "35424"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1421851": {
+    "part_number": "1421851",
+    "raw_name": "Switch, Brake Disc",
+    "brand": "CARRARO",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.51063"
+      }
+    ]
+  },
+  "1421862": {
+    "part_number": "1421862",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1422152": {
+    "part_number": "1422152",
+    "raw_name": "Quick Release Valve, Relay Valve",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18656"
+      }
+    ]
+  },
+  "1422474": {
+    "part_number": "1422474",
+    "raw_name": "Clamp, Pipe Connector, Clamping Clip",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.12378"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "40513"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1422564": {
+    "part_number": "1422564",
+    "raw_name": "Seal Kit, Repair Kit",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.31206"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "103743"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1422594": {
+    "part_number": "1422594",
+    "raw_name": "Sensor, Lens",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.23315"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "194749"
+      }
+    ]
+  },
+  "1422629": {
+    "part_number": "1422629",
+    "raw_name": "Gearbox Gasket, Oil Seal, Gasket",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.14642"
+      }
+    ]
+  },
+  "1422981": {
+    "part_number": "1422981",
+    "raw_name": "Connection Piece, Radiator Hose, Connector",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.26053"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "192871"
+      }
+    ]
+  },
+  "1423939": {
+    "part_number": "1423939",
+    "raw_name": "Camshaft Bushes",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.10752"
+      }
+    ]
+  },
+  "1425183": {
+    "part_number": "1425183",
+    "raw_name": "Relay Valve",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "WABCO",
+        "part_no": "973"
+      },
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.18660"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "44831"
+      }
+    ]
+  },
+  "1425659": {
+    "part_number": "1425659",
+    "raw_name": "Window Crank",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.22917"
+      }
+    ]
+  },
+  "1426254": {
+    "part_number": "1426254",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1426555": {
+    "part_number": "1426555",
+    "raw_name": "Mirror Glass, Outside Mirror",
+    "brand": "GENERAL",
+    "cross_refs": []
+  },
+  "1429058": {
+    "part_number": "1429058",
+    "raw_name": "Fuel Line",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.12731"
+      }
+    ]
+  },
+  "1430317": {
+    "part_number": "1430317",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1431579": {
+    "part_number": "1431579",
+    "raw_name": "Clamp, Pipe Connector",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.12800"
+      }
+    ]
+  },
+  "1433641": {
+    "part_number": "1433641",
+    "raw_name": "Sealing Plug, Screw Plug",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.10006"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "102361"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "198851"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1433656": {
+    "part_number": "1433656",
+    "raw_name": "Repair Kit",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.32316"
+      },
+      {
+        "supplier": "FEBI BILSTEIN",
+        "part_no": "46254"
+      }
+    ]
+  },
+  "1437233": {
+    "part_number": "1437233",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1437280": {
+    "part_number": "1437280",
+    "raw_name": "Seal Ring",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.27418"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1437486": {
+    "part_number": "1437486",
+    "raw_name": "Axle Bolt, Multi-Function Brake Cylinder",
+    "brand": "DAF",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.16656"
+      },
+      {
+        "supplier": "WABCO",
+        "part_no": "925"
+      }
+    ]
+  },
+  "1440407": {
+    "part_number": "1440407",
+    "raw_name": "Seal",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.11298"
+      },
+      {
+        "supplier": "TRUCKTEC",
+        "part_no": "AUTOMOTIVE"
+      }
+    ]
+  },
+  "1440499": {
+    "part_number": "1440499",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  },
+  "1440576": {
+    "part_number": "1440576",
+    "raw_name": "Repair Kit",
+    "brand": "SCANIA",
+    "cross_refs": [
+      {
+        "supplier": "DT SPARE PARTS",
+        "part_no": "1.31278"
+      }
+    ]
+  },
+  "1443299": {
+    "part_number": "1443299",
+    "raw_name": null,
+    "brand": null,
+    "cross_refs": []
+  }
+}

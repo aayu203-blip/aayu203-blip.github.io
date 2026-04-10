@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: theme('colors.ptc.base03');
+    color: theme('colors.ptc.base0');
+    font-family: theme('fontFamily.mono');
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* Mandated: tabular-nums for all numbers */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Custom scrollbar for dense interfaces */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: theme('colors.ptc.base03'); 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: theme('colors.ptc.base02'); 
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.ptc.base0'); 
+  }
+}
+
+@layer components {
+  /* No glassmorphism! Strict 2D solid tiles */
+  .tile {
+    @apply bg-ptc-base03 border border-ptc-base02 p-4 h-full w-full relative;
+  }
+
+  /* Omni-search command palette overlay */
+  .command-palette {
+    @apply fixed inset-0 z-50 flex items-start justify-center pt-[15vh] bg-ptc-base03/90; /* Opaque enough to not be glassmorphism */
+  }
+
+  .data-table {
+    @apply w-full text-left border-collapse;
+  }
+
+  .data-table th {
+    @apply p-2 font-normal text-ptc-base0 border-b-2 border-ptc-base02 sticky top-0 bg-ptc-base03 z-10;
+  }
+
+  .data-table td {
+    @apply p-2 border-b border-ptc-base02 whitespace-nowrap;
+  }
+  
+  .data-table tbody tr:nth-child(even) {
+    @apply bg-ptc-base03;
+  }
+  .data-table tbody tr:nth-child(odd) {
+    @apply bg-ptc-base02/50; /* Subtle Zebra Striping */
+  }
+
+  /* Slide-out side panel replacing modals */
+  .side-panel {
+    @apply fixed top-0 right-0 h-full w-[400px] border-l border-ptc-base02 bg-ptc-base03 shadow-2xl z-40 transform transition-transform duration-200 ease-out;
+  }
+}

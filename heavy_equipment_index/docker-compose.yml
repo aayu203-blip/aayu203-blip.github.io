@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    environment:
+      - DATABASE_URL=postgresql://antigravity:password@db:5432/heavy_parts_index
+      - GENAI_API_KEY=${GENAI_API_KEY}
+    depends_on:
+      - db
+    command: tail -f /dev/null # Keep alive for exec, or replace with worker script
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_USER=antigravity
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=heavy_parts_index
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:

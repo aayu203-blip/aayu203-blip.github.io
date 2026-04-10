@@ -1,0 +1,108 @@
+============================================================
+komatsu_new_sources_scraper.py starting
+============================================================
+Existing known part numbers: 38,544
+Existing product pages: 54,951
+=== Fetching hrparts.com sitemap ===
+  hrparts: 24388 total URLs, 5145 Komatsu product URLs
+hrparts.com: 5055 new unique parts parsed
+=== Fetching brokentractor.com sitemaps ===
+  brokentractor page 1: 9993 total, 424 komatsu
+  brokentractor page 2: 6523 total, 333 komatsu
+brokentractor.com: 675 new unique parts parsed
+=== Fetching machinerypartswarehouse.com sitemaps ===
+  mpw sitemap_part_0: 50000 total, 247 komatsu
+machinerypartswarehouse.com: 113 new unique parts parsed
+
+Total catalog: 5843 parts. Saved to komatsu_newsources_catalog.json
+
+Generating HTML pages...
+
+Generated: 5,570 | Skipped: 273 | Errors: 0
+Total product pages now: 60,456
+
+=== DONE ===
+============================================================
+komatsu_new_sources_scraper.py starting
+============================================================
+Existing known part numbers: 40,313
+Existing product pages: 62,546
+Loaded existing newsources catalog: 5843 parts
+=== Fetching hrparts.com sitemap ===
+  hrparts: 24388 total URLs, 5145 Komatsu product URLs
+hrparts.com: 0 new unique parts parsed
+=== Fetching brokentractor.com sitemaps ===
+  brokentractor page 1: 9993 total, 424 komatsu
+  brokentractor page 2: 6524 total, 333 komatsu
+brokentractor.com: 0 new unique parts parsed
+=== Fetching machinerypartswarehouse.com sitemaps ===
+  mpw sitemap_part_0: 50000 total, 247 komatsu
+machinerypartswarehouse.com: 0 new unique parts parsed
+=== Fetching komatsupartshub.com sitemaps ===
+  kph sitemap 1: 200 part URLs
+  kph sitemap 2: 200 part URLs
+  kph sitemap 3: 200 part URLs
+  kph sitemap 4: 200 part URLs
+  kph sitemap 5: 200 part URLs
+  kph sitemap 6: 200 part URLs
+  kph sitemap 7: 200 part URLs
+  kph sitemap 8: 200 part URLs
+  kph sitemap 9: 200 part URLs
+  kph sitemap 10: 200 part URLs
+  kph sitemap 11: 200 part URLs
+  kph sitemap 12: 200 part URLs
+  kph sitemap 13: 200 part URLs
+  kph sitemap 14: 200 part URLs
+  kph sitemap 15: 200 part URLs
+  kph sitemap 16: 200 part URLs
+  kph sitemap 17: 200 part URLs
+  kph sitemap 18: 200 part URLs
+  kph sitemap 19: 200 part URLs
+  kph sitemap 20: 193 part URLs
+  kph sitemap 21: 200 part URLs
+  kph sitemap 22: 200 part URLs
+  kph sitemap 23: 200 part URLs
+  kph sitemap 24: 200 part URLs
+  kph sitemap 25: 200 part URLs
+  kph sitemap 26: 200 part URLs
+  kph sitemap 27: 200 part URLs
+  kph sitemap 28: 200 part URLs
+  kph sitemap 29: 200 part URLs
+  kph sitemap 30: 200 part URLs
+  kph sitemap 31: 200 part URLs
+  kph sitemap 32: 200 part URLs
+  kph sitemap 33: 30 part URLs
+  komatsupartshub total: 6423 part URLs
+komatsupartshub.com: 5113 new unique parts parsed
+=== Fetching fabheavyparts.com sitemaps ===
+  fab ml?from=4820963590277&to=: 2501 total, 391 komatsu
+  fab ml?from=6544835379333&to=: 2500 total, 359 komatsu
+  fab ml?from=6735073017989&to=: 2500 total, 677 komatsu
+  fab ml?from=6762026926213&to=: 2500 total, 390 komatsu
+  fab ml?from=6797039075461&to=: 2500 total, 225 komatsu
+  fab ml?from=6814337564805&to=: 2500 total, 145 komatsu
+  fab ml?from=6824026505349&to=: 2500 total, 672 komatsu
+  fab ml?from=6837531148421&to=: 2500 total, 204 komatsu
+  fab ml?from=6881744158853&to=: 2500 total, 225 komatsu
+  fab xml?from=6943476220037&to: 2499 total, 214 komatsu
+  fab xml?from=7030126968965&to: 2500 total, 248 komatsu
+  fab xml?from=7050659201157&to: 2500 total, 78 komatsu
+  fab xml?from=7074328936581&to: 2500 total, 123 komatsu
+  fab xml?from=7107760259205&to: 2500 total, 57 komatsu
+  fab xml?from=7124016070789&to: 2500 total, 21 komatsu
+  fab xml?from=7138919383173&to: 2499 total, 42 komatsu
+  fab xml?from=7172970774661&to: 2500 total, 76 komatsu
+  fab xml?from=7219755319429&to: 2500 total, 116 komatsu
+  fab xml?from=7231388647557&to: 2500 total, 169 komatsu
+  fab xml?from=7248841900165&to: 800 total, 49 komatsu
+  fabheavyparts total komatsu URLs: 4481
+fabheavyparts.com: 2036 new unique parts parsed
+
+Total catalog: 12992 parts. Saved to komatsu_newsources_catalog.json
+
+Generating HTML pages...
+
+Generated: 5,772 | Skipped: 7,220 | Errors: 0
+Total product pages now: 68,110
+
+=== DONE ===

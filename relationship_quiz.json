@@ -1,0 +1,57 @@
+[
+    {
+        "question": "On January 25, 2023, what did Aadnya ask Aayu to send her?",
+        "options": [
+            "A picture of himself",
+            "The Google Maps link to Gokul Bite",
+            "His ETA",
+            "A list of nearby restaurants"
+        ],
+        "answer": "The Google Maps link to Gokul Bite",
+        "context": "Snippet: FIRST DAY EVER (2023-01-25)"
+    },
+    {
+        "question": "On July 3, 2023, Aayu mentioned that he had a _______, likely obtained by his mom.",
+        "options": [
+            "Mango",
+            "Peach",
+            "Plum",
+            "Pomegranate"
+        ],
+        "answer": "Peach",
+        "context": "Snippet: BUSY DAY 2023-07-03"
+    },
+    {
+        "question": "On April 11, 2024, Aadnya called Aayu a _______, in a sweet way.",
+        "options": [
+            "Cutie",
+            "Guddu",
+            "Sweetheart",
+            "Baby"
+        ],
+        "answer": "Guddu",
+        "context": "Snippet: BUSY DAY 2024-04-11"
+    },
+    {
+        "question": "On April 11, 2025, what event was scheduled that morning that interrupted their plans?",
+        "options": [
+            "Doctor's appointment",
+            "IPL game",
+            "RT-PCR test",
+            "Work meeting"
+        ],
+        "answer": "RT-PCR test",
+        "context": "Snippet: BUSY DAY 2025-04-11"
+    },
+    {
+        "question": "On February 1, 2026, what was Aayu experiencing that he wanted to express to Aadnya without fighting?",
+        "options": [
+            "Constant happiness",
+            "Constant fear that she will leave him",
+            "Excitement for their future",
+            "Annoyance with her exes"
+        ],
+        "answer": "Constant fear that she will leave him",
+        "context": "Snippet: BUSY DAY 2026-02-01"
+    }
+]

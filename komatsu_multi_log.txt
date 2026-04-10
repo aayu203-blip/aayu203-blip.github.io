@@ -1,0 +1,26 @@
+
+============================================================
+komatsu_multi_supplier_scraper.py starting
+============================================================
+Catalog loaded: 0 parts
+
+Source: topvelsun.com
+  Total URLs in sitemap: 1112
+  Komatsu URLs: 60
+  New parts added: 45
+
+Source: mottrolusa.com
+  Total URLs in sitemap: 0
+  Komatsu URLs: 0
+  New parts added: 0
+
+Source: almaxparts.com
+  Total URLs in sitemap: 229
+  Komatsu URLs: 111
+  New parts added: 111
+
+Catalog saved: 156 total parts → komatsu_multi_catalog.json
+
+Generating pages...
+Pages generated: 125 | Skipped: 31
+Done.
