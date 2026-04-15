@@ -1,14 +1,127 @@
 {
   "seen_guids": [
-    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001087a",
-    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010854",
-    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001083d",
-    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001087b",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001071c",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010909",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010933",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010861",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001094d",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010899",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001087a",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107d3",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010886",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010897",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107ed",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001093e",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001073c",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010890",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010519",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107ca",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010721",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001083d",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001088e",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010760",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107ce",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010921",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001087b",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108ea",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108e9",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001092a",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108ef",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010934",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000105e2",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001091c",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001086f",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010740",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010713",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108d9",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108ca",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001089a",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001092c",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108f6",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010723",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010940",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010943",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010847",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107e1",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010761",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108ec",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001073e",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107eb",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001051f",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010907",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108af",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001071e",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107ff",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010914",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001091b",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108f1",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010527",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108e1",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108ff",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107c7",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107e7",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107d1",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001093a",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107d4",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001088b",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107f9",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108b1",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010521",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010529",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010918",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010949",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010725",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010516",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001052a",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107e9",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108f4",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010854",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010923",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108cd",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010882",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010880",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108d6",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010912",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001088c",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001075e",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010910",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000106ad",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000105e7",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108e7",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010744",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001093c",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010941",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108f2",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010884",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010947",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001064d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010873",
-    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001086f"
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010530",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108c5",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010731",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010916",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001090b",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107e5",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108fd",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010945",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010936",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001073a",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000106a9",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108f9",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001051b",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108ee",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001052e",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108ac",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108fb",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001051d",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000106b2",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001091e",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108de",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001094b",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108d3",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108d1"
   ],
-  "last_sync": "2026-04-09T17:54:29.761167",
+  "last_sync": "2026-04-15T18:13:40.430641",
   "last_morning_digest": null,
   "last_sale_rate": {
     "2452544": {
@@ -22,9 +135,9 @@
       "date": "2024-04-01"
     },
     "TORQUE ARM BUSH": {
-      "rate": 1250.0,
-      "party": "S S MUCHANDI ENGINEERS AND CONTRACTORS",
-      "date": "2026-01-29"
+      "rate": 1450.0,
+      "party": "SUSHEE INFRA & MINING LIMITED (JH)",
+      "date": "2026-04-15"
     },
     "2349746": {
       "rate": 600.0,
@@ -122,9 +235,9 @@
       "date": "2024-04-01"
     },
     "SEAL KIT": {
-      "rate": 5100.0,
-      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
-      "date": "2026-02-16"
+      "rate": 3450.0,
+      "party": "YOGAYATAN PORTS PVT LTD",
+      "date": "2026-04-11"
     },
     "DRIVE SHAFT": {
       "rate": 31500.0,
@@ -143,8 +256,8 @@
     },
     "BELT TENSIONER": {
       "rate": 2800.0,
-      "party": "KUMAR ENGINEERS - KOLKATA",
-      "date": "2026-02-02"
+      "party": "TIRUPATI ENTERPRISES",
+      "date": "2026-04-11"
     },
     "FAN BLADE": {
       "rate": 12500.0,
@@ -162,9 +275,9 @@
       "date": "2026-03-24"
     },
     "WATER PUMP": {
-      "rate": 4250.0,
-      "party": "VARSHA ENTERPRISES (SALE)",
-      "date": "2026-02-17"
+      "rate": 12500.0,
+      "party": "TIRUPATI ENTERPRISES",
+      "date": "2026-04-15"
     },
     "FLEXIBLE HOSE": {
       "rate": 1170.0,
@@ -333,8 +446,8 @@
     },
     "AIR BRAKE COMPRESSOR": {
       "rate": 40000.0,
-      "party": "JAYVEE ENGINEERING CORPN.,",
-      "date": "2026-01-17"
+      "party": "PANCHSHEEL TRADERS (KOL)",
+      "date": "2026-04-11"
     },
     "V-480/SANDEN": {
       "rate": 16000.0,
@@ -347,9 +460,9 @@
       "date": "2024-04-05"
     },
     "ACCESSORY TENSIONER": {
-      "rate": 4000.0,
-      "party": "INDUSTRIAL SPARES  CORPORATION",
-      "date": "2026-03-20"
+      "rate": 3900.0,
+      "party": "NARAYANI SONS INDIA PVT. LTD, ODISHA",
+      "date": "2026-04-15"
     },
     "23959585 FMX 460": {
       "rate": 16500.0,
@@ -428,8 +541,8 @@
     },
     "FRONT WHEEL HUB": {
       "rate": 9000.0,
-      "party": "P C PATEL INFRA PVT LTD, BHUJ",
-      "date": "2024-10-02"
+      "party": "P C PATEL INFRA PRIVATE LTD- B",
+      "date": "2026-04-14"
     },
     "21983651": {
       "rate": 4700.0,
@@ -467,9 +580,9 @@
       "date": "2026-03-16"
     },
     "BEARING": {
-      "rate": 6500.0,
-      "party": "MINOVA ENGINEERING",
-      "date": "2026-04-09"
+      "rate": 4600.0,
+      "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
+      "date": "2026-03-16"
     },
     "AC COMPRESSOR": {
       "rate": 15300.0,
@@ -512,9 +625,9 @@
       "date": "2026-01-14"
     },
     "SHOCK ABSORBER": {
-      "rate": 3000.0,
-      "party": "SUSHEE INFRA & MINING LIMITED (JH)",
-      "date": "2026-04-09"
+      "rate": 3500.0,
+      "party": "BSV EARTHMOVERS",
+      "date": "2026-04-10"
     },
     "BALL SEAT": {
       "rate": 250.0,
@@ -532,24 +645,24 @@
       "date": "2025-11-13"
     },
     "FLYWHEEL RING": {
-      "rate": 3600.0,
-      "party": "P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR",
-      "date": "2026-04-09"
+      "rate": 3400.0,
+      "party": "SANATAN TRADING CO.",
+      "date": "2026-03-16"
     },
     "SD COMPRESSOR": {
-      "rate": 17000.0,
-      "party": "KARAMJEET SINGH & CO.LTD - KORBA",
-      "date": "2026-04-03"
+      "rate": 18500.0,
+      "party": "HARDESH ORES PVT LTD, SANDUR",
+      "date": "2026-04-11"
     },
     "SOLENOID VALVE": {
-      "rate": 11700.0,
-      "party": "SUSHEE INFRA & MINING LIMITED (JH)",
-      "date": "2026-04-09"
+      "rate": 12600.0,
+      "party": "P.C.PATEL MAHALAXMI INFRA LLP",
+      "date": "2026-03-16"
     },
     "CABLE": {
       "rate": 3500.0,
       "party": "P C PATEL INFRA PRIVATE LTD- B",
-      "date": "2026-03-07"
+      "date": "2026-04-10"
     },
     "2105497,1860961": {
       "rate": 23085.0,
@@ -557,9 +670,9 @@
       "date": "2024-04-17"
     },
     "REAR HUB": {
-      "rate": 7600.0,
-      "party": "SANATAN TRADING CO.",
-      "date": "2026-03-20"
+      "rate": 9000.0,
+      "party": "P C PATEL INFRA PRIVATE LIMITED - MP",
+      "date": "2026-04-13"
     },
     "GEAR SHIFT CABLE": {
       "rate": 5500.0,
@@ -567,9 +680,9 @@
       "date": "2025-05-23"
     },
     "BRAKE LINING SET": {
-      "rate": 2150.0,
-      "party": "ADITYA LUBRICANTS",
-      "date": "2026-04-04"
+      "rate": 2500.0,
+      "party": "S S MUCHANDI ENGINEERS AND CONTRACTORS",
+      "date": "2026-04-13"
     },
     "21488865": {
       "rate": 10700.0,
@@ -682,9 +795,9 @@
       "date": "2024-04-25"
     },
     "HANGER": {
-      "rate": 10000.0,
-      "party": "TIRUPATI ENTERPRISES",
-      "date": "2026-01-27"
+      "rate": 11700.0,
+      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
+      "date": "2026-04-13"
     },
     "STEERING OIL GUAGE": {
       "rate": 100.0,
@@ -692,14 +805,14 @@
       "date": "2024-11-05"
     },
     "COOLANT TANK": {
-      "rate": 5500.0,
-      "party": "P C PATEL INFRA PVT LTD, RAIGARH",
-      "date": "2026-01-24"
+      "rate": 5000.0,
+      "party": "SANATAN TRADING CO.",
+      "date": "2026-03-16"
     },
     "ENGINE MOUNTING": {
-      "rate": 3000.0,
-      "party": "P C PATEL INFRA PRIVATE LTD- B",
-      "date": "2026-04-06"
+      "rate": 3700.0,
+      "party": "TIRUPATI ENTERPRISES",
+      "date": "2026-04-15"
     },
     "2308777": {
       "rate": 56000.0,
@@ -727,9 +840,9 @@
       "date": "2025-08-23"
     },
     "RECEIVER DRIER": {
-      "rate": 3500.0,
-      "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
-      "date": "2026-04-07"
+      "rate": 1500.0,
+      "party": "DEVSHI EARTHMOVERS PVT.LTD -MH",
+      "date": "2026-04-11"
     },
     "2308777/2148069": {
       "rate": 65000.0,
@@ -892,9 +1005,9 @@
       "date": "2025-11-15"
     },
     "PISTON RING": {
-      "rate": 800.0,
-      "party": "ANAL EARTHMOVING & DIESEL SERVICES (S)",
-      "date": "2026-02-12"
+      "rate": 1100.0,
+      "party": "KARAMJEET SINGH & CO.LTD - KORBA",
+      "date": "2026-04-15"
     },
     "TIMING COVER GASKET": {
       "rate": 2550.0,
@@ -912,9 +1025,9 @@
       "date": "2025-12-17"
     },
     "BEARING PULLEY": {
-      "rate": 3000.0,
-      "party": "DECENT CARGO MOVERS PVT.LTD.",
-      "date": "2026-03-18"
+      "rate": 3850.0,
+      "party": "NARAYANI SONS INDIA PVT. LTD, ODISHA",
+      "date": "2026-04-15"
     },
     "AIR CONTROL VALVE ASSY": {
       "rate": 1800.0,
@@ -927,9 +1040,9 @@
       "date": "2024-04-16"
     },
     "HUB CAP": {
-      "rate": 1350.0,
-      "party": "SUSHEE INFRA & MINING LIMITED (JH)",
-      "date": "2026-03-14"
+      "rate": 850.0,
+      "party": "KUMAR ENGINEERS - KOLKATA",
+      "date": "2026-04-15"
     },
     "21354759": {
       "rate": 2900.0,
@@ -954,7 +1067,7 @@
     "CRADDLE BUSH": {
       "rate": 7000.0,
       "party": "AMITHA MINING EQUIPMENTS PVT LTD, HYDERABAD",
-      "date": "2026-02-25"
+      "date": "2026-04-15"
     },
     "3095196": {
       "rate": 1200.0,
@@ -1127,9 +1240,9 @@
       "date": "2026-03-18"
     },
     "SWITCH": {
-      "rate": 39000.0,
-      "party": "CUSMAT TECHNOLOGIES PRIVATE LIMITED",
-      "date": "2026-03-27"
+      "rate": 9350.0,
+      "party": "KUMAR ENGINEERS - KOLKATA",
+      "date": "2026-04-15"
     },
     "SPEED SENSOR": {
       "rate": 1800.0,
@@ -1312,9 +1425,9 @@
       "date": "2026-01-28"
     },
     "BUSH": {
-      "rate": 125.0,
-      "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
-      "date": "2025-12-16"
+      "rate": 200.0,
+      "party": "NARAYANI SONS INDIA PVT. LTD, ODISHA",
+      "date": "2026-04-15"
     },
     "21991154 VALVE": {
       "rate": 19500.0,
@@ -1662,9 +1775,9 @@
       "date": "2025-02-07"
     },
     "NUT": {
-      "rate": 120.0,
-      "party": "SUSHEE INFRA & MINING LIMITED- ND",
-      "date": "2026-01-24"
+      "rate": 489.7,
+      "party": "OPCOMMERCE ONLINE PRIVATE LIMITED",
+      "date": "2026-04-13"
     },
     "HOSE": {
       "rate": 2850.0,
@@ -1747,9 +1860,9 @@
       "date": "2024-04-29"
     },
     "VOLVO PIPE": {
-      "rate": 12000.0,
-      "party": "CHENNAI RADHA ENGINEERING WORKS PVT LTD",
-      "date": "2026-01-14"
+      "rate": 12500.0,
+      "party": "BAIN GOLBAL RESOURCES PVT. LTD",
+      "date": "2026-04-11"
     },
     "1433656": {
       "rate": 750.0,
@@ -1827,9 +1940,9 @@
       "date": "2026-02-18"
     },
     "RADIATOR": {
-      "rate": 17500.0,
-      "party": "DECENT CARGO MOVERS PVT.LTD.",
-      "date": "2026-03-05"
+      "rate": 19540.0,
+      "party": "P.C.PATEL MAHALAXMI INFRA LLP",
+      "date": "2026-04-14"
     },
     "21960479": {
       "rate": 12500.0,
@@ -1982,9 +2095,9 @@
       "date": "2026-03-21"
     },
     "AIR DRYER": {
-      "rate": 2000.0,
-      "party": "BSV EARTHMOVERS",
-      "date": "2026-03-27"
+      "rate": 3600.0,
+      "party": "SUSHEE INFRA & MINING LIMITED (JH)",
+      "date": "2026-03-16"
     },
     "COOLANT PIPE": {
       "rate": 1700.0,
@@ -2317,9 +2430,9 @@
       "date": "2024-06-22"
     },
     "ALTERNATOR": {
-      "rate": 16000.0,
-      "party": "INFRASTRUCTURE LOGISTICS PVT LTD",
-      "date": "2026-03-23"
+      "rate": 14500.0,
+      "party": "KARAMJEET SINGH & CO.LTD - KORBA",
+      "date": "2026-04-10"
     },
     "2274689": {
       "rate": 8550.0,
@@ -2662,9 +2775,9 @@
       "date": "2024-05-17"
     },
     "BRAKE SHOE": {
-      "rate": 1400.0,
-      "party": "AGRAWAL AGENCIES",
-      "date": "2026-04-01"
+      "rate": 1360.0,
+      "party": "VIJAY AUOTOMOBILES",
+      "date": "2026-04-15"
     },
     "BRAKE LINING KIT": {
       "rate": 2200.0,
@@ -2932,9 +3045,9 @@
       "date": "2024-05-25"
     },
     "FUEL PUMP": {
-      "rate": 70000.0,
-      "party": "KARAMJEET SINGH & CO. LTD.",
-      "date": "2026-02-20"
+      "rate": 22000.0,
+      "party": "VISHWAKARMA ENTERPRISES",
+      "date": "2026-04-11"
     },
     "1940016": {
       "rate": 4500.0,
@@ -2978,8 +3091,8 @@
     },
     "AIR CONTROL VALVE": {
       "rate": 1800.0,
-      "party": "P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR",
-      "date": "2026-04-07"
+      "party": "P C PATEL INFRA PVT LTD, RAIGARH",
+      "date": "2026-04-15"
     },
     "BRAKE SPRING": {
       "rate": 160.0,
@@ -2992,9 +3105,9 @@
       "date": "2025-08-23"
     },
     "THERMOSTAT": {
-      "rate": 2860.0,
-      "party": "CHENNAI RADHA ENGINEERING WORKS PVT LTD",
-      "date": "2026-01-14"
+      "rate": 1350.0,
+      "party": "INDIA EARTHMOVING SPARES CORPORATION",
+      "date": "2026-04-15"
     },
     "23576707 FMX460": {
       "rate": 17500.0,
@@ -3187,9 +3300,9 @@
       "date": "2026-03-17"
     },
     "BOWL": {
-      "rate": 900.0,
-      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
-      "date": "2024-11-12"
+      "rate": 850.0,
+      "party": "SETHIYA TRADERS",
+      "date": "2026-04-15"
     },
     "STARTER ASSY": {
       "rate": 26900.0,
@@ -3282,9 +3395,9 @@
       "date": "2024-09-26"
     },
     "CONNECTING PIPE": {
-      "rate": 750.0,
-      "party": "AVTAR SINGH & COMPANY",
-      "date": "2026-02-19"
+      "rate": 1500.0,
+      "party": "DECENT CARGO MOVERS PVT.LTD.",
+      "date": "2026-04-01"
     },
     "21286050": {
       "rate": 5500.0,
@@ -3329,7 +3442,7 @@
     "WHEEL BOLT ASSY": {
       "rate": 375.0,
       "party": "S S MUCHANDI ENGINEERS AND CONTRACTORS",
-      "date": "2026-03-23"
+      "date": "2026-04-11"
     },
     "MIRROR": {
       "rate": 900.0,
@@ -3337,9 +3450,9 @@
       "date": "2026-04-09"
     },
     "CLUTCH PULLEY ASSY": {
-      "rate": 4500.0,
-      "party": "P C PATEL INFRA PVT LTD, BHUJ",
-      "date": "2026-03-20"
+      "rate": 6000.0,
+      "party": "HARDESH ORES PVT LTD, SANDUR",
+      "date": "2026-04-11"
     },
     "WHEEL HUB": {
       "rate": 8550.0,
@@ -3372,9 +3485,9 @@
       "date": "2024-06-19"
     },
     "SENSOR": {
-      "rate": 2000.0,
-      "party": "KARAMJEET SINGH & CO. LTD.",
-      "date": "2026-03-09"
+      "rate": 3000.0,
+      "party": "KUMAR ENGINEERS - KOLKATA",
+      "date": "2026-04-15"
     },
     "BOGIE WASHER": {
       "rate": 450.0,
@@ -3452,9 +3565,9 @@
       "date": "2024-06-22"
     },
     "CYLINDER LINER": {
-      "rate": 5000.0,
+      "rate": 3600.0,
       "party": "KARAMJEET SINGH & CO.LTD - KORBA",
-      "date": "2025-05-31"
+      "date": "2026-04-15"
     },
     "SEAL O RING": {
       "rate": 720.0,
@@ -3507,9 +3620,9 @@
       "date": "2024-07-01"
     },
     "A.C.CONDENSOR": {
-      "rate": 16500.0,
-      "party": "GRN CONSTRUCTIONS PVT LTD, HYDERABAD",
-      "date": "2024-07-25"
+      "rate": 9500.0,
+      "party": "TIRUPATI ENTERPRISES, UDAIPUR",
+      "date": "2026-04-06"
     },
     "23508078": {
       "rate": 11300.0,
@@ -3737,9 +3850,9 @@
       "date": "2024-07-10"
     },
     "RELEASE BEARING": {
-      "rate": 8500.0,
-      "party": "AMITHA MINING EQUIPMENTS PVT LTD, HYDERABAD",
-      "date": "2025-07-17"
+      "rate": 9250.0,
+      "party": "KUMAR ENGINEERS - KOLKATA",
+      "date": "2026-04-06"
     },
     "22913290": {
       "rate": 18000.0,
@@ -3832,9 +3945,9 @@
       "date": "2026-01-02"
     },
     "HYDRAULIC PUMP": {
-      "rate": 5500.0,
-      "party": "SRI RAMESH AUTOMOBILES",
-      "date": "2026-03-20"
+      "rate": 12600.0,
+      "party": "SUSHEE INFRA & MINING LIMITED (JH)",
+      "date": "2026-04-13"
     },
     "4T6699,": {
       "rate": 4897.03,
@@ -3892,9 +4005,9 @@
       "date": "2024-07-20"
     },
     "HEAD GASKET SET": {
-      "rate": 7000.0,
-      "party": "TIRUPATI ENTERPRISES",
-      "date": "2025-02-04"
+      "rate": 3350.0,
+      "party": "KARAMJEET SINGH & CO.LTD - KORBA",
+      "date": "2026-04-15"
     },
     "2J3507": {
       "rate": 759.8,
@@ -3937,9 +4050,9 @@
       "date": "2024-07-22"
     },
     "TORSION ARM": {
-      "rate": 5400.0,
-      "party": "P C PATEL INFRA PVT LTD, BHUJ",
-      "date": "2026-03-28"
+      "rate": 2000.0,
+      "party": "SELF",
+      "date": "2026-04-14"
     },
     "14602247": {
       "rate": 36000.0,
@@ -4037,9 +4150,9 @@
       "date": "2024-10-23"
     },
     "FAN RING": {
-      "rate": 7800.0,
-      "party": "AMITHA MINING EQUIPMENTS PVT LTD, HYDERABAD",
-      "date": "2024-10-07"
+      "rate": 11000.0,
+      "party": "S S MUCHANDI ENGINEERS AND CONTRACTORS",
+      "date": "2026-04-13"
     },
     "20541447": {
       "rate": 3000.0,
@@ -4584,7 +4697,7 @@
     "SPRING": {
       "rate": 125.0,
       "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
-      "date": "2026-04-04"
+      "date": "2026-03-16"
     },
     "PLUNGER SPLIT": {
       "rate": 400.0,
@@ -4707,9 +4820,9 @@
       "date": "2026-01-27"
     },
     "GEAR PUMP": {
-      "rate": 8100.0,
-      "party": "P C PATEL INFRA PVT LTD, RAIGARH",
-      "date": "2025-09-05"
+      "rate": 36000.0,
+      "party": "GALAXY INFRATECH",
+      "date": "2026-04-01"
     },
     "2537499 G440REAR": {
       "rate": 2600.0,
@@ -4737,9 +4850,9 @@
       "date": "2025-04-10"
     },
     "END BIT": {
-      "rate": 4250.0,
-      "party": "SETHIYA TRADERS",
-      "date": "2026-03-13"
+      "rate": 11662.0,
+      "party": "OPCOMMERCE ONLINE PRIVATE LIMITED",
+      "date": "2026-03-16"
     },
     "2154938": {
       "rate": 2000.0,
@@ -4749,22 +4862,22 @@
     "ROTOR WITH VALVE PLATE": {
       "rate": 33500.0,
       "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
-      "date": "2026-04-04"
+      "date": "2026-03-16"
     },
     "SWASH PLATE": {
       "rate": 6500.0,
       "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
-      "date": "2026-04-04"
+      "date": "2026-03-16"
     },
     "SHOE PLATE": {
       "rate": 1850.0,
       "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
-      "date": "2026-04-04"
+      "date": "2026-03-16"
     },
     "PISTON SET": {
       "rate": 10500.0,
       "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
-      "date": "2026-04-04"
+      "date": "2026-03-16"
     },
     "21422765": {
       "rate": 3000.0,
@@ -5542,9 +5655,9 @@
       "date": "2025-04-12"
     },
     "AUTO POWER STEERING PUMP": {
-      "rate": 30000.0,
-      "party": "BSV EARTHMOVERS",
-      "date": "2026-03-27"
+      "rate": 22400.0,
+      "party": "TIRUPATI ENTERPRISES",
+      "date": "2026-04-15"
     },
     "VO994933": {
       "rate": 45.0,
@@ -6257,9 +6370,9 @@
       "date": "2024-11-05"
     },
     "PROP. BOLT W/NUT": {
-      "rate": 20.0,
-      "party": "SHAR PROJECTS PRIVATE LIMITED",
-      "date": "2024-11-05"
+      "rate": 100.0,
+      "party": "BAIN GOLBAL RESOURCES PVT. LTD",
+      "date": "2026-04-11"
     },
     "27383379": {
       "rate": 3500.0,
@@ -6267,9 +6380,9 @@
       "date": "2024-11-05"
     },
     "EXHAUST HOSE": {
-      "rate": 1170.0,
-      "party": "P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR",
-      "date": "2025-12-22"
+      "rate": 4000.0,
+      "party": "KARAMJEET SINGH & CO.LTD - KORBA",
+      "date": "2026-04-13"
     },
     "14750700": {
       "rate": 1500.0,
@@ -6922,9 +7035,9 @@
       "date": "2025-07-14"
     },
     "PLOW BOLT": {
-      "rate": 48.0,
-      "party": "MODERN ROAD MAKERS PVT LTD, GUJRAT",
-      "date": "2024-12-20"
+      "rate": 160.0,
+      "party": "OPCOMMERCE ONLINE PRIVATE LIMITED",
+      "date": "2026-04-13"
     },
     "2162257, 1817256": {
       "rate": 4915.0,
@@ -7759,7 +7872,7 @@
     "LOCKING CYLINDER": {
       "rate": 6000.0,
       "party": "HARDESH ORES PVT LTD, SANDUR",
-      "date": "2025-02-08"
+      "date": "2026-04-11"
     },
     "21581522": {
       "rate": 36000.0,
@@ -11092,9 +11205,9 @@
       "date": "2026-03-04"
     },
     "CONDENSOR": {
-      "rate": 7600.0,
-      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
-      "date": "2026-03-21"
+      "rate": 10000.0,
+      "party": "S S MUCHANDI ENGINEERS AND CONTRACTORS",
+      "date": "2026-04-13"
     },
     "2301228": {
       "rate": 3600.0,
@@ -11532,9 +11645,9 @@
       "date": "2025-12-06"
     },
     "SERVICE KIT": {
-      "rate": 18500.0,
-      "party": "KARAMJEET SINGH & CO. LTD.",
-      "date": "2025-10-28"
+      "rate": 45650.0,
+      "party": "EAGLE INFRA INDIA LIMITED",
+      "date": "2026-04-10"
     },
     "1383063 TRUNNION CAP": {
       "rate": 650.0,
@@ -11682,9 +11795,9 @@
       "date": "2025-11-15"
     },
     "SET PLATE": {
-      "rate": 3500.0,
+      "rate": 3600.0,
       "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
-      "date": "2026-04-04"
+      "date": "2026-03-16"
     },
     "LUBE OIL FILTER": {
       "rate": 2890.0,
@@ -12169,12 +12282,12 @@
     "FRICTION PLATE": {
       "rate": 750.0,
       "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
-      "date": "2026-03-28"
+      "date": "2026-04-10"
     },
     "VALVE PLATE": {
       "rate": 5000.0,
       "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
-      "date": "2026-03-28"
+      "date": "2026-04-10"
     },
     "22717828": {
       "rate": 8100.0,
@@ -12787,9 +12900,9 @@
       "date": "2026-02-19"
     },
     "VENTILATING VALVE (18%)": {
-      "rate": 2250.0,
-      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
-      "date": "2026-02-19"
+      "rate": 1700.0,
+      "party": "KUMAR ENGINEERS - KOLKATA",
+      "date": "2026-04-06"
     },
     "1114861": {
       "rate": 140.0,
@@ -13355,6 +13468,51 @@
       "rate": 25000.0,
       "party": "EAGLE INFRA INDIA LIMITED",
       "date": "2026-04-07"
+    },
+    "EBS MODULATOR REPAIR KIT": {
+      "rate": 4500.0,
+      "party": "P C PATEL INFRA PVT LTD, BHUJ",
+      "date": "2026-04-10"
+    },
+    "APM REPAIR KIT": {
+      "rate": 3600.0,
+      "party": "P C PATEL INFRA PVT LTD, BHUJ",
+      "date": "2026-04-10"
+    },
+    "HORN": {
+      "rate": 18000.0,
+      "party": "CUSMAT TECHNOLOGIES PRIVATE LIMITED",
+      "date": "2026-04-10"
+    },
+    "CLAMP HOSE": {
+      "rate": 1800.0,
+      "party": "TAURIAN MPS LIMITED",
+      "date": "2026-04-10"
+    },
+    "STEERING COLUMN ASSY": {
+      "rate": 69000.0,
+      "party": "CUSMAT TECHNOLOGIES PRIVATE LIMITED",
+      "date": "2026-04-06"
+    },
+    "MAGNETIC PLUG": {
+      "rate": 990.0,
+      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
+      "date": "2026-04-14"
+    },
+    "BRAKE PAD": {
+      "rate": 1650.0,
+      "party": "YM LANDMARK PRIVATE LIMITED",
+      "date": "2026-04-14"
+    },
+    "SERVICE KIT INJECTOR": {
+      "rate": 34500.0,
+      "party": "SANATAN TRADING CO.",
+      "date": "2026-04-15"
+    },
+    "LOCK PIN -18%": {
+      "rate": 525.0,
+      "party": "NARAYANI SONS INDIA PVT. LTD, ODISHA",
+      "date": "2026-04-15"
     }
   },
   "last_sale_rate_party": {
@@ -13712,7 +13870,7 @@
     },
     "FRONT WHEEL HUB|||P C PATEL INFRA PRIVATE LTD- B": {
       "rate": 9000.0,
-      "date": "2024-04-17"
+      "date": "2026-04-14"
     },
     "FRONT WHEEL HUB|||P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR": {
       "rate": 9000.0,
@@ -15532,7 +15690,7 @@
     },
     "HANGER|||P C PATEL INFRA PRIVATE LIMITED - TELANGANA": {
       "rate": 11700.0,
-      "date": "2026-01-19"
+      "date": "2026-04-13"
     },
     "1163758|||BERAR INTEGRATION": {
       "rate": 20000.0,
@@ -16323,8 +16481,8 @@
       "date": "2024-05-21"
     },
     "HUB CAP|||SANATAN TRADING CO.": {
-      "rate": 985.0,
-      "date": "2024-12-28"
+      "rate": 1240.0,
+      "date": "2026-04-10"
     },
     "PULLEY|||SANATAN TRADING CO.": {
       "rate": 1900.0,
@@ -16343,8 +16501,8 @@
       "date": "2025-11-14"
     },
     "SD COMPRESSOR|||INFRASTRUCTURE LOGISTICS PVT LTD, SANDUR": {
-      "rate": 17500.0,
-      "date": "2024-05-22"
+      "rate": 18500.0,
+      "date": "2026-04-11"
     },
     "RECEIVER DRIER|||INFRASTRUCTURE LOGISTICS PVT LTD, SANDUR": {
       "rate": 5000.0,
@@ -16359,8 +16517,8 @@
       "date": "2024-05-22"
     },
     "SD COMPRESSOR|||HARDESH ORES PVT LTD, SANDUR": {
-      "rate": 17500.0,
-      "date": "2024-05-22"
+      "rate": 18500.0,
+      "date": "2026-04-11"
     },
     "20744730|||KARAMJEET SINGH & CO. LTD.": {
       "rate": 6500.0,
@@ -17339,8 +17497,8 @@
       "date": "2025-12-24"
     },
     "WATER PUMP|||SANATAN TRADING CO.": {
-      "rate": 6000.0,
-      "date": "2024-06-22"
+      "rate": 5600.0,
+      "date": "2026-04-10"
     },
     "22902431|||TATHAGAT SALES AGENCY": {
       "rate": 4200.0,
@@ -18651,8 +18809,8 @@
       "date": "2025-04-14"
     },
     "BEARING|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
-      "rate": 3000.0,
-      "date": "2026-04-04"
+      "rate": 4600.0,
+      "date": "2026-03-16"
     },
     "2145694/1901729|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
       "rate": 3500.0,
@@ -19476,19 +19634,19 @@
     },
     "ROTOR WITH VALVE PLATE|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
       "rate": 33500.0,
-      "date": "2026-04-04"
+      "date": "2026-03-16"
     },
     "SWASH PLATE|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
       "rate": 6500.0,
-      "date": "2026-04-04"
+      "date": "2026-03-16"
     },
     "SHOE PLATE|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
       "rate": 1850.0,
-      "date": "2026-04-04"
+      "date": "2026-03-16"
     },
     "PISTON SET|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
       "rate": 10500.0,
-      "date": "2026-04-04"
+      "date": "2026-03-16"
     },
     "21422765|||HYLIFT ENGINEERING": {
       "rate": 3000.0,
@@ -21752,7 +21910,7 @@
     },
     "CRADDLE BUSH|||AMITHA MINING EQUIPMENTS PVT LTD, HYDERABAD": {
       "rate": 7000.0,
-      "date": "2026-02-25"
+      "date": "2026-04-15"
     },
     "BOGIE|||AMITHA MINING EQUIPMENTS PVT LTD, HYDERABAD": {
       "rate": 14000.0,
@@ -22179,8 +22337,8 @@
       "date": "2024-11-19"
     },
     "BEARING PULLEY|||SETHIYA TRADERS": {
-      "rate": 2250.0,
-      "date": "2024-11-19"
+      "rate": 2100.0,
+      "date": "2026-04-13"
     },
     "2014389  P410|||P.C.PATEL MAHALAXMI INFRA LLP": {
       "rate": 8000.0,
@@ -22976,7 +23134,7 @@
     },
     "NUT|||OPCOMMERCE ONLINE PRIVATE LIMITED": {
       "rate": 489.7,
-      "date": "2024-12-27"
+      "date": "2026-04-13"
     },
     "20479636|||AGARWAL EARTHMOVING ENTERPRISES": {
       "rate": 150.0,
@@ -23052,7 +23210,7 @@
     },
     "AIR CONTROL VALVE|||P C PATEL INFRA PVT LTD, RAIGARH": {
       "rate": 1800.0,
-      "date": "2026-01-09"
+      "date": "2026-04-15"
     },
     "FRONT HUB|||P C PATEL INFRA PRIVATE LTD- B": {
       "rate": 9000.0,
@@ -24143,8 +24301,8 @@
       "date": "2025-02-04"
     },
     "SOLENOID VALVE|||P C PATEL INFRA PVT LTD, BHUJ": {
-      "rate": 13500.0,
-      "date": "2026-02-24"
+      "rate": 21000.0,
+      "date": "2026-04-10"
     },
     "PISTON RING|||TIRUPATI ENTERPRISES": {
       "rate": 2250.0,
@@ -24360,7 +24518,7 @@
     },
     "LOCKING CYLINDER|||HARDESH ORES PVT LTD, SANDUR": {
       "rate": 6000.0,
-      "date": "2025-02-08"
+      "date": "2026-04-11"
     },
     "FUEL FILTER|||PELICAN INFRA EQUIPMENTS": {
       "rate": 3500.0,
@@ -24680,7 +24838,7 @@
     },
     "BEARING|||P R AUTO SOLUTION": {
       "rate": 6000.0,
-      "date": "2025-02-19"
+      "date": "2026-04-06"
     },
     "22841212|||PAVAN AUTO CENTRE": {
       "rate": 4500.0,
@@ -24796,7 +24954,7 @@
     },
     "ENGINE MOUNTING|||TIRUPATI ENTERPRISES": {
       "rate": 3700.0,
-      "date": "2025-02-22"
+      "date": "2026-04-15"
     },
     "1386105|||STHIRTA ENTERPRISES PRIVATE LIMITED": {
       "rate": 450.0,
@@ -25875,8 +26033,8 @@
       "date": "2026-03-04"
     },
     "SOLENOID VALVE|||P.C.PATEL MAHALAXMI INFRA LLP": {
-      "rate": 4950.0,
-      "date": "2025-03-28"
+      "rate": 12600.0,
+      "date": "2026-03-16"
     },
     "FUEL WATER SEPARATOR ASSY|||P.C.PATEL MAHALAXMI INFRA LLP": {
       "rate": 6096.0,
@@ -26307,8 +26465,8 @@
       "date": "2026-01-23"
     },
     "HYDRAULIC PUMP|||P C PATEL INFRA PVT LTD, BHUJ": {
-      "rate": 4500.0,
-      "date": "2026-01-02"
+      "rate": 70000.0,
+      "date": "2026-04-10"
     },
     "14616530|||P.C.PATEL MAHALAXMI INFRA LLP": {
       "rate": 12600.0,
@@ -26739,8 +26897,8 @@
       "date": "2025-04-23"
     },
     "ACCESSORY TENSIONER|||TIRUPATI ENTERPRISES": {
-      "rate": 4430.0,
-      "date": "2026-02-09"
+      "rate": 2800.0,
+      "date": "2026-04-15"
     },
     "GASKET|||TIRUPATI ENTERPRISES": {
       "rate": 165.0,
@@ -26979,8 +27137,8 @@
       "date": "2025-05-05"
     },
     "CLUTCH PULLEY ASSY|||P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR": {
-      "rate": 4500.0,
-      "date": "2025-05-05"
+      "rate": 4750.0,
+      "date": "2026-04-11"
     },
     "11N6-90800|||P.C.PATEL MAHALAXMI INFRA LLP": {
       "rate": 2700.0,
@@ -27771,12 +27929,12 @@
       "date": "2025-05-31"
     },
     "CYLINDER LINER|||KARAMJEET SINGH & CO.LTD - KORBA": {
-      "rate": 5000.0,
-      "date": "2025-05-31"
+      "rate": 3600.0,
+      "date": "2026-04-15"
     },
     "PISTON RING|||KARAMJEET SINGH & CO.LTD - KORBA": {
-      "rate": 2200.0,
-      "date": "2025-05-31"
+      "rate": 1100.0,
+      "date": "2026-04-15"
     },
     "1200011343|||SUSHEE INFRA & MINING LIMITED - KOHIMA": {
       "rate": 16200.0,
@@ -29627,8 +29785,8 @@
       "date": "2026-01-27"
     },
     "WATER PUMP|||TIRUPATI ENTERPRISES": {
-      "rate": 4200.0,
-      "date": "2025-07-31"
+      "rate": 12500.0,
+      "date": "2026-04-15"
     },
     "COMPRESSOR COMPLETE CYLINDER HEAD|||TIRUPATI ENTERPRISES": {
       "rate": 11500.0,
@@ -31279,12 +31437,12 @@
       "date": "2025-11-15"
     },
     "SET PLATE|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
-      "rate": 3500.0,
-      "date": "2026-04-04"
+      "rate": 3600.0,
+      "date": "2026-03-16"
     },
     "SPRING|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
       "rate": 125.0,
-      "date": "2026-04-04"
+      "date": "2026-03-16"
     },
     "GASKET|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
       "rate": 5500.0,
@@ -31956,7 +32114,7 @@
     },
     "AUTO POWER STEERING PUMP|||S S MUCHANDI ENGINEERS AND CONTRACTORS": {
       "rate": 28000.0,
-      "date": "2025-12-19"
+      "date": "2026-04-13"
     },
     "SHOCK ABSORBER|||S S MUCHANDI ENGINEERS AND CONTRACTORS": {
       "rate": 3200.0,
@@ -32452,7 +32610,7 @@
     },
     "REAR HUB|||P C PATEL INFRA PRIVATE LIMITED - TELANGANA": {
       "rate": 9000.0,
-      "date": "2026-01-10"
+      "date": "2026-04-13"
     },
     "23894645|||EAGLE INFRA INDIA LIMITED": {
       "rate": 56500.0,
@@ -32564,7 +32722,7 @@
     },
     "WHEEL BOLT ASSY|||S S MUCHANDI ENGINEERS AND CONTRACTORS": {
       "rate": 375.0,
-      "date": "2026-03-23"
+      "date": "2026-04-11"
     },
     "OIL PRESSURE SWITCH|||P C PATEL INFRA PRIVATE LIMITED - TELANGANA": {
       "rate": 1800.0,
@@ -32763,8 +32921,8 @@
       "date": "2026-01-21"
     },
     "BEARING PULLEY|||S R EARTHMOVERS - MUM (S)": {
-      "rate": 1850.0,
-      "date": "2026-01-21"
+      "rate": 1180.0,
+      "date": "2026-04-13"
     },
     "1493771|||INDIA SHINE ENTERPRISES, RAIPUR": {
       "rate": 4500.0,
@@ -33004,7 +33162,7 @@
     },
     "BRAKE LINING SET|||S S MUCHANDI ENGINEERS AND CONTRACTORS": {
       "rate": 2500.0,
-      "date": "2026-01-29"
+      "date": "2026-04-13"
     },
     "BRAKE ADJUSTER|||S S MUCHANDI ENGINEERS AND CONTRACTORS": {
       "rate": 1050.0,
@@ -33067,8 +33225,8 @@
       "date": "2026-01-31"
     },
     "BELT TENSIONER|||KUMAR ENGINEERS - KOLKATA": {
-      "rate": 2800.0,
-      "date": "2026-02-02"
+      "rate": 2850.0,
+      "date": "2026-04-11"
     },
     "23172347|||TIRUPATI ENTERPRISES, UDAIPUR": {
       "rate": 5000.0,
@@ -33832,7 +33990,7 @@
     },
     "VALVE PLATE|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
       "rate": 5000.0,
-      "date": "2026-03-28"
+      "date": "2026-04-10"
     },
     "SPRING PLATE|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
       "rate": 1800.0,
@@ -34080,7 +34238,7 @@
     },
     "CABLE|||P C PATEL INFRA PRIVATE LTD- B": {
       "rate": 3500.0,
-      "date": "2026-03-07"
+      "date": "2026-04-10"
     },
     "ACCESSORY TENSIONER|||DECENT CARGO MOVERS PVT.LTD.": {
       "rate": 3000.0,
@@ -34219,8 +34377,8 @@
       "date": "2026-03-12"
     },
     "SHOCK ABSORBER|||BSV EARTHMOVERS": {
-      "rate": 3200.0,
-      "date": "2026-03-12"
+      "rate": 3500.0,
+      "date": "2026-04-10"
     },
     "POLY VEE BELT|||SANATAN TRADING CO.": {
       "rate": 1750.0,
@@ -34804,7 +34962,7 @@
     },
     "FRICTION PLATE|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
       "rate": 750.0,
-      "date": "2026-03-28"
+      "date": "2026-04-10"
     },
     "STEEL PLATE|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
       "rate": 750.0,
@@ -35081,6 +35239,266 @@
     "SHOCK ABSORBER|||SUSHEE INFRA & MINING LIMITED (JH)": {
       "rate": 3000.0,
       "date": "2026-04-09"
+    },
+    "EBS MODULATOR REPAIR KIT|||P C PATEL INFRA PVT LTD, BHUJ": {
+      "rate": 4500.0,
+      "date": "2026-04-10"
+    },
+    "APM REPAIR KIT|||P C PATEL INFRA PVT LTD, BHUJ": {
+      "rate": 3600.0,
+      "date": "2026-04-10"
+    },
+    "VENTILATING VALVE (18%)|||SANATAN TRADING CO.": {
+      "rate": 2000.0,
+      "date": "2026-04-10"
+    },
+    "SERVICE KIT|||EAGLE INFRA INDIA LIMITED": {
+      "rate": 45650.0,
+      "date": "2026-04-10"
+    },
+    "HORN|||CUSMAT TECHNOLOGIES PRIVATE LIMITED": {
+      "rate": 18000.0,
+      "date": "2026-04-10"
+    },
+    "SOLENOID VALVE|||TAURIAN MPS LIMITED": {
+      "rate": 27000.0,
+      "date": "2026-04-10"
+    },
+    "CLAMP HOSE|||TAURIAN MPS LIMITED": {
+      "rate": 1800.0,
+      "date": "2026-04-10"
+    },
+    "ALTERNATOR|||KARAMJEET SINGH & CO.LTD - KORBA": {
+      "rate": 14500.0,
+      "date": "2026-04-10"
+    },
+    "CONDENSOR|||OPCOMMERCE ONLINE PRIVATE LIMITED": {
+      "rate": 11000.0,
+      "date": "2026-03-31"
+    },
+    "CONNECTING PIPE|||DECENT CARGO MOVERS PVT.LTD.": {
+      "rate": 1500.0,
+      "date": "2026-04-01"
+    },
+    "GEAR PUMP|||GALAXY INFRATECH": {
+      "rate": 36000.0,
+      "date": "2026-04-01"
+    },
+    "AUTO POWER STEERING PUMP|||TIRUPATI ENTERPRISES, UDAIPUR": {
+      "rate": 22400.0,
+      "date": "2026-04-06"
+    },
+    "A.C.CONDENSOR|||TIRUPATI ENTERPRISES, UDAIPUR": {
+      "rate": 9500.0,
+      "date": "2026-04-06"
+    },
+    "STEERING COLUMN ASSY|||CUSMAT TECHNOLOGIES PRIVATE LIMITED": {
+      "rate": 69000.0,
+      "date": "2026-04-06"
+    },
+    "FUEL PUMP|||SETHIYA TRADERS": {
+      "rate": 6500.0,
+      "date": "2026-04-06"
+    },
+    "RELEASE BEARING|||KUMAR ENGINEERS - KOLKATA": {
+      "rate": 9250.0,
+      "date": "2026-04-06"
+    },
+    "VENTILATING VALVE (18%)|||KUMAR ENGINEERS - KOLKATA": {
+      "rate": 1700.0,
+      "date": "2026-04-06"
+    },
+    "BUSH|||KUMAR ENGINEERS - KOLKATA": {
+      "rate": 700.0,
+      "date": "2026-04-06"
+    },
+    "LOCKING CYLINDER|||INFRASTRUCTURE LOGISTICS PVT LTD, SANDUR": {
+      "rate": 6000.0,
+      "date": "2026-04-11"
+    },
+    "CLUTCH PULLEY ASSY|||INFRASTRUCTURE LOGISTICS PVT LTD, SANDUR": {
+      "rate": 6000.0,
+      "date": "2026-04-11"
+    },
+    "CLUTCH PULLEY ASSY|||HARDESH ORES PVT LTD, SANDUR": {
+      "rate": 6000.0,
+      "date": "2026-04-11"
+    },
+    "ACCESSORY TENSIONER|||INDIA SHINE ENTERPRISES, RAIPUR": {
+      "rate": 4000.0,
+      "date": "2026-04-11"
+    },
+    "AUTO POWER STEERING PUMP|||INDIA SHINE ENTERPRISES, RAIPUR": {
+      "rate": 25000.0,
+      "date": "2026-04-11"
+    },
+    "RECEIVER DRIER|||DEVSHI EARTHMOVERS PVT.LTD -MH": {
+      "rate": 1500.0,
+      "date": "2026-04-11"
+    },
+    "AIR BRAKE COMPRESSOR|||PANCHSHEEL TRADERS (KOL)": {
+      "rate": 40000.0,
+      "date": "2026-04-11"
+    },
+    "SEAL KIT|||YOGAYATAN PORTS PVT LTD": {
+      "rate": 3450.0,
+      "date": "2026-04-11"
+    },
+    "BELT TENSIONER|||TIRUPATI ENTERPRISES": {
+      "rate": 2800.0,
+      "date": "2026-04-11"
+    },
+    "VOLVO PIPE|||BAIN GOLBAL RESOURCES PVT. LTD": {
+      "rate": 12500.0,
+      "date": "2026-04-11"
+    },
+    "TORSION ARM|||BAIN GOLBAL RESOURCES PVT. LTD": {
+      "rate": 6000.0,
+      "date": "2026-04-11"
+    },
+    "PROP. BOLT W/NUT|||BAIN GOLBAL RESOURCES PVT. LTD": {
+      "rate": 100.0,
+      "date": "2026-04-11"
+    },
+    "ENGINE MOUNTING|||SRI RAMESH AUTOMOBILES": {
+      "rate": 5500.0,
+      "date": "2026-04-11"
+    },
+    "FUEL PUMP|||VISHWAKARMA ENTERPRISES": {
+      "rate": 22000.0,
+      "date": "2026-04-11"
+    },
+    "REAR HUB|||P C PATEL INFRA PRIVATE LIMITED - MP": {
+      "rate": 9000.0,
+      "date": "2026-04-13"
+    },
+    "RADIATOR|||SUSHEE INFRA & MINING LIMITED (JH)": {
+      "rate": 18000.0,
+      "date": "2026-04-13"
+    },
+    "TORSION ARM|||SUSHEE INFRA & MINING LIMITED (JH)": {
+      "rate": 6300.0,
+      "date": "2026-04-13"
+    },
+    "HYDRAULIC PUMP|||SUSHEE INFRA & MINING LIMITED (JH)": {
+      "rate": 12600.0,
+      "date": "2026-04-13"
+    },
+    "EXHAUST HOSE|||KARAMJEET SINGH & CO.LTD - KORBA": {
+      "rate": 4000.0,
+      "date": "2026-04-13"
+    },
+    "CONDENSOR|||S S MUCHANDI ENGINEERS AND CONTRACTORS": {
+      "rate": 10000.0,
+      "date": "2026-04-13"
+    },
+    "FAN RING|||S S MUCHANDI ENGINEERS AND CONTRACTORS": {
+      "rate": 11000.0,
+      "date": "2026-04-13"
+    },
+    "BEARING PULLEY|||SPARE PART CONNECTION": {
+      "rate": 1350.0,
+      "date": "2026-04-13"
+    },
+    "PLOW BOLT|||OPCOMMERCE ONLINE PRIVATE LIMITED": {
+      "rate": 160.0,
+      "date": "2026-04-13"
+    },
+    "TORSION ARM|||P C PATEL INFRA PRIVATE LTD- B": {
+      "rate": 5400.0,
+      "date": "2026-04-14"
+    },
+    "RADIATOR|||P.C.PATEL MAHALAXMI INFRA LLP": {
+      "rate": 19540.0,
+      "date": "2026-04-14"
+    },
+    "TORSION ARM|||SELF": {
+      "rate": 2000.0,
+      "date": "2026-04-14"
+    },
+    "MAGNETIC PLUG|||P C PATEL INFRA PRIVATE LIMITED - TELANGANA": {
+      "rate": 990.0,
+      "date": "2026-04-14"
+    },
+    "BRAKE PAD|||YM LANDMARK PRIVATE LIMITED": {
+      "rate": 1650.0,
+      "date": "2026-04-14"
+    },
+    "SOLENOID VALVE|||VARSHA ENTERPRISES (SALE)": {
+      "rate": 4000.0,
+      "date": "2026-03-16"
+    },
+    "FLYWHEEL RING|||SANATAN TRADING CO.": {
+      "rate": 3400.0,
+      "date": "2026-03-16"
+    },
+    "COOLANT TANK|||SANATAN TRADING CO.": {
+      "rate": 5000.0,
+      "date": "2026-03-16"
+    },
+    "END BIT|||OPCOMMERCE ONLINE PRIVATE LIMITED": {
+      "rate": 11662.0,
+      "date": "2026-03-16"
+    },
+    "AIR DRYER|||SUSHEE INFRA & MINING LIMITED (JH)": {
+      "rate": 3600.0,
+      "date": "2026-03-16"
+    },
+    "THERMOSTAT|||INDIA EARTHMOVING SPARES CORPORATION": {
+      "rate": 1350.0,
+      "date": "2026-04-15"
+    },
+    "TORQUE ARM BUSH|||SUSHEE INFRA & MINING LIMITED (JH)": {
+      "rate": 1450.0,
+      "date": "2026-04-15"
+    },
+    "SERVICE KIT INJECTOR|||SANATAN TRADING CO.": {
+      "rate": 34500.0,
+      "date": "2026-04-15"
+    },
+    "BOWL|||SETHIYA TRADERS": {
+      "rate": 850.0,
+      "date": "2026-04-15"
+    },
+    "AUTO POWER STEERING PUMP|||TIRUPATI ENTERPRISES": {
+      "rate": 22400.0,
+      "date": "2026-04-15"
+    },
+    "BRAKE SHOE|||VIJAY AUOTOMOBILES": {
+      "rate": 1360.0,
+      "date": "2026-04-15"
+    },
+    "ACCESSORY TENSIONER|||NARAYANI SONS INDIA PVT. LTD, ODISHA": {
+      "rate": 3900.0,
+      "date": "2026-04-15"
+    },
+    "BEARING PULLEY|||NARAYANI SONS INDIA PVT. LTD, ODISHA": {
+      "rate": 3850.0,
+      "date": "2026-04-15"
+    },
+    "BUSH|||NARAYANI SONS INDIA PVT. LTD, ODISHA": {
+      "rate": 200.0,
+      "date": "2026-04-15"
+    },
+    "LOCK PIN -18%|||NARAYANI SONS INDIA PVT. LTD, ODISHA": {
+      "rate": 525.0,
+      "date": "2026-04-15"
+    },
+    "SENSOR|||KUMAR ENGINEERS - KOLKATA": {
+      "rate": 3000.0,
+      "date": "2026-04-15"
+    },
+    "SWITCH|||KUMAR ENGINEERS - KOLKATA": {
+      "rate": 9350.0,
+      "date": "2026-04-15"
+    },
+    "HUB CAP|||KUMAR ENGINEERS - KOLKATA": {
+      "rate": 850.0,
+      "date": "2026-04-15"
+    },
+    "HEAD GASKET SET|||KARAMJEET SINGH & CO.LTD - KORBA": {
+      "rate": 3350.0,
+      "date": "2026-04-15"
     }
   }
 }

@@ -360,6 +360,109 @@ export default function App() {
   const [mapPasteText, setMapPasteText]       = createSignal("");
   const [mapQuery, setMapQuery]               = createSignal("");
 
+  // ── Voucher builder ───────────────────────────────────────────────────────
+  const [vchType,       setVchType]       = createSignal("Sales");
+  const [vchDate,       setVchDate]       = createSignal(new Date().toISOString().slice(0, 10));
+  const [vchParty,      setVchParty]      = createSignal("");
+  const [vchPartyQuery, setVchPartyQuery] = createSignal("");
+  const [vchVchNo,      setVchVchNo]      = createSignal("");
+  const [vchNarration,  setVchNarration]  = createSignal("");
+  const [vchGstMode,    setVchGstMode]    = createSignal("intra"); // "intra"|"inter"|"none"
+  const [vchLines,      setVchLines]      = createSignal([]);
+  const [vchPartQuery,  setVchPartQuery]  = createSignal("");
+  const [vchStatus,     setVchStatus]     = createSignal(null);  // null | {ok, message}
+  const [vchPosting,    setVchPosting]    = createSignal(false);
+  const [vchShowPreview,setVchShowPreview]= createSignal(false);
+
+  const BRIDGE_URL = "http://127.0.0.1:5050";
+
+  const vchAddLine = (sku) => {
+    const newLine = {
+      _id:     Date.now(),
+      name:    sku.name,
+      part_no: sku.part_no || "",
+      hsn:     sku.hsn     || "",
+      gst_pct: sku.hsn ? (String(sku.hsn).startsWith("84") ? 18 : 18) : 18,
+      qty:     1,
+      rate:    sku.avg_sell > 0 ? sku.avg_sell : (sku.avg_cost > 0 ? sku.avg_cost : 0),
+      unit:    "Nos",
+    };
+    setVchLines(prev => [...prev, newLine]);
+    setVchPartQuery("");
+  };
+
+  const vchUpdateLine = (id, field, val) =>
+    setVchLines(prev => prev.map(l => l._id === id ? { ...l, [field]: val } : l));
+
+  const vchRemoveLine = (id) =>
+    setVchLines(prev => prev.filter(l => l._id !== id));
+
+  const vchTotals = createMemo(() => {
+    const lines = vchLines();
+    const subtotal = lines.reduce((a, l) => a + (l.qty || 0) * (l.rate || 0), 0);
+    let gst = 0;
+    if (vchGstMode() !== "none") {
+      lines.forEach(l => { gst += (l.qty || 0) * (l.rate || 0) * (l.gst_pct || 0) / 100; });
+    }
+    return { subtotal, gst: Math.round(gst * 100) / 100, total: Math.round((subtotal + gst) * 100) / 100 };
+  });
+
+  const vchPartySuggestions = createMemo(() => {
+    const q = vchPartyQuery().trim().toLowerCase();
+    if (q.length < 1) return [];
+    const isSale = ["Sales", "Credit Note"].includes(vchType());
+    const list = isSale ? (data()?.clients || []) : (data()?.suppliers || []);
+    return list.filter(p => p.name.toLowerCase().includes(q)).slice(0, 8);
+  });
+
+  const vchPartResults = createMemo(() =>
+    vchPartQuery().length >= 2 ? searchCatalog(vchPartQuery(), catalog(), 10) : []
+  );
+
+  const postVoucher = async () => {
+    if (!vchParty()) { setVchStatus({ ok: false, message: "Party name is required" }); return; }
+    if (vchLines().filter(l => l.qty > 0 && l.rate > 0).length === 0) {
+      setVchStatus({ ok: false, message: "Add at least one line item with qty and rate" }); return;
+    }
+    setVchPosting(true);
+    setVchStatus(null);
+    try {
+      const resp = await fetch(`${BRIDGE_URL}/api/post-voucher`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          vch_type:  vchType(),
+          date:      vchDate(),
+          party:     vchParty(),
+          vch_no:    vchVchNo(),
+          narration: vchNarration(),
+          gst_mode:  vchGstMode(),
+          lines: vchLines().map(l => ({
+            name:    l.name,
+            hsn:     l.hsn,
+            qty:     parseFloat(l.qty) || 0,
+            rate:    parseFloat(l.rate) || 0,
+            unit:    l.unit || "Nos",
+            gst_pct: parseFloat(l.gst_pct) || 0,
+          })),
+        }),
+      });
+      const data2 = await resp.json();
+      setVchStatus(data2);
+      if (data2.ok) {
+        // Reset form on success
+        setVchLines([]);
+        setVchParty("");
+        setVchPartyQuery("");
+        setVchVchNo("");
+        setVchNarration("");
+      }
+    } catch (e) {
+      setVchStatus({ ok: false, message: `Bridge not reachable — is tally_bridge.py running? (${e.message})` });
+    }
+    setVchPosting(false);
+  };
+
   // ── Load data ────────────────────────────────────────────────────────────
   onMount(async () => {
     try {
@@ -956,7 +1059,7 @@ export default function App() {
         <For each={[
           ["hub","Part Hub"], ["quote","Quote"], ["po","PO"], ["orders","Orders"],
           ["alerts","Alerts"], ["debtors","Debtors"], ["network","Network"], ["inventory","Inventory"],
-          ["supplier-maps","Supplier Maps"], ["horizon","Horizon"],
+          ["supplier-maps","Supplier Maps"], ["horizon","Horizon"], ["bill","New Bill"],
         ]}>
           {([v, label]) => (
             <button onClick={() => setView(v)}
@@ -965,6 +1068,7 @@ export default function App() {
                 v === "alerts"  ? "border-ptc-red/50 text-ptc-red hover:border-ptc-red hover:bg-ptc-red/10" :
                 v === "debtors" ? "border-ptc-orange/50 text-ptc-orange hover:border-ptc-orange hover:bg-ptc-orange/10" :
                 v === "orders"  ? "border-ptc-yellow/40 text-ptc-yellow/80 hover:border-ptc-yellow hover:text-ptc-yellow" :
+                v === "bill"    ? "border-ptc-green/50 text-ptc-green hover:border-ptc-green hover:bg-ptc-green/10" :
                 "border-ptc-base02 text-ptc-base0/70 hover:border-ptc-base0/60 hover:text-ptc-base0 hover:bg-ptc-base02/50"
               }`}>
               {label}
@@ -2753,6 +2857,294 @@ export default function App() {
                   </div>
                 </div>
               </div>
+            </div>
+          </Show>
+
+          {/* ════════════════════════════════════════════════════
+              NEW BILL — Tally Voucher Write
+          ════════════════════════════════════════════════════ */}
+          <Show when={view() === "bill"}>
+            <div class="flex-1 flex overflow-hidden">
+
+              {/* ── Left: builder ── */}
+              <div class="flex-1 flex flex-col overflow-hidden border-r border-ptc-base02">
+
+                {/* Header */}
+                <div class="px-5 py-3 border-b border-ptc-base02 shrink-0 flex items-center gap-4">
+                  <div>
+                    <div class="text-xs uppercase tracking-widest font-bold text-ptc-base0/50">New Bill — Post to Tally</div>
+                    <div class="text-xs text-ptc-base0/25 mt-0.5">Creates a voucher directly in TallyPrime via the bridge API</div>
+                  </div>
+                  <Show when={vchStatus()}>
+                    <div class={`ml-auto text-sm font-bold px-4 py-2 border ${vchStatus().ok ? "border-ptc-green text-ptc-green bg-ptc-green/10" : "border-ptc-red text-ptc-red bg-ptc-red/10"}`}>
+                      {vchStatus().ok ? "✓" : "✗"} {vchStatus().message}
+                    </div>
+                  </Show>
+                </div>
+
+                {/* Voucher metadata row */}
+                <div class="px-5 py-4 border-b border-ptc-base02 shrink-0 grid grid-cols-4 gap-4">
+
+                  {/* Type */}
+                  <div class="flex flex-col gap-1">
+                    <label class="text-xs uppercase tracking-widest text-ptc-base0/40">Voucher Type</label>
+                    <select
+                      class="bg-ptc-base02 border border-ptc-base02 text-ptc-base0 text-sm px-3 py-2 font-mono focus:outline-none focus:border-ptc-base0/40"
+                      value={vchType()}
+                      onChange={(e) => { setVchType(e.target.value); setVchParty(""); setVchPartyQuery(""); }}>
+                      <option value="Sales">Sales (Invoice)</option>
+                      <option value="Purchase">Purchase (Bill)</option>
+                      <option value="Credit Note">Credit Note</option>
+                      <option value="Debit Note">Debit Note</option>
+                    </select>
+                  </div>
+
+                  {/* Date */}
+                  <div class="flex flex-col gap-1">
+                    <label class="text-xs uppercase tracking-widest text-ptc-base0/40">Date</label>
+                    <input type="date"
+                      class="bg-ptc-base02 border border-ptc-base02 text-ptc-base0 text-sm px-3 py-2 font-mono focus:outline-none focus:border-ptc-base0/40"
+                      value={vchDate()}
+                      onInput={(e) => setVchDate(e.target.value)} />
+                  </div>
+
+                  {/* Voucher No */}
+                  <div class="flex flex-col gap-1">
+                    <label class="text-xs uppercase tracking-widest text-ptc-base0/40">Voucher No. <span class="text-ptc-base0/20">(blank = auto)</span></label>
+                    <input type="text"
+                      class="bg-ptc-base02 border border-ptc-base02 text-ptc-base0 text-sm px-3 py-2 font-mono placeholder:text-ptc-base0/25 focus:outline-none focus:border-ptc-base0/40"
+                      placeholder="Auto"
+                      value={vchVchNo()}
+                      onInput={(e) => setVchVchNo(e.target.value)} />
+                  </div>
+
+                  {/* GST Mode */}
+                  <div class="flex flex-col gap-1">
+                    <label class="text-xs uppercase tracking-widest text-ptc-base0/40">GST Type</label>
+                    <select
+                      class="bg-ptc-base02 border border-ptc-base02 text-ptc-base0 text-sm px-3 py-2 font-mono focus:outline-none focus:border-ptc-base0/40"
+                      value={vchGstMode()}
+                      onChange={(e) => setVchGstMode(e.target.value)}>
+                      <option value="intra">Intra-state (CGST + SGST)</option>
+                      <option value="inter">Inter-state (IGST)</option>
+                      <option value="none">No GST</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Party row */}
+                <div class="px-5 py-3 border-b border-ptc-base02 shrink-0 grid grid-cols-2 gap-4">
+                  {/* Party autocomplete */}
+                  <div class="flex flex-col gap-1 relative">
+                    <label class="text-xs uppercase tracking-widest text-ptc-base0/40">
+                      {["Sales","Credit Note"].includes(vchType()) ? "Customer" : "Supplier"} <span class="text-ptc-base0/20">(must match Tally ledger name exactly)</span>
+                    </label>
+                    <input type="text"
+                      class="bg-ptc-base02 border border-ptc-base0/40 text-ptc-base0 text-sm px-3 py-2 font-mono placeholder:text-ptc-base0/25 focus:outline-none focus:border-ptc-yellow"
+                      placeholder={["Sales","Credit Note"].includes(vchType()) ? "Search client name..." : "Search supplier name..."}
+                      value={vchPartyQuery()}
+                      onInput={(e) => { setVchPartyQuery(e.target.value); setVchParty(e.target.value); }} />
+                    <Show when={vchPartySuggestions().length > 0}>
+                      <div class="absolute top-full left-0 right-0 z-30 bg-ptc-base02 border border-ptc-base0/20 shadow-lg max-h-52 overflow-y-auto">
+                        <For each={vchPartySuggestions()}>
+                          {(p) => (
+                            <button class="w-full text-left px-3 py-2 text-sm hover:bg-ptc-base0/10 border-b border-ptc-base02/50 flex justify-between items-center"
+                              onClick={() => { setVchParty(p.name); setVchPartyQuery(p.name); }}>
+                              <span class="font-bold truncate">{p.name}</span>
+                              <span class="text-ptc-base0/30 text-xs shrink-0 ml-2">{currency(p.total)}</span>
+                            </button>
+                          )}
+                        </For>
+                      </div>
+                    </Show>
+                    <Show when={vchParty() && vchParty() !== vchPartyQuery()}>
+                      <div class="absolute top-full left-0 text-xs text-ptc-base0/30 mt-0.5 px-1">
+                        ✓ {vchParty()}
+                      </div>
+                    </Show>
+                  </div>
+
+                  {/* Narration */}
+                  <div class="flex flex-col gap-1">
+                    <label class="text-xs uppercase tracking-widest text-ptc-base0/40">Narration</label>
+                    <input type="text"
+                      class="bg-ptc-base02 border border-ptc-base02 text-ptc-base0 text-sm px-3 py-2 font-mono placeholder:text-ptc-base0/25 focus:outline-none focus:border-ptc-base0/40"
+                      placeholder="Optional note"
+                      value={vchNarration()}
+                      onInput={(e) => setVchNarration(e.target.value)} />
+                  </div>
+                </div>
+
+                {/* Part search */}
+                <div class="px-5 py-3 border-b border-ptc-base02 shrink-0 relative">
+                  <div class="flex gap-3 items-center">
+                    <span class="text-xs uppercase tracking-widest text-ptc-base0/40 shrink-0">Add Part</span>
+                    <input type="text"
+                      class="flex-1 bg-ptc-base02 border border-ptc-base02 text-ptc-base0 text-sm px-3 py-2 font-mono placeholder:text-ptc-base0/25 focus:outline-none focus:border-ptc-base0/40"
+                      placeholder="Search catalog by name or P/N..."
+                      value={vchPartQuery()}
+                      onInput={(e) => setVchPartQuery(e.target.value)} />
+                  </div>
+                  <Show when={vchPartResults().length > 0}>
+                    <div class="absolute top-full left-5 right-5 z-30 bg-ptc-base02 border border-ptc-base0/20 shadow-lg max-h-60 overflow-y-auto">
+                      <For each={vchPartResults()}>
+                        {(sku) => (
+                          <button class="w-full text-left px-4 py-2.5 text-sm hover:bg-ptc-base0/10 border-b border-ptc-base02/50 flex items-center gap-3"
+                            onClick={() => vchAddLine(sku)}>
+                            <span class="font-bold flex-1 truncate">{sku.name}</span>
+                            {sku.part_no && <span class="text-ptc-yellow text-xs shrink-0">{sku.part_no}</span>}
+                            {sku.hsn    && <span class="text-ptc-base0/30 text-xs shrink-0">HSN {sku.hsn}</span>}
+                            <span class="text-ptc-green text-xs tabular-nums shrink-0">{currency(sku.avg_sell > 0 ? sku.avg_sell : sku.avg_cost)}</span>
+                          </button>
+                        )}
+                      </For>
+                    </div>
+                  </Show>
+                </div>
+
+                {/* Line items table */}
+                <div class="flex-1 overflow-y-auto">
+                  <Show when={vchLines().length === 0}>
+                    <div class="flex items-center justify-center h-full text-ptc-base0/20 text-xs uppercase tracking-widest">
+                      Search above to add line items
+                    </div>
+                  </Show>
+                  <Show when={vchLines().length > 0}>
+                    <table class="w-full text-sm">
+                      <thead class="sticky top-0 bg-ptc-base02 z-10">
+                        <tr>
+                          {[["Description","text-left flex-1"],["P/N","text-left w-28"],["HSN","text-left w-24"],["GST %","text-right w-20"],["Qty","text-right w-16"],["Rate ₹","text-right w-28"],["Amount","text-right w-28"],["","w-8"]].map(([h, c]) => (
+                            <th class={`px-3 py-2.5 text-xs font-bold uppercase tracking-widest ${c}`}>{h}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <For each={vchLines()}>
+                          {(ln) => (
+                            <tr class="border-b border-ptc-base02/50">
+                              {/* Name */}
+                              <td class="px-3 py-2">
+                                <input type="text" class="w-full bg-transparent text-ptc-base0 font-mono text-sm focus:outline-none focus:bg-ptc-base02/50 px-1"
+                                  value={ln.name} onInput={(e) => vchUpdateLine(ln._id, "name", e.target.value)} />
+                              </td>
+                              {/* Part No */}
+                              <td class="px-3 py-2">
+                                <input type="text" class="w-full bg-transparent text-ptc-yellow text-xs font-mono focus:outline-none focus:bg-ptc-base02/50 px-1"
+                                  value={ln.part_no} onInput={(e) => vchUpdateLine(ln._id, "part_no", e.target.value)} />
+                              </td>
+                              {/* HSN */}
+                              <td class="px-3 py-2">
+                                <input type="text" class="w-full bg-transparent text-ptc-base0/50 text-xs font-mono focus:outline-none focus:bg-ptc-base02/50 px-1"
+                                  value={ln.hsn} onInput={(e) => vchUpdateLine(ln._id, "hsn", e.target.value)} />
+                              </td>
+                              {/* GST % */}
+                              <td class="px-3 py-2 text-right">
+                                <select class="bg-ptc-base02 border border-ptc-base02/50 text-ptc-base0 text-xs px-1 py-1 font-mono focus:outline-none w-16"
+                                  value={ln.gst_pct}
+                                  onChange={(e) => vchUpdateLine(ln._id, "gst_pct", parseFloat(e.target.value))}>
+                                  {[0, 5, 12, 18, 28].map(r => <option value={r}>{r}%</option>)}
+                                </select>
+                              </td>
+                              {/* Qty */}
+                              <td class="px-3 py-2 text-right">
+                                <input type="number" min="0.01" step="0.01"
+                                  class="w-16 bg-transparent text-ptc-base0 text-sm tabular-nums font-mono text-right focus:outline-none focus:bg-ptc-base02/50 px-1"
+                                  value={ln.qty} onInput={(e) => vchUpdateLine(ln._id, "qty", parseFloat(e.target.value) || 0)} />
+                              </td>
+                              {/* Rate */}
+                              <td class="px-3 py-2 text-right">
+                                <input type="number" min="0" step="0.01"
+                                  class="w-28 bg-transparent text-ptc-base0 text-sm tabular-nums font-mono text-right focus:outline-none focus:bg-ptc-base02/50 px-1"
+                                  value={ln.rate} onInput={(e) => vchUpdateLine(ln._id, "rate", parseFloat(e.target.value) || 0)} />
+                              </td>
+                              {/* Amount */}
+                              <td class="px-3 py-2 text-right tabular-nums text-ptc-green font-bold">
+                                {currency((ln.qty || 0) * (ln.rate || 0))}
+                              </td>
+                              {/* Remove */}
+                              <td class="px-3 py-2 text-center">
+                                <button class="text-ptc-base0/20 hover:text-ptc-red text-lg leading-none"
+                                  onClick={() => vchRemoveLine(ln._id)}>×</button>
+                              </td>
+                            </tr>
+                          )}
+                        </For>
+                      </tbody>
+                    </table>
+                  </Show>
+                </div>
+              </div>
+
+              {/* ── Right: summary + post ── */}
+              <div class="w-72 shrink-0 flex flex-col border-l border-ptc-base02">
+                <div class="px-5 py-4 border-b border-ptc-base02 shrink-0">
+                  <div class="text-xs uppercase tracking-widest font-bold text-ptc-base0/50 mb-3">Summary</div>
+
+                  <div class="flex flex-col gap-2">
+                    <div class="flex justify-between text-sm">
+                      <span class="text-ptc-base0/50">Subtotal</span>
+                      <span class="tabular-nums font-bold">{currency(vchTotals().subtotal)}</span>
+                    </div>
+                    <Show when={vchGstMode() !== "none"}>
+                      <div class="flex justify-between text-sm">
+                        <span class="text-ptc-base0/50">GST ({vchGstMode() === "intra" ? "CGST+SGST" : "IGST"})</span>
+                        <span class="tabular-nums text-ptc-orange">{currency(vchTotals().gst)}</span>
+                      </div>
+                    </Show>
+                    <div class="flex justify-between text-base border-t border-ptc-base02 pt-2 mt-1">
+                      <span class="font-bold">Total</span>
+                      <span class="tabular-nums font-bold text-ptc-green text-lg">{currency(vchTotals().total)}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="px-5 py-4 border-b border-ptc-base02 shrink-0 flex flex-col gap-2 text-xs text-ptc-base0/30">
+                  <div class="flex justify-between"><span>Type</span><span class="text-ptc-base0/60 font-bold">{vchType()}</span></div>
+                  <div class="flex justify-between"><span>Party</span><span class="text-ptc-base0/60 font-bold truncate ml-4 max-w-[140px]" title={vchParty()}>{vchParty() || "—"}</span></div>
+                  <div class="flex justify-between"><span>Date</span><span class="text-ptc-base0/60">{vchDate()}</span></div>
+                  <div class="flex justify-between"><span>Lines</span><span class="text-ptc-base0/60">{vchLines().length}</span></div>
+                  <div class="flex justify-between"><span>Vch No</span><span class="text-ptc-base0/60">{vchVchNo() || "Auto"}</span></div>
+                  <div class="flex justify-between"><span>GST</span><span class="text-ptc-base0/60">{vchGstMode() === "intra" ? "CGST+SGST" : vchGstMode() === "inter" ? "IGST" : "None"}</span></div>
+                </div>
+
+                {/* Preview toggle */}
+                <div class="px-5 py-3 border-b border-ptc-base02 shrink-0">
+                  <button class="w-full text-xs uppercase tracking-widest border border-ptc-base02 py-2 text-ptc-base0/50 hover:border-ptc-base0/40 hover:text-ptc-base0/80 transition-colors"
+                    onClick={() => setVchShowPreview(p => !p)}>
+                    {vchShowPreview() ? "Hide" : "Show"} XML Preview
+                  </button>
+                </div>
+
+                <Show when={vchShowPreview()}>
+                  <div class="flex-1 overflow-y-auto px-3 py-2 text-ptc-base0/30 text-xs font-mono whitespace-pre-wrap break-all">
+                    {`<VOUCHER VCHTYPE="${vchType()}">\n`}
+                    {`  <DATE>${vchDate().replace(/-/g,"")}</DATE>\n`}
+                    {`  <PARTYLEDGERNAME>${vchParty()}</PARTYLEDGERNAME>\n`}
+                    {vchLines().map(l =>
+                      `  <ITEM> ${l.name} x${l.qty} @ ₹${l.rate}\n`
+                    ).join("")}
+                    {`  <TOTAL>${currency(vchTotals().total)}</TOTAL>\n`}
+                    {`</VOUCHER>`}
+                  </div>
+                </Show>
+
+                {/* Post button */}
+                <div class="mt-auto px-5 py-5 shrink-0 border-t border-ptc-base02">
+                  <button
+                    class={`w-full py-3 text-sm font-bold uppercase tracking-widest border transition-colors ${
+                      vchPosting() ? "border-ptc-base0/20 text-ptc-base0/20 cursor-not-allowed" :
+                      "border-ptc-green text-ptc-green hover:bg-ptc-green hover:text-ptc-base03 cursor-pointer"
+                    }`}
+                    disabled={vchPosting()}
+                    onClick={postVoucher}>
+                    {vchPosting() ? "Posting to Tally..." : "Post to Tally"}
+                  </button>
+                  <div class="text-xs text-ptc-base0/20 text-center mt-2">
+                    tally_bridge.py must be running
+                  </div>
+                </div>
+              </div>
+
             </div>
           </Show>
 

@@ -92,125 +92,50 @@
 </script>
 </head>
 <body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;">
-<nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
-  function updateNavColor() {
-    const scrollY = window.scrollY;
-    scrolled = scrollY > 500;
-  }
-  updateNavColor();
-  window.addEventListener('scroll', updateNavColor);
-">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-24">
-<div class="flex items-center">
-<div class="flex-shrink-0">
-                <a href="/" class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-                    <img src="/assets/images/ptc-logo.png?v=1" alt="PTC Parts Trading Company" class="h-24 w-auto transition-all duration-300" id="nav-logo">
-                </a>
-</div>
-</div>
-<div class="hidden md:flex items-center space-x-2">
-<a class="nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-gray-900" href="/">
-<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">HOME</span>
-</a>
-<a class="nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#brands">
-<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">BRANDS</span>
-</a>
-<a class="nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#equipment-models">
-<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">MODELS</span>
-</a>
-<a class="nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#product-categories">
-<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">PRODUCTS</span>
-</a>
-<a class="nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-gray-900" href="/blog/index.html">
-<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">BLOG</span>
-</a>
-<a class="nav-link group relative px-6 py-4 font-bold transition-all duration-300 rounded-2xl flex items-center space-x-3 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#faq">
-<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">FAQ</span>
-</a>
-<a class="group relative bg-gradient-to-r from-yellow-400 to-yellow-1,705 text-gray-900 px-6 py-4 rounded-2xl font-bold tracking-wide hover:from-yellow-1,705 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 border-2 border-yellow-300/50 flex items-center space-x-3" href="/#contact">
-<svg class="w-5 h-5 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">CONTACT</span>
-</a>
-</div>
-<div class="md:hidden">
-<button @click="mobileMenuOpen = !mobileMenuOpen" aria-expanded="false" aria-label="Toggle mobile menu" class="p-3 rounded-xl focus:outline-none focus:ring-4 focus:ring-yellow-400/50 transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" x-bind:aria-expanded="mobileMenuOpen">
-<svg class="h-7 w-7" fill="none" stroke="currentColor" viewbox="0 0 24 24" x-show="!mobileMenuOpen">
-<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<svg class="h-7 w-7" fill="none" stroke="currentColor" viewbox="0 0 24 24" x-show="mobileMenuOpen">
-<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-</button>
-</div>
-</div>
-</div>
-<div class="md:hidden bg-white/98 backdrop-blur-xl border-t-2 border-yellow-300/60 shadow-2xl" x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:enter-start="opacity-0 transform -translate-y-4" x-transition:leave="transition ease-in duration-200" x-transition:leave-end="opacity-0 transform -translate-y-4" x-transition:leave-start="opacity-100 transform translate-y-0">
-<div class="px-6 py-6 space-y-3">
-<a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" href="/">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">HOME</span>
-</a>
-<a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#brands">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">BRANDS</span>
-</a>
-<a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#equipment-models">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">MODELS</span>
-</a>
-<a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#product-categories">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">PRODUCTS</span>
-</a>
-<a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" href="/blog/index.html">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">BLOG</span>
-</a>
-<a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 rounded-2xl font-bold transition-all duration-300 border-2 border-transparent drop-shadow-sm text-gray-900" href="/#faq">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">FAQ</span>
-</a>
-<a @click="mobileMenuOpen = false" class="nav-link group flex items-center space-x-4 px-6 py-4 bg-gradient-to-r from-yellow-400 to-yellow-1,705 text-gray-900 rounded-2xl font-bold tracking-wide hover:from-yellow-1,705 hover:to-yellow-600 transition-all duration-300 border-2 border-yellow-300/50" href="/#contact">
-<svg class="w-6 h-6 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
-</svg>
-<span class="font-bold tracking-wide">CONTACT</span>
-</a>
-</div>
-</div>
+<!-- Canonical nav: white, sticky, clean -->
+<nav id="site-nav" class="bg-white sticky top-0 z-50 border-b border-gray-200 shadow-sm" x-data="{ open: false }">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16 md:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center flex-shrink-0">
+        <img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company — Heavy Equipment Spare Parts Mumbai"
+             class="h-10 md:h-12 w-auto" width="120" height="48" loading="eager"/>
+      </a>
+      <!-- Desktop links -->
+      <div class="hidden md:flex items-center gap-1 text-sm font-semibold text-gray-700">
+        <a href="/" class="nav-item px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-colors">Home</a>
+        <a href="/#equipment-models" class="nav-item px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-colors">Models</a>
+        <a href="/#product-categories" class="nav-item px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-colors">Products</a>
+        <a href="/#brands" class="nav-item px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-colors">Brands</a>
+        <a href="/blog/index.html" class="nav-item px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-colors">Blog</a>
+        <a href="/about.html" class="nav-item px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-colors">About</a>
+        <a href="https://wa.me/919821037990?text=Hi%21%20I%20need%20help%20with%20a%20spare%20part." target="_blank" rel="noopener"
+           class="ml-2 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl transition-colors whitespace-nowrap">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <!-- Mobile hamburger -->
+      <button @click="open = !open" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100" aria-label="Toggle menu">
+        <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div x-show="open" x-transition class="md:hidden bg-white border-t border-gray-100 px-4 py-3 space-y-1 text-sm font-semibold text-gray-700">
+    <a href="/" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100">Home</a>
+    <a href="/#equipment-models" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100">Models</a>
+    <a href="/#product-categories" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100">Products</a>
+    <a href="/#brands" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100">Brands</a>
+    <a href="/blog/index.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100">Blog</a>
+    <a href="/about.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100">About</a>
+    <a href="https://wa.me/919821037990?text=Hi%21%20I%20need%20help%20with%20a%20spare%20part." target="_blank" rel="noopener"
+       class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-green-600 hover:bg-green-50">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+  </div>
 </nav>
 <!-- Breadcrumb Navigation -->
 <nav class="pt-32 pb-4" aria-label="Breadcrumb">
@@ -7166,163 +7091,122 @@
     </div>
   </section>
 
-    <footer class="site-footer relative overflow-hidden">
-<div class="absolute inset-0 overflow-hidden pointer-events-none">
-<div class="floating-shape circle absolute w-3 h-3 bg-yellow-400/6 rounded-full animate-float-slow" style="top: 20%; left: 15%; animation-delay: 0s;"></div>
-<div class="floating-shape circle absolute w-4 h-4 bg-yellow-300/5 rounded-full animate-float-medium" style="top: 40%; right: 30%; animation-delay: 1.8s;"></div>
-<div class="floating-shape circle absolute w-2 h-2 bg-yellow-500/8 rounded-full animate-float-fast" style="bottom: 30%; left: 25%; animation-delay: 3.2s;"></div>
-<div class="floating-shape circle absolute w-5 h-5 bg-yellow-400/4 rounded-full animate-float-slow" style="bottom: 20%; right: 20%; animation-delay: 0.9s;"></div>
-</div>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<!-- Contact Details Box -->
-<div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-gray-700/50 shadow-2xl">
-<div class="text-center mb-8">
-<h3 class="text-2xl font-bold text-white mb-2">Contact Information</h3>
-<div class="w-16 h-1 bg-yellow-400 mx-auto rounded-full"></div>
-</div>
-<div class="relative">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-<!-- Contact Information Column 1 (Phone Numbers & Email) -->
-<div class="text-center lg:text-left pl-4">
-<div class="space-y-4">
-<div class="flex items-start justify-center lg:justify-start">
-<div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-<svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</div>
-<div>
-<div class="font-semibold text-white mb-1">Landline</div>
-<a class="text-yellow-400 hover:text-yellow-300 transition-colors text-sm" href="tel:+912240755999">+91 22407 55999</a>
-</div>
-</div>
-<div class="flex items-start justify-center lg:justify-start">
-<div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-<svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</div>
-<div>
-<div class="font-semibold text-white mb-1">Mobile</div>
-<a class="text-yellow-400 hover:text-yellow-300 transition-colors text-sm" href="tel:+919821037990">+91 98210 37990</a>
-</div>
-</div>
-<div class="flex items-start justify-center lg:justify-start">
-<div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-<svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</div>
-<div>
-<div class="font-semibold text-white mb-1">Email</div>
-<a class="text-yellow-400 hover:text-yellow-300 transition-colors text-sm" href="mailto:parts@partstrading.com">parts@partstrading.com</a>
-</div>
-</div>
-</div>
-</div>
-<!-- Contact Information Column 2 (Address) -->
-<div class="text-center lg:text-right pr-4">
-<div class="space-y-4">
-<div class="flex items-start justify-center lg:justify-end">
-<div class="text-right">
-<div class="font-semibold text-white mb-1">Address</div>
-<a class="text-yellow-400 hover:text-yellow-300 transition-colors text-sm leading-relaxed" href="https://www.google.com/maps/dir//1st+Floor,+Parts+Trading+Company,+Vijay+Chambers,+opp.+Dreamland+Cinema,+Grant+Road+East,+Shapur+Baug,+Grant+Road,+Mumbai,+Maharashtra+400004,+India/@18.9602634,72.7367389,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3be7ce13b538727b:0x9daa2711223502bd!2m2!1d72.8191406!2d18.9602816?entry=ttu&amp;g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                                    1st Floor, Parts Trading Company,<br/>
-                                    Vijay Chambers, opp. Dreamland Cinema,<br/>
-                                    Grant Road, Mumbai, Maharashtra 400004
-                                </a>
-</div>
-<div class="w-10 h-10 bg-yellow-500/20 rounded-full flex items-center justify-center ml-4 flex-shrink-0">
-<svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Save Contact Button - Centered -->
-<div class="text-center mt-8">
-<a class="inline-flex items-center px-6 py-3 bg-yellow-1,705 text-gray-900 rounded-lg font-semibold hover:bg-yellow-400 transition-colors text-sm shadow-lg hover:shadow-xl" download="" href="../../parts_trading_company.vcf">
-<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-                    Save Contact
-                </a>
-</div>
-</div>
-<!-- Vertical Separator Line -->
-<div class="hidden lg:block absolute left-1/2 top-24 bottom-20 w-px bg-gray-600 transform -translate-x-1/2"></div>
-</div>
-</div>
-<!-- Maintenance Guide Section -->
-<section class="py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Scania Truck Maintenance Guide</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Common Brake Issues</h3>
-                <p class="text-gray-600 mb-4">Regular inspection of Scania brake shoes and linings is critical. Look for uneven wear patterns which may indicate caliper issues.</p>
-                <a href="#contact" class="text-yellow-600 font-semibold hover:text-yellow-700">Request Brake Parts &rarr;</a>
-            </div>
-            <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Engine Service Tips</h3>
-                <p class="text-gray-600 mb-4">For Scania P, G, R series, timely replacement of oil and fuel filters ensures longevity. Specific filter kits available.</p>
-                <a href="#contact" class="text-yellow-600 font-semibold hover:text-yellow-700">View Filter Kits &rarr;</a>
-            </div>
-            <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                <h3 class="text-xl font-bold text-gray-900 mb-4">Suspension Maintenance</h3>
-                <p class="text-gray-600 mb-4">Check air bags and shock absorbers every 50,000km to maintain ride quality and load stability.</p>
-                <a href="#contact" class="text-yellow-600 font-semibold hover:text-yellow-700">Suspension Parts &rarr;</a>
-            </div>
+    <footer class="bg-gray-900 text-white">
+  <!-- Row 1: 3-column grid -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- Col 1: Brand / address -->
+      <div>
+        <a href="/" class="inline-block mb-3">
+          <img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 w-auto brightness-0 invert"/>
+        </a>
+        <p class="text-sm text-gray-400 mb-4">Est. 1956, Mumbai</p>
+        <address class="not-italic text-sm text-gray-400 space-y-1">
+          <p>Parts Trading Company</p>
+          <p>Mumbai, Maharashtra, India</p>
+          <p class="mt-2">GST: 27AAAFP1087E1ZG</p>
+        </address>
+      </div>
+
+      <!-- Col 2: Navigate + Brand Parts (two sub-columns) -->
+      <div class="grid grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-3">Navigate</h3>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="/#equipment-models" class="hover:text-white transition-colors">Models</a></li>
+            <li><a href="/#product-categories" class="hover:text-white transition-colors">Products</a></li>
+            <li><a href="/#brands" class="hover:text-white transition-colors">Brands</a></li>
+            <li><a href="/blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="/about.html" class="hover:text-white transition-colors">About</a></li>
+            <li><a href="https://wa.me/919821037990?text=Hi%21%20I%20need%20help%20with%20a%20spare%20part." target="_blank" rel="noopener" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
         </div>
+        <div>
+          <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-3">Brand Parts</h3>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="/pages/hubs/brand-volvo.html" class="hover:text-white transition-colors">Volvo</a></li>
+            <li><a href="/pages/hubs/brand-scania.html" class="hover:text-white transition-colors">Scania</a></li>
+            <li><a href="/pages/hubs/brand-komatsu.html" class="hover:text-white transition-colors">Komatsu</a></li>
+            <li><a href="/pages/hubs/brand-cat.html" class="hover:text-white transition-colors">CAT</a></li>
+            <li><a href="/pages/hubs/brand-hitachi.html" class="hover:text-white transition-colors">Hitachi</a></li>
+            <li><a href="/pages/hubs/brand-kobelco.html" class="hover:text-white transition-colors">Kobelco</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Col 3: Contact -->
+      <div>
+        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-3">Contact Us</h3>
+        <ul class="space-y-3 text-sm text-gray-400">
+          <li>
+            <a href="https://wa.me/919821037990?text=Hi%21%20I%20need%20help%20with%20a%20spare%20part."
+               target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg transition-colors font-semibold">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp Us
+            </a>
+          </li>
+          <li>
+            <span class="text-gray-500 text-xs uppercase tracking-wider">Landline</span><br/>
+            <a href="tel:+912240755999" class="hover:text-white transition-colors">+91 22407 55999</a>
+          </li>
+          <li>
+            <span class="text-gray-500 text-xs uppercase tracking-wider">Mobile</span><br/>
+            <a href="tel:+919821037990" class="hover:text-white transition-colors">+91 98210 37990</a>
+          </li>
+          <li>
+            <span class="text-gray-500 text-xs uppercase tracking-wider">Email</span><br/>
+            <a href="mailto:parts@partstrading.com" class="hover:text-white transition-colors">parts@partstrading.com</a>
+          </li>
+          <li>
+            <span class="text-gray-500 text-xs uppercase tracking-wider">Hours</span><br/>
+            Mon–Sat 9:00–18:00 IST
+          </li>
+        </ul>
+      </div>
     </div>
-</section>
+  </div>
 
-<!-- Google Maps Integration -->
-<div class="mb-8">
-<div class="bg-gray-800 rounded-lg p-6">
-<h3 class="text-lg font-semibold text-white mb-4 text-center">Find Us on Google Maps</h3>
-<div class="rounded-lg overflow-hidden shadow-lg relative group cursor-pointer" onclick="window.open('https://www.google.com/maps/dir//1st+Floor,+Parts+Trading+Company,+Vijay+Chambers,+opp.+Dreamland+Cinema,+Grant+Road+East,+Shapur+Baug,+Grant+Road,+Mumbai,+Maharashtra+400004,+India/@18.9602634,72.7367389,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3be7ce13b538727b:0x9daa2711223502bd!2m2!1d72.8191406!2d18.9602816?entry=ttu&amp;g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D', '_blank')">
-<iframe allowfullscreen="" class="rounded-lg" height="250" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.5!2d72.8191406!3d18.9602816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce13b538727b:0x9daa2711223502bd!2sParts+Trading+Company!5e0!3m2!1sen!2sin!4v1234567890" style="border:0;" width="100%">
-</iframe>
-<!-- Overlay with click message -->
-<div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-<div class="bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 text-gray-900 font-semibold">
-                        Click to open in Google Maps
-                    </div>
-</div>
-</div>
-<!-- Direct link button -->
-<div class="text-center mt-4">
-<a class="inline-flex items-center px-6 py-3 bg-yellow-1,705 text-gray-900 rounded-lg font-semibold hover:bg-yellow-400 transition-colors text-sm shadow-lg hover:shadow-xl" href="https://www.google.com/maps/dir//1st+Floor,+Parts+Trading+Company,+Vijay+Chambers,+opp.+Dreamland+Cinema,+Grant+Road+East,+Shapur+Baug,+Grant+Road,+Mumbai,+Maharashtra+400004,+India/@18.9602634,72.7367389,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3be7ce13b538727b:0x9daa2711223502bd!2m2!1d72.8191406!2d18.9602816?entry=ttu&amp;g_ep=EgoyMDI1MDcyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-<path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-                    Open in Google Maps
-                </a>
-</div>
-</div>
-</div>
-<div class="border-t border-gray-600 pt-6">
-<div class="text-center text-gray-400"><!-- Social Media Links -->
-<div class="flex justify-center items-center space-x-6 mb-6">
-<a href="https://www.instagram.com/partstradingco" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-1,705 transition-colors" aria-label="Instagram">
-<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-</a>
-<a href="https://www.linkedin.com/company/81588687/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-1,705 transition-colors" aria-label="LinkedIn">
-<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-</a>
-</div>
-© Parts Trading Company. All rights reserved.</div>
-<div class="text-sm text-gray-400 mt-2 text-center">GST: 27AAAFP1087E1ZG</div>
-<div class="disclaimer mt-4 text-center text-gray-400">
-Disclaimer: All brand names, logos, images, and part numbers used on this website are for identification and reference purposes only. Parts Trading Company is not affiliated with any original equipment manufacturers (OEMs) unless specifically stated. We offer a range of products that may include genuine OEM parts or compatible high-quality aftermarket alternatives, based on availability and customer requirements.
-</div>
-</div>
-</div>
+  <!-- Row 2: Social icons + copyright + legal links -->
+  <div class="border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+      <!-- Social icons -->
+      <div class="flex items-center gap-4">
+        <a href="https://www.instagram.com/partstradingco" target="_blank" rel="noopener" aria-label="Instagram"
+           class="hover:text-white transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/company/81588687/" target="_blank" rel="noopener" aria-label="LinkedIn"
+           class="hover:text-white transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+      </div>
+      <!-- Copyright + legal links -->
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <span>© 2026 Parts Trading Company. All rights reserved.</span>
+        <a href="/privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+        <a href="/terms.html" class="hover:text-white transition-colors">Terms of Use</a>
+      </div>
+    </div>
+  </div>
 
+  <!-- Row 3: Disclaimer -->
+  <div class="border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <p class="text-xs text-gray-500 leading-relaxed">
+        Disclaimer: All brand names, logos, images, and part numbers used on this website are for identification and
+        reference purposes only. Parts Trading Company is not affiliated with any original equipment manufacturers
+        (OEMs) unless specifically stated. We offer a range of products that may include genuine OEM parts or
+        compatible high-quality aftermarket alternatives, based on availability and customer requirements.
+      </p>
+    </div>
+  </div>
 </footer>
 <script>
 const allParts = ['1100799', '1104069', '1104544', '1104545', '1107097', '1114861', '1116481', '1118030', '1122002', '1123476', '1123477', '1123479', '128680', '1300977', '1301682', '1302665', '1302733', '1302857', '1303475', '1304645', '1306259', '1306260', '1306573', '1306950', '1309465', '1313606', '1313738', '1313854', '1313871', '1321727', '1322341', '1324366', '1324664', '1324713', '1324793', '1326547', '1327878', '1332275', '1332508', '1333433', '1333733', '1334954', '1335680', '1335744', '1337283', '1338019', '1338267', '1339660', '1340859', '1343100', '1343135', '1343144', '1343178', '1343372', '1343373', '1344190', '1344667', '1345205', '1345206', '1345279', '1349089', '1352803', '1353861', '1354079', '1354387', '1355381', '1357380', '1357711', '1357950', '1358497', '1360514', '1360882', '1361459', '1361460', '1362693', '1362721', '1363818', '1363870', '1363871', '1364575', '1365290', '1365573', '1365574', '1365594', '1366349', '1366847', '1366848', '1367303', '1367406', '1367630', '1368061', '1368497', '1368694', '1369724', '1369863', '1369865', '1371836', '1372898', '1375227', '1375391', '1376357', '1377471', '1377472', '1377739', '1379383', '1379425', '1381251', '1383468', '1384761', '1385209', '1385410', '1386104', '1386105', '1386106', '1386107', '1386227', '1386406', '1387007', '1387155', '1387576', '1390211', '1390243', '1391162', '1391742', '1392073', '1392074', '1392084', '1393390', '1393617', '1393641', '1395828', '1397406', '1398116', '1398294', '1398639', '1398640', '1400131', '1401839', '1403463', '1403808', '1403855', '1404230', '1404352', '1405797', '1405803', '1406463', '1407551', '1408139', '1408172', '1408178', '1408202', '1408485', '1409318', '1411244', '1411353', '141163', '1412298', '1413893', '1413934', '1414580', '1414583', '1414595', '1421021', '1421851', '1421862', '1422152', '1422474', '1422564', '1422594', '1422629', '1422981', '1423939', '1425183', '1425659', '1426254', '1426555', '1429058', '1430317', '1431579', '1433641', '1433656', '1437233', '1437280', '1437486', '1440407', '1440499', '1440576', '1443299', '1444619', '1446056', '1446057', '1446058', '1446066', '1446582', '1446715', '1448933', '1449542', '1449620', '1449869', '1451274', '1451275', '1451527', '1451528', '1453761', '1457303', '1457304', '1457711', '1461331', '1461626', '1462266', '1462318', '1463065', '1464824', '1464828', '1466088', '1466091', '1466100', '1466101', '1467007', '1468438', '1469277', '14700506', '1471237', '1471271', '1472144', '1472718', '1472739', '1474065', '1475426', '1475431', '1476119', '1476286', '1476287', '1476533', '1477121', '1477482', '1477867', '1479758', '1479759', '1479877', '1481810', '1483544', '1484037', '1484038', '1484041', '1484042', '1484055', '1484056', '1484111', '1484112', '1484765', '1484766', '1484798', '1484800', '1485366', '1485608', '1485609', '1485808', '1486798', '1486855', '1486989', '1487542', '1487565', '1487830', '1488787', '1488890', '1488891', '14896905', '14896928', '1490086', '1490907', '1490908', '1491380', '1493179', '1493771', '1494100', '1495267', '1495269', '1498131', '1498197', '1498317', '1498712', '1498759', '1498760', '1498839', '1498854', '1498884', '1499200', '1499895', '1500068', '1501896', '1501897', '1502384', '1502385', '1503399', '1505366', '1505656', '1506341', '1507878', '1508586', '1510331', '1511807', '1512030', '1513121', '1515004', '1515099', '1515868', '1516474', '1516496', '1518380', '1518512', '1519439', '1519675', '1520607', '1520796', '1520998', '1521889', '1524337', '1524966', '1525145', '1525270', '1525387', '1525988', '1526229', '1526232', '1527384', '1528185', '1528325', '1528326', '1528991', '1529441', '1529445', '1529474', '1529886', '1530086', '1530106', '1530346', '1531996', '1532479', '1534496', '153468', '1534814', '1534815', '1534829', '1535249', '1535250', '1535253', '1535254', '1538087', '1539298', '1539451', '1540120', '1541747', '1541980', '1541982', '1541984', '154259', '1542640', '1543359', '1543360', '1544036', '1544166', '1545021', '1545024', '1545055', '1545165', '1545906', '1546038', '1546608', '1546932', '1547113', '1548056', '1548817', '1549225', '1549227', '1647577', '1720426', '1720693', '1721485', '1721732', '1722418', '1724181', '1724879', '1724896', '1725236', '1725366', '1725368', '1725467', '1725887', '1726135', '1726426', '1727524', '1728140', '1728141', '1728615', '1729332', '1730173', '1730424', '1731274', '1732507', '1732508', '1732515', '1732524', '1734040', '1734701', '1734958', '1735134', '1736908', '1738380', '1739454', '1739455', '1740413', '1740438', '1741068', '1741917', '1741936', '1742035', '1742036', '1742449', '1743442', '1743736', '1744210', '1744676', '1744793', '1744937', '1745369', '1745730', '1745886', '1746111', '1746644', '1747246', '1747507', '1747593', '1749034', '1749683', '1749684', '1749710', '1749712', '1750857', '1752963', '1753479', '1753579', '1753782', '1754521', '1755478', '1755638', '1755663', '1755677', '1755901', '1755923', '1755960', '1755961', '1755963', '1756898', '1757085', '1757826', '1759435', '1761373', '1761378', '1761750', '1762534', '1762675', '1764088', '1764363', '1765063', '1765064', '1765184', '1765406', '1765616', '1766414', '1767275', '1767328', '1767625', '1767631', '1768235', '1768271', '1769416', '1769457', '1769522', '1769799', '1769999', '1771230', '1772442', '1772712', '1772722', '1772724', '1772726', '1772727', '1772728', '1772730', '1773621', '1774107', '1774165', '1775370', '1776070', '1776079', '1776466', '177655', '1777165', '1777436', '1777779', '1777780', '1778294', '1778529', '1778647', '1779128', '1779734', '1779770', '1779825', '1781199', '1781929', '1782514', '1782741', '1783287', '1783288', '1783811', '1784689', '1784973', '1784975', '1785814', '1785815', '1786563', '1786676', '1787958', '1788922', '1789563', '1789564', '1789567', '1789568', '1790587', '1790588', '1790598', '1790613', '1790708', '1790991', '1790997', '1791181', '1791182', '1791356', '1792944', '1794873', '1795139', '1795707', '1796593', '1796996', '1797669', '1798270', '1799423', '1800278', '1800467', '1800468', '1801176', '180435', '1805148', '1805342', '1805399', '1806701', '1806715', '1806950', '1806991', '1807020', '1807144', '1807556', '1807647', '1807648', '1807775', '1808327', '1809771', '1809967', '1809996', '1809998', '1810345', '1815227', '1816106', '1816107', '1816449', '1816888', '1817152', '1817256', '1817843', '1817893', '1819843', '1820016', '1821153', '1821737', '1823533', '1825756', '1825757', '1827826', '1828365', '1828572', '1828869', '1828871', '1829033', '182929', '1829439', '1829612', '1829994', '1832378', '1833821', '1833923', '1847940', '1848281', '1849394', '1849451', '1849454', '1849457', '1849590', '1851219', '1852189', '1852496', '1853208', '1853231', '1853232', '1853473', '1854433', '1855170', '1856472', '1856473', '1856589', '1856660', '1857051', '1857265', '1857665', '1857864', '1858147', '1858200', '1858222', '1858438', '1859185', '1859636', '1860496', '1861464', '1861467', '1861881', '1862036', '1862892', '1862894', '1863303', '1863339', '1863494', '1863831', '1863832', '1863970', '1864221', '1864621', '1864986', '1865315', '1865316', '1865747', '1865748', '1866914', '1867654', '1867655', '1868016', '1868457', '1868695', '1870594', '1870630', '1870910', '1871840', '1871920', '1872040', '1872125', '1872372', '1873018', '1873183', '1873506', '1874363', '1879504', '1879540', '1879541', '1881593', '1882020', '1882111', '1883697', '1884225', '1885464', '1885465', '1885723', '1885869', '1885969', '1886324', '1886594', '1886714', '1887056', '1887739', '1888075', '1891558', '1891692', '1892047', '1892048', '1892049', '1892054', '1893055', '1893294', '1894184', '1894185', '1894408', '1895269', '1895270', '1895575', '1895610', '1896420', '1896421', '1896422', '1896427', '1896432', '1896520', '1898045', '1899302', '1899667', '1900181', '1900182', '1902198', '1902201', '1903084', '1903085', '1904983', '1905699', '1906558', '1906575', '1906590', '1906975', '1907845', '1909322', '1910819', '1911809', '1911810', '1911812', '1911813', '1911814', '1911816', '1911817', '1912759', '1913500', '1913733', '1914427', '1915330', '1919609', '1919941', '1920231', '1920895', '1921160', '1921450', '1922258', '1924343', '1925166', '1925293', '1925548', '1925549', '1926080', '1926256', '1926257', '1926740', '1926815', '1926816', '1926821', '1926829', '1926833', '1927972', '1928587', '1928803', '1928804', '1928891', '1929616', '1930649', '1930822', '1930823', '1930824', '1933394', '1936674', '1936675', '1936676', '1936677', '1938972', '1938973', '1939987', '1940000', '1940845', '1940848', '1942884', '1942885', '1943267', '1943845', '1943974', '1944537', '1944588', '1945379', '1945752', '1946057', '1948336', '1948836', '1948837', '1949421', '1952217', '2000099', '2000391', '2001994', '2002705', '2005693', '2006529', '2007279', '2008861', '2008866', '2008938', '2008939', '2009820', '2012014', '2012968', '2014389', '2014489', '2015190', '2015939', '2015940', '2016272', '2016583', '2018885', '2021377', '2021378', '2021425', '2022257', '2023751', '2023798', '2023915', '2024448', '2025561', '2025562', '2025623', '2025757', '2026052', '2026070', '2026123', '2026130', '2026268', '2026564', '2026662', '2026663', '2026699', '2027043', '2027164', '2027166', '2027167', '2027296', '2028512', '2030996', '2031228', '2031229', '2031868', '2032823', '2033890', '2033895', '2034621', '2034853', '2034857', '2034860', '2035177', '2035502', '2035611', '2035612', '2038640', '2039923', '2040258', '2042940', '2043067', '2045107', '204723', '2048090', '2049386', '2053037', '2053166', '2053564', '2053879', '2057206', '2057833', '2058218', '2058379', '2058382', '2058383', '2058384', '2058392', '2058395', '2058417', '2058436', '2058437', '2058440', '2058770', '2058772', '2060476', '2060677', '2061501', '2064010', '2064855', '2065463', '2065530', '2069694', '2069701', '2072776', '2075445', '2075463', '2076770', '2076771', '2077974', '2077975', '2077976', '2078628', '2078664', '2078668', '2079718', '2079956', '2080807', '2081828', '2082755', '2083722', '2085813', '2085822', '2086028', '2089637', '2092020', '2092021', '2094066', '2094907', '2094944', '2095474', '2096135', '2096136', '2096137', '2096561', '2096562', '2097209', '2097279', '2097427', '2099587', '2101942', '2101943', '2103546', '2105415', '2105702', '2108947', '2109643', '2109767', '2109838', '2110183', '2110192', '2112222', '2112223', '2112343', '2114752', '2115316', '2116382', '2117264', '2117621', '211808', '2119413', '2121349', '2121772', '2122093', '2122476', '2123217', '2123218', '2123410', '2124011', '2124235', '2124544', '2124545', '2124546', '2124547', '2126714', '2127218', '2127981', '2128973', '2129402', '2129404', '2130340', '2132519', '2132523', '2132724', '2133296', '2133348', '2133515', '2134356', '2137185', '2138418', '2138943', '2142130', '2142508', '2142509', '2142525', '2143422', '2143423', '2143470', '2143471', '2145694', '2145983', '2146221', '2146846', '2146847', '2147254', '2148646', '21488865', '2149137', '2149696', '2153365', '2153906', '2154131', '2154144', '2154220', '2154221', '2154483', '2156626', '2156792', '2157342', '2157413', '2157768', '2158907', '2158908', '2158917', '2158918', '2158921', '2160957', '2161984', '2162220', '2162265', '2162278', '2162665', '2165310', '2165841', '2165863', '2165864', '2169073', '2170681', '2170683', '2171712', '2171717', '2171848', '2172312', '2173804', '2175257', '2176419', '2178551', '2180824', '2181274', '2181643', '2182273', '2183266', '2183414', '2184169', '2184739', '2185839', '2188169', '2188641', '2189413', '2190160', '2190306', '2192155', '2192156', '2194643', '2195206', '2195395', '2196579', '2196742', '2196775', '2197391', '2197441', '2198944', '2200137', '2204435', '2204436', '2205624', '2213380', '2214644', '2215071', '2215938', '2218644', '2220215', '2220290', '2220291', '2220292', '2220509', '222095', '2222223', '2223436', '2224022', '2224045', '2224112', '2225192', '2225795', '2226177', '2230704', '2231259', '2239671', '2239965', '2240905', '2242162', '2243924', '2243928', '2246171', '2246172', '2246173', '2246508', '2248099', '2249253', '2249309', '2250372', '2251191', '2252076', '2252092', '2252095', '2252721', '2253571', '2253573', '2254610', '2254875', '2255345', '2257727', '2258072', '2260564', '2260736', '2260741', '2261665', '2262363', '2262387', '2262467', '2265872', '2266876', '2271034', '2271848', '2272850', '2272853', '2274689', '2276247', '2276408', '2276856', '2276857', '2277269', '2277272', '2277285', '2277576', '2277578', '22778979', '2279226', '2279227', '2279229', '2279230', '2279234', '2279383', '2280638', '2280756', '2281955', '2284722', '2285273', '2285275', '2285280', '2285282', '2285551', '2287595', '2290532', '2290553', '2290939', '2290957', '2291619', '2291716', '2292029', '2292449', '2301596', '2302254', '2302651', '2302652', '2302655', '2304242', '2304243', '2308200', '2308635', '2308777', '2309117', '2309229', '2309494', '2310169', '2310273', '2310330', '2311081', '2312090', '2312092', '2321732', '2323478', '2324951', '2326674', '2326676', '2327823', '2327824', '2327841', '2331707', '2333169', '2334335', '2334733', '2335680', '2335684', '2336180', '2336973', '2343042', '2345957', '2349746', '2350481', '2354165', '2354273', '2356253', '2358986', '2359675', '2367300', '2368578', '2368728', '2368986', '2371254', '2371255', '2372031', '2376325', '2378715', '2378716', '2382590', '2382793', '2383058', '2387479', '2388680', '2389559', '2392177', '2392182', '2392375', '2392395', '2394784', '2394786', '2394897', '2394986', '2396114', '2397505', '2398368', '2399460', '2399560', '2399800', '2400926', '2401668', '2402012', '2402035', '2402382', '2403645', '2403939', '2405802', '2406061', '2406293', '2408336', '2408773', '2408774', '2408822', '2409159', '2409703', '2411511', '2413459', '2414195', '2414197', '2414631', '2414656', '2414659', '2415246', '2416727', '2419091', '2420423', '2420827', '2421877', '2422420', '2424621', '2424734', '2425395', '2425431', '2425595', '2425597', '2425598', '2426881', '2426882', '2427948', '2431314', '2432582', '2433149', '2433362', '2433419', '2436784', '2437011', '2437684', '2437757', '2437780', '2438272', '2438376', '2438747', '2438754', '2439078', '2440222', '2441193', '2442573', '2443867', '2444085', '2444086', '2444390', '2447369', '2447370', '2447371', '2447372', '2447572', '2453248', '2453250', '2454945', '2454946', '2458252', '2458253', '2458475', '2458476', '2458994', '2458996', '2460000', '2461849', '2462543', '2468199', '2474584', '2474586', '2475974', '2479491', '2480379', '2480389', '2481496', '2483429', '2483733', '2485451', '2488136', '2489406', '2491806', '2491807', '2492489', '2492746', '2494400', '2494401', '2498540', '2498542', '2498871', '2499864', '2500186', '2501010', '2502983', '2504803', '2507706', '2508694', '2518406', '2518429', '2519434', '2521837', '2530931', '2530934', '2536881', '2536983', '2537041', '2537499', '2541671', '2542105', '2545034', '2545303', '2545537', '2546342', '2546700', '2546880', '2548943', '2552201', '2553061', '2553520', '2553521', '2553533', '2554062', '2557791', '2557792', '2557803', '2558063', '2558611', '2559113', '2561571', '2562323', '2563325', '2564093', '2567560', '2567800', '2570744', '2571617', '2573572', '2573825', '2574392', '2579258', '2580982', '2581274', '2582503', '2583449', '2583567', '2584322', '2585836', '2585965', '2587773', '2588074', '2588829', '2588968', '2588971', '2588972', '2591641', '2591642', '2592761', '2593486', '2594284', '2597451', '2599428', '2601852', '2608084', '2608085', '2608523', '2608712', '2609830', '2611114', '2611116', '2612292', '2612548', '2612549', '2613382', '2613701', '2617211', '2617263', '2620323', '26215686', '2623434', '2623818', '2624645', '2625884', '2629995', '2630545', '2630546', '2632159', '2632297', '2632298', '2634579', '2636655', '2638828', '2640840', '2640856', '2641675', '2641680', '2642201', '2642209', '2642866', '2643819', '2643821', '2645688', '2645696', '2645697', '2646592', '2649604', '2650294', '2653734', '2653995', '2655323', '2655384', '2655428', '2655789', '2655854', '2655967', '2656123', '2659483', '2661106', '2662108', '2663616', '2667702', '2667753', '2667755', '2671939', '2673060', '2674380', '2674381', '2684660', '2684667', '2686288', '2691902', '2695808', '2700878', '2701024', '2708317', '2715034', '2715064', '2723140', '2727073', '2727074', '2729053', '2731875', '2731876', '2731993', '2740036', '2742995', '2743252', '2744295', '2750340', '2753173', '2755103', '2760239', '276587', '2772631', '2773280', '2773713', '2773715', '2773898', '2781885', '2781889', '2786833', '2790036', '2792820', '2808990', '2814183', '2817269', '2819310', '2825344', '2825738', '2826197', '2827104', '2829742', '2830524', '2831673', '2831798', '2831799', '2842723', '2843870', '2844306', '2845455', '2848235', '2851942', '2861572', '2862743', '2862760', '2863219', '2863803', '2866325', '2866755', '2870363', '2870364', '2877167', '2878201', '2878975', '2879963', '2892694', '289336', '2897062', '2898850', '291190', '2920377', '2926553', '2929222', '2929561', '2934636', '2936982', '294386', '2952217', '2960401', '2961505', '2966989', '2974617', '2977059', '2977070', '2977328', '2977915', '2979070', '2979196', '2982066', '2985692', '29919759', '2996130', '2996418', '3002074', '3004672', '302082', '3025979', '302624', '3026888', '3028801', '3037381', '3044977', '3072632', '3082617', '3088350', '3094787', '3149840', '315435', '3172749', '320530', '322286', '323790', '325739', '326987', '349353', '349419', '353158', '368034', '368035', '369187', '372778', '372981', '375034', '378615', '382325', '390637', '392309', '392520', '392702', '394640', '397920', '4263765', '4282477', '4282483', '4721542', '481978', '550284', '574977', '584110', '584129', '600012', '7037560', '7103011', '750226', '800618', '800619', '803490', '803579', '804664', '804670', '804690', '804710', '804772', '804782', '804803', '804835', '804848', '804870', '804892', '805456', '805957', '806316', '807359', '809640', '809747', '809751', '809780', '809827', '8102116', '811824', '812388', '812389', '812391', '812418', '812502', '812516', '812541', '812545', '812547', '812866', '812927', '812929', '812957', '812959', '813198', '813200', '813202', '813935', '814825', '814857', '814859', '814900', '814912', '815057', '815115', '815126', '815127', '815133', '815135', '815443', '815472', '815518', '815615', '815733', '815852', '815875', '815878', '815891', '815937', '815938', '815965', '815974', '815975', '816048', '816064', '816120', '852516', '871702', '992478', '994412', '9997966', 'APV1052', 'APV1057', 'APV2645', 'APV2729', 'APV2732', 'APV2733', 'APV2734', 'APV3064', 'RN23639155', 'SE151046'];
