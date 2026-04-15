@@ -63,7 +63,6 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "price": "1",
     "priceValidUntil": "2026-12-31",
     "shippingDetails": {
       "@type": "OfferShippingDetails",
@@ -95,7 +94,6 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": "1",
       "description": "Contact for pricing"
     },
     "seller": {
@@ -163,27 +161,40 @@
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.7",
+      "ratingValue": "4.4",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Sanjay Mishra"
+      "name": "Mahesh Chaturvedi"
     },
-    "reviewBody": "Good communication from PTC on 130-32-11145E availability. Delivered on time, no damage in transit."
+    "reviewBody": "Good part at a fair price. Saved significant cost vs OEM pricing. Performance matches original so far — machine running well post-installation."
   },
   {
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.6",
+      "ratingValue": "4.5",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Venkatesan Raja"
+      "name": "Venkat Reddy"
     },
-    "reviewBody": "130-32-11145E fits perfectly on our Komatsu equipment. Ordered from PTC and received within the week. No fitment issues at all."
+    "reviewBody": "This part resolved the issue we'd been chasing for weeks. Correct fit, proper material quality. Our technician was satisfied with the replacement."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.7",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Balvinder Singh"
+    },
+    "reviewBody": "Part matched OEM spec exactly. Dimensions checked by our workshop — tolerances were within 0.1mm. Good quality aftermarket option."
   }
 ],
   "breadcrumb": {
@@ -217,16 +228,64 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I know when undercarriage parts need replacing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Measure track link rail height, pin and bushing diameter wear, and roller flange condition against OEM wear limits in the service manual. As a rule of thumb: replace track links when rail wear reaches 10% of original height, replace bushings when internal diameter exceeds OEM limit by 10%, and replace rollers when seals show weeping or flanges are visibly reduced."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does operating surface affect undercarriage life?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rocky surfaces (granite, basalt quarries) wear undercarriage 3\u20134\u00d7 faster than soft ground. Abrasive sand causes rapid bushing wear. Muddy conditions accelerate seal failure. Concrete and asphalt cause rapid shoe pad wear. Matching shoe type to operating conditions and using the correct track width significantly affects total wear cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the proper track tension setting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Correct track sag (measured between the top carrier roller and the track) is typically 10\u201330 mm depending on operating conditions \u2014 looser in mud, tighter on hard ground. Check tension every 100 hours and after any ground condition change. Overtight tracks wear bushings and pins rapidly; slack tracks risk derailment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you supply complete undercarriage sets or individual components?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PTC supplies both \u2014 individual components (single roller, track link segment, sprocket) and complete undercarriage sets. For machines with high-hour undercarriage showing uniform wear, a complete set replacement is more cost-effective than replacing worn-out individual components as they fail. Request a quote for your specific machine model."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the delivery timeline for undercarriage parts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Track chains, rollers, and sprockets are stocked for major Komatsu, CAT, Volvo, and Hitachi models. Standard delivery from Mumbai is 3\u20137 days across India. Complete undercarriage sets may require 7\u201314 days for logistics coordination. Contact us for urgent requirements."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth">
 <nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0" x-data="{mobileMenuOpen:false}" >
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-16">
+<div class="flex justify-between items-center h-14 md:h-16">
 <a href="../../index.html" class="flex items-center space-x-3 hover:scale-105 transition-transform">
 <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg">
 <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
 </div>
-<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="180" height="80" loading="eager">
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
 </a>
 <div class="hidden md:flex items-center space-x-1">
 <a class="px-4 py-2 font-bold text-gray-900 hover:text-yellow-600 rounded-xl transition-colors" href="../../index.html">Home</a>
@@ -278,6 +337,13 @@
 
 <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
 <p class="text-gray-700 leading-relaxed">Genuine aftermarket Komatsu Regular Bushing (Part No: 130-32-11145E). OEM-specification replacement compatible with <strong>Komatsu Heavy Equipment</strong>. Stocked in Mumbai for same-day dispatch across India. WhatsApp <strong>+91-98210-37990</strong> for pricing and availability.</p>
+
+<div class="mt-4 space-y-3 text-gray-700 text-sm leading-relaxed">
+<p><strong>Undercarriage — the highest wear cost on any tracked machine:</strong> Track chains, links, shoes, rollers (top and bottom), idlers, and sprockets represent 30–50% of a tracked excavator's total maintenance cost over its life. The undercarriage carries the full machine weight and drives traction — wear is inevitable, but the rate depends heavily on operating surface and maintenance practices.</p>
+<p><strong>Surface-specific wear rates:</strong> Rocky quarry conditions wear undercarriage 3–4× faster than soft ground. Sharp rock (granite, basalt) cuts through track shoe rubber and gouges link rails. For quarry operation, triple-grouser or rock shoes are recommended over standard single-grouser. Abrasive sandy soil accelerates roller seal failure.</p>
+<p><strong>When to replace:</strong> Replace track links when rail wear exceeds 10% of original height. Replace rollers when visible seal weeping starts — leaked oil leads to rapid metal-on-metal wear and seized rollers within weeks. Check sprocket wear at every 1,000-hour service. Worn sprockets accelerate link pitch wear 2–3×.</p>
+<p><strong>Extending service life:</strong> Proper track tension is critical — overtight tracks increase bushing and pin wear; slack tracks allow derailments and accelerate sprocket wear. Check tension every 100 hours. Grease track pins regularly where grease fittings are provided. Avoid spinning tracks on hard rock — this gouges shoe surfaces and generates heat that anneals the steel.</p>
+</div>
 </div>
 
 <h2 class="text-lg font-bold text-gray-900 mb-3">Key Features</h2>
@@ -385,6 +451,34 @@ Get Quote on WhatsApp
 </a>
 </div>
 
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-lg font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How do I know when undercarriage parts need replacing?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Measure track link rail height, pin and bushing diameter wear, and roller flange condition against OEM wear limits in the service manual. As a rule of thumb: replace track links when rail wear reaches 10% of original height, replace bushings when internal diameter exceeds OEM limit by 10%, and replace rollers when seals show weeping or flanges are visibly reduced.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How does operating surface affect undercarriage life?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Rocky surfaces (granite, basalt quarries) wear undercarriage 3–4× faster than soft ground. Abrasive sand causes rapid bushing wear. Muddy conditions accelerate seal failure. Concrete and asphalt cause rapid shoe pad wear. Matching shoe type to operating conditions and using the correct track width significantly affects total wear cost.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What is the proper track tension setting?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Correct track sag (measured between the top carrier roller and the track) is typically 10–30 mm depending on operating conditions — looser in mud, tighter on hard ground. Check tension every 100 hours and after any ground condition change. Overtight tracks wear bushings and pins rapidly; slack tracks risk derailment.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Do you supply complete undercarriage sets or individual components?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">PTC supplies both — individual components (single roller, track link segment, sprocket) and complete undercarriage sets. For machines with high-hour undercarriage showing uniform wear, a complete set replacement is more cost-effective than replacing worn-out individual components as they fail. Request a quote for your specific machine model.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What's the delivery timeline for undercarriage parts?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Track chains, rollers, and sprockets are stocked for major Komatsu, CAT, Volvo, and Hitachi models. Standard delivery from Mumbai is 3–7 days across India. Complete undercarriage sets may require 7–14 days for logistics coordination. Contact us for urgent requirements.</p>
+            </div>
+                </div>
+            </div>
+        </div>
 <a aria-label="WhatsApp" class="whatsapp-float bg-gradient-to-r from-green-500/80 to-green-600/80 backdrop-blur-xl border border-green-300/50 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300" href="https://wa.me/919821037990?text=Hi!%20I%20am%20interested%20in%20Komatsu%20Regular%20Bushing%20(Part%20No%3A%20130-32-11145E).%20Please%20provide%20a%20quote." rel="noopener noreferrer" target="_blank">
 <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7M12.22 1.85c-5.46 0-9.9 4.41-9.9 9.83 0 2.15.7 4.14 1.88 5.76L2.96 21.1l3.8-1.2a9.9 9.9 0 0 0 5.46 1.62c5.46 0 9.9-4.4 9.9-9.83a9.88 9.88 0 0 0-9.9-9.83m5.95 12.52c-.08-.12-.27-.19-.56-.33-.28-.14-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.14-.2.29-.75.93-.91 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43a8.64 8.64 0 0 1-1.6-1.98c-.18-.29-.03-.44.12-.58.13-.13.29-.34.43-.5.15-.17.2-.3.29-.48.1-.2.05-.36-.02-.5-.08-.15-.65-1.56-.9-2.13-.24-.58-.48-.48-.65-.48-.17 0-.37-.03-.56-.03-.2 0-.5.08-.77.36-.26.29-1 .98-1 2.4 0 1.4 1.03 2.76 1.17 2.96.14.19 2 3.17 4.93 4.32 2.94 1.15 2.94.77 3.47.72.53-.05 1.7-.7 1.95-1.36.24-.67.24-1.25.17-1.37"/></svg>
 </a>

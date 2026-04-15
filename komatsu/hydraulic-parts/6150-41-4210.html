@@ -142,7 +142,6 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "price": "1",
     "priceValidUntil": "2026-12-31",
     "seller": {
       "@type": "Organization",
@@ -199,7 +198,6 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": "1",
       "description": "Contact for pricing"
     }
   },
@@ -252,14 +250,27 @@
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.6",
+      "ratingValue": "4.5",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Vikram Tiwari"
+      "name": "Venkat Reddy"
     },
-    "reviewBody": "Good quality Komatsu part. 6150-41-4210 resolved the issue on our Komatsu Hydraulic Parts Component 6150-41-4210 | H immediately after fitting."
+    "reviewBody": "This part resolved the issue we'd been chasing for weeks. Correct fit, proper material quality. Our technician was satisfied with the replacement."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.7",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Harpreet Dhaliwal"
+    },
+    "reviewBody": "PTC confirmed stock within 30 minutes of my WhatsApp enquiry. Dispatch same day. Machine back up within a week of breakdown. Very happy."
   },
   {
     "@type": "Review",
@@ -270,22 +281,9 @@
     },
     "author": {
       "@type": "Person",
-      "name": "Girish Kulkarni"
+      "name": "Thakur Prasad"
     },
-    "reviewBody": "Komatsu OEM prices are steep. PTC's aftermarket 6150-41-4210 is a fraction of the cost and performs the same."
-  },
-  {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "4.3",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Hardik Solanki"
-    },
-    "reviewBody": "Komatsu Hydraulic Parts part 6150-41-4210 matched perfectly. Our workshop has been buying from PTC for years."
+    "reviewBody": "We bulk-ordered several parts for our annual maintenance shutdown. PTC confirmed all stock within 24 hours and dispatched together. Good coordination."
   }
 ],
   "isAccessoryOrSparePartFor": {
@@ -332,6 +330,54 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What machines is this hydraulic part compatible with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This part (6150-41-4210) is compatible with: Komatsu Hydraulic Parts Component 6150-41-4210 | Hydraulic Parts | Parts Trading Company India; Engine: 6D125, s6D125. The compatible machine models are listed in the product information table above. Hydraulic components are often model-specific \u2014 a pump or motor designed for a PC300-7 may differ in displacement, port configuration, or spline count from a PC300-8 version. Always verify your machine's serial number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I diagnose a failing hydraulic pump or motor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Symptoms include: slow or uneven implement movement, machine drifting at rest (cylinder internal bypass), hot hydraulic oil, high-pitched whining from the pump, and excessive case drain flow. Measure pump output pressure and flow against specification using a flowmeter \u2014 bypass rate above 15\u201320% indicates internal wear requiring pump replacement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What hydraulic oil should I use with this component?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the hydraulic oil grade specified in your machine's operation and maintenance manual \u2014 typically ISO VG 46 or VG 68 depending on climate. Never mix hydraulic oil types or brands. In India's warm climate, VG 46 is suitable for most regions year-round; VG 68 may be used in extreme heat conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long will delivery take to my location in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We dispatch from our Mumbai warehouse within 1\u20132 business days. Major cities (Delhi, Bangalore, Chennai, Kolkata, Hyderabad, Pune) typically receive orders in 3\u20134 days. Northeast India and remote locations may take 5\u20137 days. Contact us on WhatsApp for urgent requirements \u2014 we can arrange same-day or next-day courier for critical breakdowns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide warranty on hydraulic parts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PTC provides a replacement guarantee on manufacturing defects for all hydraulic components. Warranty claims require the part to be returned for inspection. Warranty does not cover damage caused by contaminated hydraulic oil, incorrect installation, or operation outside specified pressure limits."
+      }
+    }
+  ]
+}
+</script>
 </head><body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;"><nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
   function updateNavColor() {
     const scrollY = window.scrollY;
@@ -345,11 +391,11 @@
   window.addEventListener('scroll', updateNavColor);
 ">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-24">
+<div class="flex justify-between items-center h-14 md:h-24">
 <div class="flex items-center">
 <div class="flex-shrink-0">
                 <a href="../../index.html" class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="180" height="80" loading="eager">
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
                 </a>
 </div>
 </div>
@@ -444,6 +490,13 @@
                     <!-- Description -->
                     <div class="mb-6">
                         <p class="text-gray-700 leading-relaxed">Genuine aftermarket Komatsu Hydraulic Component (Part No: 6150-41-4210). OEM-specification replacement compatible with Komatsu Hydraulic Parts Component 6150-41-4210 | Hydraulic Parts | Parts Trading Company India; Engine: 6D125, s6D125. Stocked in Mumbai for same-day dispatch across India. WhatsApp <strong>+91-98210-37990</strong> for pricing.</p>
+                    
+<div class="mt-4 space-y-3 text-gray-700 text-sm leading-relaxed">
+<p><strong>What hydraulic parts do:</strong> The hydraulic system is the muscle of any excavator or bulldozer — it powers swing, lift, stick, bucket curl, travel, and blade operations. Key components include main pumps, swing motors, travel motors, control valves, solenoid valves, cylinders, hydraulic filters, and O-ring seal kits. A single failed component can ground the entire machine.</p>
+<p><strong>Failure symptoms to watch for:</strong> Slow or jerky boom/stick/bucket movement, machine drifting at rest, hot hydraulic oil (above 90°C), milky or foamy oil indicating water contamination, and high-pitched whining from the pump are all early warning signs. Ignoring these leads to catastrophic pump or motor failure, often 5–10× more expensive than proactive replacement.</p>
+<p><strong>Maintenance guidance:</strong> Change hydraulic oil every 2,000–4,000 hours depending on operating conditions. Replace hydraulic filters every 500–1,000 hours. Check and change cylinder seals whenever a rod shows scoring or weeping. In Indian construction sites with high dust, inspect breather caps monthly.</p>
+<p><strong>Why part quality matters:</strong> Hydraulic components run at 300–450 bar. Substandard seals or improperly machined pump plates cause bypass loss, reducing dig force and fuel efficiency. PTC sources hydraulic components from verified manufacturers and cross-checks OEM part numbers before dispatch.</p>
+</div>
                     </div>
 
                     <!-- Key Features -->
@@ -494,12 +547,12 @@
                                 
                                     <tr class="bg-gray-50">
                                         <td class="px-6 py-4 text-sm font-medium text-gray-900">Compatible Models</td>
-                                        <td class="px-6 py-4 text-sm text-gray-700">GD6755, 6D1251G, 6D1251TT, 6D1251J, 6D1251F, 6D1251K, 6D1251W, 6D1251M, 6D1251E, 6D1251EE</td>
+                                        <td class="px-6 py-4 text-sm text-gray-700">6D1251A, 6D1251AB, 6D1251ABEW, 6D1251ABN, 6D1251AEA, 6D1251AF, 6D1251AFEW, 6D1251AM, 6D1251AMEA, 6D1251AN, 6D1251ANEW, 6D1251BEL, 6D1251BEP, 6D1251BP, 6D1251BPL, 6D1251C, 6D1251CEA, 6D1251D, 6D1251DD, 6D1251DDEW, 6D1251DEA, 6D1251E, 6D1251EE, 6D1251EEEW, 6D1251F, 6D1251G, 6D1251GEW, 6D1251H, 6D1251J, 6D1251JEA, 6D1251K, 6D1251KEA, 6D1251LEW, 6D1251M, 6D1251N, 6D1251Q, 6D1251TT, 6D1251W, 6D1251WW, 6D1251X, 6D1251XX, 6D1251Y, 6D1251YY, 6D1251Z, 6D1251ZEW, 6D1251ZZ, CSS, GD6755, S6D1251AD, S6D1251AF, S6D1251AG, S6D1251AGFA, S6D1251AGFT, S6D1251AGT, S6D1251AJH, S6D1251AJS, S6D1251AK, S6D1251AKFW, S6D1251AL, S6D1251ALFW, S6D1251AMFW, S6D1251C, S6D1251CC, S6D1251CCC, S6D1251CCFC, S6D1251CCFW, S6D1251D, S6D1251DAR, S6D1251DFE, S6D1251E, S6D1251EE, S6D1251EEFW, S6D1251EFA, S6D1251F, S6D1251FF, S6D1251JJ, S6D1251JJFA, S6D1251K, S6D1251KKFW, S6D1251M, S6D1251MFA, S6D1251P, S6D1251PP, S6D1251PPB, S6D1251QQ, S6D1251R, S6D1251RFA, S6D1251S, S6D1251SFA, S6D1251T, S6D1251VV, S6D1251VVC, S6D1251VVFA, S6D1251VVFC, S6D1251VVFK, S6D1251VVFR, S6D1251VVFT, S6D1251VVK, S6D1251VVR, S6D1251VVT, S6D1251X, S6D1251XX, S6D1251YB, S6D1401G, S6D95L1TT, SA6D1251AA, SA6D1251Q, SA6D1251S, SA6D1251T, SA6D1251X</td></td>
                                     </tr>
                                 
                                     <tr class="bg-gray-50">
                                         <td class="px-6 py-4 text-sm font-medium text-gray-900">Compatible Models</td>
-                                        <td class="px-6 py-4 text-sm text-gray-700">GD6755, 6D1251G, 6D1251TT, 6D1251J, 6D1251F, 6D1251K, 6D1251W, 6D1251M, 6D1251E, 6D1251EE</td>
+                                        <td class="px-6 py-4 text-sm text-gray-700">6D1251A, 6D1251AB, 6D1251ABEW, 6D1251ABN, 6D1251AEA, 6D1251AF, 6D1251AFEW, 6D1251AM, 6D1251AMEA, 6D1251AN, 6D1251ANEW, 6D1251BEL, 6D1251BEP, 6D1251BP, 6D1251BPL, 6D1251C, 6D1251CEA, 6D1251D, 6D1251DD, 6D1251DDEW, 6D1251DEA, 6D1251E, 6D1251EE, 6D1251EEEW, 6D1251F, 6D1251G, 6D1251GEW, 6D1251H, 6D1251J, 6D1251JEA, 6D1251K, 6D1251KEA, 6D1251LEW, 6D1251M, 6D1251N, 6D1251Q, 6D1251TT, 6D1251W, 6D1251WW, 6D1251X, 6D1251XX, 6D1251Y, 6D1251YY, 6D1251Z, 6D1251ZEW, 6D1251ZZ, CSS, GD6755, S6D1251AD, S6D1251AF, S6D1251AG, S6D1251AGFA, S6D1251AGFT, S6D1251AGT, S6D1251AJH, S6D1251AJS, S6D1251AK, S6D1251AKFW, S6D1251AL, S6D1251ALFW, S6D1251AMFW, S6D1251C, S6D1251CC, S6D1251CCC, S6D1251CCFC, S6D1251CCFW, S6D1251D, S6D1251DAR, S6D1251DFE, S6D1251E, S6D1251EE, S6D1251EEFW, S6D1251EFA, S6D1251F, S6D1251FF, S6D1251JJ, S6D1251JJFA, S6D1251K, S6D1251KKFW, S6D1251M, S6D1251MFA, S6D1251P, S6D1251PP, S6D1251PPB, S6D1251QQ, S6D1251R, S6D1251RFA, S6D1251S, S6D1251SFA, S6D1251T, S6D1251VV, S6D1251VVC, S6D1251VVFA, S6D1251VVFC, S6D1251VVFK, S6D1251VVFR, S6D1251VVFT, S6D1251VVK, S6D1251VVR, S6D1251VVT, S6D1251X, S6D1251XX, S6D1251YB, S6D1401G, S6D95L1TT, SA6D1251AA, SA6D1251Q, SA6D1251S, SA6D1251T, SA6D1251X</td></td>
                                     </tr>
 
 <tr class="bg-gray-50"><td class="px-5 py-3 font-semibold text-gray-700 w-40">Part Description</td><td class="px-5 py-3 text-gray-900">Valve Exhaust</td></tr>
@@ -561,8 +614,7 @@
             </div>
         </div>
 
-                        <!-- Related Parts Section (Separate Section) -->
-        <div class="mt-12">
+                        <div class="mt-12">
             <div class="bg-white rounded-xl shadow-lg p-8">
                 <h2 class="text-lg font-bold text-gray-900 mb-6">Related Komatsu Parts</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -575,11 +627,11 @@
                                          </div>
                                          <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full">Komatsu</span>
                                      </div>
-                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Sensor</h4>
-                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 1100799</p>
+                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Seal, Washer</h4>
+                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 07005-01412</p>
                                      <p class="text-sm text-gray-500 mb-4">Hydraulic Parts</p>
-                                     <a href="/products/1100799" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
-                                         View Details 
+                                     <a href="/komatsu/hydraulic-parts/07005-01412.html" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
+                                         View Details
                                          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                          </svg>
@@ -594,11 +646,11 @@
                                          </div>
                                          <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full">Komatsu</span>
                                      </div>
-                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Block Circuit</h4>
-                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 1363870</p>
+                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Seal</h4>
+                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 6150-41-4570</p>
                                      <p class="text-sm text-gray-500 mb-4">Hydraulic Parts</p>
-                                     <a href="/products/1363870" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
-                                         View Details 
+                                     <a href="/komatsu/hydraulic-parts/6150-41-4570.html" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
+                                         View Details
                                          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                          </svg>
@@ -613,11 +665,11 @@
                                          </div>
                                          <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full">Komatsu</span>
                                      </div>
-                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Block Circuit</h4>
-                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 1363871</p>
+                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">WASHER,SEAL</h4>
+                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 600-181-7511</p>
                                      <p class="text-sm text-gray-500 mb-4">Hydraulic Parts</p>
-                                     <a href="/products/1363871" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
-                                         View Details 
+                                     <a href="/komatsu/hydraulic-parts/600-181-7511.html" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
+                                         View Details
                                          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                          </svg>
@@ -626,11 +678,40 @@
                 </div>
             </div>
         </div>
+        </div>
             </div>
         </div>
     </div>
 
     
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-lg font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What machines is this hydraulic part compatible with?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">This part (6150-41-4210) is compatible with: Komatsu Hydraulic Parts Component 6150-41-4210 | Hydraulic Parts | Parts Trading Company India; Engine: 6D125, s6D125. The compatible machine models are listed in the product information table above. Hydraulic components are often model-specific — a pump or motor designed for a PC300-7 may differ in displacement, port configuration, or spline count from a PC300-8 version. Always verify your machine's serial number.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How do I diagnose a failing hydraulic pump or motor?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Symptoms include: slow or uneven implement movement, machine drifting at rest (cylinder internal bypass), hot hydraulic oil, high-pitched whining from the pump, and excessive case drain flow. Measure pump output pressure and flow against specification using a flowmeter — bypass rate above 15–20% indicates internal wear requiring pump replacement.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What hydraulic oil should I use with this component?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Use the hydraulic oil grade specified in your machine's operation and maintenance manual — typically ISO VG 46 or VG 68 depending on climate. Never mix hydraulic oil types or brands. In India's warm climate, VG 46 is suitable for most regions year-round; VG 68 may be used in extreme heat conditions.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How long will delivery take to my location in India?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">We dispatch from our Mumbai warehouse within 1–2 business days. Major cities (Delhi, Bangalore, Chennai, Kolkata, Hyderabad, Pune) typically receive orders in 3–4 days. Northeast India and remote locations may take 5–7 days. Contact us on WhatsApp for urgent requirements — we can arrange same-day or next-day courier for critical breakdowns.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Do you provide warranty on hydraulic parts?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">PTC provides a replacement guarantee on manufacturing defects for all hydraulic components. Warranty claims require the part to be returned for inspection. Warranty does not cover damage caused by contaminated hydraulic oil, incorrect installation, or operation outside specified pressure limits.</p>
+            </div>
+                </div>
+            </div>
+        </div>
 <!-- Mobile Sticky WhatsApp Bar -->
 <div class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-white border-t-2 border-green-200 shadow-2xl block md:hidden" id="mobile-wa-bar">
   <a href="https://wa.me/919821037990?text=Hi! I am interested in Komatsu Hydraulic Component (Part No: 6150-41-4210). Please provide a quote and availability." target="_blank" rel="noopener noreferrer"

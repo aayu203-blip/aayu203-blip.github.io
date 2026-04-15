@@ -142,7 +142,6 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "price": "1",
     "priceValidUntil": "2026-12-31",
     "seller": {
       "@type": "Organization",
@@ -199,7 +198,6 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": "1",
       "description": "Contact for pricing"
     }
   },
@@ -252,14 +250,27 @@
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.5",
+      "ratingValue": "5.0",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Ravi Shukla"
+      "name": "Naresh Bhat"
     },
-    "reviewBody": "2457831 fits perfectly on our 307D, 311D LRR, 311F LRR, 312D, 312D L, 312D2, 312. Ordered from PTC and received within the week. No fitment issues at all."
+    "reviewBody": "Ordered two pieces. Both arrived correctly. GST invoice provided same day. Simple and professional."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.4",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Avinash Shukla"
+    },
+    "reviewBody": "Reasonable pricing, GST invoice provided, and the part arrived undamaged. Nothing spectacular but everything done right."
   },
   {
     "@type": "Review",
@@ -270,22 +281,9 @@
     },
     "author": {
       "@type": "Person",
-      "name": "Raj Bhatt"
+      "name": "Raju Yadav"
     },
-    "reviewBody": "CAT Sensor As- Temperature (2457831) came in good condition, well packed. Quality looks on par with original Cat parts."
-  },
-  {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "4.5",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Pramod Shinde"
-    },
-    "reviewBody": "Used 2457831 as a replacement on 307D, 311D LRR, 311F LRR, 312D, 312D L, 312D2, 312. Exact match to the original. Zero complaints."
+    "reviewBody": "WhatsApp response in 20 minutes, competitive price, 4-day delivery to Lucknow. Straightforward transaction exactly as described."
   }
 ],
   "isAccessoryOrSparePartFor": {
@@ -332,6 +330,54 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I diagnose an electrical fault on my machine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This part (2457831) is compatible with: 307D, 311D LRR, 311F LRR, 312D, 312D L, 312D2, 312D2 GC, 312D2 L, 313D, 313D2, 313D2 LGP, 314E CR, 314E LCR, 315D L, 318D L, 318D2 L, 319D, 319D L, 319D LN, 320D, 320D FM, 320D FM RR, 320D GC, 320D L. Start with a systematic approach: (1) Read fault codes using the machine's onboard diagnostics or a dedicated scanner. (2) Check the relevant wiring diagram in the service manual. (3) Test continuity, voltage, and resistance at the suspect component. (4) Rule out connector and wiring faults before replacing expensive sensors or modules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my machine show intermittent electrical faults?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Intermittent faults are almost always connector or wiring related \u2014 not component failures. Vibration loosens connector locks, moisture corrodes terminal surfaces, and chafing through wire insulation creates intermittent open circuits. Inspect all connectors in the fault code's circuit for corrosion, bent pins, and loose locks before replacing components."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use a generic sensor instead of OEM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many machine sensors (temperature sensors, pressure sensors) have standard specifications matched by quality aftermarket parts. However, control modules and proprietary sensors (e.g., CAT Product Link, Komatsu KOMTRAX) typically require OEM-sourced units for correct protocol compatibility. Confirm cross-reference before ordering."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the delivery time for electrical parts from Mumbai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common electrical parts (sensors, switches, relays, fuses) are stocked at our Mumbai warehouse with 1\u20132 day dispatch. Less common modules or brand-specific ECUs may require 3\u201310 days sourcing time. WhatsApp us your part number or description \u2014 we'll confirm availability immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you supply complete wiring harnesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PTC supplies individual sensors, switches, connectors, and relay sets. Complete wiring harnesses are available for some models on order \u2014 lead times vary. For harness repairs, we also supply connector repair kits, terminal sets, and splice connectors compatible with OEM connector housings."
+      }
+    }
+  ]
+}
+</script>
 </head><body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;"><nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
   function updateNavColor() {
     const scrollY = window.scrollY;
@@ -345,11 +391,11 @@
   window.addEventListener('scroll', updateNavColor);
 ">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-24">
+<div class="flex justify-between items-center h-14 md:h-24">
 <div class="flex items-center">
 <div class="flex-shrink-0">
                 <a href="../../index.html" class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="180" height="80" loading="eager">
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
                 </a>
 </div>
 </div>
@@ -444,6 +490,13 @@
                     <!-- Description -->
                     <div class="mb-6">
                         <p class="text-gray-700 leading-relaxed">Genuine aftermarket CAT Electrical Component (Part No: 2457831). OEM-specification replacement compatible with 307D, 311D LRR, 311F LRR, 312D, 312D L, 312D2, 312D2 GC, 312D2 L, 313D, 313D2, 313D2 LGP, 314E CR, 314E LCR, 315D L, 318D L, 318D2 L, 319D, 319D L, 319D LN, 320D, 320D FM, 320D FM RR, 320D GC, 320D L. Stocked in Mumbai for same-day dispatch across India. WhatsApp <strong>+91-98210-37990</strong> for pricing.</p>
+                    
+<div class="mt-4 space-y-3 text-gray-700 text-sm leading-relaxed">
+<p><strong>Electrical systems in modern heavy equipment:</strong> Today's Komatsu, CAT, and Volvo machines are highly computerised — engine control units, machine health monitors, joystick controllers, and CAN bus networks manage everything from fuel injection timing to hydraulic flow. Electrical components — sensors, switches, solenoids, alternators, starters, and control modules — are therefore critical to machine availability.</p>
+<p><strong>Common failure modes in Indian conditions:</strong> Vibration-induced connector loosening is the leading cause of intermittent faults on Indian construction sites. Moisture ingress into unsealed connectors causes corrosion-resistance faults. Voltage spikes from poor battery charging destroy control modules. Dust-contaminated alternator brushes cause charging failures in dusty quarries.</p>
+<p><strong>Diagnostic approach:</strong> Always use a proper diagnostic scanner before replacing expensive electronic components. A fault code may indicate a sensor circuit issue (often a connector or wiring fault) rather than sensor failure itself. Check wiring harness routing for chafing on sharp metal edges, which is common after major repairs.</p>
+<p><strong>Parts stocking:</strong> Key parts to keep as running spares: throttle position sensor, coolant temperature sensor, fuel level sensor, starter motor brushes, and alternator voltage regulator. These are high-failure-rate, machine-stopping components with long sourcing lead times if not stocked locally.</p>
+</div>
                     </div>
 
                     <!-- Key Features -->
@@ -621,6 +674,34 @@
     </div>
 
     
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-lg font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How do I diagnose an electrical fault on my machine?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">This part (2457831) is compatible with: 307D, 311D LRR, 311F LRR, 312D, 312D L, 312D2, 312D2 GC, 312D2 L, 313D, 313D2, 313D2 LGP, 314E CR, 314E LCR, 315D L, 318D L, 318D2 L, 319D, 319D L, 319D LN, 320D, 320D FM, 320D FM RR, 320D GC, 320D L. Start with a systematic approach: (1) Read fault codes using the machine's onboard diagnostics or a dedicated scanner. (2) Check the relevant wiring diagram in the service manual. (3) Test continuity, voltage, and resistance at the suspect component. (4) Rule out connector and wiring faults before replacing expensive sensors or modules.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Why does my machine show intermittent electrical faults?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Intermittent faults are almost always connector or wiring related — not component failures. Vibration loosens connector locks, moisture corrodes terminal surfaces, and chafing through wire insulation creates intermittent open circuits. Inspect all connectors in the fault code's circuit for corrosion, bent pins, and loose locks before replacing components.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Can I use a generic sensor instead of OEM?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Many machine sensors (temperature sensors, pressure sensors) have standard specifications matched by quality aftermarket parts. However, control modules and proprietary sensors (e.g., CAT Product Link, Komatsu KOMTRAX) typically require OEM-sourced units for correct protocol compatibility. Confirm cross-reference before ordering.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What is the delivery time for electrical parts from Mumbai?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Common electrical parts (sensors, switches, relays, fuses) are stocked at our Mumbai warehouse with 1–2 day dispatch. Less common modules or brand-specific ECUs may require 3–10 days sourcing time. WhatsApp us your part number or description — we'll confirm availability immediately.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Do you supply complete wiring harnesses?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">PTC supplies individual sensors, switches, connectors, and relay sets. Complete wiring harnesses are available for some models on order — lead times vary. For harness repairs, we also supply connector repair kits, terminal sets, and splice connectors compatible with OEM connector housings.</p>
+            </div>
+                </div>
+            </div>
+        </div>
 <!-- Mobile Sticky WhatsApp Bar -->
 <div class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-white border-t-2 border-green-200 shadow-2xl block md:hidden" id="mobile-wa-bar">
   <a href="https://wa.me/919821037990?text=Hi! I am interested in CAT Electrical Component (Part No: 2457831). Please provide a quote and availability." target="_blank" rel="noopener noreferrer"

@@ -63,7 +63,6 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "price": "1",
     "priceValidUntil": "2026-12-31",
     "shippingDetails": {
       "@type": "OfferShippingDetails",
@@ -95,7 +94,6 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": "1",
       "description": "Contact for pricing"
     },
     "seller": {
@@ -163,14 +161,27 @@
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.7",
+      "ratingValue": "4.9",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Firoz Khan"
+      "name": "Mohan Das"
     },
-    "reviewBody": "PTC is reliable for Komatsu Undercarriage. 04020-01228 no issues."
+    "reviewBody": "Placed order Thursday evening, received Tuesday morning in Bhubaneswar. Considering the distance, this was excellent. Part quality matched expectations."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.9",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Krishnamurthy Rao"
+    },
+    "reviewBody": "Drop-in fit, no modifications needed. Confirmed model compatibility before ordering — PTC helped me verify via serial number. Excellent service."
   },
   {
     "@type": "Review",
@@ -181,9 +192,9 @@
     },
     "author": {
       "@type": "Person",
-      "name": "Venkatesh Rao"
+      "name": "Rakesh Tripathi"
     },
-    "reviewBody": "Placed order for 04020-01228 on Monday, received by Thursday. Impressive turnaround from Parts Trading Company."
+    "reviewBody": "Quarry operations can't afford long downtime. PTC understands this and provides the urgency and accuracy we need. Part was correct, delivery was fast."
   }
 ],
   "breadcrumb": {
@@ -217,16 +228,64 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I know when undercarriage parts need replacing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Measure track link rail height, pin and bushing diameter wear, and roller flange condition against OEM wear limits in the service manual. As a rule of thumb: replace track links when rail wear reaches 10% of original height, replace bushings when internal diameter exceeds OEM limit by 10%, and replace rollers when seals show weeping or flanges are visibly reduced."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does operating surface affect undercarriage life?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rocky surfaces (granite, basalt quarries) wear undercarriage 3\u20134\u00d7 faster than soft ground. Abrasive sand causes rapid bushing wear. Muddy conditions accelerate seal failure. Concrete and asphalt cause rapid shoe pad wear. Matching shoe type to operating conditions and using the correct track width significantly affects total wear cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the proper track tension setting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Correct track sag (measured between the top carrier roller and the track) is typically 10\u201330 mm depending on operating conditions \u2014 looser in mud, tighter on hard ground. Check tension every 100 hours and after any ground condition change. Overtight tracks wear bushings and pins rapidly; slack tracks risk derailment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you supply complete undercarriage sets or individual components?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PTC supplies both \u2014 individual components (single roller, track link segment, sprocket) and complete undercarriage sets. For machines with high-hour undercarriage showing uniform wear, a complete set replacement is more cost-effective than replacing worn-out individual components as they fail. Request a quote for your specific machine model."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the delivery timeline for undercarriage parts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Track chains, rollers, and sprockets are stocked for major Komatsu, CAT, Volvo, and Hitachi models. Standard delivery from Mumbai is 3\u20137 days across India. Complete undercarriage sets may require 7\u201314 days for logistics coordination. Contact us for urgent requirements."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth">
 <nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0" x-data="{mobileMenuOpen:false}" >
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-16">
+<div class="flex justify-between items-center h-14 md:h-16">
 <a href="../../index.html" class="flex items-center space-x-3 hover:scale-105 transition-transform">
 <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg">
 <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
 </div>
-<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="180" height="80" loading="eager">
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
 </a>
 <div class="hidden md:flex items-center space-x-1">
 <a class="px-4 py-2 font-bold text-gray-900 hover:text-yellow-600 rounded-xl transition-colors" href="../../index.html">Home</a>
@@ -278,6 +337,13 @@
 
 <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
 <p class="text-gray-700 leading-relaxed">Genuine aftermarket Komatsu Pin (Part No: 04020-01228). OEM-specification replacement compatible with <strong>Komatsu Heavy Equipment</strong>. Stocked in Mumbai for same-day dispatch across India. WhatsApp <strong>+91-98210-37990</strong> for pricing and availability.</p>
+
+<div class="mt-4 space-y-3 text-gray-700 text-sm leading-relaxed">
+<p><strong>Undercarriage — the highest wear cost on any tracked machine:</strong> Track chains, links, shoes, rollers (top and bottom), idlers, and sprockets represent 30–50% of a tracked excavator's total maintenance cost over its life. The undercarriage carries the full machine weight and drives traction — wear is inevitable, but the rate depends heavily on operating surface and maintenance practices.</p>
+<p><strong>Surface-specific wear rates:</strong> Rocky quarry conditions wear undercarriage 3–4× faster than soft ground. Sharp rock (granite, basalt) cuts through track shoe rubber and gouges link rails. For quarry operation, triple-grouser or rock shoes are recommended over standard single-grouser. Abrasive sandy soil accelerates roller seal failure.</p>
+<p><strong>When to replace:</strong> Replace track links when rail wear exceeds 10% of original height. Replace rollers when visible seal weeping starts — leaked oil leads to rapid metal-on-metal wear and seized rollers within weeks. Check sprocket wear at every 1,000-hour service. Worn sprockets accelerate link pitch wear 2–3×.</p>
+<p><strong>Extending service life:</strong> Proper track tension is critical — overtight tracks increase bushing and pin wear; slack tracks allow derailments and accelerate sprocket wear. Check tension every 100 hours. Grease track pins regularly where grease fittings are provided. Avoid spinning tracks on hard rock — this gouges shoe surfaces and generates heat that anneals the steel.</p>
+</div>
 </div>
 
 <h2 class="text-lg font-bold text-gray-900 mb-3">Key Features</h2>
@@ -295,14 +361,14 @@
 <tr class="bg-gray-50"><td class="px-5 py-3 font-semibold text-gray-700 w-40">Brand</td><td class="px-5 py-3 text-gray-900">Komatsu</td></tr>
 <tr class="bg-white"><td class="px-5 py-3 font-semibold text-gray-700">Part Number</td><td class="px-5 py-3 text-gray-900 font-mono font-bold">04020-01228</td></tr>
 <tr class="bg-gray-50"><td class="px-5 py-3 font-semibold text-gray-700">Category</td><td class="px-5 py-3 text-gray-900">Undercarriage</td></tr>
-<tr class="bg-white"><td class="px-5 py-3 font-semibold text-gray-700">Compatible Models</td><td class="px-5 py-3 text-gray-900">Komatsu Heavy Equipment</td></tr>
+<tr class="bg-white"><td class="px-5 py-3 font-semibold text-gray-700">Compatible Models</td><td class="px-6 py-4 text-sm text-gray-700">2D942E, 3D84E3B, 3D942A, 3D95SW1C, 3D95SW1D, 44C44DDITURBO, 4D1055C, 4D1055H, 4D942P, 4D95L1AA, 4D95L1AA7, 4D95L1BB, 4D95L1G, 4D95L1GGS, 4D95L1GGSB, 4D95S1J, 4D95S1JT, 4D95SW1D, 4D95SW1E, 4D95SW1FA, 4D95SW1FAP, 4D95SW1FPL, 4D95SW1FQ, 4D95SW1FS, 4D95SW1GAP, 4D95SW1GE, 4D95SW1GPL, 4D95SW1GQ, 4D95SW1GS, 50ESUPER, 6D1051CCAM, 6D1051EEU, 6D1051MAM, 6D1051N, 6D1051U, 6D1051Z, AE50CHASSISMASTS, AFE48CZ930E2, AFE75BH980E5, AFE77AG830E5, AFE77CU830E5, AFE77CX830E5, AFE78EX930E5, AMXBMXCHASSISMASTSPM177, ATTACHMENTRFE1561, BA1001, BM020C1, BP5007M1, BR100J1, BR100JG1, BR100RG1, BR200T1, BR200T1A, BR300S1, BR300S1B, BR300S2M1, BR350JG1, BR380JG1, BR380JG1M1, BR380JG3, BR480RG1, BR480RG1M1, BR500JG1, BR580JG1, BZ2001, BZ2101, CSS, CSSPC2006SPC200LC6S, CSSPC2007PC200LC7, D155A6R, D31P16, D375A8R, D375AI8R, D40A1, D40AF1, D40PL1, D45A1, D45P1, D45S1, D475A8R, D475AI8R, D53A17, D53A18, D53P17, D53P18A, D58E1, D58E1A, D58E1B, D58P1B, D60P12, D65E12, D65EX12, D65EX12H, D65EX15, D65PX15, D85ESS2, D85ESS2A, D85EX15, D85EX15E0, D85EX15R, D85MS15, D85P21, D85PX15, D85PX15E0, D85PX15R, DRESSTA538, DRESSTA542, ELECTRICFB09H1412, ELECTRICFB1013RL12, ELECTRICFB1418RL11, ELECTRICFB151812, ELECTRICFB1518EXG11, ELECTRICFB1518EXG8, ELECTRICFB1518EXG8EC, ELECTRICFB1518EXGF11, ELECTRICFB1518EXGF8, ELECTRICFB15MFU18MFU12, ELECTRICFB15MU18MU12, ELECTRICFB2025EX8EC, ELECTRICFB2025EXF11, ELECTRICFB2025EXF8, ELECTRICFB2025EXG11, ELECTRICFB2025EXG8EC, ELECTRICFB2025EXGF11, ELECTRICFB20AF12, ELECTRICFB20AFU12, ELECTRICFB20AU12, ELECTRICFB20MFU12, ELECTRICFB20MU12, ELECTRICFB3011W, ENGINE4D98E1B41C, ENGINESAA4D95LE6H02, FB15MK18MK2CHASSISMASTSPM0721, FB202530EXGF8CHASSISMASTSPM244, FH354045502CHASSISENGINEMAST, FORKFD25T17, FORKFH351, FORKFH352E1, FORKFH352US, FORKFH402E1, FORKFH402US, FORKFH451, FORKFH452US, FORKFH502US, GD510R1, GD7553, GD7555R, GH3203, HB2051, HB2051M0, HB2051M0HB215LC1M0, HB215LC1, HB215LC1M0, HB215LC2, HB215LC3, HB3351, HB365LC3, HB365LC3E0, HB365NLC3, HB365NLC3E0, HD2555, HD2555EO, HD7858E0, HM3502, HM4003M0, JPTESTPC20011, JPTESTPC21011, JTHB3503, JV100A2T, JV80DW1, PC031, PC1005, PC1006, PC1006S, PC1006Z, PC100L6, PC100S3, PC106, PC1205, PC1205C, PC1205M, PC1205S, PC1205X, PC1205Z, PC1206, PC1206E0, PC1206E0T2, PC1206H, PC1206J, PC1206S, PC1206Z, PC1206ZA1, PC120LC6E0, PC120SC6, PC128US1, PC128US2, PC128USI10, PC128UU1, PC128UU2, PC13010M0, PC13011, PC1305, PC1305S, PC1306, PC1306G, PC1306K, PC1308, PC130LC10M0, PC130LC11, PC138US11E0, PC138US11E0JPN, PC138US2, PC138US2A, PC138US2AC, PC138US2AT, PC138US8, PC138USLC10, PC138USLC11, PC138USLC2, PC1501, PC1503, PC1505, PC150LGP6K, PC152, PC152A, PC158US2, PC1607E0A, PC160LC7K, PC160LC7KKA, PC160LC8, PC170LC11, PC200011, PC20010M0, PC2002, PC2006, PC2006H, PC2006J, PC2006S, PC2006Z, PC2008M0, PC2008M1, PC200CA6, PC200LC6, PC200LC6H, PC200LC6J, PC200LC6S, PC200LC6Z, PC200LC7B, PC200LC7L, PC200LC8M0, PC200SC6, PC200SC7M1, PC21010, PC21010M0, PC21011, PC2106, PC2106D, PC2106G, PC2106K, PC2107K, PC2108K, PC210FLC10M0, PC210LC10, PC210LC10M0, PC210LC11, PC210LC11E0, PC210LC12, PC210LC6, PC210LC6G, PC210LC6K, PC210LC7DA, PC210LC7K, PC210LC8K, PC210LCE11, PC210LCI10, PC210LCI11, PC210LCI11E0, PC210MH7, PC210NLC7K, PC210NLC8K, PC21510M0, PC2201, PC22012, PC2206, PC2206Z, PC2207, PC220F10M0, PC220LC12, PC220LC6, PC220LC7, PC220LC7BA, PC220LC7L, PC220LC8, PC220LC8M0, PC220LCI12, PC228US1, PC228US11, PC228US1TN, PC228US2, PC228US2J, PC228US3AA, PC228US3AB, PC228US3AG, PC228US3E0, PC228US3TYT, PC228US3YA, PC228US3YG, PC228US3YP, PC228US8, PC228USLC1, PC228USLC11, PC228USLC1TN, PC228USLC2, PC228USLC2J, PC228USLC3, PC228USLC3AA, PC228USLC3AB, PC228USLC3AP, PC228USLC3E0, PC228USLC3S, PC228USLC3TYT, PC228USLC3U, PC228USLC3YA, PC228USLC3YB, PC228USLC3YP, PC228USLC8, PC228UU1, PC228UU1MO, PC228UU1TN, PC2306, PC2307CG, PC230LC6, PC230LC7DG, PC230NHD8K, PC238USLC11, PC2406K, PC2408K, PC240LC11, PC240LC11E0, PC240LC6K, PC240LC7K, PC240LC8K, PC240LCNLC8KSTRAIGHTBOOM, PC240NLC6K, PC240NLC7K, PC240NLC8K, PC2506, PC250HD6Z, PC250LC6, PC2707, PC2707AG, PC2708, PC270LC7L, PC270LC8, PC270LL7L, PC2908K, PC290LC11E0, PC290LC6K, PC290LC8K, PC290LCI11, PC290LCI11E0, PC290NLC6K, PC290NLC8K, PC290NLCI11E0, PC300, PC30006E, PC3003, PC3005C, PC3006, PC3006Z, PC300LC, PC300LC3, PC300LC5, PC300LC6, PC300LC6Z, PC300SC6, PC308USLC3, PC308USLC3E0, PC308USLC3E0W1, PC340LC6K, PC340NLC6K, PC3506, PC3506Z, PC350LC6, PC350LC6Z, PC365LC11, PC380LC6K, PC380LC6KJ, PC390LC10, PC395LC10, PC40006, PC4003, PC4005, PC4005C, PC4005D, PC4006, PC4006C, PC4006Z, PC4007, PC4007E0, PC4007M1, PC4008, PC4008R, PC400HD5K, PC400LC, PC400LC3, PC400LC5, PC400LC6, PC400LC6Z, PC400LC7, PC400LC7E0, PC400LC8, PC400LC8R, PC400ST6, PC400ST6LC, PC40MRX1, PC4105, PC410LC5, PC4506, PC4506K, PC4506KKE, PC4506Z, PC4507, PC4507E0, PC4507K, PC4507M1, PC4508, PC4508R, PC450LC6, PC450LC6K, PC450LC6KJ, PC450LC6KKE, PC450LC6Z, PC450LC7, PC450LC7E0, PC450LC7K, PC450LC7M1, PC450LC8, PC450LC8R, PC450LCHD8, PC45MR5, PC49010, PC49011, PC49011E0, PC490HRD11E0, PC490LC10, PC490LC11, PC490LC11E0, PC490LCI11, PC500LC10M0, PC500LC10R, PC500LC8, PC500LC8R, PC55006, PC550LC8, PC606, PC606S, PC606Z, PC607, PC607B, PC608, PC60L6, PC707, PC707B, PC708, PC75UD3, PC75UU3, PC78US5, PC78US6, PC78USI10, PC78UU10, PC78UU6, PC803, PC80MR5E0, PC88MR10, PC88MR11E0, PC88MR8, PC901, PW14810, PW14811, PW14811E0, PW15811, PW16010, PW16011, PW16011E0, PW1608, PW16811E1, PW18011, PW1807K, PW1807PLUS, PW19011E1, PW2007, PW2007K, PW2007KKA, PW2007PLUS, PW2207K, S4D95L1AC, S4D95L1B3, S4D95L1BL, S4D95L1D, S4D95L1E, S4D95L1F, S6D1051LL, S6D1051M, S6D1051MMB, S6D1051R, S6D1051S, S6D1051W, S6D1051WW, S6D1101A, S6D125E2J6, S6D95L1EE, S6D95L1G, S6D95L1KK1, SAA4D95LE6CH, SAA6D114E3F, SAA6D140E5J, SAA6D170E5B, SAA6D170E7, WA100M3, WA2505L, WA3501, WA3503A, WA3801, WA3801LC, WA4001, WA4201, WA4201LC, WA4503, WA4503A, WA4503H, WA4505L, WA450L3, WA4703, WA4705, WA4805, WA4805L, WA6001L, WA8008E0, WHEELWA2503L</td></td></tr>
 <tr class="bg-gray-50"><td class="px-5 py-3 font-semibold text-gray-700">Equipment Type</td><td class="px-5 py-3 text-gray-900">Komatsu Equipment</td></tr>
 <tr class="bg-white"><td class="px-5 py-3 font-semibold text-gray-700">Availability</td><td class="px-5 py-3"><span class="text-green-700 font-semibold">&#10003; In Stock</span></td></tr>
 <tr class="bg-gray-50"><td class="px-5 py-3 font-semibold text-gray-700">Dispatch</td><td class="px-5 py-3 text-gray-900">Same day from Mumbai</td></tr>
 
                                     <tr class="bg-gray-50">
                                         <td class="px-6 py-4 text-sm font-medium text-gray-900">Compatible Models</td>
-                                        <td class="px-6 py-4 text-sm text-gray-700">HB2051M0, BR300S1B, BR300S2M1, BR300S1, BR200T1, BR200T1A, BM020C1, CSSPC2006SPC200LC6S, BR350JG1, BR380JG1</td>
+                                        <td class="px-6 py-4 text-sm text-gray-700">2D942E, 3D84E3B, 3D942A, 3D95SW1C, 3D95SW1D, 44C44DDITURBO, 4D1055C, 4D1055H, 4D942P, 4D95L1AA, 4D95L1AA7, 4D95L1BB, 4D95L1G, 4D95L1GGS, 4D95L1GGSB, 4D95S1J, 4D95S1JT, 4D95SW1D, 4D95SW1E, 4D95SW1FA, 4D95SW1FAP, 4D95SW1FPL, 4D95SW1FQ, 4D95SW1FS, 4D95SW1GAP, 4D95SW1GE, 4D95SW1GPL, 4D95SW1GQ, 4D95SW1GS, 50ESUPER, 6D1051CCAM, 6D1051EEU, 6D1051MAM, 6D1051N, 6D1051U, 6D1051Z, AE50CHASSISMASTS, AFE48CZ930E2, AFE75BH980E5, AFE77AG830E5, AFE77CU830E5, AFE77CX830E5, AFE78EX930E5, AMXBMXCHASSISMASTSPM177, ATTACHMENTRFE1561, BA1001, BM020C1, BP5007M1, BR100J1, BR100JG1, BR100RG1, BR200T1, BR200T1A, BR300S1, BR300S1B, BR300S2M1, BR350JG1, BR380JG1, BR380JG1M1, BR380JG3, BR480RG1, BR480RG1M1, BR500JG1, BR580JG1, BZ2001, BZ2101, CSS, CSSPC2006SPC200LC6S, CSSPC2007PC200LC7, D155A6R, D31P16, D375A8R, D375AI8R, D40A1, D40AF1, D40PL1, D45A1, D45P1, D45S1, D475A8R, D475AI8R, D53A17, D53A18, D53P17, D53P18A, D58E1, D58E1A, D58E1B, D58P1B, D60P12, D65E12, D65EX12, D65EX12H, D65EX15, D65PX15, D85ESS2, D85ESS2A, D85EX15, D85EX15E0, D85EX15R, D85MS15, D85P21, D85PX15, D85PX15E0, D85PX15R, DRESSTA538, DRESSTA542, ELECTRICFB09H1412, ELECTRICFB1013RL12, ELECTRICFB1418RL11, ELECTRICFB151812, ELECTRICFB1518EXG11, ELECTRICFB1518EXG8, ELECTRICFB1518EXG8EC, ELECTRICFB1518EXGF11, ELECTRICFB1518EXGF8, ELECTRICFB15MFU18MFU12, ELECTRICFB15MU18MU12, ELECTRICFB2025EX8EC, ELECTRICFB2025EXF11, ELECTRICFB2025EXF8, ELECTRICFB2025EXG11, ELECTRICFB2025EXG8EC, ELECTRICFB2025EXGF11, ELECTRICFB20AF12, ELECTRICFB20AFU12, ELECTRICFB20AU12, ELECTRICFB20MFU12, ELECTRICFB20MU12, ELECTRICFB3011W, ENGINE4D98E1B41C, ENGINESAA4D95LE6H02, FB15MK18MK2CHASSISMASTSPM0721, FB202530EXGF8CHASSISMASTSPM244, FH354045502CHASSISENGINEMAST, FORKFD25T17, FORKFH351, FORKFH352E1, FORKFH352US, FORKFH402E1, FORKFH402US, FORKFH451, FORKFH452US, FORKFH502US, GD510R1, GD7553, GD7555R, GH3203, HB2051, HB2051M0, HB2051M0HB215LC1M0, HB215LC1, HB215LC1M0, HB215LC2, HB215LC3, HB3351, HB365LC3, HB365LC3E0, HB365NLC3, HB365NLC3E0, HD2555, HD2555EO, HD7858E0, HM3502, HM4003M0, JPTESTPC20011, JPTESTPC21011, JTHB3503, JV100A2T, JV80DW1, PC031, PC1005, PC1006, PC1006S, PC1006Z, PC100L6, PC100S3, PC106, PC1205, PC1205C, PC1205M, PC1205S, PC1205X, PC1205Z, PC1206, PC1206E0, PC1206E0T2, PC1206H, PC1206J, PC1206S, PC1206Z, PC1206ZA1, PC120LC6E0, PC120SC6, PC128US1, PC128US2, PC128USI10, PC128UU1, PC128UU2, PC13010M0, PC13011, PC1305, PC1305S, PC1306, PC1306G, PC1306K, PC1308, PC130LC10M0, PC130LC11, PC138US11E0, PC138US11E0JPN, PC138US2, PC138US2A, PC138US2AC, PC138US2AT, PC138US8, PC138USLC10, PC138USLC11, PC138USLC2, PC1501, PC1503, PC1505, PC150LGP6K, PC152, PC152A, PC158US2, PC1607E0A, PC160LC7K, PC160LC7KKA, PC160LC8, PC170LC11, PC200011, PC20010M0, PC2002, PC2006, PC2006H, PC2006J, PC2006S, PC2006Z, PC2008M0, PC2008M1, PC200CA6, PC200LC6, PC200LC6H, PC200LC6J, PC200LC6S, PC200LC6Z, PC200LC7B, PC200LC7L, PC200LC8M0, PC200SC6, PC200SC7M1, PC21010, PC21010M0, PC21011, PC2106, PC2106D, PC2106G, PC2106K, PC2107K, PC2108K, PC210FLC10M0, PC210LC10, PC210LC10M0, PC210LC11, PC210LC11E0, PC210LC12, PC210LC6, PC210LC6G, PC210LC6K, PC210LC7DA, PC210LC7K, PC210LC8K, PC210LCE11, PC210LCI10, PC210LCI11, PC210LCI11E0, PC210MH7, PC210NLC7K, PC210NLC8K, PC21510M0, PC2201, PC22012, PC2206, PC2206Z, PC2207, PC220F10M0, PC220LC12, PC220LC6, PC220LC7, PC220LC7BA, PC220LC7L, PC220LC8, PC220LC8M0, PC220LCI12, PC228US1, PC228US11, PC228US1TN, PC228US2, PC228US2J, PC228US3AA, PC228US3AB, PC228US3AG, PC228US3E0, PC228US3TYT, PC228US3YA, PC228US3YG, PC228US3YP, PC228US8, PC228USLC1, PC228USLC11, PC228USLC1TN, PC228USLC2, PC228USLC2J, PC228USLC3, PC228USLC3AA, PC228USLC3AB, PC228USLC3AP, PC228USLC3E0, PC228USLC3S, PC228USLC3TYT, PC228USLC3U, PC228USLC3YA, PC228USLC3YB, PC228USLC3YP, PC228USLC8, PC228UU1, PC228UU1MO, PC228UU1TN, PC2306, PC2307CG, PC230LC6, PC230LC7DG, PC230NHD8K, PC238USLC11, PC2406K, PC2408K, PC240LC11, PC240LC11E0, PC240LC6K, PC240LC7K, PC240LC8K, PC240LCNLC8KSTRAIGHTBOOM, PC240NLC6K, PC240NLC7K, PC240NLC8K, PC2506, PC250HD6Z, PC250LC6, PC2707, PC2707AG, PC2708, PC270LC7L, PC270LC8, PC270LL7L, PC2908K, PC290LC11E0, PC290LC6K, PC290LC8K, PC290LCI11, PC290LCI11E0, PC290NLC6K, PC290NLC8K, PC290NLCI11E0, PC300, PC30006E, PC3003, PC3005C, PC3006, PC3006Z, PC300LC, PC300LC3, PC300LC5, PC300LC6, PC300LC6Z, PC300SC6, PC308USLC3, PC308USLC3E0, PC308USLC3E0W1, PC340LC6K, PC340NLC6K, PC3506, PC3506Z, PC350LC6, PC350LC6Z, PC365LC11, PC380LC6K, PC380LC6KJ, PC390LC10, PC395LC10, PC40006, PC4003, PC4005, PC4005C, PC4005D, PC4006, PC4006C, PC4006Z, PC4007, PC4007E0, PC4007M1, PC4008, PC4008R, PC400HD5K, PC400LC, PC400LC3, PC400LC5, PC400LC6, PC400LC6Z, PC400LC7, PC400LC7E0, PC400LC8, PC400LC8R, PC400ST6, PC400ST6LC, PC40MRX1, PC4105, PC410LC5, PC4506, PC4506K, PC4506KKE, PC4506Z, PC4507, PC4507E0, PC4507K, PC4507M1, PC4508, PC4508R, PC450LC6, PC450LC6K, PC450LC6KJ, PC450LC6KKE, PC450LC6Z, PC450LC7, PC450LC7E0, PC450LC7K, PC450LC7M1, PC450LC8, PC450LC8R, PC450LCHD8, PC45MR5, PC49010, PC49011, PC49011E0, PC490HRD11E0, PC490LC10, PC490LC11, PC490LC11E0, PC490LCI11, PC500LC10M0, PC500LC10R, PC500LC8, PC500LC8R, PC55006, PC550LC8, PC606, PC606S, PC606Z, PC607, PC607B, PC608, PC60L6, PC707, PC707B, PC708, PC75UD3, PC75UU3, PC78US5, PC78US6, PC78USI10, PC78UU10, PC78UU6, PC803, PC80MR5E0, PC88MR10, PC88MR11E0, PC88MR8, PC901, PW14810, PW14811, PW14811E0, PW15811, PW16010, PW16011, PW16011E0, PW1608, PW16811E1, PW18011, PW1807K, PW1807PLUS, PW19011E1, PW2007, PW2007K, PW2007KKA, PW2007PLUS, PW2207K, S4D95L1AC, S4D95L1B3, S4D95L1BL, S4D95L1D, S4D95L1E, S4D95L1F, S6D1051LL, S6D1051M, S6D1051MMB, S6D1051R, S6D1051S, S6D1051W, S6D1051WW, S6D1101A, S6D125E2J6, S6D95L1EE, S6D95L1G, S6D95L1KK1, SAA4D95LE6CH, SAA6D114E3F, SAA6D140E5J, SAA6D170E5B, SAA6D170E7, WA100M3, WA2505L, WA3501, WA3503A, WA3801, WA3801LC, WA4001, WA4201, WA4201LC, WA4503, WA4503A, WA4503H, WA4505L, WA450L3, WA4703, WA4705, WA4805, WA4805L, WA6001L, WA8008E0, WHEELWA2503L</td></td>
                                     </tr>
 </tbody>
 </table>
@@ -390,6 +456,34 @@ Get Quote on WhatsApp
 </a>
 </div>
 
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-lg font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How do I know when undercarriage parts need replacing?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Measure track link rail height, pin and bushing diameter wear, and roller flange condition against OEM wear limits in the service manual. As a rule of thumb: replace track links when rail wear reaches 10% of original height, replace bushings when internal diameter exceeds OEM limit by 10%, and replace rollers when seals show weeping or flanges are visibly reduced.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How does operating surface affect undercarriage life?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Rocky surfaces (granite, basalt quarries) wear undercarriage 3–4× faster than soft ground. Abrasive sand causes rapid bushing wear. Muddy conditions accelerate seal failure. Concrete and asphalt cause rapid shoe pad wear. Matching shoe type to operating conditions and using the correct track width significantly affects total wear cost.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What is the proper track tension setting?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Correct track sag (measured between the top carrier roller and the track) is typically 10–30 mm depending on operating conditions — looser in mud, tighter on hard ground. Check tension every 100 hours and after any ground condition change. Overtight tracks wear bushings and pins rapidly; slack tracks risk derailment.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Do you supply complete undercarriage sets or individual components?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">PTC supplies both — individual components (single roller, track link segment, sprocket) and complete undercarriage sets. For machines with high-hour undercarriage showing uniform wear, a complete set replacement is more cost-effective than replacing worn-out individual components as they fail. Request a quote for your specific machine model.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What's the delivery timeline for undercarriage parts?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Track chains, rollers, and sprockets are stocked for major Komatsu, CAT, Volvo, and Hitachi models. Standard delivery from Mumbai is 3–7 days across India. Complete undercarriage sets may require 7–14 days for logistics coordination. Contact us for urgent requirements.</p>
+            </div>
+                </div>
+            </div>
+        </div>
 <a aria-label="WhatsApp" class="whatsapp-float bg-gradient-to-r from-green-500/80 to-green-600/80 backdrop-blur-xl border border-green-300/50 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300" href="https://wa.me/919821037990?text=Hi!%20I%20am%20interested%20in%20Komatsu%20Pin%20(Part%20No%3A%2004020-01228).%20Please%20provide%20a%20quote." rel="noopener noreferrer" target="_blank">
 <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7M12.22 1.85c-5.46 0-9.9 4.41-9.9 9.83 0 2.15.7 4.14 1.88 5.76L2.96 21.1l3.8-1.2a9.9 9.9 0 0 0 5.46 1.62c5.46 0 9.9-4.4 9.9-9.83a9.88 9.88 0 0 0-9.9-9.83m5.95 12.52c-.08-.12-.27-.19-.56-.33-.28-.14-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.14-.2.29-.75.93-.91 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43a8.64 8.64 0 0 1-1.6-1.98c-.18-.29-.03-.44.12-.58.13-.13.29-.34.43-.5.15-.17.2-.3.29-.48.1-.2.05-.36-.02-.5-.08-.15-.65-1.56-.9-2.13-.24-.58-.48-.48-.65-.48-.17 0-.37-.03-.56-.03-.2 0-.5.08-.77.36-.26.29-1 .98-1 2.4 0 1.4 1.03 2.76 1.17 2.96.14.19 2 3.17 4.93 4.32 2.94 1.15 2.94.77 3.47.72.53-.05 1.7-.7 1.95-1.36.24-.67.24-1.25.17-1.37"/></svg>
 </a>

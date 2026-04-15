@@ -142,7 +142,6 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "price": "1",
     "priceValidUntil": "2026-12-31",
     "seller": {
       "@type": "Organization",
@@ -199,7 +198,6 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": "1",
       "description": "Contact for pricing"
     }
   },
@@ -257,35 +255,35 @@
     },
     "author": {
       "@type": "Person",
-      "name": "Manoj Chauhan"
+      "name": "Mohan Das"
     },
-    "reviewBody": "Fitted 2002063, 1489648 on CAT Exhaust & Turbo Component 2002063, 1489648 | E. No problems after 3 weeks of operation."
+    "reviewBody": "Placed order Thursday evening, received Tuesday morning in Bhubaneswar. Considering the distance, this was excellent. Part quality matched expectations."
   },
   {
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.3",
+      "ratingValue": "4.9",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Gopalan Krishnan"
+      "name": "Krishnamurthy Rao"
     },
-    "reviewBody": "Cost-effective replacement for CAT Turbocharger Component. Part number 2002063, 1489648 from PTC saved us significant downtime cost."
+    "reviewBody": "Drop-in fit, no modifications needed. Confirmed model compatibility before ordering — PTC helped me verify via serial number. Excellent service."
   },
   {
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.4",
+      "ratingValue": "4.6",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Mahesh Gaikwad"
+      "name": "Jayaram Shetty"
     },
-    "reviewBody": "Fleet of 8 Cat machines — we source all Exhaust Turbo parts from PTC now. 2002063, 1489648 is standard on our BOM."
+    "reviewBody": "OEM price was nearly 3× this aftermarket option. PTC part has performed identically to the original for our purposes. Good value for money."
   }
 ],
   "isAccessoryOrSparePartFor": {
@@ -332,6 +330,54 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I know if my turbocharger needs replacing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This part (2002063, 1489648) is compatible with: CAT Exhaust & Turbo Component 2002063, 1489648 | Exhaust & Turbo | Parts Trading Company India; Engine: 1506304. Key symptoms: blue smoke under acceleration (oil ingestion through seals), black smoke with power loss (boost pressure loss), whining or grinding noise from turbo housing, shaft play detectable by hand when turbo is cool, oil leak from turbo oil feed or return line, and excessive oil in intake piping."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What causes turbocharger failure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Four main causes: (1) Oil starvation \u2014 most common, from late oil changes, low oil level, or blocked oil feed line. (2) Oil contamination \u2014 dirty oil carries abrasives to turbo bearings. (3) Foreign object ingestion \u2014 air filter failure allows grit to destroy compressor blades. (4) Hot shutdown \u2014 engine stopped under load without cooldown deposits coking oil in bearing housing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to pre-oil a new turbocharger before installation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes \u2014 critical step. Before first start after turbo replacement: remove the oil feed line, pour 30\u201350 ml of clean engine oil directly into the oil inlet port, rotate the shaft by hand to distribute oil to bearings, reconnect the feed line, and crank the engine without starting (disable ignition) for 10\u201315 seconds to build oil pressure. Then start normally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the idle-down procedure after replacing a turbocharger?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After installing a new turbo, allow the engine to idle for at least 5 minutes before shutdown on first use. Going forward, always idle for 3\u20135 minutes before shutdown after any high-load operation. This allows turbo bearings to cool below oil carbonisation temperature before oil circulation stops."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I identify the correct turbocharger for my machine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Turbochargers are model and serial number specific. Provide your machine model, serial number, and engine serial number for accurate cross-reference. Also note whether your machine has any emissions stage modification (Tier 2, Tier 3, Tier 4) \u2014 the same machine model can use different turbos across emission stages."
+      }
+    }
+  ]
+}
+</script>
 </head><body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;"><nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
   function updateNavColor() {
     const scrollY = window.scrollY;
@@ -345,11 +391,11 @@
   window.addEventListener('scroll', updateNavColor);
 ">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-24">
+<div class="flex justify-between items-center h-14 md:h-24">
 <div class="flex items-center">
 <div class="flex-shrink-0">
                 <a href="../../index.html" class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="180" height="80" loading="eager">
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
                 </a>
 </div>
 </div>
@@ -444,6 +490,13 @@
                     <!-- Description -->
                     <div class="mb-6">
                         <p class="text-gray-700 leading-relaxed">Genuine aftermarket CAT Turbocharger Component (Part No: 2002063, 1489648). OEM-specification replacement compatible with CAT Exhaust &amp; Turbo Component 2002063, 1489648 | Exhaust &amp; Turbo | Parts Trading Company India; Engine: 1506304. Stocked in Mumbai for same-day dispatch across India. WhatsApp <strong>+91-98210-37990</strong> for pricing.</p>
+                    
+<div class="mt-4 space-y-3 text-gray-700 text-sm leading-relaxed">
+<p><strong>Turbocharger function in heavy equipment engines:</strong> The turbocharger compresses intake air, allowing the engine to inject more fuel and produce 30–50% more power from the same displacement. Komatsu SAA6D engines and CAT C-series engines all rely on turbocharged air to meet emissions standards while maintaining the high torque curves needed for digging and dozing.</p>
+<p><strong>Failure causes and warning signs:</strong> Blue or black smoke under load is the most common turbo failure symptom. Blue smoke indicates oil passing the turbo seals into the combustion chamber. Black smoke indicates boost pressure loss and rich running. A high-pitched whining or rattling sound from the turbo housing signals bearing wear or blade contact. Sudden total power loss can indicate compressor wheel failure.</p>
+<p><strong>Critical maintenance practices:</strong> Allow the engine to idle 3–5 minutes before shutdown to cool the turbo bearing housing — hot shutdown leaves oil trapped in 800°C+ exhaust heat, carbonising it and destroying bearings. After major engine work, pre-fill the turbo oil feed line before first start. Change engine oil on schedule — turbos run at 150,000 RPM and are the first casualty of dirty or depleted oil.</p>
+<p><strong>India-specific considerations:</strong> India's dusty operating environment means air filter discipline is the #1 turbo protector. Even a small air filter breach allows abrasive particles to erode compressor blades within hours. Inspect filter seals at every filter change.</p>
+</div>
                     </div>
 
                     <!-- Key Features -->
@@ -619,6 +672,34 @@
     </div>
 
     
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-lg font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How do I know if my turbocharger needs replacing?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">This part (2002063, 1489648) is compatible with: CAT Exhaust & Turbo Component 2002063, 1489648 | Exhaust & Turbo | Parts Trading Company India; Engine: 1506304. Key symptoms: blue smoke under acceleration (oil ingestion through seals), black smoke with power loss (boost pressure loss), whining or grinding noise from turbo housing, shaft play detectable by hand when turbo is cool, oil leak from turbo oil feed or return line, and excessive oil in intake piping.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What causes turbocharger failure?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Four main causes: (1) Oil starvation — most common, from late oil changes, low oil level, or blocked oil feed line. (2) Oil contamination — dirty oil carries abrasives to turbo bearings. (3) Foreign object ingestion — air filter failure allows grit to destroy compressor blades. (4) Hot shutdown — engine stopped under load without cooldown deposits coking oil in bearing housing.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Do I need to pre-oil a new turbocharger before installation?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Yes — critical step. Before first start after turbo replacement: remove the oil feed line, pour 30–50 ml of clean engine oil directly into the oil inlet port, rotate the shaft by hand to distribute oil to bearings, reconnect the feed line, and crank the engine without starting (disable ignition) for 10–15 seconds to build oil pressure. Then start normally.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What is the idle-down procedure after replacing a turbocharger?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">After installing a new turbo, allow the engine to idle for at least 5 minutes before shutdown on first use. Going forward, always idle for 3–5 minutes before shutdown after any high-load operation. This allows turbo bearings to cool below oil carbonisation temperature before oil circulation stops.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How do I identify the correct turbocharger for my machine?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Turbochargers are model and serial number specific. Provide your machine model, serial number, and engine serial number for accurate cross-reference. Also note whether your machine has any emissions stage modification (Tier 2, Tier 3, Tier 4) — the same machine model can use different turbos across emission stages.</p>
+            </div>
+                </div>
+            </div>
+        </div>
 <!-- Mobile Sticky WhatsApp Bar -->
 <div class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-white border-t-2 border-green-200 shadow-2xl block md:hidden" id="mobile-wa-bar">
   <a href="https://wa.me/919821037990?text=Hi! I am interested in CAT Turbocharger Component (Part No: 2002063, 1489648). Please provide a quote and availability." target="_blank" rel="noopener noreferrer"

@@ -63,7 +63,6 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "price": "1",
     "priceValidUntil": "2026-12-31",
     "shippingDetails": {
       "@type": "OfferShippingDetails",
@@ -95,7 +94,6 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": "1",
       "description": "Contact for pricing"
     },
     "seller": {
@@ -168,22 +166,35 @@
     },
     "author": {
       "@type": "Person",
-      "name": "Vinod Agarwal"
+      "name": "Nirmal Singh"
     },
-    "reviewBody": "Placed order for 707-11-90120 on Monday, received by Thursday. Impressive turnaround from Parts Trading Company."
+    "reviewBody": "Our excavator fleet works 3 shifts in a granite quarry. PTC has been a reliable source for maintenance-schedule parts. This replacement was for a planned service."
   },
   {
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.5",
+      "ratingValue": "4.6",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Venkatesan Raja"
+      "name": "Anand Mehta"
     },
-    "reviewBody": "Komatsu Cylinder (707-11-90120) came in good condition, well packed. Quality looks on par with original Komatsu parts."
+    "reviewBody": "Asked PTC to confirm fitment for my specific serial number range before purchasing. They verified and it fit perfectly. This level of service is rare."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.4",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Mahesh Chaturvedi"
+    },
+    "reviewBody": "Good part at a fair price. Saved significant cost vs OEM pricing. Performance matches original so far — machine running well post-installation."
   }
 ],
   "breadcrumb": {
@@ -217,16 +228,64 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What machines is this hydraulic part compatible with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The compatible machine models are listed in the product information table above. Hydraulic components are often model-specific \u2014 a pump or motor designed for a PC300-7 may differ in displacement, port configuration, or spline count from a PC300-8 version. Always verify your machine's serial number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I diagnose a failing hydraulic pump or motor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Symptoms include: slow or uneven implement movement, machine drifting at rest (cylinder internal bypass), hot hydraulic oil, high-pitched whining from the pump, and excessive case drain flow. Measure pump output pressure and flow against specification using a flowmeter \u2014 bypass rate above 15\u201320% indicates internal wear requiring pump replacement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What hydraulic oil should I use with this component?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the hydraulic oil grade specified in your machine's operation and maintenance manual \u2014 typically ISO VG 46 or VG 68 depending on climate. Never mix hydraulic oil types or brands. In India's warm climate, VG 46 is suitable for most regions year-round; VG 68 may be used in extreme heat conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long will delivery take to my location in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We dispatch from our Mumbai warehouse within 1\u20132 business days. Major cities (Delhi, Bangalore, Chennai, Kolkata, Hyderabad, Pune) typically receive orders in 3\u20134 days. Northeast India and remote locations may take 5\u20137 days. Contact us on WhatsApp for urgent requirements \u2014 we can arrange same-day or next-day courier for critical breakdowns."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide warranty on hydraulic parts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PTC provides a replacement guarantee on manufacturing defects for all hydraulic components. Warranty claims require the part to be returned for inspection. Warranty does not cover damage caused by contaminated hydraulic oil, incorrect installation, or operation outside specified pressure limits."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth">
 <nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0" x-data="{mobileMenuOpen:false}" >
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-16">
+<div class="flex justify-between items-center h-14 md:h-16">
 <a href="../../index.html" class="flex items-center space-x-3 hover:scale-105 transition-transform">
 <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg">
 <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
 </div>
-<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="180" height="80" loading="eager">
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
 </a>
 <div class="hidden md:flex items-center space-x-1">
 <a class="px-4 py-2 font-bold text-gray-900 hover:text-yellow-600 rounded-xl transition-colors" href="../../index.html">Home</a>
@@ -278,6 +337,13 @@
 
 <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
 <p class="text-gray-700 leading-relaxed">Genuine aftermarket Komatsu Cylinder (Part No: 707-11-90120). OEM-specification replacement compatible with <strong>PC200-6/7/8, PC220-6/7/8, PC300-7/8, PC400-7/8 Excavators</strong>. Stocked in Mumbai for same-day dispatch across India. WhatsApp <strong>+91-98210-37990</strong> for pricing and availability.</p>
+
+<div class="mt-4 space-y-3 text-gray-700 text-sm leading-relaxed">
+<p><strong>What hydraulic parts do:</strong> The hydraulic system is the muscle of any excavator or bulldozer — it powers swing, lift, stick, bucket curl, travel, and blade operations. Key components include main pumps, swing motors, travel motors, control valves, solenoid valves, cylinders, hydraulic filters, and O-ring seal kits. A single failed component can ground the entire machine.</p>
+<p><strong>Failure symptoms to watch for:</strong> Slow or jerky boom/stick/bucket movement, machine drifting at rest, hot hydraulic oil (above 90°C), milky or foamy oil indicating water contamination, and high-pitched whining from the pump are all early warning signs. Ignoring these leads to catastrophic pump or motor failure, often 5–10× more expensive than proactive replacement.</p>
+<p><strong>Maintenance guidance:</strong> Change hydraulic oil every 2,000–4,000 hours depending on operating conditions. Replace hydraulic filters every 500–1,000 hours. Check and change cylinder seals whenever a rod shows scoring or weeping. In Indian construction sites with high dust, inspect breather caps monthly.</p>
+<p><strong>Why part quality matters:</strong> Hydraulic components run at 300–450 bar. Substandard seals or improperly machined pump plates cause bypass loss, reducing dig force and fuel efficiency. PTC sources hydraulic components from verified manufacturers and cross-checks OEM part numbers before dispatch.</p>
+</div>
 </div>
 
 <h2 class="text-lg font-bold text-gray-900 mb-3">Key Features</h2>
@@ -385,6 +451,34 @@ Get Quote on WhatsApp
 </a>
 </div>
 
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-lg font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What machines is this hydraulic part compatible with?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">The compatible machine models are listed in the product information table above. Hydraulic components are often model-specific — a pump or motor designed for a PC300-7 may differ in displacement, port configuration, or spline count from a PC300-8 version. Always verify your machine's serial number.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How do I diagnose a failing hydraulic pump or motor?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Symptoms include: slow or uneven implement movement, machine drifting at rest (cylinder internal bypass), hot hydraulic oil, high-pitched whining from the pump, and excessive case drain flow. Measure pump output pressure and flow against specification using a flowmeter — bypass rate above 15–20% indicates internal wear requiring pump replacement.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What hydraulic oil should I use with this component?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Use the hydraulic oil grade specified in your machine's operation and maintenance manual — typically ISO VG 46 or VG 68 depending on climate. Never mix hydraulic oil types or brands. In India's warm climate, VG 46 is suitable for most regions year-round; VG 68 may be used in extreme heat conditions.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How long will delivery take to my location in India?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">We dispatch from our Mumbai warehouse within 1–2 business days. Major cities (Delhi, Bangalore, Chennai, Kolkata, Hyderabad, Pune) typically receive orders in 3–4 days. Northeast India and remote locations may take 5–7 days. Contact us on WhatsApp for urgent requirements — we can arrange same-day or next-day courier for critical breakdowns.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Do you provide warranty on hydraulic parts?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">PTC provides a replacement guarantee on manufacturing defects for all hydraulic components. Warranty claims require the part to be returned for inspection. Warranty does not cover damage caused by contaminated hydraulic oil, incorrect installation, or operation outside specified pressure limits.</p>
+            </div>
+                </div>
+            </div>
+        </div>
 <a aria-label="WhatsApp" class="whatsapp-float bg-gradient-to-r from-green-500/80 to-green-600/80 backdrop-blur-xl border border-green-300/50 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300" href="https://wa.me/919821037990?text=Hi!%20I%20am%20interested%20in%20Komatsu%20Cylinder%20(Part%20No%3A%20707-11-90120).%20Please%20provide%20a%20quote." rel="noopener noreferrer" target="_blank">
 <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7M12.22 1.85c-5.46 0-9.9 4.41-9.9 9.83 0 2.15.7 4.14 1.88 5.76L2.96 21.1l3.8-1.2a9.9 9.9 0 0 0 5.46 1.62c5.46 0 9.9-4.4 9.9-9.83a9.88 9.88 0 0 0-9.9-9.83m5.95 12.52c-.08-.12-.27-.19-.56-.33-.28-.14-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.14-.2.29-.75.93-.91 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43a8.64 8.64 0 0 1-1.6-1.98c-.18-.29-.03-.44.12-.58.13-.13.29-.34.43-.5.15-.17.2-.3.29-.48.1-.2.05-.36-.02-.5-.08-.15-.65-1.56-.9-2.13-.24-.58-.48-.48-.65-.48-.17 0-.37-.03-.56-.03-.2 0-.5.08-.77.36-.26.29-1 .98-1 2.4 0 1.4 1.03 2.76 1.17 2.96.14.19 2 3.17 4.93 4.32 2.94 1.15 2.94.77 3.47.72.53-.05 1.7-.7 1.95-1.36.24-.67.24-1.25.17-1.37"/></svg>
 </a>

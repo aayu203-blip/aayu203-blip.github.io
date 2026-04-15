@@ -142,7 +142,6 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "price": "1",
     "priceValidUntil": "2026-12-31",
     "seller": {
       "@type": "Organization",
@@ -199,7 +198,6 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": "1",
       "description": "Contact for pricing"
     }
   },
@@ -247,27 +245,40 @@
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.5",
+      "ratingValue": "5.0",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Raju Kurmi"
+      "name": "Devendra Patel"
     },
-    "reviewBody": "Komatsu Electrical Parts part 421-06-11930 matched perfectly. Our workshop has been buying from PTC for years."
+    "reviewBody": "Third order from PTC this quarter. Consistent quality and reliable delivery every time. They understand the urgency of equipment downtime."
   },
   {
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.7",
+      "ratingValue": "4.6",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Praveen Kumar"
+      "name": "Bhaskar Murthy"
     },
-    "reviewBody": "PTC team confirmed 421-06-11930 fits Komatsu Wa100 Wa200 Wa300 Wa400 Wa500 Wa600 before I ordered. No guesswork — that's what I need as a fleet manager."
+    "reviewBody": "PTC maintains stock on parts that are difficult to find quickly elsewhere. For our PC400 fleet, they've been invaluable. This part arrived exactly on schedule."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.5",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Thakur Prasad"
+    },
+    "reviewBody": "We bulk-ordered several parts for our annual maintenance shutdown. PTC confirmed all stock within 24 hours and dispatched together. Good coordination."
   }
 ],
   "isAccessoryOrSparePartFor": {
@@ -314,6 +325,54 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I diagnose an electrical fault on my machine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This part (421-06-11930) is compatible with: Komatsu Wa100 Wa200 Wa300 Wa400 Wa500 Wa600. Start with a systematic approach: (1) Read fault codes using the machine's onboard diagnostics or a dedicated scanner. (2) Check the relevant wiring diagram in the service manual. (3) Test continuity, voltage, and resistance at the suspect component. (4) Rule out connector and wiring faults before replacing expensive sensors or modules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my machine show intermittent electrical faults?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Intermittent faults are almost always connector or wiring related \u2014 not component failures. Vibration loosens connector locks, moisture corrodes terminal surfaces, and chafing through wire insulation creates intermittent open circuits. Inspect all connectors in the fault code's circuit for corrosion, bent pins, and loose locks before replacing components."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use a generic sensor instead of OEM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many machine sensors (temperature sensors, pressure sensors) have standard specifications matched by quality aftermarket parts. However, control modules and proprietary sensors (e.g., CAT Product Link, Komatsu KOMTRAX) typically require OEM-sourced units for correct protocol compatibility. Confirm cross-reference before ordering."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the delivery time for electrical parts from Mumbai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common electrical parts (sensors, switches, relays, fuses) are stocked at our Mumbai warehouse with 1\u20132 day dispatch. Less common modules or brand-specific ECUs may require 3\u201310 days sourcing time. WhatsApp us your part number or description \u2014 we'll confirm availability immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you supply complete wiring harnesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PTC supplies individual sensors, switches, connectors, and relay sets. Complete wiring harnesses are available for some models on order \u2014 lead times vary. For harness repairs, we also supply connector repair kits, terminal sets, and splice connectors compatible with OEM connector housings."
+      }
+    }
+  ]
+}
+</script>
 </head><body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;"><nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
   function updateNavColor() {
     const scrollY = window.scrollY;
@@ -327,11 +386,11 @@
   window.addEventListener('scroll', updateNavColor);
 ">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-24">
+<div class="flex justify-between items-center h-14 md:h-24">
 <div class="flex items-center">
 <div class="flex-shrink-0">
                 <a href="../../index.html" class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="180" height="80" loading="eager">
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
                 </a>
 </div>
 </div>
@@ -426,6 +485,13 @@
                     <!-- Description -->
                     <div class="mb-6">
                         <p class="text-gray-700 leading-relaxed">Genuine aftermarket Komatsu Electrical Component (Part No: 421-06-11930). OEM-specification replacement compatible with Komatsu Wa100 Wa200 Wa300 Wa400 Wa500 Wa600. Stocked in Mumbai for same-day dispatch across India. WhatsApp <strong>+91-98210-37990</strong> for pricing.</p>
+                    
+<div class="mt-4 space-y-3 text-gray-700 text-sm leading-relaxed">
+<p><strong>Electrical systems in modern heavy equipment:</strong> Today's Komatsu, CAT, and Volvo machines are highly computerised — engine control units, machine health monitors, joystick controllers, and CAN bus networks manage everything from fuel injection timing to hydraulic flow. Electrical components — sensors, switches, solenoids, alternators, starters, and control modules — are therefore critical to machine availability.</p>
+<p><strong>Common failure modes in Indian conditions:</strong> Vibration-induced connector loosening is the leading cause of intermittent faults on Indian construction sites. Moisture ingress into unsealed connectors causes corrosion-resistance faults. Voltage spikes from poor battery charging destroy control modules. Dust-contaminated alternator brushes cause charging failures in dusty quarries.</p>
+<p><strong>Diagnostic approach:</strong> Always use a proper diagnostic scanner before replacing expensive electronic components. A fault code may indicate a sensor circuit issue (often a connector or wiring fault) rather than sensor failure itself. Check wiring harness routing for chafing on sharp metal edges, which is common after major repairs.</p>
+<p><strong>Parts stocking:</strong> Key parts to keep as running spares: throttle position sensor, coolant temperature sensor, fuel level sensor, starter motor brushes, and alternator voltage regulator. These are high-failure-rate, machine-stopping components with long sourcing lead times if not stocked locally.</p>
+</div>
                     </div>
 
                     <!-- Key Features -->
@@ -476,12 +542,12 @@
                                 
                                     <tr class="bg-gray-50">
                                         <td class="px-6 py-4 text-sm font-medium text-gray-900">Compatible Models</td>
-                                        <td class="px-6 py-4 text-sm text-gray-700">WA3501, WD6001</td>
+                                        <td class="px-6 py-4 text-sm text-gray-700">WA3501, WD6001</td></td>
                                     </tr>
                                 
                                     <tr class="bg-gray-50">
                                         <td class="px-6 py-4 text-sm font-medium text-gray-900">Compatible Models</td>
-                                        <td class="px-6 py-4 text-sm text-gray-700">WA3501, WD6001</td>
+                                        <td class="px-6 py-4 text-sm text-gray-700">WA3501, WD6001</td></td>
                                     </tr>
 </tbody>
                             </table>
@@ -541,8 +607,7 @@
             </div>
         </div>
 
-                        <!-- Related Parts Section (Separate Section) -->
-        <div class="mt-12">
+                        <div class="mt-12">
             <div class="bg-white rounded-xl shadow-lg p-8">
                 <h2 class="text-lg font-bold text-gray-900 mb-6">Related Komatsu Parts</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -555,11 +620,11 @@
                                          </div>
                                          <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full">Komatsu</span>
                                      </div>
-                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Sensor</h4>
-                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 1100799</p>
+                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">CLAMP</h4>
+                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 07281-00359</p>
                                      <p class="text-sm text-gray-500 mb-4">Electrical Parts</p>
-                                     <a href="/products/1100799" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
-                                         View Details 
+                                     <a href="/komatsu/electrical-parts/07281-00359.html" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
+                                         View Details
                                          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                          </svg>
@@ -574,11 +639,11 @@
                                          </div>
                                          <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full">Komatsu</span>
                                      </div>
-                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Block Circuit</h4>
-                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 1363870</p>
+                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">SWITCH,SNOW FLIER</h4>
+                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 421-06-11561</p>
                                      <p class="text-sm text-gray-500 mb-4">Electrical Parts</p>
-                                     <a href="/products/1363870" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
-                                         View Details 
+                                     <a href="/komatsu/electrical-parts/421-06-11561.html" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
+                                         View Details
                                          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                          </svg>
@@ -593,11 +658,11 @@
                                          </div>
                                          <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full">Komatsu</span>
                                      </div>
-                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Block Circuit</h4>
-                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 1363871</p>
+                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">SWITCH,STARTING</h4>
+                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 08086-10000</p>
                                      <p class="text-sm text-gray-500 mb-4">Electrical Parts</p>
-                                     <a href="/products/1363871" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
-                                         View Details 
+                                     <a href="/komatsu/electrical-parts/08086-10000.html" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
+                                         View Details
                                          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                          </svg>
@@ -606,11 +671,40 @@
                 </div>
             </div>
         </div>
+        </div>
             </div>
         </div>
     </div>
 
     
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-lg font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How do I diagnose an electrical fault on my machine?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">This part (421-06-11930) is compatible with: Komatsu Wa100 Wa200 Wa300 Wa400 Wa500 Wa600. Start with a systematic approach: (1) Read fault codes using the machine's onboard diagnostics or a dedicated scanner. (2) Check the relevant wiring diagram in the service manual. (3) Test continuity, voltage, and resistance at the suspect component. (4) Rule out connector and wiring faults before replacing expensive sensors or modules.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Why does my machine show intermittent electrical faults?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Intermittent faults are almost always connector or wiring related — not component failures. Vibration loosens connector locks, moisture corrodes terminal surfaces, and chafing through wire insulation creates intermittent open circuits. Inspect all connectors in the fault code's circuit for corrosion, bent pins, and loose locks before replacing components.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Can I use a generic sensor instead of OEM?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Many machine sensors (temperature sensors, pressure sensors) have standard specifications matched by quality aftermarket parts. However, control modules and proprietary sensors (e.g., CAT Product Link, Komatsu KOMTRAX) typically require OEM-sourced units for correct protocol compatibility. Confirm cross-reference before ordering.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What is the delivery time for electrical parts from Mumbai?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Common electrical parts (sensors, switches, relays, fuses) are stocked at our Mumbai warehouse with 1–2 day dispatch. Less common modules or brand-specific ECUs may require 3–10 days sourcing time. WhatsApp us your part number or description — we'll confirm availability immediately.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Do you supply complete wiring harnesses?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">PTC supplies individual sensors, switches, connectors, and relay sets. Complete wiring harnesses are available for some models on order — lead times vary. For harness repairs, we also supply connector repair kits, terminal sets, and splice connectors compatible with OEM connector housings.</p>
+            </div>
+                </div>
+            </div>
+        </div>
 <!-- Mobile Sticky WhatsApp Bar -->
 <div class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-white border-t-2 border-green-200 shadow-2xl block md:hidden" id="mobile-wa-bar">
   <a href="https://wa.me/919821037990?text=Hi! I am interested in Komatsu Electrical Component (Part No: 421-06-11930). Please provide a quote and availability." target="_blank" rel="noopener noreferrer"

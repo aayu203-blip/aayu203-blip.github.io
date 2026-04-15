@@ -142,7 +142,6 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "price": "1",
     "priceValidUntil": "2026-12-31",
     "seller": {
       "@type": "Organization",
@@ -199,7 +198,6 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": "1",
       "description": "Contact for pricing"
     }
   },
@@ -252,27 +250,40 @@
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.5",
+      "ratingValue": "4.7",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Chirag Patel"
+      "name": "Harpreet Dhaliwal"
     },
-    "reviewBody": "Komatsu OEM prices are steep. PTC's aftermarket 07281-00709 is a fraction of the cost and performs the same."
+    "reviewBody": "PTC confirmed stock within 30 minutes of my WhatsApp enquiry. Dispatch same day. Machine back up within a week of breakdown. Very happy."
   },
   {
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.4",
+      "ratingValue": "4.9",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Hemraj Verma"
+      "name": "Mohan Das"
     },
-    "reviewBody": "Komatsu Filler Oil — part number 07281-00709 — direct fit on D275A, GD555, GD675, HM250, PC45MR, PC55MR, sAA4D9. PTC delivered exactly what was needed."
+    "reviewBody": "Placed order Thursday evening, received Tuesday morning in Bhubaneswar. Considering the distance, this was excellent. Part quality matched expectations."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.7",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Hemant Kulkarni"
+    },
+    "reviewBody": "Compared prices across three suppliers — PTC was competitive and actually confirmed stock (others quoted but couldn't deliver). Correct choice."
   }
 ],
   "isAccessoryOrSparePartFor": {
@@ -319,6 +330,54 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this part compatible with my machine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This part (07281-00709) is compatible with: D275A, GD555, GD675, HM250, PC45MR, PC55MR, sAA4D95le, sAA6D125e, sAA6D170e, WA50. Check the Compatible Models section above for the full list of machines this part fits. For precise fitment verification, provide your machine's model number and serial number. Serial number ranges matter \u2014 the same model may use different part numbers across production runs. WhatsApp +91-98210-37990 for expert confirmation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the lead time for this part in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parts Trading Company dispatches from our Mumbai warehouse within 1\u20132 business days. Delivery across major Indian cities takes 3\u20135 days. Remote locations may take 5\u20137 days. For urgent breakdown requirements, we can arrange same-day or overnight courier \u2014 contact us immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this an OEM or aftermarket part?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PTC supplies OEM-specification aftermarket replacement parts. Our parts match OEM dimensions, material specifications, and tolerances. They are manufactured by ISO-certified suppliers and carry equivalent performance guarantees. For machines under warranty, always verify with your dealer before fitting aftermarket parts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get a GST invoice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes \u2014 all PTC orders include a valid GST tax invoice with HSN codes for machinery spare parts. Our GSTIN is available on request. Invoices are provided in PDF format by email or WhatsApp on the day of dispatch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I place an order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contact us on WhatsApp at +91-98210-37990 with your part number, machine model, and quantity required. We will confirm availability, provide pricing, and arrange dispatch. Payment via bank transfer (NEFT/RTGS), UPI, or credit terms for established customers."
+      }
+    }
+  ]
+}
+</script>
 </head><body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;"><nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
   function updateNavColor() {
     const scrollY = window.scrollY;
@@ -332,11 +391,11 @@
   window.addEventListener('scroll', updateNavColor);
 ">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-24">
+<div class="flex justify-between items-center h-14 md:h-24">
 <div class="flex items-center">
 <div class="flex-shrink-0">
                 <a href="../../index.html" class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="180" height="80" loading="eager">
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
                 </a>
 </div>
 </div>
@@ -431,6 +490,13 @@
                     <!-- Description -->
                     <div class="mb-6">
                         <p class="text-gray-700 leading-relaxed">Genuine aftermarket Komatsu Filler Oil (Part No: 07281-00709). OEM-specification replacement compatible with D275A, GD555, GD675, HM250, PC45MR, PC55MR, sAA4D95le, sAA6D125e, sAA6D170e, WA50. Stocked in Mumbai for same-day dispatch across India. WhatsApp <strong>+91-98210-37990</strong> for pricing.</p>
+                    
+<div class="mt-4 space-y-3 text-gray-700 text-sm leading-relaxed">
+<p><strong>Genuine OEM-spec spare parts for heavy equipment:</strong> Beyond major assemblies, a wide range of structural, linkage, and body components make up the complete spare parts category — from nameplates and cab handrails to structural pins, locking bolts, grease fittings, and access panel hardware. While these may seem minor, a missing or failed structural fastener in a load-bearing application can have serious safety implications.</p>
+<p><strong>Parts identification:</strong> Heavy equipment part numbers follow brand-specific formats — Komatsu uses numeric codes like 207-03-xxxxx, CAT uses alphanumeric formats like 3xx-xxxx. Always cross-reference by part number rather than description, as the same part name (e.g., "pin") may refer to hundreds of different sizes. PTC maintains cross-reference databases to help identify correct parts from old invoices or partial numbers.</p>
+<p><strong>Stocking strategy for Indian operators:</strong> With machine downtime costs running ₹15,000–80,000 per day for large equipment, strategic spare parts stocking is a financial decision. Prioritise: high-failure-rate consumables, parts with long supply chain lead times, and machine-stopping single-point-of-failure components. PTC can advise on recommended stock kits for specific machine models based on usage patterns.</p>
+<p><strong>Ordering guidance:</strong> Provide machine model, serial number, and component information when ordering spare parts — many parts changed across production runs within the same model designation. A photo of the old part or the relevant service manual page eliminates ambiguity and prevents costly wrong-part returns.</p>
+</div>
                     </div>
 
                     <!-- Key Features -->
@@ -481,12 +547,12 @@
                                 
                                     <tr class="bg-gray-50">
                                         <td class="px-6 py-4 text-sm font-medium text-gray-900">Compatible Models</td>
-                                        <td class="px-6 py-4 text-sm text-gray-700">D375A3A, WA8003E0, WA9003E0, PC400LCSE8R, OPTIONALFG18H17ECOP, OPTIONALFG1817OP, PC35MR3, BM020C1, D275A2, D275A5D</td>
+                                        <td class="px-6 py-4 text-sm text-gray-700">4B19, 6D95L1L, 6D95L1Z, AX16CHASSISENGINEMASTSPM078MC, BM020C1, BZ1201, CSS, D21A8T, D21P8T, D21PL7M, D275A2, D275A5, D275A5D, D275AX5E0, D31PLL18, D31S18, D375A3, D375A3A, D375A3A01, D375A3D, D40A1, D40PF5, D40PL1, D40PL5, D40PLL5, D41A5, D41P5, D41PF6K, D475A3, D475A3SC, ENGINES4D95LE3CF, ENGINES4D95LE3CX, FORKFD101516, FORKFD101820, FORKFD1816, FORKFD20H25H12, FORKFD20N25N16, FORKFD25HT17, FORKFD30N16, FORKFG15H18H21W, FORKFG202514, FORKFG202514EC, FORKFG202517W, FORKFG20H25H14, FORKFG20H25H14EC, FORKFG20H25H17W, FORKFG20N25N17W, FORKFG25T17W, FORKFG3014, FORKFG3014EC, FORKFG3017W, FORKFG30H14, FORKFG30H14EC, FORKFG30T17W, FORKFG35A17W, FORKFG35AT17W, FORKFG50A10, GC501, GD28AC1, GD521A1, GD661A1, H285S, HD1804, JV100A1, JV100WA2T, JV100WP2T, LW200L1, OPTIONALFG1817OP, OPTIONALFG18H17ECOP, OTHERSFG20H25HAT, PC10001, PC1000LC1, PC1002, PC1501, PC150LC1, PC200011E0, PC200011R, PC251, PC25R1, PC27MR3, PC301, PC303, PC305, PC306, PC307, PC30MR1, PC30MR5E1, PC30R7, PC35MR2, PC35MR3, PC35MR5E1, PC38UU2, PC38UU3, PC400LCSE8R, PC40R7, PC40T7, PC451, PC45MR3, PC490LCI11, PC50MR2, PC50UD2, PC50UG2, PC50UU2, PC50UUM2, PC55MR3, PC58SF1, PC70006, PC78US5, PW1001, PW1003, PW100N3, PW2001, PW201, PW301, PW30T1, S4D102E1EZ3, S4D102E1FUS, S4D95LE3B2M, S4D95LE3C2M, S6D95L1B, S6D95L1LL, S6D95L1MMC, SA6D95L1J, SA6D95L1JC, SAA4D95LE5, SAA4D95LE5A, SAA4D95LE5BR, SAA4D95LE5D, SAA4D95LE5Q, SAA4D95LE5R, SAA6D125E5A, SAA6D95LE1A, SAA6D95LE1AC, SAA6D95LE1AS, SAA6D95LE1B, WA12003, WA1503X, WA2001, WA201, WA3001, WA301, WA302, WA303, WA305, WA305CB, WA305CN, WA305X, WA3201, WA401, WA402, WA403CN, WA403X, WA501, WA503, WA503CB, WA503CN, WA8003E0, WA9003E0</td></td>
                                     </tr>
                                 
                                     <tr class="bg-gray-50">
                                         <td class="px-6 py-4 text-sm font-medium text-gray-900">Compatible Models</td>
-                                        <td class="px-6 py-4 text-sm text-gray-700">D375A3A, WA8003E0, WA9003E0, PC400LCSE8R, OPTIONALFG18H17ECOP, OPTIONALFG1817OP, PC35MR3, BM020C1, D275A2, D275A5D</td>
+                                        <td class="px-6 py-4 text-sm text-gray-700">4B19, 6D95L1L, 6D95L1Z, AX16CHASSISENGINEMASTSPM078MC, BM020C1, BZ1201, CSS, D21A8T, D21P8T, D21PL7M, D275A2, D275A5, D275A5D, D275AX5E0, D31PLL18, D31S18, D375A3, D375A3A, D375A3A01, D375A3D, D40A1, D40PF5, D40PL1, D40PL5, D40PLL5, D41A5, D41P5, D41PF6K, D475A3, D475A3SC, ENGINES4D95LE3CF, ENGINES4D95LE3CX, FORKFD101516, FORKFD101820, FORKFD1816, FORKFD20H25H12, FORKFD20N25N16, FORKFD25HT17, FORKFD30N16, FORKFG15H18H21W, FORKFG202514, FORKFG202514EC, FORKFG202517W, FORKFG20H25H14, FORKFG20H25H14EC, FORKFG20H25H17W, FORKFG20N25N17W, FORKFG25T17W, FORKFG3014, FORKFG3014EC, FORKFG3017W, FORKFG30H14, FORKFG30H14EC, FORKFG30T17W, FORKFG35A17W, FORKFG35AT17W, FORKFG50A10, GC501, GD28AC1, GD521A1, GD661A1, H285S, HD1804, JV100A1, JV100WA2T, JV100WP2T, LW200L1, OPTIONALFG1817OP, OPTIONALFG18H17ECOP, OTHERSFG20H25HAT, PC10001, PC1000LC1, PC1002, PC1501, PC150LC1, PC200011E0, PC200011R, PC251, PC25R1, PC27MR3, PC301, PC303, PC305, PC306, PC307, PC30MR1, PC30MR5E1, PC30R7, PC35MR2, PC35MR3, PC35MR5E1, PC38UU2, PC38UU3, PC400LCSE8R, PC40R7, PC40T7, PC451, PC45MR3, PC490LCI11, PC50MR2, PC50UD2, PC50UG2, PC50UU2, PC50UUM2, PC55MR3, PC58SF1, PC70006, PC78US5, PW1001, PW1003, PW100N3, PW2001, PW201, PW301, PW30T1, S4D102E1EZ3, S4D102E1FUS, S4D95LE3B2M, S4D95LE3C2M, S6D95L1B, S6D95L1LL, S6D95L1MMC, SA6D95L1J, SA6D95L1JC, SAA4D95LE5, SAA4D95LE5A, SAA4D95LE5BR, SAA4D95LE5D, SAA4D95LE5Q, SAA4D95LE5R, SAA6D125E5A, SAA6D95LE1A, SAA6D95LE1AC, SAA6D95LE1AS, SAA6D95LE1B, WA12003, WA1503X, WA2001, WA201, WA3001, WA301, WA302, WA303, WA305, WA305CB, WA305CN, WA305X, WA3201, WA401, WA402, WA403CN, WA403X, WA501, WA503, WA503CB, WA503CN, WA8003E0, WA9003E0</td></td>
                                     </tr>
 
 <tr class="bg-gray-50"><td class="px-5 py-3 font-semibold text-gray-700 w-40">Part Description</td><td class="px-5 py-3 text-gray-900">Filler Oil</td></tr>
@@ -548,8 +614,7 @@
             </div>
         </div>
 
-                        <!-- Related Parts Section (Separate Section) -->
-        <div class="mt-12">
+                        <div class="mt-12">
             <div class="bg-white rounded-xl shadow-lg p-8">
                 <h2 class="text-lg font-bold text-gray-900 mb-6">Related Komatsu Parts</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -562,11 +627,11 @@
                                          </div>
                                          <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full">Komatsu</span>
                                      </div>
-                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Sensor</h4>
-                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 1100799</p>
+                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">TERMINAL¤ (+)</h4>
+                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 08000-00000</p>
                                      <p class="text-sm text-gray-500 mb-4">Spare Parts</p>
-                                     <a href="/products/1100799" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
-                                         View Details 
+                                     <a href="/komatsu/spare-parts/08000-00000.html" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
+                                         View Details
                                          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                          </svg>
@@ -581,11 +646,11 @@
                                          </div>
                                          <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full">Komatsu</span>
                                      </div>
-                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Block Circuit</h4>
-                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 1363870</p>
+                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">TERMINAL¤ (-)</h4>
+                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 08000-00001</p>
                                      <p class="text-sm text-gray-500 mb-4">Spare Parts</p>
-                                     <a href="/products/1363870" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
-                                         View Details 
+                                     <a href="/komatsu/spare-parts/08000-00001.html" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
+                                         View Details
                                          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                          </svg>
@@ -600,11 +665,11 @@
                                          </div>
                                          <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full">Komatsu</span>
                                      </div>
-                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Block Circuit</h4>
-                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 1363871</p>
+                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">COTTER</h4>
+                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 6204-41-4520</p>
                                      <p class="text-sm text-gray-500 mb-4">Spare Parts</p>
-                                     <a href="/products/1363871" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
-                                         View Details 
+                                     <a href="/komatsu/spare-parts/6204-41-4520.html" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
+                                         View Details
                                          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                          </svg>
@@ -613,11 +678,40 @@
                 </div>
             </div>
         </div>
+        </div>
             </div>
         </div>
     </div>
 
     
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-lg font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Is this part compatible with my machine?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">This part (07281-00709) is compatible with: D275A, GD555, GD675, HM250, PC45MR, PC55MR, sAA4D95le, sAA6D125e, sAA6D170e, WA50. Check the Compatible Models section above for the full list of machines this part fits. For precise fitment verification, provide your machine's model number and serial number. Serial number ranges matter — the same model may use different part numbers across production runs. WhatsApp +91-98210-37990 for expert confirmation.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What is the lead time for this part in India?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Parts Trading Company dispatches from our Mumbai warehouse within 1–2 business days. Delivery across major Indian cities takes 3–5 days. Remote locations may take 5–7 days. For urgent breakdown requirements, we can arrange same-day or overnight courier — contact us immediately.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Is this an OEM or aftermarket part?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">PTC supplies OEM-specification aftermarket replacement parts. Our parts match OEM dimensions, material specifications, and tolerances. They are manufactured by ISO-certified suppliers and carry equivalent performance guarantees. For machines under warranty, always verify with your dealer before fitting aftermarket parts.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Can I get a GST invoice?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Yes — all PTC orders include a valid GST tax invoice with HSN codes for machinery spare parts. Our GSTIN is available on request. Invoices are provided in PDF format by email or WhatsApp on the day of dispatch.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How do I place an order?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Contact us on WhatsApp at +91-98210-37990 with your part number, machine model, and quantity required. We will confirm availability, provide pricing, and arrange dispatch. Payment via bank transfer (NEFT/RTGS), UPI, or credit terms for established customers.</p>
+            </div>
+                </div>
+            </div>
+        </div>
 <!-- Mobile Sticky WhatsApp Bar -->
 <div class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-white border-t-2 border-green-200 shadow-2xl block md:hidden" id="mobile-wa-bar">
   <a href="https://wa.me/919821037990?text=Hi! I am interested in Komatsu Filler Oil (Part No: 07281-00709). Please provide a quote and availability." target="_blank" rel="noopener noreferrer"

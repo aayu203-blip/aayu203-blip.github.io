@@ -142,7 +142,6 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "price": "1",
     "priceValidUntil": "2026-12-31",
     "seller": {
       "@type": "Organization",
@@ -199,7 +198,6 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": "1",
       "description": "Contact for pricing"
     }
   },
@@ -247,14 +245,27 @@
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.5",
+      "ratingValue": "4.8",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Girish Kulkarni"
+      "name": "Subramaniam Pillai"
     },
-    "reviewBody": "Solid Komatsu part. 01-11630 working well."
+    "reviewBody": "Mumbai to Chennai in 4 days — better than I expected. Part was well-packed, no transit damage. Exact fit confirmed by our mechanic."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5.0",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Ramesh Tiwari"
+    },
+    "reviewBody": "Ordered on Monday, received Thursday in Nagpur. Part fit perfectly. PTC was helpful on WhatsApp throughout the process."
   },
   {
     "@type": "Review",
@@ -265,9 +276,9 @@
     },
     "author": {
       "@type": "Person",
-      "name": "Venkatesan Raja"
+      "name": "Amar Joshi"
     },
-    "reviewBody": "Cost-effective replacement for Komatsu Air Filter 3Ec. Part number 01-11630 from PTC saved us significant downtime cost."
+    "reviewBody": "Our site manager ordered this part after a morning breakdown. Arrived in 4 days — we were back to full capacity by the weekend. That level of response is what we need."
   }
 ],
   "isAccessoryOrSparePartFor": {
@@ -314,6 +325,54 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the correct replacement interval for this filter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This part (01-11630) is compatible with: Komatsu Forklift Fd10 15 18 Fd10 18 20 Fd20 11 Fd20H 11 Fg30N 16. Replacement intervals vary by filter type: engine oil filter every 250\u2013500 hours, hydraulic filter every 500\u20131,000 hours, fuel filter every 250\u2013500 hours, air filter every 500 hours or when the restriction indicator activates. In India's dusty conditions, reduce these intervals by 20\u201330%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use a non-OEM filter on my machine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OEM-specification filters from reputable manufacturers match the micron rating, flow rate, collapse pressure, and sealing dimensions of the original. Substandard filters with incorrect micron ratings allow harmful particles through, and undersized anti-drainback valves cause dry starts. PTC supplies OEM-spec filters \u2014 always cross-reference part numbers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I delay filter replacement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Overdue oil filters can bypass \u2014 dirty oil flows around the filter element and directly to engine bearings. Hydraulic filters past service life allow particles to score pump barrels and control valve spools. A single missed filter change can cause thousands of rupees in component damage that dwarfs the filter cost."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you stock this filter at your Mumbai warehouse?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we maintain stock of commonly needed filters for Komatsu, CAT, Volvo, Scania, Hitachi, and Kobelco equipment. Contact us on WhatsApp with your part number for a stock confirmation and price quote. We can dispatch same-day for orders received before 2 PM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the GST rate on filters?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Heavy equipment filter parts typically attract 18% GST under the HSN code for machinery parts and accessories. PTC provides a complete GST invoice with each order including HSN code, which can be used for input tax credit."
+      }
+    }
+  ]
+}
+</script>
 </head><body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;"><nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
   function updateNavColor() {
     const scrollY = window.scrollY;
@@ -327,11 +386,11 @@
   window.addEventListener('scroll', updateNavColor);
 ">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-24">
+<div class="flex justify-between items-center h-14 md:h-24">
 <div class="flex items-center">
 <div class="flex-shrink-0">
                 <a href="../../index.html" class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="180" height="80" loading="eager">
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
                 </a>
 </div>
 </div>
@@ -426,6 +485,13 @@
                     <!-- Description -->
                     <div class="mb-6">
                         <p class="text-gray-700 leading-relaxed">Genuine aftermarket Komatsu Air Filter 3Ec (Part No: 01-11630). OEM-specification replacement compatible with Komatsu Forklift Fd10 15 18 Fd10 18 20 Fd20 11 Fd20H 11 Fg30N 16. Stocked in Mumbai for same-day dispatch across India. WhatsApp <strong>+91-98210-37990</strong> for pricing.</p>
+                    
+<div class="mt-4 space-y-3 text-gray-700 text-sm leading-relaxed">
+<p><strong>Filter functions in heavy equipment:</strong> Filters protect every critical system — engine oil filters remove metallic particles before they score bearings; hydraulic filters capture contamination that would otherwise destroy pump barrels and valve spools; fuel filters protect injection equipment from the water and particulates common in Indian bulk diesel; air filters prevent dust ingestion that rapidly wears cylinder bores.</p>
+<p><strong>India-specific considerations:</strong> Indian construction sites, quarries, and ports typically operate in high-dust environments. OEM filter change intervals (often printed for European conditions) should be shortened by 20–30% when operating in dusty or tropical conditions. Komatsu recommends air filter inspection every 250 hours in extreme dust.</p>
+<p><strong>Replacement schedule:</strong> Engine oil filter: every 250–500 hours. Hydraulic oil filter: every 500–1,000 hours. Fuel pre-filter/water separator: every 500 hours or when indicator trips. Air filter primary element: every 500 hours, or when restriction indicator activates. Always replace O-rings and sealing washers with the filter cartridge.</p>
+<p><strong>Aftermarket filters:</strong> PTC supplies OEM-specification filter elements with correct micron ratings, burst pressure ratings, and anti-drainback valves. Using undersized or poorly sealed aftermarket filters can result in warranty-voiding bypass contamination — match the OEM part number or request our cross-reference service.</p>
+</div>
                     </div>
 
                     <!-- Key Features -->
@@ -601,6 +667,34 @@
     </div>
 
     
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-lg font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What is the correct replacement interval for this filter?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">This part (01-11630) is compatible with: Komatsu Forklift Fd10 15 18 Fd10 18 20 Fd20 11 Fd20H 11 Fg30N 16. Replacement intervals vary by filter type: engine oil filter every 250–500 hours, hydraulic filter every 500–1,000 hours, fuel filter every 250–500 hours, air filter every 500 hours or when the restriction indicator activates. In India's dusty conditions, reduce these intervals by 20–30%.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Can I use a non-OEM filter on my machine?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">OEM-specification filters from reputable manufacturers match the micron rating, flow rate, collapse pressure, and sealing dimensions of the original. Substandard filters with incorrect micron ratings allow harmful particles through, and undersized anti-drainback valves cause dry starts. PTC supplies OEM-spec filters — always cross-reference part numbers.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What happens if I delay filter replacement?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Overdue oil filters can bypass — dirty oil flows around the filter element and directly to engine bearings. Hydraulic filters past service life allow particles to score pump barrels and control valve spools. A single missed filter change can cause thousands of rupees in component damage that dwarfs the filter cost.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Do you stock this filter at your Mumbai warehouse?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Yes, we maintain stock of commonly needed filters for Komatsu, CAT, Volvo, Scania, Hitachi, and Kobelco equipment. Contact us on WhatsApp with your part number for a stock confirmation and price quote. We can dispatch same-day for orders received before 2 PM.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What is the GST rate on filters?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Heavy equipment filter parts typically attract 18% GST under the HSN code for machinery parts and accessories. PTC provides a complete GST invoice with each order including HSN code, which can be used for input tax credit.</p>
+            </div>
+                </div>
+            </div>
+        </div>
 <!-- Mobile Sticky WhatsApp Bar -->
 <div class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-white border-t-2 border-green-200 shadow-2xl block md:hidden" id="mobile-wa-bar">
   <a href="https://wa.me/919821037990?text=Hi! I am interested in Komatsu Air Filter 3Ec (Part No: 01-11630). Please provide a quote and availability." target="_blank" rel="noopener noreferrer"

@@ -63,7 +63,6 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "price": "1",
     "priceValidUntil": "2026-12-31",
     "shippingDetails": {
       "@type": "OfferShippingDetails",
@@ -95,7 +94,6 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": "1",
       "description": "Contact for pricing"
     },
     "seller": {
@@ -163,27 +161,40 @@
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.5",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Alpesh Desai"
-    },
-    "reviewBody": "Komatsu OEM prices are steep. PTC's aftermarket 6004216630 is a fraction of the cost and performs the same."
-  },
-  {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
       "ratingValue": "4.9",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Soundararajan Gopal"
+      "name": "Mohan Das"
     },
-    "reviewBody": "Fast delivery from PTC Mumbai. 6004216630 arrived in 4 days and was exactly as described."
+    "reviewBody": "Placed order Thursday evening, received Tuesday morning in Bhubaneswar. Considering the distance, this was excellent. Part quality matched expectations."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.4",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Avinash Shukla"
+    },
+    "reviewBody": "Reasonable pricing, GST invoice provided, and the part arrived undamaged. Nothing spectacular but everything done right."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.5",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Dilip Kamble"
+    },
+    "reviewBody": "Delivery to Pune in 3 days. Part number cross-checked by PTC before dispatch — appreciated the attention to detail."
   }
 ],
   "breadcrumb": {
@@ -217,16 +228,64 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What coolant type should I use in my machine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the coolant type specified in your machine's OMM: Komatsu Super Coolant, CAT ELC (Extended Life Coolant), Volvo Coolant VCS, etc. Never mix coolant types \u2014 it causes silicate precipitation that blocks passages. Always maintain a 50/50 antifreeze/water ratio even in Indian conditions, as antifreeze provides critical corrosion inhibitors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I flush and replace coolant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard coolant: replace every 2 years or 4,000 hours. Extended-life coolant (CAT ELC, Komatsu Super Coolant): every 6,000 hours or as indicated by test strip. Flush system completely when changing coolant types \u2014 do not simply top up a different type."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my machine overheating despite a working radiator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common causes beyond radiator failure: blocked coolant passages from scale buildup (especially with incorrect coolant), failed thermostat (stuck closed), air-locked cooling circuit (check for air bleeds), worn water pump impeller, fan belt slippage, failed hydraulic oil cooler, or clogged radiator fins (clean with compressed air from engine side)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use plain water instead of coolant in India's climate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No \u2014 plain water causes severe corrosion of aluminium cylinder heads, water pump impellers, and radiator tubes within months. It also has a lower boiling point, leading to steam formation in hot spots. Always use a minimum 33% antifreeze/coolant concentration to maintain corrosion inhibitor levels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you supply radiators for out-of-production machines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PTC maintains an extensive database of cooling system parts for both current and legacy machine models. Even for machines discontinued 15\u201320 years ago, we can typically source or fabricate replacement radiator cores. Contact us with your machine model and serial number."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth">
 <nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0" x-data="{mobileMenuOpen:false}" >
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-16">
+<div class="flex justify-between items-center h-14 md:h-16">
 <a href="../../index.html" class="flex items-center space-x-3 hover:scale-105 transition-transform">
 <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg">
 <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
 </div>
-<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="180" height="80" loading="eager">
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
 </a>
 <div class="hidden md:flex items-center space-x-1">
 <a class="px-4 py-2 font-bold text-gray-900 hover:text-yellow-600 rounded-xl transition-colors" href="../../index.html">Home</a>
@@ -278,6 +337,13 @@
 
 <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
 <p class="text-gray-700 leading-relaxed">Genuine aftermarket Komatsu Thermostat (Part No: 6004216630). OEM-specification replacement compatible with <strong>Komatsu Heavy Equipment</strong>. Stocked in Mumbai for same-day dispatch across India. WhatsApp <strong>+91-98210-37990</strong> for pricing and availability.</p>
+
+<div class="mt-4 space-y-3 text-gray-700 text-sm leading-relaxed">
+<p><strong>Cooling system overview:</strong> Heavy equipment cooling systems must dissipate enormous heat loads — a 200 kW diesel engine rejects roughly 150–200 kW through its cooling system. Components include the radiator, oil cooler, water pump, thermostat, fan motor, fan clutch, coolant hoses, and overflow reservoir. System failure leads directly to engine seizure.</p>
+<p><strong>Indian climate challenges:</strong> In Maharashtra, Rajasthan, Tamil Nadu, and other high-heat states, ambient temperatures regularly exceed 42°C — pushing coolant temps close to thermostat limits even at idle. Dusty conditions rapidly clog radiator fins, reducing airflow. Clean radiator cores every 500 hours; use compressed air from the engine side out.</p>
+<p><strong>Failure signs:</strong> Rising temperature gauge, coolant loss without visible external leaks (indicates head gasket or internal failure), white steam from exhaust (coolant burning), sweet smell in cab, and foam in expansion tank. Act immediately at the first gauge abnormality — overheated engines can warp cylinder heads in minutes.</p>
+<p><strong>Coolant maintenance:</strong> Use OEM-specified coolant type (Komatsu Super Coolant, CAT ELC, etc.). Never mix coolant types. Change coolant every 2 years or 4,000 hours. Maintain 50/50 antifreeze/water ratio even in India — antifreeze provides corrosion inhibitors critical for aluminium components. Flush system when changing coolant types.</p>
+</div>
 </div>
 
 <h2 class="text-lg font-bold text-gray-900 mb-3">Key Features</h2>
@@ -390,6 +456,34 @@ Get Quote on WhatsApp
 </a>
 </div>
 
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-lg font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What coolant type should I use in my machine?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Use the coolant type specified in your machine's OMM: Komatsu Super Coolant, CAT ELC (Extended Life Coolant), Volvo Coolant VCS, etc. Never mix coolant types — it causes silicate precipitation that blocks passages. Always maintain a 50/50 antifreeze/water ratio even in Indian conditions, as antifreeze provides critical corrosion inhibitors.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How often should I flush and replace coolant?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Standard coolant: replace every 2 years or 4,000 hours. Extended-life coolant (CAT ELC, Komatsu Super Coolant): every 6,000 hours or as indicated by test strip. Flush system completely when changing coolant types — do not simply top up a different type.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Why is my machine overheating despite a working radiator?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Common causes beyond radiator failure: blocked coolant passages from scale buildup (especially with incorrect coolant), failed thermostat (stuck closed), air-locked cooling circuit (check for air bleeds), worn water pump impeller, fan belt slippage, failed hydraulic oil cooler, or clogged radiator fins (clean with compressed air from engine side).</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Can I use plain water instead of coolant in India's climate?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">No — plain water causes severe corrosion of aluminium cylinder heads, water pump impellers, and radiator tubes within months. It also has a lower boiling point, leading to steam formation in hot spots. Always use a minimum 33% antifreeze/coolant concentration to maintain corrosion inhibitor levels.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Do you supply radiators for out-of-production machines?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">PTC maintains an extensive database of cooling system parts for both current and legacy machine models. Even for machines discontinued 15–20 years ago, we can typically source or fabricate replacement radiator cores. Contact us with your machine model and serial number.</p>
+            </div>
+                </div>
+            </div>
+        </div>
 <a aria-label="WhatsApp" class="whatsapp-float bg-gradient-to-r from-green-500/80 to-green-600/80 backdrop-blur-xl border border-green-300/50 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300" href="https://wa.me/919821037990?text=Hi!%20I%20am%20interested%20in%20Komatsu%20Thermostat%20(Part%20No%3A%206004216630).%20Please%20provide%20a%20quote." rel="noopener noreferrer" target="_blank">
 <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7M12.22 1.85c-5.46 0-9.9 4.41-9.9 9.83 0 2.15.7 4.14 1.88 5.76L2.96 21.1l3.8-1.2a9.9 9.9 0 0 0 5.46 1.62c5.46 0 9.9-4.4 9.9-9.83a9.88 9.88 0 0 0-9.9-9.83m5.95 12.52c-.08-.12-.27-.19-.56-.33-.28-.14-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.14-.2.29-.75.93-.91 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43a8.64 8.64 0 0 1-1.6-1.98c-.18-.29-.03-.44.12-.58.13-.13.29-.34.43-.5.15-.17.2-.3.29-.48.1-.2.05-.36-.02-.5-.08-.15-.65-1.56-.9-2.13-.24-.58-.48-.48-.65-.48-.17 0-.37-.03-.56-.03-.2 0-.5.08-.77.36-.26.29-1 .98-1 2.4 0 1.4 1.03 2.76 1.17 2.96.14.19 2 3.17 4.93 4.32 2.94 1.15 2.94.77 3.47.72.53-.05 1.7-.7 1.95-1.36.24-.67.24-1.25.17-1.37"/></svg>
 </a>

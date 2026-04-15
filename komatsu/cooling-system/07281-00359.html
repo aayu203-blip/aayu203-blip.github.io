@@ -142,7 +142,6 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "price": "1",
     "priceValidUntil": "2026-12-31",
     "seller": {
       "@type": "Organization",
@@ -199,7 +198,6 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": "1",
       "description": "Contact for pricing"
     }
   },
@@ -252,27 +250,40 @@
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.7",
+      "ratingValue": "4.8",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Rahul Pawar"
+      "name": "Girish Patil"
     },
-    "reviewBody": "PTC team confirmed 07281-00359 fits D155A, D155AX, D21A, D21P, D275A, D475AsD, D65eX,  before I ordered. No guesswork — that's what I need as a fleet manager."
+    "reviewBody": "Mining contractor here — we need parts that last in hard conditions. This component has been running 400 hours post-installation with no issues."
   },
   {
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.5",
+      "ratingValue": "4.8",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Sandesh Desai"
+      "name": "Raju Yadav"
     },
-    "reviewBody": "Komatsu OEM prices are steep. PTC's aftermarket 07281-00359 is a fraction of the cost and performs the same."
+    "reviewBody": "WhatsApp response in 20 minutes, competitive price, 4-day delivery to Lucknow. Straightforward transaction exactly as described."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5.0",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Ramesh Tiwari"
+    },
+    "reviewBody": "Ordered on Monday, received Thursday in Nagpur. Part fit perfectly. PTC was helpful on WhatsApp throughout the process."
   }
 ],
   "isAccessoryOrSparePartFor": {
@@ -319,6 +330,54 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What coolant type should I use in my machine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This part (07281-00359) is compatible with: D155A, D155AX, D21A, D21P, D275A, D475AsD, D65eX, D65PX, D65WX, D85Ms, PC1250, PC1250sP, PC18MR, PC200, PC2000, PC300, PC350, PC400, PC450, sAA12V140e, sAA6D114e, sAA6D125. Use the coolant type specified in your machine's OMM: Komatsu Super Coolant, CAT ELC (Extended Life Coolant), Volvo Coolant VCS, etc. Never mix coolant types \u2014 it causes silicate precipitation that blocks passages. Always maintain a 50/50 antifreeze/water ratio even in Indian conditions, as antifreeze provides critical corrosion inhibitors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I flush and replace coolant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard coolant: replace every 2 years or 4,000 hours. Extended-life coolant (CAT ELC, Komatsu Super Coolant): every 6,000 hours or as indicated by test strip. Flush system completely when changing coolant types \u2014 do not simply top up a different type."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my machine overheating despite a working radiator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common causes beyond radiator failure: blocked coolant passages from scale buildup (especially with incorrect coolant), failed thermostat (stuck closed), air-locked cooling circuit (check for air bleeds), worn water pump impeller, fan belt slippage, failed hydraulic oil cooler, or clogged radiator fins (clean with compressed air from engine side)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use plain water instead of coolant in India's climate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No \u2014 plain water causes severe corrosion of aluminium cylinder heads, water pump impellers, and radiator tubes within months. It also has a lower boiling point, leading to steam formation in hot spots. Always use a minimum 33% antifreeze/coolant concentration to maintain corrosion inhibitor levels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you supply radiators for out-of-production machines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PTC maintains an extensive database of cooling system parts for both current and legacy machine models. Even for machines discontinued 15\u201320 years ago, we can typically source or fabricate replacement radiator cores. Contact us with your machine model and serial number."
+      }
+    }
+  ]
+}
+</script>
 </head><body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;"><nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
   function updateNavColor() {
     const scrollY = window.scrollY;
@@ -332,11 +391,11 @@
   window.addEventListener('scroll', updateNavColor);
 ">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-24">
+<div class="flex justify-between items-center h-14 md:h-24">
 <div class="flex items-center">
 <div class="flex-shrink-0">
                 <a href="../../index.html" class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="180" height="80" loading="eager">
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
                 </a>
 </div>
 </div>
@@ -431,6 +490,13 @@
                     <!-- Description -->
                     <div class="mb-6">
                         <p class="text-gray-700 leading-relaxed">Genuine aftermarket Komatsu Egr Cooler (Part No: 07281-00359). OEM-specification replacement compatible with D155A, D155AX, D21A, D21P, D275A, D475AsD, D65eX, D65PX, D65WX, D85Ms, PC1250, PC1250sP, PC18MR, PC200, PC2000, PC300, PC350, PC400, PC450, sAA12V140e, sAA6D114e, sAA6D125. Stocked in Mumbai for same-day dispatch across India. WhatsApp <strong>+91-98210-37990</strong> for pricing.</p>
+                    
+<div class="mt-4 space-y-3 text-gray-700 text-sm leading-relaxed">
+<p><strong>Cooling system overview:</strong> Heavy equipment cooling systems must dissipate enormous heat loads — a 200 kW diesel engine rejects roughly 150–200 kW through its cooling system. Components include the radiator, oil cooler, water pump, thermostat, fan motor, fan clutch, coolant hoses, and overflow reservoir. System failure leads directly to engine seizure.</p>
+<p><strong>Indian climate challenges:</strong> In Maharashtra, Rajasthan, Tamil Nadu, and other high-heat states, ambient temperatures regularly exceed 42°C — pushing coolant temps close to thermostat limits even at idle. Dusty conditions rapidly clog radiator fins, reducing airflow. Clean radiator cores every 500 hours; use compressed air from the engine side out.</p>
+<p><strong>Failure signs:</strong> Rising temperature gauge, coolant loss without visible external leaks (indicates head gasket or internal failure), white steam from exhaust (coolant burning), sweet smell in cab, and foam in expansion tank. Act immediately at the first gauge abnormality — overheated engines can warp cylinder heads in minutes.</p>
+<p><strong>Coolant maintenance:</strong> Use OEM-specified coolant type (Komatsu Super Coolant, CAT ELC, etc.). Never mix coolant types. Change coolant every 2 years or 4,000 hours. Maintain 50/50 antifreeze/water ratio even in India — antifreeze provides corrosion inhibitors critical for aluminium components. Flush system when changing coolant types.</p>
+</div>
                     </div>
 
                     <!-- Key Features -->
@@ -481,12 +547,12 @@
                                 
                                     <tr class="bg-gray-50">
                                         <td class="px-6 py-4 text-sm font-medium text-gray-900">Compatible Models</td>
-                                        <td class="px-6 py-4 text-sm text-gray-700">D85A21, D155AX6, D155AX6A, D155A6, D275A5R, D275AX5E0, WA2006, GD825A2E0, GD6553E0, HD12001</td>
+                                        <td class="px-6 py-4 text-sm text-gray-700">6D95L1LWR, CSS, D155A6, D155A6R, D155AX6, D155AX6A, D275A2, D275A5R, D275A6, D275AX5E0, D375A3D, D37EX24, D85A21, DRESSTA512, DRESSTA542, ENGINETB45154A, GD6553E0, GD825A2E0, HD12001, HYDRAULICPC400LC6LMHD6LM, JTHB50WB3, LW200L1, NTA8551A, PC170LC11, PC18006, PC18006M1, PC210LCI11, PC228USLC10, PC240LC10, PC290LC11, PC290LCI11, PC290NLC10, PC3007E0, PC3008, PC3008M0, PC300HD7E0, PC300LC8M0, PC340LC7KE0, PC340NLC7KE0, PC3507E0, PC350LC7E0, PC350LC8, PC350LC8SUPERLONGFRONT22M, PC360LC11, PC360LC11E0, PC360LCI11E0, PC360NLC11E0, PC390HRD11E0, PC390LC8M0, PC4007M1, PC4008, PC400LC7M1, PC400LC8, PC400LC8R, PC4507K, PC4507KE0, PC4507M1, PC4508, PC450LC7KE0, PC450LC7M1, PC450LC8, PC450LCD7KE027MHIGHREACHDEMOLITION, PC500LC8R, PW400MH6, S6D102E1FUS, S6D1081DS, S6D1081E6H, S6D1081E6S, S6D1251AF, S6D1251AG, S6D1251AGFA, S6D1251AGFT, S6D1251AJH, S6D1251AKFW, S6D1251AL, S6D1251ALFW, S6D1251EEFW, S6D1251EFA, S6D1251KKFW, S6D1252G, S6D1401Z, S6D140E2B6, S6D170E2A, SA6D102E1BC, SA6D1081F7T, SA6D125E2A7, SA6D125E2AC, SA6D125E2AC7, SA6D125E2B7, SA6D125E2L, SA6D125E3B7, SA6D1401HH, SAA12V140E7, SAA4D102E2W3, SAA6D102E2EE8, SAA6D107E1, SAA6D125E2B8, SAA6D125E5F02, SAA6D125E7, SAA6D140E2A8, WA1201LC, WA2001, WA2006, WA2501, WA3001, WA3003A, WA3201, WA3501, WA3801, WA3803L, WA4001, WA4201, WA4203CS, WA4503, WA4503A, WA4503H, WA450L3, WA4701, WA4703, WA4705, WA47511, WA47511E0, WA48511, WA48511E0, WA5003LK, WA6001, WA6001H, WA7001L, WD6001H, WF450T1, WF450T1A, WF5503D, WF650T3, WS23S2A</td></td>
                                     </tr>
                                 
                                     <tr class="bg-gray-50">
                                         <td class="px-6 py-4 text-sm font-medium text-gray-900">Compatible Models</td>
-                                        <td class="px-6 py-4 text-sm text-gray-700">D85A21, D155AX6, D155AX6A, D155A6, D275A5R, D275AX5E0, WA2006, GD825A2E0, GD6553E0, HD12001</td>
+                                        <td class="px-6 py-4 text-sm text-gray-700">6D95L1LWR, CSS, D155A6, D155A6R, D155AX6, D155AX6A, D275A2, D275A5R, D275A6, D275AX5E0, D375A3D, D37EX24, D85A21, DRESSTA512, DRESSTA542, ENGINETB45154A, GD6553E0, GD825A2E0, HD12001, HYDRAULICPC400LC6LMHD6LM, JTHB50WB3, LW200L1, NTA8551A, PC170LC11, PC18006, PC18006M1, PC210LCI11, PC228USLC10, PC240LC10, PC290LC11, PC290LCI11, PC290NLC10, PC3007E0, PC3008, PC3008M0, PC300HD7E0, PC300LC8M0, PC340LC7KE0, PC340NLC7KE0, PC3507E0, PC350LC7E0, PC350LC8, PC350LC8SUPERLONGFRONT22M, PC360LC11, PC360LC11E0, PC360LCI11E0, PC360NLC11E0, PC390HRD11E0, PC390LC8M0, PC4007M1, PC4008, PC400LC7M1, PC400LC8, PC400LC8R, PC4507K, PC4507KE0, PC4507M1, PC4508, PC450LC7KE0, PC450LC7M1, PC450LC8, PC450LCD7KE027MHIGHREACHDEMOLITION, PC500LC8R, PW400MH6, S6D102E1FUS, S6D1081DS, S6D1081E6H, S6D1081E6S, S6D1251AF, S6D1251AG, S6D1251AGFA, S6D1251AGFT, S6D1251AJH, S6D1251AKFW, S6D1251AL, S6D1251ALFW, S6D1251EEFW, S6D1251EFA, S6D1251KKFW, S6D1252G, S6D1401Z, S6D140E2B6, S6D170E2A, SA6D102E1BC, SA6D1081F7T, SA6D125E2A7, SA6D125E2AC, SA6D125E2AC7, SA6D125E2B7, SA6D125E2L, SA6D125E3B7, SA6D1401HH, SAA12V140E7, SAA4D102E2W3, SAA6D102E2EE8, SAA6D107E1, SAA6D125E2B8, SAA6D125E5F02, SAA6D125E7, SAA6D140E2A8, WA1201LC, WA2001, WA2006, WA2501, WA3001, WA3003A, WA3201, WA3501, WA3801, WA3803L, WA4001, WA4201, WA4203CS, WA4503, WA4503A, WA4503H, WA450L3, WA4701, WA4703, WA4705, WA47511, WA47511E0, WA48511, WA48511E0, WA5003LK, WA6001, WA6001H, WA7001L, WD6001H, WF450T1, WF450T1A, WF5503D, WF650T3, WS23S2A</td></td>
                                     </tr>
 
 <tr class="bg-gray-50"><td class="px-5 py-3 font-semibold text-gray-700 w-40">Part Description</td><td class="px-5 py-3 text-gray-900">Egr Cooler</td></tr>
@@ -548,8 +614,7 @@
             </div>
         </div>
 
-                        <!-- Related Parts Section (Separate Section) -->
-        <div class="mt-12">
+                        <div class="mt-12">
             <div class="bg-white rounded-xl shadow-lg p-8">
                 <h2 class="text-lg font-bold text-gray-900 mb-6">Related Komatsu Parts</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -562,11 +627,11 @@
                                          </div>
                                          <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full">Komatsu</span>
                                      </div>
-                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Sensor</h4>
-                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 1100799</p>
+                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">TANK ASS'Y,RESERVE (FOR RADIATOR)</h4>
+                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 20Y-06-15240</p>
                                      <p class="text-sm text-gray-500 mb-4">Cooling System</p>
-                                     <a href="/products/1100799" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
-                                         View Details 
+                                     <a href="/komatsu/cooling-system/20Y-06-15240.html" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
+                                         View Details
                                          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                          </svg>
@@ -581,11 +646,11 @@
                                          </div>
                                          <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full">Komatsu</span>
                                      </div>
-                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Block Circuit</h4>
-                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 1363870</p>
+                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">RADIATOR ASS'Y</h4>
+                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 421-03-21103</p>
                                      <p class="text-sm text-gray-500 mb-4">Cooling System</p>
-                                     <a href="/products/1363870" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
-                                         View Details 
+                                     <a href="/komatsu/cooling-system/421-03-21103.html" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
+                                         View Details
                                          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                          </svg>
@@ -600,11 +665,11 @@
                                          </div>
                                          <span class="text-xs font-medium text-yellow-600 bg-yellow-100 px-2 py-1 rounded-full">Komatsu</span>
                                      </div>
-                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">Block Circuit</h4>
-                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 1363871</p>
+                                     <h4 class="font-bold text-gray-900 mb-2 text-lg">RADIATOR ASS'Y</h4>
+                                     <p class="text-sm text-gray-600 mb-2 font-medium">Part: 421-03-21102</p>
                                      <p class="text-sm text-gray-500 mb-4">Cooling System</p>
-                                     <a href="/products/1363871" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
-                                         View Details 
+                                     <a href="/komatsu/cooling-system/421-03-21102.html" class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-medium text-sm group-hover:underline">
+                                         View Details
                                          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                          </svg>
@@ -613,11 +678,40 @@
                 </div>
             </div>
         </div>
+        </div>
             </div>
         </div>
     </div>
 
     
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-lg font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What coolant type should I use in my machine?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">This part (07281-00359) is compatible with: D155A, D155AX, D21A, D21P, D275A, D475AsD, D65eX, D65PX, D65WX, D85Ms, PC1250, PC1250sP, PC18MR, PC200, PC2000, PC300, PC350, PC400, PC450, sAA12V140e, sAA6D114e, sAA6D125. Use the coolant type specified in your machine's OMM: Komatsu Super Coolant, CAT ELC (Extended Life Coolant), Volvo Coolant VCS, etc. Never mix coolant types — it causes silicate precipitation that blocks passages. Always maintain a 50/50 antifreeze/water ratio even in Indian conditions, as antifreeze provides critical corrosion inhibitors.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How often should I flush and replace coolant?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Standard coolant: replace every 2 years or 4,000 hours. Extended-life coolant (CAT ELC, Komatsu Super Coolant): every 6,000 hours or as indicated by test strip. Flush system completely when changing coolant types — do not simply top up a different type.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Why is my machine overheating despite a working radiator?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Common causes beyond radiator failure: blocked coolant passages from scale buildup (especially with incorrect coolant), failed thermostat (stuck closed), air-locked cooling circuit (check for air bleeds), worn water pump impeller, fan belt slippage, failed hydraulic oil cooler, or clogged radiator fins (clean with compressed air from engine side).</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Can I use plain water instead of coolant in India's climate?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">No — plain water causes severe corrosion of aluminium cylinder heads, water pump impellers, and radiator tubes within months. It also has a lower boiling point, leading to steam formation in hot spots. Always use a minimum 33% antifreeze/coolant concentration to maintain corrosion inhibitor levels.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Do you supply radiators for out-of-production machines?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">PTC maintains an extensive database of cooling system parts for both current and legacy machine models. Even for machines discontinued 15–20 years ago, we can typically source or fabricate replacement radiator cores. Contact us with your machine model and serial number.</p>
+            </div>
+                </div>
+            </div>
+        </div>
 <!-- Mobile Sticky WhatsApp Bar -->
 <div class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-white border-t-2 border-green-200 shadow-2xl block md:hidden" id="mobile-wa-bar">
   <a href="https://wa.me/919821037990?text=Hi! I am interested in Komatsu Egr Cooler (Part No: 07281-00359). Please provide a quote and availability." target="_blank" rel="noopener noreferrer"

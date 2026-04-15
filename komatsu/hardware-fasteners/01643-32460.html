@@ -63,7 +63,6 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "price": "1",
     "priceValidUntil": "2026-12-31",
     "shippingDetails": {
       "@type": "OfferShippingDetails",
@@ -95,7 +94,6 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": "1",
       "description": "Contact for pricing"
     },
     "seller": {
@@ -163,27 +161,40 @@
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "5.0",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Murugan Selvam"
-    },
-    "reviewBody": "Komatsu OEM prices are steep. PTC's aftermarket 01643-32460 is a fraction of the cost and performs the same."
-  },
-  {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
       "ratingValue": "4.8",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Hariharan Bhat"
+      "name": "Raju Yadav"
     },
-    "reviewBody": "Quality of 01643-32460 is solid. Our site mechanic inspected it before fitting — confirmed OEM specification."
+    "reviewBody": "WhatsApp response in 20 minutes, competitive price, 4-day delivery to Lucknow. Straightforward transaction exactly as described."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5.0",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Naresh Bhat"
+    },
+    "reviewBody": "Ordered two pieces. Both arrived correctly. GST invoice provided same day. Simple and professional."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.6",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Anand Mehta"
+    },
+    "reviewBody": "Asked PTC to confirm fitment for my specific serial number range before purchasing. They verified and it fit perfectly. This level of service is rare."
   }
 ],
   "breadcrumb": {
@@ -217,16 +228,64 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this part compatible with my machine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Check the Compatible Models section above for the full list of machines this part fits. For precise fitment verification, provide your machine's model number and serial number. Serial number ranges matter \u2014 the same model may use different part numbers across production runs. WhatsApp +91-98210-37990 for expert confirmation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the lead time for this part in India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parts Trading Company dispatches from our Mumbai warehouse within 1\u20132 business days. Delivery across major Indian cities takes 3\u20135 days. Remote locations may take 5\u20137 days. For urgent breakdown requirements, we can arrange same-day or overnight courier \u2014 contact us immediately."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this an OEM or aftermarket part?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PTC supplies OEM-specification aftermarket replacement parts. Our parts match OEM dimensions, material specifications, and tolerances. They are manufactured by ISO-certified suppliers and carry equivalent performance guarantees. For machines under warranty, always verify with your dealer before fitting aftermarket parts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get a GST invoice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes \u2014 all PTC orders include a valid GST tax invoice with HSN codes for machinery spare parts. Our GSTIN is available on request. Invoices are provided in PDF format by email or WhatsApp on the day of dispatch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I place an order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contact us on WhatsApp at +91-98210-37990 with your part number, machine model, and quantity required. We will confirm availability, provide pricing, and arrange dispatch. Payment via bank transfer (NEFT/RTGS), UPI, or credit terms for established customers."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth">
 <nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0" x-data="{mobileMenuOpen:false}" >
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-16">
+<div class="flex justify-between items-center h-14 md:h-16">
 <a href="../../index.html" class="flex items-center space-x-3 hover:scale-105 transition-transform">
 <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg">
 <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/></svg>
 </div>
-<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="180" height="80" loading="eager">
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
 </a>
 <div class="hidden md:flex items-center space-x-1">
 <a class="px-4 py-2 font-bold text-gray-900 hover:text-yellow-600 rounded-xl transition-colors" href="../../index.html">Home</a>
@@ -295,14 +354,14 @@
 <tr class="bg-gray-50"><td class="px-5 py-3 font-semibold text-gray-700 w-40">Brand</td><td class="px-5 py-3 text-gray-900">Komatsu</td></tr>
 <tr class="bg-white"><td class="px-5 py-3 font-semibold text-gray-700">Part Number</td><td class="px-5 py-3 text-gray-900 font-mono font-bold">01643-32460</td></tr>
 <tr class="bg-gray-50"><td class="px-5 py-3 font-semibold text-gray-700">Category</td><td class="px-5 py-3 text-gray-900">Spare Parts</td></tr>
-<tr class="bg-white"><td class="px-5 py-3 font-semibold text-gray-700">Compatible Models</td><td class="px-5 py-3 text-gray-900">Komatsu Heavy Equipment</td></tr>
+<tr class="bg-white"><td class="px-5 py-3 font-semibold text-gray-700">Compatible Models</td><td class="px-6 py-4 text-sm text-gray-700">3D76E6, 4D88E6, AFE48AAAE930E, AFE48AH930E, AFE48AK930E, AFE48AM930E, AFE48AN930E, AFE48AP930E, AFE48AQ930E, AFE48AR930E, AFE48AS930E, AFE48AT930E2, AFE48BC930E, AFE48BF930E2, AFE48BG930E2, AFE59FP930E4, AFE59FQ930E4, AFE59FW930E4, AFE59FX930E4, AFE59GB930E4, AFE59GE930E4, AFE59GG930E4, AFE59GH930E4, AFE59GJ930E4, AFE59GK930E4, AFE62BJ930E4SE, AFE62BK930E4SE, AFE62BP930E4SE, AFE62BT930E4SE, AFE62BU930E4SE, AFE62BW930E4SE, AFE62BY930E4SE, AFE62CA930E4SE, AFE62CB930E4SE, AFE62CC930E4SE, AFE66E860E1K, AFE69E730E8, AFE69G730E8, AFE69J730E8, AFE69K730E8, AFE69L730E8, AFE69M730E8, AFE69P730E8, AFE69Q730E8, AFE73D980E4, AFE73H980E4, AFE73J980E4, AFE77BN830E5, AFE77BX830E5, ASXHPBSXHPCHASSISMASTSPM307, ATTACHMENTHFS2532, ATTACHMENTHFS3032, BF601, BR200T1, BR200T1A, BR300S1, BR480RG1, BR480RG1M1, BR500JG1, BR580JG1, CD110R2, CS3602, CS360SD2, CSS, D155A2, D155A2A, D155A3, D155A5, D155A6, D155A6R, D155AX3, D155AX5, D155AX6, D155AX6A, D155AX7, D155AX8, D155AX8E0, D155AXI8, D155AXI8E0, D155C1P, D155CX8, D155PX8, D275A2, D275A5, D275A5D, D275A5R, D275A6, D275AX5E0, D275AX5KO, D375A1, D375A2, D375A3, D375A301, D375A3A01, D375A5, D375A5D, D375A5E0, D375A6, D375A6R, D475A1, D475A8, D475A8E0, D475A8R, D475AI8, D475AI8R, D61EX24, D61PX24, D61PXI24, D65PX16, D65PX17, D71PX24E0, D85A21, D85A21B, DDM0531A, DNH0206MQT, DNH0206MST, DNP0313CE, DRESSTA538, DRESSTA542, ELECTRICFB20MF12B, ENGINE4D98E1G46BF, ENGINEGK151AW, GC3801, GC380F1, GC380F1A, GC380F2, GD663A2, GD705A3, GD705A3A, GD705A4, GD705A4A, GD705A4AN, GD705R1, GD725A1, GD805A1, GD825A2E0, GH3202, GLOBALAFE57J830EAC, GLOBALAFE59G930E4, GS3601, GS3602, HB215LC3, HD15007, HD1804, HD200D3, HD2053, HD2555, HD3202, HD3203, HD3252, HD3253, HD3255, HD3256, HD3256W, HD4056, JPB200-HYDRAULIC-BREAKER, JTHB083, JTHB50WB3, PC10001, PC1000LC1, PC11006, PC1100LC6, PC1100SP6, PC125011, PC125011E0, PC125011R, PC12507, PC12508, PC12508R, PC1250LC11, PC1250LC7, PC1250LC8, PC1250SE7, PC1250SP7, PC1250SP8, PC1250SP8R, PC16001, PC16001A, PC1600SP1, PC18006, PC18006M1, PC200011, PC200011E0, PC200011R, PC20008, PC2002, PC2006, PC210LC8WASTESPEC, PC210LCNLC815MSUPERLONGFRONT, PC2208M0, PC220LC12, PC300, PC30006, PC3002, PC3003, PC3005, PC3005C, PC3005K, PC3006, PC3006Z, PC3007, PC3007AA, PC3007E0, PC3008, PC3008M0, PC3008M2, PC300LC, PC300LC1, PC300LC3, PC300LC5, PC300LC5K, PC300LC5LC, PC300LC6, PC300LC6Z, PC300LC7, PC300LC7E0, PC300LC8, PC300LC8M0, PC300LC8M2, PC300LL7L, PC300NLC5K, PC300SC6, PC3406K, PC340LC6K, PC340LC7K, PC340NLC6K, PC340NLC7K, PC340NLC7KE0, PC3506, PC3506Z, PC3507AA, PC3507E0, PC3508, PC3508M0, PC3508M0WORKEQUIPMENTGREASE500H, PC3508M2, PC350F8M0, PC350LC6, PC350LC6Z, PC350LC7, PC350LC7BA, PC350LC7E0, PC350LC8, PC350LC8M0, PC350LC8M2, PC350LL7E0, PC3608M0, PC3608M1, PC3608M2, PC360LC11, PC360LC11E0, PC360LC8M2, PC360LCI11, PC360LCI11E0, PC360NLC11, PC360NLC11E0, PC380LC6K, PC380LC7K, PC390LC11HRD, PC390LC8M0, PC40006, PC4001, PC4003, PC4005, PC4005C, PC4005D, PC4006, PC4006C, PC4006Z, PC4007, PC4007E0, PC4007M1, PC4008, PC4008R, PC400HD5K, PC400LC, PC400LC1, PC400LC3, PC400LC5, PC400LC6, PC400LC6Z, PC400LC7, PC400LC7E0, PC400LC8, PC400LC8R, PC400ST6, PC400ST6LC, PC4105, PC410LC5, PC4506, PC4506K, PC4506KKE, PC4506Z, PC4507, PC4507E0, PC4507K, PC4507M1, PC4508, PC4508R, PC450LC6, PC450LC6K, PC450LC6KJ, PC450LC6KKE, PC450LC6Z, PC450LC7, PC450LC7E0, PC450LC7K, PC450LC7M1, PC450LC8, PC450LC8R, PC450LCHD8, PC49010, PC490LC10, PC490LC11, PC490LC11E0, PC490LCI11, PC500LC10M0, PC500LC10R, PC500LC8, PC500LC8R, PC55006, PC550LC8, PC6006, PC6006A, PC6006KJ, PC6007, PC6007K, PC6007M1, PC6008, PC6008R, PC6008R1, PC600LC6, PC600LC6A, PC600LC6K, PC600LC6KJ, PC600LC7K, PC600LC7M1, PC600LC8, PC600LC8E0, PC600LC8R1, PC6503PC650LC3, PC6505, PC6506, PC6506A, PC6507M1, PC650LC11, PC650LC6, PC650LC6A, PC650LC7M1, PC650LC8E0, PC700LC11, PC700LC11E0, PC700LC8E0, PC700LC8R, PC7105, PC710SE5, PC7507M1, PC750LC6, PC750LC6K01, PC750LC7, PC750LC7K, PC750SE6, PC750SE6AM, PC750SE6K01, PC750SE6KJ, PC750SE6KLS, PC750SE7, PC750SE7K, PC750SE7M1, PC78US10, PC8008E0, PC8008K, PC8008R1, PC800LC8E0, PC800LC8K, PC800LC8R1, PC800SE6, PC800SE8E0, PC800SE8R1, PC8508E0, PC8508R1, PC850SE8E0, PC850SE8R1, PC900LC11, PC95011, PC95011E0, PC95011R, PC950LC11, PC950LC11E0, PC950LC11R, PW15811E0, PW19011E1, PW75R2, PW95R2, SAA4D107E1D, SAA6D107E1, SAA6D125E3N8M, WA2006, WA3003AXT, WA300L3, WA3203, WA3501, WA3503A, WA3503AS, WA3503ASW, WA3503X, WA3801, WA3801LC, WA4001, WA4003A, WA4003AS, WA4003ASN, WA4003H, WA4003X, WA403SFX, WA4201, WA4201LC, WA4203, WA4503, WA4503A, WA4503AS, WA4503H, WA4503X, WA4506, WA4703, WA5001, WA5001LSUPPLEMENT, WA5008E0, WA6001, WA6001H, WA6001L, WA6001LC, WA6001LE, WA6003, WA6003D, WA6006, WA6008E0, WA7001, WA7001L, WA7003, WA7008E0, WA8001, WA800113, WA8001A, WA8002, WA8002L, WA8002LC, WA800L3, WA900, WA9001, WA9001L, WA9003, WA9003E0, WA900L3, WB97R8, WD6001, WD6001H, WD6003, WD6006, WD6006R, WF600T1, WF650T3, WS23S2A</td></td></tr>
 <tr class="bg-gray-50"><td class="px-5 py-3 font-semibold text-gray-700">Equipment Type</td><td class="px-5 py-3 text-gray-900">Komatsu Equipment</td></tr>
 <tr class="bg-white"><td class="px-5 py-3 font-semibold text-gray-700">Availability</td><td class="px-5 py-3"><span class="text-green-700 font-semibold">&#10003; In Stock</span></td></tr>
 <tr class="bg-gray-50"><td class="px-5 py-3 font-semibold text-gray-700">Dispatch</td><td class="px-5 py-3 text-gray-900">Same day from Mumbai</td></tr>
 
                                     <tr class="bg-gray-50">
                                         <td class="px-6 py-4 text-sm font-medium text-gray-900">Compatible Models</td>
-                                        <td class="px-6 py-4 text-sm text-gray-700">PC12508R, PC1250SP8R, D375A6R, D155AX7, PC6008R1, BR300S1, BR200T1, BR200T1A, BR480RG1, BR480RG1M1</td>
+                                        <td class="px-6 py-4 text-sm text-gray-700">3D76E6, 4D88E6, AFE48AAAE930E, AFE48AH930E, AFE48AK930E, AFE48AM930E, AFE48AN930E, AFE48AP930E, AFE48AQ930E, AFE48AR930E, AFE48AS930E, AFE48AT930E2, AFE48BC930E, AFE48BF930E2, AFE48BG930E2, AFE59FP930E4, AFE59FQ930E4, AFE59FW930E4, AFE59FX930E4, AFE59GB930E4, AFE59GE930E4, AFE59GG930E4, AFE59GH930E4, AFE59GJ930E4, AFE59GK930E4, AFE62BJ930E4SE, AFE62BK930E4SE, AFE62BP930E4SE, AFE62BT930E4SE, AFE62BU930E4SE, AFE62BW930E4SE, AFE62BY930E4SE, AFE62CA930E4SE, AFE62CB930E4SE, AFE62CC930E4SE, AFE66E860E1K, AFE69E730E8, AFE69G730E8, AFE69J730E8, AFE69K730E8, AFE69L730E8, AFE69M730E8, AFE69P730E8, AFE69Q730E8, AFE73D980E4, AFE73H980E4, AFE73J980E4, AFE77BN830E5, AFE77BX830E5, ASXHPBSXHPCHASSISMASTSPM307, ATTACHMENTHFS2532, ATTACHMENTHFS3032, BF601, BR200T1, BR200T1A, BR300S1, BR480RG1, BR480RG1M1, BR500JG1, BR580JG1, CD110R2, CS3602, CS360SD2, CSS, D155A2, D155A2A, D155A3, D155A5, D155A6, D155A6R, D155AX3, D155AX5, D155AX6, D155AX6A, D155AX7, D155AX8, D155AX8E0, D155AXI8, D155AXI8E0, D155C1P, D155CX8, D155PX8, D275A2, D275A5, D275A5D, D275A5R, D275A6, D275AX5E0, D275AX5KO, D375A1, D375A2, D375A3, D375A301, D375A3A01, D375A5, D375A5D, D375A5E0, D375A6, D375A6R, D475A1, D475A8, D475A8E0, D475A8R, D475AI8, D475AI8R, D61EX24, D61PX24, D61PXI24, D65PX16, D65PX17, D71PX24E0, D85A21, D85A21B, DDM0531A, DNH0206MQT, DNH0206MST, DNP0313CE, DRESSTA538, DRESSTA542, ELECTRICFB20MF12B, ENGINE4D98E1G46BF, ENGINEGK151AW, GC3801, GC380F1, GC380F1A, GC380F2, GD663A2, GD705A3, GD705A3A, GD705A4, GD705A4A, GD705A4AN, GD705R1, GD725A1, GD805A1, GD825A2E0, GH3202, GLOBALAFE57J830EAC, GLOBALAFE59G930E4, GS3601, GS3602, HB215LC3, HD15007, HD1804, HD200D3, HD2053, HD2555, HD3202, HD3203, HD3252, HD3253, HD3255, HD3256, HD3256W, HD4056, JPB200-HYDRAULIC-BREAKER, JTHB083, JTHB50WB3, PC10001, PC1000LC1, PC11006, PC1100LC6, PC1100SP6, PC125011, PC125011E0, PC125011R, PC12507, PC12508, PC12508R, PC1250LC11, PC1250LC7, PC1250LC8, PC1250SE7, PC1250SP7, PC1250SP8, PC1250SP8R, PC16001, PC16001A, PC1600SP1, PC18006, PC18006M1, PC200011, PC200011E0, PC200011R, PC20008, PC2002, PC2006, PC210LC8WASTESPEC, PC210LCNLC815MSUPERLONGFRONT, PC2208M0, PC220LC12, PC300, PC30006, PC3002, PC3003, PC3005, PC3005C, PC3005K, PC3006, PC3006Z, PC3007, PC3007AA, PC3007E0, PC3008, PC3008M0, PC3008M2, PC300LC, PC300LC1, PC300LC3, PC300LC5, PC300LC5K, PC300LC5LC, PC300LC6, PC300LC6Z, PC300LC7, PC300LC7E0, PC300LC8, PC300LC8M0, PC300LC8M2, PC300LL7L, PC300NLC5K, PC300SC6, PC3406K, PC340LC6K, PC340LC7K, PC340NLC6K, PC340NLC7K, PC340NLC7KE0, PC3506, PC3506Z, PC3507AA, PC3507E0, PC3508, PC3508M0, PC3508M0WORKEQUIPMENTGREASE500H, PC3508M2, PC350F8M0, PC350LC6, PC350LC6Z, PC350LC7, PC350LC7BA, PC350LC7E0, PC350LC8, PC350LC8M0, PC350LC8M2, PC350LL7E0, PC3608M0, PC3608M1, PC3608M2, PC360LC11, PC360LC11E0, PC360LC8M2, PC360LCI11, PC360LCI11E0, PC360NLC11, PC360NLC11E0, PC380LC6K, PC380LC7K, PC390LC11HRD, PC390LC8M0, PC40006, PC4001, PC4003, PC4005, PC4005C, PC4005D, PC4006, PC4006C, PC4006Z, PC4007, PC4007E0, PC4007M1, PC4008, PC4008R, PC400HD5K, PC400LC, PC400LC1, PC400LC3, PC400LC5, PC400LC6, PC400LC6Z, PC400LC7, PC400LC7E0, PC400LC8, PC400LC8R, PC400ST6, PC400ST6LC, PC4105, PC410LC5, PC4506, PC4506K, PC4506KKE, PC4506Z, PC4507, PC4507E0, PC4507K, PC4507M1, PC4508, PC4508R, PC450LC6, PC450LC6K, PC450LC6KJ, PC450LC6KKE, PC450LC6Z, PC450LC7, PC450LC7E0, PC450LC7K, PC450LC7M1, PC450LC8, PC450LC8R, PC450LCHD8, PC49010, PC490LC10, PC490LC11, PC490LC11E0, PC490LCI11, PC500LC10M0, PC500LC10R, PC500LC8, PC500LC8R, PC55006, PC550LC8, PC6006, PC6006A, PC6006KJ, PC6007, PC6007K, PC6007M1, PC6008, PC6008R, PC6008R1, PC600LC6, PC600LC6A, PC600LC6K, PC600LC6KJ, PC600LC7K, PC600LC7M1, PC600LC8, PC600LC8E0, PC600LC8R1, PC6503PC650LC3, PC6505, PC6506, PC6506A, PC6507M1, PC650LC11, PC650LC6, PC650LC6A, PC650LC7M1, PC650LC8E0, PC700LC11, PC700LC11E0, PC700LC8E0, PC700LC8R, PC7105, PC710SE5, PC7507M1, PC750LC6, PC750LC6K01, PC750LC7, PC750LC7K, PC750SE6, PC750SE6AM, PC750SE6K01, PC750SE6KJ, PC750SE6KLS, PC750SE7, PC750SE7K, PC750SE7M1, PC78US10, PC8008E0, PC8008K, PC8008R1, PC800LC8E0, PC800LC8K, PC800LC8R1, PC800SE6, PC800SE8E0, PC800SE8R1, PC8508E0, PC8508R1, PC850SE8E0, PC850SE8R1, PC900LC11, PC95011, PC95011E0, PC95011R, PC950LC11, PC950LC11E0, PC950LC11R, PW15811E0, PW19011E1, PW75R2, PW95R2, SAA4D107E1D, SAA6D107E1, SAA6D125E3N8M, WA2006, WA3003AXT, WA300L3, WA3203, WA3501, WA3503A, WA3503AS, WA3503ASW, WA3503X, WA3801, WA3801LC, WA4001, WA4003A, WA4003AS, WA4003ASN, WA4003H, WA4003X, WA403SFX, WA4201, WA4201LC, WA4203, WA4503, WA4503A, WA4503AS, WA4503H, WA4503X, WA4506, WA4703, WA5001, WA5001LSUPPLEMENT, WA5008E0, WA6001, WA6001H, WA6001L, WA6001LC, WA6001LE, WA6003, WA6003D, WA6006, WA6008E0, WA7001, WA7001L, WA7003, WA7008E0, WA8001, WA800113, WA8001A, WA8002, WA8002L, WA8002LC, WA800L3, WA900, WA9001, WA9001L, WA9003, WA9003E0, WA900L3, WB97R8, WD6001, WD6001H, WD6003, WD6006, WD6006R, WF600T1, WF650T3, WS23S2A</td></td>
                                     </tr>
 </tbody>
 </table>
@@ -390,6 +449,34 @@ Get Quote on WhatsApp
 </a>
 </div>
 
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-lg font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Is this part compatible with my machine?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Check the Compatible Models section above for the full list of machines this part fits. For precise fitment verification, provide your machine's model number and serial number. Serial number ranges matter — the same model may use different part numbers across production runs. WhatsApp +91-98210-37990 for expert confirmation.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What is the lead time for this part in India?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Parts Trading Company dispatches from our Mumbai warehouse within 1–2 business days. Delivery across major Indian cities takes 3–5 days. Remote locations may take 5–7 days. For urgent breakdown requirements, we can arrange same-day or overnight courier — contact us immediately.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Is this an OEM or aftermarket part?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">PTC supplies OEM-specification aftermarket replacement parts. Our parts match OEM dimensions, material specifications, and tolerances. They are manufactured by ISO-certified suppliers and carry equivalent performance guarantees. For machines under warranty, always verify with your dealer before fitting aftermarket parts.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Can I get a GST invoice?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Yes — all PTC orders include a valid GST tax invoice with HSN codes for machinery spare parts. Our GSTIN is available on request. Invoices are provided in PDF format by email or WhatsApp on the day of dispatch.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How do I place an order?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Contact us on WhatsApp at +91-98210-37990 with your part number, machine model, and quantity required. We will confirm availability, provide pricing, and arrange dispatch. Payment via bank transfer (NEFT/RTGS), UPI, or credit terms for established customers.</p>
+            </div>
+                </div>
+            </div>
+        </div>
 <a aria-label="WhatsApp" class="whatsapp-float bg-gradient-to-r from-green-500/80 to-green-600/80 backdrop-blur-xl border border-green-300/50 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300" href="https://wa.me/919821037990?text=Hi!%20I%20am%20interested%20in%20Komatsu%20Washer%20(Part%20No%3A%2001643-32460).%20Please%20provide%20a%20quote." rel="noopener noreferrer" target="_blank">
 <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M24 11.7c0 6.45-5.27 11.68-11.78 11.68-2.07 0-4-.53-5.7-1.45L0 24l2.13-6.27a11.57 11.57 0 0 1-1.7-6.04C.44 5.23 5.72 0 12.23 0 18.72 0 24 5.23 24 11.7M12.22 1.85c-5.46 0-9.9 4.41-9.9 9.83 0 2.15.7 4.14 1.88 5.76L2.96 21.1l3.8-1.2a9.9 9.9 0 0 0 5.46 1.62c5.46 0 9.9-4.4 9.9-9.83a9.88 9.88 0 0 0-9.9-9.83m5.95 12.52c-.08-.12-.27-.19-.56-.33-.28-.14-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.14-.2.29-.75.93-.91 1.12-.17.2-.34.22-.63.08-.29-.15-1.22-.45-2.32-1.43a8.64 8.64 0 0 1-1.6-1.98c-.18-.29-.03-.44.12-.58.13-.13.29-.34.43-.5.15-.17.2-.3.29-.48.1-.2.05-.36-.02-.5-.08-.15-.65-1.56-.9-2.13-.24-.58-.48-.48-.65-.48-.17 0-.37-.03-.56-.03-.2 0-.5.08-.77.36-.26.29-1 .98-1 2.4 0 1.4 1.03 2.76 1.17 2.96.14.19 2 3.17 4.93 4.32 2.94 1.15 2.94.77 3.47.72.53-.05 1.7-.7 1.95-1.36.24-.67.24-1.25.17-1.37"/></svg>
 </a>

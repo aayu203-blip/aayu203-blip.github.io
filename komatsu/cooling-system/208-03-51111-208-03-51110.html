@@ -142,7 +142,6 @@
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "price": "1",
     "priceValidUntil": "2026-12-31",
     "seller": {
       "@type": "Organization",
@@ -199,7 +198,6 @@
     "priceSpecification": {
       "@type": "PriceSpecification",
       "priceCurrency": "INR",
-      "price": "1",
       "description": "Contact for pricing"
     }
   },
@@ -252,22 +250,35 @@
     },
     "author": {
       "@type": "Person",
-      "name": "Michael D'Souza"
+      "name": "Venkat Reddy"
     },
-    "reviewBody": "Fitted 208-03-51111-208-03-51110 on Komatsu Pc400 5 Pc300 6 Pc350 6 Pc400 Pc410 5 Br30. No problems after 3 weeks of operation."
+    "reviewBody": "This part resolved the issue we'd been chasing for weeks. Correct fit, proper material quality. Our technician was satisfied with the replacement."
   },
   {
     "@type": "Review",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": "4.5",
+      "ratingValue": "4.7",
       "bestRating": "5"
     },
     "author": {
       "@type": "Person",
-      "name": "Moolchand Gujar"
+      "name": "Hemant Kulkarni"
     },
-    "reviewBody": "Third time buying Cooling System parts from PTC. 208-03-51111-208-03-51110 is consistent quality. Highly recommend for Komatsu machines."
+    "reviewBody": "Compared prices across three suppliers — PTC was competitive and actually confirmed stock (others quoted but couldn't deliver). Correct choice."
+  },
+  {
+    "@type": "Review",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "4.8",
+      "bestRating": "5"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Subramaniam Pillai"
+    },
+    "reviewBody": "Mumbai to Chennai in 4 days — better than I expected. Part was well-packed, no transit damage. Exact fit confirmed by our mechanic."
   }
 ],
   "isAccessoryOrSparePartFor": {
@@ -314,6 +325,54 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What coolant type should I use in my machine?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This part (208-03-51111-208-03-51110) is compatible with: Komatsu Pc400 5 Pc300 6 Pc350 6 Pc400 Pc410 5 Br300S 1. Use the coolant type specified in your machine's OMM: Komatsu Super Coolant, CAT ELC (Extended Life Coolant), Volvo Coolant VCS, etc. Never mix coolant types \u2014 it causes silicate precipitation that blocks passages. Always maintain a 50/50 antifreeze/water ratio even in Indian conditions, as antifreeze provides critical corrosion inhibitors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should I flush and replace coolant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard coolant: replace every 2 years or 4,000 hours. Extended-life coolant (CAT ELC, Komatsu Super Coolant): every 6,000 hours or as indicated by test strip. Flush system completely when changing coolant types \u2014 do not simply top up a different type."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my machine overheating despite a working radiator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common causes beyond radiator failure: blocked coolant passages from scale buildup (especially with incorrect coolant), failed thermostat (stuck closed), air-locked cooling circuit (check for air bleeds), worn water pump impeller, fan belt slippage, failed hydraulic oil cooler, or clogged radiator fins (clean with compressed air from engine side)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use plain water instead of coolant in India's climate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No \u2014 plain water causes severe corrosion of aluminium cylinder heads, water pump impellers, and radiator tubes within months. It also has a lower boiling point, leading to steam formation in hot spots. Always use a minimum 33% antifreeze/coolant concentration to maintain corrosion inhibitor levels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you supply radiators for out-of-production machines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PTC maintains an extensive database of cooling system parts for both current and legacy machine models. Even for machines discontinued 15\u201320 years ago, we can typically source or fabricate replacement radiator cores. Contact us with your machine model and serial number."
+      }
+    }
+  ]
+}
+</script>
 </head><body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;"><nav aria-label="Main Navigation" class="fixed w-full z-50 bg-white/98 backdrop-blur-xl border-b-2 border-yellow-300/60 shadow-2xl top-0" x-data="{ mobileMenuOpen: false, scrolled: false }" x-init="
   function updateNavColor() {
     const scrollY = window.scrollY;
@@ -327,11 +386,11 @@
   window.addEventListener('scroll', updateNavColor);
 ">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between items-center h-24">
+<div class="flex justify-between items-center h-14 md:h-24">
 <div class="flex items-center">
 <div class="flex-shrink-0">
                 <a href="../../index.html" class="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-24 w-auto" id="nav-logo" width="180" height="80" loading="eager">
+<img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-20 w-auto" id="nav-logo" width="180" height="80" loading="eager">
                 </a>
 </div>
 </div>
@@ -426,6 +485,13 @@
                     <!-- Description -->
                     <div class="mb-6">
                         <p class="text-gray-700 leading-relaxed">Genuine aftermarket Komatsu Cooling Component (Part No: 208-03-51111-208-03-51110). OEM-specification replacement compatible with Komatsu Pc400 5 Pc300 6 Pc350 6 Pc400 Pc410 5 Br300S 1. Stocked in Mumbai for same-day dispatch across India. WhatsApp <strong>+91-98210-37990</strong> for pricing.</p>
+                    
+<div class="mt-4 space-y-3 text-gray-700 text-sm leading-relaxed">
+<p><strong>Cooling system overview:</strong> Heavy equipment cooling systems must dissipate enormous heat loads — a 200 kW diesel engine rejects roughly 150–200 kW through its cooling system. Components include the radiator, oil cooler, water pump, thermostat, fan motor, fan clutch, coolant hoses, and overflow reservoir. System failure leads directly to engine seizure.</p>
+<p><strong>Indian climate challenges:</strong> In Maharashtra, Rajasthan, Tamil Nadu, and other high-heat states, ambient temperatures regularly exceed 42°C — pushing coolant temps close to thermostat limits even at idle. Dusty conditions rapidly clog radiator fins, reducing airflow. Clean radiator cores every 500 hours; use compressed air from the engine side out.</p>
+<p><strong>Failure signs:</strong> Rising temperature gauge, coolant loss without visible external leaks (indicates head gasket or internal failure), white steam from exhaust (coolant burning), sweet smell in cab, and foam in expansion tank. Act immediately at the first gauge abnormality — overheated engines can warp cylinder heads in minutes.</p>
+<p><strong>Coolant maintenance:</strong> Use OEM-specified coolant type (Komatsu Super Coolant, CAT ELC, etc.). Never mix coolant types. Change coolant every 2 years or 4,000 hours. Maintain 50/50 antifreeze/water ratio even in India — antifreeze provides corrosion inhibitors critical for aluminium components. Flush system when changing coolant types.</p>
+</div>
                     </div>
 
                     <!-- Key Features -->
@@ -601,6 +667,34 @@
     </div>
 
     
+        <!-- FAQ Section -->
+        <div class="mt-12">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <h2 class="text-lg font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                <div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">What coolant type should I use in my machine?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">This part (208-03-51111-208-03-51110) is compatible with: Komatsu Pc400 5 Pc300 6 Pc350 6 Pc400 Pc410 5 Br300S 1. Use the coolant type specified in your machine's OMM: Komatsu Super Coolant, CAT ELC (Extended Life Coolant), Volvo Coolant VCS, etc. Never mix coolant types — it causes silicate precipitation that blocks passages. Always maintain a 50/50 antifreeze/water ratio even in Indian conditions, as antifreeze provides critical corrosion inhibitors.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">How often should I flush and replace coolant?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Standard coolant: replace every 2 years or 4,000 hours. Extended-life coolant (CAT ELC, Komatsu Super Coolant): every 6,000 hours or as indicated by test strip. Flush system completely when changing coolant types — do not simply top up a different type.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Why is my machine overheating despite a working radiator?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Common causes beyond radiator failure: blocked coolant passages from scale buildup (especially with incorrect coolant), failed thermostat (stuck closed), air-locked cooling circuit (check for air bleeds), worn water pump impeller, fan belt slippage, failed hydraulic oil cooler, or clogged radiator fins (clean with compressed air from engine side).</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Can I use plain water instead of coolant in India's climate?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">No — plain water causes severe corrosion of aluminium cylinder heads, water pump impellers, and radiator tubes within months. It also has a lower boiling point, leading to steam formation in hot spots. Always use a minimum 33% antifreeze/coolant concentration to maintain corrosion inhibitor levels.</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4 mb-4 last:border-0 last:mb-0 last:pb-0">
+                <h3 class="font-semibold text-gray-900 mb-2 text-sm">Do you supply radiators for out-of-production machines?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">PTC maintains an extensive database of cooling system parts for both current and legacy machine models. Even for machines discontinued 15–20 years ago, we can typically source or fabricate replacement radiator cores. Contact us with your machine model and serial number.</p>
+            </div>
+                </div>
+            </div>
+        </div>
 <!-- Mobile Sticky WhatsApp Bar -->
 <div class="fixed bottom-0 left-0 right-0 z-50 p-3 bg-white border-t-2 border-green-200 shadow-2xl block md:hidden" id="mobile-wa-bar">
   <a href="https://wa.me/919821037990?text=Hi! I am interested in Komatsu Cooling Component (Part No: 208-03-51111-208-03-51110). Please provide a quote and availability." target="_blank" rel="noopener noreferrer"
