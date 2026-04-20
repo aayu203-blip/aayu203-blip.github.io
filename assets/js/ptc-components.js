@@ -22,17 +22,23 @@ window.getProductPageLink = function (result) {
   const partNoRaw = (result['Part No'] || '').toString().trim();
   if (!partNoRaw) return '#';
 
-  const brand  = brandRaw.toLowerCase();
-  const partNo = partNoRaw.replace(/^-+/, '').toUpperCase();
+  const brand     = brandRaw.toLowerCase();
+  const partNo    = partNoRaw.replace(/^-+/, '').toUpperCase(); // display form
+  const partNoKey = partNo.toLowerCase();                        // lookup form (index uses lowercase)
 
   if (typeof window.productPathIndex === 'object' && window.productPathIndex !== null) {
-    const brandKey  = `${brand}|${partNo}`;
-    const directPath = window.productPathIndex[brandKey] || window.productPathIndex[partNo];
+    const directPath = window.productPathIndex[`${brand}|${partNoKey}`]
+                    || window.productPathIndex[partNoKey]
+                    || window.productPathIndex[`${brand}|${partNo}`]
+                    || window.productPathIndex[partNo];
     if (directPath) return directPath;
   }
 
-  const brandSlug = brand.includes('caterpillar') ? 'cat' : brand.split(' ')[0];
-  return `/pages/aftermarket-${brandSlug}-${partNo.toLowerCase()}.html`;
+  // No page exists for this part — open WhatsApp with the part number pre-filled
+  const waText = encodeURIComponent(
+    `Hi, I need the part ${partNo}${brandRaw ? ' (' + brandRaw + ')' : ''} — do you have it in stock?`
+  );
+  return `https://wa.me/919821037990?text=${waText}`;
 };
 
 (function () {

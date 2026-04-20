@@ -1,0 +1,14 @@
+{
+  "_instructions": "Add an entry here for each photo. The key must match the exact filename. All fields are optional — if you skip caption, the filename is used instead. Delete this _instructions line once you have real entries.",
+
+  "example-delivery-komatsu-pc200.jpg": {
+    "caption": "Komatsu PC200 engine rebuild kit — dispatched to Pune",
+    "brand": "Komatsu",
+    "location": "Pune, India"
+  },
+  "example-delivery-cat-hydraulic-pump.jpg": {
+    "caption": "CAT 320D hydraulic pump — export to UAE client",
+    "brand": "CAT",
+    "location": "Dubai, UAE"
+  }
+}

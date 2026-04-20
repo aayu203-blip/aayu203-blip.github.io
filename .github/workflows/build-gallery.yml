@@ -1,0 +1,43 @@
+name: Build Delivery Gallery
+
+# Triggers:
+#   - Any push that touches assets/images/deliveries/ (photo added/renamed/deleted)
+#   - Any push that touches build_delivery_gallery.py (script updated)
+#   - Manual trigger from the GitHub Actions tab
+on:
+  push:
+    paths:
+      - "assets/images/deliveries/**"
+      - "build_delivery_gallery.py"
+  workflow_dispatch:
+
+jobs:
+  build-gallery:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed so the bot can commit deliveries.html back
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate deliveries.html
+        run: python build_delivery_gallery.py --write
+
+      - name: Commit and push deliveries.html
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add deliveries.html
+          # Only commit if something actually changed
+          if git diff --cached --quiet; then
+            echo "No changes to deliveries.html — skipping commit."
+          else
+            git commit -m "Auto-rebuild delivery gallery [skip ci]"
+            git push
+          fi

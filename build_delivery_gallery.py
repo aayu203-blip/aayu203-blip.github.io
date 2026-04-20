@@ -1,0 +1,312 @@
+#!/usr/bin/env python3
+"""
+build_delivery_gallery.py
+Generates deliveries.html from images in assets/images/deliveries/
+
+USAGE
+-----
+  python build_delivery_gallery.py            # dry-run (prints output)
+  python build_delivery_gallery.py --write    # writes deliveries.html
+
+WORKFLOW FOR AAYUSH
+-------------------
+1. Save a delivery photo from WhatsApp to:  assets/images/deliveries/
+2. (Optional) Edit deliveries_captions.json to add a caption for the photo
+3. Run:  git add . && git push
+   → GitHub Action auto-runs this script and commits deliveries.html back to main
+
+CAPTION FILE FORMAT  (assets/images/deliveries/deliveries_captions.json)
+---------------------------------------------------
+{
+  "delivery-komatsu-2024-01.jpg": {
+    "caption": "Komatsu PC200 engine parts — Pune, Jan 2024",
+    "brand": "Komatsu",
+    "location": "Pune"
+  },
+  "delivery-cat-hydraulic-pump.jpg": {
+    "caption": "CAT 320D hydraulic pump — export to UAE",
+    "brand": "CAT",
+    "location": "UAE"
+  }
+}
+
+If a photo has no entry in the captions file, it will still appear with an
+auto-generated title based on the filename.
+"""
+
+import os
+import sys
+import json
+import re
+from pathlib import Path
+from datetime import datetime
+
+# ─── Config ──────────────────────────────────────────────────────────────────
+
+REPO_ROOT    = Path(__file__).parent
+IMAGES_DIR   = REPO_ROOT / "assets" / "images" / "deliveries"
+CAPTIONS_FILE = IMAGES_DIR / "deliveries_captions.json"
+OUTPUT_FILE  = REPO_ROOT / "deliveries.html"
+
+SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
+
+# ─── Helpers ─────────────────────────────────────────────────────────────────
+
+def slugify_to_title(filename: str) -> str:
+    """Turn 'delivery-komatsu-pc200-pune.jpg' → 'Komatsu Pc200 Pune'"""
+    stem = Path(filename).stem
+    # strip common prefixes
+    stem = re.sub(r"^(delivery[-_]?|img[-_]?|photo[-_]?|pic[-_]?)", "", stem, flags=re.IGNORECASE)
+    stem = stem.replace("-", " ").replace("_", " ")
+    return stem.title().strip() or filename
+
+
+def load_captions() -> dict:
+    if CAPTIONS_FILE.exists():
+        try:
+            with open(CAPTIONS_FILE, encoding="utf-8") as f:
+                return json.load(f)
+        except json.JSONDecodeError as e:
+            print(f"[WARN] Could not parse {CAPTIONS_FILE}: {e}")
+    return {}
+
+
+def collect_images() -> list[dict]:
+    """Return list of image dicts sorted newest-first (by mtime)."""
+    if not IMAGES_DIR.exists():
+        return []
+
+    captions = load_captions()
+    images = []
+
+    for p in IMAGES_DIR.iterdir():
+        if p.suffix.lower() not in SUPPORTED_EXTENSIONS:
+            continue
+        if p.name.startswith("."):
+            continue
+
+        meta = captions.get(p.name, {})
+        caption = meta.get("caption", slugify_to_title(p.name))
+        brand    = meta.get("brand", "")
+        location = meta.get("location", "")
+
+        images.append({
+            "filename":  p.name,
+            "path":      f"/assets/images/deliveries/{p.name}",
+            "caption":   caption,
+            "brand":     brand,
+            "location":  location,
+            "mtime":     p.stat().st_mtime,
+        })
+
+    images.sort(key=lambda x: x["mtime"], reverse=True)
+    return images
+
+
+# ─── Card builder ────────────────────────────────────────────────────────────
+
+def build_card(img: dict) -> str:
+    badge_html = ""
+    if img["brand"]:
+        badge_html = f'<span class="absolute top-3 left-3 bg-yellow-400 text-gray-900 text-xs font-bold px-2 py-1 rounded-full">{img["brand"]}</span>'
+
+    location_html = ""
+    if img["location"]:
+        location_html = f'<p class="text-xs text-gray-500 mt-1">{img["location"]}</p>'
+
+    return f"""      <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 hover:shadow-md transition-shadow">
+        <div class="relative">
+          <img src="{img['path']}" alt="{img['caption']}"
+               class="w-full h-56 object-cover" loading="lazy" width="400" height="224">
+          {badge_html}
+        </div>
+        <div class="p-4">
+          <p class="text-sm font-semibold text-gray-800 leading-snug">{img['caption']}</p>
+          {location_html}
+        </div>
+      </div>"""
+
+
+# ─── Page builder ─────────────────────────────────────────────────────────────
+
+def build_page(images: list[dict]) -> str:
+    cards_html = "\n".join(build_card(img) for img in images) if images else \
+        '      <p class="col-span-3 text-center text-gray-500 py-16">No delivery photos yet — check back soon.</p>'
+
+    count_label = f"{len(images)} deliveries" if images else "0 deliveries"
+    generated   = datetime.utcnow().strftime("%Y-%m-%d")
+
+    return f"""<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delivery Gallery | Parts Trading Company</title>
+  <meta name="description" content="See real deliveries from Parts Trading Company — genuine spare parts dispatched from our Mumbai warehouse to customers across India and worldwide.">
+  <link rel="canonical" href="https://partstrading.com/deliveries.html">
+  <meta property="og:title" content="Delivery Gallery | Parts Trading Company">
+  <meta property="og:description" content="Photos from actual parts dispatches — Komatsu, CAT, Hitachi, Cummins and more.">
+  <meta property="og:url" content="https://partstrading.com/deliveries.html">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/tailwind.css">
+  <style>[x-cloak] {{ display: none !important; }}</style>
+  <script src="/assets/js/alpine.min.js" defer></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans antialiased">
+
+<!-- Canonical nav -->
+<nav id="site-nav" class="bg-white sticky top-0 z-50 border-b border-gray-200 shadow-sm" x-data="{{ open: false }}">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16 md:h-20">
+      <a href="/" class="flex items-center flex-shrink-0">
+        <img src="/assets/images/ptc-logo.png?v=1" alt="Parts Trading Company" class="h-10 md:h-12 w-auto" width="120" height="48" loading="eager"/>
+      </a>
+      <div class="hidden md:flex items-center gap-1 text-sm font-semibold text-gray-700">
+        <a href="/" class="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Home</a>
+        <a href="/#equipment-models" class="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Models</a>
+        <a href="/#product-categories" class="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Products</a>
+        <a href="/#brands" class="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Brands</a>
+        <a href="/blog/index.html" class="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Blog</a>
+        <a href="/about.html" class="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">About</a>
+        <a href="/get-a-quote.html" class="ml-1 px-4 py-2 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold transition-colors whitespace-nowrap text-sm">Get a Quote</a>
+        <a href="https://wa.me/919821037990?text=Hi%2C%20I%20saw%20your%20delivery%20gallery%20and%20need%20spare%20parts." target="_blank" rel="noopener"
+           class="ml-1 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl transition-colors whitespace-nowrap">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+      <button @click="open = !open" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100" aria-label="Toggle menu">
+        <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile menu -->
+  <div x-show="open" x-cloak class="md:hidden border-t border-gray-200 bg-white px-4 pb-4 pt-2 space-y-1">
+    <a href="/" class="block px-3 py-2.5 rounded-lg text-gray-700 font-semibold hover:bg-gray-100">Home</a>
+    <a href="/#equipment-models" class="block px-3 py-2.5 rounded-lg text-gray-700 font-semibold hover:bg-gray-100">Models</a>
+    <a href="/#product-categories" class="block px-3 py-2.5 rounded-lg text-gray-700 font-semibold hover:bg-gray-100">Products</a>
+    <a href="/#brands" class="block px-3 py-2.5 rounded-lg text-gray-700 font-semibold hover:bg-gray-100">Brands</a>
+    <a href="/blog/index.html" class="block px-3 py-2.5 rounded-lg text-gray-700 font-semibold hover:bg-gray-100">Blog</a>
+    <a href="/about.html" class="block px-3 py-2.5 rounded-lg text-gray-700 font-semibold hover:bg-gray-100">About</a>
+    <a href="/get-a-quote.html" class="block px-3 py-2.5 rounded-lg bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold">Get a Quote</a>
+    <a href="https://wa.me/919821037990?text=Hi%2C%20I%20saw%20your%20delivery%20gallery%20and%20need%20spare%20parts." target="_blank" rel="noopener"
+       class="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-green-500 text-white font-bold">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="bg-gray-900 text-white py-14 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-yellow-400 font-semibold text-sm uppercase tracking-widest mb-3">Proof of Delivery</p>
+    <h1 class="text-3xl sm:text-4xl font-bold mb-4">Real Parts. Real Customers. Real Deliveries.</h1>
+    <p class="text-gray-300 text-lg max-w-2xl mx-auto">Every photo here is an actual dispatch from our Mumbai warehouse. Komatsu, CAT, Hitachi, Cummins, Volvo — parts we physically stocked and shipped.</p>
+    <p class="text-gray-500 text-sm mt-4">{count_label} &middot; Last updated {generated}</p>
+  </div>
+</section>
+
+<!-- Gallery grid -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+{cards_html}
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-yellow-400 py-12 px-4 text-center">
+  <h2 class="text-2xl font-bold text-gray-900 mb-2">Need a Part?</h2>
+  <p class="text-gray-800 mb-6">We physically stock genuine parts in Mumbai. Tell us what you need.</p>
+  <div class="flex flex-col sm:flex-row gap-3 justify-center">
+    <a href="/get-a-quote.html"
+       class="inline-block px-8 py-3 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-colors">
+      Get a Quote
+    </a>
+    <a href="https://wa.me/919821037990?text=Hi%2C%20I%20saw%20your%20delivery%20gallery%20and%20need%20spare%20parts."
+       target="_blank" rel="noopener"
+       class="inline-flex items-center gap-2 px-8 py-3 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition-colors">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp Us
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-400 py-12 px-4">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div class="col-span-2 md:col-span-1">
+      <img src="/assets/images/ptc-logo.png" alt="Parts Trading Company" class="h-10 w-auto mb-4 brightness-0 invert" width="120" height="40" loading="lazy">
+      <p class="text-sm leading-relaxed">70+ years supplying genuine spare parts for heavy equipment. Physical warehouse in Mumbai — no dropshipping.</p>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold mb-3 text-sm uppercase tracking-wide">Brands</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/komatsu/" class="hover:text-white transition-colors">Komatsu</a></li>
+        <li><a href="/caterpillar/" class="hover:text-white transition-colors">Caterpillar</a></li>
+        <li><a href="/hitachi/" class="hover:text-white transition-colors">Hitachi</a></li>
+        <li><a href="/cummins/" class="hover:text-white transition-colors">Cummins</a></li>
+        <li><a href="/volvo/" class="hover:text-white transition-colors">Volvo</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold mb-3 text-sm uppercase tracking-wide">Industries</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/construction-equipment-parts.html" class="hover:text-white transition-colors">Construction</a></li>
+        <li><a href="/oil-gas-equipment-parts.html" class="hover:text-white transition-colors">Oil &amp; Gas</a></li>
+        <li><a href="/marine-engine-parts.html" class="hover:text-white transition-colors">Marine</a></li>
+        <li><a href="/commercial-fleet-parts.html" class="hover:text-white transition-colors">Commercial Fleet</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold mb-3 text-sm uppercase tracking-wide">Contact</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="https://wa.me/919821037990" class="hover:text-white transition-colors">+91 98210 37990</a></li>
+        <li><a href="mailto:parts@partstrading.com" class="hover:text-white transition-colors">parts@partstrading.com</a></li>
+        <li><a href="/get-a-quote.html" class="hover:text-white transition-colors">Get a Quote</a></li>
+        <li><a href="/deliveries.html" class="hover:text-white transition-colors">Delivery Gallery</a></li>
+        <li><a href="/about.html" class="hover:text-white transition-colors">About Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-gray-800 text-xs text-center text-gray-600">
+    &copy; {datetime.utcnow().year} Parts Trading Company. All rights reserved. &middot; Mumbai, India
+    <!-- Gallery auto-generated by build_delivery_gallery.py on {generated} -->
+  </div>
+</footer>
+
+</body>
+</html>
+"""
+
+
+# ─── Main ─────────────────────────────────────────────────────────────────────
+
+def main():
+    write = "--write" in sys.argv
+
+    if not IMAGES_DIR.exists():
+        IMAGES_DIR.mkdir(parents=True)
+        print(f"[INFO] Created {IMAGES_DIR}")
+        print("[INFO] Add your delivery photos (.jpg / .png / .webp) to that folder, then re-run.")
+
+    images = collect_images()
+    print(f"[INFO] Found {len(images)} delivery image(s)")
+
+    html = build_page(images)
+
+    if write:
+        OUTPUT_FILE.write_text(html, encoding="utf-8")
+        print(f"[OK]   Written → {OUTPUT_FILE}")
+    else:
+        print("[DRY RUN] Pass --write to save the file.")
+        print(f"          Would write {len(html):,} bytes to {OUTPUT_FILE}")
+
+
+if __name__ == "__main__":
+    main()
