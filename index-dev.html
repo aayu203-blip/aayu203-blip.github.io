@@ -377,63 +377,10 @@
 	<script src="https://www.google.com/recaptcha/api.js?render=6LfHZfUrAAAAACPo1X9FCmuwdaBhuxhruta_YDke" async
 		defer></script>
 	<script type="text/javascript">
-		/// Navigation color change
-		document.addEventListener('DOMContentLoaded', function () {
-			const navLogo = document.getElementById('nav-logo');
-			const navLinks = document.querySelectorAll('.nav-link');
-			const mobileMenuButton = document.querySelector('[aria-label="Toggle mobile menu"]');
-
-
-			function updateNavColor() {
-				const scrollY = window.scrollY;
-				const isScrolled = scrollY > 80;
-
-
-				if (isScrolled) {
-					/// Logo - add filter for darker appearance when scrolled
-					navLogo.style.filter = 'brightness(0.8) contrast(1.2)';
-
-
-					/// Navigation links
-					navLinks.forEach(link => {
-						link.classList.remove('text-white');
-						link.classList.add('text-gray-900');
-					});
-
-
-					/// Mobile menu button
-					if (mobileMenuButton) {
-						mobileMenuButton.classList.remove('text-white');
-						mobileMenuButton.classList.add('text-gray-900');
-					}
-				} else {
-					/// Logo - remove filter for normal appearance
-					navLogo.style.filter = 'brightness(1) contrast(1)';
-
-
-					/// Navigation links
-					navLinks.forEach(link => {
-						link.classList.remove('text-gray-900');
-						link.classList.add('text-white');
-					});
-
-
-					/// Mobile menu button
-					if (mobileMenuButton) {
-						mobileMenuButton.classList.remove('text-gray-900');
-						mobileMenuButton.classList.add('text-white');
-					}
-				}
-			}
-
-
-			updateNavColor();
-			window.addEventListener('scroll', updateNavColor);
-		});
 	</script>
 
-
-
+	<!-- Tailwind CDN for development utility classes -->
+	<script src="https://cdn.tailwindcss.com"></script>
 
 	<link href="/assets/css/styles.css" rel="stylesheet" />
 	<style>
@@ -787,6 +734,13 @@
 .exit-modal-close:hover { background: #f3f4f6; color: #111; }
 </style>
   <script src="/assets/js/alpine.min.js" defer></script>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wek6sq3u0u");
+</script>
 </head>
 
 <body class="bg-gradient-to-b from-yellow-50 to-white min-h-screen scroll-smooth" style="cursor: default;">
@@ -807,9 +761,8 @@
 				₹25,000–₹1,00,000/hour</span>
 		</div>
 	</div>
+	<!-- Navigation -->
 	<!-- Canonical nav: white, sticky, clean -->
-<!-- Canonical nav: white, sticky, clean -->
-<!-- Canonical nav: white, sticky, clean -->
 <nav id="site-nav" class="bg-white sticky top-0 z-50 border-b border-gray-200 shadow-sm" x-data="{ open: false }">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16 md:h-20">
@@ -826,8 +779,9 @@
         <a href="/#brands" class="nav-item px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-colors">Brands</a>
         <a href="/blog/index.html" class="nav-item px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-colors">Blog</a>
         <a href="/about.html" class="nav-item px-3 py-2 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-colors">About</a>
+        <a href="/get-a-quote.html" class="ml-1 px-4 py-2 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold transition-colors whitespace-nowrap text-sm">Get a Quote</a>
         <a href="https://wa.me/919821037990?text=Hi%21%20I%20need%20help%20with%20a%20spare%20part." target="_blank" rel="noopener"
-           class="ml-2 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl transition-colors whitespace-nowrap">
+           class="ml-1 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl transition-colors whitespace-nowrap">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           WhatsApp
         </a>
@@ -847,6 +801,7 @@
     <a href="/#brands" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100">Brands</a>
     <a href="/blog/index.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100">Blog</a>
     <a href="/about.html" class="block px-3 py-2.5 rounded-lg hover:bg-gray-100">About</a>
+    <a href="/get-a-quote.html" class="block px-3 py-2.5 rounded-lg bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold">Get a Quote</a>
     <a href="https://wa.me/919821037990?text=Hi%21%20I%20need%20help%20with%20a%20spare%20part." target="_blank" rel="noopener"
        class="flex items-center gap-2 px-3 py-2.5 rounded-lg text-green-600 hover:bg-green-50">
       <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -1083,6 +1038,29 @@
 			</svg>
 		</div>
 	</section>
+
+	<!-- Recent Dispatches Ticker -->
+	<div class="bg-gray-900 border-b border-gray-800 py-3 overflow-hidden text-sm flex items-center relative z-20">
+		<div class="px-4 flex items-center whitespace-nowrap text-yellow-500 font-semibold z-10 bg-gray-900 shadow-[10px_0_10px_-5px_black] border-r border-gray-800">
+			<svg class="w-4 h-4 mr-2 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+			LIVE DISPATCHES
+		</div>
+		<div class="flex-1 overflow-hidden relative flex">
+			<div class="animate-ticker flex whitespace-nowrap text-gray-400 w-max pl-4 items-center">
+				<span class="mx-6 border-l border-gray-700 pl-6"><strong class="text-white">Volvo L120F</strong> Hydraulic Pump to <span class="text-green-400">Dubai, UAE</span> (11 mins ago)</span>
+				<span class="mx-6 border-l border-gray-700 pl-6"><strong class="text-white">Scania R420</strong> Transmission Kit to <span class="text-green-400">Nairobi, Kenya</span> (34 mins ago)</span>
+				<span class="mx-6 border-l border-gray-700 pl-6"><strong class="text-white">Komatsu PC200</strong> Undercarriage Set to <span class="text-green-400">Brisbane, AU</span> (1 hr ago)</span>
+				<span class="mx-6 border-l border-gray-700 pl-6"><strong class="text-white">CAT 777G</strong> Engine Overhaul Kit to <span class="text-green-400">Santiago, Chile</span> (2 hrs ago)</span>
+				<span class="mx-6 border-l border-gray-700 pl-6"><strong class="text-white">Volvo EW140C</strong> Sensor Block to <span class="text-green-400">Jakarta, INA</span> (4 hrs ago)</span>
+				<!-- Duplicate for seamless looping -->
+				<span class="mx-6 border-l border-gray-700 pl-6"><strong class="text-white">Volvo L120F</strong> Hydraulic Pump to <span class="text-green-400">Dubai, UAE</span> (11 mins ago)</span>
+				<span class="mx-6 border-l border-gray-700 pl-6"><strong class="text-white">Scania R420</strong> Transmission Kit to <span class="text-green-400">Nairobi, Kenya</span> (34 mins ago)</span>
+				<span class="mx-6 border-l border-gray-700 pl-6"><strong class="text-white">Komatsu PC200</strong> Undercarriage Set to <span class="text-green-400">Brisbane, AU</span> (1 hr ago)</span>
+				<span class="mx-6 border-l border-gray-700 pl-6"><strong class="text-white">CAT 777G</strong> Engine Overhaul Kit to <span class="text-green-400">Santiago, Chile</span> (2 hrs ago)</span>
+				<span class="mx-6 border-l border-gray-700 pl-6"><strong class="text-white">Volvo EW140C</strong> Sensor Block to <span class="text-green-400">Jakarta, INA</span> (4 hrs ago)</span>
+			</div>
+		</div>
+	</div>
 
 
 
@@ -1377,108 +1355,102 @@
 						parts</span>, available for immediate delivery or special order.
 				</p>
 			</div>
-			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-				<div
-					class="category-card engine bg-white rounded-2xl shadow-md p-8 flex flex-col items-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
-					<div class="bg-yellow-100 rounded-full p-5 mb-6">
-						<svg class="w-12 h-12 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-						</svg>
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+				<!-- Engine Parts -->
+				<a href="/pages/" class="group relative bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+					<div class="w-full h-48 overflow-hidden bg-gray-50">
+						<img src="/assets/images/parts/engine.jpg" alt="Engine Parts" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
 					</div>
-					<h3 class="text-xl font-bold text-gray-900 mb-2">Engine Parts</h3>
-					<p class="text-gray-600 text-center text-sm">Pistons, liners, gaskets, valves, and more for all
-						major brands.</p>
-				</div>
-				<div
-					class="category-card hydraulic bg-white rounded-2xl shadow-md p-8 flex flex-col items-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
-					<div class="bg-blue-100 rounded-full p-5 mb-6">
-						<svg class="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3c0 0-6 5.686-6 10a6 6 0 0012 0c0-4.314-6-10-6-10z"></path>
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 15a3 3 0 006 0"></path>
-						</svg>
+					<div class="p-6 flex flex-col flex-grow">
+						<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-yellow-600 transition-colors">Engine Parts</h3>
+						<p class="text-gray-600 text-sm mb-4 flex-grow">Pistons, liners, gaskets, valves, and more for all major brands.</p>
+						<span class="text-yellow-600 font-semibold text-sm flex items-center mt-auto">Browse Parts <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
 					</div>
-					<h3 class="text-xl font-bold text-gray-900 mb-2">Hydraulic Components</h3>
-					<p class="text-gray-600 text-center text-sm">Pumps, cylinders, hoses, and seals for excavators,
-						dozers, and more.</p>
-				</div>
-				<div
-					class="category-card undercarriage bg-white rounded-2xl shadow-md p-8 flex flex-col items-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
-					<div class="bg-green-100 rounded-full p-5 mb-6">
-						<svg class="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<circle cx="6" cy="17" r="3" stroke-width="1.5"/>
-							<circle cx="18" cy="17" r="3" stroke-width="1.5"/>
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17H15M3 17V10l3-5h12l3 5v7"></path>
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 10h12"></path>
-						</svg>
+				</a>
+
+				<!-- Hydraulic Components -->
+				<a href="/pages/" class="group relative bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+					<div class="w-full h-48 overflow-hidden bg-gray-50">
+						<img src="/assets/images/parts/hydraulics.jpg" alt="Hydraulic Components" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
 					</div>
-					<h3 class="text-xl font-bold text-gray-900 mb-2">Undercarriage</h3>
-					<p class="text-gray-600 text-center text-sm">Tracks, rollers, idlers, sprockets, and shoes for all
-						terrains.</p>
-				</div>
-				<div
-					class="category-card electrical bg-white rounded-2xl shadow-md p-8 flex flex-col items-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
-					<div class="bg-purple-100 rounded-full p-5 mb-6">
-						<svg class="w-12 h-12 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"
-								stroke-width="1.5"></path>
-						</svg>
+					<div class="p-6 flex flex-col flex-grow">
+						<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">Hydraulic Components</h3>
+						<p class="text-gray-600 text-sm mb-4 flex-grow">Pumps, cylinders, hoses, and seals for excavators, dozers, and more.</p>
+						<span class="text-blue-600 font-semibold text-sm flex items-center mt-auto">Browse Parts <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
 					</div>
-					<h3 class="text-xl font-bold text-gray-900 mb-2">Electrical &amp; Electronics</h3>
-					<p class="text-gray-600 text-center text-sm">Starters, alternators, sensors, wiring, and control
-						modules.</p>
-				</div>
-				<div
-					class="category-card filters bg-white rounded-2xl shadow-md p-8 flex flex-col items-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
-					<div class="bg-pink-100 rounded-full p-5 mb-6">
-						<svg class="w-12 h-12 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
-						</svg>
+				</a>
+
+				<!-- Undercarriage -->
+				<a href="/pages/" class="group relative bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+					<div class="w-full h-48 overflow-hidden bg-gray-50">
+						<img src="/assets/images/parts/undercarriage.jpg" alt="Undercarriage" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
 					</div>
-					<h3 class="text-xl font-bold text-gray-900 mb-2">Filters &amp; Fluids</h3>
-					<p class="text-gray-600 text-center text-sm">Oil, air, fuel, hydraulic filters, and OEM-approved
-						fluids.</p>
-				</div>
-				<div
-					class="category-card transmission bg-white rounded-2xl shadow-md p-8 flex flex-col items-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
-					<div class="bg-orange-100 rounded-full p-5 mb-6">
-						<svg class="w-12 h-12 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<circle cx="5" cy="12" r="2" stroke-width="1.5"/>
-							<circle cx="12" cy="5" r="2" stroke-width="1.5"/>
-							<circle cx="19" cy="12" r="2" stroke-width="1.5"/>
-							<circle cx="12" cy="19" r="2" stroke-width="1.5"/>
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 12h3m4 0h3M12 7v3m0 4v3"></path>
-						</svg>
+					<div class="p-6 flex flex-col flex-grow">
+						<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">Undercarriage</h3>
+						<p class="text-gray-600 text-sm mb-4 flex-grow">Tracks, rollers, idlers, sprockets, and shoes for all terrains.</p>
+						<span class="text-green-600 font-semibold text-sm flex items-center mt-auto">Browse Parts <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
 					</div>
-					<h3 class="text-xl font-bold text-gray-900 mb-2">Transmission &amp; Drivetrain</h3>
-					<p class="text-gray-600 text-center text-sm">Gears, clutches, axles, differentials, and drive
-						shafts.</p>
-				</div>
-				<div
-					class="category-card ground bg-white rounded-2xl shadow-md p-8 flex flex-col items-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
-					<div class="bg-teal-100 rounded-full p-5 mb-6">
-						<svg class="w-12 h-12 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.5 3.5l6 6-11 11a4 4 0 01-5.657-5.657L14.5 3.5z"></path>
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 3l1.5-1.5 3 3L20 6"></path>
-						</svg>
+				</a>
+
+				<!-- Electrical & Electronics -->
+				<a href="/pages/" class="group relative bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+					<div class="w-full h-48 overflow-hidden bg-gray-50">
+						<img src="/assets/images/parts/electrical.jpg" alt="Electrical & Electronics" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
 					</div>
-					<h3 class="text-xl font-bold text-gray-900 mb-2">Ground Engaging Tools</h3>
-					<p class="text-gray-600 text-center text-sm">Buckets, teeth, blades, cutting edges, and adapters.
-					</p>
-				</div>
-				<div
-					class="category-card cabin bg-white rounded-2xl shadow-md p-8 flex flex-col items-center transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl relative overflow-hidden">
-					<div class="bg-gray-100 rounded-full p-5 mb-6">
-						<svg class="w-12 h-12 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8a2 2 0 012-2h10a2 2 0 012 2v9a2 2 0 01-2 2H7a2 2 0 01-2-2V8z"></path>
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8l3-4h8l3 4"></path>
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22v-5h6v5"></path>
-						</svg>
+					<div class="p-6 flex flex-col flex-grow">
+						<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">Electrical &amp; Electronics</h3>
+						<p class="text-gray-600 text-sm mb-4 flex-grow">Starters, alternators, sensors, wiring, and control modules.</p>
+						<span class="text-purple-600 font-semibold text-sm flex items-center mt-auto">Browse Parts <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
 					</div>
-					<h3 class="text-xl font-bold text-gray-900 mb-2">Cabin &amp; Body Parts</h3>
-					<p class="text-gray-600 text-center text-sm">Glass, seats, panels, doors, mirrors, and accessories.
-					</p>
-				</div>
+				</a>
+
+				<!-- Filters & Fluids -->
+				<a href="/pages/" class="group relative bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+					<div class="w-full h-48 overflow-hidden bg-gray-50">
+						<img src="/assets/images/parts/filters.jpg" alt="Filters & Fluids" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+					</div>
+					<div class="p-6 flex flex-col flex-grow">
+						<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-pink-600 transition-colors">Filters &amp; Fluids</h3>
+						<p class="text-gray-600 text-sm mb-4 flex-grow">Oil, air, fuel, hydraulic filters, and OEM-approved fluids.</p>
+						<span class="text-pink-600 font-semibold text-sm flex items-center mt-auto">Browse Parts <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
+					</div>
+				</a>
+
+				<!-- Transmission & Drivetrain -->
+				<a href="/pages/" class="group relative bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+					<div class="w-full h-48 overflow-hidden bg-gray-50">
+						<img src="/assets/images/parts/transmission.jpg" alt="Transmission & Drivetrain" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+					</div>
+					<div class="p-6 flex flex-col flex-grow">
+						<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition-colors">Transmission &amp; Drivetrain</h3>
+						<p class="text-gray-600 text-sm mb-4 flex-grow">Gears, clutches, axles, differentials, and drive shafts.</p>
+						<span class="text-orange-600 font-semibold text-sm flex items-center mt-auto">Browse Parts <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
+					</div>
+				</a>
+
+				<!-- Ground Engaging Tools -->
+				<a href="/pages/" class="group relative bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+					<div class="w-full h-48 overflow-hidden bg-gray-50">
+						<img src="/assets/images/parts/ground-engaging-tools.jpg" alt="Ground Engaging Tools" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+					</div>
+					<div class="p-6 flex flex-col flex-grow">
+						<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors">Ground Engaging Tools</h3>
+						<p class="text-gray-600 text-sm mb-4 flex-grow">Buckets, teeth, blades, cutting edges, and adapters.</p>
+						<span class="text-teal-600 font-semibold text-sm flex items-center mt-auto">Browse Parts <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
+					</div>
+				</a>
+
+				<!-- Cabin & Body Parts -->
+				<a href="/pages/" class="group relative bg-white rounded-2xl shadow-sm border border-gray-100 flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+					<div class="w-full h-48 overflow-hidden bg-gray-50">
+						<img src="/assets/images/parts/cabin.jpg" alt="Cabin & Body Parts" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+					</div>
+					<div class="p-6 flex flex-col flex-grow">
+						<h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors">Cabin &amp; Body Parts</h3>
+						<p class="text-gray-600 text-sm mb-4 flex-grow">Glass, seats, panels, doors, mirrors, and accessories.</p>
+						<span class="text-gray-700 font-semibold text-sm flex items-center mt-auto">Browse Parts <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></span>
+					</div>
+				</a>
 			</div>
 		</div>
 	</section>

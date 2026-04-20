@@ -1,7 +1,7 @@
 :root{--primary-color:#FFB81C;--secondary-color:#1F2937;--accent-color:#DC2626;--text-dark:#111827;--text-light:#6B7280;--bg-light:#F9FAFB;--bg-dark:#111827;}
 body{font-family:"Inter",sans-serif;color:var(--text-dark);scroll-behavior:smooth;overflow-x:hidden;}
 .nav-link{scroll-margin-top:5rem;}
-.hero-gradient{background:linear-gradient(135deg,#111827 0%,#1f2937 100%);}
+.hero-gradient{background:linear-gradient(135deg,rgba(17,24,39,0.92) 0%,rgba(31,41,55,0.85) 100%),url('../images/ptc-warehouse.webp');background-size:cover;background-position:center;background-attachment:fixed;}
 .text-gradient{background:linear-gradient(135deg,#FFB81C 0%,#F59E0B 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .btn-primary{background:#FFB81C;color:var(--text-dark);font-weight:600;padding:1rem 2rem;border-radius:0.5rem;display:inline-flex;align-items:center;gap:0.5rem;transition:all 0.3s ease;border:none;cursor:pointer;text-decoration:none;}
 .btn-primary:hover{background:#F59E0B;transform:translateY(-2px);box-shadow:0 20px 40px rgba(255,184,28,0.3);}
@@ -38,7 +38,27 @@ body{font-family:"Inter",sans-serif;color:var(--text-dark);scroll-behavior:smoot
 }@keyframes gradientShift{0%,100%{background-position:0% 50%;}
 }.animate-slide-in-up{animation:slideInUp 1s ease-out forwards;opacity:0;transform:translateY(30px);}
 .animate-slide-in-left{animation:slideInLeft 1s ease-out forwards;opacity:0;transform:translateX(-30px);}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.animate-ticker{animation:ticker 30s linear infinite;}
+.animate-ticker:hover{animation-play-state:paused;}
 .animate-slide-in-right{animation:slideInRight 1s ease-out forwards;opacity:0;transform:translateX(30px);}
+
+/* Equipment Component Polish */
+#equipment-models details[open] {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+    border-color: #fde047;
+}
+#equipment-models details .bg-gradient-to-br {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(253, 224, 71, 0.3) !important;
+}
+#equipment-models details .bg-gradient-to-br:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(to bottom right, #fefce8, #fef3c7);
+    border-color: rgba(253, 224, 71, 0.8) !important;
+}
 @keyframes slideInUp{to{opacity:1;transform:translateY(0);}
 }@keyframes slideInLeft{to{opacity:1;transform:translateX(0);}
 }@keyframes slideInRight{to{opacity:1;transform:translateX(0);}
