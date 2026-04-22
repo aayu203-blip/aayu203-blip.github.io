@@ -1096,7 +1096,53 @@
 		</div>
 	</section>
 
-
+	<!-- Live Dispatch Ticker -->
+	<div class="bg-gray-900 border-t border-gray-800 py-3 overflow-hidden select-none" aria-hidden="true">
+		<div class="max-w-7xl mx-auto px-4 flex items-center gap-4">
+			<span class="flex-shrink-0 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-yellow-400">
+				<span class="w-2 h-2 rounded-full bg-green-400 animate-pulse inline-block"></span>
+				Live
+			</span>
+			<div class="relative flex-1 overflow-hidden h-6">
+				<div id="dispatch-ticker" class="absolute inset-0 flex items-center">
+					<span id="dispatch-text" class="text-sm text-gray-300 font-medium transition-opacity duration-700"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	(function(){
+		var items = [
+			"Komatsu dozer engine kit \u2192 Dhanbad",
+			"CAT undercarriage assembly \u2192 Perth",
+			"Hitachi hydraulic pump \u2192 Johannesburg",
+			"Cummins engine rebuild kit \u2192 Ranchi",
+			"Volvo articulated dump parts \u2192 Lusaka",
+			"Komatsu track shoes \u2192 Korba",
+			"CAT bucket teeth & adapters \u2192 Muscat",
+			"Hitachi boom cylinder \u2192 Bhubaneswar",
+			"Scania haul truck transmission \u2192 Kitwe",
+			"CAT liner & piston kit \u2192 Odisha",
+			"Komatsu swing motor \u2192 Sambalpur",
+			"Cummins injectors & seals \u2192 Raipur",
+			"Volvo CE engine parts \u2192 Bilaspur",
+			"Hitachi final drive \u2192 Bellary",
+			"CAT 3406 overhaul kit \u2192 Johannesburg"
+		];
+		var el = document.getElementById('dispatch-text');
+		var i = 0;
+		function next(){
+			el.style.opacity = '0';
+			setTimeout(function(){
+				el.textContent = items[i % items.length];
+				el.style.opacity = '1';
+				i++;
+			}, 600);
+		}
+		next();
+		setInterval(next, 3800);
+	})();
+	</script>
 
 	<section class="py-12 md:py-16 bg-verylight-yellow relative overflow-hidden" data-aos="fade-up" id="search-parts">
 		<div class="max-w-4xl mx-auto px-4" data-aos="fade-up" data-aos-delay="100">
