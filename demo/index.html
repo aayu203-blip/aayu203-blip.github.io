@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heavy Equipment Spare Parts India | Volvo, Scania, Komatsu, CAT | Parts Trading Company</title>
+<meta name="description" content="India's leading OEM & aftermarket spare parts for Volvo, Scania, Komatsu, CAT, Hitachi & 16 more brands. 51,000+ parts. Same-day dispatch from Mumbai. Est. 1956. Serving 50+ countries.">
+<meta name="keywords" content="heavy equipment spare parts India, Volvo spare parts, Scania parts Mumbai, Komatsu parts India, CAT spare parts, Hitachi excavator parts, OEM aftermarket parts supplier">
+<meta property="og:title" content="PTC — Heavy Equipment Parts. Anywhere. Fast.">
+<meta property="og:description" content="51,000+ OEM & aftermarket parts for Volvo, Scania, Komatsu, CAT & more. Same-day dispatch from Mumbai.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;font-family:'Barlow',sans-serif;background:#050505;}
+::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:#080808;}::-webkit-scrollbar-thumb{background:#FFB81C;border-radius:3px;}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-inner{animation:ticker 40s linear infinite;}
+.ticker-inner:hover{animation-play-state:paused;}
+@keyframes act{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.act-inner{animation:act 28s linear infinite;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.fu1{animation:fadeUp 0.8s ease both;}
+.fu2{animation:fadeUp 0.8s 0.18s ease both;}
+.fu3{animation:fadeUp 0.8s 0.36s ease both;}
+.fu4{animation:fadeUp 0.8s 0.54s ease both;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.pulse{animation:pulse 2s ease-in-out infinite;}
+@keyframes shimmer{0%{left:-100%}100%{left:200%}}
+.card-shine{position:relative;overflow:hidden;}
+.card-shine::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,184,28,0.04),transparent);transition:none;pointer-events:none;}
+.card-shine:hover::after{animation:shimmer 0.7s ease forwards;}
+@keyframes countUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.count-in{animation:countUp 0.6s ease both;}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 20px rgba(255,184,28,0.1)}50%{box-shadow:0 0 40px rgba(255,184,28,0.2)}}
+.dispatch-glow{animation:glowPulse 3s ease-in-out infinite;}
+.noise::before{content:'';position:absolute;inset:0;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px;pointer-events:none;z-index:1;}
+/* Demo banner */
+.demo-banner{position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:9999;background:#FFB81C;color:#050505;padding:6px 20px;border-radius:0 0 12px 12px;font-family:'Barlow',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,0.3);}
+@media(max-width:768px){
+  .desktop-nav-links{display:none!important;}
+  .mobile-sticky{display:flex!important;}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}
+}
+</style>
+</head>
+<body>
+<div class="demo-banner">⚠ DEMO — Not the live site · <a href="/" style="color:#050505;text-decoration:underline;">View live site</a></div>
+<div id="root"></div>
+<script type="text/babel">
+const {useState,useEffect,useContext,createContext,useRef,useCallback} = React;
+
+const D = "'Barlow Condensed',sans-serif";
+const B = "'Barlow',sans-serif";
+const AMBER = '#FFB81C';
+const WA = txt=>`https://wa.me/919821037990?text=${encodeURIComponent(txt)}`;
+
+// Dark Industrial theme (locked — user chose this)
+const T = {
+  bg:'#050505',bgCard:'#0F0F0F',bgSection:'#080808',bgAlt:'#0C0C0C',
+  text:'#F0ECE6',textMuted:'#484848',accent:AMBER,accentDark:'#050505',
+  border:'rgba(255,255,255,0.055)',navBg:'rgba(5,5,5,0.97)',navText:'#F0ECE6',
+  heroOverlay:'rgba(0,0,0,0.76)',statsBg:AMBER,statsText:'#050505',
+  brandsBg:'#080808',tagBg:'rgba(255,184,28,0.09)',tagText:AMBER,
+  inputBg:'rgba(255,255,255,0.06)',inputBorder:'rgba(255,255,255,0.1)',
+  footerBg:'#020202'
+};
+
+const ALL_BRANDS = [
+  {name:'Volvo',   models:['EC140','EC210','EC240','EC290','EC330','EC360','EC460','EC480','EC700','FH12','FH13','FH16','FH400','FH440','FH460','FH480','FH500','FH520','FH540','FM9','FM10','FM12','FM13','FM340','FM370','FM400','FM410','FM440','FM460','FM480','FMX330','FMX370','FMX410','FMX440','FMX460','FMX480','FMX500','FMX540','L60','L90','L110','L120','L150','L180','L220','L350','A25','A30','A35','A40','A45','A60']},
+  {name:'Scania',  models:['R340','R360','R370','R380','R400','R410','R420','R440','R450','R460','R480','R500','R520','R540','R580','R620','R650','R730','R770','S500','S520','S540','S580','S650','S730','S770','G340','G360','G380','G400','G420','G440','G460','G480','G500','P230','P280','P310','P340','P380','P410','P440','P480','P500']},
+  {name:'Komatsu', models:['PC200','PC210','PC220','PC290','PC350','PC390','PC450','PC490','PC750','PC800','PC850','WA320','WA380','WA470','WA500','WA600','WA700','WA900','D37','D39','D51','D61','D65E','D65EX-15','D65PX-15','D85ESS','D85EX-15','D85PX-15','D155','D155A-6','D155AX-6','D275A-5','D375A-5','D475A-5','GD555-3','GD605','GD655-3','GD705','GD785','GD825A-2','HD465','HD465-7','HD605','HD785','HD785-5','HD1500','HD1500-7']},
+  {name:'CAT',     models:['312','315','318','320','321','323','325','329','330','336','340','345','349','365','374','385','390','120H','120M','12M','140H','140M','14M','160M','16M','24M','725','730','735','740','745','770','772','773','773E','773F','775F','777','777C','777D','777F','785','785C','789','789C','793','793C','793F','797F','814F','824C','834G','924','930','938','950','966','972','980','988','990','994','6015','6020','6030']},
+  {name:'Hitachi', models:['ZX55','ZX75','ZX95','ZX135','ZX155','ZX200','ZX250','ZX300','ZX350','ZX450','ZX500','EX1200','EX1900','EX2500','ZW150','ZW180','ZW220','ZW250']},
+  {name:'Hyundai', models:['R55','R80','R110','R130','R150','R170','R200','R220','R250','R300','R350','R450','HL730','HL740','HL750','HL760']},
+  {name:'BEML',    models:['BC160','BC180','BC260','BD50','BD50T','BD80','BD110','BD155','BD260','BE100','BE110','BE200','BE220','BE300','BE600','BE650','BE700','BE750','BE1000','BE1400','BG555','BG605','BG685','BG705','BH35','BH50','BH60','BH75','BH85','BH120','BH170','BL520','BL530','BL750','WL30','WL40','WL50']},
+  {name:'LiuGong', models:['835','855','856','877','906','915','925','936','946','956','966','976','D31','D41','D51']},
+];
+
+const SAMPLE_PARTS = [
+  {part:'20Y-60-31121',desc:'Air Filter Element',brand:'Komatsu',cat:'Filters'},
+  {part:'VOE20450734',desc:'Fuel Filter',brand:'Volvo',cat:'Filters'},
+  {part:'1-87810-338-0',desc:'Hydraulic Pump Assembly',brand:'Hitachi',cat:'Hydraulic Parts'},
+  {part:'1544117',desc:'O-Ring Seal Kit',brand:'CAT',cat:'Seals & O-Rings'},
+  {part:'1786801',desc:'Engine Oil Filter',brand:'CAT',cat:'Filters'},
+  {part:'VOE20726764',desc:'D13 Piston Ring Set',brand:'Volvo',cat:'Engine Parts'},
+  {part:'1387185',desc:'3406 Cylinder Liner',brand:'CAT',cat:'Engine Parts'},
+  {part:'20459253',desc:'EC210 Hydraulic Pump',brand:'Volvo',cat:'Hydraulic Parts'},
+  {part:'11110683',desc:'DC13 Fuel Injector',brand:'Scania',cat:'Fuel System'},
+  {part:'1768484',desc:'Gearbox Oil Pump',brand:'Scania',cat:'Transmission'},
+  {part:'1786868',desc:'777G Brake Pad Set',brand:'CAT',cat:'Brake Parts'},
+  {part:'KOM-6754818110',desc:'PC200 Oil Filter',brand:'Komatsu',cat:'Filters'},
+  {part:'4448402',desc:'ZX200 Swing Motor',brand:'Hitachi',cat:'Hydraulic Parts'},
+  {part:'SA8230-09860',desc:'WA380 Air Cleaner',brand:'Komatsu',cat:'Filters'},
+  {part:'VOE11703858',desc:'FH16 Alternator 24V',brand:'Volvo',cat:'Electrical Parts'},
+  {part:'1756432',desc:'R Series Clutch Disc',brand:'Scania',cat:'Transmission'},
+  {part:'20702172',desc:'EC290 Track Roller',brand:'Volvo',cat:'Undercarriage'},
+  {part:'KOM-3EB-60-11430',desc:'D85 Drive Sprocket',brand:'Komatsu',cat:'Undercarriage'},
+  {part:'VOE20546629',desc:'A40 Axle Shaft',brand:'Volvo',cat:'Drive Parts'},
+  {part:'11707317',desc:'DC9 Turbocharger',brand:'Scania',cat:'Exhaust & Turbo'},
+  {part:'4456722',desc:'EX1200 Bucket Pin',brand:'Hitachi',cat:'Ground Engaging'},
+  {part:'1556655',desc:'Water Pump Assembly',brand:'CAT',cat:'Cooling System'},
+  {part:'KOM-700-21-28600',desc:'D155 Final Drive',brand:'Komatsu',cat:'Drive Parts'},
+  {part:'VOE20531299',desc:'Starter Motor 24V',brand:'Volvo',cat:'Electrical Parts'},
+  {part:'1786234',desc:'320 Boom Cylinder Seal',brand:'CAT',cat:'Hydraulic Parts'},
+];
+
+const ACTIVITY = [
+  {flag:'🇮🇳',name:'Rajesh M.',loc:'Mumbai',part:'Volvo FH16 Injector Kit',ago:'2 min ago'},
+  {flag:'🇷🇺',name:'Ivan K.',loc:'Moscow',part:'Komatsu PC300 Hydraulic Pump',ago:'4 min ago'},
+  {flag:'🇦🇪',name:'Ahmad H.',loc:'Dubai',part:'CAT 777G Brake Pads (x4)',ago:'7 min ago'},
+  {flag:'🇮🇩',name:'Budi S.',loc:'Jakarta',part:'Scania R580 Clutch Kit',ago:'11 min ago'},
+  {flag:'🇿🇦',name:'Johan V.',loc:'Johannesburg',part:'Hitachi ZX300 Track Rollers',ago:'14 min ago'},
+  {flag:'🇮🇳',name:'Suresh P.',loc:'Chennai',part:'Komatsu D85 Final Drive',ago:'18 min ago'},
+  {flag:'🇰🇪',name:'James O.',loc:'Nairobi',part:'CAT 336 Hydraulic Hose Set',ago:'22 min ago'},
+  {flag:'🇳🇬',name:'Emeka A.',loc:'Lagos',part:'Volvo EC210 Engine Filter Kit',ago:'26 min ago'},
+];
+
+const COUNTRIES = [
+  {flag:'🇮🇳',name:'India'},{flag:'🇷🇺',name:'Russia'},{flag:'🇦🇪',name:'UAE'},
+  {flag:'🇮🇩',name:'Indonesia'},{flag:'🇿🇦',name:'South Africa'},{flag:'🇳🇬',name:'Nigeria'},
+  {flag:'🇰🇪',name:'Kenya'},{flag:'🇬🇭',name:'Ghana'},{flag:'🇪🇬',name:'Egypt'},
+  {flag:'🇦🇺',name:'Australia'},{flag:'🇸🇬',name:'Singapore'},{flag:'🇲🇾',name:'Malaysia'},
+  {flag:'🇧🇩',name:'Bangladesh'},{flag:'🇵🇰',name:'Pakistan'},{flag:'🇱🇰',name:'Sri Lanka'},
+  {flag:'🇹🇿',name:'Tanzania'},{flag:'🇲🇿',name:'Mozambique'},{flag:'🇲🇲',name:'Myanmar'},
+  {flag:'🇧🇷',name:'Brazil'},{flag:'🇨🇱',name:'Chile'},{flag:'🇵🇭',name:'Philippines'},
+  {flag:'🇻🇳',name:'Vietnam'},{flag:'🇲🇳',name:'Mongolia'},{flag:'🇺🇿',name:'Uzbekistan'},
+];
+
+const STATS=[
+  {raw:51000,display:'51,000+',label:'Parts in Stock'},
+  {raw:70,display:'70+',label:'Years Trusted'},
+  {raw:16,display:'16+',label:'Equipment Brands'},
+  {raw:50,display:'50+',label:'Countries Served'},
+];
+const CATS=[
+  {name:'Engine Parts',count:'12,400+',desc:'Pistons, liners, bearings & rebuild kits'},
+  {name:'Hydraulic Systems',count:'8,800+',desc:'Pumps, motors, cylinders & hoses'},
+  {name:'Electrical',count:'6,300+',desc:'Alternators, starters, ECUs & sensors'},
+  {name:'Filters',count:'4,900+',desc:'OEM & aftermarket — all brands'},
+  {name:'Undercarriage',count:'5,200+',desc:'Track shoes, rollers, sprockets & chains'},
+  {name:'Transmission',count:'4,100+',desc:'Gearboxes, clutch packs & converters'},
+  {name:'Brake Systems',count:'4,400+',desc:'Pads, discs, calipers & air systems'},
+  {name:'Cooling',count:'2,900+',desc:'Radiators, thermostats & water pumps'},
+];
+const TESTIMONIALS=[
+  {name:'Rajesh Mehta',role:'Fleet Manager',loc:'Maharashtra, India',flag:'🇮🇳',text:'PTC has been our trusted partner for 15+ years. When a machine goes down, I call PTC first. Same-day dispatch from Mumbai has saved us lakhs in downtime.'},
+  {name:'Ivan Petrov',role:'Mining Operations Director',loc:'Kemerovo, Russia',flag:'🇷🇺',text:'Reliable Komatsu and Scania parts shipped reliably to Russia. Quality is always OEM standard. PTC understands the urgency of mining operations.'},
+  {name:'Ahmad Hassan',role:'VP Procurement',loc:'Dubai, UAE',flag:'🇦🇪',text:"We've sourced CAT and Hitachi parts from PTC for 8 years. Their pricing, packaging, and speed for international shipping is unmatched."},
+];
+const BLOG=[
+  {tag:'Volvo',title:'Volvo D13 Engine: Common Problems & Fixes',date:'Mar 2025',read:'8 min',href:'../blog/volvo-d13-engine-problems.html'},
+  {tag:'Scania',title:'Scania PDE vs HPI Injectors — Full Comparison',date:'Feb 2025',read:'6 min',href:'../blog/scania-injectors-pde-vs-hpi.html'},
+  {tag:'Komatsu',title:'Komatsu Hydraulic Pump Failure: Signs & Solutions',date:'Jan 2025',read:'7 min',href:'../blog/komatsu-hydraulic-pump-failure.html'},
+];
+
+// ── HOOKS ─────────────────────────────────────────────────────────────────────
+function useInView(options={}) {
+  const ref = useRef();
+  const [inView,setInView] = useState(false);
+  useEffect(()=>{
+    const obs = new IntersectionObserver(([e])=>{if(e.isIntersecting){setInView(true);obs.disconnect();}},options);
+    if(ref.current) obs.observe(ref.current);
+    return()=>obs.disconnect();
+  },[]);
+  return [ref,inView];
+}
+
+function useCounter(target, inView, duration=1800) {
+  const [val,setVal] = useState(0);
+  useEffect(()=>{
+    if(!inView) return;
+    let start=null;
+    const step = ts => {
+      if(!start) start=ts;
+      const p = Math.min((ts-start)/duration,1);
+      const ease = 1-Math.pow(1-p,3);
+      setVal(Math.floor(ease*target));
+      if(p<1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  },[inView,target]);
+  return val;
+}
+
+function useDispatchCountdown() {
+  const [time,setTime] = useState('');
+  useEffect(()=>{
+    const calc=()=>{
+      const now = new Date();
+      const ist = new Date(now.toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
+      const cutoff = new Date(ist);
+      cutoff.setHours(15,0,0,0);
+      if(ist>=cutoff){setTime('Tomorrow at 9 AM');return;}
+      const diff = cutoff-ist;
+      const h = Math.floor(diff/3600000);
+      const m = Math.floor((diff%3600000)/60000);
+      setTime(`${h}h ${m}m`);
+    };
+    calc();
+    const id=setInterval(calc,30000);
+    return()=>clearInterval(id);
+  },[]);
+  return time;
+}
+
+// ── SHARED ────────────────────────────────────────────────────────────────────
+const Label=({children,center=false})=>(
+  <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:12,justifyContent:center?'center':'flex-start'}}>
+    <div style={{width:24,height:2,background:AMBER}}/>
+    <span style={{fontFamily:D,fontSize:11,fontWeight:700,letterSpacing:'0.22em',textTransform:'uppercase',color:AMBER}}>{children}</span>
+    {center&&<div style={{width:24,height:2,background:AMBER}}/>}
+  </div>
+);
+
+// ── ANNOUNCEMENT BAR ──────────────────────────────────────────────────────────
+function AnnouncementBar(){
+  const items=['✓ Est. 1956 — 70+ years of trusted supply','⚡ Same-day dispatch before 3 PM IST','🌍 Serving 50+ countries worldwide','📦 51,000+ parts in stock, Mumbai','💬 WhatsApp: +91 98210 37990','🔧 OEM & aftermarket quality guaranteed'];
+  const all=[...items,...items];
+  return(
+    <div style={{background:AMBER,overflow:'hidden',padding:'9px 0',marginTop:30}}>
+      <div className="act-inner" style={{display:'flex',gap:64,width:'max-content',alignItems:'center'}}>
+        {all.map((item,i)=>(
+          <span key={i} style={{fontFamily:B,fontSize:13,fontWeight:600,color:'#050505',whiteSpace:'nowrap'}}>{item}</span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ── NAV ────────────────────────────────────────────────────────────────────────
+function Nav({scrolled}){
+  const bg=scrolled?T.navBg:'transparent';
+  const lc=scrolled?T.navText:'#fff';
+  return(
+    <nav aria-label="Main navigation" style={{position:'sticky',top:30,zIndex:1000,background:bg,borderBottom:scrolled?`1px solid ${T.border}`:'none',backdropFilter:scrolled?'blur(24px)':'none',transition:'all 0.35s cubic-bezier(0.4,0,0.2,1)'}}>
+      <div style={{maxWidth:1360,margin:'0 auto',padding:'0 32px',display:'flex',alignItems:'center',justifyContent:'space-between',height:68}}>
+        <a href="/" aria-label="Parts Trading Company — Home">
+          <img src="../assets/images/ptc-logo.png" alt="Parts Trading Company" style={{height:42,width:'auto',transition:'filter 0.3s'}}/>
+        </a>
+        <div className="desktop-nav-links" style={{display:'flex',gap:0,alignItems:'center'}}>
+          {[['Parts','#products'],['Brands','#brands'],['Models','#models'],['Blog','../blog/index.html'],['Contact','#contact']].map(([label,href])=>(
+            <a key={label} href={href} style={{color:lc,textDecoration:'none',padding:'7px 14px',borderRadius:7,fontFamily:B,fontWeight:600,fontSize:13,transition:'color 0.2s'}}
+              onMouseEnter={e=>{e.target.style.color=AMBER;}}
+              onMouseLeave={e=>{e.target.style.color=lc;}}
+            >{label}</a>
+          ))}
+          <a href="https://wa.me/919821037990" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp PTC"
+            style={{marginLeft:4,display:'inline-flex',alignItems:'center',gap:8,background:'#25D366',color:'#fff',textDecoration:'none',padding:'9px 20px',borderRadius:8,fontFamily:B,fontWeight:700,fontSize:13,transition:'opacity 0.2s'}}
+            onMouseEnter={e=>e.currentTarget.style.opacity='0.85'}
+            onMouseLeave={e=>e.currentTarget.style.opacity='1'}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a href="#contact" style={{marginLeft:6,background:AMBER,color:'#050505',textDecoration:'none',padding:'9px 22px',borderRadius:8,fontFamily:D,fontWeight:700,fontSize:14,letterSpacing:'0.07em',textTransform:'uppercase',transition:'opacity 0.2s'}}
+            onMouseEnter={e=>e.currentTarget.style.opacity='0.82'}
+            onMouseLeave={e=>e.currentTarget.style.opacity='1'}
+          >Get Quote</a>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+// ── HERO SEARCH ───────────────────────────────────────────────────────────────
+function HeroSearch(){
+  const [q,setQ]=useState('');
+  const [results,setResults]=useState([]);
+  const [focused,setFocused]=useState(false);
+  const [brand,setBrand]=useState('All');
+  const ref=useRef();
+
+  // Try to use the live search DB if loaded, fall back to sample parts
+  const searchParts = useCallback((query, brandFilter) => {
+    if(query.length < 2) return [];
+    const lq = query.toLowerCase();
+    // Try live window.productSearchDB first
+    if(window.productSearchDB && window.productSearchDB.length > 0) {
+      return window.productSearchDB
+        .filter(p => {
+          const matchQ = (p.part||'').toLowerCase().includes(lq) || (p.desc||'').toLowerCase().includes(lq) || (p.brand||'').toLowerCase().includes(lq);
+          const matchB = brandFilter === 'All' || (p.brand||'').toLowerCase() === brandFilter.toLowerCase();
+          return matchQ && matchB;
+        }).slice(0,7);
+    }
+    return SAMPLE_PARTS.filter(p =>
+      (p.part.toLowerCase().includes(lq) || p.desc.toLowerCase().includes(lq) || p.brand.toLowerCase().includes(lq)) &&
+      (brandFilter==='All' || p.brand===brandFilter)
+    ).slice(0,7);
+  }, []);
+
+  useEffect(()=>{
+    setResults(searchParts(q, brand));
+  },[q,brand]);
+
+  useEffect(()=>{
+    const fn=e=>{if(ref.current&&!ref.current.contains(e.target))setFocused(false);};
+    document.addEventListener('mousedown',fn);
+    return()=>document.removeEventListener('mousedown',fn);
+  },[]);
+
+  const brands=['All','Volvo','Scania','Komatsu','CAT','Hitachi'];
+  return(
+    <div ref={ref} style={{width:'100%',maxWidth:800,margin:'0 auto',position:'relative'}}>
+      <div style={{display:'flex',gap:8,marginBottom:14,justifyContent:'center',flexWrap:'wrap'}}>
+        {brands.map(b=>(
+          <button key={b} onClick={()=>setBrand(b)} style={{fontFamily:B,fontSize:12,fontWeight:700,padding:'5px 16px',borderRadius:20,border:`1px solid ${brand===b?AMBER:'rgba(255,255,255,0.15)'}`,cursor:'pointer',transition:'all 0.2s',background:brand===b?AMBER:'transparent',color:brand===b?'#050505':'rgba(255,255,255,0.65)',letterSpacing:'0.04em'}}>{b}</button>
+        ))}
+      </div>
+      <div style={{position:'relative',display:'flex',background:'rgba(255,255,255,0.07)',backdropFilter:'blur(24px)',borderRadius:12,border:`1.5px solid ${focused?AMBER:'rgba(255,255,255,0.12)'}`,transition:'border-color 0.25s',overflow:'hidden'}}>
+        <div style={{position:'absolute',left:20,top:'50%',transform:'translateY(-50%)',pointerEvents:'none',zIndex:2}}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <label htmlFor="hero-search" className="sr-only" style={{position:'absolute',width:1,height:1,overflow:'hidden',clip:'rect(0,0,0,0)'}}>Search by part number or description</label>
+        <input id="hero-search" type="search" value={q} onChange={e=>setQ(e.target.value)} onFocus={()=>setFocused(true)}
+          placeholder="Search by part number or description… e.g. 'VOE20450734' or 'Komatsu filter'"
+          style={{flex:1,padding:'18px 18px 18px 54px',fontSize:15,fontFamily:B,fontWeight:500,background:'transparent',border:'none',color:'#fff',outline:'none'}}/>
+        <button onClick={()=>{if(q)window.open(WA(`Hi, I need the part: ${q}. Please check availability and pricing.`),'_blank');}}
+          style={{padding:'0 32px',background:AMBER,color:'#050505',border:'none',fontFamily:D,fontWeight:800,fontSize:16,letterSpacing:'0.07em',textTransform:'uppercase',cursor:'pointer',flexShrink:0,transition:'opacity 0.2s'}}
+          onMouseEnter={e=>e.currentTarget.style.opacity='0.85'}
+          onMouseLeave={e=>e.currentTarget.style.opacity='1'}
+          aria-label="Search parts"
+        >Search</button>
+      </div>
+      <div style={{display:'flex',justifyContent:'space-between',marginTop:10,padding:'0 4px'}}>
+        <span style={{fontFamily:B,fontSize:11.5,color:'rgba(255,255,255,0.3)'}}>51,000+ parts indexed · Type to search, or browse by model below</span>
+        <span style={{fontFamily:B,fontSize:11.5,color:'rgba(255,255,255,0.3)'}}>No result? WhatsApp us in seconds →</span>
+      </div>
+      {focused&&q.length>=2&&(
+        <div style={{position:'absolute',top:'calc(100% + 4px)',left:0,right:0,background:'#111',border:`1px solid ${AMBER}`,borderRadius:12,zIndex:200,overflow:'hidden',boxShadow:'0 24px 80px rgba(0,0,0,0.8)'}}>
+          {results.length===0?(
+            <div style={{padding:20,display:'flex',justifyContent:'space-between',alignItems:'center',gap:16}}>
+              <div>
+                <div style={{fontFamily:D,fontWeight:700,fontSize:16,color:'#fff',marginBottom:4}}>No match found in demo index</div>
+                <div style={{fontFamily:B,fontSize:13,color:'#555'}}>Our full database has 51,000+ parts. Send the number on WhatsApp.</div>
+              </div>
+              <a href={WA(`Hi, I need: ${q}. Do you have it in stock? Please confirm price and availability.`)} target="_blank" rel="noopener noreferrer"
+                style={{display:'flex',alignItems:'center',gap:8,background:'#25D366',color:'#fff',textDecoration:'none',padding:'11px 20px',borderRadius:9,fontFamily:D,fontWeight:700,fontSize:14,whiteSpace:'nowrap',flexShrink:0}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Ask on WhatsApp
+              </a>
+            </div>
+          ):(
+            <>
+              {results.map(r=>(
+                <a key={r.part} href={WA(`Hi, I need part ${r.part} — ${r.desc} (${r.brand}). Please confirm stock and price.`)} target="_blank" rel="noopener noreferrer"
+                  style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'13px 20px',borderBottom:'1px solid rgba(255,255,255,0.04)',textDecoration:'none',transition:'background 0.15s',gap:16}}
+                  onMouseEnter={e=>e.currentTarget.style.background='rgba(255,184,28,0.05)'}
+                  onMouseLeave={e=>e.currentTarget.style.background='transparent'}
+                >
+                  <div style={{minWidth:0}}>
+                    <div style={{display:'flex',gap:10,alignItems:'center',marginBottom:3,flexWrap:'wrap'}}>
+                      <span style={{fontFamily:D,fontWeight:700,fontSize:15,color:AMBER,letterSpacing:'0.02em'}}>{r.part}</span>
+                      <span style={{fontFamily:B,fontSize:11,color:'#444',background:'rgba(255,255,255,0.04)',padding:'2px 8px',borderRadius:4,border:'1px solid rgba(255,255,255,0.07)'}}>{r.brand}</span>
+                      <span style={{fontFamily:B,fontSize:11,color:'#444',background:'rgba(255,255,255,0.04)',padding:'2px 8px',borderRadius:4,border:'1px solid rgba(255,255,255,0.07)'}}>{r.cat}</span>
+                    </div>
+                    <div style={{fontFamily:B,fontSize:13,color:'#888',overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap'}}>{r.desc}</div>
+                  </div>
+                  <span style={{fontFamily:B,fontSize:12,color:'#25D366',fontWeight:700,flexShrink:0}}>WhatsApp →</span>
+                </a>
+              ))}
+              <div style={{padding:'10px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',borderTop:'1px solid rgba(255,255,255,0.04)'}}>
+                <span style={{fontFamily:B,fontSize:12,color:'#333'}}>Showing {results.length} of 51,000+ parts</span>
+                <a href={WA(`Hi, I'm searching for: ${q}. Can you help with availability and pricing?`)} target="_blank" rel="noopener noreferrer" style={{fontFamily:B,fontSize:12,color:AMBER,textDecoration:'none',fontWeight:700}}>Search all 51K parts →</a>
+              </div>
+            </>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── HERO ──────────────────────────────────────────────────────────────────────
+function Hero(){
+  const countdown=useDispatchCountdown();
+  return(
+    <header id="home" style={{position:'relative',minHeight:'96vh',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',overflow:'hidden'}}>
+      <div className="noise" style={{position:'absolute',inset:0,backgroundImage:'url(../assets/images/ptc-warehouse.webp)',backgroundSize:'cover',backgroundPosition:'center'}}/>
+      <div style={{position:'absolute',inset:0,background:T.heroOverlay}}/>
+      <div style={{position:'absolute',inset:0,backgroundImage:'linear-gradient(rgba(255,184,28,0.03) 1px, transparent 1px),linear-gradient(90deg,rgba(255,184,28,0.03) 1px,transparent 1px)',backgroundSize:'80px 80px',pointerEvents:'none'}}/>
+      <div style={{position:'relative',zIndex:2,maxWidth:1360,margin:'0 auto',padding:'80px 32px 60px',width:'100%',textAlign:'center'}}>
+        <div className="fu1" style={{display:'inline-flex',alignItems:'center',gap:8,background:'rgba(255,184,28,0.1)',border:'1px solid rgba(255,184,28,0.25)',borderRadius:24,padding:'6px 20px',marginBottom:32}}>
+          <span className="pulse" style={{width:7,height:7,borderRadius:'50%',background:AMBER,display:'inline-block'}}/>
+          <span style={{color:AMBER,fontSize:12,fontFamily:D,fontWeight:700,letterSpacing:'0.2em',textTransform:'uppercase'}}>Est. 1956 · Grant Road, Mumbai · Open Now</span>
+        </div>
+        <h1 className="fu2" style={{fontFamily:D,fontWeight:900,fontSize:'clamp(52px,9.5vw,120px)',lineHeight:0.9,color:'#fff',letterSpacing:'-0.02em',marginBottom:14,textTransform:'uppercase'}}>
+          Find The Part.<br/><span style={{color:AMBER,textShadow:`0 0 80px rgba(255,184,28,0.4)`}}>Get It Today.</span>
+        </h1>
+        <p className="fu3" style={{fontFamily:B,fontSize:18,color:'rgba(255,255,255,0.6)',lineHeight:1.65,marginBottom:48,maxWidth:520,margin:'0 auto 48px'}}>
+          51,000+ OEM & aftermarket parts for Volvo, Scania, Komatsu, CAT & 16 more brands — shipped from Mumbai to anywhere in the world.
+        </p>
+        <div className="fu4" style={{maxWidth:820,margin:'0 auto 40px'}}>
+          <HeroSearch/>
+        </div>
+        <div className="fu4" style={{display:'flex',justifyContent:'center',gap:14,flexWrap:'wrap',marginBottom:60}}>
+          <a href="https://wa.me/919821037990" target="_blank" rel="noopener noreferrer"
+            style={{display:'inline-flex',alignItems:'center',gap:10,background:'#25D366',color:'#fff',textDecoration:'none',padding:'14px 28px',borderRadius:10,fontFamily:D,fontWeight:800,fontSize:16,letterSpacing:'0.06em',textTransform:'uppercase',boxShadow:'0 8px 32px rgba(37,211,102,0.28)',transition:'transform 0.2s'}}
+            onMouseEnter={e=>e.currentTarget.style.transform='translateY(-2px)'}
+            onMouseLeave={e=>e.currentTarget.style.transform='none'}
+          >
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp — Reply in &lt;1 Hour
+          </a>
+          <a href="#models" style={{display:'inline-flex',alignItems:'center',gap:8,background:'transparent',color:'rgba(255,255,255,0.8)',textDecoration:'none',padding:'14px 28px',borderRadius:10,border:'1.5px solid rgba(255,255,255,0.2)',fontFamily:D,fontWeight:700,fontSize:16,letterSpacing:'0.06em',textTransform:'uppercase',transition:'all 0.2s'}}
+            onMouseEnter={e=>{e.currentTarget.style.borderColor=AMBER;e.currentTarget.style.color=AMBER;}}
+            onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(255,255,255,0.2)';e.currentTarget.style.color='rgba(255,255,255,0.8)';}}
+          >Browse by Model ↓</a>
+        </div>
+        {countdown&&(
+          <div className="dispatch-glow" style={{display:'inline-flex',alignItems:'center',gap:24,background:'rgba(255,255,255,0.05)',backdropFilter:'blur(12px)',border:'1px solid rgba(255,255,255,0.1)',borderRadius:40,padding:'10px 28px',flexWrap:'wrap',justifyContent:'center'}}>
+            <div style={{display:'flex',alignItems:'center',gap:8}}>
+              <span className="pulse" style={{width:7,height:7,borderRadius:'50%',background:'#4ade80',display:'inline-block'}}/>
+              <span style={{fontFamily:B,fontSize:13,color:'rgba(255,255,255,0.7)',fontWeight:500}}>Same-day dispatch closes in</span>
+              <span style={{fontFamily:D,fontWeight:800,fontSize:17,color:AMBER,letterSpacing:'0.04em'}}>{countdown}</span>
+            </div>
+            <div style={{width:1,height:20,background:'rgba(255,255,255,0.1)'}}/>
+            <span style={{fontFamily:B,fontSize:13,color:'rgba(255,255,255,0.5)'}}>📦 Orders placed before 3 PM IST ship today</span>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+}
+
+// ── LIVE ACTIVITY ─────────────────────────────────────────────────────────────
+function LiveActivity(){
+  const [idx,setIdx]=useState(0);
+  useEffect(()=>{const id=setInterval(()=>setIdx(i=>(i+1)%ACTIVITY.length),3500);return()=>clearInterval(id);},[]);
+  const cur=ACTIVITY[idx];
+  return(
+    <div aria-live="polite" aria-atomic="true" style={{background:T.bgAlt,borderTop:`1px solid ${T.border}`,borderBottom:`1px solid ${T.border}`,padding:'14px 32px'}}>
+      <div style={{maxWidth:1360,margin:'0 auto',display:'flex',alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',gap:12}}>
+        <div style={{display:'flex',alignItems:'center',gap:12}}>
+          <span className="pulse" style={{width:8,height:8,borderRadius:'50%',background:'#4ade80',display:'inline-block',flexShrink:0}}/>
+          <span style={{fontFamily:B,fontSize:13,color:T.textMuted,fontWeight:500}}>Recent orders:</span>
+          <div style={{display:'flex',alignItems:'center',gap:8}}>
+            <span style={{fontSize:18}} aria-hidden="true">{cur.flag}</span>
+            <span style={{fontFamily:B,fontSize:13,color:T.text,fontWeight:600}}>{cur.name} from {cur.loc}</span>
+            <span style={{fontFamily:B,fontSize:13,color:T.textMuted}}>ordered</span>
+            <span style={{fontFamily:D,fontSize:14,color:T.accent,fontWeight:700}}>{cur.part}</span>
+            <span style={{fontFamily:B,fontSize:12,color:T.textMuted}}>— {cur.ago}</span>
+          </div>
+        </div>
+        <a href="https://wa.me/919821037990" target="_blank" rel="noopener noreferrer" style={{fontFamily:D,fontSize:13,color:T.accent,textDecoration:'none',fontWeight:700,letterSpacing:'0.05em',border:`1px solid ${T.border}`,padding:'6px 16px',borderRadius:20,transition:'border-color 0.2s'}}
+          onMouseEnter={e=>e.currentTarget.style.borderColor=T.accent}
+          onMouseLeave={e=>e.currentTarget.style.borderColor=T.border}
+        >Order yours →</a>
+      </div>
+    </div>
+  );
+}
+
+// ── STATS ─────────────────────────────────────────────────────────────────────
+function StatCounter({raw,display,label}){
+  const [ref,inView]=useInView({threshold:0.3});
+  const val=useCounter(raw,inView);
+  const shown=inView?(val>=raw?display:`${val.toLocaleString()}+`):display;
+  return(
+    <div ref={ref} style={{textAlign:'center',padding:'12px 0'}}>
+      <div className={inView?'count-in':''} style={{fontFamily:D,fontWeight:900,fontSize:'clamp(36px,5vw,56px)',color:T.statsText,lineHeight:1,letterSpacing:'-0.03em'}}>{shown}</div>
+      <div style={{fontFamily:B,fontSize:11.5,color:'rgba(0,0,0,0.5)',marginTop:5,fontWeight:700,letterSpacing:'0.1em',textTransform:'uppercase'}}>{label}</div>
+    </div>
+  );
+}
+function StatsBar(){
+  return(
+    <section aria-label="Key statistics" style={{background:T.statsBg}}>
+      <div style={{maxWidth:1360,margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(4,1fr)',padding:'0 32px'}}>
+        {STATS.map((s,i)=>(
+          <div key={s.label} style={{borderRight:i<3?'1px solid rgba(0,0,0,0.1)':undefined}}>
+            <StatCounter {...s}/>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// ── HOW IT WORKS ──────────────────────────────────────────────────────────────
+function HowItWorks(){
+  const steps=[
+    {n:'01',title:'Search or WhatsApp',desc:'Type your part number into the search bar, or send us a WhatsApp message with your equipment model and part number.'},
+    {n:'02',title:'Confirm in Under 1 Hour',desc:'Our expert team checks stock, confirms price, and sends you a formal quotation — within 60 minutes on business days.'},
+    {n:'03',title:'Parts Shipped Same Day',desc:'Order before 3 PM IST. We dispatch from our Mumbai warehouse the same day, to anywhere in the world.'},
+  ];
+  return(
+    <section style={{background:T.bg,padding:'96px 32px',borderTop:`1px solid ${T.border}`}}>
+      <div style={{maxWidth:1360,margin:'0 auto'}}>
+        <div style={{textAlign:'center',marginBottom:64}}>
+          <Label center>How to Order</Label>
+          <h2 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(32px,4.5vw,60px)',color:T.text,lineHeight:0.95,letterSpacing:'-0.02em',textTransform:'uppercase'}}>
+            Part in Hand.<br/><span style={{color:AMBER}}>In 3 Steps.</span>
+          </h2>
+        </div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:2}}>
+          {steps.map(s=>(
+            <div key={s.n} className="card-shine" style={{background:T.bgCard,padding:'44px 40px',border:`1px solid ${T.border}`,position:'relative'}}>
+              <div style={{fontFamily:D,fontWeight:900,fontSize:80,color:'rgba(255,184,28,0.06)',lineHeight:1,position:'absolute',top:20,right:28,letterSpacing:'-0.04em',userSelect:'none'}} aria-hidden="true">{s.n}</div>
+              <div style={{width:44,height:44,borderRadius:'50%',background:T.accent,display:'flex',alignItems:'center',justifyContent:'center',marginBottom:24}}>
+                <span style={{fontFamily:D,fontWeight:900,fontSize:18,color:T.accentDark}}>{s.n}</span>
+              </div>
+              <h3 style={{fontFamily:D,fontWeight:800,fontSize:22,color:T.text,marginBottom:12,textTransform:'uppercase',letterSpacing:'0.01em'}}>{s.title}</h3>
+              <p style={{fontFamily:B,fontSize:15,color:T.textMuted,lineHeight:1.7}}>{s.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div style={{textAlign:'center',marginTop:48}}>
+          <a href="https://wa.me/919821037990" target="_blank" rel="noopener noreferrer"
+            style={{display:'inline-flex',alignItems:'center',gap:10,background:'#25D366',color:'#fff',textDecoration:'none',padding:'16px 40px',borderRadius:10,fontFamily:D,fontWeight:800,fontSize:17,letterSpacing:'0.06em',textTransform:'uppercase',boxShadow:'0 8px 32px rgba(37,211,102,0.25)',transition:'transform 0.2s'}}
+            onMouseEnter={e=>e.currentTarget.style.transform='translateY(-2px)'}
+            onMouseLeave={e=>e.currentTarget.style.transform='none'}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Start on WhatsApp Now
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── BRAND TICKER ─────────────────────────────────────────────────────────────
+function BrandTicker(){
+  const logos = [
+    {name:'Volvo',logo:'../assets/logos/volvo.svg'},
+    {name:'Scania',logo:'../assets/logos/scania.svg'},
+    {name:'Komatsu',logo:'../assets/logos/komatsu.svg'},
+    {name:'CAT',logo:'../assets/logos/cat.svg'},
+    {name:'Hitachi',logo:'../assets/logos/hitachi.svg'},
+    {name:'Kobelco',logo:'../assets/logos/kobelco.svg'},
+    {name:'MAHLE',logo:'../assets/logos/mahle.svg'},
+    {name:'Garrett',logo:'../assets/logos/garrett.svg'},
+    {name:'HELLA',logo:'../assets/logos/hella-behr.svg'},
+  ];
+  const all=[...logos,...logos,...logos];
+  return(
+    <section id="brands" aria-label="Brands we supply" style={{background:T.brandsBg,padding:'52px 0',borderTop:`1px solid ${T.border}`,borderBottom:`1px solid ${T.border}`,overflow:'hidden'}}>
+      <p style={{fontFamily:D,fontSize:11,color:T.textMuted,letterSpacing:'0.22em',textTransform:'uppercase',textAlign:'center',fontWeight:700,marginBottom:28}}>OEM & Aftermarket Parts for Leading Brands</p>
+      <div style={{overflow:'hidden'}}>
+        <div className="ticker-inner" style={{display:'flex',gap:88,alignItems:'center',width:'max-content'}}>
+          {all.map((b,i)=>(
+            <div key={i} style={{opacity:0.3,filter:'grayscale(100%) invert(1) brightness(2)',transition:'all 0.3s ease',cursor:'default',minWidth:90,display:'flex',alignItems:'center',justifyContent:'center'}}
+              onMouseEnter={e=>{e.currentTarget.style.opacity='1';e.currentTarget.style.filter='grayscale(0%) invert(1) brightness(2)';}}
+              onMouseLeave={e=>{e.currentTarget.style.opacity='0.3';e.currentTarget.style.filter='grayscale(100%) invert(1) brightness(2)';}}
+            >
+              <img src={b.logo} alt={`${b.name} spare parts supplier`} style={{height:28,width:'auto',maxWidth:110,objectFit:'contain'}}/>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── CATEGORIES ────────────────────────────────────────────────────────────────
+function CatCard({cat}){
+  const [hov,setHov]=useState(false);
+  return(
+    <article className="card-shine" style={{background:hov?'#161616':T.bgCard,padding:'32px',border:`1px solid ${hov?T.accent:T.border}`,cursor:'pointer',transition:'all 0.25s cubic-bezier(0.4,0,0.2,1)',transform:hov?'translateY(-3px)':'none',boxShadow:hov?'0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(255,184,28,0.1)':'none',position:'relative'}}
+      onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
+      <div style={{fontFamily:D,fontWeight:900,fontSize:38,color:T.accent,lineHeight:1,marginBottom:12,letterSpacing:'-0.02em'}}>{cat.count}</div>
+      <h3 style={{fontFamily:D,fontWeight:800,fontSize:18,color:T.text,marginBottom:8,textTransform:'uppercase',letterSpacing:'0.01em'}}>{cat.name}</h3>
+      <p style={{fontFamily:B,fontSize:13.5,color:T.textMuted,lineHeight:1.65}}>{cat.desc}</p>
+      {hov&&<div style={{position:'absolute',bottom:20,right:20,fontFamily:D,fontSize:13,fontWeight:700,color:T.accent,letterSpacing:'0.05em'}}>ENQUIRE →</div>}
+    </article>
+  );
+}
+function ProductCategories(){
+  return(
+    <section id="products" aria-labelledby="products-heading" style={{background:T.bgSection,padding:'96px 32px'}}>
+      <div style={{maxWidth:1360,margin:'0 auto'}}>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:52,flexWrap:'wrap',gap:20}}>
+          <div>
+            <Label>Parts Catalog</Label>
+            <h2 id="products-heading" style={{fontFamily:D,fontWeight:900,fontSize:'clamp(30px,4.5vw,58px)',color:T.text,lineHeight:0.95,letterSpacing:'-0.02em',textTransform:'uppercase'}}>51,000+ Parts<br/><span style={{color:AMBER}}>8 Categories</span></h2>
+          </div>
+          <a href={WA('Hi, I want to request the full parts catalog. Please share details.')} target="_blank" rel="noopener noreferrer" style={{fontFamily:B,fontSize:14,color:T.accent,textDecoration:'none',fontWeight:700,borderBottom:`2px solid ${T.accent}`,paddingBottom:2,flexShrink:0}}>Request full catalog →</a>
+        </div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(300px,1fr))',gap:1}}>
+          {CATS.map(cat=><CatCard key={cat.name} cat={cat}/>)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── EQUIPMENT MODELS ──────────────────────────────────────────────────────────
+function ModelChip({brand,model}){
+  const [hov,setHov]=useState(false);
+  return(
+    <a href={WA(`Hi, I need spare parts for ${brand} ${model}. Please advise on availability and pricing.`)} target="_blank" rel="noopener noreferrer"
+      style={{display:'block',fontFamily:B,fontSize:13.5,fontWeight:600,color:hov?T.accent:T.text,textDecoration:'none',padding:'11px 14px',borderRadius:8,background:T.bgSection,border:`1px solid ${hov?T.accent:T.border}`,transition:'all 0.18s'}}
+      onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}
+    >{brand} {model}</a>
+  );
+}
+function EquipmentModels(){
+  const [active,setActive]=useState(0);
+  const [ms,setMs]=useState('');
+  const cur=ALL_BRANDS[active];
+  const filtered=ms?cur.models.filter(m=>m.toLowerCase().includes(ms.toLowerCase())):cur.models;
+  const total=ALL_BRANDS.reduce((a,b)=>a+b.models.length,0);
+  return(
+    <section id="models" aria-labelledby="models-heading" style={{background:T.bg,padding:'96px 32px',borderTop:`1px solid ${T.border}`}}>
+      <div style={{maxWidth:1360,margin:'0 auto'}}>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:48,flexWrap:'wrap',gap:20}}>
+          <div>
+            <Label>Equipment Models</Label>
+            <h2 id="models-heading" style={{fontFamily:D,fontWeight:900,fontSize:'clamp(30px,4.5vw,58px)',color:T.text,lineHeight:0.95,letterSpacing:'-0.02em',textTransform:'uppercase'}}>Browse by<br/><span style={{color:AMBER}}>Your Model</span></h2>
+          </div>
+          <div style={{textAlign:'right'}}>
+            <div style={{fontFamily:D,fontWeight:900,fontSize:44,color:T.accent,lineHeight:1,letterSpacing:'-0.03em'}}>{total}+</div>
+            <div style={{fontFamily:B,fontSize:12,color:T.textMuted,letterSpacing:'0.08em',textTransform:'uppercase',fontWeight:600}}>Models Indexed</div>
+          </div>
+        </div>
+        <div role="tablist" aria-label="Select brand" style={{display:'flex',gap:6,marginBottom:20,flexWrap:'wrap'}}>
+          {ALL_BRANDS.map((b,i)=>(
+            <button key={b.name} role="tab" aria-selected={active===i} onClick={()=>{setActive(i);setMs('');}}
+              style={{fontFamily:D,fontWeight:800,fontSize:13,letterSpacing:'0.06em',textTransform:'uppercase',padding:'9px 20px',borderRadius:8,cursor:'pointer',border:'none',transition:'all 0.2s',background:active===i?T.accent:T.bgCard,color:active===i?T.accentDark:T.textMuted,boxShadow:active===i?'0 4px 20px rgba(255,184,28,0.25)':'none'}}
+            >{b.name}<span style={{marginLeft:6,fontSize:11,opacity:0.6}}>({b.models.length})</span></button>
+          ))}
+        </div>
+        <div style={{display:'flex',gap:16,marginBottom:16,alignItems:'center',flexWrap:'wrap'}}>
+          <div style={{position:'relative'}}>
+            <svg style={{position:'absolute',left:12,top:'50%',transform:'translateY(-50%)',pointerEvents:'none'}} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.textMuted} strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <label htmlFor="model-filter" style={{position:'absolute',width:1,height:1,overflow:'hidden',clip:'rect(0,0,0,0)'}}>Filter models</label>
+            <input id="model-filter" type="search" value={ms} onChange={e=>setMs(e.target.value)} placeholder={`Filter ${cur.name} models…`}
+              style={{padding:'10px 14px 10px 36px',background:T.bgCard,border:`1px solid ${T.border}`,borderRadius:8,color:T.text,fontFamily:B,fontSize:14,outline:'none',transition:'border-color 0.2s',width:240}}
+              onFocus={e=>e.target.style.borderColor=T.accent}
+              onBlur={e=>e.target.style.borderColor=T.border}/>
+          </div>
+          <span style={{fontFamily:B,fontSize:13,color:T.textMuted}}>{filtered.length} models shown</span>
+        </div>
+        <div style={{background:T.bgCard,border:`1px solid ${T.border}`,borderRadius:14,padding:'28px',display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(175px,1fr))',gap:8}}>
+          {filtered.map(model=><ModelChip key={model} brand={cur.name} model={model}/>)}
+          {filtered.length===0&&<div style={{gridColumn:'1/-1',padding:20,textAlign:'center',fontFamily:B,fontSize:14,color:T.textMuted}}>No models match "{ms}"</div>}
+          <a href={WA(`Hi, I need spare parts for ${cur.name}. Please help me find the right model.`)} target="_blank" rel="noopener noreferrer"
+            style={{display:'flex',alignItems:'center',justifyContent:'center',fontFamily:D,fontWeight:800,fontSize:13,color:T.accent,textDecoration:'none',padding:'13px 16px',borderRadius:9,border:`2px dashed ${T.accent}`,opacity:0.6,transition:'opacity 0.2s',letterSpacing:'0.06em',textTransform:'uppercase'}}
+            onMouseEnter={e=>e.currentTarget.style.opacity='1'}
+            onMouseLeave={e=>e.currentTarget.style.opacity='0.6'}
+          >+ All {cur.name} models</a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── GLOBAL REACH ──────────────────────────────────────────────────────────────
+function GlobalReach(){
+  return(
+    <section aria-labelledby="reach-heading" style={{background:T.bgCard,padding:'96px 32px',borderTop:`1px solid ${T.border}`}}>
+      <div style={{maxWidth:1360,margin:'0 auto'}}>
+        <div style={{textAlign:'center',marginBottom:56}}>
+          <Label center>Global Reach</Label>
+          <h2 id="reach-heading" style={{fontFamily:D,fontWeight:900,fontSize:'clamp(30px,4.5vw,58px)',color:T.text,lineHeight:0.95,letterSpacing:'-0.02em',textTransform:'uppercase',marginBottom:16}}>
+            Shipped to<br/><span style={{color:AMBER}}>50+ Countries</span>
+          </h2>
+          <p style={{fontFamily:B,fontSize:16,color:T.textMuted,maxWidth:480,margin:'0 auto',lineHeight:1.7}}>Full customs documentation, reliable freight partners, and 70 years of international export experience.</p>
+        </div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(130px,1fr))',gap:10,marginBottom:48}}>
+          {COUNTRIES.map(c=>(
+            <div key={c.name} className="card-shine" style={{background:T.bg,border:`1px solid ${T.border}`,borderRadius:10,padding:'14px 12px',textAlign:'center',transition:'all 0.2s',cursor:'default'}}
+              onMouseEnter={e=>{e.currentTarget.style.borderColor=T.accent;e.currentTarget.style.transform='translateY(-2px)';}}
+              onMouseLeave={e=>{e.currentTarget.style.borderColor=T.border;e.currentTarget.style.transform='none';}}
+            >
+              <div style={{fontSize:28,marginBottom:6}} aria-hidden="true">{c.flag}</div>
+              <div style={{fontFamily:B,fontSize:12,fontWeight:600,color:T.text}}>{c.name}</div>
+            </div>
+          ))}
+        </div>
+        <div style={{display:'flex',gap:16,justifyContent:'center',flexWrap:'wrap'}}>
+          {['Full customs documentation','SWIFT & wire transfer accepted','DHL, FedEx & freight forwarders','Multi-language support','Consolidated shipments available'].map(item=>(
+            <div key={item} style={{display:'flex',alignItems:'center',gap:8,background:T.bgSection,border:`1px solid ${T.border}`,padding:'9px 18px',borderRadius:24}}>
+              <span style={{color:AMBER,fontSize:14}} aria-hidden="true">✓</span>
+              <span style={{fontFamily:B,fontSize:13,color:T.textMuted,fontWeight:500}}>{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── TESTIMONIALS ─────────────────────────────────────────────────────────────
+function Testimonials(){
+  return(
+    <section aria-labelledby="testimonials-heading" style={{background:T.bgSection,padding:'96px 32px',borderTop:`1px solid ${T.border}`}}>
+      <div style={{maxWidth:1360,margin:'0 auto'}}>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:56,flexWrap:'wrap',gap:20}}>
+          <div>
+            <Label>Customer Stories</Label>
+            <h2 id="testimonials-heading" style={{fontFamily:D,fontWeight:900,fontSize:'clamp(30px,4.5vw,58px)',color:T.text,lineHeight:0.95,letterSpacing:'-0.02em',textTransform:'uppercase'}}>Trusted<br/><span style={{color:AMBER}}>Worldwide</span></h2>
+          </div>
+          <div style={{textAlign:'right'}}>
+            <div style={{display:'flex',gap:3,marginBottom:4,justifyContent:'flex-end'}} aria-label="5 stars">{[1,2,3,4,5].map(s=><span key={s} style={{color:AMBER,fontSize:22}} aria-hidden="true">★</span>)}</div>
+            <div style={{fontFamily:B,fontSize:13,color:T.textMuted}}>4.8 / 5 from 250+ international buyers</div>
+          </div>
+        </div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(340px,1fr))',gap:16}}>
+          {TESTIMONIALS.map((r,i)=>(
+            <article key={r.name} className="card-shine" style={{background:T.bgCard,border:`1px solid ${T.border}`,borderRadius:16,padding:'36px',position:'relative',overflow:'hidden',transition:'all 0.25s'}}>
+              {i===0&&<div style={{position:'absolute',top:0,left:0,right:0,height:3,background:`linear-gradient(90deg,${AMBER},rgba(255,184,28,0.3))`}}/>}
+              <div style={{fontFamily:D,fontWeight:900,fontSize:72,color:'rgba(255,184,28,0.06)',lineHeight:0.8,position:'absolute',top:16,right:24,userSelect:'none',pointerEvents:'none'}} aria-hidden="true">"</div>
+              <div style={{display:'flex',gap:3,marginBottom:20}} aria-label="5 stars">{[1,2,3,4,5].map(s=><span key={s} style={{color:AMBER,fontSize:14}} aria-hidden="true">★</span>)}</div>
+              <blockquote style={{fontFamily:B,fontSize:15.5,color:T.text,lineHeight:1.8,marginBottom:28,fontStyle:'italic',position:'relative',zIndex:1}}>"{r.text}"</blockquote>
+              <div style={{display:'flex',alignItems:'center',gap:14}}>
+                <div style={{width:44,height:44,borderRadius:'50%',background:T.accent,display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}} aria-hidden="true">
+                  <span style={{fontFamily:D,fontWeight:900,fontSize:18,color:T.accentDark}}>{r.name[0]}</span>
+                </div>
+                <div>
+                  <div style={{fontFamily:D,fontWeight:800,fontSize:15,color:T.text,marginBottom:2}}>{r.name} <span aria-label={r.loc}>{r.flag}</span></div>
+                  <div style={{fontFamily:B,fontSize:12,color:T.textMuted}}>{r.role} · {r.loc}</div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── BLOG ──────────────────────────────────────────────────────────────────────
+function BlogPreview(){
+  return(
+    <section aria-labelledby="blog-heading" style={{background:T.bg,padding:'96px 32px',borderTop:`1px solid ${T.border}`}}>
+      <div style={{maxWidth:1360,margin:'0 auto'}}>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:52,flexWrap:'wrap',gap:20}}>
+          <div>
+            <Label>Technical Knowledge</Label>
+            <h2 id="blog-heading" style={{fontFamily:D,fontWeight:900,fontSize:'clamp(30px,4.5vw,58px)',color:T.text,lineHeight:0.95,letterSpacing:'-0.02em',textTransform:'uppercase'}}>Engineer's<br/><span style={{color:AMBER}}>Guides</span></h2>
+          </div>
+          <a href="../blog/index.html" style={{fontFamily:B,fontSize:14,color:T.accent,textDecoration:'none',fontWeight:700,borderBottom:`2px solid ${T.accent}`,paddingBottom:2}}>All articles →</a>
+        </div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(320px,1fr))',gap:16}}>
+          {BLOG.map(post=>{
+            const [hov,setHov]=useState(false);
+            return(
+              <article key={post.title} className="card-shine" style={{background:T.bgCard,border:`1px solid ${hov?T.accent:T.border}`,borderRadius:14,overflow:'hidden',transition:'all 0.25s',transform:hov?'translateY(-4px)':'none',cursor:'pointer'}}
+                onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
+                <a href={post.href} style={{textDecoration:'none',display:'block'}}>
+                  <div style={{background:T.bgAlt,height:120,display:'flex',alignItems:'center',justifyContent:'center',position:'relative'}}>
+                    <span style={{fontFamily:D,fontWeight:900,fontSize:80,color:T.accent,opacity:0.1,userSelect:'none'}} aria-hidden="true">{post.tag[0]}</span>
+                  </div>
+                  <div style={{padding:'26px'}}>
+                    <div style={{display:'inline-block',background:T.tagBg,color:T.tagText,fontSize:10,fontWeight:700,letterSpacing:'0.14em',textTransform:'uppercase',padding:'4px 10px',borderRadius:4,marginBottom:12,fontFamily:D}}>{post.tag}</div>
+                    <h3 style={{fontFamily:D,fontWeight:800,fontSize:19,color:T.text,lineHeight:1.3,marginBottom:12,textTransform:'uppercase',letterSpacing:'0.01em'}}>{post.title}</h3>
+                    <div style={{fontFamily:B,fontSize:12,color:T.textMuted}}>{post.date} · {post.read} read</div>
+                  </div>
+                </a>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── WHATSAPP CTA ──────────────────────────────────────────────────────────────
+function WhatsAppCTA(){
+  return(
+    <section style={{background:'#064E3B',padding:'100px 32px',textAlign:'center',position:'relative',overflow:'hidden'}}>
+      <div style={{position:'absolute',inset:0,backgroundImage:'linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px)',backgroundSize:'60px 60px',pointerEvents:'none'}} aria-hidden="true"/>
+      <div style={{position:'relative',zIndex:1,maxWidth:640,margin:'0 auto'}}>
+        <div style={{fontFamily:D,fontWeight:900,fontSize:'clamp(36px,6vw,72px)',color:'#fff',marginBottom:16,lineHeight:0.9,textTransform:'uppercase',letterSpacing:'-0.02em'}}>
+          Need a Part<br/>Right Now?<br/><span style={{color:'#4ade80'}}>We Reply Fast.</span>
+        </div>
+        <p style={{fontFamily:B,fontSize:17,color:'rgba(255,255,255,0.6)',marginBottom:44,lineHeight:1.7}}>
+          Send your part number or equipment model on WhatsApp. Price & availability confirmed in under 60 minutes.
+        </p>
+        <a href="https://wa.me/919821037990" target="_blank" rel="noopener noreferrer"
+          style={{display:'inline-flex',alignItems:'center',gap:14,background:'#25D366',color:'#fff',textDecoration:'none',padding:'20px 48px',borderRadius:12,fontFamily:D,fontWeight:900,fontSize:20,letterSpacing:'0.06em',textTransform:'uppercase',boxShadow:'0 16px 48px rgba(0,0,0,0.3)',transition:'all 0.25s'}}
+          onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-3px)';e.currentTarget.style.boxShadow='0 24px 64px rgba(0,0,0,0.4)';}}
+          onMouseLeave={e=>{e.currentTarget.style.transform='none';e.currentTarget.style.boxShadow='0 16px 48px rgba(0,0,0,0.3)';}}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          +91 98210 37990
+        </a>
+        <p style={{fontFamily:B,fontSize:13,color:'rgba(255,255,255,0.3)',marginTop:20}}>Mon–Sat, 9 AM – 6 PM IST · Multilingual team · SWIFT & UPI accepted</p>
+      </div>
+    </section>
+  );
+}
+
+// ── CONTACT ───────────────────────────────────────────────────────────────────
+function Contact(){
+  const [form,setForm]=useState({name:'',phone:'',email:'',brand:'',part:''});
+  const u=k=>e=>setForm({...form,[k]:e.target.value});
+  const iS={width:'100%',padding:'13px 16px',background:T.inputBg,border:`1px solid ${T.inputBorder}`,borderRadius:9,color:T.text,fontFamily:B,fontSize:14,outline:'none',transition:'border-color 0.2s'};
+  const lS={display:'block',fontFamily:D,fontSize:11,fontWeight:700,letterSpacing:'0.14em',textTransform:'uppercase',color:T.textMuted,marginBottom:7};
+  return(
+    <section id="contact" aria-labelledby="contact-heading" style={{background:T.bgSection,padding:'96px 32px',borderTop:`1px solid ${T.border}`}}>
+      <div style={{maxWidth:1360,margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 1fr',gap:80,alignItems:'start'}}>
+        <div>
+          <Label>Get in Touch</Label>
+          <h2 id="contact-heading" style={{fontFamily:D,fontWeight:900,fontSize:'clamp(30px,4vw,56px)',color:T.text,lineHeight:0.95,letterSpacing:'-0.02em',textTransform:'uppercase',marginBottom:24}}>Request a<br/><span style={{color:AMBER}}>Quote Today</span></h2>
+          <p style={{fontFamily:B,fontSize:16,color:T.textMuted,lineHeight:1.75,marginBottom:44}}>Share your equipment model and part number. We respond within 2 hours. WhatsApp is even faster.</p>
+          {[
+            {icon:'📍',label:'Address',val:'Vijay Chambers, Grant Road East, Mumbai 400004, India'},
+            {icon:'📞',label:'Phone',val:'+91 98210 37990'},
+            {icon:'✉️',label:'Email',val:'parts@partstrading.com'},
+            {icon:'🕐',label:'Hours',val:'Mon–Sat, 9 AM – 6 PM IST'},
+          ].map(item=>(
+            <div key={item.label} style={{display:'flex',gap:16,marginBottom:24}}>
+              <span style={{fontSize:22,flexShrink:0,marginTop:1}} aria-hidden="true">{item.icon}</span>
+              <div>
+                <div style={{fontFamily:D,fontSize:11,fontWeight:700,letterSpacing:'0.14em',textTransform:'uppercase',color:T.textMuted,marginBottom:3}}>{item.label}</div>
+                <div style={{fontFamily:B,fontSize:15,color:T.text,lineHeight:1.5}}>{item.val}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{background:T.bgCard,borderRadius:20,padding:'44px',border:`1px solid ${T.border}`,boxShadow:'0 24px 80px rgba(0,0,0,0.4)'}}>
+          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:14,marginBottom:14}}>
+            <div><label htmlFor="f-name" style={lS}>Your Name</label><input id="f-name" type="text" value={form.name} onChange={u('name')} placeholder="Rajesh Mehta" style={iS} onFocus={e=>e.target.style.borderColor=AMBER} onBlur={e=>e.target.style.borderColor=T.inputBorder}/></div>
+            <div><label htmlFor="f-phone" style={lS}>Phone / WhatsApp</label><input id="f-phone" type="tel" value={form.phone} onChange={u('phone')} placeholder="+91 …" style={iS} onFocus={e=>e.target.style.borderColor=AMBER} onBlur={e=>e.target.style.borderColor=T.inputBorder}/></div>
+          </div>
+          <div style={{marginBottom:14}}><label htmlFor="f-email" style={lS}>Email</label><input id="f-email" type="email" value={form.email} onChange={u('email')} placeholder="you@company.com" style={iS} onFocus={e=>e.target.style.borderColor=AMBER} onBlur={e=>e.target.style.borderColor=T.inputBorder}/></div>
+          <div style={{marginBottom:14}}><label htmlFor="f-brand" style={lS}>Equipment Brand / Model</label><input id="f-brand" type="text" value={form.brand} onChange={u('brand')} placeholder="e.g. Volvo EC300, Scania R440, Komatsu PC200" style={iS} onFocus={e=>e.target.style.borderColor=AMBER} onBlur={e=>e.target.style.borderColor=T.inputBorder}/></div>
+          <div style={{marginBottom:28}}><label htmlFor="f-part" style={lS}>Part Number / Description</label><textarea id="f-part" value={form.part} onChange={u('part')} rows={4} placeholder="Enter part number or describe what you need…" style={{...iS,resize:'vertical'}} onFocus={e=>e.target.style.borderColor=AMBER} onBlur={e=>e.target.style.borderColor=T.inputBorder}/></div>
+          <button onClick={()=>window.open(WA(`Hi, my name is ${form.name||'Customer'}. I need: ${form.part||'parts'} for ${form.brand||'my equipment'}. Phone: ${form.phone||'N/A'}. Email: ${form.email||'N/A'}.`),'_blank')}
+            style={{width:'100%',background:T.accent,color:T.accentDark,padding:'16px 0',border:'none',borderRadius:10,fontFamily:D,fontWeight:900,fontSize:17,cursor:'pointer',letterSpacing:'0.07em',textTransform:'uppercase',transition:'all 0.2s',boxShadow:'0 8px 32px rgba(255,184,28,0.2)'}}
+            onMouseEnter={e=>{e.currentTarget.style.opacity='0.88';e.currentTarget.style.transform='translateY(-1px)';}}
+            onMouseLeave={e=>{e.currentTarget.style.opacity='1';e.currentTarget.style.transform='none';}}
+          >Send Enquiry on WhatsApp →</button>
+          <p style={{fontFamily:B,fontSize:11.5,color:T.textMuted,textAlign:'center',marginTop:14}}>You'll be redirected to WhatsApp with your details pre-filled</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── FOOTER ────────────────────────────────────────────────────────────────────
+function Footer(){
+  return(
+    <footer style={{background:T.footerBg,padding:'64px 32px 32px',borderTop:'1px solid rgba(255,255,255,0.04)'}}>
+      <div style={{maxWidth:1360,margin:'0 auto'}}>
+        <div style={{display:'grid',gridTemplateColumns:'2fr 1fr 1fr 1fr',gap:48,marginBottom:56}}>
+          <div>
+            <img src="../assets/images/ptc-logo.png" alt="Parts Trading Company" style={{height:44,marginBottom:20}}/>
+            <p style={{fontFamily:B,fontSize:14,color:'#444',lineHeight:1.8,maxWidth:280}}>India's trusted OEM & aftermarket heavy equipment spare parts supplier since 1956. Serving 50+ countries.</p>
+            <div style={{display:'flex',gap:12,marginTop:20}}>
+              <a href="https://wa.me/919821037990" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp PTC" style={{width:36,height:36,borderRadius:'50%',background:'#25D366',display:'flex',alignItems:'center',justifyContent:'center',textDecoration:'none'}}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </a>
+            </div>
+          </div>
+          {[
+            {title:'Top Brands',links:[['Volvo Parts','../volvo/engine-parts/'],['Scania Parts','../scania/engine-parts/'],['Komatsu Parts','../komatsu/engine-parts/'],['CAT Parts','../cat/spare-parts/'],['Hitachi Parts','../hitachi/spare-parts/'],['Kobelco Parts','../kobelco/engine-parts/']]},
+            {title:'Company',links:[['About Us','../about.html'],['Blog','../blog/index.html'],['Contact','#contact'],['Get a Quote','../get-a-quote.html'],['Deliveries','../deliveries.html']]},
+            {title:'Export Markets',links:[['Russia','#contact'],['UAE','#contact'],['Indonesia','#contact'],['South Africa','#contact'],['Nigeria','#contact'],['Kenya','#contact']]},
+          ].map(col=>(
+            <div key={col.title}>
+              <div style={{fontFamily:D,fontSize:11,fontWeight:700,letterSpacing:'0.18em',textTransform:'uppercase',color:AMBER,marginBottom:18}}>{col.title}</div>
+              {col.links.map(([label,href])=>(
+                <a key={label} href={href} style={{display:'block',fontFamily:B,fontSize:14,color:'#444',marginBottom:10,textDecoration:'none',transition:'color 0.2s'}}
+                  onMouseEnter={e=>e.target.style.color='#ddd'} onMouseLeave={e=>e.target.style.color='#444'}>{label}</a>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div style={{borderTop:'1px solid rgba(255,255,255,0.04)',paddingTop:24,display:'flex',justifyContent:'space-between',flexWrap:'wrap',gap:12}}>
+          <div style={{fontFamily:B,fontSize:12,color:'#2a2a2a'}}>© 2025 Parts Trading Company · Mumbai, India · Est. 1956</div>
+          <div style={{fontFamily:B,fontSize:12,color:'#2a2a2a',fontStyle:'italic'}}>Not affiliated with OEM manufacturers. Aftermarket & genuine parts supplied.</div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+// ── MOBILE STICKY BAR ─────────────────────────────────────────────────────────
+function MobileStickyBar(){
+  return(
+    <div style={{position:'fixed',bottom:0,left:0,right:0,zIndex:998,background:'rgba(5,5,5,0.97)',backdropFilter:'blur(20px)',borderTop:'1px solid rgba(255,255,255,0.08)',padding:'12px 16px',display:'none',gap:10}} className="mobile-sticky">
+      <a href="https://wa.me/919821037990" target="_blank" rel="noopener noreferrer"
+        style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',gap:8,background:'#25D366',color:'#fff',textDecoration:'none',padding:'13px',borderRadius:10,fontFamily:D,fontWeight:800,fontSize:15,letterSpacing:'0.05em'}}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Now
+      </a>
+      <a href="#contact" style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',background:AMBER,color:'#050505',textDecoration:'none',padding:'13px',borderRadius:10,fontFamily:D,fontWeight:800,fontSize:15,letterSpacing:'0.05em'}}>Get Quote</a>
+    </div>
+  );
+}
+
+// ── APP ────────────────────────────────────────────────────────────────────────
+function App(){
+  const [scrolled,setScrolled]=useState(false);
+  useEffect(()=>{
+    const fn=()=>setScrolled(window.scrollY>60);
+    window.addEventListener('scroll',fn,{passive:true});
+    return()=>window.removeEventListener('scroll',fn);
+  },[]);
+  return(
+    <div style={{background:T.bg,minHeight:'100vh'}}>
+      <AnnouncementBar/>
+      <Nav scrolled={scrolled}/>
+      <main>
+        <Hero/>
+        <LiveActivity/>
+        <StatsBar/>
+        <HowItWorks/>
+        <BrandTicker/>
+        <ProductCategories/>
+        <EquipmentModels/>
+        <GlobalReach/>
+        <Testimonials/>
+        <BlogPreview/>
+        <WhatsAppCTA/>
+        <Contact/>
+      </main>
+      <Footer/>
+      <MobileStickyBar/>
+      {/* Floating WhatsApp bubble */}
+      <a href="https://wa.me/919821037990" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"
+        style={{position:'fixed',bottom:88,right:24,width:54,height:54,borderRadius:'50%',background:'#25D366',display:'flex',alignItems:'center',justifyContent:'center',boxShadow:'0 8px 28px rgba(37,211,102,0.4)',zIndex:997,textDecoration:'none',transition:'transform 0.2s'}}
+        onMouseEnter={e=>e.currentTarget.style.transform='scale(1.1)'}
+        onMouseLeave={e=>e.currentTarget.style.transform='scale(1)'}
+      >
+        <svg width="25" height="25" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>
