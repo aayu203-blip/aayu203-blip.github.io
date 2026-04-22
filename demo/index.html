@@ -8,6 +8,24 @@
 <meta name="keywords" content="heavy equipment spare parts India, Volvo spare parts, Scania parts Mumbai, Komatsu parts India, CAT spare parts, Hitachi excavator parts, OEM aftermarket parts supplier">
 <meta property="og:title" content="PTC — Heavy Equipment Parts. Anywhere. Fast.">
 <meta property="og:description" content="51,000+ OEM & aftermarket parts for Volvo, Scania, Komatsu, CAT & more. Same-day dispatch from Mumbai.">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Do you supply OEM or aftermarket parts?","acceptedAnswer":{"@type":"Answer","text":"We supply both. OEM parts are genuine manufacturer-sourced components. Our aftermarket parts meet or exceed OEM specifications and are sourced from trusted manufacturers including MAHLE, Garrett, HELLA, and others. Every part is clearly labelled so you always know what you're getting."}},
+    {"@type":"Question","name":"How long does international shipping take?","acceptedAnswer":{"@type":"Answer","text":"Most international orders ship within 24–48 hours of payment confirmation. Transit times depend on destination: UAE and Gulf countries 3–5 days, Africa 5–10 days, Southeast Asia 4–7 days, Russia and Central Asia 7–14 days. We work with DHL, FedEx, and specialist freight forwarders."}},
+    {"@type":"Question","name":"What payment methods do you accept for international orders?","acceptedAnswer":{"@type":"Answer","text":"We accept SWIFT international wire transfer, UPI (for Indian buyers), and in select cases, PayPal or credit card. A proforma invoice is issued before payment. For established clients, we also offer credit terms."}},
+    {"@type":"Question","name":"Can I get a formal quotation or proforma invoice?","acceptedAnswer":{"@type":"Answer","text":"Yes — send us your part numbers via WhatsApp or the contact form. We respond with a formal quotation within 60 minutes on business days (Mon–Sat, 9 AM–6 PM IST), including part availability, price, and estimated shipping cost to your country."}},
+    {"@type":"Question","name":"Is there a minimum order value?","acceptedAnswer":{"@type":"Answer","text":"There is no minimum order for domestic Indian buyers. For international orders, we recommend a minimum of USD 200 to keep shipping costs proportionate, but we evaluate every enquiry individually."}},
+    {"@type":"Question","name":"How do I find my correct part number?","acceptedAnswer":{"@type":"Answer","text":"Check your equipment's parts manual, the part itself (most carry a stamped number), or your machine's service record. If you can't locate it, send us your equipment model and serial number via WhatsApp and our team will identify the correct part."}},
+    {"@type":"Question","name":"What if the part doesn't fit or is incorrect?","acceptedAnswer":{"@type":"Answer","text":"We stand behind every order. If a part is incorrect due to an error on our side, we replace or refund it. We strongly recommend confirming part numbers before ordering, which is why we always provide a quotation with part details before taking payment."}},
+    {"@type":"Question","name":"Do you supply to countries with strict import regulations?","acceptedAnswer":{"@type":"Answer","text":"Yes. We have 70 years of export experience and provide full customs documentation including commercial invoices, packing lists, certificates of origin, and country-specific compliance paperwork. We regularly ship to Russia, Nigeria, Bangladesh, Myanmar, and other tightly regulated markets."}},
+    {"@type":"Question","name":"Can I visit your warehouse in Mumbai?","acceptedAnswer":{"@type":"Answer","text":"Yes. We are located at Vijay Chambers, Grant Road East, Mumbai 400004. Visits are welcome Mon–Sat, 9 AM–6 PM IST. We recommend calling ahead so we can have your enquiry ready."}},
+    {"@type":"Question","name":"How do I place a repeat order?","acceptedAnswer":{"@type":"Answer","text":"The easiest way is via WhatsApp — send us your previous order reference or part numbers and we'll turn it around immediately. Many of our international clients maintain a standing parts list with us for regular dispatch."}}
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -892,6 +910,274 @@ function MobileStickyBar(){
   );
 }
 
+// ── INDUSTRIES ────────────────────────────────────────────────────────────────
+const INDUSTRIES = [
+  {
+    id:'mining',
+    name:'Mining &\nExtraction',
+    img:'../assets/images/industries/mining.webp',
+    gradient:'linear-gradient(135deg,#1a0f00 0%,#0d0800 100%)',
+    accent:'#FFB81C',
+    desc:'Open-pit, underground, and coal — when a machine stops, production stops. We maintain deep stock of critical drivetrain, hydraulic, and engine components for the brands that run mines.',
+    parts:['Final drives & track assemblies','Hydraulic pump & motor rebuilds','Engine liner & piston kits','Dump truck brake & suspension'],
+    brands:'Komatsu · CAT · Hitachi · BEML · Volvo',
+  },
+  {
+    id:'construction',
+    name:'Construction\n& Infrastructure',
+    img:'../assets/images/industries/construction.webp',
+    gradient:'linear-gradient(135deg,#001a0d 0%,#000d06 100%)',
+    accent:'#FFB81C',
+    desc:'Site timelines don\'t flex. From excavator slew rings to loader transmission packs, we supply the components that keep infrastructure projects on schedule across South Asia and Africa.',
+    parts:['Excavator boom & arm cylinder seals','Wheel loader transmission kits','Compactor drum & vibratory parts','Crane slew ring & swing motor'],
+    brands:'Volvo · CAT · Komatsu · LiuGong · Hyundai',
+  },
+  {
+    id:'road',
+    name:'Road Building\n& Quarrying',
+    img:'../assets/images/industries/road.webp',
+    gradient:'linear-gradient(135deg,#0d0d1a 0%,#06060d 100%)',
+    accent:'#FFB81C',
+    desc:'Motor graders, pavers, and compactors take punishing daily loads. We carry the specialist parts for road-building equipment that most suppliers don\'t stock — including circle drives, screed components, and roller bearings.',
+    parts:['Motor grader circle & blade parts','Paver screed & auger components','Compactor roller drum bearings','Rock drill & breaker tooling'],
+    brands:'CAT · Volvo · BEML · Komatsu · Sandvik',
+  },
+  {
+    id:'haulage',
+    name:'Haulage &\nFleet Operations',
+    img:'../assets/images/industries/haulage.webp',
+    gradient:'linear-gradient(135deg,#1a1000 0%,#0d0800 100%)',
+    accent:'#FFB81C',
+    desc:'Long-haul fleet managers across India, Russia, and East Africa rely on PTC for engine, drivetrain, and braking parts. OEM and aftermarket available. Bulk orders dispatched same day.',
+    parts:['Engine overhaul & gasket kits','Clutch & gearbox assemblies','Fuel injection & turbocharger','Air brake & suspension parts'],
+    brands:'Scania · Volvo · Cummins · HELLA · Garrett',
+  },
+];
+
+function IndustryCard({ind, index}){
+  const [hov,setHov]=useState(false);
+  const [ref,inView]=useInView({threshold:0.15});
+  const isEven = index % 2 === 0;
+  return(
+    <article ref={ref} onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}
+      style={{
+        position:'relative',overflow:'hidden',
+        background:ind.gradient,
+        backgroundImage:`url(${ind.img}), ${ind.gradient}`,
+        backgroundSize:'cover',backgroundPosition:'center',
+        opacity:inView?1:0,transform:inView?'none':`translateY(40px)`,
+        transition:`opacity 0.7s ${index*0.12}s ease, transform 0.7s ${index*0.12}s ease`,
+        minHeight:540,display:'flex',flexDirection:'column',justifyContent:'flex-end',cursor:'default',
+      }}>
+      {/* Image overlay */}
+      <div style={{position:'absolute',inset:0,background:hov?'rgba(0,0,0,0.72)':'rgba(0,0,0,0.82)',transition:'background 0.4s ease'}}/>
+      {/* Amber accent line top */}
+      <div style={{position:'absolute',top:0,left:0,right:0,height:3,background:AMBER,transform:hov?'scaleX(1)':'scaleX(0)',transformOrigin:'left',transition:'transform 0.4s ease'}}/>
+      {/* Content */}
+      <div style={{position:'relative',zIndex:1,padding:'40px 36px'}}>
+        <div style={{fontFamily:D,fontWeight:900,fontSize:'clamp(32px,3.5vw,52px)',color:'#fff',lineHeight:0.95,letterSpacing:'-0.02em',textTransform:'uppercase',marginBottom:20,whiteSpace:'pre-line'}}>{ind.name}</div>
+        <p style={{fontFamily:B,fontSize:14,color:'rgba(255,255,255,0.55)',lineHeight:1.75,marginBottom:24,maxWidth:320,transition:'opacity 0.3s',opacity:hov?1:0.7}}>{ind.desc}</p>
+        <ul style={{listStyle:'none',marginBottom:24}}>
+          {ind.parts.map(p=>(
+            <li key={p} style={{display:'flex',alignItems:'center',gap:10,fontFamily:B,fontSize:13,color:'rgba(255,255,255,0.65)',marginBottom:8,fontWeight:500}}>
+              <span style={{width:4,height:4,borderRadius:'50%',background:AMBER,flexShrink:0,display:'inline-block'}}/>
+              {p}
+            </li>
+          ))}
+        </ul>
+        <div style={{fontFamily:D,fontSize:11,fontWeight:700,letterSpacing:'0.16em',textTransform:'uppercase',color:AMBER,marginBottom:20,opacity:0.7}}>{ind.brands}</div>
+        <a href={WA(`Hi, I need parts for ${ind.name.replace('\n',' ')} equipment. Can you help?`)} target="_blank" rel="noopener noreferrer"
+          style={{display:'inline-flex',alignItems:'center',gap:8,background:hov?AMBER:'transparent',color:hov?'#050505':'rgba(255,255,255,0.8)',border:`1px solid ${hov?AMBER:'rgba(255,255,255,0.25)'}`,textDecoration:'none',padding:'11px 22px',borderRadius:8,fontFamily:D,fontWeight:800,fontSize:14,letterSpacing:'0.06em',textTransform:'uppercase',transition:'all 0.3s ease'}}>
+          Enquire Now →
+        </a>
+      </div>
+    </article>
+  );
+}
+
+function Industries(){
+  return(
+    <section id="industries" aria-labelledby="industries-heading" style={{background:T.bg,borderTop:`1px solid ${T.border}`}}>
+      <div style={{maxWidth:1360,margin:'0 auto',padding:'96px 32px 52px'}}>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:52,flexWrap:'wrap',gap:20}}>
+          <div>
+            <Label>Industries We Serve</Label>
+            <h2 id="industries-heading" style={{fontFamily:D,fontWeight:900,fontSize:'clamp(30px,4.5vw,58px)',color:T.text,lineHeight:0.95,letterSpacing:'-0.02em',textTransform:'uppercase'}}>
+              Built for the<br/><span style={{color:AMBER}}>World's Hardest Jobs</span>
+            </h2>
+          </div>
+          <p style={{fontFamily:B,fontSize:15,color:T.textMuted,maxWidth:400,lineHeight:1.7}}>From open-pit mines in Jharkhand to road projects across East Africa — if heavy equipment runs there, we supply the parts.</p>
+        </div>
+      </div>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(320px,1fr))'}}>
+        {INDUSTRIES.map((ind,i)=><IndustryCard key={ind.id} ind={ind} index={i}/>)}
+      </div>
+    </section>
+  );
+}
+
+// ── CASE STUDIES ──────────────────────────────────────────────────────────────
+const CASE_STUDIES = [
+  {
+    tag:'Mining · Jharkhand, India',
+    flag:'🇮🇳',
+    headline:'47 parts. 3 machines. Back online in 72 hours.',
+    equipment:'Komatsu PC800 · HD785 dump trucks',
+    challenge:'A coal mining operator faced simultaneous hydraulic failures across three excavators during peak production season. Standard lead time from OEM channels was 3–4 weeks.',
+    result:'PTC supplied 47 line items — hydraulic pumps, cylinder seal kits, and swing motor components — from in-stock inventory. All three machines resumed operations within 72 hours of the initial call.',
+    metric:'72 hrs',
+    metricLabel:'Total turnaround',
+  },
+  {
+    tag:'Fleet Operations · Dubai, UAE',
+    flag:'🇦🇪',
+    headline:'A standing supply agreement that outlasted three procurement managers.',
+    equipment:'Scania R580 · Volvo FH16 · CAT 777G',
+    challenge:'A regional logistics group managing 200+ heavy vehicles needed a single reliable source for Scania, Volvo, and CAT parts across three countries — without the delays and quality inconsistencies of spot buying.',
+    result:'PTC established a monthly consolidated shipment schedule. Parts arrive pre-sorted by fleet and vehicle. The client has not used a secondary supplier in over five years.',
+    metric:'5+ years',
+    metricLabel:'Uninterrupted supply',
+  },
+  {
+    tag:'Road Construction · Nairobi, Kenya',
+    flag:'🇰🇪',
+    headline:'Motor grader circle drive. Sourced and shipped in 4 days.',
+    equipment:'CAT 140M Motor Grader',
+    challenge:'A road infrastructure contractor had a CAT 140M grader down mid-project with a failed circle drive assembly — a specialist component most suppliers list as 6–8 weeks lead time.',
+    result:'PTC confirmed availability within 2 hours, issued a proforma invoice the same afternoon, and dispatched via DHL Express to Nairobi. Part cleared customs and was fitted on day four.',
+    metric:'4 days',
+    metricLabel:'Nairobi, door to door',
+  },
+];
+
+function CaseStudyCard({cs, index}){
+  const [ref,inView]=useInView({threshold:0.2});
+  return(
+    <article ref={ref} style={{
+      background:T.bgCard,border:`1px solid ${T.border}`,borderRadius:2,
+      padding:'44px 40px',position:'relative',overflow:'hidden',
+      opacity:inView?1:0,transform:inView?'none':'translateY(32px)',
+      transition:`opacity 0.7s ${index*0.15}s ease, transform 0.7s ${index*0.15}s ease`,
+    }}>
+      {/* Top amber line */}
+      <div style={{position:'absolute',top:0,left:0,right:0,height:3,background:`linear-gradient(90deg,${AMBER},rgba(255,184,28,0.2))`}}/>
+      {/* Tag */}
+      <div style={{display:'flex',alignItems:'center',gap:8,marginBottom:28}}>
+        <span style={{fontSize:16}} aria-hidden="true">{cs.flag}</span>
+        <span style={{fontFamily:D,fontSize:11,fontWeight:700,letterSpacing:'0.18em',textTransform:'uppercase',color:T.textMuted}}>{cs.tag}</span>
+      </div>
+      {/* Metric — the hero number */}
+      <div style={{marginBottom:24}}>
+        <div style={{fontFamily:D,fontWeight:900,fontSize:'clamp(44px,5vw,64px)',color:AMBER,lineHeight:1,letterSpacing:'-0.03em'}}>{cs.metric}</div>
+        <div style={{fontFamily:B,fontSize:12,color:T.textMuted,fontWeight:600,letterSpacing:'0.1em',textTransform:'uppercase',marginTop:4}}>{cs.metricLabel}</div>
+      </div>
+      {/* Headline */}
+      <h3 style={{fontFamily:D,fontWeight:800,fontSize:'clamp(18px,2vw,24px)',color:T.text,lineHeight:1.2,marginBottom:16,textTransform:'uppercase',letterSpacing:'0.01em'}}>{cs.headline}</h3>
+      {/* Equipment */}
+      <div style={{fontFamily:D,fontSize:11,fontWeight:700,letterSpacing:'0.14em',textTransform:'uppercase',color:AMBER,marginBottom:20,opacity:0.6}}>{cs.equipment}</div>
+      {/* Challenge */}
+      <div style={{marginBottom:16}}>
+        <div style={{fontFamily:D,fontSize:10,fontWeight:700,letterSpacing:'0.18em',textTransform:'uppercase',color:T.textMuted,marginBottom:6}}>The Situation</div>
+        <p style={{fontFamily:B,fontSize:14,color:T.textMuted,lineHeight:1.75}}>{cs.challenge}</p>
+      </div>
+      {/* Result */}
+      <div style={{borderLeft:`2px solid ${AMBER}`,paddingLeft:16}}>
+        <div style={{fontFamily:D,fontSize:10,fontWeight:700,letterSpacing:'0.18em',textTransform:'uppercase',color:AMBER,marginBottom:6}}>What Happened</div>
+        <p style={{fontFamily:B,fontSize:14,color:T.text,lineHeight:1.75}}>{cs.result}</p>
+      </div>
+    </article>
+  );
+}
+
+function CaseStudies(){
+  return(
+    <section aria-labelledby="cases-heading" style={{background:T.bgSection,padding:'96px 32px',borderTop:`1px solid ${T.border}`}}>
+      <div style={{maxWidth:1360,margin:'0 auto'}}>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:56,flexWrap:'wrap',gap:20}}>
+          <div>
+            <Label>Field Proven</Label>
+            <h2 id="cases-heading" style={{fontFamily:D,fontWeight:900,fontSize:'clamp(30px,4.5vw,58px)',color:T.text,lineHeight:0.95,letterSpacing:'-0.02em',textTransform:'uppercase'}}>
+              When Machines<br/><span style={{color:AMBER}}>Can't Wait</span>
+            </h2>
+          </div>
+          <p style={{fontFamily:B,fontSize:15,color:T.textMuted,maxWidth:380,lineHeight:1.7}}>Real situations. Real timelines. No embellishment — just what happens when you call PTC with an urgent requirement.</p>
+        </div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(340px,1fr))',gap:2}}>
+          {CASE_STUDIES.map((cs,i)=><CaseStudyCard key={i} cs={cs} index={i}/>)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── FAQ ───────────────────────────────────────────────────────────────────────
+const FAQS = [
+  {q:'Do you supply OEM or aftermarket parts?',a:'Both. OEM parts are genuine manufacturer-sourced components. Our aftermarket parts meet or exceed OEM specifications and come from trusted manufacturers — MAHLE, Garrett, HELLA, Dayco, and others. Every part is clearly labelled. You always know exactly what you\'re getting.'},
+  {q:'How long does international shipping take?',a:'Most orders ship within 24–48 hours of payment confirmation. Transit times: Gulf countries 3–5 days · Africa 5–10 days · Southeast Asia 4–7 days · Russia & Central Asia 7–14 days. We work with DHL, FedEx, and specialist freight forwarders for heavy consignments.'},
+  {q:'What payment methods do you accept?',a:'SWIFT international wire transfer, UPI (India), and in select cases PayPal or credit card. A proforma invoice is issued before any payment. For established clients with a track record, we offer credit terms.'},
+  {q:'Can I get a formal quotation or proforma invoice?',a:'Yes — send part numbers via WhatsApp or the contact form. We respond with a formal quotation within 60 minutes on business days (Mon–Sat, 9 AM–6 PM IST), including availability, price, and estimated shipping cost to your country.'},
+  {q:'Is there a minimum order value?',a:'No minimum for Indian buyers. For international orders, we recommend a minimum of USD 200 to keep shipping costs proportionate — but we evaluate every enquiry individually. Many of our long-term international clients started with a single small order.'},
+  {q:'How do I find my correct part number?',a:'Check your equipment\'s parts manual, the component itself (most carry a stamped number), or your machine\'s service record. If you can\'t locate it, send your equipment model and serial number on WhatsApp — our team will identify the correct part.'},
+  {q:'What if the part is incorrect or doesn\'t fit?',a:'We stand behind every order. If a part is incorrect due to an error on our side, we replace or refund it. This is why we always confirm part details with you before taking payment — it protects both sides.'},
+  {q:'Do you handle customs documentation for exports?',a:'Yes. We have 70 years of export experience. We provide commercial invoices, packing lists, certificates of origin, and country-specific compliance paperwork for every international shipment. We regularly supply to Russia, Nigeria, Bangladesh, Myanmar, and other tightly regulated markets.'},
+  {q:'Can I visit your warehouse in Mumbai?',a:'Yes. We\'re at Vijay Chambers, Grant Road East, Mumbai 400004. Open Mon–Sat, 9 AM–6 PM IST. We recommend calling ahead so your enquiry is ready when you arrive.'},
+  {q:'How do repeat orders work?',a:'The easiest way is WhatsApp — send your previous order reference or part numbers and we\'ll turn it around immediately. Many international clients maintain a standing parts list with us for scheduled monthly dispatch.'},
+];
+
+function FAQItem({faq,index}){
+  const [open,setOpen]=useState(false);
+  return(
+    <div style={{borderBottom:`1px solid ${T.border}`,overflow:'hidden'}}>
+      <button
+        onClick={()=>setOpen(o=>!o)}
+        aria-expanded={open}
+        style={{width:'100%',display:'flex',justifyContent:'space-between',alignItems:'center',padding:'24px 0',background:'transparent',border:'none',cursor:'pointer',gap:24,textAlign:'left'}}
+      >
+        <span style={{fontFamily:D,fontWeight:700,fontSize:'clamp(16px,2vw,20px)',color:open?AMBER:T.text,letterSpacing:'0.01em',lineHeight:1.3,transition:'color 0.25s',textTransform:'uppercase'}}>{faq.q}</span>
+        <span style={{flexShrink:0,width:28,height:28,borderRadius:'50%',border:`1px solid ${open?AMBER:T.border}`,display:'flex',alignItems:'center',justifyContent:'center',transition:'all 0.25s',background:open?AMBER:'transparent'}}>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 4.5L6 8.5L10 4.5" stroke={open?'#050505':'rgba(255,255,255,0.4)'} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
+              style={{transform:open?'rotate(180deg)':'none',transformOrigin:'center',transition:'transform 0.25s'}}/>
+          </svg>
+        </span>
+      </button>
+      <div style={{
+        maxHeight:open?400:0,overflow:'hidden',
+        transition:'max-height 0.4s cubic-bezier(0.4,0,0.2,1)',
+      }}>
+        <p style={{fontFamily:B,fontSize:15,color:T.textMuted,lineHeight:1.8,paddingBottom:24,maxWidth:760}}>{faq.a}</p>
+      </div>
+    </div>
+  );
+}
+
+function FAQ(){
+  return(
+    <section id="faq" aria-labelledby="faq-heading" style={{background:T.bg,padding:'96px 32px',borderTop:`1px solid ${T.border}`}}>
+      <div style={{maxWidth:1360,margin:'0 auto',display:'grid',gridTemplateColumns:'1fr 2fr',gap:80,alignItems:'start'}}>
+        <div style={{position:'sticky',top:120}}>
+          <Label>FAQ</Label>
+          <h2 id="faq-heading" style={{fontFamily:D,fontWeight:900,fontSize:'clamp(30px,3.5vw,52px)',color:T.text,lineHeight:0.95,letterSpacing:'-0.02em',textTransform:'uppercase',marginBottom:24}}>
+            Questions<br/><span style={{color:AMBER}}>Answered.</span>
+          </h2>
+          <p style={{fontFamily:B,fontSize:15,color:T.textMuted,lineHeight:1.75,marginBottom:36}}>Anything not covered here — ask us directly. We respond to every serious enquiry.</p>
+          <a href={WA('Hi, I have a question about ordering parts from PTC.')} target="_blank" rel="noopener noreferrer"
+            style={{display:'inline-flex',alignItems:'center',gap:8,background:'#25D366',color:'#fff',textDecoration:'none',padding:'12px 24px',borderRadius:8,fontFamily:D,fontWeight:800,fontSize:14,letterSpacing:'0.06em',textTransform:'uppercase',transition:'opacity 0.2s'}}
+            onMouseEnter={e=>e.currentTarget.style.opacity='0.85'}
+            onMouseLeave={e=>e.currentTarget.style.opacity='1'}
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Ask on WhatsApp
+          </a>
+        </div>
+        <div>
+          {FAQS.map((faq,i)=><FAQItem key={i} faq={faq} index={i}/>)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ── APP ────────────────────────────────────────────────────────────────────────
 function App(){
   const [scrolled,setScrolled]=useState(false);
@@ -908,13 +1194,16 @@ function App(){
         <Hero/>
         <LiveActivity/>
         <StatsBar/>
+        <Industries/>
         <HowItWorks/>
         <BrandTicker/>
         <ProductCategories/>
         <EquipmentModels/>
         <GlobalReach/>
+        <CaseStudies/>
         <Testimonials/>
         <BlogPreview/>
+        <FAQ/>
         <WhatsAppCTA/>
         <Contact/>
       </main>
