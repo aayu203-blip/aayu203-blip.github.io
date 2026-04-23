@@ -174,9 +174,9 @@ const TESTIMONIALS=[
   {name:'Ahmad Hassan',role:'VP Procurement',loc:'Dubai, UAE',flag:'🇦🇪',text:"We've sourced CAT and Hitachi parts from PTC for 8 years. Their pricing, packaging, and speed for international shipping is unmatched."},
 ];
 const BLOG=[
-  {tag:'Volvo',title:'Volvo D13 Engine: Common Problems & Fixes',date:'Mar 2025',read:'8 min',href:'../blog/volvo-d13-engine-problems.html'},
-  {tag:'Scania',title:'Scania PDE vs HPI Injectors — Full Comparison',date:'Feb 2025',read:'6 min',href:'../blog/scania-injectors-pde-vs-hpi.html'},
-  {tag:'Komatsu',title:'Komatsu Hydraulic Pump Failure: Signs & Solutions',date:'Jan 2025',read:'7 min',href:'../blog/komatsu-hydraulic-pump-failure.html'},
+  {tag:'Volvo',title:'Volvo D13 Engine: Common Problems & Fixes',date:'Mar 2025',read:'8 min',href:'../blog/volvo-d13-engine-problems.html',cover:'../assets/images/blog/volvo-injector.jpg'},
+  {tag:'Komatsu',title:'Komatsu Hydraulic Pump Failure: Signs & Solutions',date:'Jan 2025',read:'7 min',href:'../blog/komatsu-hydraulic-pump-failure.html',cover:'../assets/images/blog/komatsu-pump.jpg'},
+  {tag:'Scania',title:'Scania PDE vs HPI Injectors — Full Comparison',date:'Feb 2025',read:'6 min',href:'../blog/scania-injectors-pde-vs-hpi.html',cover:'../assets/images/parts-closeup.jpg'},
 ];
 
 // ── HOOKS ─────────────────────────────────────────────────────────────────────
@@ -402,7 +402,7 @@ function Hero(){
   const countdown=useDispatchCountdown();
   return(
     <header id="home" style={{position:'relative',minHeight:'96vh',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',overflow:'hidden'}}>
-      <div className="noise" style={{position:'absolute',inset:0,backgroundImage:'url(../assets/images/ptc-warehouse.webp)',backgroundSize:'cover',backgroundPosition:'center'}}/>
+      <div className="noise" style={{position:'absolute',inset:0,backgroundImage:'url(../assets/images/team-warehouse.jpg)',backgroundSize:'cover',backgroundPosition:'center 40%'}}/>
       <div style={{position:'absolute',inset:0,background:T.heroOverlay}}/>
       <div style={{position:'absolute',inset:0,backgroundImage:'linear-gradient(rgba(255,184,28,0.03) 1px, transparent 1px),linear-gradient(90deg,rgba(255,184,28,0.03) 1px,transparent 1px)',backgroundSize:'80px 80px',pointerEvents:'none'}}/>
       <div style={{position:'relative',zIndex:2,maxWidth:1360,margin:'0 auto',padding:'80px 32px 60px',width:'100%',textAlign:'center'}}>
@@ -766,8 +766,8 @@ function BlogPreview(){
               <article key={post.title} className="card-shine" style={{background:T.bgCard,border:`1px solid ${hov?T.accent:T.border}`,borderRadius:14,overflow:'hidden',transition:'all 0.25s',transform:hov?'translateY(-4px)':'none',cursor:'pointer'}}
                 onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
                 <a href={post.href} style={{textDecoration:'none',display:'block'}}>
-                  <div style={{background:T.bgAlt,height:120,display:'flex',alignItems:'center',justifyContent:'center',position:'relative'}}>
-                    <span style={{fontFamily:D,fontWeight:900,fontSize:80,color:T.accent,opacity:0.1,userSelect:'none'}} aria-hidden="true">{post.tag[0]}</span>
+                  <div style={{height:200,backgroundImage:`url(${post.cover})`,backgroundSize:'cover',backgroundPosition:'center',position:'relative'}}>
+                    <div style={{position:'absolute',inset:0,background:'rgba(0,0,0,0.35)'}}/>
                   </div>
                   <div style={{padding:'26px'}}>
                     <div style={{display:'inline-block',background:T.tagBg,color:T.tagText,fontSize:10,fontWeight:700,letterSpacing:'0.14em',textTransform:'uppercase',padding:'4px 10px',borderRadius:4,marginBottom:12,fontFamily:D}}>{post.tag}</div>
@@ -910,12 +910,58 @@ function MobileStickyBar(){
   );
 }
 
+// ── OPERATIONS STRIP ──────────────────────────────────────────────────────────
+const OPS_SHOTS = [
+  {img:'../assets/images/warehouse-shelves.jpg',label:'51,000+ parts. Mumbai.',caption:'Floor-to-ceiling stock across 8 part categories — available for same-day dispatch.'},
+  {img:'../assets/images/team-counter.jpg',label:'Expert team. Real knowledge.',caption:'Our team has been matching parts to machines for decades. No call centres.'},
+  {img:'../assets/images/dispatch.jpg',label:'Shipped to Johannesburg.',caption:'PTC-branded crates with full airway documentation, to 50+ countries.'},
+  {img:'../assets/images/packing.jpg',label:'Crated for international freight.',caption:'Every part packed to withstand long-haul freight — hydraulics, engines, undercarriage.'},
+];
+function OperationsStrip(){
+  return(
+    <section aria-label="Our operations" style={{background:T.bg,borderTop:`1px solid ${T.border}`}}>
+      <div style={{maxWidth:1360,margin:'0 auto',padding:'96px 32px 52px'}}>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:48,flexWrap:'wrap',gap:20}}>
+          <div>
+            <Label>Behind Every Order</Label>
+            <h2 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(28px,4vw,52px)',color:T.text,lineHeight:0.95,letterSpacing:'-0.02em',textTransform:'uppercase'}}>
+              This Is What<br/><span style={{color:AMBER}}>We Actually Do.</span>
+            </h2>
+          </div>
+          <p style={{fontFamily:B,fontSize:15,color:T.textMuted,maxWidth:360,lineHeight:1.75}}>Not a marketplace. Not a broker. A real warehouse, a real team, and 70 years of getting the right part to the right place.</p>
+        </div>
+      </div>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:2}}>
+        {OPS_SHOTS.map((s,i)=>{
+          const [hov,setHov]=useState(false);
+          const [ref,inView]=useInView({threshold:0.1});
+          return(
+            <div key={i} ref={ref} onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}
+              style={{
+                position:'relative',overflow:'hidden',height:480,cursor:'default',
+                opacity:inView?1:0,transform:inView?'none':'translateY(24px)',
+                transition:`opacity 0.6s ${i*0.1}s ease, transform 0.6s ${i*0.1}s ease`,
+              }}>
+              <div style={{position:'absolute',inset:0,backgroundImage:`url(${s.img})`,backgroundSize:'cover',backgroundPosition:'center',transform:hov?'scale(1.04)':'scale(1)',transition:'transform 0.6s cubic-bezier(0.4,0,0.2,1)'}}/>
+              <div style={{position:'absolute',inset:0,background:hov?'rgba(0,0,0,0.55)':'rgba(0,0,0,0.45)',transition:'background 0.4s'}}/>
+              <div style={{position:'absolute',bottom:0,left:0,right:0,padding:'28px 24px',background:'linear-gradient(transparent,rgba(0,0,0,0.85))'}}>
+                <div style={{fontFamily:D,fontWeight:800,fontSize:15,color:AMBER,letterSpacing:'0.06em',textTransform:'uppercase',marginBottom:8}}>{s.label}</div>
+                <p style={{fontFamily:B,fontSize:13,color:'rgba(255,255,255,0.65)',lineHeight:1.6,maxHeight:hov?80:0,overflow:'hidden',transition:'max-height 0.4s ease',opacity:hov?1:0}}>{s.caption}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 // ── INDUSTRIES ────────────────────────────────────────────────────────────────
 const INDUSTRIES = [
   {
     id:'mining',
     name:'Mining &\nExtraction',
-    img:'../assets/images/industries/mining.webp',
+    img:'../assets/images/industries/mining.jpg',
     gradient:'linear-gradient(135deg,#1a0f00 0%,#0d0800 100%)',
     accent:'#FFB81C',
     desc:'Open-pit, underground, and coal — when a machine stops, production stops. We maintain deep stock of critical drivetrain, hydraulic, and engine components for the brands that run mines.',
@@ -925,7 +971,7 @@ const INDUSTRIES = [
   {
     id:'construction',
     name:'Construction\n& Infrastructure',
-    img:'../assets/images/industries/construction.webp',
+    img:'../assets/images/industries/construction.jpg',
     gradient:'linear-gradient(135deg,#001a0d 0%,#000d06 100%)',
     accent:'#FFB81C',
     desc:'Site timelines don\'t flex. From excavator slew rings to loader transmission packs, we supply the components that keep infrastructure projects on schedule across South Asia and Africa.',
@@ -935,7 +981,7 @@ const INDUSTRIES = [
   {
     id:'road',
     name:'Road Building\n& Quarrying',
-    img:'../assets/images/industries/road.webp',
+    img:'../assets/images/industries/haulage.jpg',
     gradient:'linear-gradient(135deg,#0d0d1a 0%,#06060d 100%)',
     accent:'#FFB81C',
     desc:'Motor graders, pavers, and compactors take punishing daily loads. We carry the specialist parts for road-building equipment that most suppliers don\'t stock — including circle drives, screed components, and roller bearings.',
@@ -945,7 +991,7 @@ const INDUSTRIES = [
   {
     id:'haulage',
     name:'Haulage &\nFleet Operations',
-    img:'../assets/images/industries/haulage.webp',
+    img:'../assets/images/industries/haulage.jpg',
     gradient:'linear-gradient(135deg,#1a1000 0%,#0d0800 100%)',
     accent:'#FFB81C',
     desc:'Long-haul fleet managers across India, Russia, and East Africa rely on PTC for engine, drivetrain, and braking parts. OEM and aftermarket available. Bulk orders dispatched same day.',
@@ -1196,6 +1242,8 @@ function App(){
         <StatsBar/>
         <Industries/>
         <HowItWorks/>
+        <OperationsStrip/>
+        <Industries/>
         <BrandTicker/>
         <ProductCategories/>
         <EquipmentModels/>
@@ -1206,6 +1254,7 @@ function App(){
         <FAQ/>
         <WhatsAppCTA/>
         <Contact/>
+
       </main>
       <Footer/>
       <MobileStickyBar/>
