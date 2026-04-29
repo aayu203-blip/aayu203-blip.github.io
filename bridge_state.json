@@ -12,9 +12,9 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001082f",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a5f",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d7ff",
-    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010713",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a28",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010912",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010713",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010516",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001081e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108cf",
@@ -69,6 +69,7 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010949",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d766",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010936",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b5a",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010ac8",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010916",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010998",
@@ -144,6 +145,7 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010993",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d828",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001091c",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b57",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010882",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108af",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010969",
@@ -274,6 +276,7 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010725",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000106a1",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010941",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b55",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d7ab",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108ee",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000106a9",
@@ -286,9 +289,10 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000109a1",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000ed4b",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001092c",
-    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010940"
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010940",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b5e"
   ],
-  "last_sync": "2026-04-29T15:24:59.040979",
+  "last_sync": "2026-04-29T23:08:11.698394",
   "last_morning_digest": "2026-04-29",
   "last_sale_rate": {
     "2452544": {
@@ -627,9 +631,9 @@
       "date": "2024-04-05"
     },
     "ACCESSORY TENSIONER": {
-      "rate": 2800.0,
-      "party": "P C PATEL INFRA PVT LTD, BHUJ",
-      "date": "2026-04-25"
+      "rate": 3410.0,
+      "party": "P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR",
+      "date": "2026-04-29"
     },
     "23959585 FMX 460": {
       "rate": 16500.0,
@@ -1082,9 +1086,9 @@
       "date": "2025-04-24"
     },
     "HOSE PIPE": {
-      "rate": 4000.0,
-      "party": "KARAMJEET SINGH & CO.LTD - KORBA",
-      "date": "2026-04-28"
+      "rate": 4500.0,
+      "party": "P C PATEL INFRA PVT LTD, BHUJ",
+      "date": "2026-04-29"
     },
     "STEERING CYLINDER": {
       "rate": 18000.0,
@@ -1192,9 +1196,9 @@
       "date": "2025-12-17"
     },
     "BEARING PULLEY": {
-      "rate": 5000.0,
-      "party": "BSV EARTHMOVERS",
-      "date": "2026-04-25"
+      "rate": 2700.0,
+      "party": "P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR",
+      "date": "2026-04-29"
     },
     "AIR CONTROL VALVE ASSY": {
       "rate": 1800.0,
@@ -1947,9 +1951,9 @@
       "date": "2026-04-13"
     },
     "HOSE": {
-      "rate": 2200.0,
-      "party": "D M SHAH & CO PVT LTD - KOLKATA",
-      "date": "2026-04-25"
+      "rate": 2700.0,
+      "party": "P C PATEL INFRA PVT LTD, BHUJ",
+      "date": "2026-04-29"
     },
     "DOOR CABLE": {
       "rate": 150.0,
@@ -2248,8 +2252,8 @@
     },
     "PTO ASSY": {
       "rate": 54000.0,
-      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
-      "date": "2026-04-09"
+      "party": "P C PATEL INFRA PVT LTD, BHUJ",
+      "date": "2026-04-29"
     },
     "21766717": {
       "rate": 2600.0,
@@ -3317,9 +3321,9 @@
       "date": "2024-05-30"
     },
     "PVK BELT": {
-      "rate": 810.0,
-      "party": "DECENT CARGO MOVERS PVT.LTD.",
-      "date": "2026-03-07"
+      "rate": 670.0,
+      "party": "P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR",
+      "date": "2026-04-29"
     },
     "WIPER BLADE": {
       "rate": 450.0,
@@ -3872,9 +3876,9 @@
       "date": "2026-03-12"
     },
     "FEED PUMP": {
-      "rate": 7600.0,
-      "party": "VIVEK INDUSTRIES",
-      "date": "2024-07-03"
+      "rate": 2800.0,
+      "party": "PATEL INFRASTRUCTURE LTD",
+      "date": "2026-04-29"
     },
     "6Y1204": {
       "rate": 1310.35,
@@ -8712,9 +8716,9 @@
       "date": "2025-03-19"
     },
     "CENTER BOLT": {
-      "rate": 100.0,
-      "party": "S S MUCHANDI ENGINEERS AND CONTRACTORS",
-      "date": "2026-02-27"
+      "rate": 80.0,
+      "party": "P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR",
+      "date": "2026-04-29"
     },
     "SEALING RING": {
       "rate": 1225.0,
@@ -11372,9 +11376,9 @@
       "date": "2026-03-04"
     },
     "CONDENSOR": {
-      "rate": 10000.0,
-      "party": "S S MUCHANDI ENGINEERS AND CONTRACTORS",
-      "date": "2026-04-13"
+      "rate": 7600.0,
+      "party": "P C PATEL INFRA PRIVATE LIMITED - MP",
+      "date": "2026-04-29"
     },
     "2301228": {
       "rate": 3600.0,
@@ -13222,9 +13226,9 @@
       "date": "2026-03-09"
     },
     "STEERING WHEEL SWITCH": {
-      "rate": 6000.0,
-      "party": "KARAMJEET SINGH & CO.LTD - KORBA",
-      "date": "2026-04-28"
+      "rate": 4500.0,
+      "party": "P C PATEL INFRA PVT LTD, BHUJ",
+      "date": "2026-04-29"
     },
     "84331568, 84168589": {
       "rate": 4000.0,
@@ -14739,8 +14743,8 @@
       "date": "2024-04-17"
     },
     "BEARING PULLEY|||P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR": {
-      "rate": 2400.0,
-      "date": "2024-04-17"
+      "rate": 2700.0,
+      "date": "2026-04-29"
     },
     "1789563|||SANATAN TRADING CO.": {
       "rate": 3575.0,
@@ -20359,8 +20363,8 @@
       "date": "2026-03-30"
     },
     "HOSE|||P C PATEL INFRA PVT LTD, BHUJ": {
-      "rate": 2250.0,
-      "date": "2026-04-24"
+      "rate": 2700.0,
+      "date": "2026-04-29"
     },
     "2394786 G440|||SKK INFRA SOLUTIONS PVT LTD": {
       "rate": 26000.0,
@@ -26699,8 +26703,8 @@
       "date": "2025-04-09"
     },
     "ACCESSORY TENSIONER|||P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR": {
-      "rate": 3050.0,
-      "date": "2025-10-29"
+      "rate": 3410.0,
+      "date": "2026-04-29"
     },
     "1903084, 1749684|||NEXGEN SPARES": {
       "rate": 820.0,
@@ -33332,7 +33336,7 @@
     },
     "PTO ASSY|||P C PATEL INFRA PVT LTD, BHUJ": {
       "rate": 54000.0,
-      "date": "2026-04-03"
+      "date": "2026-04-29"
     },
     "23868417|||SUSHEE INFRA & MINING LIMITED- ND": {
       "rate": 7200.0,
@@ -36245,6 +36249,30 @@
     "SWING BEARING|||J M MHATRE INFRA PVT. LTD.": {
       "rate": 75000.0,
       "date": "2026-04-28"
+    },
+    "HOSE PIPE|||P C PATEL INFRA PVT LTD, BHUJ": {
+      "rate": 4500.0,
+      "date": "2026-04-29"
+    },
+    "STEERING WHEEL SWITCH|||P C PATEL INFRA PVT LTD, BHUJ": {
+      "rate": 4500.0,
+      "date": "2026-04-29"
+    },
+    "CONDENSOR|||P C PATEL INFRA PRIVATE LIMITED - MP": {
+      "rate": 7600.0,
+      "date": "2026-04-29"
+    },
+    "CENTER BOLT|||P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR": {
+      "rate": 80.0,
+      "date": "2026-04-29"
+    },
+    "PVK BELT|||P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR": {
+      "rate": 670.0,
+      "date": "2026-04-29"
+    },
+    "FEED PUMP|||PATEL INFRASTRUCTURE LTD": {
+      "rate": 2800.0,
+      "date": "2026-04-29"
     }
   }
 }
