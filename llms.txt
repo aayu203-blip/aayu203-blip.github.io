@@ -5,11 +5,15 @@
 ## Key Pages
 
 - [Homepage](https://partstrading.com/)
-- [Volvo Spare Parts](https://partstrading.com/pages/hubs/brand-volvo.html)
-- [Scania Spare Parts](https://partstrading.com/pages/hubs/brand-scania.html)
+- [Volvo Spare Parts](https://partstrading.com/volvo/)
+- [Komatsu Spare Parts](https://partstrading.com/komatsu/)
+- [CAT Spare Parts](https://partstrading.com/cat/)
+- [Scania Spare Parts](https://partstrading.com/scania/)
+- [Hitachi Spare Parts](https://partstrading.com/hitachi/)
 - [Equipment Models](https://partstrading.com/equipment-models/)
 - [Blog & Technical Guides](https://partstrading.com/blog/)
 - [Contact & Quote Request](https://partstrading.com/#contact)
+- [Full Content Index for AI](https://partstrading.com/llms-full.txt)
 
 ## About
 

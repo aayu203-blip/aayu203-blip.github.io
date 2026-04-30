@@ -1,0 +1,211 @@
+# Parts Trading Company — Full Content Index for AI Systems
+
+> This file provides detailed context for AI language models and search engines.
+> See also: https://partstrading.com/llms.txt (summary version)
+
+## Company Overview
+
+**Parts Trading Company (PTC)** is India's leading OEM and aftermarket spare parts supplier for heavy equipment and trucks. Established in 1956 (70+ years of operation), headquartered in Mumbai, India.
+
+- **Address:** 1st Floor, Vijay Chambers, opp. Dreamland Cinema, Grant Road East, Mumbai 400004, India
+- **Phone:** +91-98210-37990
+- **Email:** parts@partstrading.com
+- **GST:** 27AAAFP1087E1ZG
+- **Working hours:** Mon–Sat, 9 AM–6 PM IST
+- **Website:** https://partstrading.com/
+- **Rating:** 4.8/5 (customer reviews)
+
+## What We Do
+
+PTC supplies genuine OEM and OEM-specification aftermarket spare parts for heavy trucks, construction equipment, and mining machinery. We serve:
+- Fleet operators and transport companies
+- Mining operations (open-cast and underground)
+- Construction contractors
+- Equipment dealers and service workshops
+- Government infrastructure projects
+
+We offer same-day dispatch from Mumbai stock for in-stock items, and global sourcing for specialty parts. Proforma invoice issued on every order. WhatsApp enquiries answered within 60 minutes on business days.
+
+## Brands We Stock
+
+### Heavy Trucks
+- **Volvo** — FH, FM, FL, FMX series trucks; EC, EW excavators; L series wheel loaders; A series articulated haulers; Volvo Penta marine/industrial engines
+- **Scania** — R, S, G, P series trucks; bus and coach chassis; generator sets (250–500 kVA)
+- **Komatsu** — PC, WA, GD, D series construction equipment; HD dump trucks; mining equipment
+- **CAT (Caterpillar)** — 300/320/323/325/330/336 excavators; 950/962/966/972/980 wheel loaders; D series dozers; 140/160 motor graders; C series engines
+
+### Construction & Mining Equipment
+- Hitachi — ZX, EX series excavators
+- Kobelco — SK series excavators
+- JCB — 3CX, 4CX backhoe loaders; JS series excavators
+- Doosan/Develon — DX series excavators
+- Liebherr — LH series cranes, R series excavators
+- Atlas Copco / Epiroc — drill rigs, compressors, rock tools
+- Sandvik — underground mining drill rigs, loaders
+- Wirtgen — road milling machines
+- Terex / Grove — mobile and crawler cranes
+- Normet — underground mining vehicles
+- BEML, Sany, Hyundai, Liugong, MAIT, Soilmec
+
+### Component Brands Stocked
+MAHLE (engine components), Garrett (turbochargers), HELLA (electrical), WABCO (air braking), VALEO (clutch/electrical), FERODO (braking), LUK (clutch), HENGST (filters), HALDEX (braking systems), MONROE (shock absorbers), SPICER (driveshafts), DENSO (fuel systems), FAG/INA (bearings), DAYCO (belts/pulleys)
+
+## Product Categories (53,856 individual part pages)
+
+- Engine Parts: pistons, cylinder liners, gasket sets, engine bearings, connecting rods, camshafts, crankshafts, valve train components, timing components
+- Hydraulic Parts: hydraulic pumps, hydraulic motors, cylinders, control valves, seals & O-rings, hydraulic hoses
+- Transmission Parts: gearbox components, torque converters, clutch assemblies, planetary gears
+- Filters: air filters, oil filters, fuel filters, hydraulic filters, cabin air filters
+- Electrical Parts: alternators, starters, sensors, switches, ECUs, wiring harnesses
+- Undercarriage: track chains, track shoes, rollers, idlers, sprockets, track tensioners
+- Brake Parts: brake discs, brake pads, brake chambers, slack adjusters, ABS components
+- Cooling System: radiators, thermostats, water pumps, intercoolers, coolant hoses
+- Exhaust & Turbo: turbochargers, DPF (diesel particulate filters), EGR valves, exhaust manifolds
+- Cab & Body Parts: mirrors, door components, glass, cab mounts
+- Fuel System: fuel injectors, fuel pumps, fuel filters, common rail components
+- Drive & Swing Parts: final drives, swing motors, travel motors
+- Ground Engaging Tools: bucket teeth, side cutters, blade edges, wear plates
+- Bearing & Bushing: all bearing types, bronze bushings, pin & bushing kits
+- Steering Parts: steering pumps, steering cylinders, tie rods, drag links
+- Suspension & Chassis: leaf springs, shock absorbers, air bellows, chassis components
+- Gearbox & Differential: differential assemblies, axle shafts, gear sets
+
+## Export Markets
+
+PTC exports to:
+- **Russia** — запасные части для тяжёлой техники (spare parts for heavy equipment), served since Soviet era
+- **UAE & Gulf** — Dubai, Abu Dhabi, Qatar; 3–5 day delivery via DHL/FedEx
+- **Indonesia** — mining and construction equipment parts; 4–7 day delivery
+- **South Africa** — mining and construction; 5–10 day delivery
+- **Australia** — specialized mining parts on request
+- Other markets: Nigeria, Kenya, Ghana, Egypt, Bangladesh, Myanmar, Kazakhstan, Uzbekistan
+
+Full customs documentation provided: commercial invoice, packing list, certificate of origin, country-specific compliance paperwork.
+
+## Key Differentiators
+
+1. **70 years of continuous operation** — est. 1956, family business, deep institutional knowledge
+2. **18,000+ parts in Mumbai warehouse** — same-day dispatch on stocked items
+3. **Both OEM and aftermarket** — clearly labelled, customer chooses
+4. **Global export experience** — ships to tightly regulated markets (Russia, Nigeria, Myanmar)
+5. **Technical support** — team can identify parts from model/serial number when part number unknown
+6. **WhatsApp-first** — fast response, proforma invoice within 60 minutes
+
+## Blog & Technical Guides
+
+PTC publishes technical maintenance and parts guides at https://partstrading.com/blog/
+
+### Volvo Guides
+- [Guide to Volvo Truck Injector Replacement](https://partstrading.com/blog/guide-to-volvo-truck-injector-replacement.html)
+- [Volvo D13 Engine Common Problems and Fixes](https://partstrading.com/blog/volvo-d13-engine-common-problems-and-fixes.html)
+- [Volvo EC210 Excavator Track Tensioning Guide](https://partstrading.com/blog/volvo-ec210-excavator-track-tensioning-guide.html)
+- [Understanding Volvo I-Shift Transmission Faults](https://partstrading.com/blog/understanding-volvo-i-shift-transmission-faults.html)
+- [Volvo Articulated Hauler Suspension Repairs](https://partstrading.com/blog/volvo-articulated-hauler-suspension-repairs.html)
+- [Identifying Volvo Construction Equipment Serial Numbers](https://partstrading.com/blog/identifying-volvo-construction-equipment-serial-numbers.html)
+- [How to Identify Volvo Part Numbers](https://partstrading.com/blog/how-to-identify-volvo-part-numbers.html)
+- [Troubleshooting Volvo Excavator Error Codes](https://partstrading.com/blog/troubleshooting-volvo-excavator-error-codes.html)
+- [Volvo Penta Marine Engine Maintenance Schedule](https://partstrading.com/blog/volvo-penta-marine-engine-maintenance-schedule.html)
+- [Volvo Wheel Loader Hydraulic System Maintenance](https://partstrading.com/blog/volvo-wheel-loader-hydraulic-system-maintenance.html)
+- [Difference Between Volvo VCE and Volvo Penta Parts](https://partstrading.com/blog/difference-between-volvo-vce-and-volvo-penta-parts.html)
+- [Volvo Spare Parts Guide](https://partstrading.com/blog/volvo-spare-parts-guide.html)
+
+### Scania Guides
+- [Common Scania Brake Problems & Solutions](https://partstrading.com/blog/common-scania-brake-problems-solutions.html)
+- [How to Bleed Scania Fuel System](https://partstrading.com/blog/how-to-bleed-scania-fuel-system.html)
+- [Scania R Series Truck Maintenance Checklist](https://partstrading.com/blog/scania-r-series-truck-maintenance-checklist.html)
+- [Scania PDE vs HPI Injectors Explained](https://partstrading.com/blog/scania-pde-vs-hpi-injectors-explained.html)
+- [Scania V8 Engine Oil Consumption Issues Fixed](https://partstrading.com/blog/scania-v8-engine-oil-consumption-issues-fixed.html)
+- [Scania Gearbox Planet Gear Wear Signs](https://partstrading.com/blog/scania-gearbox-planet-gear-wear-signs.html)
+- [Scania Bus Air Suspension Troubleshooting](https://partstrading.com/blog/scania-bus-air-suspension-troubleshooting.html)
+- [Scania Truck AdBlue System Faults](https://partstrading.com/blog/scania-truck-adblue-system-faults.html)
+- [Scania Retarder Common Failures and Solutions](https://partstrading.com/blog/scania-retarder-common-failures-and-solutions.html)
+- [Scania 500kVA Generator Maintenance Guide](https://partstrading.com/blog/scania-500kva-generator-maintenance-guide.html)
+- [Replacing Scania Brake Pads and Discs](https://partstrading.com/blog/replacing-scania-brake-pads-and-discs.html)
+- [Scania Spare Parts India Guide](https://partstrading.com/blog/scania-spare-parts-india-guide.html)
+
+### Komatsu Guides
+- [Komatsu Excavator Maintenance Guide](https://partstrading.com/blog/komatsu-excavator-maintenance-guide.html)
+- [Komatsu Engine Overheating Causes](https://partstrading.com/blog/komatsu-engine-overheating-causes.html)
+- [Komatsu Hydraulic Pump Failure Symptoms](https://partstrading.com/blog/komatsu-hydraulic-pump-failure-symptoms.html)
+- [Komatsu Undercarriage Wear Measurement Guide](https://partstrading.com/blog/komatsu-undercarriage-wear-measurement-guide.html)
+- [Komatsu Bulldozer Final Drive Oil Change](https://partstrading.com/blog/komatsu-bulldozer-final-drive-oil-change.html)
+- [Komatsu PC200 Parts India](https://partstrading.com/blog/komatsu-pc200-parts-india.html)
+- [Komatsu PC300 Parts India](https://partstrading.com/blog/komatsu-pc300-parts-india.html)
+- [Komatsu PC400 Parts India](https://partstrading.com/blog/komatsu-pc400-parts-india.html)
+- [Komatsu PC200 vs PC210 — Which Excavator is Right](https://partstrading.com/blog/komatsu-pc200-vs-pc210-which-excavator-is-right.html)
+- [Komatsu Motor Grader Blade Adjustment Tips](https://partstrading.com/blog/komatsu-motor-grader-blade-adjustment-tips.html)
+- [Komatsu Forklift Hydraulic Cylinder Repair](https://partstrading.com/blog/komatsu-forklift-hydraulic-cylinder-repair.html)
+- [Komatsu Wheel Loader Bucket Teeth Types](https://partstrading.com/blog/komatsu-wheel-loader-bucket-teeth-types.html)
+- [Komatsu Genuine Oil vs Aftermarket Oil](https://partstrading.com/blog/komatsu-genuine-oil-vs-aftermarket-oil.html)
+- [Troubleshooting Komatsu Monitor Panel Errors](https://partstrading.com/blog/troubleshooting-komatsu-monitor-panel-errors.html)
+
+### CAT / Caterpillar Guides
+- [CAT 320 Excavator Parts India](https://partstrading.com/blog/cat-320-excavator-parts-india.html)
+- [CAT 323D and 325D Parts India](https://partstrading.com/blog/cat-323d-325d-parts-india.html)
+- [CAT 330D Parts India](https://partstrading.com/blog/cat-330d-parts-india.html)
+- [CAT Excavator Hydraulic Fluid Contamination Signs](https://partstrading.com/blog/cat-excavator-hydraulic-fluid-contamination-signs.html)
+- [Caterpillar C15 Engine Rebuild Tips](https://partstrading.com/blog/caterpillar-c15-engine-rebuild-tips.html)
+- [How to Read Caterpillar Part Numbers](https://partstrading.com/blog/how-to-read-caterpillar-part-numbers.html)
+
+### General Heavy Equipment Guides
+- [OEM vs Aftermarket Heavy Equipment Parts India](https://partstrading.com/blog/oem-vs-aftermarket-heavy-equipment-parts-india.html)
+- [OEM vs Aftermarket Parts Guide](https://partstrading.com/blog/oem-vs-aftermarket-parts-guide.html)
+- [OEM vs Aftermarket vs Remanufactured Parts](https://partstrading.com/blog/oem-vs-aftermarket-vs-remanufactured-parts.html)
+- [How to Identify Counterfeit Spare Parts](https://partstrading.com/blog/how-to-identify-counterfeit-spare-parts.html)
+- [Turbocharger Failure Signs in Diesel Engines](https://partstrading.com/blog/turbocharger-failure-signs-in-diesel-engines.html)
+- [Diesel Fuel Injector Testing Methods](https://partstrading.com/blog/diesel-fuel-injector-testing-methods.html)
+- [DPF Cleaning Guide](https://partstrading.com/blog/diesel-particulate-filter-dpf-cleaning-guide.html)
+- [Excavator Swing Motor Troubleshooting](https://partstrading.com/blog/excavator-swing-motor-troubleshooting.html)
+- [Hydraulic Hose Safety Inspections](https://partstrading.com/blog/hydraulic-hose-safety-inspections.html)
+- [Dump Truck Hydraulic Cylinder Leaks](https://partstrading.com/blog/dump-truck-hydraulic-cylinder-leaks.html)
+- [Heavy Equipment Filter Replacement Schedule](https://partstrading.com/blog/heavy-equipment-filter-replacement-schedule.html)
+- [Heavy Equipment Air Filter Cleaning Myths](https://partstrading.com/blog/heavy-equipment-air-filter-cleaning-myths.html)
+- [Heavy Equipment Battery Maintenance in Winter](https://partstrading.com/blog/heavy-equipment-battery-maintenance-in-winter.html)
+- [Heavy Duty Radiator Flush Procedure](https://partstrading.com/blog/heavy-duty-radiator-flush-procedure.html)
+- [Heavy Duty Alternator Wiring Diagrams](https://partstrading.com/blog/heavy-duty-alternator-wiring-diagrams.html)
+- [How to Choose the Right Grease for Excavator Pins](https://partstrading.com/blog/how-to-choose-the-right-grease-for-excavator-pins.html)
+- [Preventing Cavitation in Cylinder Liners](https://partstrading.com/blog/preventing-cavitation-in-cylinder-liners.html)
+- [Understanding Bearing Clearance C3 vs Standard](https://partstrading.com/blog/understanding-bearing-clearance-c3-vs-standard.html)
+- [Rock Breaker Chisel Maintenance](https://partstrading.com/blog/rock-breaker-chisel-maintenance.html)
+- [Crane Wire Rope Inspection Criteria](https://partstrading.com/blog/crane-wire-rope-inspection-criteria.html)
+- [Concrete Pump Wear Plate Replacement](https://partstrading.com/blog/concrete-pump-wear-plate-replacement.html)
+
+## Brand Hub Pages
+
+- [Volvo Spare Parts](https://partstrading.com/volvo/)
+- [Komatsu Spare Parts](https://partstrading.com/komatsu/)
+- [CAT Spare Parts](https://partstrading.com/cat/)
+- [Scania Spare Parts](https://partstrading.com/scania/)
+- [Hitachi Spare Parts](https://partstrading.com/hitachi/)
+
+## Location & Region Pages
+
+- [India (National)](https://partstrading.com/)
+- [Jharkhand Heavy Equipment Parts](https://partstrading.com/jharkhand-heavy-equipment-parts.html)
+- [Rajasthan Heavy Equipment Parts](https://partstrading.com/rajasthan-heavy-equipment-parts.html)
+- [Karnataka Heavy Equipment Parts](https://partstrading.com/karnataka-heavy-equipment-parts.html)
+- [Odisha Heavy Equipment Parts](https://partstrading.com/odisha-heavy-equipment-parts.html)
+- [Russia Heavy Equipment Parts](https://partstrading.com/russia-heavy-equipment-parts.html)
+- [Indonesia Heavy Equipment Parts](https://partstrading.com/indonesia-heavy-equipment-parts.html)
+- [UAE Heavy Equipment Parts](https://partstrading.com/uae-heavy-equipment-parts.html)
+- [South Africa Heavy Equipment Parts](https://partstrading.com/south-africa-heavy-equipment-parts.html)
+
+## Frequently Asked Questions
+
+**Do you supply OEM or aftermarket parts?**
+Both. OEM parts are genuine manufacturer-sourced. Aftermarket parts meet or exceed OEM specifications, sourced from trusted manufacturers including MAHLE, Garrett, HELLA. Every part is clearly labelled.
+
+**How long does international shipping take?**
+UAE and Gulf: 3–5 days. Africa: 5–10 days. Southeast Asia: 4–7 days. Russia and Central Asia: 7–14 days. We use DHL, FedEx, and specialist freight forwarders.
+
+**What payment methods do you accept?**
+SWIFT international wire transfer, UPI (Indian buyers), PayPal or credit card (select cases). Proforma invoice issued before payment. Credit terms for established clients.
+
+**Is there a minimum order?**
+No minimum for domestic Indian orders. For international, we recommend USD 200 minimum to keep shipping proportionate.
+
+**How do I find my part number?**
+Check the parts manual, the part itself (stamped number), or service records. If unknown, send model and serial number via WhatsApp — our team will identify the correct part.
+
+**Can I visit the warehouse?**
+Yes. Vijay Chambers, Grant Road East, Mumbai 400004. Mon–Sat, 9 AM–6 PM IST. Call ahead so we can prepare your enquiry.
