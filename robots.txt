@@ -46,6 +46,13 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+# Social crawlers
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
 # Training data scrapers — disallowed
 User-agent: Bytespider
 Disallow: /
