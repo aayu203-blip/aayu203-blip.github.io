@@ -9,9 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -521,7 +521,7 @@ function WAFloatPill(){
 // ═════════════════════════════════════════════════════════════════════════════
 
 // ── ABOUT ─────────────────────────────────────────────────────────────────────
-const ABOUT_SECS=[{id:'story',label:'Our Story'},{id:'why',label:'Why PTC'},{id:'warehouse',label:'Mumbai Warehouse'},{id:'reach',label:'Global Reach'}];
+const ABOUT_SECS=[{id:'story',label:'Our Story'},{id:'family',label:'The Family'},{id:'why',label:'Why PTC'},{id:'warehouse',label:'Mumbai Warehouse'},{id:'reach',label:'Global Reach'}];
 
 function AboutPage(){
   const active=useScrollSpy(ABOUT_SECS.map(s=>s.id));
@@ -536,22 +536,60 @@ function AboutPage(){
             <p style={{fontFamily:B,fontSize:15,color:T.muted,lineHeight:1.8}}>Parts Trading Company was founded in 1956 at Vijay Chambers, Grant Road East, Mumbai. What started as a small counter serving local construction contractors has grown into one of India's most trusted names in heavy equipment spare parts.</p>
             <p style={{fontFamily:B,fontSize:15,color:T.muted,lineHeight:1.8}}>Three generations. The same address. The same commitment to fast availability, accurate part identification, and dependable supply — extended now to customers in Russia, Africa, the Middle East, Southeast Asia, and beyond.</p>
           </div>
-          <div style={{display:'flex',flexDirection:'column',gap:0}}>
-            {[['1956','Founded at Grant Road, Mumbai — serving local construction contractors'],['1970s','Expanded into mining equipment parts — first international shipments'],['1990s','Added Volvo, Scania, Komatsu, CAT to a growing catalogue'],['2000s','Export program launches — Russia, Africa, Southeast Asia become major markets'],['2020s','51,000+ part catalogue. Digital search. WhatsApp ordering. Same-day dispatch.']].map(([yr,ev],i)=>(
-              <div key={yr} style={{display:'flex',gap:24,paddingBottom:28}}>
-                <div style={{width:72,flexShrink:0,paddingTop:2}}>
-                  <div style={{fontFamily:D,fontWeight:900,fontSize:18,color:AMBER,letterSpacing:'0.02em'}}>{yr}</div>
+          <div className="two-col" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:32,alignItems:'start'}}>
+            <div style={{display:'flex',flexDirection:'column',gap:0}}>
+              {[['1956','Founded at Vijay Chambers, Grant Road — serving local construction contractors'],['1970s','Expanded into mining equipment parts — first international shipments'],['1990s','Added Volvo, Scania, Komatsu, CAT to a growing catalogue'],['2000s','Export program launches — Russia, Africa, Southeast Asia become major markets'],['2020s','51,000+ parts. Digital search. WhatsApp ordering. Same-day dispatch.']].map(([yr,ev],i)=>(
+                <div key={yr} style={{display:'flex',gap:24,paddingBottom:28}}>
+                  <div style={{width:72,flexShrink:0,paddingTop:2}}>
+                    <div style={{fontFamily:D,fontWeight:900,fontSize:18,color:AMBER,letterSpacing:'0.02em'}}>{yr}</div>
+                  </div>
+                  <div style={{borderLeft:`2px solid ${T.border}`,paddingLeft:24,flex:1,position:'relative'}}>
+                    <div style={{position:'absolute',left:-5,top:8,width:8,height:8,borderRadius:'50%',background:i===4?AMBER:T.border,border:`2px solid ${i===4?AMBER:'rgba(255,255,255,0.2)'}`}}/>
+                    <p style={{fontFamily:B,fontSize:14,color:T.muted,lineHeight:1.7,paddingTop:2}}>{ev}</p>
+                  </div>
                 </div>
-                <div style={{borderLeft:`2px solid ${T.border}`,paddingLeft:24,flex:1,position:'relative'}}>
-                  <div style={{position:'absolute',left:-5,top:8,width:8,height:8,borderRadius:'50%',background:i===4?AMBER:T.border,border:`2px solid ${i===4?AMBER:'rgba(255,255,255,0.2)'}`}}/>
-                  <p style={{fontFamily:B,fontSize:14,color:T.muted,lineHeight:1.7,paddingTop:2}}>{ev}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div style={{borderRadius:16,overflow:'hidden',border:`1px solid ${T.border}`,aspectRatio:'4/3',background:T.bgCard}}>
+              <img src="assets/images/ptc-team-exhibition.webp" alt="Parts Trading Company team at exhibition" loading="lazy" style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
+            </div>
           </div>
         </Section>
         <SectionRule/>
-        <Section id="why" num="02" style={{padding:'64px 0'}}>
+        <Section id="family" num="02" style={{padding:'64px 0'}}>
+          <div style={{fontFamily:D,fontSize:11,fontWeight:700,letterSpacing:'0.2em',textTransform:'uppercase',color:AMBER,marginBottom:16}}>The Family</div>
+          <h2 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(28px,4vw,52px)',color:T.text,textTransform:'uppercase',letterSpacing:'-0.02em',lineHeight:0.95,marginBottom:28}}>Three Generations.<br/>One Address.</h2>
+          <div className="two-col" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:32,alignItems:'start',marginBottom:40}}>
+            <div>
+              <p style={{fontFamily:B,fontSize:15,color:T.muted,lineHeight:1.9,marginBottom:24}}>Parts Trading Company has stayed in the same family and the same building since 1956. What began as one man's counter has passed through three generations — each one growing the business without losing the principles that built it: know your parts, know your customer, ship fast.</p>
+              <p style={{fontFamily:B,fontSize:15,color:T.muted,lineHeight:1.9}}>Today the third generation — <strong style={{color:T.text,fontWeight:600}}>Jinaal Shah</strong> and <strong style={{color:T.text,fontWeight:600}}>Aayush Shah</strong> — runs the business alongside <strong style={{color:T.text,fontWeight:600}}>Vinesh Shah</strong>, bringing digital catalogues, WhatsApp ordering, and worldwide export to a 70-year-old institution that still answers the phone.</p>
+            </div>
+            <div style={{display:'flex',flexDirection:'column',gap:10}}>
+              {[{gen:'1st Generation',years:'1956 – 1980s',desc:'Founded the company at Grant Road. Built trust with Mumbai\'s first wave of construction contractors.'},
+                {gen:'2nd Generation',years:'1980s – 2010s',desc:'Expanded to mining and export. Added international brands — Volvo, Scania, Komatsu, CAT, Hitachi.'},
+                {gen:'3rd Generation',years:'2010s – Present',desc:'Jinaal & Aayush Shah digitised the catalogue, launched WhatsApp ordering, and scaled exports to 50+ countries.'}
+              ].map(g=>(
+                <div key={g.gen} style={{background:T.bgCard,border:`1px solid ${T.border}`,borderRadius:12,padding:20}}>
+                  <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:8}}>
+                    <span style={{fontFamily:D,fontWeight:800,fontSize:15,color:T.text,textTransform:'uppercase',letterSpacing:'0.04em'}}>{g.gen}</span>
+                    <span style={{fontFamily:D,fontSize:11,fontWeight:700,color:AMBER,letterSpacing:'0.1em'}}>{g.years}</span>
+                  </div>
+                  <p style={{fontFamily:B,fontSize:13,color:T.muted,lineHeight:1.7}}>{g.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="two-col" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}}>
+            <div style={{borderRadius:14,overflow:'hidden',border:`1px solid ${T.border}`,aspectRatio:'16/10',background:T.bgCard}}>
+              <img src="assets/images/team-counter.jpg" alt="PTC team at the parts counter, Mumbai" loading="lazy" style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
+            </div>
+            <div style={{borderRadius:14,overflow:'hidden',border:`1px solid ${T.border}`,aspectRatio:'16/10',background:T.bgCard}}>
+              <img src="assets/images/team-warehouse.jpg" alt="PTC warehouse team with spare parts" loading="lazy" style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
+            </div>
+          </div>
+        </Section>
+        <SectionRule/>
+        <Section id="why" num="03" style={{padding:'64px 0'}}>
           <div style={{fontFamily:D,fontSize:11,fontWeight:700,letterSpacing:'0.2em',textTransform:'uppercase',color:AMBER,marginBottom:16}}>Why PTC</div>
           <h2 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(28px,4vw,52px)',color:T.text,textTransform:'uppercase',letterSpacing:'-0.02em',lineHeight:0.95,marginBottom:36}}>What Sets Us Apart</h2>
           <div className="two-col" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12}}>
@@ -571,9 +609,12 @@ function AboutPage(){
           </div>
         </Section>
         <SectionRule/>
-        <Section id="warehouse" num="03" style={{padding:'64px 0'}}>
+        <Section id="warehouse" num="04" style={{padding:'64px 0'}}>
           <div style={{fontFamily:D,fontSize:11,fontWeight:700,letterSpacing:'0.2em',textTransform:'uppercase',color:AMBER,marginBottom:16}}>Mumbai Warehouse</div>
           <h2 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(28px,4vw,52px)',color:T.text,textTransform:'uppercase',letterSpacing:'-0.02em',lineHeight:0.95,marginBottom:24}}>Grant Road,<br/>Mumbai 400004</h2>
+          <div style={{borderRadius:16,overflow:'hidden',border:`1px solid ${T.border}`,aspectRatio:'21/9',background:T.bgCard,marginBottom:32}}>
+            <img src="assets/images/ptc-warehouse.webp" alt="Parts Trading Company warehouse — shelves of heavy equipment spare parts" loading="lazy" style={{width:'100%',height:'100%',objectFit:'cover',display:'block'}}/>
+          </div>
           <div className="two-col" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:32}}>
             <div>
               <p style={{fontFamily:B,fontSize:15,color:T.muted,lineHeight:1.8,marginBottom:24}}>Vijay Chambers, opposite Dreamland Cinema, Grant Road East — our home since 1956. Walk in Mon–Sat, 9 AM–6 PM IST. We recommend calling ahead so we can have your enquiry ready.</p>
@@ -598,7 +639,7 @@ function AboutPage(){
           </div>
         </Section>
         <SectionRule/>
-        <Section id="reach" num="04" style={{padding:'64px 0'}}>
+        <Section id="reach" num="05" style={{padding:'64px 0'}}>
           <div style={{fontFamily:D,fontSize:11,fontWeight:700,letterSpacing:'0.2em',textTransform:'uppercase',color:AMBER,marginBottom:16}}>Global Reach</div>
           <h2 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(28px,4vw,52px)',color:T.text,textTransform:'uppercase',letterSpacing:'-0.02em',lineHeight:0.95,marginBottom:28}}>50+ Countries.<br/>One Mumbai Warehouse.</h2>
           <div style={{display:'flex',flexWrap:'wrap',gap:10,marginBottom:32}}>
