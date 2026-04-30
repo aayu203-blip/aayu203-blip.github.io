@@ -624,7 +624,7 @@ o
               <div style={{ position: 'relative' }} onMouseEnter={ob} onMouseLeave={cb}>
                 <button style={lnk} onMouseEnter={e => e.currentTarget.style.opacity = 1} onMouseLeave={e => e.currentTarget.style.opacity = 0.75}>By Brand {chev(bOpen)}</button>
                 {bOpen && <div className="mega-anim" style={{ position: 'absolute', top: '100%', left: -16, background: '#080808', border: `1px solid ${T.border}`, borderTop: `2px solid ${AMBER}`, borderRadius: '0 0 16px 16px', padding: 18, width: 360, boxShadow: '0 40px 80px rgba(0,0,0,0.97)' }}>
-                  <div style={{ fontFamily: B, fontSize: 9, fontWeight: 700, letterSpacing: '0.15em', color: T.muted, textTransform: 'uppercase', marginBottom: 12 }}>Browse by Brand</div>
+                  <div style={{ fontFamily: B, fontSize: 9, fontWeight: 700, letterSpacing: '0.15em', color: T.textMuted, textTransform: 'uppercase', marginBottom: 12 }}>Browse by Brand</div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 5 }}>
                     {BRANDS_NAV.map(br => <a key={br.name} href={`/${br.slug}/`} style={{ display: 'flex', alignItems: 'center', padding: '9px 11px', borderRadius: 8, border: `1px solid ${T.border}`, background: 'rgba(255,255,255,0.025)', textDecoration: 'none', color: T.navText, fontFamily: B, fontSize: 12, fontWeight: 600, transition: 'all 0.18s' }}
                       onMouseEnter={e => { e.currentTarget.style.borderColor = AMBER; e.currentTarget.style.color = AMBER; e.currentTarget.style.background = 'rgba(255,184,28,0.08)'; }}
@@ -637,7 +637,7 @@ o
               <div style={{ position: 'relative' }} onMouseEnter={oc} onMouseLeave={cc}>
                 <button style={lnk} onMouseEnter={e => e.currentTarget.style.opacity = 1} onMouseLeave={e => e.currentTarget.style.opacity = 0.75}>By Category {chev(cOpen)}</button>
                 {cOpen && <div className="mega-anim" style={{ position: 'absolute', top: '100%', left: -16, background: '#080808', border: `1px solid ${T.border}`, borderTop: `2px solid ${AMBER}`, borderRadius: '0 0 16px 16px', padding: 18, width: 510, boxShadow: '0 40px 80px rgba(0,0,0,0.97)' }}>
-                  <div style={{ fontFamily: B, fontSize: 9, fontWeight: 700, letterSpacing: '0.15em', color: T.muted, textTransform: 'uppercase', marginBottom: 12 }}>Browse by Category</div>
+                  <div style={{ fontFamily: B, fontSize: 9, fontWeight: 700, letterSpacing: '0.15em', color: T.textMuted, textTransform: 'uppercase', marginBottom: 12 }}>Browse by Category</div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 4 }}>
                     {CATS_NAV.map(cat => <a key={cat} href={CATS_NAV_URLS[cat]||'/'} style={{ display: 'block', padding: '7px 10px', borderRadius: 6, border: `1px solid ${T.border}`, background: 'rgba(255,255,255,0.018)', textDecoration: 'none', color: T.text, fontFamily: B, fontSize: 11, fontWeight: 500, transition: 'all 0.15s' }}
                       onMouseEnter={e => { e.currentTarget.style.color = AMBER; e.currentTarget.style.borderColor = 'rgba(255,184,28,0.3)'; e.currentTarget.style.background = 'rgba(255,184,28,0.08)'; }}
