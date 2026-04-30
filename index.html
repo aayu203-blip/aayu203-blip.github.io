@@ -52,10 +52,10 @@ o
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","name":"International Spare Parts Supply","description":"Global supply of Volvo, Scania, Komatsu, CAT, Hitachi, Kobelco, Epiroc and Sandvik spare parts","provider":{"@type":"Organization","name":"Parts Trading Company"},"areaServed":[{"@type":"Country","name":"India"},{"@type":"Country","name":"Russia"},{"@type":"Country","name":"Indonesia"},{"@type":"Country","name":"United Arab Emirates"},{"@type":"Country","name":"South Africa"},{"@type":"Country","name":"Nigeria"},{"@type":"Country","name":"Kenya"},{"@type":"Country","name":"Ghana"},{"@type":"Country","name":"Egypt"},{"@type":"Country","name":"Australia"}],"serviceType":"Spare Parts Supply","category":"Heavy Equipment Parts"}
   </script>
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -307,16 +307,16 @@ o
     ];
     const CATS_NAV = ['Engine Parts','Hydraulic Parts','Filters','Electrical Parts','Transmission Parts','Undercarriage','Brake Parts','Cooling System','Exhaust & Turbo','Seals & O-Rings','Cab & Body Parts','Bearing & Bushing','Fuel System','Drive & Swing Parts','Ground Engaging Tools','Hardware & Fasteners','Suspension & Chassis','Gearbox & Differential','Steering Parts'];
     const CATS_NAV_URLS = {
-      'Engine Parts':'/komatsu/engine-parts/','Hydraulic Parts':'/komatsu/hydraulic-parts/',
-      'Filters':'/cat/filters/','Electrical Parts':'/cat/electrical-parts/',
-      'Transmission Parts':'/komatsu/transmission-parts/','Undercarriage':'/komatsu/undercarriage/',
-      'Brake Parts':'/cat/brake-parts/','Cooling System':'/cat/cooling-system/',
-      'Exhaust & Turbo':'/volvo/exhaust-turbo-parts/','Seals & O-Rings':'/volvo/seals-o-rings/',
-      'Cab & Body Parts':'/volvo/cab-body-parts/','Bearing & Bushing':'/komatsu/bearing-bushing/',
+      'Engine Parts':'/volvo/engine-parts/','Hydraulic Parts':'/volvo/hydraulic-parts/',
+      'Filters':'/volvo/filters/','Electrical Parts':'/volvo/electrical-parts/',
+      'Transmission Parts':'/volvo/transmission-parts/','Undercarriage':'/volvo/undercarriage/',
+      'Brake Parts':'/volvo/brake-parts/','Cooling System':'/volvo/cooling-system/',
+      'Exhaust & Turbo':'/volvo/exhaust-turbo/','Seals & O-Rings':'/volvo/seals-orings/',
+      'Cab & Body Parts':'/volvo/cab-body-parts/','Bearing & Bushing':'/volvo/bearing-bushing/',
       'Fuel System':'/volvo/fuel-system/','Drive & Swing Parts':'/komatsu/drive-swing-parts/',
-      'Ground Engaging Tools':'/komatsu/ground-engaging-tools/','Hardware & Fasteners':'/komatsu/hardware-fasteners/',
+      'Ground Engaging Tools':'/komatsu/ground-engaging-tools/','Hardware & Fasteners':'/volvo/hardware-fasteners/',
       'Suspension & Chassis':'/volvo/suspension-chassis/','Gearbox & Differential':'/volvo/gearbox-differential/',
-      'Steering Parts':'/komatsu/steering-parts/',
+      'Steering Parts':'/volvo/steering-parts/',
     };
 
     const DARK_T = {
@@ -441,14 +441,14 @@ o
       { raw: 50, display: '50+', label: 'Countries Served' },
     ];
     const CATS = [
-      { name: 'Engine Parts',     count: '15,600+', desc: 'Pistons, liners, bearings & rebuild kits',    href: '/komatsu/engine-parts/' },
+      { name: 'Engine Parts',     count: '15,600+', desc: 'Pistons, liners, bearings & rebuild kits',    href: '/volvo/engine-parts/' },
       { name: 'Hydraulic Parts',  count: '4,700+',  desc: 'Pumps, motors, cylinders & hoses',            href: '/komatsu/hydraulic-parts/' },
-      { name: 'Electrical',       count: '1,300+',  desc: 'Alternators, starters, ECUs & sensors',       href: '/cat/electrical-parts/' },
-      { name: 'Filters',          count: '1,400+',  desc: 'OEM & aftermarket — all brands',              href: '/cat/filters/' },
+      { name: 'Electrical',       count: '1,300+',  desc: 'Alternators, starters, ECUs & sensors',       href: '/volvo/electrical-parts/' },
+      { name: 'Filters',          count: '1,400+',  desc: 'OEM & aftermarket — all brands',              href: '/volvo/filters/' },
       { name: 'Undercarriage',    count: '3,600+',  desc: 'Track shoes, rollers, sprockets & chains',    href: '/komatsu/undercarriage/' },
-      { name: 'Transmission',     count: '1,100+',  desc: 'Gearboxes, clutch packs & converters',        href: '/komatsu/transmission-parts/' },
-      { name: 'Brake Systems',    count: '1,000+',  desc: 'Pads, discs, calipers & air systems',         href: '/cat/brake-parts/' },
-      { name: 'Cooling System',   count: '1,300+',  desc: 'Radiators, thermostats & water pumps',        href: '/cat/cooling-system/' },
+      { name: 'Transmission',     count: '1,100+',  desc: 'Gearboxes, clutch packs & converters',        href: '/volvo/transmission-parts/' },
+      { name: 'Brake Systems',    count: '1,000+',  desc: 'Pads, discs, calipers & air systems',         href: '/volvo/brake-parts/' },
+      { name: 'Cooling System',   count: '1,300+',  desc: 'Radiators, thermostats & water pumps',        href: '/volvo/cooling-system/' },
     ];
     const TESTIMONIALS = [
       { name: 'Rajesh Mehta', role: 'Fleet Manager', loc: 'Maharashtra, India', flag: '🇮🇳', text: 'PTC has been our trusted partner for 15+ years. When a machine goes down, I call PTC first. Same-day dispatch from Mumbai has saved us lakhs in downtime.' },
@@ -1455,7 +1455,7 @@ o
     // ── FOOTER ────────────────────────────────────────────────────────────────────
     const FOOTER_COLS = [
       { h: 'Browse Brands', links: [['Volvo Parts','/volvo/'],['Scania Parts','/scania/'],['Komatsu Parts','/komatsu/'],['CAT Parts','/cat/'],['Hitachi Parts','/hitachi/'],['All Brands','/']] },
-      { h: 'Part Categories', links: [['Engine Parts','/komatsu/engine-parts/'],['Hydraulic Parts','/komatsu/hydraulic-parts/'],['Filters','/cat/filters/'],['Undercarriage','/komatsu/undercarriage/'],['Transmission','/komatsu/transmission-parts/'],['All Categories','/komatsu/']] },
+      { h: 'Part Categories', links: [['Engine Parts','/volvo/engine-parts/'],['Hydraulic Parts','/volvo/hydraulic-parts/'],['Filters','/volvo/filters/'],['Undercarriage','/komatsu/undercarriage/'],['Transmission','/volvo/transmission-parts/'],['All Categories','/volvo/']] },
       { h: 'Company', links: [['About PTC','/about.html'],['Blog & Guides','/blog/'],['Contact Us','/contact.html'],['Int\'l Shipping','/deliveries.html'],['Get a Quote','/get-a-quote.html']] },
     ];
     function Footer() {
