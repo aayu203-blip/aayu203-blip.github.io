@@ -52,6 +52,7 @@
 
 <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="/assets/js/ptc-components.js"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -118,7 +119,7 @@ body{overflow-x:hidden;font-family:'Barlow',sans-serif;background:#050505;color:
   <meta name="twitter:description" content="Buy Hitachi filters in India — 112+ parts in stock. OEM & aftermarket. Same-day dispatch from Mumbai. WhatsApp +91-98210-37990.">
   <meta name="twitter:image" content="https://partstrading.com/assets/images/ptc-warehouse.webp">
   <script src="../../assets/js/search-db.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many Hitachi Filters does PTC stock?","acceptedAnswer":{"@type":"Answer","text":"PTC stocks 112+ Hitachi filters in Mumbai, ready for same-day dispatch. All OEM-specification aftermarket parts, cross-referenced against Hitachi part numbers."}},{"@type":"Question","name":"Are the Hitachi filters OEM or aftermarket?","acceptedAnswer":{"@type":"Answer","text":"All Hitachi filters from PTC are OEM-specification aftermarket — manufactured to the same tolerances as genuine Hitachi parts and sourced from certified suppliers."}},{"@type":"Question","name":"Do you ship Hitachi filters internationally?","acceptedAnswer":{"@type":"Answer","text":"Yes. PTC ships Hitachi filters from Mumbai to India, Russia, UAE, Africa, Southeast Asia, and 50+ countries by air and sea freight."}},{"@type":"Question","name":"How do I order Hitachi filters?","acceptedAnswer":{"@type":"Answer","text":"Send your part number or equipment model on WhatsApp (+91-98210-37990). PTC confirms stock and pricing within 1 hour and dispatches same day from Mumbai."}}]}</script>
+  
 </head>
 <body>
 <div id="root"></div>
@@ -205,7 +206,7 @@ const BRANDS_NAV=[
   {name:'BEML',slug:'beml'},{name:'LiuGong',slug:'liugong'},
 ];
 
-const CATS_NAV_URLS={'Engine Parts':'/komatsu/engine-parts/','Hydraulic Parts':'/komatsu/hydraulic-parts/','Filters':'/cat/filters/','Electrical Parts':'/cat/electrical-parts/','Transmission Parts':'/komatsu/transmission-parts/','Undercarriage':'/komatsu/undercarriage/','Brake Parts':'/cat/brake-parts/','Cooling System':'/cat/cooling-system/','Exhaust & Turbo':'/cat/exhaust-turbo/','Seals & O-Rings':'/komatsu/seals-orings/','Cab & Body Parts':'/scania/cab-body-parts/','Bearing & Bushing':'/cat/bearing-bushing/','Fuel System':'/cat/fuel-system/','Drive & Swing Parts':'/komatsu/drive-swing-parts/','Ground Engaging Tools':'/cat/ground-engaging-tools/','Hardware & Fasteners':'/cat/hardware-fasteners/','Suspension & Chassis':'/scania/suspension-chassis/','Gearbox & Differential':'/volvo/gearbox-differential/','Steering Parts':'/scania/steering-parts/'};
+const CATS_NAV_URLS={'Engine Parts':'/hitachi/engine-parts/','Hydraulic Parts':'/hitachi/hydraulic-parts/','Filters':'/hitachi/filters/','Electrical Parts':'/hitachi/electrical-parts/','Transmission Parts':'/hitachi/transmission-parts/','Undercarriage':'/hitachi/undercarriage/','Brake Parts':'/hitachi/brake-parts/','Cooling System':'/hitachi/cooling-system/','Exhaust & Turbo':'/hitachi/exhaust-turbo/','Seals & O-Rings':'/hitachi/seals-orings/','Cab & Body Parts':'/hitachi/cab-body-parts/','Bearing & Bushing':'/hitachi/bearing-bushing/','Fuel System':'/hitachi/fuel-system/','Drive & Swing Parts':'/hitachi/drive-swing-parts/','Ground Engaging Tools':'/hitachi/ground-engaging-tools/','Hardware & Fasteners':'/hitachi/hardware-fasteners/','Suspension & Chassis':'/hitachi/suspension-chassis/','Gearbox & Differential':'/hitachi/gearbox-differential/','Steering Parts':'/hitachi/steering-parts/'};
 const CATS_NAV=['Engine Parts','Hydraulic Parts','Filters','Electrical Parts','Transmission Parts','Undercarriage','Brake Parts','Cooling System','Exhaust & Turbo','Seals & O-Rings','Cab & Body Parts','Bearing & Bushing','Fuel System','Drive & Swing Parts','Ground Engaging Tools','Hardware & Fasteners','Suspension & Chassis','Gearbox & Differential','Steering Parts'];
 
 // ── HOOKS ─────────────────────────────────────────────────────────────────────
@@ -371,6 +372,8 @@ function SearchModal({open,onClose,defaultBrand='All'}){
   const results=useMemo(()=>{
     if(q.length<2) return [];
     const lq=q.toLowerCase();
+    const DB=window.productSearchDB||null;
+    if(DB){return DB.filter(p=>((p.part||'').toLowerCase().includes(lq)||(p.desc||'').toLowerCase().includes(lq)||(p.brand||'').toLowerCase().includes(lq))&&(brand==='All'||p.brand===brand)).slice(0,12).map(p=>({partNo:p.part,name:p.desc,brand:p.brand,cat:p.cat,url:p.url}));}
     return SEARCH_PARTS.filter(p=>(
       (p.partNo.toLowerCase().includes(lq)||p.name.toLowerCase().includes(lq)||p.brand.toLowerCase().includes(lq))
       &&(brand==='All'||p.brand===brand)
@@ -404,7 +407,7 @@ function SearchModal({open,onClose,defaultBrand='All'}){
         {q.length>=2&&(results.length===0?(
           <div style={{padding:'24px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',gap:12}}>
             <div>
-              <div style={{fontFamily:D,fontWeight:700,fontSize:16,color:T.text,marginBottom:4}}>No match in demo index</div>
+              <div style={{fontFamily:D,fontWeight:700,fontSize:16,color:T.text,marginBottom:4}}>No match found</div>
               <div style={{fontFamily:B,fontSize:13,color:T.muted}}>Full database has 51,000+ parts — WhatsApp us directly.</div>
             </div>
             <a href={WA(`Hi, I'm searching for: ${q}. Please check availability and pricing.`)} target="_blank"
@@ -415,7 +418,7 @@ function SearchModal({open,onClose,defaultBrand='All'}){
         ):(
           <div>
             {results.map(r=>(
-              <a key={r.partNo} href={WA(`Hi, I need part ${r.partNo} — ${r.name} (${r.brand}). Please confirm availability and pricing.`)} target="_blank"
+              <a key={r.partNo} href={r.url||WA(`Hi, I need part ${r.partNo} — ${r.name} (${r.brand}). Please confirm availability and pricing.`)} target={r.url?'_self':'_blank'}
                 style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'13px 20px',borderBottom:`1px solid ${T.border}`,textDecoration:'none',transition:'background 0.15s',gap:12}}
                 onMouseEnter={e=>e.currentTarget.style.background='rgba(255,184,28,0.04)'}
                 onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
@@ -427,7 +430,7 @@ function SearchModal({open,onClose,defaultBrand='All'}){
                   </div>
                   <div style={{fontFamily:B,fontSize:13,color:T.muted}}>{r.name}</div>
                 </div>
-                <span style={{fontFamily:B,fontSize:12,color:WG,fontWeight:700,flexShrink:0,display:'flex',alignItems:'center',gap:4}}><WASvg color={WG}/>WhatsApp</span>
+                {!r.url&&<span style={{fontFamily:B,fontSize:12,color:WG,fontWeight:700,flexShrink:0,display:'flex',alignItems:'center',gap:4}}><WASvg color={WG}/>WhatsApp</span>}
               </a>
             ))}
             <div style={{padding:'10px 20px',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
@@ -1111,6 +1114,31 @@ function CategoryPage({onSearchOpen}){
 }
 
 
+
+function App(){
+  const [geo,setGeo]=useState(null);
+  const [searchOpen,setSearchOpen]=useState(false);
+  useEffect(()=>{
+    fetch('https://ipapi.co/json/?fields=country_code,country_name,timezone,continent_code')
+      .then(r=>r.json())
+      .then(d=>setGeo({country:d.country_code||'',countryName:d.country_name||'',timezone:d.timezone||'',continent:d.continent_code||''}))
+      .catch(()=>{});
+  },[]);
+  const openSearch=useCallback(()=>setSearchOpen(true),[]);
+  const closeSearch=useCallback(()=>setSearchOpen(false),[]);
+  return(
+    <GeoCtx.Provider value={geo}>
+      <AnnouncementBar/>
+      <Nav page="category" onSearchOpen={openSearch}/>
+      <main>
+        <CategoryPage onSearchOpen={openSearch}/>
+      </main>
+      <Footer/>
+      <WAFloatPill page="category"/>
+      <SearchModal open={searchOpen} onClose={closeSearch}/>
+    </GeoCtx.Provider>
+  );
+}
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 </script>

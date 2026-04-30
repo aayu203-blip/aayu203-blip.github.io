@@ -52,6 +52,7 @@
 
 <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+<script src="/assets/js/ptc-components.js"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -451,6 +452,8 @@ function SearchModal({open,onClose,defaultBrand='All'}){
   const results=useMemo(()=>{
     if(q.length<2) return [];
     const lq=q.toLowerCase();
+    const DB=window.productSearchDB||null;
+    if(DB){return DB.filter(p=>((p.part||'').toLowerCase().includes(lq)||(p.desc||'').toLowerCase().includes(lq)||(p.brand||'').toLowerCase().includes(lq))&&(brand==='All'||p.brand===brand)).slice(0,12).map(p=>({partNo:p.part,name:p.desc,brand:p.brand,cat:p.cat,url:p.url}));}
     return SEARCH_PARTS.filter(p=>(
       (p.partNo.toLowerCase().includes(lq)||p.name.toLowerCase().includes(lq)||p.brand.toLowerCase().includes(lq))
       &&(brand==='All'||p.brand===brand)
@@ -484,7 +487,7 @@ function SearchModal({open,onClose,defaultBrand='All'}){
         {q.length>=2&&(results.length===0?(
           <div style={{padding:'24px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',gap:12}}>
             <div>
-              <div style={{fontFamily:D,fontWeight:700,fontSize:16,color:T.text,marginBottom:4}}>No match in demo index</div>
+              <div style={{fontFamily:D,fontWeight:700,fontSize:16,color:T.text,marginBottom:4}}>No match found</div>
               <div style={{fontFamily:B,fontSize:13,color:T.muted}}>Full database has 51,000+ parts — WhatsApp us directly.</div>
             </div>
             <a href={WA(`Hi, I'm searching for: ${q}. Please check availability and pricing.`)} target="_blank"
@@ -495,7 +498,7 @@ function SearchModal({open,onClose,defaultBrand='All'}){
         ):(
           <div>
             {results.map(r=>(
-              <a key={r.partNo} href={WA(`Hi, I need part ${r.partNo} — ${r.name} (${r.brand}). Please confirm availability and pricing.`)} target="_blank"
+              <a key={r.partNo} href={r.url||WA(`Hi, I need part ${r.partNo} — ${r.name} (${r.brand}). Please confirm availability and pricing.`)} target={r.url?'_self':'_blank'}
                 style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'13px 20px',borderBottom:`1px solid ${T.border}`,textDecoration:'none',transition:'background 0.15s',gap:12}}
                 onMouseEnter={e=>e.currentTarget.style.background='rgba(255,184,28,0.04)'}
                 onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
@@ -507,7 +510,7 @@ function SearchModal({open,onClose,defaultBrand='All'}){
                   </div>
                   <div style={{fontFamily:B,fontSize:13,color:T.muted}}>{r.name}</div>
                 </div>
-                <span style={{fontFamily:B,fontSize:12,color:WG,fontWeight:700,flexShrink:0,display:'flex',alignItems:'center',gap:4}}><WASvg color={WG}/>WhatsApp</span>
+                {!r.url&&<span style={{fontFamily:B,fontSize:12,color:WG,fontWeight:700,flexShrink:0,display:'flex',alignItems:'center',gap:4}}><WASvg color={WG}/>WhatsApp</span>}
               </a>
             ))}
             <div style={{padding:'10px 20px',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
@@ -1191,6 +1194,31 @@ function CategoryPage({onSearchOpen}){
 }
 
 
+
+function App(){
+  const [geo,setGeo]=useState(null);
+  const [searchOpen,setSearchOpen]=useState(false);
+  useEffect(()=>{
+    fetch('https://ipapi.co/json/?fields=country_code,country_name,timezone,continent_code')
+      .then(r=>r.json())
+      .then(d=>setGeo({country:d.country_code||'',countryName:d.country_name||'',timezone:d.timezone||'',continent:d.continent_code||''}))
+      .catch(()=>{});
+  },[]);
+  const openSearch=useCallback(()=>setSearchOpen(true),[]);
+  const closeSearch=useCallback(()=>setSearchOpen(false),[]);
+  return(
+    <GeoCtx.Provider value={geo}>
+      <AnnouncementBar/>
+      <Nav page="brand" onSearchOpen={openSearch}/>
+      <main>
+        <BrandPage onSearchOpen={openSearch}/>
+      </main>
+      <Footer/>
+      <WAFloatPill page="brand"/>
+      <SearchModal open={searchOpen} onClose={closeSearch}/>
+    </GeoCtx.Provider>
+  );
+}
 
 ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
 </script>
