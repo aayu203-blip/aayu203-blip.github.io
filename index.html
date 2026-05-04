@@ -60,7 +60,7 @@ o
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
@@ -295,7 +295,7 @@ o
     const { useState, useEffect, useContext, createContext, useRef, useCallback } = React;
 
     const D = "'Barlow Condensed',sans-serif";
-    const B = "'Barlow',sans-serif";
+    const B = "'Inter',sans-serif";
     const AMBER = '#FFB81C';
     const WG    = '#25D366';
     const WA = txt => `https://wa.me/919821037990?text=${encodeURIComponent(txt)}`;
@@ -322,7 +322,7 @@ o
 
     const DARK_T = {
       bg: '#050505', bgCard: '#0F0F0F', bgSection: '#080808', bgAlt: '#0C0C0C',
-      text: '#F0ECE6', textMuted: '#888888', accent: '#FFB81C', accentDark: '#050505',
+      text: '#F0ECE6', textMuted: '#9A9A9A', accent: '#FFB81C', accentDark: '#050505',
       border: 'rgba(255,255,255,0.055)', navBg: 'rgba(5,5,5,0.97)', navText: '#F0ECE6',
       heroOverlay: 'rgba(0,0,0,0.76)', statsBg: '#FFB81C', statsText: '#050505', statsMuted: 'rgba(0,0,0,0.5)',
       brandsBg: '#080808', tagBg: 'rgba(255,184,28,0.09)', tagText: '#FFB81C',
@@ -512,12 +512,22 @@ o
       return time;
     }
 
+    function useIsMobile(bp = 768) {
+      const [m, setM] = useState(typeof window !== 'undefined' && window.innerWidth <= bp);
+      useEffect(() => {
+        const h = () => setM(window.innerWidth <= bp);
+        window.addEventListener('resize', h);
+        return () => window.removeEventListener('resize', h);
+      }, [bp]);
+      return m;
+    }
+
     // ── GEO ──────────────────────────────────────────────────────────────────────
     const GeoCtx = createContext(null);
     const useGeo = () => useContext(GeoCtx);
 
     // ── THEME CONTEXT ────────────────────────────────────────────────────────────
-    const ThemeCtx = createContext({ T: DARK_T, AMBER: '#FFB81C', isDark: true, toggle: () => { } });
+    const ThemeCtx = createContext({ T: DARK_T, AMBER: '#FFB81C', isDark: true, toggle: () => { }, isMobile: false });
     const useTheme = () => useContext(ThemeCtx);
 
     // Regions with low WhatsApp penetration — email shown first in contact form
@@ -914,17 +924,17 @@ o
 
     // ── HERO ──────────────────────────────────────────────────────────────────────
     function Hero() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       const countdown = useDispatchCountdown();
       const [sm, setSm] = useState(false);
       const geo = useGeo();
       const localTime = geo ? localCutoff(geo.timezone) : '';
       return (
-        <header id="home" style={{ position: 'relative', minHeight: '96vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+        <header id="home" style={{ position: 'relative', minHeight: isMobile ? '100svh' : '96vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
           <div className="noise" style={{ position: 'absolute', inset: 0, backgroundImage: 'url(assets/images/team-warehouse.jpg)', backgroundSize: 'cover', backgroundPosition: 'center 40%' }} />
           <div style={{ position: 'absolute', inset: 0, background: sm ? 'rgba(0,0,0,0.88)' : T.heroOverlay, transition: 'background 0.4s' }} />
           <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,184,28,0.03) 1px, transparent 1px),linear-gradient(90deg,rgba(255,184,28,0.03) 1px,transparent 1px)', backgroundSize: '80px 80px', pointerEvents: 'none' }} />
-          <div style={{ position: 'relative', zIndex: 2, maxWidth: 1360, margin: '0 auto', padding: '80px 32px 60px', width: '100%', textAlign: 'center' }}>
+          <div style={{ position: 'relative', zIndex: 2, maxWidth: 1360, margin: '0 auto', padding: isMobile ? '100px 20px 48px' : '80px 32px 60px', width: '100%', textAlign: 'center' }}>
             <div className="fu1" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,184,28,0.1)', border: '1px solid rgba(255,184,28,0.25)', borderRadius: 24, padding: '6px 20px', marginBottom: 32 }}>
               <span className="pulse" style={{ width: 7, height: 7, borderRadius: '50%', background: AMBER, display: 'inline-block' }} />
               <span style={{ color: AMBER, fontSize: 12, fontFamily: D, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase' }}>Est. 1956 · Mumbai · Open Now</span>
@@ -971,7 +981,7 @@ o
 
     // ── TRUST STRIP ───────────────────────────────────────────────────────────────
     function TrustStrip() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       const geo = useGeo();
       const ship = geoShipping(geo);
       const lastItem = ship && geo
@@ -986,13 +996,19 @@ o
         lastItem,
       ];
       return (
-        <div style={{ background: '#0A0A0A', overflowX: 'auto' }}>
-          <div style={{ maxWidth: 1360, margin: '0 auto', padding: '0 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'stretch', minWidth: 'max-content' }}>
+        <div style={{ background: '#0A0A0A', overflowX: isMobile ? 'visible' : 'auto' }}>
+          <div style={isMobile
+            ? { maxWidth: 1360, margin: '0 auto', padding: '4px 0', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)' }
+            : { maxWidth: 1360, margin: '0 auto', padding: '0 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'stretch', minWidth: 'max-content' }
+          }>
             {items.map((item, i) => (
-              <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '15px 28px', flexShrink: 0, borderRight: i < items.length - 1 ? `1px solid ${T.border}` : 'none' }}>
+              <div key={item.label} style={isMobile
+                ? { display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 3, padding: '14px 8px', textAlign: 'center', borderRight: i % 3 !== 2 ? `1px solid ${T.border}` : 'none', borderBottom: i < 3 ? `1px solid ${T.border}` : 'none' }
+                : { display: 'flex', alignItems: 'center', gap: 12, padding: '15px 28px', flexShrink: 0, borderRight: i < items.length - 1 ? `1px solid ${T.border}` : 'none' }
+              }>
                 <div>
-                  <div style={{ fontFamily: D, fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase' }}>{item.label}</div>
-                  <div style={{ fontFamily: B, fontSize: 11, color: T.textMuted, marginTop: 1 }}>{item.sub}</div>
+                  <div style={{ fontFamily: D, fontSize: isMobile ? 10 : 12, fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase' }}>{item.label}</div>
+                  <div style={{ fontFamily: B, fontSize: 10, color: T.textMuted, marginTop: 1 }}>{item.sub}</div>
                 </div>
               </div>
             ))}
@@ -1044,12 +1060,12 @@ o
       );
     }
     function StatsBar() {
-      const { T } = useTheme();
+      const { T, isMobile } = useTheme();
       return (
         <section aria-label="Key statistics" style={{ background: T.statsBg }}>
-          <div style={{ maxWidth: 1360, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', padding: '0 32px' }}>
+          <div style={{ maxWidth: 1360, margin: '0 auto', display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2,1fr)' : 'repeat(4,1fr)', padding: isMobile ? '0 16px' : '0 32px' }}>
             {STATS.map((s, i) => (
-              <div key={s.label} style={{ borderRight: i < 3 ? '1px solid rgba(0,0,0,0.1)' : undefined }}>
+              <div key={s.label} style={{ borderRight: isMobile ? (i % 2 === 0 ? '1px solid rgba(0,0,0,0.1)' : undefined) : (i < 3 ? '1px solid rgba(0,0,0,0.1)' : undefined), borderBottom: isMobile && i < 2 ? '1px solid rgba(0,0,0,0.1)' : undefined }}>
                 <StatCounter {...s} />
               </div>
             ))}
@@ -1060,24 +1076,24 @@ o
 
     // ── HOW IT WORKS ──────────────────────────────────────────────────────────────
     function HowItWorks() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       const steps = [
         { n: '01', title: 'Search or WhatsApp', desc: 'Type your part number into the search bar, or send us a WhatsApp message with your equipment model and part number.' },
         { n: '02', title: 'Confirm in Under 1 Hour', desc: 'Our expert team checks stock, confirms price, and sends you a formal quotation — within 60 minutes on business days.' },
         { n: '03', title: 'Parts Shipped Same Day', desc: 'Order before 3 PM IST. We dispatch from our Mumbai warehouse the same day, to anywhere in the world.' },
       ];
       return (
-        <section style={{ background: T.bg, padding: '96px 32px', borderTop: `1px solid ${T.border}` }}>
+        <section style={{ background: T.bg, padding: isMobile ? '64px 20px' : '96px 32px', borderTop: `1px solid ${T.border}` }}>
           <div style={{ maxWidth: 1360, margin: '0 auto' }}>
-            <div style={{ marginBottom: 64 }}>
+            <div style={{ marginBottom: isMobile ? 40 : 64 }}>
               <Label>How to Order</Label>
               <h2 style={{ fontFamily: D, fontWeight: 900, fontSize: 'clamp(32px,4.5vw,60px)', color: T.text, lineHeight: 0.95, letterSpacing: '-0.02em', textTransform: 'uppercase' }}>
                 Part in Hand.<br /><span style={{ color: AMBER }}>In 3 Steps.</span>
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 2, maxWidth: 1100, margin: '0 auto' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3,1fr)', gap: isMobile ? 12 : 2, maxWidth: 1100, margin: '0 auto' }}>
               {steps.map(s => (
-                <div key={s.n} className="card-shine" style={{ background: T.bgCard, padding: '44px 40px', border: `1px solid ${T.border}`, position: 'relative' }}>
+                <div key={s.n} className="card-shine" style={{ background: T.bgCard, padding: isMobile ? '28px 24px' : '44px 40px', border: `1px solid ${T.border}`, position: 'relative' }}>
                   <div style={{ fontFamily: D, fontWeight: 900, fontSize: 80, color: 'rgba(255,184,28,0.06)', lineHeight: 1, position: 'absolute', top: 20, right: 28, letterSpacing: '-0.04em', userSelect: 'none' }} aria-hidden="true">{s.n}</div>
                   <div style={{ width: 44, height: 44, borderRadius: '50%', background: T.accent, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 24 }}>
                     <span style={{ fontFamily: D, fontWeight: 900, fontSize: 18, color: T.accentDark }}>{s.n}</span>
@@ -1161,9 +1177,9 @@ o
       );
     }
     function ProductCategories() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       return (
-        <section id="products" aria-labelledby="products-heading" style={{ background: T.bgSection, padding: '96px 32px' }}>
+        <section id="products" aria-labelledby="products-heading" style={{ background: T.bgSection, padding: isMobile ? '56px 16px' : '96px 32px' }}>
           <div style={{ maxWidth: 1360, margin: '0 auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 52, flexWrap: 'wrap', gap: 20 }}>
               <div>
@@ -1192,14 +1208,14 @@ o
       );
     }
     function EquipmentModels() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       const [active, setActive] = useState(0);
       const [ms, setMs] = useState('');
       const cur = ALL_BRANDS[active];
       const filtered = ms ? cur.models.filter(m => m.toLowerCase().includes(ms.toLowerCase())) : cur.models;
       const total = ALL_BRANDS.reduce((a, b) => a + b.models.length, 0);
       return (
-        <section id="models" aria-labelledby="models-heading" style={{ background: T.bg, padding: '96px 32px', borderTop: `1px solid ${T.border}` }}>
+        <section id="models" aria-labelledby="models-heading" style={{ background: T.bg, padding: isMobile ? '56px 16px' : '96px 32px', borderTop: `1px solid ${T.border}` }}>
           <div style={{ maxWidth: 1360, margin: '0 auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 48, flexWrap: 'wrap', gap: 20 }}>
               <div>
@@ -1223,7 +1239,7 @@ o
                 <svg style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={T.textMuted} strokeWidth="2.5" strokeLinecap="round" aria-hidden="true"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.35-4.35" /></svg>
                 <label htmlFor="model-filter" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)' }}>Filter models</label>
                 <input id="model-filter" type="search" value={ms} onChange={e => setMs(e.target.value)} placeholder={`Filter ${cur.name} models…`}
-                  style={{ padding: '10px 14px 10px 36px', background: T.bgCard, border: `1px solid ${T.border}`, borderRadius: 8, color: T.text, fontFamily: B, fontSize: 14, outline: 'none', transition: 'border-color 0.2s', width: 240 }}
+                  style={{ padding: '10px 14px 10px 36px', background: T.bgCard, border: `1px solid ${T.border}`, borderRadius: 8, color: T.text, fontFamily: B, fontSize: 14, outline: 'none', transition: 'border-color 0.2s', width: isMobile ? '100%' : 240 }}
                   onFocus={e => e.target.style.borderColor = T.accent}
                   onBlur={e => e.target.style.borderColor = T.border} />
               </div>
@@ -1245,12 +1261,12 @@ o
 
     // ── GLOBAL REACH ──────────────────────────────────────────────────────────────
     function GlobalReach() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       const geo = useGeo();
       const ship = geoShipping(geo);
       const homeCard = geo && COUNTRIES.find(c => c.code === geo.country);
       return (
-        <section aria-labelledby="reach-heading" style={{ background: T.bgCard, padding: '96px 32px', borderTop: `1px solid ${T.border}` }}>
+        <section aria-labelledby="reach-heading" style={{ background: T.bgCard, padding: isMobile ? '56px 16px' : '96px 32px', borderTop: `1px solid ${T.border}` }}>
           <div style={{ maxWidth: 1360, margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: 56 }}>
               <Label center>Global Reach</Label>
@@ -1295,9 +1311,9 @@ o
 
     // ── TESTIMONIALS ─────────────────────────────────────────────────────────────
     function Testimonials() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       return (
-        <section aria-labelledby="testimonials-heading" style={{ background: T.bgSection, padding: '96px 32px', borderTop: `1px solid ${T.border}` }}>
+        <section aria-labelledby="testimonials-heading" style={{ background: T.bgSection, padding: isMobile ? '56px 16px' : '96px 32px', borderTop: `1px solid ${T.border}` }}>
           <div style={{ maxWidth: 1360, margin: '0 auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, flexWrap: 'wrap', gap: 20 }}>
               <div>
@@ -1335,9 +1351,9 @@ o
 
     // ── BLOG ──────────────────────────────────────────────────────────────────────
     function BlogPreview() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       return (
-        <section aria-labelledby="blog-heading" style={{ background: T.bg, padding: '96px 32px', borderTop: `1px solid ${T.border}` }}>
+        <section aria-labelledby="blog-heading" style={{ background: T.bg, padding: isMobile ? '56px 16px' : '96px 32px', borderTop: `1px solid ${T.border}` }}>
           <div style={{ maxWidth: 1360, margin: '0 auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 52, flexWrap: 'wrap', gap: 20 }}>
               <div>
@@ -1373,8 +1389,9 @@ o
 
     // ── WHATSAPP CTA ──────────────────────────────────────────────────────────────
     function WhatsAppCTA() {
+      const { isMobile } = useTheme();
       return (
-        <section style={{ background: '#075E54', padding: '100px 32px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <section style={{ background: '#075E54', padding: isMobile ? '64px 20px' : '100px 32px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px)', backgroundSize: '60px 60px', pointerEvents: 'none' }} aria-hidden="true" />
           <div style={{ position: 'relative', zIndex: 1, maxWidth: 640, margin: '0 auto' }}>
             <div style={{ fontFamily: D, fontWeight: 900, fontSize: 'clamp(36px,6vw,72px)', color: '#fff', marginBottom: 16, lineHeight: 0.9, textTransform: 'uppercase', letterSpacing: '-0.02em' }}>
@@ -1384,7 +1401,7 @@ o
               Send your part number or equipment model on WhatsApp. Price & availability confirmed in under 60 minutes.
             </p>
             <a href="https://wa.me/919821037990" target="_blank" rel="noopener noreferrer"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 14, background: WG, color: '#fff', textDecoration: 'none', padding: '20px 48px', borderRadius: 12, fontFamily: D, fontWeight: 900, fontSize: 20, letterSpacing: '0.06em', textTransform: 'uppercase', boxShadow: '0 16px 48px rgba(0,0,0,0.25)', transition: 'all 0.25s' }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: isMobile ? 10 : 14, background: WG, color: '#fff', textDecoration: 'none', padding: isMobile ? '16px 28px' : '20px 48px', borderRadius: 12, fontFamily: D, fontWeight: 900, fontSize: isMobile ? 16 : 20, letterSpacing: '0.06em', textTransform: 'uppercase', boxShadow: '0 16px 48px rgba(0,0,0,0.25)', transition: 'all 0.25s' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 24px 64px rgba(0,0,0,0.35)'; }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 16px 48px rgba(0,0,0,0.25)'; }}
             >
@@ -1399,7 +1416,7 @@ o
 
     // ── CONTACT ───────────────────────────────────────────────────────────────────
     function Contact() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       const geo = useGeo();
       const emailFirst = geo && EMAIL_FIRST.has(geo.country);
       const [form, setForm] = useState({ name: '', phone: '', email: '', brand: '', part: '' });
@@ -1410,8 +1427,8 @@ o
       const sendEmail = () => window.open(`mailto:parts@partstrading.com?subject=Parts Enquiry — ${form.brand || 'Heavy Equipment'}&body=${encodeURIComponent(buildBody())}`);
       const sendWA = () => window.open(WA(`Hi, my name is ${form.name || 'Customer'}. I need: ${form.part || 'parts'} for ${form.brand || 'my equipment'}. Email: ${form.email || 'N/A'}. Phone: ${form.phone || 'N/A'}.`), '_blank');
       return (
-        <section id="contact" aria-labelledby="contact-heading" style={{ background: T.bgSection, padding: '96px 32px', borderTop: `1px solid ${T.border}` }}>
-          <div style={{ maxWidth: 1360, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'start' }}>
+        <section id="contact" aria-labelledby="contact-heading" style={{ background: T.bgSection, padding: isMobile ? '56px 20px' : '96px 32px', borderTop: `1px solid ${T.border}` }}>
+          <div style={{ maxWidth: 1360, margin: '0 auto', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 40 : 80, alignItems: 'start' }}>
             <div>
               <Label>Get in Touch</Label>
               <h2 id="contact-heading" style={{ fontFamily: D, fontWeight: 900, fontSize: 'clamp(30px,4vw,56px)', color: T.text, lineHeight: 0.95, letterSpacing: '-0.02em', textTransform: 'uppercase', marginBottom: 24 }}>Request a<br /><span style={{ color: AMBER }}>Quote Today</span></h2>
@@ -1431,7 +1448,7 @@ o
                 </div>
               ))}
             </div>
-            <div style={{ background: T.bgCard, borderRadius: 20, padding: '44px', border: `1px solid ${T.border}`, boxShadow: '0 24px 80px rgba(0,0,0,0.4)' }}>
+            <div style={{ background: T.bgCard, borderRadius: 20, padding: isMobile ? '24px 20px' : '44px', border: `1px solid ${T.border}`, boxShadow: '0 24px 80px rgba(0,0,0,0.4)' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 14 }}>
                 <div><label htmlFor="f-name" style={lS}>Your Name</label><input id="f-name" type="text" value={form.name} onChange={u('name')} placeholder="Your full name" style={iS} onFocus={e => e.target.style.borderColor = AMBER} onBlur={e => e.target.style.borderColor = T.inputBorder} /></div>
                 <div><label htmlFor="f-phone" style={lS}>Phone (with country code)</label><input id="f-phone" type="tel" value={form.phone} onChange={u('phone')} placeholder="+1 / +44 / +91 …" style={iS} onFocus={e => e.target.style.borderColor = AMBER} onBlur={e => e.target.style.borderColor = T.inputBorder} /></div>
@@ -1465,11 +1482,11 @@ o
       { h: 'Company', links: [['About PTC','/about.html'],['Blog & Guides','/blog/'],['Contact Us','/contact.html'],['Int\'l Shipping','/deliveries.html'],['Get a Quote','/get-a-quote.html']] },
     ];
     function Footer() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       return (
-        <footer style={{ background: T.footerBg, padding: '56px 32px 32px', borderTop: `1px solid ${T.border}` }} role="contentinfo">
+        <footer style={{ background: T.footerBg, padding: isMobile ? '40px 20px 24px' : '56px 32px 32px', borderTop: `1px solid ${T.border}` }} role="contentinfo">
           <div style={{ maxWidth: 1360, margin: '0 auto' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 48, marginBottom: 48 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2,1fr)' : '2fr 1fr 1fr 1fr', gap: isMobile ? 28 : 48, marginBottom: isMobile ? 32 : 48 }}>
               <div>
                 <img src="assets/images/ptc-logo.webp" alt="Parts Trading Company" style={{ height: 34, width: 'auto', marginBottom: 18 }} />
                 <p style={{ fontFamily: B, fontSize: 13, color: T.textMuted, lineHeight: 1.75, maxWidth: 270, marginBottom: 20 }}>Globally trusted supplier of OEM &amp; aftermarket heavy equipment spare parts. Established 1956. Shipping to 50+ countries.</p>
@@ -1571,10 +1588,10 @@ o
       { img: 'assets/images/packing.jpg', label: 'Crated for international freight.', caption: 'Every part packed to withstand long-haul freight — hydraulics, engines, undercarriage.' },
     ];
     function OperationsStrip() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       return (
         <section aria-label="Our operations" style={{ background: T.bg, borderTop: `1px solid ${T.border}` }}>
-          <div style={{ maxWidth: 1360, margin: '0 auto', padding: '96px 32px 52px' }}>
+          <div style={{ maxWidth: 1360, margin: '0 auto', padding: isMobile ? '56px 20px 32px' : '96px 32px 52px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 48, flexWrap: 'wrap', gap: 20 }}>
               <div>
                 <Label>Behind Every Order</Label>
@@ -1585,14 +1602,14 @@ o
               <p style={{ fontFamily: B, fontSize: 15, color: T.textMuted, maxWidth: 360, lineHeight: 1.75 }}>Not a marketplace. Not a broker. A real warehouse, a real team, and decades of getting the right part to the right place, fast.</p>
             </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 2 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? 'repeat(2,1fr)' : 'repeat(4,1fr)', gap: 2 }}>
             {OPS_SHOTS.map((s, i) => {
               const [hov, setHov] = useState(false);
               const [ref, inView] = useInView({ threshold: 0.1 });
               return (
                 <div key={i} ref={ref} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
                   style={{
-                    position: 'relative', overflow: 'hidden', height: 480, cursor: 'default',
+                    position: 'relative', overflow: 'hidden', height: isMobile ? 260 : 480, cursor: 'default',
                     opacity: inView ? 1 : 0, transform: inView ? 'none' : 'translateY(24px)',
                     transition: `opacity 0.6s ${i * 0.1}s ease, transform 0.6s ${i * 0.1}s ease`,
                   }}>
@@ -1675,7 +1692,7 @@ o
     ];
 
     function IndustryCard({ ind, index }) {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       const [hov, setHov] = useState(false);
       const [ref, inView] = useInView({ threshold: 0.15 });
       const isEven = index % 2 === 0;
@@ -1688,7 +1705,7 @@ o
             backgroundSize: 'cover', backgroundPosition: 'center',
             opacity: inView ? 1 : 0, transform: inView ? 'none' : `translateY(40px)`,
             transition: `opacity 0.7s ${index * 0.12}s ease, transform 0.7s ${index * 0.12}s ease`,
-            minHeight: 540, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', cursor: 'default',
+            minHeight: isMobile ? 360 : 540, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', cursor: 'default',
           }}>
           {/* Image overlay */}
           <div style={{ position: 'absolute', inset: 0, background: hov ? 'rgba(0,0,0,0.72)' : 'rgba(0,0,0,0.82)', transition: 'background 0.4s ease' }} />
@@ -1717,10 +1734,10 @@ o
     }
 
     function Industries() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       return (
         <section id="industries" aria-labelledby="industries-heading" style={{ background: T.bg, borderTop: `1px solid ${T.border}` }}>
-          <div style={{ maxWidth: 1360, margin: '0 auto', padding: '96px 32px 52px' }}>
+          <div style={{ maxWidth: 1360, margin: '0 auto', padding: isMobile ? '56px 20px 32px' : '96px 32px 52px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 52, flexWrap: 'wrap', gap: 20 }}>
               <div>
                 <Label>Industries We Serve</Label>
@@ -1731,7 +1748,7 @@ o
               <p style={{ fontFamily: B, fontSize: 15, color: T.textMuted, maxWidth: 400, lineHeight: 1.7 }}>From open-pit mines in Jharkhand to road projects across East Africa — if heavy equipment runs there, we supply the parts.</p>
             </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3,1fr)' }}>
             {INDUSTRIES.map((ind, i) => <IndustryCard key={ind.id} ind={ind} index={i} />)}
           </div>
         </section>
@@ -1813,9 +1830,9 @@ o
     }
 
     function CaseStudies() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       return (
-        <section aria-labelledby="cases-heading" style={{ background: T.bgSection, padding: '96px 32px', borderTop: `1px solid ${T.border}` }}>
+        <section aria-labelledby="cases-heading" style={{ background: T.bgSection, padding: isMobile ? '56px 16px' : '96px 32px', borderTop: `1px solid ${T.border}` }}>
           <div style={{ maxWidth: 1360, margin: '0 auto' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 56, flexWrap: 'wrap', gap: 20 }}>
               <div>
@@ -1877,11 +1894,11 @@ o
     }
 
     function FAQ() {
-      const { T, AMBER } = useTheme();
+      const { T, AMBER, isMobile } = useTheme();
       return (
-        <section id="faq" aria-labelledby="faq-heading" style={{ background: T.bg, padding: '96px 32px', borderTop: `1px solid ${T.border}` }}>
-          <div style={{ maxWidth: 1360, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 80, alignItems: 'start' }}>
-            <div style={{ position: 'sticky', top: 120 }}>
+        <section id="faq" aria-labelledby="faq-heading" style={{ background: T.bg, padding: isMobile ? '56px 20px' : '96px 32px', borderTop: `1px solid ${T.border}` }}>
+          <div style={{ maxWidth: 1360, margin: '0 auto', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 2fr', gap: isMobile ? 32 : 80, alignItems: 'start' }}>
+            <div style={{ position: isMobile ? 'static' : 'sticky', top: 120 }}>
               <Label>FAQ</Label>
               <h2 id="faq-heading" style={{ fontFamily: D, fontWeight: 900, fontSize: 'clamp(30px,3.5vw,52px)', color: T.text, lineHeight: 0.95, letterSpacing: '-0.02em', textTransform: 'uppercase', marginBottom: 24 }}>
                 Questions<br /><span style={{ color: AMBER }}>Answered.</span>
@@ -1915,6 +1932,7 @@ o
       const T = isDark ? DARK_T : LIGHT_T;
       const AMBER = isDark ? '#FFB81C' : '#E8A000';
       const toggle = useCallback(() => setIsDark(d => !d), []);
+      const isMobile = useIsMobile();
 
       useEffect(() => {
         document.body.style.background = T.bg;
@@ -1930,7 +1948,7 @@ o
       }, []);
 
       return (
-        <ThemeCtx.Provider value={{ T, AMBER, isDark, toggle }}>
+        <ThemeCtx.Provider value={{ T, AMBER, isDark, toggle, isMobile }}>
           <GeoCtx.Provider value={geo}>
             <div style={{ background: T.bg, minHeight: '100vh', transition: 'background 0.35s ease' }}>
               <AnnouncementBar />
