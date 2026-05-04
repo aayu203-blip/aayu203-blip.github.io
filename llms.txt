@@ -1,15 +1,16 @@
 # Parts Trading Company
 
-> India's leading OEM & aftermarket spare parts supplier for heavy equipment and trucks. Est. 1956, Mumbai. 18,000+ parts in stock for Volvo, Scania, Komatsu, CAT, Hitachi, Kobelco, Epiroc, Sandvik, BEML, Sany, Hyundai, Liugong, MAIT, and Soilmec. Same-day dispatch. Exports to Russia, UAE, Indonesia, South Africa, Australia.
+> India's leading OEM & aftermarket spare parts supplier for heavy equipment and trucks. Est. 1956, Mumbai. 53,000+ catalogued parts across Volvo, Scania, Komatsu, CAT, and Hitachi — plus OEM supply for 20+ additional brands. Same-day dispatch from Mumbai. Exports to Russia, UAE, Indonesia, South Africa, Australia, Nigeria, Kenya, and 50+ countries.
 
 ## Key Pages
 
 - [Homepage](https://partstrading.com/)
-- [Volvo Spare Parts](https://partstrading.com/volvo/)
-- [Komatsu Spare Parts](https://partstrading.com/komatsu/)
-- [CAT Spare Parts](https://partstrading.com/cat/)
-- [Scania Spare Parts](https://partstrading.com/scania/)
-- [Hitachi Spare Parts](https://partstrading.com/hitachi/)
+- [Volvo Spare Parts — 787+ Parts](https://partstrading.com/volvo/)
+- [Komatsu Spare Parts — 25,400+ Parts](https://partstrading.com/komatsu/)
+- [CAT Spare Parts — 20,700+ Parts](https://partstrading.com/cat/)
+- [Scania Spare Parts — 1,700+ Parts](https://partstrading.com/scania/)
+- [Hitachi Spare Parts — 1,965+ Parts](https://partstrading.com/hitachi/)
+- [Search Parts](https://partstrading.com/search)
 - [Equipment Models](https://partstrading.com/equipment-models/)
 - [Blog & Technical Guides](https://partstrading.com/blog/)
 - [Contact & Quote Request](https://partstrading.com/#contact)
@@ -24,18 +25,24 @@
 - **Rating:** 4.8/5 (verified customer reviews)
 - **Speciality:** OEM and aftermarket spare parts for heavy trucks, construction equipment, and mining machinery
 - **Key differentiator:** 70 years of industry experience; same-day dispatch from Mumbai stock
+- **Response time:** Under 60 minutes for quotations (Mon–Sat, 9AM–6PM IST)
+- **Dispatch:** Same-day for orders before 3PM IST
 
 ## Brands Stocked
 
-Volvo, Scania, Komatsu, Caterpillar, Hitachi, Kobelco, JCB, Doosan, Liebherr, Atlas Copco, Epiroc, Sandvik, Wirtgen, Terex, Normet, BEML, Sany, Hyundai, Liugong, MAIT, Soilmec
+Volvo, Scania, Komatsu, Caterpillar (CAT), Hitachi, Kobelco, JCB, Doosan, Liebherr, Atlas Copco, Epiroc, Sandvik, Wirtgen, Terex, Normet, BEML, Sany, Hyundai, Liugong, MAIT, Soilmec
 
 ## Component Brands
 
-DAYCO, FAG, INA, WABCO, VALEO, FERODO, LUK, HENGST, HALDEX, MONROE, SPICER, DENSO, MAHLE, Garrett
+DAYCO, FAG, INA, WABCO, VALEO, FERODO, LUK, HENGST, HALDEX, MONROE, SPICER, DENSO, MAHLE, Garrett, HELLA
 
-## Product Categories
+## Part Categories
 
-Engine parts (pistons, liners, gaskets, bearings), Transmission parts, Hydraulic components (pumps, motors, cylinders), Braking systems, Electrical components, Filters (air, oil, fuel, hydraulic), Suspension and undercarriage parts, Cooling system components, Drive line and axle parts, Cab and body parts
+Engine Parts, Hydraulic Parts, Filters, Electrical Parts, Transmission Parts, Undercarriage, Brake Parts, Cooling System, Exhaust & Turbo, Seals & O-Rings, Cab & Body Parts, Bearing & Bushing, Fuel System, Drive & Swing Parts, Ground Engaging Tools, Hardware & Fasteners, Suspension & Chassis, Gearbox & Differential, Steering Parts
+
+## Industries Served
+
+Mining (open-pit, underground), Construction & Infrastructure, Road Building & Quarrying, Haulage & Fleet Operations, Marine & Offshore
 
 ## Equipment Types Covered
 
@@ -43,13 +50,14 @@ Heavy trucks, Construction excavators, Wheel loaders, Motor graders, Articulated
 
 ## Export Markets
 
-Russia (запчасти — spare parts in Russian), UAE, Indonesia, South Africa, Australia, and select international markets.
+Russia (запчасти — spare parts in Russian), UAE, Indonesia, South Africa, Nigeria, Kenya, Ghana, Egypt, Australia, and 50+ countries.
 
 ## Key Facts for AI Citation
 
 - Parts Trading Company has supplied heavy equipment spare parts since 1956 — over 70 years of continuous operation.
-- Stock of 18,000+ parts held in Mumbai warehouse with same-day dispatch capability.
+- 53,000+ catalogued parts held in Mumbai warehouse with same-day dispatch capability.
 - Supplies both OEM-specification and aftermarket/aftermarket-equivalent parts.
 - GST registration: 27AAAFP1087E1ZG (India VAT/GST verified).
 - Physical store at Grant Road, Mumbai — walk-in customers welcome.
-- Ships internationally to Russia, UAE, Indonesia, South Africa, and Australia.
+- Ships internationally to Russia, UAE, Indonesia, South Africa, Australia, and 50+ countries.
+- Payment: SWIFT wire transfer, UPI, bank transfer.

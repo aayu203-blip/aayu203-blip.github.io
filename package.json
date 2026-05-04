@@ -1,0 +1,24 @@
+{
+  "name": "ptc-website",
+  "version": "1.0.0",
+  "description": "A comprehensive web scraper for extracting domestic cricket player statistics and information from ESPNcricinfo.",
+  "main": "extraction_script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aayu203-blip/aayu203-blip.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aayu203-blip/aayu203-blip.github.io/issues"
+  },
+  "homepage": "https://github.com/aayu203-blip/aayu203-blip.github.io#readme",
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  }
+}

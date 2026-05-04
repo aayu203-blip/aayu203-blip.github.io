@@ -1,6 +1,6 @@
 # PTC Website — Master Priority Checklist
 _Consolidated from: PERFORMANCE, ACCESSIBILITY, SEO-TECHNICAL, SECURITY, ONPAGE-SEO, AEO-GEO reports_
-_Last updated: 2026-05-04_
+_Last updated: 2026-05-04 (A, C, E, F, G, H, I, M, N, Q completed · D partial · B, J, K, L, O, P, R pending)_
 
 Legend: 🔴 Critical · 🟠 High · 🟡 Medium · 🟢 Low · ✅ Done
 
@@ -8,16 +8,15 @@ Legend: 🔴 Critical · 🟠 High · 🟡 Medium · 🟢 Low · ✅ Done
 
 ## 🔴 TIER 1 — Do These First (Highest Impact, Site-Wide)
 
-### A. Build Pipeline — Eliminate Babel Standalone
+### A. Build Pipeline — Eliminate Babel Standalone ✅
 > The single biggest win. Babel in-browser (~1.63 MB) causes LCP >4s on mobile. Every page loads it.
 
-- [ ] Set up Vite build pipeline (`npm create vite@latest`)
-- [ ] Convert `<script type="text/babel">` JSX to proper `.jsx` files
-- [ ] Run build, verify output replaces inline Babel with compiled bundle (~140 KB)
-- [ ] Update deployment to push `dist/` to GitHub Pages
-- [ ] **Paired**: Once Babel is gone, CSP can drop `unsafe-inline` → tighten security headers
+- [x] Pre-compile JSX template once with esbuild → `assets/js/product-page.js` (63 KB)
+- [x] Strip Babel CDN tag + inline JSX from all 53,856 product pages (strip_babel.py)
+- [x] Each page now loads: `<script>const P={...}</script>` + `<script src="/assets/js/product-page.js">`
+- [ ] **Paired**: CSP can now drop `unsafe-inline` → tighten security headers (do with item B)
 
-**Effort**: 1–2 days · **Reports**: PERFORMANCE (P1), SECURITY
+**Effort**: Done · **Reports**: PERFORMANCE (P1), SECURITY
 
 ---
 
@@ -36,104 +35,79 @@ Legend: 🔴 Critical · 🟠 High · 🟡 Medium · 🟢 Low · ✅ Done
 
 ---
 
-### C. Static-First Rendering — Homepage & Category Pages
+### C. Static-First Rendering — Homepage & Category Pages ✅
 > Product pages (53,856) already have static HTML injected. Homepage and 5 brand index pages still JS-only.
 
-- [ ] Add static-first HTML injection to `index.html` (homepage)
-- [ ] Add static-first HTML injection to `volvo/index.html`
-- [ ] Add static-first HTML injection to `komatsu/index.html`
-- [ ] Add static-first HTML injection to `cat/index.html`
-- [ ] Add static-first HTML injection to `scania/index.html`
-- [ ] Add static-first HTML injection to `hitachi/index.html`
-- [ ] **Paired**: Fixes GMC "Product page unavailable" (475 products), speeds Googlebot indexing
+- [x] Add static-first HTML injection to `index.html` (homepage) — nav, H1, brand grid, FAQ, footer
+- [x] `volvo/index.html` — already had `#seo-static` div from prior work
+- [x] `komatsu/index.html` — already had `#seo-static` div
+- [x] `cat/index.html` — already had `#seo-static` div
+- [x] `scania/index.html` — already had `#seo-static` div
+- [x] `hitachi/index.html` — already had `#seo-static` div
 
-**Effort**: 2–3 hrs · **Reports**: SEO-TECHNICAL, PERFORMANCE (P2)
+**Effort**: Done · **Reports**: SEO-TECHNICAL, PERFORMANCE (P2)
 
 ---
 
 ## 🟠 TIER 2 — High Impact, Moderate Effort
 
-### D. Product Page Data Quality — CAT & Scania
+### D. Product Page Data Quality — CAT & Scania (partial ✅)
 > ~2,000–3,000 CAT pages have "Engine Component" as name. Some Scania pages have single-letter model bleeding into title.
 
-- [ ] Identify all CAT pages with generic names: `grep -rl "Engine Component" cat/ | wc -l`
-- [ ] Enrich CAT names from FridayParts catalog (`fridayparts_new_catalog.json` has 5,286 CAT entries)
-- [ ] Write script to update CAT page titles/descriptions/schema names from catalog
-- [ ] Fix Scania single-letter model filter: strip model names < 3 chars from title template
-- [ ] Re-run generator for affected pages only
-- [ ] **Paired**: Also fix OG tags (see item E below) in the same pass
+- [ ] Enrich CAT names from FridayParts catalog — **blocked**: FridayParts keys (short numeric) don't match CAT part number format. Needs separate data source or manual mapping.
+- [x] Fix Scania single-letter model filter: strip model names < 3 chars from title (done via inject_og_tags.py)
 
-**Effort**: 1 day · **Report**: ONPAGE-SEO, SEO-TECHNICAL
+**Effort**: CAT enrichment deferred · **Report**: ONPAGE-SEO, SEO-TECHNICAL
 
 ---
 
-### E. Add OG Tags to Product Pages
-> All 53,856 product pages are missing `og:title`, `og:description`, `og:type="product"`.
-> Affects social sharing previews (WhatsApp, LinkedIn link unfurls).
+### E. Add OG Tags to Product Pages ✅
+> All 53,856 product pages were missing `og:title`, `og:description`, `og:type="product"`.
 
-- [ ] Write Python script to inject into product page `<head>`:
-  ```html
-  <meta property="og:title" content="{Brand} {PartNo} — {Name}">
-  <meta property="og:description" content="{meta description}">
-  <meta property="og:type" content="product">
-  ```
-- [ ] Run across all 53,856 pages
-- [ ] **Paired**: Run together with CAT/Scania name fixes (item D) — same file pass
+- [x] Inject `og:title`, `og:description`, `og:type=product`, `og:url` into all 53,856 product pages
+- [x] Scania `| G |` single-char model bleed fixed in og:title simultaneously
 
-**Effort**: 1 hr (script) + runtime · **Report**: ONPAGE-SEO
+**Effort**: Done · **Report**: ONPAGE-SEO
 
 ---
 
-### F. Fix SearchAction Schema (Homepage)
-> `WebSite` schema has `SearchAction` pointing to WhatsApp (`wa.me/...`). Google requires a real search URL — won't trigger sitelinks search box. Currently misleads Googlebot.
+### F. Fix SearchAction Schema + Search Results Page ✅
+> `WebSite` schema was pointing SearchAction at WhatsApp. Created real search page.
 
-- [ ] Either: replace with a real search URL (e.g. `https://partstrading.com/?q={search_term_string}`) if a search results page exists
-- [ ] Or: remove the `SearchAction` block entirely from `WebSite` schema if no search results page
-- [ ] **Paired**: While editing homepage schema, also bump `textMuted` color (item H)
+- [x] Created `/search.html` — full search results page using existing `productSearchDB`
+- [x] Updated `WebSite` schema `SearchAction.urlTemplate` → `https://partstrading.com/search?q={search_term_string}`
+- [x] HeroSearch Enter key now navigates to `/search?q=...` instead of WhatsApp fallback
+- [x] Search page: brand filters, show-more pagination, WhatsApp fallback for no results, keyboard-accessible
 
-**Effort**: 10 min · **Report**: SEO-TECHNICAL
-
----
-
-### G. Hero Image Preload
-> Hero background image (`team-warehouse.jpg`) is set via JS `backgroundImage` CSS — browser can't discover it until React renders, delaying LCP.
-
-- [ ] Add to `<head>` of `index.html`:
-  ```html
-  <link rel="preload" as="image" href="assets/images/team-warehouse.jpg" fetchpriority="high">
-  ```
-- [ ] **Paired**: Also add `dns-prefetch` for ipapi.co (geolocation API):
-  ```html
-  <link rel="dns-prefetch" href="https://ipapi.co">
-  ```
-
-**Effort**: 5 min · **Report**: PERFORMANCE (P2, P5)
+**Effort**: Done · **Report**: SEO-TECHNICAL
 
 ---
 
-### H. Accessibility — Contrast + Tab Panel ARIA
-> `textMuted` (#9A9A9A on #050505) is 3.9:1 — borderline WCAG AA fail (need 4.5:1 for normal text).
-> Models section tabs missing `role="tabpanel"` + `aria-controls`.
+### G. Hero Image Preload ✅
+- [x] Added `<link rel="preload" as="image" href="assets/images/team-warehouse.jpg" fetchpriority="high">`
+- [x] Added `<link rel="dns-prefetch" href="https://ipapi.co">`
 
-- [ ] Bump `textMuted` in `DARK_T`: `'#9A9A9A'` → `'#ABABAB'` (4.6:1 contrast)
-- [ ] In `EquipmentModels`: wrap models grid in `<div role="tabpanel" aria-labelledby="tab-{brand}">`
-- [ ] Add `id="tab-{b.name}"` to each brand tab button
-- [ ] **Paired**: While in EquipmentModels, also fix mobile `width: 240` on filter input (already done ✅)
+**Effort**: Done · **Report**: PERFORMANCE (P2, P5)
 
-**Effort**: 20 min · **Report**: ACCESSIBILITY
+---
+
+### H. Accessibility — Contrast + Tab Panel ARIA ✅
+- [x] `textMuted` in `DARK_T`: `'#9A9A9A'` → `'#ABABAB'` (4.6:1 contrast ratio)
+- [x] EquipmentModels: models grid wrapped in `<div role="tabpanel" aria-labelledby="tab-{brand}">`
+- [x] Brand tab buttons get `id="tab-{brand}"` + `aria-controls="tabpanel-{brand}"`
+
+**Effort**: Done · **Report**: ACCESSIBILITY
 
 ---
 
 ## 🟡 TIER 3 — Medium Impact, Quick Wins
 
-### I. Update llms.txt Part Count
-> llms.txt claims "18,000+ parts" — site has 53,856. AI assistants will cite the wrong number.
+### I. Update llms.txt Part Count ✅
+- [x] Updated "18,000+" → "53,000+" in intro paragraph and Key Facts section
+- [x] Added per-brand part counts to brand links (Komatsu 25,400+, CAT 20,700+, etc.)
+- [x] Added Search Parts link, expanded Export Markets, added Industries Served section
 
-- [ ] Edit `llms.txt`: update "18,000+" → "53,000+"
-- [ ] Audit `llms-full.txt` — verify it has comprehensive brand/category/country listing
-- [ ] **Paired**: Add per-brand part counts to llms.txt (from homepage BrandGrid data)
-
-**Effort**: 10 min · **Report**: AEO-GEO
+**Effort**: Done · **Report**: AEO-GEO
 
 ---
 
@@ -174,25 +148,18 @@ Legend: 🔴 Critical · 🟠 High · 🟡 Medium · 🟢 Low · ✅ Done
 
 ---
 
-### M. Remove or Restrict .htaccess
-> `.htaccess` is publicly accessible at `/.htaccess` (200). GitHub Pages ignores it anyway.
+### M. Remove .htaccess ✅
+- [x] Deleted `.htaccess` — had zero effect on GitHub Pages, was publicly readable
 
-- [ ] Delete `.htaccess` from repo (it has zero effect on GitHub Pages)
-- [ ] Or: add `Disallow: /.htaccess` to `robots.txt` as a minimum
-
-**Effort**: 2 min · **Report**: SECURITY, SEO-TECHNICAL
+**Effort**: Done · **Report**: SECURITY, SEO-TECHNICAL
 
 ---
 
-### N. Reduce Google Fonts Payload
-> Loading 4 weights for Inter + 5 weights for Barlow Condensed. Audit which weights are actually used.
+### N. Reduce Google Fonts Payload ✅
+- [x] Barlow Condensed: dropped weight 500 (unused) → now loads 600;700;800;900
+- [x] Inter: keeps 400;500;600;700 (all used in JSX)
 
-- [ ] Check which Inter weights are used in JSX (`fontWeight: 400/500/600/700`)
-- [ ] Check which Barlow Condensed weights are used
-- [ ] Remove unused weights from Google Fonts URL
-- [ ] Target: Inter 400+600+700, Barlow Condensed 700+800+900 (drop 500)
-
-**Effort**: 15 min · **Report**: PERFORMANCE (P4)
+**Effort**: Done · **Report**: PERFORMANCE (P4)
 
 ---
 
@@ -219,12 +186,10 @@ Legend: 🔴 Critical · 🟠 High · 🟡 Medium · 🟢 Low · ✅ Done
 
 ---
 
-### Q. Add Speakable Schema to FAQ
-> Marks FAQ answers as suitable for voice/audio AI responses.
+### Q. Add Speakable Schema ✅
+- [x] Added `WebPage` + `SpeakableSpecification` JSON-LD targeting `#faq`, `#home h1`, `#home p`
 
-- [ ] Add `Speakable` schema to FAQ section in homepage JSON-LD
-
-**Effort**: 30 min · **Report**: AEO-GEO
+**Effort**: Done · **Report**: AEO-GEO
 
 ---
 
@@ -238,7 +203,7 @@ Legend: 🔴 Critical · 🟠 High · 🟡 Medium · 🟢 Low · ✅ Done
 
 ---
 
-## ✅ Already Done (This Session)
+## ✅ Already Done
 
 - ✅ Body CSS `font-family: 'Barlow'` → `'Inter'` (was missed when B constant was changed)
 - ✅ SRI integrity hashes added to React/ReactDOM/Babel on homepage
@@ -255,6 +220,17 @@ Legend: 🔴 Critical · 🟠 High · 🟡 Medium · 🟢 Low · ✅ Done
 - ✅ robots.txt AI crawlers configured
 - ✅ llms.txt created
 - ✅ Sitemap index with 6 child sitemaps
+- ✅ **A**: Babel stripped from all 53,856 product pages → `assets/js/product-page.js` (63 KB replaces 1.63 MB)
+- ✅ **C**: Static-first HTML injected into homepage + confirmed on 5 brand index pages
+- ✅ **D** (partial): Scania single-char model bleed fixed in titles/og:title
+- ✅ **E**: `og:title`, `og:description`, `og:type=product`, `og:url` added to all 53,856 product pages
+- ✅ **F**: Search results page created at `/search.html`; WebSite SearchAction schema updated; HeroSearch Enter → `/search?q=...`
+- ✅ **G**: Hero image preload + ipapi.co dns-prefetch added to `<head>`
+- ✅ **H**: `textMuted` #9A9A9A → #ABABAB (4.6:1 contrast); EquipmentModels tabpanel ARIA added
+- ✅ **I**: llms.txt updated to 53,000+ parts with per-brand counts
+- ✅ **M**: `.htaccess` deleted (no effect on GitHub Pages, was publicly readable)
+- ✅ **N**: Barlow Condensed weight 500 dropped (unused)
+- ✅ **Q**: Speakable schema added to homepage
 
 ---
 
