@@ -3,7 +3,16 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/sitemap.xml", "destination": "/sitemap_index.xml", "permanent": true },
-    { "source": "/news-sitemap.xml", "destination": "/sitemap_index.xml", "permanent": true }
+    { "source": "/news-sitemap.xml", "destination": "/sitemap_index.xml", "permanent": true },
+    { "source": "/pages/hubs/brand-scania", "destination": "/scania/", "permanent": true },
+    { "source": "/pages/hubs/brand-volvo", "destination": "/volvo/", "permanent": true },
+    { "source": "/pages/hubs/brand-komatsu", "destination": "/komatsu/", "permanent": true },
+    { "source": "/pages/hubs/brand-cat", "destination": "/cat/", "permanent": true },
+    { "source": "/pages/hubs/brand-hitachi", "destination": "/hitachi/", "permanent": true },
+    { "source": "/pages/hubs/brand-kobelco", "destination": "/kobelco/", "permanent": true },
+    { "source": "/pages/hubs/brand-john-deere", "destination": "/john-deere/", "permanent": true },
+    { "source": "/pages/hubs/:path*", "destination": "/", "permanent": true },
+    { "source": "/pages/:path*", "destination": "/", "permanent": true }
   ],
   "rewrites": [
     { "source": "/products/:path*", "destination": "/pages/products/:path*" }
