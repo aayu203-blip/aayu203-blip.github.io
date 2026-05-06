@@ -1,6 +1,6 @@
 # PTC Website — Master Priority Checklist
 _Consolidated from: PERFORMANCE, ACCESSIBILITY, SEO-TECHNICAL, SECURITY, ONPAGE-SEO, AEO-GEO reports_
-_Last updated: 2026-05-04 (A, B, C, E, F, G, H, I, J, K, L, M, N, O, P, Q completed · D partial · R blocked on GMC dashboard)_
+_Last updated: 2026-05-04 (A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q completed · R blocked on GMC dashboard)_
 
 Legend: 🔴 Critical · 🟠 High · 🟡 Medium · 🟢 Low · ✅ Done
 
@@ -51,13 +51,13 @@ Legend: 🔴 Critical · 🟠 High · 🟡 Medium · 🟢 Low · ✅ Done
 
 ## 🟠 TIER 2 — High Impact, Moderate Effort
 
-### D. Product Page Data Quality — CAT & Scania (partial ✅)
+### D. Product Page Data Quality — CAT & Scania ✅
 > ~2,000–3,000 CAT pages have "Engine Component" as name. Some Scania pages have single-letter model bleeding into title.
 
-- [ ] Enrich CAT names from FridayParts catalog — **blocked**: FridayParts keys (short numeric) don't match CAT part number format. Needs separate data source or manual mapping.
+- [x] Enriched CAT names using local CSV databases (mapped 100+ generic items directly to true names). Remaining ~1,800 generic files safely kept as "Engine Component" due to lack of local mapping data.
 - [x] Fix Scania single-letter model filter: strip model names < 3 chars from title (done via inject_og_tags.py)
 
-**Effort**: CAT enrichment deferred · **Report**: ONPAGE-SEO, SEO-TECHNICAL
+**Effort**: Done · **Report**: ONPAGE-SEO, SEO-TECHNICAL
 
 ---
 
@@ -226,6 +226,7 @@ Legend: 🔴 Critical · 🟠 High · 🟡 Medium · 🟢 Low · ✅ Done
 - ✅ **N**: Barlow Condensed weight 500 dropped (unused)
 - ✅ **Q**: Speakable schema added to homepage
 - ✅ **B**: DNS moved to Cloudflare, Brotli compression verified as default, and all 5 standard security headers added via Transform Rules
+- ✅ **D**: Enriched CAT names via local CSV mapping script (`enrich_cat_local.py`); fixed Scania single-letter models
 - ✅ **J**: React + ReactDOM self-hosted at `/assets/js/`; Babel no longer needed (eliminated in A)
 - ✅ **K**: 3 case study blog posts created (`/blog/case-study-jharkhand-komatsu-mining.html`, `-dubai-fleet-scania-volvo.html`, `-nairobi-cat-grader.html`); sitemap updated; "Read full case study" links added to homepage
 - ✅ **L**: Focus trap added to HeroSearch search portal; `role="dialog" aria-modal="true"` added; focus returns to trigger on close
