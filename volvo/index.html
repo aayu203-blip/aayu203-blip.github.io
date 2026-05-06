@@ -506,7 +506,7 @@ function SearchModal({open,onClose,defaultBrand='All'}){
           <div style={{padding:'24px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',gap:12}}>
             <div>
               <div style={{fontFamily:D,fontWeight:700,fontSize:16,color:T.text,marginBottom:4}}>No match found</div>
-              <div style={{fontFamily:B,fontSize:13,color:T.muted}}>Full database has 51,000+ parts — WhatsApp us directly.</div>
+              <div style={{fontFamily:B,fontSize:13,color:T.muted}}>Full database has 70,000+ parts — WhatsApp us directly.</div>
             </div>
             <a href={WA(`Hi, I'm searching for: ${q}. Please check availability and pricing.`)} target="_blank"
               style={{display:'flex',alignItems:'center',gap:8,background:WG,color:'#fff',textDecoration:'none',padding:'11px 18px',borderRadius:9,fontFamily:D,fontWeight:700,fontSize:14,whiteSpace:'nowrap',flexShrink:0}}>
@@ -539,7 +539,7 @@ function SearchModal({open,onClose,defaultBrand='All'}){
         ))}
         {q.length<2&&(
           <div style={{padding:'20px',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-            <span style={{fontFamily:B,fontSize:12,color:T.muted}}>51,000+ parts indexed · type 2+ characters to search</span>
+            <span style={{fontFamily:B,fontSize:12,color:T.muted}}>70,000+ parts indexed · type 2+ characters to search</span>
             <span style={{fontFamily:B,fontSize:12,color:T.muted}}>Esc to close</span>
           </div>
         )}
@@ -558,7 +558,7 @@ function AnnouncementBar(){
   const items=[
     'Order before 3 PM IST — ships same day',
     shippingItem,
-    '51,000+ parts ready to dispatch, Mumbai',
+    '70,000+ parts ready to dispatch, Mumbai',
     'WhatsApp · Email · SWIFT & UPI accepted',
     'Est. 1956 — 70 years of trusted supply',
   ];
@@ -721,7 +721,7 @@ function WAFloatPill({page}){
 
 // ── STATS BAR ─────────────────────────────────────────────────────────────────
 function StatsBar(){
-  const stats=[['51,000+','Parts in Stock'],['70+','Years Trusted'],['16+','Brands Covered'],['50+','Countries Served']];
+  const stats=[['70,000+','Parts in Stock'],['70+','Years Trusted'],['16+','Brands Covered'],['50+','Countries Served']];
   return(
     <div style={{background:AMBER}}>
       <div style={{maxWidth:1360,margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(4,1fr)',padding:'0 32px'}}>
