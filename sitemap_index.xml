@@ -82,4 +82,16 @@
     <loc>https://partstrading.com/sitemap-location-1.xml</loc>
     <lastmod>2026-05-06</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-blog.xml</loc>
+    <lastmod>2026-05-06</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-john-deere.xml</loc>
+    <lastmod>2026-05-06</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-kobelco.xml</loc>
+    <lastmod>2026-05-06</lastmod>
+  </sitemap>
 </sitemapindex>
