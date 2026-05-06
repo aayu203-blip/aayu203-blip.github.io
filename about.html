@@ -76,7 +76,47 @@ body{overflow-x:hidden;font-family:'Barlow',sans-serif;background:#050505;color:
     <link rel="alternate" hreflang="en" href="https://partstrading.com/about.html">
   <link rel="alternate" hreflang="x-default" href="https://partstrading.com/about.html">
   <link rel="canonical" href="https://partstrading.com/about.html">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Parts Trading Company","url":"https://partstrading.com","telephone":"+919821037990","address":{"@type":"PostalAddress","streetAddress":"1st Floor, Vijay Chambers, Grant Road East","addressLocality":"Mumbai","postalCode":"400004","addressCountry":"IN"},"foundingDate":"1956","logo":"https://partstrading.com/assets/images/ptc-logo.webp"}</script>
+  <script type="application/ld+json">{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://partstrading.com/#organization",
+      "name":"Parts Trading Company",
+      "alternateName":"PTC",
+      "url":"https://partstrading.com",
+      "logo":{
+        "@type":"ImageObject",
+        "url":"https://partstrading.com/assets/images/ptc-logo.png",
+        "width":512,
+        "height":512
+      },
+      "image":"https://partstrading.com/assets/images/ptc-logo.png",
+      "telephone":"+919821037990",
+      "email":"parts@partstrading.com",
+      "foundingDate":"1956",
+      "foundingLocation":{"@type":"Place","name":"Vijay Chambers, Grant Road East, Mumbai, India"},
+      "description":"Parts Trading Company is India's leading heavy equipment spare parts supplier, established in 1956 by Rasik Shah at Grant Road, Mumbai. Three generations of the Shah family have built the business into a global exporter supplying CAT, Volvo, Komatsu, Hitachi and Scania parts to 50+ countries.",
+      "address":{
+        "@type":"PostalAddress",
+        "streetAddress":"1st Floor, Vijay Chambers, Grant Road East",
+        "addressLocality":"Mumbai",
+        "addressRegion":"Maharashtra",
+        "postalCode":"400004",
+        "addressCountry":"IN"
+      },
+      "areaServed":{"@type":"Place","name":"Worldwide"},
+      "numberOfEmployees":{"@type":"QuantitativeValue","value":"10-50"},
+      "sameAs":["https://partstrading.com"]
+    },
+    {
+      "@type":"WebPage",
+      "url":"https://partstrading.com/about",
+      "name":"About Parts Trading Company — Est. 1956, Mumbai",
+      "isPartOf":{"@id":"https://partstrading.com/#organization"}
+    }
+  ]
+}</script>
 </head>
 <body>
 <div id="root"></div>
@@ -388,7 +428,7 @@ function Nav({onSearchOpen}){
     <nav style={{position:'sticky',top:0,zIndex:1000,background:scrolled?T.navBg:'rgba(5,5,5,0.9)',backdropFilter:'blur(28px)',borderBottom:`1px solid ${scrolled?T.border:'transparent'}`,transition:'all 0.3s'}}>
       <div style={{maxWidth:1360,margin:'0 auto',padding:'0 32px',height:68,display:'flex',alignItems:'center'}}>
         <a href="/" style={{marginRight:32,flexShrink:0,display:'flex',alignItems:'center'}}>
-          <img src="assets/images/ptc-logo.webp" alt="Parts Trading Company" style={{height:48,width:'auto'}}/>
+          <img src="assets/images/ptc-logo.png" alt="Parts Trading Company" style={{height:48,width:'auto'}}/>
         </a>
         <div className="desktop-only" style={{display:'flex',alignItems:'center',flex:1}}>
           <a href="/" style={{...lnk,textDecoration:'none',opacity:0.6,display:'flex',alignItems:'center',gap:5}}
@@ -465,7 +505,7 @@ function Footer(){
       <div style={{maxWidth:1360,margin:'0 auto'}}>
         <div style={{display:'grid',gridTemplateColumns:'2fr 1fr 1fr 1fr',gap:48,marginBottom:48}}>
           <div>
-            <img src="assets/images/ptc-logo.webp" alt="Parts Trading Company" style={{height:34,width:'auto',marginBottom:18}}/>
+            <img src="assets/images/ptc-logo.png" alt="Parts Trading Company" style={{height:34,width:'auto',marginBottom:18}}/>
             <p style={{fontFamily:B,fontSize:13,color:T.muted,lineHeight:1.75,maxWidth:270,marginBottom:20}}>Globally trusted supplier of OEM &amp; aftermarket heavy equipment spare parts. Established 1956. Shipping to 50+ countries.</p>
             <div style={{display:'flex',gap:10}}>
               {socials.map(s=>(
@@ -562,19 +602,24 @@ function AboutPage(){
           <div className="two-col" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:32,alignItems:'start',marginBottom:40}}>
             <div>
               <p style={{fontFamily:B,fontSize:15,color:T.muted,lineHeight:1.9,marginBottom:24}}>Parts Trading Company has stayed in the same family and the same building since 1956. What began as one man's counter has passed through three generations — each one growing the business without losing the principles that built it: know your parts, know your customer, ship fast.</p>
+              <p style={{fontFamily:B,fontSize:15,color:T.muted,lineHeight:1.9,marginBottom:24}}>The company was founded by <strong style={{color:T.text,fontWeight:600}}>Rasik Shah</strong>, who opened at Vijay Chambers, Grant Road in 1956. His sons — <strong style={{color:T.text,fontWeight:600}}>Lalit Shah</strong>, <strong style={{color:T.text,fontWeight:600}}>Vinesh Shah</strong>, and <strong style={{color:T.text,fontWeight:600}}>Sanjeev Shah</strong> — built the second generation, expanding from Mumbai contractors into mining, export, and international brands.</p>
               <p style={{fontFamily:B,fontSize:15,color:T.muted,lineHeight:1.9}}>Today the third generation — <strong style={{color:T.text,fontWeight:600}}>Jinaal Shah</strong> and <strong style={{color:T.text,fontWeight:600}}>Aayush Shah</strong> — runs the business alongside <strong style={{color:T.text,fontWeight:600}}>Vinesh Shah</strong>, bringing digital catalogues, WhatsApp ordering, and worldwide export to a 70-year-old institution that still answers the phone.</p>
             </div>
             <div style={{display:'flex',flexDirection:'column',gap:10}}>
-              {[{gen:'1st Generation',years:'1956 – 1980s',desc:'Founded the company at Grant Road. Built trust with Mumbai\'s first wave of construction contractors.'},
-                {gen:'2nd Generation',years:'1980s – 2010s',desc:'Expanded to mining and export. Added international brands — Volvo, Scania, Komatsu, CAT, Hitachi.'},
-                {gen:'3rd Generation',years:'2010s – Present',desc:'Jinaal & Aayush Shah digitised the catalogue, launched WhatsApp ordering, and scaled exports to 50+ countries.'}
+              {[
+                {gen:'1st Generation',years:'1956 – 1980s',name:'Rasik Shah',desc:'Founded the company at Vijay Chambers, Grant Road East. Built the counter from scratch, serving Mumbai\'s first wave of construction contractors with the principle: know your part, know your customer.'},
+                {gen:'2nd Generation',years:'1980s – 2010s',name:'Lalit, Vinesh & Sanjeev Shah',desc:'Three brothers expanded into mining equipment, added Volvo, Scania, Komatsu, CAT and Hitachi to the catalogue, and launched the first international shipments to the Middle East and Africa.'},
+                {gen:'3rd Generation',years:'2010s – Present',name:'Jinaal & Aayush Shah',desc:'Digitised the entire catalogue, built the global web presence, launched WhatsApp ordering, and scaled exports to customers in 50+ countries — while keeping Vinesh Shah\'s experience at the core.'}
               ].map(g=>(
                 <div key={g.gen} style={{background:T.bgCard,border:`1px solid ${T.border}`,borderRadius:12,padding:20}}>
-                  <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:8}}>
-                    <span style={{fontFamily:D,fontWeight:800,fontSize:15,color:T.text,textTransform:'uppercase',letterSpacing:'0.04em'}}>{g.gen}</span>
-                    <span style={{fontFamily:D,fontSize:11,fontWeight:700,color:AMBER,letterSpacing:'0.1em'}}>{g.years}</span>
+                  <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:6}}>
+                    <div>
+                      <span style={{fontFamily:D,fontWeight:800,fontSize:15,color:T.text,textTransform:'uppercase',letterSpacing:'0.04em',display:'block'}}>{g.gen}</span>
+                      <span style={{fontFamily:B,fontSize:13,color:AMBER,fontWeight:600}}>{g.name}</span>
+                    </div>
+                    <span style={{fontFamily:D,fontSize:11,fontWeight:700,color:'#555',letterSpacing:'0.1em',whiteSpace:'nowrap',marginLeft:12,marginTop:2}}>{g.years}</span>
                   </div>
-                  <p style={{fontFamily:B,fontSize:13,color:T.muted,lineHeight:1.7}}>{g.desc}</p>
+                  <p style={{fontFamily:B,fontSize:13,color:T.muted,lineHeight:1.75,marginTop:10}}>{g.desc}</p>
                 </div>
               ))}
             </div>

@@ -388,7 +388,7 @@ function Nav({onSearchOpen}){
     <nav style={{position:'sticky',top:0,zIndex:1000,background:scrolled?T.navBg:'rgba(5,5,5,0.9)',backdropFilter:'blur(28px)',borderBottom:`1px solid ${scrolled?T.border:'transparent'}`,transition:'all 0.3s'}}>
       <div style={{maxWidth:1360,margin:'0 auto',padding:'0 32px',height:68,display:'flex',alignItems:'center'}}>
         <a href="/" style={{marginRight:32,flexShrink:0,display:'flex',alignItems:'center'}}>
-          <img src="assets/images/ptc-logo.webp" alt="Parts Trading Company" style={{height:48,width:'auto'}}/>
+          <img src="assets/images/ptc-logo.png" alt="Parts Trading Company" style={{height:48,width:'auto'}}/>
         </a>
         <div className="desktop-only" style={{display:'flex',alignItems:'center',flex:1}}>
           <a href="/" style={{...lnk,textDecoration:'none',opacity:0.6,display:'flex',alignItems:'center',gap:5}}
@@ -465,7 +465,7 @@ function Footer(){
       <div style={{maxWidth:1360,margin:'0 auto'}}>
         <div style={{display:'grid',gridTemplateColumns:'2fr 1fr 1fr 1fr',gap:48,marginBottom:48}}>
           <div>
-            <img src="assets/images/ptc-logo.webp" alt="Parts Trading Company" style={{height:34,width:'auto',marginBottom:18}}/>
+            <img src="assets/images/ptc-logo.png" alt="Parts Trading Company" style={{height:34,width:'auto',marginBottom:18}}/>
             <p style={{fontFamily:B,fontSize:13,color:T.muted,lineHeight:1.75,maxWidth:270,marginBottom:20}}>Globally trusted supplier of OEM &amp; aftermarket heavy equipment spare parts. Established 1956. Shipping to 50+ countries.</p>
             <div style={{display:'flex',gap:10}}>
               {socials.map(s=>(
