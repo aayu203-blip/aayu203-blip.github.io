@@ -352,7 +352,7 @@ function SearchModal({open,onClose}){
           <div style={{padding:'24px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',gap:12}}>
             <div>
               <div style={{fontFamily:B,fontWeight:700,fontSize:15,color:T.text,marginBottom:4}}>No match in demo index</div>
-              <div style={{fontFamily:B,fontSize:13,color:T.muted}}>Full database has 51,000+ parts — WhatsApp us directly.</div>
+              <div style={{fontFamily:B,fontSize:13,color:T.muted}}>Full database has 70,000+ parts — WhatsApp us directly.</div>
             </div>
             <a href={WA(`Hi, I'm searching for: ${q}. Please check availability and pricing.`)} target="_blank"
               style={{display:'flex',alignItems:'center',gap:8,background:WG,color:'#fff',textDecoration:'none',padding:'11px 18px',borderRadius:9,fontFamily:B,fontWeight:700,fontSize:14,whiteSpace:'nowrap',flexShrink:0}}>
@@ -383,7 +383,7 @@ function SearchModal({open,onClose}){
         ))}
         {q.length<2&&(
           <div style={{padding:'20px',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-            <span style={{fontFamily:B,fontSize:12,color:T.muted}}>51,000+ parts indexed · type 2+ characters to search</span>
+            <span style={{fontFamily:B,fontSize:12,color:T.muted}}>70,000+ parts indexed · type 2+ characters to search</span>
             <span style={{fontFamily:B,fontSize:12,color:T.muted}}>Esc to close</span>
           </div>
         )}
@@ -399,7 +399,7 @@ function AnnouncementBar(){
   const shippingItem=ship&&geo
     ?(geo.country==='IN'?`India domestic: ${ship.est} · same-day dispatch available`:`Ships to ${geo.countryName} in ${ship.est} via ${ship.via}`)
     :'Shipping to 50+ countries worldwide';
-  const items=['Order before 3 PM IST — ships same day',shippingItem,'51,000+ parts ready to dispatch, Mumbai','WhatsApp · Email · SWIFT & UPI accepted','Est. 1956 — 70 years of trusted supply'];
+  const items=['Order before 3 PM IST — ships same day',shippingItem,'70,000+ parts ready to dispatch, Mumbai','WhatsApp · Email · SWIFT & UPI accepted','Est. 1956 — 70 years of trusted supply'];
   const all=[...items,...items];
   return(
     <div style={{background:AMBER,overflow:'hidden',padding:'9px 0'}}>
@@ -578,7 +578,7 @@ function AboutPage(){
           </div>
           <div className="two-col" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:32,alignItems:'start'}}>
             <div style={{display:'flex',flexDirection:'column',gap:0}}>
-              {[['1956','Founded at Vijay Chambers, Grant Road — serving local construction contractors'],['1970s','Expanded into mining equipment parts — first international shipments'],['1990s','Added Volvo, Scania, Komatsu, CAT to a growing catalogue'],['2000s','Export program launches — Russia, Africa, Southeast Asia become major markets'],['2020s','51,000+ parts. Digital search. WhatsApp ordering. Same-day dispatch.']].map(([yr,ev],i)=>(
+              {[['1956','Founded at Vijay Chambers, Grant Road — serving local construction contractors'],['1970s','Expanded into mining equipment parts — first international shipments'],['1990s','Added Volvo, Scania, Komatsu, CAT to a growing catalogue'],['2000s','Export program launches — Russia, Africa, Southeast Asia become major markets'],['2020s','70,000+ parts. Digital search. WhatsApp ordering. Same-day dispatch.']].map(([yr,ev],i)=>(
                 <div key={yr} style={{display:'flex',gap:24,paddingBottom:28}}>
                   <div style={{width:72,flexShrink:0,paddingTop:2}}>
                     <div style={{fontFamily:D,fontWeight:900,fontSize:18,color:AMBER,letterSpacing:'0.02em'}}>{yr}</div>
@@ -674,7 +674,7 @@ function AboutPage(){
               ))}
             </div>
             <div style={{background:T.bgCard,border:`1px solid ${T.border}`,borderRadius:16,padding:32,display:'grid',gridTemplateColumns:'1fr 1fr',gap:0}}>
-              {[['51,000+','Parts in stock'],['70+','Years operating'],['16+','Equipment brands'],['50+','Countries served']].map(([v,l],i)=>(
+              {[['70,000+','Parts in stock'],['70+','Years operating'],['16+','Equipment brands'],['50+','Countries served']].map(([v,l],i)=>(
                 <div key={l} style={{padding:20,borderRight:i%2===0?`1px solid ${T.border}`:'none',borderBottom:i<2?`1px solid ${T.border}`:'none'}}>
                   <div style={{fontFamily:D,fontWeight:900,fontSize:40,color:AMBER,lineHeight:1,letterSpacing:'-0.03em'}}>{v}</div>
                   <div style={{fontFamily:B,fontSize:11,fontWeight:700,color:T.muted,textTransform:'uppercase',letterSpacing:'0.08em',marginTop:6}}>{l}</div>
