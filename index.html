@@ -1253,19 +1253,77 @@ o
     }
 
     // ── CATEGORIES ────────────────────────────────────────────────────────────────
+
+
+    const CAT_BRANDS = {
+      'Engine Parts':    [{b:'Komatsu',s:'komatsu',n:'8,731'},{b:'CAT',s:'cat',n:'9,611'},{b:'Volvo',s:'volvo',n:'3,545'},{b:'Hitachi',s:'hitachi',n:'767'},{b:'Scania',s:'scania',n:'567'}],
+      'Hydraulic Parts': [{b:'Komatsu',s:'komatsu',n:'5,020'},{b:'CAT',s:'cat',n:'2,315'},{b:'Volvo',s:'volvo',n:'2,118'},{b:'Hitachi',s:'hitachi',n:'331'},{b:'Scania',s:'scania',n:'343'}],
+      'Electrical':      [{b:'Volvo',s:'volvo',n:'822'},{b:'CAT',s:'cat',n:'918'},{b:'Komatsu',s:'komatsu',n:'258'},{b:'Hitachi',s:'hitachi',n:'121'},{b:'Scania',s:'scania',n:'99'}],
+      'Filters':         [{b:'Komatsu',s:'komatsu',n:'517'},{b:'CAT',s:'cat',n:'732'},{b:'Volvo',s:'volvo',n:'478'},{b:'Hitachi',s:'hitachi',n:'115'},{b:'Scania',s:'scania',n:'120'}],
+      'Undercarriage':   [{b:'Komatsu',s:'komatsu',n:'5,386'},{b:'CAT',s:'cat',n:'447'},{b:'Volvo',s:'volvo',n:'191'},{b:'Hitachi',s:'hitachi',n:'158'}],
+      'Transmission':    [{b:'Komatsu',s:'komatsu',n:'1,082'},{b:'Volvo',s:'volvo',n:'79'},{b:'Hitachi',s:'hitachi',n:'146'},{b:'Scania',s:'scania',n:'196'},{b:'CAT',s:'cat',n:'81'}],
+      'Brake Systems':   [{b:'Komatsu',s:'komatsu',n:'382'},{b:'CAT',s:'cat',n:'543'},{b:'Volvo',s:'volvo',n:'347'},{b:'Scania',s:'scania',n:'45'},{b:'Hitachi',s:'hitachi',n:'9'}],
+      'Cooling System':  [{b:'Komatsu',s:'komatsu',n:'508'},{b:'CAT',s:'cat',n:'625'},{b:'Volvo',s:'volvo',n:'59'},{b:'Hitachi',s:'hitachi',n:'148'}],
+    };
+
     function CatCard({ cat }) {
       const { T, AMBER } = useTheme();
-      const [hov, setHov] = useState(false);
+      const [flipped, setFlipped] = useState(false);
+      const brands = CAT_BRANDS[cat.name] || [];
+      const catSlug = {
+        'Engine Parts':'engine-parts','Hydraulic Parts':'hydraulic-parts','Electrical':'electrical-parts',
+        'Filters':'filters','Undercarriage':'undercarriage','Transmission':'transmission-parts',
+        'Brake Systems':'brake-parts','Cooling System':'cooling-system',
+      }[cat.name] || 'spare-parts';
+
       return (
-        <a href={cat.href||'/'} className="card-shine" style={{ background: hov ? '#161616' : T.bgCard, padding: '32px', border: `1px solid ${hov ? T.accent : T.border}`, cursor: 'pointer', transition: 'all 0.25s cubic-bezier(0.4,0,0.2,1)', transform: hov ? 'translateY(-3px)' : 'none', boxShadow: hov ? '0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(255,184,28,0.1)' : 'none', position: 'relative', textDecoration: 'none', display: 'block' }}
-          onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}>
-          <div style={{ fontFamily: D, fontWeight: 900, fontSize: 38, color: T.accent, lineHeight: 1, marginBottom: 12, letterSpacing: '-0.02em' }}>{cat.count}</div>
-          <h3 style={{ fontFamily: D, fontWeight: 800, fontSize: 18, color: T.text, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.01em' }}>{cat.name}</h3>
-          <p style={{ fontFamily: B, fontSize: 13.5, color: T.textMuted, lineHeight: 1.65 }}>{cat.desc}</p>
-          {hov && <div style={{ position: 'absolute', bottom: 20, right: 20, fontFamily: D, fontSize: 13, fontWeight: 700, color: T.accent, letterSpacing: '0.05em' }}>BROWSE →</div>}
-        </a>
+        <div
+          onClick={() => setFlipped(f => !f)}
+          style={{ perspective: '1000px', cursor: 'pointer', minHeight: 180 }}
+          role="button" aria-pressed={flipped} aria-label={`${cat.name} — click to see brands`}
+        >
+          <div className="card-shine" style={{
+            position: 'relative', width: '100%', height: '100%', minHeight: 180,
+            transformStyle: 'preserve-3d',
+            transition: 'transform 0.55s cubic-bezier(0.4,0,0.2,1)',
+            transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+          }}>
+            {/* FRONT */}
+            <div style={{
+              position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden',
+              background: T.bgCard, padding: '32px', border: `1px solid ${T.border}`,
+            }}>
+              <div style={{ fontFamily: D, fontWeight: 900, fontSize: 38, color: AMBER, lineHeight: 1, marginBottom: 12, letterSpacing: '-0.02em' }}>{cat.count}</div>
+              <h3 style={{ fontFamily: D, fontWeight: 800, fontSize: 18, color: T.text, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.01em' }}>{cat.name}</h3>
+              <p style={{ fontFamily: B, fontSize: 13.5, color: T.textMuted, lineHeight: 1.65, marginBottom: 16 }}>{cat.desc}</p>
+              <div style={{ fontFamily: D, fontSize: 11, fontWeight: 700, color: T.accent, letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.7 }}>TAP TO SEE BRANDS →</div>
+            </div>
+            {/* BACK */}
+            <div style={{
+              position: 'absolute', inset: 0, backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden',
+              transform: 'rotateY(180deg)',
+              background: '#0d0d0d', padding: '24px 28px', border: `1px solid ${AMBER}33`,
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+            }}>
+              <div>
+                <div style={{ fontFamily: D, fontWeight: 800, fontSize: 11, color: AMBER, letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 16, opacity: 0.85 }}>{cat.name} — BY BRAND</div>
+                {brands.map(br => (
+                  <a key={br.b} href={`/${br.s}/${catSlug}/`}
+                    onClick={e => e.stopPropagation()}
+                    style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 0', borderBottom: `1px solid ${T.border}`, textDecoration: 'none' }}>
+                    <span style={{ fontFamily: D, fontWeight: 700, fontSize: 15, color: T.text, textTransform: 'uppercase', letterSpacing: '0.02em' }}>{br.b}</span>
+                    <span style={{ fontFamily: B, fontSize: 12, color: AMBER, fontWeight: 600 }}>{br.n} parts →</span>
+                  </a>
+                ))}
+              </div>
+              <div style={{ fontFamily: D, fontSize: 11, fontWeight: 700, color: T.textMuted, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: 12, opacity: 0.5 }}>TAP TO FLIP BACK</div>
+            </div>
+          </div>
+        </div>
       );
     }
+
+
     function ProductCategories() {
       const { T, AMBER, isMobile } = useTheme();
       return (
