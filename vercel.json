@@ -12,7 +12,27 @@
     { "source": "/pages/hubs/brand-kobelco", "destination": "/kobelco/", "permanent": true },
     { "source": "/pages/hubs/brand-john-deere", "destination": "/john-deere/", "permanent": true },
     { "source": "/pages/hubs/:path*", "destination": "/", "permanent": true },
-    { "source": "/pages/:path*", "destination": "/", "permanent": true }
+    { "source": "/pages/:path*", "destination": "/", "permanent": true },
+    { "source": "/komatsu/bulldozer-parts/:path*", "destination": "/komatsu/", "permanent": true },
+    { "source": "/komatsu/excavator-parts/:path*", "destination": "/komatsu/", "permanent": true },
+    { "source": "/komatsu/mini-excavator-parts/:path*", "destination": "/komatsu/", "permanent": true },
+    { "source": "/komatsu/wheel-loader-parts/:path*", "destination": "/komatsu/", "permanent": true },
+    { "source": "/komatsu/travel-and-swing-motor-parts/:path*", "destination": "/komatsu/", "permanent": true },
+    { "source": "/komatsu/belt-hose/:path*", "destination": "/komatsu/", "permanent": true },
+    { "source": "/cat/belt-hose/:path*", "destination": "/cat/", "permanent": true },
+    { "source": "/volvo/bulldozer-parts/:path*", "destination": "/volvo/", "permanent": true },
+    { "source": "/volvo/air-drier-and-parts/:path*", "destination": "/volvo/", "permanent": true },
+    { "source": "/volvo/air-systems/:path*", "destination": "/volvo/", "permanent": true },
+    { "source": "/volvo/belts-pulleys/:path*", "destination": "/volvo/", "permanent": true },
+    { "source": "/volvo/drivetrain/:path*", "destination": "/volvo/", "permanent": true },
+    { "source": "/volvo/hose-pipe/:path*", "destination": "/volvo/", "permanent": true },
+    { "source": "/volvo/seals-gaskets/:path*", "destination": "/volvo/", "permanent": true },
+    { "source": "/volvo/shock-absorbers/:path*", "destination": "/volvo/", "permanent": true },
+    { "source": "/volvo/wheel-parts/:path*", "destination": "/volvo/", "permanent": true },
+    { "source": "/hitachi/belt-hose/:path*", "destination": "/hitachi/", "permanent": true },
+    { "source": "/scania/air-systems/:path*", "destination": "/scania/", "permanent": true },
+    { "source": "/scania/wheel-parts/:path*", "destination": "/scania/", "permanent": true },
+    { "source": "/kobelco/belt-hose/:path*", "destination": "/kobelco/", "permanent": true }
   ],
   "rewrites": [
     { "source": "/products/:path*", "destination": "/pages/products/:path*" }

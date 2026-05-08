@@ -53,7 +53,6 @@
 <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1"></script>
 <script src="/assets/js/ptc-components.js"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -146,1057 +145,3619 @@ body{overflow-x:hidden;font-family:'Barlow',sans-serif;background:#050505;color:
 <div id="root"></div>
 <div class="demo-pill">⚠ Demo</div>
 
-<script type="text/babel">
-const {useState,useEffect,useContext,createContext,useRef,useCallback,useMemo} = React;
-
-const D    = "'Barlow Condensed',sans-serif";
-const B    = "'Barlow',sans-serif";
+<script>
+const {
+  useState,
+  useEffect,
+  useContext,
+  createContext,
+  useRef,
+  useCallback,
+  useMemo
+} = React;
+const D = "'Barlow Condensed',sans-serif";
+const B = "'Barlow',sans-serif";
 const AMBER = '#FFB81C';
-const WG    = '#25D366';
-const WA   = t => `https://wa.me/919821037990?text=${encodeURIComponent(t)}`;
+const WG = '#25D366';
+const WA = t => `https://wa.me/919821037990?text=${encodeURIComponent(t)}`;
 const EMAIL = 'parts@partstrading.com';
 
 // ── THEME (dark industrial only, matching homepage + product page) ────────────
 const T = {
-  bg:'#050505', bgCard:'#0D0D0D', bgSection:'#080808', bgAlt:'#0B0B0B',
-  text:'#F0ECE6', muted:'#777', dim:'rgba(255,255,255,0.35)',
-  border:'rgba(255,255,255,0.07)', borderAlt:'rgba(255,255,255,0.04)',
-  navBg:'rgba(5,5,5,0.96)', amber:AMBER, amberDim:'rgba(255,184,28,0.12)',
-  tagBg:'rgba(255,184,28,0.09)', tagText:AMBER,
-  inputBg:'rgba(255,255,255,0.06)', inputBorder:'rgba(255,255,255,0.1)',
-  green:AMBER, greenDim:'rgba(255,184,28,0.1)',
-  footerBg:'#020202',
+  bg: '#050505',
+  bgCard: '#0D0D0D',
+  bgSection: '#080808',
+  bgAlt: '#0B0B0B',
+  text: '#F0ECE6',
+  muted: '#777',
+  dim: 'rgba(255,255,255,0.35)',
+  border: 'rgba(255,255,255,0.07)',
+  borderAlt: 'rgba(255,255,255,0.04)',
+  navBg: 'rgba(5,5,5,0.96)',
+  amber: AMBER,
+  amberDim: 'rgba(255,184,28,0.12)',
+  tagBg: 'rgba(255,184,28,0.09)',
+  tagText: AMBER,
+  inputBg: 'rgba(255,255,255,0.06)',
+  inputBorder: 'rgba(255,255,255,0.1)',
+  green: AMBER,
+  greenDim: 'rgba(255,184,28,0.1)',
+  footerBg: '#020202',
   // aliases used by design-file components
-  bgCard2:'#0F0F0F', textMuted:'#777', accent:AMBER, accentDark:'#050505',
+  bgCard2: '#0F0F0F',
+  textMuted: '#777',
+  accent: AMBER,
+  accentDark: '#050505'
 };
 
 // ── GEO ───────────────────────────────────────────────────────────────────────
 const GeoCtx = createContext(null);
 const useGeo = () => useContext(GeoCtx);
-const EMAIL_FIRST = new Set(['US','CA','GB','DE','FR','JP','KR','IT','ES','NL','SE','NO','DK','FI','CH','AT','BE','NZ','IE','PT','AU']);
-const GULF = new Set(['AE','SA','KW','QA','BH','OM','YE','IQ','JO']);
+const EMAIL_FIRST = new Set(['US', 'CA', 'GB', 'DE', 'FR', 'JP', 'KR', 'IT', 'ES', 'NL', 'SE', 'NO', 'DK', 'FI', 'CH', 'AT', 'BE', 'NZ', 'IE', 'PT', 'AU']);
+const GULF = new Set(['AE', 'SA', 'KW', 'QA', 'BH', 'OM', 'YE', 'IQ', 'JO']);
 const geoShip = geo => {
-  if(!geo?.country) return null;
+  if (!geo?.country) return null;
   const c = geo.country;
-  if(c==='IN') return {est:'1–2 days',via:'domestic courier'};
-  if(GULF.has(c)) return {est:'3–5 days',via:'DHL Express'};
-  return ({AS:{est:'4–8 days',via:'DHL / FedEx'},EU:{est:'6–9 days',via:'DHL / FedEx'},AF:{est:'5–10 days',via:'DHL / FedEx'},NA:{est:'7–12 days',via:'FedEx / DHL'},SA:{est:'9–14 days',via:'DHL / freight'},OC:{est:'7–10 days',via:'DHL / FedEx'}})[geo.continent]||{est:'5–12 days',via:'DHL / FedEx'};
+  if (c === 'IN') return {
+    est: '1–2 days',
+    via: 'domestic courier'
+  };
+  if (GULF.has(c)) return {
+    est: '3–5 days',
+    via: 'DHL Express'
+  };
+  return {
+    AS: {
+      est: '4–8 days',
+      via: 'DHL / FedEx'
+    },
+    EU: {
+      est: '6–9 days',
+      via: 'DHL / FedEx'
+    },
+    AF: {
+      est: '5–10 days',
+      via: 'DHL / FedEx'
+    },
+    NA: {
+      est: '7–12 days',
+      via: 'FedEx / DHL'
+    },
+    SA: {
+      est: '9–14 days',
+      via: 'DHL / freight'
+    },
+    OC: {
+      est: '7–10 days',
+      via: 'DHL / FedEx'
+    }
+  }[geo.continent] || {
+    est: '5–12 days',
+    via: 'DHL / FedEx'
+  };
 };
 
 // ── TEMPLATE DATA ─────────────────────────────────────────────────────────────
 const BRAND_TPL = {
-  brand:'Caterpillar', brandSlug:'cat',
-  brandLogoSrc:'../../assets/logos/cat.svg',
-  brandPartCount:'17,725',
-  brandDesc:'Parts Trading Company stocks 17,000+ Caterpillar spare parts covering 300-series excavators, D-series track-type tractors, 900-series wheel loaders, motor graders, and off-highway trucks. OEM-specification aftermarket parts dispatched from Mumbai.',
-  brandSEO:'CAT Caterpillar spare parts in India from Parts Trading Company — OEM & aftermarket components for CAT 320D, 323D, 325D, 330D, 336D excavators, D6R, D7R, D8T bulldozers, 950H, 966H, 972H wheel loaders, 140H, 140K motor graders. Engine, hydraulic, undercarriage, electrical, and filter parts stocked in Mumbai.',
-  categories:[{name:'Engine Parts',count:'7611+',slug:'engine-parts'},{name:'Hydraulic Parts',count:'1190+',slug:'hydraulic-parts'},{name:'Filters',count:'731+',slug:'filters'},{name:'Electrical Parts',count:'918+',slug:'electrical-parts'},{name:'Transmission Parts',count:'81+',slug:'transmission-parts'},{name:'Undercarriage',count:'441+',slug:'undercarriage'},{name:'Brake Parts',count:'543+',slug:'brake-parts'},{name:'Cooling System',count:'625+',slug:'cooling-system'},{name:'Exhaust & Turbo',count:'762+',slug:'exhaust-turbo'},{name:'Seals & O-Rings',count:'32+',slug:'seals-orings'},{name:'Cab & Body Parts',count:'163+',slug:'cab-body-parts'},{name:'Bearing & Bushing',count:'2060+',slug:'bearing-bushing'},{name:'Fuel System',count:'418+',slug:'fuel-system'},{name:'Drive & Swing Parts',count:'35+',slug:'drive-swing-parts'},{name:'Ground Engaging Tools',count:'1111+',slug:'ground-engaging-tools'},{name:'Hardware & Fasteners',count:'997+',slug:'hardware-fasteners'},{name:'Suspension & Chassis',count:'4+',slug:'suspension-chassis'},{name:'Gearbox & Differential',count:'2+',slug:'gearbox-differential'},{name:'Steering Parts',count:'1+',slug:'steering-parts'}],
-  popularModels:["320D", "320E", "323D", "323E", "325D", "325F", "329E", "330D", "330F", "336D", "336F", "349E", "D6R", "D6T", "D7R", "D8T", "D10T", "950H", "966H", "972H", "980H", "140H", "140K", "160K", "777D", "773E"],
-  featuredParts:[{partNo:'0.0256 in',name:'in CAT Snap Ring 0.0256',cat:'Engine Parts',models:[]},{partNo:'0.0256in',name:'Caterpillar Snap Ring 0.0256in',cat:'Engine Parts',models:[]},{partNo:'005602',name:'CAT Rocker Housing',cat:'Engine Parts',models:[]},{partNo:'008-5018',name:'CAT Rubber Mount',cat:'Engine Parts',models:[]},{partNo:'01974',name:'CAT Fuel Injector 4Cr',cat:'Engine Parts',models:[]},{partNo:'0198',name:'CAT Transmission Wiring Harness121',cat:'Engine Parts',models:[]}],
+  brand: 'Caterpillar',
+  brandSlug: 'cat',
+  brandLogoSrc: '../../assets/logos/cat.svg',
+  brandPartCount: '17,725',
+  brandDesc: 'Parts Trading Company stocks 17,000+ Caterpillar spare parts covering 300-series excavators, D-series track-type tractors, 900-series wheel loaders, motor graders, and off-highway trucks. OEM-specification aftermarket parts dispatched from Mumbai.',
+  brandSEO: 'CAT Caterpillar spare parts in India from Parts Trading Company — OEM & aftermarket components for CAT 320D, 323D, 325D, 330D, 336D excavators, D6R, D7R, D8T bulldozers, 950H, 966H, 972H wheel loaders, 140H, 140K motor graders. Engine, hydraulic, undercarriage, electrical, and filter parts stocked in Mumbai.',
+  categories: [{
+    name: 'Engine Parts',
+    count: '7611+',
+    slug: 'engine-parts'
+  }, {
+    name: 'Hydraulic Parts',
+    count: '1190+',
+    slug: 'hydraulic-parts'
+  }, {
+    name: 'Filters',
+    count: '731+',
+    slug: 'filters'
+  }, {
+    name: 'Electrical Parts',
+    count: '918+',
+    slug: 'electrical-parts'
+  }, {
+    name: 'Transmission Parts',
+    count: '81+',
+    slug: 'transmission-parts'
+  }, {
+    name: 'Undercarriage',
+    count: '441+',
+    slug: 'undercarriage'
+  }, {
+    name: 'Brake Parts',
+    count: '543+',
+    slug: 'brake-parts'
+  }, {
+    name: 'Cooling System',
+    count: '625+',
+    slug: 'cooling-system'
+  }, {
+    name: 'Exhaust & Turbo',
+    count: '762+',
+    slug: 'exhaust-turbo'
+  }, {
+    name: 'Seals & O-Rings',
+    count: '32+',
+    slug: 'seals-orings'
+  }, {
+    name: 'Cab & Body Parts',
+    count: '163+',
+    slug: 'cab-body-parts'
+  }, {
+    name: 'Bearing & Bushing',
+    count: '2060+',
+    slug: 'bearing-bushing'
+  }, {
+    name: 'Fuel System',
+    count: '418+',
+    slug: 'fuel-system'
+  }, {
+    name: 'Drive & Swing Parts',
+    count: '35+',
+    slug: 'drive-swing-parts'
+  }, {
+    name: 'Ground Engaging Tools',
+    count: '1111+',
+    slug: 'ground-engaging-tools'
+  }, {
+    name: 'Hardware & Fasteners',
+    count: '997+',
+    slug: 'hardware-fasteners'
+  }, {
+    name: 'Suspension & Chassis',
+    count: '4+',
+    slug: 'suspension-chassis'
+  }, {
+    name: 'Gearbox & Differential',
+    count: '2+',
+    slug: 'gearbox-differential'
+  }, {
+    name: 'Steering Parts',
+    count: '1+',
+    slug: 'steering-parts'
+  }],
+  popularModels: ["320D", "320E", "323D", "323E", "325D", "325F", "329E", "330D", "330F", "336D", "336F", "349E", "D6R", "D6T", "D7R", "D8T", "D10T", "950H", "966H", "972H", "980H", "140H", "140K", "160K", "777D", "773E"],
+  featuredParts: [{
+    partNo: '0.0256 in',
+    name: 'in CAT Snap Ring 0.0256',
+    cat: 'Engine Parts',
+    models: []
+  }, {
+    partNo: '0.0256in',
+    name: 'Caterpillar Snap Ring 0.0256in',
+    cat: 'Engine Parts',
+    models: []
+  }, {
+    partNo: '005602',
+    name: 'CAT Rocker Housing',
+    cat: 'Engine Parts',
+    models: []
+  }, {
+    partNo: '008-5018',
+    name: 'CAT Rubber Mount',
+    cat: 'Engine Parts',
+    models: []
+  }, {
+    partNo: '01974',
+    name: 'CAT Fuel Injector 4Cr',
+    cat: 'Engine Parts',
+    models: []
+  }, {
+    partNo: '0198',
+    name: 'CAT Transmission Wiring Harness121',
+    cat: 'Engine Parts',
+    models: []
+  }]
 };
-
 const CATEGORY_TPL = {
-  brand:'Caterpillar', brandSlug:'cat',
-  category:'Cab & Body Parts', categorySlug:'cab-body-parts',
-  partCount:'163',
-  breadcrumb:[['Home','/'],['Caterpillar Parts','/cat/'],['Cab & Body Parts',null]],
-  filters:['All','Doors','Glass','Mirrors','Seats','Panels','Structural'],
-  parts:[{partNo:'099-0149',name:'CAT Rubber Coupling',models:[]},{partNo:'099-7048',name:'CAT Cab & Body Parts Component',models:[]},{partNo:'1010742',name:'Caterpillar Wiper Pivot Gp 1010742',models:[]},{partNo:'102-8109',name:'Caterpillar Track Adjuster Gp 102',models:[]},{partNo:'1052080',name:'Caterpillar Bracket 1052080',models:[]},{partNo:'1125061',name:'Caterpillar Bracket As 1125061',models:[]},{partNo:'1127462',name:'Caterpillar Bracket 1127462',models:[]},{partNo:'114-1497',name:'CAT Floating Seal',models:[]},{partNo:'1225311',name:'Caterpillar Mirror 1225311',models:[]},{partNo:'1229405',name:'Caterpillar Bracket As 1229405',models:[]},{partNo:'125-5538',name:'CAT Floating Seal',models:[]},{partNo:'130-6877',name:'CAT Seal',models:[]},{partNo:'133-0512',name:'CAT Floating Oil Seal',models:[]},{partNo:'133-0513',name:'CAT Floating Oil Seal',models:[]},{partNo:'1442227',name:'Caterpillar Mirror Gp 1442227',models:[]},{partNo:'145-6033',name:'CAT Floating Oil Seal',models:[]},{partNo:'145-8032',name:'CAT Floating Oil Seal',models:[]},{partNo:'147-5507',name:'CAT Floating Oil Seal',models:[]},{partNo:'148-3533',name:'CAT Floating Oil Seal',models:[]},{partNo:'1531776',name:'Caterpillar Mirror',models:[]},{partNo:'1534010',name:'Caterpillar Mirror As 1534010',models:[]},{partNo:'1555779',name:'Caterpillar Wiper Arm Pivot Group 1555779',models:[]},{partNo:'156-6472',name:'CAT Cab & Body Parts Component',models:[]},{partNo:'156-6473-383-6930',name:'CAT Cab & Body Parts',models:[]}],
-  categorySEO:'Caterpillar cab & body parts from Parts Trading Company — Cab and body parts including doors, glass, mirrors, seats, instrument panels, and structural components. OEM-specification aftermarket from Mumbai.',
+  brand: 'Caterpillar',
+  brandSlug: 'cat',
+  category: 'Cab & Body Parts',
+  categorySlug: 'cab-body-parts',
+  partCount: '163',
+  breadcrumb: [['Home', '/'], ['Caterpillar Parts', '/cat/'], ['Cab & Body Parts', null]],
+  filters: ['All', 'Doors', 'Glass', 'Mirrors', 'Seats', 'Panels', 'Structural'],
+  parts: [{
+    partNo: '099-0149',
+    name: 'CAT Rubber Coupling',
+    models: []
+  }, {
+    partNo: '099-7048',
+    name: 'CAT Cab & Body Parts Component',
+    models: []
+  }, {
+    partNo: '1010742',
+    name: 'Caterpillar Wiper Pivot Gp 1010742',
+    models: []
+  }, {
+    partNo: '102-8109',
+    name: 'Caterpillar Track Adjuster Gp 102',
+    models: []
+  }, {
+    partNo: '1052080',
+    name: 'Caterpillar Bracket 1052080',
+    models: []
+  }, {
+    partNo: '1125061',
+    name: 'Caterpillar Bracket As 1125061',
+    models: []
+  }, {
+    partNo: '1127462',
+    name: 'Caterpillar Bracket 1127462',
+    models: []
+  }, {
+    partNo: '114-1497',
+    name: 'CAT Floating Seal',
+    models: []
+  }, {
+    partNo: '1225311',
+    name: 'Caterpillar Mirror 1225311',
+    models: []
+  }, {
+    partNo: '1229405',
+    name: 'Caterpillar Bracket As 1229405',
+    models: []
+  }, {
+    partNo: '125-5538',
+    name: 'CAT Floating Seal',
+    models: []
+  }, {
+    partNo: '130-6877',
+    name: 'CAT Seal',
+    models: []
+  }, {
+    partNo: '133-0512',
+    name: 'CAT Floating Oil Seal',
+    models: []
+  }, {
+    partNo: '133-0513',
+    name: 'CAT Floating Oil Seal',
+    models: []
+  }, {
+    partNo: '1442227',
+    name: 'Caterpillar Mirror Gp 1442227',
+    models: []
+  }, {
+    partNo: '145-6033',
+    name: 'CAT Floating Oil Seal',
+    models: []
+  }, {
+    partNo: '145-8032',
+    name: 'CAT Floating Oil Seal',
+    models: []
+  }, {
+    partNo: '147-5507',
+    name: 'CAT Floating Oil Seal',
+    models: []
+  }, {
+    partNo: '148-3533',
+    name: 'CAT Floating Oil Seal',
+    models: []
+  }, {
+    partNo: '1531776',
+    name: 'Caterpillar Mirror',
+    models: []
+  }, {
+    partNo: '1534010',
+    name: 'Caterpillar Mirror As 1534010',
+    models: []
+  }, {
+    partNo: '1555779',
+    name: 'Caterpillar Wiper Arm Pivot Group 1555779',
+    models: []
+  }, {
+    partNo: '156-6472',
+    name: 'CAT Cab & Body Parts Component',
+    models: []
+  }, {
+    partNo: '156-6473-383-6930',
+    name: 'CAT Cab & Body Parts',
+    models: []
+  }],
+  categorySEO: 'Caterpillar cab & body parts from Parts Trading Company — Cab and body parts including doors, glass, mirrors, seats, instrument panels, and structural components. OEM-specification aftermarket from Mumbai.'
 };
-
-const SEARCH_PARTS = [
-  {partNo:'VOE20450734', name:'Fuel Filter',           brand:'Volvo',   cat:'Filters'},
-  {partNo:'20459253',    name:'EC210 Hydraulic Pump',  brand:'Volvo',   cat:'Hydraulic Parts'},
-  {partNo:'VOE20726764', name:'D13 Piston Ring Set',   brand:'Volvo',   cat:'Engine Parts'},
-  {partNo:'VOE11703858', name:'FH16 Alternator 24V',   brand:'Volvo',   cat:'Electrical'},
-  {partNo:'20702172',    name:'EC290 Track Roller',    brand:'Volvo',   cat:'Undercarriage'},
-  {partNo:'VOE20531299', name:'Starter Motor 24V',     brand:'Volvo',   cat:'Electrical'},
-  {partNo:'14522218',    name:'Hydraulic Seal Kit',    brand:'Volvo',   cat:'Hydraulic Parts'},
-  {partNo:'VOE14540534', name:'Swing Motor Assembly',  brand:'Volvo',   cat:'Hydraulic Parts'},
-  {partNo:'1786801',     name:'Engine Oil Filter',     brand:'CAT',     cat:'Filters'},
-  {partNo:'1556655',     name:'Water Pump Assembly',   brand:'CAT',     cat:'Cooling System'},
-  {partNo:'6754818110',  name:'Oil Filter',            brand:'Komatsu', cat:'Engine Parts'},
-  {partNo:'20Y-60-31121',name:'Air Filter Element',    brand:'Komatsu', cat:'Filters'},
-];
+const SEARCH_PARTS = [{
+  partNo: 'VOE20450734',
+  name: 'Fuel Filter',
+  brand: 'Volvo',
+  cat: 'Filters'
+}, {
+  partNo: '20459253',
+  name: 'EC210 Hydraulic Pump',
+  brand: 'Volvo',
+  cat: 'Hydraulic Parts'
+}, {
+  partNo: 'VOE20726764',
+  name: 'D13 Piston Ring Set',
+  brand: 'Volvo',
+  cat: 'Engine Parts'
+}, {
+  partNo: 'VOE11703858',
+  name: 'FH16 Alternator 24V',
+  brand: 'Volvo',
+  cat: 'Electrical'
+}, {
+  partNo: '20702172',
+  name: 'EC290 Track Roller',
+  brand: 'Volvo',
+  cat: 'Undercarriage'
+}, {
+  partNo: 'VOE20531299',
+  name: 'Starter Motor 24V',
+  brand: 'Volvo',
+  cat: 'Electrical'
+}, {
+  partNo: '14522218',
+  name: 'Hydraulic Seal Kit',
+  brand: 'Volvo',
+  cat: 'Hydraulic Parts'
+}, {
+  partNo: 'VOE14540534',
+  name: 'Swing Motor Assembly',
+  brand: 'Volvo',
+  cat: 'Hydraulic Parts'
+}, {
+  partNo: '1786801',
+  name: 'Engine Oil Filter',
+  brand: 'CAT',
+  cat: 'Filters'
+}, {
+  partNo: '1556655',
+  name: 'Water Pump Assembly',
+  brand: 'CAT',
+  cat: 'Cooling System'
+}, {
+  partNo: '6754818110',
+  name: 'Oil Filter',
+  brand: 'Komatsu',
+  cat: 'Engine Parts'
+}, {
+  partNo: '20Y-60-31121',
+  name: 'Air Filter Element',
+  brand: 'Komatsu',
+  cat: 'Filters'
+}];
 
 // ── NAV DATA ──────────────────────────────────────────────────────────────────
-const BRANDS_NAV=[
-  {name:'Volvo',slug:'volvo'},{name:'Scania',slug:'scania'},{name:'Komatsu',slug:'komatsu'},
-  {name:'CAT',slug:'cat'},{name:'Hitachi',slug:'hitachi'},{name:'Hyundai',slug:'hyundai'},
-  {name:'BEML',slug:'beml'},{name:'LiuGong',slug:'liugong'},
-];
-
-const CATS_NAV_URLS={'Engine Parts':'/cat/engine-parts/','Hydraulic Parts':'/cat/hydraulic-parts/','Filters':'/cat/filters/','Electrical Parts':'/cat/electrical-parts/','Transmission Parts':'/cat/transmission-parts/','Undercarriage':'/cat/undercarriage/','Brake Parts':'/cat/brake-parts/','Cooling System':'/cat/cooling-system/','Exhaust & Turbo':'/cat/exhaust-turbo/','Seals & O-Rings':'/cat/seals-orings/','Cab & Body Parts':'/cat/cab-body-parts/','Bearing & Bushing':'/cat/bearing-bushing/','Fuel System':'/cat/fuel-system/','Drive & Swing Parts':'/cat/drive-swing-parts/','Ground Engaging Tools':'/cat/ground-engaging-tools/','Hardware & Fasteners':'/cat/hardware-fasteners/','Suspension & Chassis':'/cat/suspension-chassis/','Gearbox & Differential':'/cat/gearbox-differential/','Steering Parts':'/cat/steering-parts/'};
-const CATS_NAV=['Engine Parts','Hydraulic Parts','Filters','Electrical Parts','Transmission Parts','Undercarriage','Brake Parts','Cooling System','Exhaust & Turbo','Seals & O-Rings','Cab & Body Parts','Bearing & Bushing','Fuel System','Drive & Swing Parts','Ground Engaging Tools','Hardware & Fasteners','Suspension & Chassis','Gearbox & Differential','Steering Parts'];
+const BRANDS_NAV = [{
+  name: 'Volvo',
+  slug: 'volvo'
+}, {
+  name: 'Scania',
+  slug: 'scania'
+}, {
+  name: 'Komatsu',
+  slug: 'komatsu'
+}, {
+  name: 'CAT',
+  slug: 'cat'
+}, {
+  name: 'Hitachi',
+  slug: 'hitachi'
+}, {
+  name: 'Hyundai',
+  slug: 'hyundai'
+}, {
+  name: 'BEML',
+  slug: 'beml'
+}, {
+  name: 'LiuGong',
+  slug: 'liugong'
+}];
+const CATS_NAV_URLS = {
+  'Engine Parts': '/cat/engine-parts/',
+  'Hydraulic Parts': '/cat/hydraulic-parts/',
+  'Filters': '/cat/filters/',
+  'Electrical Parts': '/cat/electrical-parts/',
+  'Transmission Parts': '/cat/transmission-parts/',
+  'Undercarriage': '/cat/undercarriage/',
+  'Brake Parts': '/cat/brake-parts/',
+  'Cooling System': '/cat/cooling-system/',
+  'Exhaust & Turbo': '/cat/exhaust-turbo/',
+  'Seals & O-Rings': '/cat/seals-orings/',
+  'Cab & Body Parts': '/cat/cab-body-parts/',
+  'Bearing & Bushing': '/cat/bearing-bushing/',
+  'Fuel System': '/cat/fuel-system/',
+  'Drive & Swing Parts': '/cat/drive-swing-parts/',
+  'Ground Engaging Tools': '/cat/ground-engaging-tools/',
+  'Hardware & Fasteners': '/cat/hardware-fasteners/',
+  'Suspension & Chassis': '/cat/suspension-chassis/',
+  'Gearbox & Differential': '/cat/gearbox-differential/',
+  'Steering Parts': '/cat/steering-parts/'
+};
+const CATS_NAV = ['Engine Parts', 'Hydraulic Parts', 'Filters', 'Electrical Parts', 'Transmission Parts', 'Undercarriage', 'Brake Parts', 'Cooling System', 'Exhaust & Turbo', 'Seals & O-Rings', 'Cab & Body Parts', 'Bearing & Bushing', 'Fuel System', 'Drive & Swing Parts', 'Ground Engaging Tools', 'Hardware & Fasteners', 'Suspension & Chassis', 'Gearbox & Differential', 'Steering Parts'];
 
 // ── HOOKS ─────────────────────────────────────────────────────────────────────
-function useInView(opts={}){
-  const ref=useRef(); const [v,setV]=useState(false);
-  useEffect(()=>{
-    const o=new IntersectionObserver(([e])=>{if(e.isIntersecting){setV(true);o.disconnect();}},{threshold:0.07,...opts});
-    if(ref.current) o.observe(ref.current); return()=>o.disconnect();
-  },[]);
-  return [ref,v];
+function useInView(opts = {}) {
+  const ref = useRef();
+  const [v, setV] = useState(false);
+  useEffect(() => {
+    const o = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        setV(true);
+        o.disconnect();
+      }
+    }, {
+      threshold: 0.07,
+      ...opts
+    });
+    if (ref.current) o.observe(ref.current);
+    return () => o.disconnect();
+  }, []);
+  return [ref, v];
 }
-
-function useCountdown(){
-  const [s,setS]=useState({h:0,m:0,sec:0,urgent:false,closed:false});
-  useEffect(()=>{
-    const tick=()=>{
-      const ist=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
-      const day=ist.getDay(); const nowM=ist.getHours()*60+ist.getMinutes();
-      if(day===0||nowM>=900){setS({h:0,m:0,sec:0,urgent:false,closed:true});return;}
-      const rem=900-nowM;
-      setS({h:Math.floor(rem/60),m:rem%60,sec:59-ist.getSeconds(),urgent:rem<=60,closed:false});
+function useCountdown() {
+  const [s, setS] = useState({
+    h: 0,
+    m: 0,
+    sec: 0,
+    urgent: false,
+    closed: false
+  });
+  useEffect(() => {
+    const tick = () => {
+      const ist = new Date(new Date().toLocaleString('en-US', {
+        timeZone: 'Asia/Kolkata'
+      }));
+      const day = ist.getDay();
+      const nowM = ist.getHours() * 60 + ist.getMinutes();
+      if (day === 0 || nowM >= 900) {
+        setS({
+          h: 0,
+          m: 0,
+          sec: 0,
+          urgent: false,
+          closed: true
+        });
+        return;
+      }
+      const rem = 900 - nowM;
+      setS({
+        h: Math.floor(rem / 60),
+        m: rem % 60,
+        sec: 59 - ist.getSeconds(),
+        urgent: rem <= 60,
+        closed: false
+      });
     };
-    tick(); const t=setInterval(tick,1000); return()=>clearInterval(t);
-  },[]);
+    tick();
+    const t = setInterval(tick, 1000);
+    return () => clearInterval(t);
+  }, []);
   return s;
 }
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
-const catToSlug = c => c.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-$/,'');
-const catImg    = c => `../../assets/images/categories/${catToSlug(c)}.jpg`;
-const partLink  = partNo => `${partNo.toLowerCase()}.html`;
+const catToSlug = c => c.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '');
+const catImg = c => `../../assets/images/categories/${catToSlug(c)}.jpg`;
+const partLink = partNo => `${partNo.toLowerCase()}.html`;
 
 // ── READING PROGRESS ──────────────────────────────────────────────────────────
-function ReadingProgress(){
-  const [pct,setPct]=useState(0);
-  useEffect(()=>{
-    const fn=()=>{
-      const doc=document.documentElement;
-      const scrolled=doc.scrollTop||document.body.scrollTop;
-      const total=doc.scrollHeight-doc.clientHeight;
-      setPct(total>0?Math.min(100,(scrolled/total)*100):0);
+function ReadingProgress() {
+  const [pct, setPct] = useState(0);
+  useEffect(() => {
+    const fn = () => {
+      const doc = document.documentElement;
+      const scrolled = doc.scrollTop || document.body.scrollTop;
+      const total = doc.scrollHeight - doc.clientHeight;
+      setPct(total > 0 ? Math.min(100, scrolled / total * 100) : 0);
     };
-    window.addEventListener('scroll',fn,{passive:true});
-    return()=>window.removeEventListener('scroll',fn);
-  },[]);
-  return(
-    <div style={{position:'fixed',top:0,left:0,right:0,zIndex:10000,height:3,background:'rgba(255,255,255,0.04)',pointerEvents:'none'}}>
-      <div style={{height:'100%',background:AMBER,width:`${pct}%`,transition:'width 0.1s linear',boxShadow:`0 0 10px ${AMBER}66`}}/>
-    </div>
-  );
+    window.addEventListener('scroll', fn, {
+      passive: true
+    });
+    return () => window.removeEventListener('scroll', fn);
+  }, []);
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 10000,
+      height: 3,
+      background: 'rgba(255,255,255,0.04)',
+      pointerEvents: 'none'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: '100%',
+      background: AMBER,
+      width: `${pct}%`,
+      transition: 'width 0.1s linear',
+      boxShadow: `0 0 10px ${AMBER}66`
+    }
+  }));
 }
 
 // ── REVEAL HOOK ───────────────────────────────────────────────────────────────
-function useReveal(){
-  const ref=useRef();
-  useEffect(()=>{
-    const el=ref.current; if(!el) return;
-    const obs=new IntersectionObserver(([e])=>{if(e.isIntersecting){el.classList.add('in');obs.disconnect();}},{threshold:0.08});
+function useReveal() {
+  const ref = useRef();
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) {
+        el.classList.add('in');
+        obs.disconnect();
+      }
+    }, {
+      threshold: 0.08
+    });
     obs.observe(el);
-    return()=>obs.disconnect();
-  },[]);
+    return () => obs.disconnect();
+  }, []);
   return ref;
 }
 
 // ── SCROLL SPY ────────────────────────────────────────────────────────────────
-function useScrollSpy(ids){
-  const [active,setActive]=useState(ids[0]);
-  useEffect(()=>{
-    const obs=new IntersectionObserver(entries=>{
-      entries.forEach(e=>{if(e.isIntersecting) setActive(e.target.id);});
-    },{rootMargin:'-20% 0px -70% 0px'});
-    ids.forEach(id=>{const el=document.getElementById(id);if(el) obs.observe(el);});
-    return()=>obs.disconnect();
-  },[ids.join(',')]);
+function useScrollSpy(ids) {
+  const [active, setActive] = useState(ids[0]);
+  useEffect(() => {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) setActive(e.target.id);
+      });
+    }, {
+      rootMargin: '-20% 0px -70% 0px'
+    });
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) obs.observe(el);
+    });
+    return () => obs.disconnect();
+  }, [ids.join(',')]);
   return active;
 }
 
 // ── SECTION WRAPPER ───────────────────────────────────────────────────────────
-function Section({id,num,children,style={}}){
-  const ref=useReveal();
-  return(
-    <div id={id} style={{position:'relative',overflow:'hidden',...style}}>
-      {num&&<div className="section-ghost">{num}</div>}
-      <div ref={ref} className="reveal" style={{position:'relative',zIndex:1}}>{children}</div>
-    </div>
-  );
+function Section({
+  id,
+  num,
+  children,
+  style = {}
+}) {
+  const ref = useReveal();
+  return /*#__PURE__*/React.createElement("div", {
+    id: id,
+    style: {
+      position: 'relative',
+      overflow: 'hidden',
+      ...style
+    }
+  }, num && /*#__PURE__*/React.createElement("div", {
+    className: "section-ghost"
+  }, num), /*#__PURE__*/React.createElement("div", {
+    ref: ref,
+    className: "reveal",
+    style: {
+      position: 'relative',
+      zIndex: 1
+    }
+  }, children));
 }
-
-function SectionRule(){
-  return <div style={{height:1,background:T.border}}/>;
+function SectionRule() {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 1,
+      background: T.border
+    }
+  });
 }
 
 // ── BRAND PAGE SIDEBAR ────────────────────────────────────────────────────────
-const BRAND_PAGE_SECS=[
-  {id:'sec-cats',   label:'Browse Categories'},
-  {id:'sec-models', label:'Popular Models'},
-  {id:'sec-parts',  label:'Featured Parts'},
-  {id:'sec-about',  label:'About Volvo CE'},
-];
-
-const CAT_PAGE_SECS=[
-  {id:'sec-parts-list', label:'Parts Catalogue'},
-  {id:'sec-cat-about',  label:'About This Category'},
-];
-
-function BrandSidebar({activeId,secs,waMsg}){
-  const scrollTo=id=>{const el=document.getElementById(id);if(el) el.scrollIntoView({behavior:'smooth',block:'start'});};
-  return(
-    <div className="sidebar-col">
-      <div style={{position:'sticky',top:88,display:'flex',flexDirection:'column',gap:2}}>
-        <div style={{fontFamily:D,fontSize:10,fontWeight:700,letterSpacing:'0.2em',textTransform:'uppercase',color:T.muted,marginBottom:12,paddingBottom:8,borderBottom:`1px solid ${T.border}`}}>On this page</div>
-        {secs.map(s=>(
-          <button key={s.id} className="toc-link" onClick={()=>scrollTo(s.id)}>
-            <div className="toc-dot" style={{
-              background:activeId===s.id?AMBER:T.muted,
-              boxShadow:activeId===s.id?`0 0 8px ${AMBER}99`:'none',
-              width:activeId===s.id?7:5,height:activeId===s.id?7:5,
-            }}/>
-            <span style={{fontFamily:B,fontSize:13,fontWeight:activeId===s.id?600:400,color:activeId===s.id?T.text:T.muted,transition:'color 0.2s'}}>{s.label}</span>
-          </button>
-        ))}
-        <div style={{marginTop:28,background:T.bgCard,border:`1px solid ${T.border}`,borderRadius:12,padding:16}}>
-          <div style={{fontFamily:D,fontWeight:800,fontSize:14,color:T.text,textTransform:'uppercase',letterSpacing:'0.05em',marginBottom:6}}>Need a Part?</div>
-          <p style={{fontFamily:B,fontSize:12,color:T.muted,lineHeight:1.6,marginBottom:12}}>Pricing and availability in under 60 minutes.</p>
-          <a href={WA(waMsg||'Hi, I need a heavy equipment spare part. Please confirm availability and pricing.')} target="_blank" rel="noopener"
-            style={{display:'flex',alignItems:'center',gap:7,background:WG,color:'#fff',textDecoration:'none',padding:'10px 14px',borderRadius:8,fontFamily:D,fontWeight:700,fontSize:13,letterSpacing:'0.04em',transition:'opacity 0.2s'}}
-            onMouseEnter={e=>e.currentTarget.style.opacity='0.85'} onMouseLeave={e=>e.currentTarget.style.opacity='1'}>
-            <WASvg size={14}/>WhatsApp Now
-          </a>
-        </div>
-      </div>
-    </div>
-  );
+const BRAND_PAGE_SECS = [{
+  id: 'sec-cats',
+  label: 'Browse Categories'
+}, {
+  id: 'sec-models',
+  label: 'Popular Models'
+}, {
+  id: 'sec-parts',
+  label: 'Featured Parts'
+}, {
+  id: 'sec-about',
+  label: 'About Volvo CE'
+}];
+const CAT_PAGE_SECS = [{
+  id: 'sec-parts-list',
+  label: 'Parts Catalogue'
+}, {
+  id: 'sec-cat-about',
+  label: 'About This Category'
+}];
+function BrandSidebar({
+  activeId,
+  secs,
+  waMsg
+}) {
+  const scrollTo = id => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "sidebar-col"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'sticky',
+      top: 88,
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 2
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: D,
+      fontSize: 10,
+      fontWeight: 700,
+      letterSpacing: '0.2em',
+      textTransform: 'uppercase',
+      color: T.muted,
+      marginBottom: 12,
+      paddingBottom: 8,
+      borderBottom: `1px solid ${T.border}`
+    }
+  }, "On this page"), secs.map(s => /*#__PURE__*/React.createElement("button", {
+    key: s.id,
+    className: "toc-link",
+    onClick: () => scrollTo(s.id)
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "toc-dot",
+    style: {
+      background: activeId === s.id ? AMBER : T.muted,
+      boxShadow: activeId === s.id ? `0 0 8px ${AMBER}99` : 'none',
+      width: activeId === s.id ? 7 : 5,
+      height: activeId === s.id ? 7 : 5
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 13,
+      fontWeight: activeId === s.id ? 600 : 400,
+      color: activeId === s.id ? T.text : T.muted,
+      transition: 'color 0.2s'
+    }
+  }, s.label))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 28,
+      background: T.bgCard,
+      border: `1px solid ${T.border}`,
+      borderRadius: 12,
+      padding: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: D,
+      fontWeight: 800,
+      fontSize: 14,
+      color: T.text,
+      textTransform: 'uppercase',
+      letterSpacing: '0.05em',
+      marginBottom: 6
+    }
+  }, "Need a Part?"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      color: T.muted,
+      lineHeight: 1.6,
+      marginBottom: 12
+    }
+  }, "Pricing and availability in under 60 minutes."), /*#__PURE__*/React.createElement("a", {
+    href: WA(waMsg || 'Hi, I need a heavy equipment spare part. Please confirm availability and pricing.'),
+    target: "_blank",
+    rel: "noopener",
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 7,
+      background: WG,
+      color: '#fff',
+      textDecoration: 'none',
+      padding: '10px 14px',
+      borderRadius: 8,
+      fontFamily: D,
+      fontWeight: 700,
+      fontSize: 13,
+      letterSpacing: '0.04em',
+      transition: 'opacity 0.2s'
+    },
+    onMouseEnter: e => e.currentTarget.style.opacity = '0.85',
+    onMouseLeave: e => e.currentTarget.style.opacity = '1'
+  }, /*#__PURE__*/React.createElement(WASvg, {
+    size: 14
+  }), "WhatsApp Now"))));
 }
-
-const Label = ({children,center=false}) => (
-  <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:12,justifyContent:center?'center':'flex-start'}}>
-    <div style={{width:24,height:2,background:AMBER}}/>
-    <span style={{fontFamily:D,fontSize:11,fontWeight:700,letterSpacing:'0.22em',textTransform:'uppercase',color:AMBER}}>{children}</span>
-    {center&&<div style={{width:24,height:2,background:AMBER}}/>}
-  </div>
-);
-
-const WASvg = ({color='#fff',size=16}) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill={color} style={{flexShrink:0}}>
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-);
+const Label = ({
+  children,
+  center = false
+}) => /*#__PURE__*/React.createElement("div", {
+  style: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 10,
+    marginBottom: 12,
+    justifyContent: center ? 'center' : 'flex-start'
+  }
+}, /*#__PURE__*/React.createElement("div", {
+  style: {
+    width: 24,
+    height: 2,
+    background: AMBER
+  }
+}), /*#__PURE__*/React.createElement("span", {
+  style: {
+    fontFamily: D,
+    fontSize: 11,
+    fontWeight: 700,
+    letterSpacing: '0.22em',
+    textTransform: 'uppercase',
+    color: AMBER
+  }
+}, children), center && /*#__PURE__*/React.createElement("div", {
+  style: {
+    width: 24,
+    height: 2,
+    background: AMBER
+  }
+}));
+const WASvg = ({
+  color = '#fff',
+  size = 16
+}) => /*#__PURE__*/React.createElement("svg", {
+  width: size,
+  height: size,
+  viewBox: "0 0 24 24",
+  fill: color,
+  style: {
+    flexShrink: 0
+  }
+}, /*#__PURE__*/React.createElement("path", {
+  d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+}));
 
 // ── SEARCH MODAL ──────────────────────────────────────────────────────────────
-function SearchModal({open,onClose,defaultBrand='All'}){
-  const [q,setQ]=useState('');
-  const [brand,setBrand]=useState(defaultBrand);
-  const inputRef=useRef();
-  const brands=['All','Volvo','Scania','Komatsu','CAT','Hitachi'];
-
-  useEffect(()=>{if(open){setTimeout(()=>inputRef.current?.focus(),80);}else{setQ('');}},[open]);
-  useEffect(()=>{
-    const fn=e=>{if(e.key==='Escape') onClose();};
-    window.addEventListener('keydown',fn); return()=>window.removeEventListener('keydown',fn);
-  },[onClose]);
-
-  const results=useMemo(()=>{
-    if(q.length<2) return [];
-    const lq=q.toLowerCase();
-    const DB=window.productSearchDB||null;
-    if(DB){return DB.filter(p=>((p.part||'').toLowerCase().includes(lq)||(p.desc||'').toLowerCase().includes(lq)||(p.brand||'').toLowerCase().includes(lq))&&(brand==='All'||p.brand===brand)).slice(0,12).map(p=>({partNo:p.part,name:p.desc,brand:p.brand,cat:p.cat,url:p.url}));}
-    return SEARCH_PARTS.filter(p=>(
-      (p.partNo.toLowerCase().includes(lq)||p.name.toLowerCase().includes(lq)||p.brand.toLowerCase().includes(lq))
-      &&(brand==='All'||p.brand===brand)
-    )).slice(0,8);
-  },[q,brand]);
-
-  if(!open) return null;
-  return(
-    <div onClick={onClose} style={{position:'fixed',inset:0,zIndex:9999,background:'rgba(0,0,0,0.88)',backdropFilter:'blur(8px)',display:'flex',alignItems:'flex-start',justifyContent:'center',paddingTop:80}}>
-      <div style={{animation:'modalIn 0.2s ease both',width:'100%',maxWidth:720,margin:'0 16px',background:T.bgCard,border:`1px solid ${T.border}`,borderRadius:16,overflow:'hidden',boxShadow:'0 40px 120px rgba(0,0,0,0.8)'}}
-        onClick={e=>e.stopPropagation()}>
-        {/* Brand chips */}
-        <div style={{display:'flex',gap:8,padding:'16px 20px 0',flexWrap:'wrap'}}>
-          {brands.map(b=>(
-            <button key={b} onClick={()=>setBrand(b)} style={{fontFamily:B,fontSize:12,fontWeight:700,padding:'5px 14px',borderRadius:20,border:`1px solid ${brand===b?AMBER:'rgba(255,255,255,0.1)'}`,cursor:'pointer',background:brand===b?AMBER:'transparent',color:brand===b?'#050505':'rgba(255,255,255,0.5)',transition:'all 0.15s'}}>{b}</button>
-          ))}
-          <button onClick={onClose} style={{marginLeft:'auto',background:'transparent',border:'none',cursor:'pointer',color:T.muted,padding:'4px 8px',display:'flex',alignItems:'center'}}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
-          </button>
-        </div>
-        {/* Input */}
-        <div style={{display:'flex',alignItems:'center',borderBottom:`1px solid ${T.border}`,margin:'12px 0 0'}}>
-          <div style={{padding:'0 20px',flexShrink:0}}>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={T.muted} strokeWidth="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          </div>
-          <input ref={inputRef} type="search" value={q} onChange={e=>setQ(e.target.value)}
-            placeholder="Part number or description — e.g. VOE20450734 or hydraulic pump"
-            style={{flex:1,padding:'18px 16px 18px 0',fontSize:16,fontFamily:B,fontWeight:500,background:'transparent',border:'none',color:T.text,outline:'none'}}/>
-        </div>
-        {/* Results */}
-        {q.length>=2&&(results.length===0?(
-          <div style={{padding:'24px 20px',display:'flex',justifyContent:'space-between',alignItems:'center',gap:12}}>
-            <div>
-              <div style={{fontFamily:D,fontWeight:700,fontSize:16,color:T.text,marginBottom:4}}>No match found</div>
-              <div style={{fontFamily:B,fontSize:13,color:T.muted}}>Full database has 70,000+ parts — WhatsApp us directly.</div>
-            </div>
-            <a href={WA(`Hi, I'm searching for: ${q}. Please check availability and pricing.`)} target="_blank"
-              style={{display:'flex',alignItems:'center',gap:8,background:WG,color:'#fff',textDecoration:'none',padding:'11px 18px',borderRadius:9,fontFamily:D,fontWeight:700,fontSize:14,whiteSpace:'nowrap',flexShrink:0}}>
-              <WASvg/> Ask on WhatsApp
-            </a>
-          </div>
-        ):(
-          <div>
-            {results.map(r=>(
-              <a key={r.partNo} href={r.url||WA(`Hi, I need part ${r.partNo} — ${r.name} (${r.brand}). Please confirm availability and pricing.`)} target={r.url?'_self':'_blank'}
-                style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'13px 20px',borderBottom:`1px solid ${T.border}`,textDecoration:'none',transition:'background 0.15s',gap:12}}
-                onMouseEnter={e=>e.currentTarget.style.background='rgba(255,184,28,0.04)'}
-                onMouseLeave={e=>e.currentTarget.style.background='transparent'}>
-                <div>
-                  <div style={{display:'flex',gap:8,alignItems:'center',marginBottom:3,flexWrap:'wrap'}}>
-                    <span style={{fontFamily:'monospace',fontWeight:700,fontSize:14,color:AMBER}}>{r.partNo}</span>
-                    <span style={{fontFamily:B,fontSize:11,color:T.muted,background:'rgba(255,255,255,0.04)',padding:'2px 8px',borderRadius:4,border:`1px solid ${T.border}`}}>{r.brand}</span>
-                    <span style={{fontFamily:B,fontSize:11,color:T.muted,background:'rgba(255,255,255,0.04)',padding:'2px 8px',borderRadius:4,border:`1px solid ${T.border}`}}>{r.cat}</span>
-                  </div>
-                  <div style={{fontFamily:B,fontSize:13,color:T.muted}}>{r.name}</div>
-                </div>
-                {!r.url&&<span style={{fontFamily:B,fontSize:12,color:WG,fontWeight:700,flexShrink:0,display:'flex',alignItems:'center',gap:4}}><WASvg color={WG}/>WhatsApp</span>}
-              </a>
-            ))}
-            <div style={{padding:'10px 20px',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-              <span style={{fontFamily:B,fontSize:12,color:T.muted}}>{results.length} results · full 51K+ database on WhatsApp</span>
-              <a href={WA(`Hi, I'm searching for: ${q}. Can you help?`)} target="_blank" style={{fontFamily:B,fontSize:12,color:AMBER,textDecoration:'none',fontWeight:700}}>Search all 51K+ →</a>
-            </div>
-          </div>
-        ))}
-        {q.length<2&&(
-          <div style={{padding:'20px',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-            <span style={{fontFamily:B,fontSize:12,color:T.muted}}>70,000+ parts indexed · type 2+ characters to search</span>
-            <span style={{fontFamily:B,fontSize:12,color:T.muted}}>Esc to close</span>
-          </div>
-        )}
-      </div>
-    </div>
-  );
+function SearchModal({
+  open,
+  onClose,
+  defaultBrand = 'All'
+}) {
+  const [q, setQ] = useState('');
+  const [brand, setBrand] = useState(defaultBrand);
+  const inputRef = useRef();
+  const brands = ['All', 'Volvo', 'Scania', 'Komatsu', 'CAT', 'Hitachi'];
+  useEffect(() => {
+    if (open) {
+      setTimeout(() => inputRef.current?.focus(), 80);
+    } else {
+      setQ('');
+    }
+  }, [open]);
+  useEffect(() => {
+    const fn = e => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', fn);
+    return () => window.removeEventListener('keydown', fn);
+  }, [onClose]);
+  const results = useMemo(() => {
+    if (q.length < 2) return [];
+    const lq = q.toLowerCase();
+    const DB = window.productSearchDB || null;
+    if (DB) {
+      return DB.filter(p => ((p.part || '').toLowerCase().includes(lq) || (p.desc || '').toLowerCase().includes(lq) || (p.brand || '').toLowerCase().includes(lq)) && (brand === 'All' || p.brand === brand)).slice(0, 12).map(p => ({
+        partNo: p.part,
+        name: p.desc,
+        brand: p.brand,
+        cat: p.cat,
+        url: p.url
+      }));
+    }
+    return SEARCH_PARTS.filter(p => (p.partNo.toLowerCase().includes(lq) || p.name.toLowerCase().includes(lq) || p.brand.toLowerCase().includes(lq)) && (brand === 'All' || p.brand === brand)).slice(0, 8);
+  }, [q, brand]);
+  if (!open) return null;
+  return /*#__PURE__*/React.createElement("div", {
+    onClick: onClose,
+    style: {
+      position: 'fixed',
+      inset: 0,
+      zIndex: 9999,
+      background: 'rgba(0,0,0,0.88)',
+      backdropFilter: 'blur(8px)',
+      display: 'flex',
+      alignItems: 'flex-start',
+      justifyContent: 'center',
+      paddingTop: 80
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      animation: 'modalIn 0.2s ease both',
+      width: '100%',
+      maxWidth: 720,
+      margin: '0 16px',
+      background: T.bgCard,
+      border: `1px solid ${T.border}`,
+      borderRadius: 16,
+      overflow: 'hidden',
+      boxShadow: '0 40px 120px rgba(0,0,0,0.8)'
+    },
+    onClick: e => e.stopPropagation()
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 8,
+      padding: '16px 20px 0',
+      flexWrap: 'wrap'
+    }
+  }, brands.map(b => /*#__PURE__*/React.createElement("button", {
+    key: b,
+    onClick: () => setBrand(b),
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      fontWeight: 700,
+      padding: '5px 14px',
+      borderRadius: 20,
+      border: `1px solid ${brand === b ? AMBER : 'rgba(255,255,255,0.1)'}`,
+      cursor: 'pointer',
+      background: brand === b ? AMBER : 'transparent',
+      color: brand === b ? '#050505' : 'rgba(255,255,255,0.5)',
+      transition: 'all 0.15s'
+    }
+  }, b)), /*#__PURE__*/React.createElement("button", {
+    onClick: onClose,
+    style: {
+      marginLeft: 'auto',
+      background: 'transparent',
+      border: 'none',
+      cursor: 'pointer',
+      color: T.muted,
+      padding: '4px 8px',
+      display: 'flex',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "18",
+    height: "18",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M18 6 6 18M6 6l12 12"
+  })))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      borderBottom: `1px solid ${T.border}`,
+      margin: '12px 0 0'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '0 20px',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "20",
+    height: "20",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: T.muted,
+    strokeWidth: "2.5"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "11",
+    cy: "11",
+    r: "8"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "m21 21-4.35-4.35"
+  }))), /*#__PURE__*/React.createElement("input", {
+    ref: inputRef,
+    type: "search",
+    value: q,
+    onChange: e => setQ(e.target.value),
+    placeholder: "Part number or description \u2014 e.g. VOE20450734 or hydraulic pump",
+    style: {
+      flex: 1,
+      padding: '18px 16px 18px 0',
+      fontSize: 16,
+      fontFamily: B,
+      fontWeight: 500,
+      background: 'transparent',
+      border: 'none',
+      color: T.text,
+      outline: 'none'
+    }
+  })), q.length >= 2 && (results.length === 0 ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '24px 20px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: D,
+      fontWeight: 700,
+      fontSize: 16,
+      color: T.text,
+      marginBottom: 4
+    }
+  }, "No match found"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: B,
+      fontSize: 13,
+      color: T.muted
+    }
+  }, "Full database has 70,000+ parts \u2014 WhatsApp us directly.")), /*#__PURE__*/React.createElement("a", {
+    href: WA(`Hi, I'm searching for: ${q}. Please check availability and pricing.`),
+    target: "_blank",
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8,
+      background: WG,
+      color: '#fff',
+      textDecoration: 'none',
+      padding: '11px 18px',
+      borderRadius: 9,
+      fontFamily: D,
+      fontWeight: 700,
+      fontSize: 14,
+      whiteSpace: 'nowrap',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement(WASvg, null), " Ask on WhatsApp")) : /*#__PURE__*/React.createElement("div", null, results.map(r => /*#__PURE__*/React.createElement("a", {
+    key: r.partNo,
+    href: r.url || WA(`Hi, I need part ${r.partNo} — ${r.name} (${r.brand}). Please confirm availability and pricing.`),
+    target: r.url ? '_self' : '_blank',
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: '13px 20px',
+      borderBottom: `1px solid ${T.border}`,
+      textDecoration: 'none',
+      transition: 'background 0.15s',
+      gap: 12
+    },
+    onMouseEnter: e => e.currentTarget.style.background = 'rgba(255,184,28,0.04)',
+    onMouseLeave: e => e.currentTarget.style.background = 'transparent'
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 8,
+      alignItems: 'center',
+      marginBottom: 3,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: 'monospace',
+      fontWeight: 700,
+      fontSize: 14,
+      color: AMBER
+    }
+  }, r.partNo), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 11,
+      color: T.muted,
+      background: 'rgba(255,255,255,0.04)',
+      padding: '2px 8px',
+      borderRadius: 4,
+      border: `1px solid ${T.border}`
+    }
+  }, r.brand), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 11,
+      color: T.muted,
+      background: 'rgba(255,255,255,0.04)',
+      padding: '2px 8px',
+      borderRadius: 4,
+      border: `1px solid ${T.border}`
+    }
+  }, r.cat)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: B,
+      fontSize: 13,
+      color: T.muted
+    }
+  }, r.name)), !r.url && /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      color: WG,
+      fontWeight: 700,
+      flexShrink: 0,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 4
+    }
+  }, /*#__PURE__*/React.createElement(WASvg, {
+    color: WG
+  }), "WhatsApp"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '10px 20px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      color: T.muted
+    }
+  }, results.length, " results \xB7 full 51K+ database on WhatsApp"), /*#__PURE__*/React.createElement("a", {
+    href: WA(`Hi, I'm searching for: ${q}. Can you help?`),
+    target: "_blank",
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      color: AMBER,
+      textDecoration: 'none',
+      fontWeight: 700
+    }
+  }, "Search all 51K+ \u2192")))), q.length < 2 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '20px',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      color: T.muted
+    }
+  }, "70,000+ parts indexed \xB7 type 2+ characters to search"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      color: T.muted
+    }
+  }, "Esc to close"))));
 }
 
 // ── ANNOUNCEMENT BAR ──────────────────────────────────────────────────────────
-function AnnouncementBar(){
-  const geo=useGeo();
-  const ship=geoShip(geo);
-  const shippingItem=ship&&geo
-    ?(geo.country==='IN'?`India domestic: ${ship.est} · same-day dispatch available`:`Ships to ${geo.countryName} in ${ship.est} via ${ship.via}`)
-    :'Shipping to 50+ countries worldwide';
-  const items=[
-    'Order before 3 PM IST — ships same day',
-    shippingItem,
-    '70,000+ parts ready to dispatch, Mumbai',
-    'WhatsApp · Email · SWIFT & UPI accepted',
-    'Est. 1956 — 70 years of trusted supply',
-  ];
-  const all=[...items,...items];
-  return(
-    <div style={{background:AMBER,overflow:'hidden',padding:'9px 0'}}>
-      <div className="act-inner" style={{display:'flex',gap:64,width:'max-content',alignItems:'center'}}>
-        {all.map((item,i)=><span key={i} style={{fontFamily:B,fontSize:13,fontWeight:600,color:'#050505',whiteSpace:'nowrap'}}>{item}</span>)}
-      </div>
-    </div>
-  );
+function AnnouncementBar() {
+  const geo = useGeo();
+  const ship = geoShip(geo);
+  const shippingItem = ship && geo ? geo.country === 'IN' ? `India domestic: ${ship.est} · same-day dispatch available` : `Ships to ${geo.countryName} in ${ship.est} via ${ship.via}` : 'Shipping to 50+ countries worldwide';
+  const items = ['Order before 3 PM IST — ships same day', shippingItem, '70,000+ parts ready to dispatch, Mumbai', 'WhatsApp · Email · SWIFT & UPI accepted', 'Est. 1956 — 70 years of trusted supply'];
+  const all = [...items, ...items];
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: AMBER,
+      overflow: 'hidden',
+      padding: '9px 0'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "act-inner",
+    style: {
+      display: 'flex',
+      gap: 64,
+      width: 'max-content',
+      alignItems: 'center'
+    }
+  }, all.map((item, i) => /*#__PURE__*/React.createElement("span", {
+    key: i,
+    style: {
+      fontFamily: B,
+      fontSize: 13,
+      fontWeight: 600,
+      color: '#050505',
+      whiteSpace: 'nowrap'
+    }
+  }, item))));
 }
 
 // ── NAV (mega-menu, matching product page) ────────────────────────────────────
-function Nav({page,onSearchOpen}){
-  const navWaMsg = page==='category'
-    ? WA(`Hi, I need ${CATEGORY_TPL.brand} ${CATEGORY_TPL.category}. Please confirm availability and pricing.`)
-    : WA(`Hi, I need ${BRAND_TPL.brand} spare parts. Please confirm availability and pricing.`);
-  const [scrolled,setScrolled]=useState(false);
-  const [bOpen,setBOpen]=useState(false);
-  const [cOpen,setCOpen]=useState(false);
-  const [mOpen,setMOpen]=useState(false);
-  const bT=useRef(null); const cT=useRef(null);
-
-  useEffect(()=>{
-    const h=()=>setScrolled(window.scrollY>20);
-    window.addEventListener('scroll',h,{passive:true}); return()=>window.removeEventListener('scroll',h);
-  },[]);
-
-  const ob=()=>{clearTimeout(bT.current);setBOpen(true);}; const cb=()=>{bT.current=setTimeout(()=>setBOpen(false),160);};
-  const oc=()=>{clearTimeout(cT.current);setCOpen(true);}; const cc=()=>{cT.current=setTimeout(()=>setCOpen(false),160);};
-
-  const lnk={background:'none',border:'none',cursor:'pointer',fontFamily:B,fontSize:13,fontWeight:500,color:T.text,padding:'0 13px',height:68,display:'flex',alignItems:'center',gap:5,textDecoration:'none',opacity:0.75,transition:'opacity 0.18s',whiteSpace:'nowrap'};
-  const chev=(open)=><svg width="8" height="5" viewBox="0 0 8 5" fill="none" style={{transform:open?'rotate(180deg)':'none',transition:'transform 0.2s',flexShrink:0}}><path d="M1 1l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>;
-  const currentBrand=page==='brand'?BRAND_TPL.brandSlug:CATEGORY_TPL.brandSlug;
-
-  return(
-    <nav style={{position:'sticky',top:0,zIndex:1000,background:scrolled?T.navBg:'rgba(5,5,5,0.9)',backdropFilter:'blur(28px)',borderBottom:`1px solid ${scrolled?T.border:'transparent'}`,transition:'all 0.3s'}}>
-      <div style={{maxWidth:1360,margin:'0 auto',padding:'0 32px',height:68,display:'flex',alignItems:'center'}}>
-        <a href="/" style={{marginRight:32,flexShrink:0,display:'flex',alignItems:'center'}}>
-          <img src="../../assets/images/ptc-logo.webp" alt="Parts Trading Company" style={{height:48,width:'auto'}}/>
-        </a>
-
-        <div className="desktop-only" style={{display:'flex',alignItems:'center',flex:1}}>
-          <a href="index.html" style={{...lnk,textDecoration:'none',opacity:0.6,display:'flex',alignItems:'center',gap:5}}
-            onMouseEnter={e=>e.currentTarget.style.opacity=1} onMouseLeave={e=>e.currentTarget.style.opacity=0.6}>
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            Home
-          </a>
-          {/* By Brand */}
-          <div style={{position:'relative'}} onMouseEnter={ob} onMouseLeave={cb}>
-            <button style={lnk} onMouseEnter={e=>e.currentTarget.style.opacity=1} onMouseLeave={e=>e.currentTarget.style.opacity=0.75}>By Brand {chev(bOpen)}</button>
-            {bOpen&&<div className="mega-anim" style={{position:'absolute',top:'100%',left:-16,background:'#080808',border:`1px solid ${T.border}`,borderTop:`2px solid ${AMBER}`,borderRadius:'0 0 16px 16px',padding:'18px',width:360,boxShadow:'0 40px 80px rgba(0,0,0,0.97)'}}>
-              <div style={{fontFamily:B,fontSize:9,fontWeight:700,letterSpacing:'0.15em',color:T.muted,textTransform:'uppercase',marginBottom:12}}>Browse by Brand</div>
-              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:5}}>
-                {BRANDS_NAV.map(br=>{
-                  const active=br.slug===currentBrand;
-                  return<a key={br.name} href={`/${br.slug}/`} style={{display:'flex',alignItems:'center',justifyContent:'space-between',padding:'9px 11px',borderRadius:8,border:`1px solid ${active?'rgba(255,184,28,0.4)':T.border}`,background:active?T.amberDim:'rgba(255,255,255,0.025)',textDecoration:'none',color:active?AMBER:T.text,fontFamily:B,fontSize:12,fontWeight:600,transition:'all 0.18s'}}
-                    onMouseEnter={e=>{e.currentTarget.style.borderColor=AMBER;e.currentTarget.style.color=AMBER;e.currentTarget.style.background=T.amberDim;}}
-                    onMouseLeave={e=>{if(!active){e.currentTarget.style.borderColor=T.border;e.currentTarget.style.color=T.text;e.currentTarget.style.background='rgba(255,255,255,0.025)';}}}
-                  >{br.name}{active&&<span style={{fontSize:9,color:AMBER,letterSpacing:'0.08em'}}>YOU'RE HERE</span>}</a>;
-                })}
-              </div>
-            </div>}
-          </div>
-          {/* By Category */}
-          <div style={{position:'relative'}} onMouseEnter={oc} onMouseLeave={cc}>
-            <button style={lnk} onMouseEnter={e=>e.currentTarget.style.opacity=1} onMouseLeave={e=>e.currentTarget.style.opacity=0.75}>By Category {chev(cOpen)}</button>
-            {cOpen&&<div className="mega-anim" style={{position:'absolute',top:'100%',left:-16,background:'#080808',border:`1px solid ${T.border}`,borderTop:`2px solid ${AMBER}`,borderRadius:'0 0 16px 16px',padding:'18px',width:510,boxShadow:'0 40px 80px rgba(0,0,0,0.97)'}}>
-              <div style={{fontFamily:B,fontSize:9,fontWeight:700,letterSpacing:'0.15em',color:T.muted,textTransform:'uppercase',marginBottom:12}}>Browse by Category</div>
-              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:4}}>
-                {CATS_NAV.map(cat=>{
-                  const active=page==='category'&&cat===CATEGORY_TPL.category;
-                  return<a key={cat} href={`/parts/${cat.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-$/,'')}/`} style={{display:'block',padding:'7px 10px',borderRadius:6,border:`1px solid ${active?'rgba(255,184,28,0.35)':T.border}`,background:active?T.amberDim:'rgba(255,255,255,0.018)',textDecoration:'none',color:active?AMBER:T.text,fontFamily:B,fontSize:11,fontWeight:active?700:500,transition:'all 0.15s'}}
-                    onMouseEnter={e=>{e.currentTarget.style.color=AMBER;e.currentTarget.style.borderColor='rgba(255,184,28,0.3)';e.currentTarget.style.background=T.amberDim;}}
-                    onMouseLeave={e=>{if(!active){e.currentTarget.style.color=T.text;e.currentTarget.style.borderColor=T.border;e.currentTarget.style.background='rgba(255,255,255,0.018)';}}}
-                  >{cat}</a>;
-                })}
-              </div>
-            </div>}
-          </div>
-          <a href="/blog/" style={{...lnk,textDecoration:'none'}} onMouseEnter={e=>e.currentTarget.style.opacity=1} onMouseLeave={e=>e.currentTarget.style.opacity=0.75}>Blog</a>
-          <a href="/about.html" style={{...lnk,textDecoration:'none'}} onMouseEnter={e=>e.currentTarget.style.opacity=1} onMouseLeave={e=>e.currentTarget.style.opacity=0.75}>About</a>
-        </div>
-
-        <div style={{display:'flex',alignItems:'center',gap:8,flexShrink:0}}>
-          <button onClick={onSearchOpen} aria-label="Search parts" title="Search parts" style={{display:'flex',alignItems:'center',justifyContent:'center',width:34,height:34,borderRadius:7,border:'1px solid rgba(255,255,255,0.2)',background:'rgba(255,255,255,0.07)',color:'rgba(255,255,255,0.7)',cursor:'pointer',transition:'all 0.2s'}}
-            onMouseEnter={e=>{e.currentTarget.style.borderColor=AMBER;e.currentTarget.style.color=AMBER;e.currentTarget.style.background='rgba(255,184,28,0.1)';}}
-            onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(255,255,255,0.2)';e.currentTarget.style.color='rgba(255,255,255,0.7)';e.currentTarget.style.background='rgba(255,255,255,0.07)';}}
-          ><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
-          <a href={navWaMsg} target="_blank" rel="noopener"
-            style={{display:'inline-flex',alignItems:'center',gap:7,background:WG,color:'#fff',textDecoration:'none',borderRadius:8,padding:'8px 16px',fontFamily:B,fontSize:13,fontWeight:700,letterSpacing:'0.03em',transition:'opacity 0.2s',boxShadow:`0 2px 14px rgba(37,211,102,0.3)`}}
-            onMouseEnter={e=>e.currentTarget.style.opacity='0.85'}
-            onMouseLeave={e=>e.currentTarget.style.opacity='1'}
-          ><WASvg size={13}/> WhatsApp</a>
-          <a href="#contact" style={{background:AMBER,color:'#050505',textDecoration:'none',padding:'8px 18px',borderRadius:8,fontFamily:D,fontWeight:700,fontSize:13,letterSpacing:'0.06em',textTransform:'uppercase',transition:'opacity 0.2s'}}
-            onMouseEnter={e=>e.currentTarget.style.opacity='0.82'}
-            onMouseLeave={e=>e.currentTarget.style.opacity='1'}>Get Quote</a>
-          <button className="mob-hbg" onClick={()=>setMOpen(o=>!o)} aria-label="Menu" style={{display:'none',background:'none',border:'1px solid rgba(255,255,255,0.2)',color:'rgba(255,255,255,0.8)',borderRadius:6,width:34,height:34,cursor:'pointer',alignItems:'center',justifyContent:'center',flexShrink:0,padding:0}}>
-            {mOpen
-              ?<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-              :<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-            }
-          </button>
-        </div>
-      </div>
-      {mOpen&&(
-        <div className="mob-menu-overlay" style={{display:'none',position:'fixed',top:68,left:0,right:0,bottom:0,background:'rgba(5,5,5,0.98)',zIndex:999,overflowY:'auto',padding:'16px'}}>
-          <div style={{marginBottom:16,paddingBottom:16,borderBottom:'1px solid rgba(255,255,255,0.07)'}}>
-            <div style={{fontFamily:D,fontSize:9,fontWeight:700,letterSpacing:'0.15em',color:T.muted,textTransform:'uppercase',marginBottom:10}}>By Brand</div>
-            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:6}}>
-              {BRANDS_NAV.map(br=>(
-                <a key={br.name} href={`/${br.slug}/`} onClick={()=>setMOpen(false)} style={{padding:'10px 12px',borderRadius:8,border:'1px solid rgba(255,255,255,0.08)',textDecoration:'none',color:T.text,fontFamily:B,fontSize:13,fontWeight:600,background:'rgba(255,255,255,0.03)'}}>{br.name}</a>
-              ))}
-            </div>
-          </div>
-          <div style={{marginBottom:16,paddingBottom:16,borderBottom:'1px solid rgba(255,255,255,0.07)'}}>
-            <div style={{fontFamily:D,fontSize:9,fontWeight:700,letterSpacing:'0.15em',color:T.muted,textTransform:'uppercase',marginBottom:10}}>By Category</div>
-            <div style={{display:'flex',flexDirection:'column',gap:3}}>
-              {CATS_NAV.map(cat=>(
-                <a key={cat} href={CATS_NAV_URLS[cat]||'#'} onClick={()=>setMOpen(false)} style={{padding:'9px 12px',borderRadius:6,border:'1px solid rgba(255,255,255,0.07)',textDecoration:'none',color:T.text,fontFamily:B,fontSize:13,background:'rgba(255,255,255,0.025)'}}>{cat}</a>
-              ))}
-            </div>
-          </div>
-          <a href="/blog/" style={{display:'block',padding:'12px 4px',color:T.muted,textDecoration:'none',fontFamily:B,fontSize:13,fontWeight:600,borderBottom:'1px solid rgba(255,255,255,0.07)'}}>Blog</a>
-          <a href="/about.html" style={{display:'block',padding:'12px 4px',color:T.muted,textDecoration:'none',fontFamily:B,fontSize:13,fontWeight:600,borderBottom:'1px solid rgba(255,255,255,0.07)'}}>About</a>
-          <div style={{marginTop:16,display:'flex',gap:8}}>
-            <a href={WA(`Hi, I need a quote for a part. Can you help?`)} target="_blank" style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',gap:8,background:WG,color:'#fff',textDecoration:'none',padding:'12px 8px',borderRadius:8,fontFamily:B,fontSize:14,fontWeight:700}}>
-              <WASvg size={16}/>WhatsApp
-            </a>
-            <a href="#contact" onClick={()=>setMOpen(false)} style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',background:AMBER,color:'#050505',textDecoration:'none',padding:'12px 8px',borderRadius:8,fontFamily:D,fontWeight:700,fontSize:14,letterSpacing:'0.06em',textTransform:'uppercase'}}>Get Quote</a>
-          </div>
-        </div>
-      )}
-    </nav>
-  );
+function Nav({
+  page,
+  onSearchOpen
+}) {
+  const navWaMsg = page === 'category' ? WA(`Hi, I need ${CATEGORY_TPL.brand} ${CATEGORY_TPL.category}. Please confirm availability and pricing.`) : WA(`Hi, I need ${BRAND_TPL.brand} spare parts. Please confirm availability and pricing.`);
+  const [scrolled, setScrolled] = useState(false);
+  const [bOpen, setBOpen] = useState(false);
+  const [cOpen, setCOpen] = useState(false);
+  const [mOpen, setMOpen] = useState(false);
+  const bT = useRef(null);
+  const cT = useRef(null);
+  useEffect(() => {
+    const h = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', h, {
+      passive: true
+    });
+    return () => window.removeEventListener('scroll', h);
+  }, []);
+  const ob = () => {
+    clearTimeout(bT.current);
+    setBOpen(true);
+  };
+  const cb = () => {
+    bT.current = setTimeout(() => setBOpen(false), 160);
+  };
+  const oc = () => {
+    clearTimeout(cT.current);
+    setCOpen(true);
+  };
+  const cc = () => {
+    cT.current = setTimeout(() => setCOpen(false), 160);
+  };
+  const lnk = {
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    fontFamily: B,
+    fontSize: 13,
+    fontWeight: 500,
+    color: T.text,
+    padding: '0 13px',
+    height: 68,
+    display: 'flex',
+    alignItems: 'center',
+    gap: 5,
+    textDecoration: 'none',
+    opacity: 0.75,
+    transition: 'opacity 0.18s',
+    whiteSpace: 'nowrap'
+  };
+  const chev = open => /*#__PURE__*/React.createElement("svg", {
+    width: "8",
+    height: "5",
+    viewBox: "0 0 8 5",
+    fill: "none",
+    style: {
+      transform: open ? 'rotate(180deg)' : 'none',
+      transition: 'transform 0.2s',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M1 1l3 3 3-3",
+    stroke: "currentColor",
+    strokeWidth: "1.5",
+    strokeLinecap: "round"
+  }));
+  const currentBrand = page === 'brand' ? BRAND_TPL.brandSlug : CATEGORY_TPL.brandSlug;
+  return /*#__PURE__*/React.createElement("nav", {
+    style: {
+      position: 'sticky',
+      top: 0,
+      zIndex: 1000,
+      background: scrolled ? T.navBg : 'rgba(5,5,5,0.9)',
+      backdropFilter: 'blur(28px)',
+      borderBottom: `1px solid ${scrolled ? T.border : 'transparent'}`,
+      transition: 'all 0.3s'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1360,
+      margin: '0 auto',
+      padding: '0 32px',
+      height: 68,
+      display: 'flex',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/",
+    style: {
+      marginRight: 32,
+      flexShrink: 0,
+      display: 'flex',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "../../assets/images/ptc-logo.webp",
+    alt: "Parts Trading Company",
+    style: {
+      height: 48,
+      width: 'auto'
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "desktop-only",
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      flex: 1
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "index.html",
+    style: {
+      ...lnk,
+      textDecoration: 'none',
+      opacity: 0.6,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 5
+    },
+    onMouseEnter: e => e.currentTarget.style.opacity = 1,
+    onMouseLeave: e => e.currentTarget.style.opacity = 0.6
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "13",
+    height: "13",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2.2"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+  }), /*#__PURE__*/React.createElement("polyline", {
+    points: "9 22 9 12 15 12 15 22"
+  })), "Home"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'relative'
+    },
+    onMouseEnter: ob,
+    onMouseLeave: cb
+  }, /*#__PURE__*/React.createElement("button", {
+    style: lnk,
+    onMouseEnter: e => e.currentTarget.style.opacity = 1,
+    onMouseLeave: e => e.currentTarget.style.opacity = 0.75
+  }, "By Brand ", chev(bOpen)), bOpen && /*#__PURE__*/React.createElement("div", {
+    className: "mega-anim",
+    style: {
+      position: 'absolute',
+      top: '100%',
+      left: -16,
+      background: '#080808',
+      border: `1px solid ${T.border}`,
+      borderTop: `2px solid ${AMBER}`,
+      borderRadius: '0 0 16px 16px',
+      padding: '18px',
+      width: 360,
+      boxShadow: '0 40px 80px rgba(0,0,0,0.97)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: B,
+      fontSize: 9,
+      fontWeight: 700,
+      letterSpacing: '0.15em',
+      color: T.muted,
+      textTransform: 'uppercase',
+      marginBottom: 12
+    }
+  }, "Browse by Brand"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 5
+    }
+  }, BRANDS_NAV.map(br => {
+    const active = br.slug === currentBrand;
+    return /*#__PURE__*/React.createElement("a", {
+      key: br.name,
+      href: `/${br.slug}/`,
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '9px 11px',
+        borderRadius: 8,
+        border: `1px solid ${active ? 'rgba(255,184,28,0.4)' : T.border}`,
+        background: active ? T.amberDim : 'rgba(255,255,255,0.025)',
+        textDecoration: 'none',
+        color: active ? AMBER : T.text,
+        fontFamily: B,
+        fontSize: 12,
+        fontWeight: 600,
+        transition: 'all 0.18s'
+      },
+      onMouseEnter: e => {
+        e.currentTarget.style.borderColor = AMBER;
+        e.currentTarget.style.color = AMBER;
+        e.currentTarget.style.background = T.amberDim;
+      },
+      onMouseLeave: e => {
+        if (!active) {
+          e.currentTarget.style.borderColor = T.border;
+          e.currentTarget.style.color = T.text;
+          e.currentTarget.style.background = 'rgba(255,255,255,0.025)';
+        }
+      }
+    }, br.name, active && /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 9,
+        color: AMBER,
+        letterSpacing: '0.08em'
+      }
+    }, "YOU'RE HERE"));
+  })))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'relative'
+    },
+    onMouseEnter: oc,
+    onMouseLeave: cc
+  }, /*#__PURE__*/React.createElement("button", {
+    style: lnk,
+    onMouseEnter: e => e.currentTarget.style.opacity = 1,
+    onMouseLeave: e => e.currentTarget.style.opacity = 0.75
+  }, "By Category ", chev(cOpen)), cOpen && /*#__PURE__*/React.createElement("div", {
+    className: "mega-anim",
+    style: {
+      position: 'absolute',
+      top: '100%',
+      left: -16,
+      background: '#080808',
+      border: `1px solid ${T.border}`,
+      borderTop: `2px solid ${AMBER}`,
+      borderRadius: '0 0 16px 16px',
+      padding: '18px',
+      width: 510,
+      boxShadow: '0 40px 80px rgba(0,0,0,0.97)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: B,
+      fontSize: 9,
+      fontWeight: 700,
+      letterSpacing: '0.15em',
+      color: T.muted,
+      textTransform: 'uppercase',
+      marginBottom: 12
+    }
+  }, "Browse by Category"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr 1fr',
+      gap: 4
+    }
+  }, CATS_NAV.map(cat => {
+    const active = page === 'category' && cat === CATEGORY_TPL.category;
+    return /*#__PURE__*/React.createElement("a", {
+      key: cat,
+      href: `/parts/${cat.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '')}/`,
+      style: {
+        display: 'block',
+        padding: '7px 10px',
+        borderRadius: 6,
+        border: `1px solid ${active ? 'rgba(255,184,28,0.35)' : T.border}`,
+        background: active ? T.amberDim : 'rgba(255,255,255,0.018)',
+        textDecoration: 'none',
+        color: active ? AMBER : T.text,
+        fontFamily: B,
+        fontSize: 11,
+        fontWeight: active ? 700 : 500,
+        transition: 'all 0.15s'
+      },
+      onMouseEnter: e => {
+        e.currentTarget.style.color = AMBER;
+        e.currentTarget.style.borderColor = 'rgba(255,184,28,0.3)';
+        e.currentTarget.style.background = T.amberDim;
+      },
+      onMouseLeave: e => {
+        if (!active) {
+          e.currentTarget.style.color = T.text;
+          e.currentTarget.style.borderColor = T.border;
+          e.currentTarget.style.background = 'rgba(255,255,255,0.018)';
+        }
+      }
+    }, cat);
+  })))), /*#__PURE__*/React.createElement("a", {
+    href: "/blog/",
+    style: {
+      ...lnk,
+      textDecoration: 'none'
+    },
+    onMouseEnter: e => e.currentTarget.style.opacity = 1,
+    onMouseLeave: e => e.currentTarget.style.opacity = 0.75
+  }, "Blog"), /*#__PURE__*/React.createElement("a", {
+    href: "/about.html",
+    style: {
+      ...lnk,
+      textDecoration: 'none'
+    },
+    onMouseEnter: e => e.currentTarget.style.opacity = 1,
+    onMouseLeave: e => e.currentTarget.style.opacity = 0.75
+  }, "About")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8,
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: onSearchOpen,
+    "aria-label": "Search parts",
+    title: "Search parts",
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 34,
+      height: 34,
+      borderRadius: 7,
+      border: '1px solid rgba(255,255,255,0.2)',
+      background: 'rgba(255,255,255,0.07)',
+      color: 'rgba(255,255,255,0.7)',
+      cursor: 'pointer',
+      transition: 'all 0.2s'
+    },
+    onMouseEnter: e => {
+      e.currentTarget.style.borderColor = AMBER;
+      e.currentTarget.style.color = AMBER;
+      e.currentTarget.style.background = 'rgba(255,184,28,0.1)';
+    },
+    onMouseLeave: e => {
+      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
+      e.currentTarget.style.color = 'rgba(255,255,255,0.7)';
+      e.currentTarget.style.background = 'rgba(255,255,255,0.07)';
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2.3"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "11",
+    cy: "11",
+    r: "8"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "m21 21-4.35-4.35"
+  }))), /*#__PURE__*/React.createElement("a", {
+    href: navWaMsg,
+    target: "_blank",
+    rel: "noopener",
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 7,
+      background: WG,
+      color: '#fff',
+      textDecoration: 'none',
+      borderRadius: 8,
+      padding: '8px 16px',
+      fontFamily: B,
+      fontSize: 13,
+      fontWeight: 700,
+      letterSpacing: '0.03em',
+      transition: 'opacity 0.2s',
+      boxShadow: `0 2px 14px rgba(37,211,102,0.3)`
+    },
+    onMouseEnter: e => e.currentTarget.style.opacity = '0.85',
+    onMouseLeave: e => e.currentTarget.style.opacity = '1'
+  }, /*#__PURE__*/React.createElement(WASvg, {
+    size: 13
+  }), " WhatsApp"), /*#__PURE__*/React.createElement("a", {
+    href: "#contact",
+    style: {
+      background: AMBER,
+      color: '#050505',
+      textDecoration: 'none',
+      padding: '8px 18px',
+      borderRadius: 8,
+      fontFamily: D,
+      fontWeight: 700,
+      fontSize: 13,
+      letterSpacing: '0.06em',
+      textTransform: 'uppercase',
+      transition: 'opacity 0.2s'
+    },
+    onMouseEnter: e => e.currentTarget.style.opacity = '0.82',
+    onMouseLeave: e => e.currentTarget.style.opacity = '1'
+  }, "Get Quote"), /*#__PURE__*/React.createElement("button", {
+    className: "mob-hbg",
+    onClick: () => setMOpen(o => !o),
+    "aria-label": "Menu",
+    style: {
+      display: 'none',
+      background: 'none',
+      border: '1px solid rgba(255,255,255,0.2)',
+      color: 'rgba(255,255,255,0.8)',
+      borderRadius: 6,
+      width: 34,
+      height: 34,
+      cursor: 'pointer',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexShrink: 0,
+      padding: 0
+    }
+  }, mOpen ? /*#__PURE__*/React.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2.5"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M18 6L6 18M6 6l12 12"
+  })) : /*#__PURE__*/React.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2.5"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M4 6h16M4 12h16M4 18h16"
+  }))))), mOpen && /*#__PURE__*/React.createElement("div", {
+    className: "mob-menu-overlay",
+    style: {
+      display: 'none',
+      position: 'fixed',
+      top: 68,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: 'rgba(5,5,5,0.98)',
+      zIndex: 999,
+      overflowY: 'auto',
+      padding: '16px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 16,
+      paddingBottom: 16,
+      borderBottom: '1px solid rgba(255,255,255,0.07)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: D,
+      fontSize: 9,
+      fontWeight: 700,
+      letterSpacing: '0.15em',
+      color: T.muted,
+      textTransform: 'uppercase',
+      marginBottom: 10
+    }
+  }, "By Brand"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 6
+    }
+  }, BRANDS_NAV.map(br => /*#__PURE__*/React.createElement("a", {
+    key: br.name,
+    href: `/${br.slug}/`,
+    onClick: () => setMOpen(false),
+    style: {
+      padding: '10px 12px',
+      borderRadius: 8,
+      border: '1px solid rgba(255,255,255,0.08)',
+      textDecoration: 'none',
+      color: T.text,
+      fontFamily: B,
+      fontSize: 13,
+      fontWeight: 600,
+      background: 'rgba(255,255,255,0.03)'
+    }
+  }, br.name)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 16,
+      paddingBottom: 16,
+      borderBottom: '1px solid rgba(255,255,255,0.07)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: D,
+      fontSize: 9,
+      fontWeight: 700,
+      letterSpacing: '0.15em',
+      color: T.muted,
+      textTransform: 'uppercase',
+      marginBottom: 10
+    }
+  }, "By Category"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 3
+    }
+  }, CATS_NAV.map(cat => /*#__PURE__*/React.createElement("a", {
+    key: cat,
+    href: CATS_NAV_URLS[cat] || '#',
+    onClick: () => setMOpen(false),
+    style: {
+      padding: '9px 12px',
+      borderRadius: 6,
+      border: '1px solid rgba(255,255,255,0.07)',
+      textDecoration: 'none',
+      color: T.text,
+      fontFamily: B,
+      fontSize: 13,
+      background: 'rgba(255,255,255,0.025)'
+    }
+  }, cat)))), /*#__PURE__*/React.createElement("a", {
+    href: "/blog/",
+    style: {
+      display: 'block',
+      padding: '12px 4px',
+      color: T.muted,
+      textDecoration: 'none',
+      fontFamily: B,
+      fontSize: 13,
+      fontWeight: 600,
+      borderBottom: '1px solid rgba(255,255,255,0.07)'
+    }
+  }, "Blog"), /*#__PURE__*/React.createElement("a", {
+    href: "/about.html",
+    style: {
+      display: 'block',
+      padding: '12px 4px',
+      color: T.muted,
+      textDecoration: 'none',
+      fontFamily: B,
+      fontSize: 13,
+      fontWeight: 600,
+      borderBottom: '1px solid rgba(255,255,255,0.07)'
+    }
+  }, "About"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 16,
+      display: 'flex',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: WA(`Hi, I need a quote for a part. Can you help?`),
+    target: "_blank",
+    style: {
+      flex: 1,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: 8,
+      background: WG,
+      color: '#fff',
+      textDecoration: 'none',
+      padding: '12px 8px',
+      borderRadius: 8,
+      fontFamily: B,
+      fontSize: 14,
+      fontWeight: 700
+    }
+  }, /*#__PURE__*/React.createElement(WASvg, {
+    size: 16
+  }), "WhatsApp"), /*#__PURE__*/React.createElement("a", {
+    href: "#contact",
+    onClick: () => setMOpen(false),
+    style: {
+      flex: 1,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      background: AMBER,
+      color: '#050505',
+      textDecoration: 'none',
+      padding: '12px 8px',
+      borderRadius: 8,
+      fontFamily: D,
+      fontWeight: 700,
+      fontSize: 14,
+      letterSpacing: '0.06em',
+      textTransform: 'uppercase'
+    }
+  }, "Get Quote"))));
 }
 
 // ── WHATSAPP FLOAT PILL ────────────────────────────────────────────────────────
-function WAFloatPill({page}){
-  const [scrolled,setScrolled]=useState(false);
-  const [hov,setHov]=useState(false);
-  const brand=page==='brand'?BRAND_TPL.brand:`${CATEGORY_TPL.brand} ${CATEGORY_TPL.category}`;
-  const waMsg=WA(`Hi, I need ${brand} spare parts. Please confirm availability and pricing.`);
-  useEffect(()=>{
-    const h=()=>setScrolled(window.scrollY>300);
-    window.addEventListener('scroll',h,{passive:true}); return()=>window.removeEventListener('scroll',h);
-  },[]);
-  return(
-    <a href={waMsg} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"
-      onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}
-      style={{position:'fixed',bottom:32,right:32,zIndex:997,display:'flex',alignItems:'center',gap:10,background:hov?'#1a1a1a':'#111',border:'1px solid rgba(255,255,255,0.08)',borderRadius:40,padding:'11px 20px 11px 14px',textDecoration:'none',boxShadow:'0 8px 32px rgba(0,0,0,0.5)',opacity:scrolled?1:0,transform:scrolled?'translateY(0)':'translateY(12px)',transition:'all 0.35s cubic-bezier(0.4,0,0.2,1)',pointerEvents:scrolled?'auto':'none'}}>
-      <div style={{width:28,height:28,borderRadius:'50%',background:WG,display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      </div>
-      <span style={{fontFamily:B,fontSize:13,fontWeight:700,color:hov?'#fff':'rgba(255,255,255,0.7)',letterSpacing:'0.02em',transition:'color 0.2s'}}>WhatsApp Us</span>
-    </a>
-  );
+function WAFloatPill({
+  page
+}) {
+  const [scrolled, setScrolled] = useState(false);
+  const [hov, setHov] = useState(false);
+  const brand = page === 'brand' ? BRAND_TPL.brand : `${CATEGORY_TPL.brand} ${CATEGORY_TPL.category}`;
+  const waMsg = WA(`Hi, I need ${brand} spare parts. Please confirm availability and pricing.`);
+  useEffect(() => {
+    const h = () => setScrolled(window.scrollY > 300);
+    window.addEventListener('scroll', h, {
+      passive: true
+    });
+    return () => window.removeEventListener('scroll', h);
+  }, []);
+  return /*#__PURE__*/React.createElement("a", {
+    href: waMsg,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    "aria-label": "Chat on WhatsApp",
+    onMouseEnter: () => setHov(true),
+    onMouseLeave: () => setHov(false),
+    style: {
+      position: 'fixed',
+      bottom: 32,
+      right: 32,
+      zIndex: 997,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      background: hov ? '#1a1a1a' : '#111',
+      border: '1px solid rgba(255,255,255,0.08)',
+      borderRadius: 40,
+      padding: '11px 20px 11px 14px',
+      textDecoration: 'none',
+      boxShadow: '0 8px 32px rgba(0,0,0,0.5)',
+      opacity: scrolled ? 1 : 0,
+      transform: scrolled ? 'translateY(0)' : 'translateY(12px)',
+      transition: 'all 0.35s cubic-bezier(0.4,0,0.2,1)',
+      pointerEvents: scrolled ? 'auto' : 'none'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 28,
+      height: 28,
+      borderRadius: '50%',
+      background: WG,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "white"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+  }))), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 13,
+      fontWeight: 700,
+      color: hov ? '#fff' : 'rgba(255,255,255,0.7)',
+      letterSpacing: '0.02em',
+      transition: 'color 0.2s'
+    }
+  }, "WhatsApp Us"));
 }
 
 // ── STATS BAR ─────────────────────────────────────────────────────────────────
-function StatsBar(){
-  const stats=[['70,000+','Parts in Stock'],['70+','Years Trusted'],['16+','Brands Covered'],['50+','Countries Served']];
-  return(
-    <div style={{background:AMBER}}>
-      <div style={{maxWidth:1360,margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(4,1fr)',padding:'0 32px'}}>
-        {stats.map(([val,label],i)=>(
-          <div key={label} style={{textAlign:'center',padding:'18px 0',borderRight:i<3?'1px solid rgba(0,0,0,0.1)':undefined}}>
-            <div style={{fontFamily:D,fontWeight:900,fontSize:38,color:'#050505',lineHeight:1,letterSpacing:'-0.03em'}}>{val}</div>
-            <div style={{fontFamily:B,fontSize:11,fontWeight:700,color:'rgba(0,0,0,0.45)',letterSpacing:'0.1em',textTransform:'uppercase',marginTop:4}}>{label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+function StatsBar() {
+  const stats = [['70,000+', 'Parts in Stock'], ['70+', 'Years Trusted'], ['16+', 'Brands Covered'], ['50+', 'Countries Served']];
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: AMBER
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1360,
+      margin: '0 auto',
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4,1fr)',
+      padding: '0 32px'
+    }
+  }, stats.map(([val, label], i) => /*#__PURE__*/React.createElement("div", {
+    key: label,
+    style: {
+      textAlign: 'center',
+      padding: '18px 0',
+      borderRight: i < 3 ? '1px solid rgba(0,0,0,0.1)' : undefined
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: D,
+      fontWeight: 900,
+      fontSize: 38,
+      color: '#050505',
+      lineHeight: 1,
+      letterSpacing: '-0.03em'
+    }
+  }, val), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: B,
+      fontSize: 11,
+      fontWeight: 700,
+      color: 'rgba(0,0,0,0.45)',
+      letterSpacing: '0.1em',
+      textTransform: 'uppercase',
+      marginTop: 4
+    }
+  }, label)))));
 }
 
 // ── FOOTER ────────────────────────────────────────────────────────────────────
-function Footer(){
-  const cols=[
-    {h:'Browse Brands',links:[['Volvo Parts','/volvo/'],['Komatsu Parts','/komatsu/'],['CAT Parts','/cat/'],['Scania Parts','/scania/'],['Hitachi Parts','/hitachi/'],['All Brands','../']]},
-    {h:'Part Categories',links:[['Engine Parts','/cat/engine-parts/'],['Hydraulic Parts','/cat/hydraulic-parts/'],['Filters','/cat/filters/'],['Undercarriage','/cat/undercarriage/'],['Transmission','/cat/transmission-parts/'],['All Categories','/cat/']]},
-    {h:'Company',links:[['About PTC','/about.html'],['Blog & Guides','/blog/'],['Contact Us','/contact.html'],['Int\'l Shipping','/shipping.html'],['Get a Quote','/get-a-quote.html']]},
-  ];
-  const socials=[
-    {label:'WhatsApp',href:WA('Hi, I need a quote for heavy equipment spare parts.'),bg:WG,icon:<svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.85L.057 23.5l5.797-1.522A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.889 9.889 0 0 1-5.032-1.378l-.361-.214-3.44.902.918-3.352-.235-.374A9.861 9.861 0 0 1 2.106 12C2.106 6.533 6.533 2.106 12 2.106S21.894 6.533 21.894 12 17.467 21.894 12 21.894z"/></svg>},
-    {label:'Email',href:`mailto:${EMAIL}`,bg:'#1a1a1a',icon:<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>},
-    {label:'Phone',href:'tel:+919821037990',bg:'#1a1a1a',icon:<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>},
-    {label:'Instagram',href:'https://instagram.com/partstrading',bg:'#1a1a1a',icon:<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/></svg>},
-    {label:'LinkedIn',href:'https://linkedin.com/company/parts-trading-company',bg:'#1a1a1a',icon:<svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>},
-  ];
-  return(
-    <footer style={{background:T.footerBg,padding:'56px 32px 32px',borderTop:`1px solid ${T.border}`}} role="contentinfo">
-      <div style={{maxWidth:1360,margin:'0 auto'}}>
-        <div style={{display:'grid',gridTemplateColumns:'2fr 1fr 1fr 1fr',gap:48,marginBottom:48}}>
-          <div>
-            <img src="../../assets/images/ptc-logo.webp" alt="Parts Trading Company" style={{height:34,width:'auto',marginBottom:18}}/>
-            <p style={{fontFamily:B,fontSize:13,color:T.muted,lineHeight:1.75,maxWidth:270,marginBottom:20}}>Globally trusted supplier of OEM &amp; aftermarket heavy equipment spare parts. Established 1956. Shipping to 50+ countries.</p>
-            <div style={{display:'flex',gap:10}}>
-              {socials.map(s=>(
-                <a key={s.label} href={s.href} target="_blank" rel="noopener" aria-label={s.label}
-                  style={{width:36,height:36,borderRadius:'50%',background:s.bg,display:'flex',alignItems:'center',justifyContent:'center',transition:'opacity 0.18s',flexShrink:0}}
-                  onMouseEnter={e=>e.currentTarget.style.opacity='0.8'} onMouseLeave={e=>e.currentTarget.style.opacity='1'}>{s.icon}</a>
-              ))}
-            </div>
-          </div>
-          {cols.map(col=>(
-            <div key={col.h}>
-              <div style={{fontFamily:D,fontSize:9,fontWeight:700,letterSpacing:'0.14em',color:AMBER,textTransform:'uppercase',marginBottom:16}}>{col.h}</div>
-              <div style={{display:'flex',flexDirection:'column',gap:11}}>
-                {col.links.map(([l,h])=>(
-                  <a key={l} href={h} style={{fontFamily:B,fontSize:13,color:T.muted,textDecoration:'none',transition:'color 0.18s'}} onMouseEnter={e=>e.currentTarget.style.color=AMBER} onMouseLeave={e=>e.currentTarget.style.color=T.muted}>{l}</a>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-        <div style={{height:1,background:T.border,marginBottom:22}}/>
-        <div style={{display:'flex',flexDirection:'column',gap:6,width:'100%'}}>
-          <div style={{display:'flex',justifyContent:'space-between',flexWrap:'wrap',gap:8}}>
-            <span style={{fontFamily:B,fontSize:11,color:'rgba(255,255,255,0.15)'}}>© 2026 Parts Trading Company · All rights reserved</span>
-            <span style={{fontFamily:B,fontSize:11,color:'rgba(255,255,255,0.15)'}}>Vijay Chambers, Grant Road East, Mumbai 400004, India</span>
-          </div>
-          <span style={{fontFamily:B,fontSize:10,color:'rgba(255,255,255,0.06)',lineHeight:1.5}}>Part numbers, brand names, and OEM references on this website are used solely for identification and compatibility purposes. Parts Trading Company is an independent aftermarket supplier and is not affiliated with, endorsed by, or sponsored by Volvo CE, Komatsu, Caterpillar, Scania, Hitachi, or any other OEM. All trademarks and registered trademarks are the property of their respective owners.</span>
-        </div>
-      </div>
-    </footer>
-  );
+function Footer() {
+  const cols = [{
+    h: 'Browse Brands',
+    links: [['Volvo Parts', '/volvo/'], ['Komatsu Parts', '/komatsu/'], ['CAT Parts', '/cat/'], ['Scania Parts', '/scania/'], ['Hitachi Parts', '/hitachi/'], ['All Brands', '../']]
+  }, {
+    h: 'Part Categories',
+    links: [['Engine Parts', '/cat/engine-parts/'], ['Hydraulic Parts', '/cat/hydraulic-parts/'], ['Filters', '/cat/filters/'], ['Undercarriage', '/cat/undercarriage/'], ['Transmission', '/cat/transmission-parts/'], ['All Categories', '/cat/']]
+  }, {
+    h: 'Company',
+    links: [['About PTC', '/about.html'], ['Blog & Guides', '/blog/'], ['Contact Us', '/contact.html'], ['Int\'l Shipping', '/shipping.html'], ['Get a Quote', '/get-a-quote.html']]
+  }];
+  const socials = [{
+    label: 'WhatsApp',
+    href: WA('Hi, I need a quote for heavy equipment spare parts.'),
+    bg: WG,
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "18",
+      height: "18",
+      viewBox: "0 0 24 24",
+      fill: "#fff"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.85L.057 23.5l5.797-1.522A11.94 11.94 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.894a9.889 9.889 0 0 1-5.032-1.378l-.361-.214-3.44.902.918-3.352-.235-.374A9.861 9.861 0 0 1 2.106 12C2.106 6.533 6.533 2.106 12 2.106S21.894 6.533 21.894 12 17.467 21.894 12 21.894z"
+    }))
+  }, {
+    label: 'Email',
+    href: `mailto:${EMAIL}`,
+    bg: '#1a1a1a',
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "16",
+      height: "16",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "#fff",
+      strokeWidth: "2"
+    }, /*#__PURE__*/React.createElement("rect", {
+      x: "2",
+      y: "4",
+      width: "20",
+      height: "16",
+      rx: "2"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"
+    }))
+  }, {
+    label: 'Phone',
+    href: 'tel:+919821037990',
+    bg: '#1a1a1a',
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "16",
+      height: "16",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "#fff",
+      strokeWidth: "2"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.16 6.16l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+    }))
+  }, {
+    label: 'Instagram',
+    href: 'https://instagram.com/partstrading',
+    bg: '#1a1a1a',
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "16",
+      height: "16",
+      viewBox: "0 0 24 24",
+      fill: "none",
+      stroke: "#fff",
+      strokeWidth: "2"
+    }, /*#__PURE__*/React.createElement("rect", {
+      x: "2",
+      y: "2",
+      width: "20",
+      height: "20",
+      rx: "5"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "12",
+      cy: "12",
+      r: "5"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "17.5",
+      cy: "6.5",
+      r: "1",
+      fill: "#fff",
+      stroke: "none"
+    }))
+  }, {
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/company/parts-trading-company',
+    bg: '#1a1a1a',
+    icon: /*#__PURE__*/React.createElement("svg", {
+      width: "16",
+      height: "16",
+      viewBox: "0 0 24 24",
+      fill: "#fff"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+    }), /*#__PURE__*/React.createElement("rect", {
+      x: "2",
+      y: "9",
+      width: "4",
+      height: "12"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "4",
+      cy: "4",
+      r: "2"
+    }))
+  }];
+  return /*#__PURE__*/React.createElement("footer", {
+    style: {
+      background: T.footerBg,
+      padding: '56px 32px 32px',
+      borderTop: `1px solid ${T.border}`
+    },
+    role: "contentinfo"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1360,
+      margin: '0 auto'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '2fr 1fr 1fr 1fr',
+      gap: 48,
+      marginBottom: 48
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", {
+    src: "../../assets/images/ptc-logo.webp",
+    alt: "Parts Trading Company",
+    style: {
+      height: 34,
+      width: 'auto',
+      marginBottom: 18
+    }
+  }), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: B,
+      fontSize: 13,
+      color: T.muted,
+      lineHeight: 1.75,
+      maxWidth: 270,
+      marginBottom: 20
+    }
+  }, "Globally trusted supplier of OEM & aftermarket heavy equipment spare parts. Established 1956. Shipping to 50+ countries."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 10
+    }
+  }, socials.map(s => /*#__PURE__*/React.createElement("a", {
+    key: s.label,
+    href: s.href,
+    target: "_blank",
+    rel: "noopener",
+    "aria-label": s.label,
+    style: {
+      width: 36,
+      height: 36,
+      borderRadius: '50%',
+      background: s.bg,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      transition: 'opacity 0.18s',
+      flexShrink: 0
+    },
+    onMouseEnter: e => e.currentTarget.style.opacity = '0.8',
+    onMouseLeave: e => e.currentTarget.style.opacity = '1'
+  }, s.icon)))), cols.map(col => /*#__PURE__*/React.createElement("div", {
+    key: col.h
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: D,
+      fontSize: 9,
+      fontWeight: 700,
+      letterSpacing: '0.14em',
+      color: AMBER,
+      textTransform: 'uppercase',
+      marginBottom: 16
+    }
+  }, col.h), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 11
+    }
+  }, col.links.map(([l, h]) => /*#__PURE__*/React.createElement("a", {
+    key: l,
+    href: h,
+    style: {
+      fontFamily: B,
+      fontSize: 13,
+      color: T.muted,
+      textDecoration: 'none',
+      transition: 'color 0.18s'
+    },
+    onMouseEnter: e => e.currentTarget.style.color = AMBER,
+    onMouseLeave: e => e.currentTarget.style.color = T.muted
+  }, l)))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 1,
+      background: T.border,
+      marginBottom: 22
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 6,
+      width: '100%'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexWrap: 'wrap',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 11,
+      color: 'rgba(255,255,255,0.15)'
+    }
+  }, "\xA9 2026 Parts Trading Company \xB7 All rights reserved"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 11,
+      color: 'rgba(255,255,255,0.15)'
+    }
+  }, "Vijay Chambers, Grant Road East, Mumbai 400004, India")), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 10,
+      color: 'rgba(255,255,255,0.06)',
+      lineHeight: 1.5
+    }
+  }, "Part numbers, brand names, and OEM references on this website are used solely for identification and compatibility purposes. Parts Trading Company is an independent aftermarket supplier and is not affiliated with, endorsed by, or sponsored by Volvo CE, Komatsu, Caterpillar, Scania, Hitachi, or any other OEM. All trademarks and registered trademarks are the property of their respective owners."))));
 }
 
 // ── BRAND PAGE ────────────────────────────────────────────────────────────────
-function BrandHero({onSearchOpen}){
-  const p=BRAND_TPL;
-  const cd=useCountdown();
-  return(
-    <div className="noise-layer" style={{position:'relative',background:T.bgAlt,borderBottom:`1px solid ${T.border}`,padding:'64px 32px 56px',overflow:'hidden'}}>
-      <div style={{position:'absolute',inset:0,backgroundImage:`linear-gradient(${T.border} 1px,transparent 1px),linear-gradient(90deg,${T.border} 1px,transparent 1px)`,backgroundSize:'80px 80px',pointerEvents:'none'}}/>
-      <div style={{maxWidth:1360,margin:'0 auto',position:'relative',zIndex:1}}>
-        <div className="hero-2col" style={{display:'grid',gridTemplateColumns:'auto 1fr',gap:48,alignItems:'center'}}>
-          {/* Brand logo block */}
-          <div style={{animation:'fadeUp 0.6s ease both',background:T.bgCard,border:`1px solid ${T.border}`,borderRadius:16,padding:'28px 36px',display:'flex',alignItems:'center',justifyContent:'center',minWidth:180}}>
-            <img src={p.brandLogoSrc} alt={`${p.brand} logo`} style={{height:56,width:'auto',filter:'brightness(0) invert(1)',maxWidth:140}}
-              onError={e=>{ e.target.style.display='none'; e.target.nextSibling.style.display='block'; }}/>
-            <span style={{display:'none',fontFamily:D,fontSize:32,fontWeight:900,color:AMBER,letterSpacing:'0.04em'}}>{p.brand}</span>
-          </div>
-          {/* Text + search */}
-          <div style={{animation:'fadeUp 0.6s 0.1s ease both'}}>
-            <nav style={{display:'flex',gap:6,alignItems:'center',fontFamily:B,fontSize:12,color:T.muted,marginBottom:16}}>
-              <a href="/" style={{color:T.muted,textDecoration:'none'}} onMouseEnter={e=>e.target.style.color=AMBER} onMouseLeave={e=>e.target.style.color=T.muted}>Home</a>
-              <span style={{opacity:0.3}}>›</span>
-              <span style={{color:T.text,fontWeight:600}}>{p.brand} Parts</span>
-            </nav>
-            <div style={{display:'flex',alignItems:'center',gap:12,marginBottom:12,flexWrap:'wrap'}}>
-              <span style={{fontFamily:D,fontSize:12,fontWeight:700,letterSpacing:'0.14em',textTransform:'uppercase',background:T.tagBg,color:T.tagText,border:'1px solid rgba(255,184,28,0.2)',padding:'5px 14px',borderRadius:4}}>{p.brand}</span>
-              <span style={{fontFamily:B,fontSize:13,color:T.green,fontWeight:600,display:'flex',alignItems:'center',gap:6}}>
-                <span style={{width:7,height:7,borderRadius:'50%',background:T.green,display:'inline-block'}}/>
-                {p.brandPartCount} parts in stock
-              </span>
-            </div>
-            <div style={{display:'flex',gap:18,alignItems:'flex-start',marginBottom:14}}>
-              <div style={{width:4,background:AMBER,borderRadius:2,flexShrink:0,alignSelf:'stretch',minHeight:48,marginTop:4}}/>
-              <h1 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(40px,6vw,72px)',lineHeight:0.9,color:T.text,letterSpacing:'-0.02em',textTransform:'uppercase'}}>
-                {p.brand} Spare Parts
-              </h1>
-            </div>
-            <p style={{fontFamily:B,fontSize:15,color:T.muted,lineHeight:1.7,maxWidth:560,marginBottom:16}}>{p.brandDesc}</p>
-            <div style={{display:'flex',gap:12,marginBottom:28,flexWrap:'wrap',alignItems:'center'}}>
-              {!cd.closed?(
-                <div style={{display:'inline-flex',alignItems:'center',gap:10,background:'rgba(255,184,28,0.08)',border:`1px solid rgba(255,184,28,${cd.urgent?'0.35':'0.15'})`,borderRadius:8,padding:'7px 14px'}}>
-                  <span style={{width:7,height:7,borderRadius:'50%',background:cd.urgent?AMBER:T.green,display:'inline-block',flexShrink:0,boxShadow:`0 0 0 3px rgba(255,184,28,0.2)`}}/>
-                  <span style={{fontFamily:B,fontSize:12,fontWeight:700,color:cd.urgent?AMBER:T.green}}>
-                    Order in <strong style={{fontFamily:'monospace'}}>{cd.h}h {String(cd.m).padStart(2,'0')}m</strong> — ships today
-                  </span>
-                </div>
-              ):(
-                <div style={{display:'inline-flex',alignItems:'center',gap:8,background:'rgba(255,255,255,0.04)',border:`1px solid ${T.border}`,borderRadius:8,padding:'7px 14px'}}>
-                  <span style={{fontFamily:B,fontSize:12,color:T.muted}}>Ships next business day · order anytime</span>
-                </div>
-              )}
-              <span style={{fontFamily:B,fontSize:12,color:T.muted}}>Trusted in <strong style={{color:T.text}}>50+ countries</strong></span>
-            </div>
-            {/* Search bar — clicks open modal */}
-            <div onClick={onSearchOpen} style={{display:'flex',background:T.inputBg,border:`1.5px solid ${T.inputBorder}`,borderRadius:10,overflow:'hidden',maxWidth:560,cursor:'pointer',transition:'border-color 0.2s'}}
-              onMouseEnter={e=>e.currentTarget.style.borderColor=AMBER} onMouseLeave={e=>e.currentTarget.style.borderColor=T.inputBorder}>
-              <div style={{padding:'0 16px',display:'flex',alignItems:'center',flexShrink:0}}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={T.muted} strokeWidth="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-              </div>
-              <div style={{flex:1,padding:'14px 8px',fontSize:14,fontFamily:B,color:T.muted,userSelect:'none'}}>Search {p.brand} parts by number or description…</div>
-              <div style={{padding:'0 24px',background:AMBER,display:'flex',alignItems:'center',fontFamily:D,fontWeight:800,fontSize:15,letterSpacing:'0.06em',textTransform:'uppercase',color:'#050505'}}>Search</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+function BrandHero({
+  onSearchOpen
+}) {
+  const p = BRAND_TPL;
+  const cd = useCountdown();
+  return /*#__PURE__*/React.createElement("div", {
+    className: "noise-layer",
+    style: {
+      position: 'relative',
+      background: T.bgAlt,
+      borderBottom: `1px solid ${T.border}`,
+      padding: '64px 32px 56px',
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      backgroundImage: `linear-gradient(${T.border} 1px,transparent 1px),linear-gradient(90deg,${T.border} 1px,transparent 1px)`,
+      backgroundSize: '80px 80px',
+      pointerEvents: 'none'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1360,
+      margin: '0 auto',
+      position: 'relative',
+      zIndex: 1
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "hero-2col",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'auto 1fr',
+      gap: 48,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      animation: 'fadeUp 0.6s ease both',
+      background: T.bgCard,
+      border: `1px solid ${T.border}`,
+      borderRadius: 16,
+      padding: '28px 36px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minWidth: 180
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: p.brandLogoSrc,
+    alt: `${p.brand} logo`,
+    style: {
+      height: 56,
+      width: 'auto',
+      filter: 'brightness(0) invert(1)',
+      maxWidth: 140
+    },
+    onError: e => {
+      e.target.style.display = 'none';
+      e.target.nextSibling.style.display = 'block';
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'none',
+      fontFamily: D,
+      fontSize: 32,
+      fontWeight: 900,
+      color: AMBER,
+      letterSpacing: '0.04em'
+    }
+  }, p.brand)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      animation: 'fadeUp 0.6s 0.1s ease both'
+    }
+  }, /*#__PURE__*/React.createElement("nav", {
+    style: {
+      display: 'flex',
+      gap: 6,
+      alignItems: 'center',
+      fontFamily: B,
+      fontSize: 12,
+      color: T.muted,
+      marginBottom: 16
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/",
+    style: {
+      color: T.muted,
+      textDecoration: 'none'
+    },
+    onMouseEnter: e => e.target.style.color = AMBER,
+    onMouseLeave: e => e.target.style.color = T.muted
+  }, "Home"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      opacity: 0.3
+    }
+  }, "\u203A"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: T.text,
+      fontWeight: 600
+    }
+  }, p.brand, " Parts")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
+      marginBottom: 12,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: D,
+      fontSize: 12,
+      fontWeight: 700,
+      letterSpacing: '0.14em',
+      textTransform: 'uppercase',
+      background: T.tagBg,
+      color: T.tagText,
+      border: '1px solid rgba(255,184,28,0.2)',
+      padding: '5px 14px',
+      borderRadius: 4
+    }
+  }, p.brand), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 13,
+      color: T.green,
+      fontWeight: 600,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 6
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 7,
+      height: 7,
+      borderRadius: '50%',
+      background: T.green,
+      display: 'inline-block'
+    }
+  }), p.brandPartCount, " parts in stock")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 18,
+      alignItems: 'flex-start',
+      marginBottom: 14
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 4,
+      background: AMBER,
+      borderRadius: 2,
+      flexShrink: 0,
+      alignSelf: 'stretch',
+      minHeight: 48,
+      marginTop: 4
+    }
+  }), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontFamily: D,
+      fontWeight: 900,
+      fontSize: 'clamp(40px,6vw,72px)',
+      lineHeight: 0.9,
+      color: T.text,
+      letterSpacing: '-0.02em',
+      textTransform: 'uppercase'
+    }
+  }, p.brand, " Spare Parts")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: B,
+      fontSize: 15,
+      color: T.muted,
+      lineHeight: 1.7,
+      maxWidth: 560,
+      marginBottom: 16
+    }
+  }, p.brandDesc), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12,
+      marginBottom: 28,
+      flexWrap: 'wrap',
+      alignItems: 'center'
+    }
+  }, !cd.closed ? /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 10,
+      background: 'rgba(255,184,28,0.08)',
+      border: `1px solid rgba(255,184,28,${cd.urgent ? '0.35' : '0.15'})`,
+      borderRadius: 8,
+      padding: '7px 14px'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 7,
+      height: 7,
+      borderRadius: '50%',
+      background: cd.urgent ? AMBER : T.green,
+      display: 'inline-block',
+      flexShrink: 0,
+      boxShadow: `0 0 0 3px rgba(255,184,28,0.2)`
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      fontWeight: 700,
+      color: cd.urgent ? AMBER : T.green
+    }
+  }, "Order in ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      fontFamily: 'monospace'
+    }
+  }, cd.h, "h ", String(cd.m).padStart(2, '0'), "m"), " \u2014 ships today")) : /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 8,
+      background: 'rgba(255,255,255,0.04)',
+      border: `1px solid ${T.border}`,
+      borderRadius: 8,
+      padding: '7px 14px'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      color: T.muted
+    }
+  }, "Ships next business day \xB7 order anytime")), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      color: T.muted
+    }
+  }, "Trusted in ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: T.text
+    }
+  }, "50+ countries"))), /*#__PURE__*/React.createElement("div", {
+    onClick: onSearchOpen,
+    style: {
+      display: 'flex',
+      background: T.inputBg,
+      border: `1.5px solid ${T.inputBorder}`,
+      borderRadius: 10,
+      overflow: 'hidden',
+      maxWidth: 560,
+      cursor: 'pointer',
+      transition: 'border-color 0.2s'
+    },
+    onMouseEnter: e => e.currentTarget.style.borderColor = AMBER,
+    onMouseLeave: e => e.currentTarget.style.borderColor = T.inputBorder
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '0 16px',
+      display: 'flex',
+      alignItems: 'center',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "18",
+    height: "18",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: T.muted,
+    strokeWidth: "2.5"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "11",
+    cy: "11",
+    r: "8"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "m21 21-4.35-4.35"
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      padding: '14px 8px',
+      fontSize: 14,
+      fontFamily: B,
+      color: T.muted,
+      userSelect: 'none'
+    }
+  }, "Search ", p.brand, " parts by number or description\u2026"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '0 24px',
+      background: AMBER,
+      display: 'flex',
+      alignItems: 'center',
+      fontFamily: D,
+      fontWeight: 800,
+      fontSize: 15,
+      letterSpacing: '0.06em',
+      textTransform: 'uppercase',
+      color: '#050505'
+    }
+  }, "Search"))))));
 }
-
-function BrandCategories(){
-  const p=BRAND_TPL;
-  const [ref,inView]=useInView();
-  return(
-    <Section id="sec-cats" num="01" style={{padding:'72px 0 64px',borderBottom:`1px solid ${T.border}`}}>
-      <div ref={ref}>
-        <Label>Browse by Category</Label>
-        <h2 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(26px,3.5vw,48px)',color:T.text,textTransform:'uppercase',letterSpacing:'-0.02em',marginBottom:32}}>
-          {p.brand} Parts <span style={{color:AMBER}}>by Category</span>
-        </h2>
-        <div className="grid-cat" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:14}}>
-          {p.categories.map((cat,i)=>{
-            const [hov,setHov]=useState(false);
-            return(
-              <a key={cat.slug} href={`../${p.brandSlug}/${cat.slug}/`} className="card-shine"
-                style={{background:T.bgCard,border:`1px solid ${hov?AMBER:T.border}`,borderRadius:12,textDecoration:'none',transition:'all 0.25s',transform:hov?'translateY(-3px)':'none',display:'block',overflow:'hidden',opacity:inView?1:0,transitionDelay:`${i*0.05}s`}}
-                onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
-                <div style={{height:100,overflow:'hidden',position:'relative'}}>
-                  <img src={`../../assets/images/categories/${cat.slug}.jpg`} alt={cat.name}
-                    style={{width:'100%',height:'100%',objectFit:'cover',filter:'brightness(0.6) saturate(0.8)',transition:'transform 0.4s ease',transform:hov?'scale(1.06)':'scale(1)'}}
-                    onError={e=>{e.target.parentNode.style.background=T.bgAlt;e.target.style.display='none';}}/>
-                  <div style={{position:'absolute',inset:0,background:'linear-gradient(to top,rgba(8,8,8,0.9),rgba(8,8,8,0.1))'}}/>
-                </div>
-                <div style={{padding:'18px 20px 16px'}}>
-                  <div style={{fontFamily:D,fontWeight:900,fontSize:18,color:T.text,textTransform:'uppercase',letterSpacing:'0.01em',marginBottom:6,lineHeight:1.2}}>{cat.name}</div>
-                  <div style={{fontFamily:B,fontSize:12,color:hov?AMBER:T.muted,fontWeight:600,transition:'color 0.2s'}}>{cat.count} parts in stock →</div>
-                </div>
-              </a>
-            );
-          })}
-        </div>
-      </div>
-    </Section>
-  );
+function BrandCategories() {
+  const p = BRAND_TPL;
+  const [ref, inView] = useInView();
+  return /*#__PURE__*/React.createElement(Section, {
+    id: "sec-cats",
+    num: "01",
+    style: {
+      padding: '72px 0 64px',
+      borderBottom: `1px solid ${T.border}`
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    ref: ref
+  }, /*#__PURE__*/React.createElement(Label, null, "Browse by Category"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: D,
+      fontWeight: 900,
+      fontSize: 'clamp(26px,3.5vw,48px)',
+      color: T.text,
+      textTransform: 'uppercase',
+      letterSpacing: '-0.02em',
+      marginBottom: 32
+    }
+  }, p.brand, " Parts ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: AMBER
+    }
+  }, "by Category")), /*#__PURE__*/React.createElement("div", {
+    className: "grid-cat",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4,1fr)',
+      gap: 14
+    }
+  }, p.categories.map((cat, i) => {
+    const [hov, setHov] = useState(false);
+    return /*#__PURE__*/React.createElement("a", {
+      key: cat.slug,
+      href: `../${p.brandSlug}/${cat.slug}/`,
+      className: "card-shine",
+      style: {
+        background: T.bgCard,
+        border: `1px solid ${hov ? AMBER : T.border}`,
+        borderRadius: 12,
+        textDecoration: 'none',
+        transition: 'all 0.25s',
+        transform: hov ? 'translateY(-3px)' : 'none',
+        display: 'block',
+        overflow: 'hidden',
+        opacity: inView ? 1 : 0,
+        transitionDelay: `${i * 0.05}s`
+      },
+      onMouseEnter: () => setHov(true),
+      onMouseLeave: () => setHov(false)
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: 100,
+        overflow: 'hidden',
+        position: 'relative'
+      }
+    }, /*#__PURE__*/React.createElement("img", {
+      src: `../../assets/images/categories/${cat.slug}.jpg`,
+      alt: cat.name,
+      style: {
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        filter: 'brightness(0.6) saturate(0.8)',
+        transition: 'transform 0.4s ease',
+        transform: hov ? 'scale(1.06)' : 'scale(1)'
+      },
+      onError: e => {
+        e.target.parentNode.style.background = T.bgAlt;
+        e.target.style.display = 'none';
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'absolute',
+        inset: 0,
+        background: 'linear-gradient(to top,rgba(8,8,8,0.9),rgba(8,8,8,0.1))'
+      }
+    })), /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: '18px 20px 16px'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: D,
+        fontWeight: 900,
+        fontSize: 18,
+        color: T.text,
+        textTransform: 'uppercase',
+        letterSpacing: '0.01em',
+        marginBottom: 6,
+        lineHeight: 1.2
+      }
+    }, cat.name), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: B,
+        fontSize: 12,
+        color: hov ? AMBER : T.muted,
+        fontWeight: 600,
+        transition: 'color 0.2s'
+      }
+    }, cat.count, " parts in stock \u2192")));
+  }))));
 }
-
-function PopularModels(){
-  const p=BRAND_TPL;
-  const [ref,inView]=useInView();
-  return(
-    <Section id="sec-models" num="02" style={{padding:'56px 0 48px',borderBottom:`1px solid ${T.border}`}}>
-      <div ref={ref}>
-        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:24,flexWrap:'wrap',gap:8}}>
-          <div>
-            <Label>Equipment Compatibility</Label>
-            <h2 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(22px,3vw,38px)',color:T.text,textTransform:'uppercase',letterSpacing:'-0.01em'}}>Popular {p.brand} Models</h2>
-          </div>
-          <span style={{fontFamily:B,fontSize:12,color:T.muted}}>{p.popularModels.length} models covered</span>
-        </div>
-      </div>
-      <div className="hscroll" style={{padding:'0 32px 8px'}}>
-        <div style={{display:'flex',gap:10,width:'max-content'}}>
-          {p.popularModels.map((m,i)=>(
-            <a key={m} href={`../equipment-models/${p.brandSlug}/${p.brandSlug}-${m.toLowerCase().replace(/\s/g,'')}-parts.html`}
-              style={{fontFamily:D,fontWeight:700,fontSize:14,color:T.text,letterSpacing:'0.04em',background:T.bgCard,border:`1px solid ${T.border}`,borderRadius:8,padding:'10px 18px',textDecoration:'none',whiteSpace:'nowrap',transition:'all 0.2s',flexShrink:0,opacity:inView?1:0,transitionDelay:`${Math.min(i*0.025,0.5)}s`}}
-              onMouseEnter={e=>{e.currentTarget.style.borderColor=AMBER;e.currentTarget.style.color=AMBER;}}
-              onMouseLeave={e=>{e.currentTarget.style.borderColor=T.border;e.currentTarget.style.color=T.text;}}>{m}</a>
-          ))}
-        </div>
-      </div>
-    </Section>
-  );
+function PopularModels() {
+  const p = BRAND_TPL;
+  const [ref, inView] = useInView();
+  return /*#__PURE__*/React.createElement(Section, {
+    id: "sec-models",
+    num: "02",
+    style: {
+      padding: '56px 0 48px',
+      borderBottom: `1px solid ${T.border}`
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    ref: ref
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'flex-end',
+      marginBottom: 24,
+      flexWrap: 'wrap',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Label, null, "Equipment Compatibility"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: D,
+      fontWeight: 900,
+      fontSize: 'clamp(22px,3vw,38px)',
+      color: T.text,
+      textTransform: 'uppercase',
+      letterSpacing: '-0.01em'
+    }
+  }, "Popular ", p.brand, " Models")), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      color: T.muted
+    }
+  }, p.popularModels.length, " models covered"))), /*#__PURE__*/React.createElement("div", {
+    className: "hscroll",
+    style: {
+      padding: '0 32px 8px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 10,
+      width: 'max-content'
+    }
+  }, p.popularModels.map((m, i) => /*#__PURE__*/React.createElement("a", {
+    key: m,
+    href: `../equipment-models/${p.brandSlug}/${p.brandSlug}-${m.toLowerCase().replace(/\s/g, '')}-parts.html`,
+    style: {
+      fontFamily: D,
+      fontWeight: 700,
+      fontSize: 14,
+      color: T.text,
+      letterSpacing: '0.04em',
+      background: T.bgCard,
+      border: `1px solid ${T.border}`,
+      borderRadius: 8,
+      padding: '10px 18px',
+      textDecoration: 'none',
+      whiteSpace: 'nowrap',
+      transition: 'all 0.2s',
+      flexShrink: 0,
+      opacity: inView ? 1 : 0,
+      transitionDelay: `${Math.min(i * 0.025, 0.5)}s`
+    },
+    onMouseEnter: e => {
+      e.currentTarget.style.borderColor = AMBER;
+      e.currentTarget.style.color = AMBER;
+    },
+    onMouseLeave: e => {
+      e.currentTarget.style.borderColor = T.border;
+      e.currentTarget.style.color = T.text;
+    }
+  }, m)))));
 }
-
-function FeaturedParts(){
-  const p=BRAND_TPL;
-  const [ref,inView]=useInView();
-  return(
-    <Section id="sec-parts" num="03" style={{padding:'72px 0 64px',borderBottom:`1px solid ${T.border}`}}>
-      <div ref={ref}>
-        <Label>Top-Moving Stock</Label>
-        <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:32,flexWrap:'wrap',gap:8}}>
-          <h2 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(26px,3.5vw,48px)',color:T.text,textTransform:'uppercase',letterSpacing:'-0.02em'}}>Featured {p.brand} Parts</h2>
-          <a href={WA(`Hi, I need a list of available ${p.brand} parts. Please send a catalogue.`)} target="_blank" style={{fontFamily:D,fontWeight:700,fontSize:14,color:WG,textDecoration:'none',display:'flex',alignItems:'center',gap:6}}><WASvg/> Full stock list on WhatsApp</a>
-        </div>
-        <div className="grid-3" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:14}}>
-          {p.featuredParts.map((fp,i)=>{
-            const [hov,setHov]=useState(false);
-            const slug=catToSlug(fp.cat);
-            return(
-              <article key={fp.partNo} className="card-shine"
-                style={{background:T.bgCard,border:`1px solid ${hov?AMBER:T.border}`,borderRadius:12,overflow:'hidden',transition:'all 0.25s',transform:hov?'translateY(-4px)':'none',opacity:inView?1:0,transitionDelay:`${i*0.08}s`}}
-                onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
-                {/* Image header */}
-                <div style={{height:120,overflow:'hidden',position:'relative',background:T.bgSection,flexShrink:0}}>
-                  <img src={catImg(fp.cat)} alt={fp.cat}
-                    style={{width:'100%',height:'100%',objectFit:'cover',filter:'brightness(0.55) saturate(0.7)',transition:'transform 0.4s ease'}}
-                    onMouseEnter={e=>e.target.style.transform='scale(1.04)'} onMouseLeave={e=>e.target.style.transform='scale(1)'}
-                    onError={e=>{e.target.parentNode.style.background=T.bgSection;e.target.style.display='none';}}/>
-                  <div style={{position:'absolute',inset:0,background:'linear-gradient(to top,rgba(13,13,13,0.85),rgba(13,13,13,0.1))'}}/>
-                  <div style={{position:'absolute',bottom:10,left:14,display:'flex',gap:6}}>
-                    <span style={{fontFamily:D,fontSize:9,fontWeight:700,letterSpacing:'0.12em',textTransform:'uppercase',background:T.tagBg,color:T.tagText,padding:'3px 9px',borderRadius:4,backdropFilter:'blur(4px)'}}>{p.brand}</span>
-                    <span style={{fontFamily:D,fontSize:9,fontWeight:700,letterSpacing:'0.12em',textTransform:'uppercase',background:'rgba(0,0,0,0.5)',color:T.muted,border:`1px solid ${T.border}`,padding:'3px 9px',borderRadius:4,backdropFilter:'blur(4px)'}}>{fp.cat}</span>
-                  </div>
-                </div>
-                {/* Content */}
-                <div style={{padding:'16px 18px 18px'}}>
-                  <code style={{fontFamily:'monospace',fontSize:13,color:AMBER,fontWeight:700,letterSpacing:'0.04em',display:'block',marginBottom:6}}>{fp.partNo}</code>
-                  <div style={{fontFamily:B,fontSize:14,color:T.text,fontWeight:600,marginBottom:10,lineHeight:1.3}}>{fp.name}</div>
-                  <div style={{display:'flex',flexWrap:'wrap',gap:4,marginBottom:16}}>
-                    {fp.models.map(m=>(
-                      <span key={m} style={{fontFamily:D,fontSize:9,fontWeight:700,color:T.muted,background:'rgba(255,255,255,0.04)',border:`1px solid ${T.border}`,padding:'2px 7px',borderRadius:3,letterSpacing:'0.04em'}}>{m}</span>
-                    ))}
-                  </div>
-                  <div style={{display:'flex',gap:8}}>
-                    <a href={partLink(fp.partNo)}
-                      style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',gap:6,background:hov?AMBER:'transparent',border:`1px solid ${hov?AMBER:T.border}`,color:hov?'#050505':T.text,textDecoration:'none',padding:'9px 0',borderRadius:8,fontFamily:D,fontWeight:700,fontSize:13,letterSpacing:'0.05em',textTransform:'uppercase',transition:'all 0.2s'}}>
-                      View Details →
-                    </a>
-                    <a href={WA(`Hi, I need part ${fp.partNo} — ${fp.name} (${p.brand}). Please confirm price and availability.`)} target="_blank"
-                      style={{width:40,height:38,display:'flex',alignItems:'center',justifyContent:'center',background:WG,borderRadius:8,flexShrink:0,transition:'opacity 0.2s'}}
-                      onMouseEnter={e=>e.currentTarget.style.opacity='0.82'} onMouseLeave={e=>e.currentTarget.style.opacity='1'}
-                      title={`WhatsApp for ${fp.partNo}`}>
-                      <WASvg/>
-                    </a>
-                  </div>
-                  <div style={{fontFamily:B,fontSize:10,color:T.muted,marginTop:8}}>Responds in ~60 min · Invoice same day</div>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-      </div>
-    </Section>
-  );
+function FeaturedParts() {
+  const p = BRAND_TPL;
+  const [ref, inView] = useInView();
+  return /*#__PURE__*/React.createElement(Section, {
+    id: "sec-parts",
+    num: "03",
+    style: {
+      padding: '72px 0 64px',
+      borderBottom: `1px solid ${T.border}`
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    ref: ref
+  }, /*#__PURE__*/React.createElement(Label, null, "Top-Moving Stock"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'flex-end',
+      marginBottom: 32,
+      flexWrap: 'wrap',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: D,
+      fontWeight: 900,
+      fontSize: 'clamp(26px,3.5vw,48px)',
+      color: T.text,
+      textTransform: 'uppercase',
+      letterSpacing: '-0.02em'
+    }
+  }, "Featured ", p.brand, " Parts"), /*#__PURE__*/React.createElement("a", {
+    href: WA(`Hi, I need a list of available ${p.brand} parts. Please send a catalogue.`),
+    target: "_blank",
+    style: {
+      fontFamily: D,
+      fontWeight: 700,
+      fontSize: 14,
+      color: WG,
+      textDecoration: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 6
+    }
+  }, /*#__PURE__*/React.createElement(WASvg, null), " Full stock list on WhatsApp")), /*#__PURE__*/React.createElement("div", {
+    className: "grid-3",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3,1fr)',
+      gap: 14
+    }
+  }, p.featuredParts.map((fp, i) => {
+    const [hov, setHov] = useState(false);
+    const slug = catToSlug(fp.cat);
+    return /*#__PURE__*/React.createElement("article", {
+      key: fp.partNo,
+      className: "card-shine",
+      style: {
+        background: T.bgCard,
+        border: `1px solid ${hov ? AMBER : T.border}`,
+        borderRadius: 12,
+        overflow: 'hidden',
+        transition: 'all 0.25s',
+        transform: hov ? 'translateY(-4px)' : 'none',
+        opacity: inView ? 1 : 0,
+        transitionDelay: `${i * 0.08}s`
+      },
+      onMouseEnter: () => setHov(true),
+      onMouseLeave: () => setHov(false)
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        height: 120,
+        overflow: 'hidden',
+        position: 'relative',
+        background: T.bgSection,
+        flexShrink: 0
+      }
+    }, /*#__PURE__*/React.createElement("img", {
+      src: catImg(fp.cat),
+      alt: fp.cat,
+      style: {
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        filter: 'brightness(0.55) saturate(0.7)',
+        transition: 'transform 0.4s ease'
+      },
+      onMouseEnter: e => e.target.style.transform = 'scale(1.04)',
+      onMouseLeave: e => e.target.style.transform = 'scale(1)',
+      onError: e => {
+        e.target.parentNode.style.background = T.bgSection;
+        e.target.style.display = 'none';
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'absolute',
+        inset: 0,
+        background: 'linear-gradient(to top,rgba(13,13,13,0.85),rgba(13,13,13,0.1))'
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'absolute',
+        bottom: 10,
+        left: 14,
+        display: 'flex',
+        gap: 6
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: D,
+        fontSize: 9,
+        fontWeight: 700,
+        letterSpacing: '0.12em',
+        textTransform: 'uppercase',
+        background: T.tagBg,
+        color: T.tagText,
+        padding: '3px 9px',
+        borderRadius: 4,
+        backdropFilter: 'blur(4px)'
+      }
+    }, p.brand), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: D,
+        fontSize: 9,
+        fontWeight: 700,
+        letterSpacing: '0.12em',
+        textTransform: 'uppercase',
+        background: 'rgba(0,0,0,0.5)',
+        color: T.muted,
+        border: `1px solid ${T.border}`,
+        padding: '3px 9px',
+        borderRadius: 4,
+        backdropFilter: 'blur(4px)'
+      }
+    }, fp.cat))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: '16px 18px 18px'
+      }
+    }, /*#__PURE__*/React.createElement("code", {
+      style: {
+        fontFamily: 'monospace',
+        fontSize: 13,
+        color: AMBER,
+        fontWeight: 700,
+        letterSpacing: '0.04em',
+        display: 'block',
+        marginBottom: 6
+      }
+    }, fp.partNo), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: B,
+        fontSize: 14,
+        color: T.text,
+        fontWeight: 600,
+        marginBottom: 10,
+        lineHeight: 1.3
+      }
+    }, fp.name), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 4,
+        marginBottom: 16
+      }
+    }, fp.models.map(m => /*#__PURE__*/React.createElement("span", {
+      key: m,
+      style: {
+        fontFamily: D,
+        fontSize: 9,
+        fontWeight: 700,
+        color: T.muted,
+        background: 'rgba(255,255,255,0.04)',
+        border: `1px solid ${T.border}`,
+        padding: '2px 7px',
+        borderRadius: 3,
+        letterSpacing: '0.04em'
+      }
+    }, m))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        gap: 8
+      }
+    }, /*#__PURE__*/React.createElement("a", {
+      href: partLink(fp.partNo),
+      style: {
+        flex: 1,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: 6,
+        background: hov ? AMBER : 'transparent',
+        border: `1px solid ${hov ? AMBER : T.border}`,
+        color: hov ? '#050505' : T.text,
+        textDecoration: 'none',
+        padding: '9px 0',
+        borderRadius: 8,
+        fontFamily: D,
+        fontWeight: 700,
+        fontSize: 13,
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        transition: 'all 0.2s'
+      }
+    }, "View Details \u2192"), /*#__PURE__*/React.createElement("a", {
+      href: WA(`Hi, I need part ${fp.partNo} — ${fp.name} (${p.brand}). Please confirm price and availability.`),
+      target: "_blank",
+      style: {
+        width: 40,
+        height: 38,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: WG,
+        borderRadius: 8,
+        flexShrink: 0,
+        transition: 'opacity 0.2s'
+      },
+      onMouseEnter: e => e.currentTarget.style.opacity = '0.82',
+      onMouseLeave: e => e.currentTarget.style.opacity = '1',
+      title: `WhatsApp for ${fp.partNo}`
+    }, /*#__PURE__*/React.createElement(WASvg, null))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: B,
+        fontSize: 10,
+        color: T.muted,
+        marginTop: 8
+      }
+    }, "Responds in ~60 min \xB7 Invoice same day")));
+  }))));
 }
-
-function BrandSEO(){
-  const p=BRAND_TPL;
-  return(
-    <Section id="sec-about" style={{padding:'64px 0'}}>
-      <div style={{maxWidth:640}}>
-        <Label>About {p.brand} Parts</Label>
-        <h2 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(20px,2.5vw,32px)',color:T.text,textTransform:'uppercase',letterSpacing:'-0.01em',marginBottom:16}}>{p.brand} Spare Parts from Parts Trading Company</h2>
-        <p style={{fontFamily:B,fontSize:15,color:T.muted,lineHeight:1.85}}>{p.brandSEO}</p>
-      </div>
-    </Section>
-  );
+function BrandSEO() {
+  const p = BRAND_TPL;
+  return /*#__PURE__*/React.createElement(Section, {
+    id: "sec-about",
+    style: {
+      padding: '64px 0'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 640
+    }
+  }, /*#__PURE__*/React.createElement(Label, null, "About ", p.brand, " Parts"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: D,
+      fontWeight: 900,
+      fontSize: 'clamp(20px,2.5vw,32px)',
+      color: T.text,
+      textTransform: 'uppercase',
+      letterSpacing: '-0.01em',
+      marginBottom: 16
+    }
+  }, p.brand, " Spare Parts from Parts Trading Company"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: B,
+      fontSize: 15,
+      color: T.muted,
+      lineHeight: 1.85
+    }
+  }, p.brandSEO)));
 }
-
-function BrandPage({onSearchOpen}){
-  const activeId=useScrollSpy(BRAND_PAGE_SECS.map(s=>s.id));
-  return(
-    <>
-      <BrandHero onSearchOpen={onSearchOpen}/>
-      <StatsBar/>
-      <div style={{maxWidth:1360,margin:'0 auto',padding:'0 32px',display:'flex',gap:56}}>
-        <BrandSidebar activeId={activeId} secs={BRAND_PAGE_SECS} waMsg={`Hi, I need Volvo spare parts. Please help with availability and pricing.`}/>
-        <div style={{flex:1,minWidth:0,paddingBottom:80}}>
-          <BrandCategories/>
-          <SectionRule/>
-          <PopularModels/>
-          <SectionRule/>
-          <FeaturedParts/>
-          <SectionRule/>
-          <BrandSEO/>
-        </div>
-      </div>
-    </>
-  );
+function BrandPage({
+  onSearchOpen
+}) {
+  const activeId = useScrollSpy(BRAND_PAGE_SECS.map(s => s.id));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(BrandHero, {
+    onSearchOpen: onSearchOpen
+  }), /*#__PURE__*/React.createElement(StatsBar, null), /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1360,
+      margin: '0 auto',
+      padding: '0 32px',
+      display: 'flex',
+      gap: 56
+    }
+  }, /*#__PURE__*/React.createElement(BrandSidebar, {
+    activeId: activeId,
+    secs: BRAND_PAGE_SECS,
+    waMsg: `Hi, I need Volvo spare parts. Please help with availability and pricing.`
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0,
+      paddingBottom: 80
+    }
+  }, /*#__PURE__*/React.createElement(BrandCategories, null), /*#__PURE__*/React.createElement(SectionRule, null), /*#__PURE__*/React.createElement(PopularModels, null), /*#__PURE__*/React.createElement(SectionRule, null), /*#__PURE__*/React.createElement(FeaturedParts, null), /*#__PURE__*/React.createElement(SectionRule, null), /*#__PURE__*/React.createElement(BrandSEO, null))));
 }
 
 // ── CATEGORY PAGE ─────────────────────────────────────────────────────────────
-function CategoryHero({onSearchOpen}){
-  const p=CATEGORY_TPL;
-  return(
-    <div className="noise-layer" style={{position:'relative',background:T.bgAlt,borderBottom:`1px solid ${T.border}`,padding:'40px 32px 36px',overflow:'hidden'}}>
-      <div style={{position:'absolute',inset:0,backgroundImage:`linear-gradient(${T.border} 1px,transparent 1px),linear-gradient(90deg,${T.border} 1px,transparent 1px)`,backgroundSize:'80px 80px',pointerEvents:'none'}}/>
-      <div style={{maxWidth:1360,margin:'0 auto',position:'relative',zIndex:1}}>
-        <nav style={{display:'flex',gap:6,alignItems:'center',fontFamily:B,fontSize:12,color:T.muted,marginBottom:18}}>
-          {p.breadcrumb.map(([label,href],i,arr)=>(
-            <span key={label} style={{display:'flex',alignItems:'center',gap:6}}>
-              {href?<a href={href} style={{color:T.muted,textDecoration:'none'}} onMouseEnter={e=>e.target.style.color=AMBER} onMouseLeave={e=>e.target.style.color=T.muted}>{label}</a>:<span style={{color:T.text,fontWeight:600}}>{label}</span>}
-              {i<arr.length-1&&<span style={{opacity:0.25}}>›</span>}
-            </span>
-          ))}
-        </nav>
-        <div className="hero-2col" style={{display:'grid',gridTemplateColumns:'1fr auto',gap:32,alignItems:'center'}}>
-          <div style={{animation:'fadeUp 0.6s ease both'}}>
-            <div style={{display:'flex',gap:10,marginBottom:12,flexWrap:'wrap',alignItems:'center'}}>
-              <span style={{fontFamily:D,fontSize:12,fontWeight:700,letterSpacing:'0.14em',textTransform:'uppercase',background:T.tagBg,color:T.tagText,border:'1px solid rgba(255,184,28,0.2)',padding:'5px 14px',borderRadius:4}}>{p.brand}</span>
-              <span style={{fontFamily:B,fontSize:12,color:T.green,fontWeight:600,display:'flex',alignItems:'center',gap:6}}>
-                <span style={{width:6,height:6,borderRadius:'50%',background:T.green,display:'inline-block'}}/>
-                {p.partCount} parts in stock
-              </span>
-            </div>
-            <div style={{display:'flex',gap:16,alignItems:'flex-start'}}>
-              <div style={{width:4,background:AMBER,borderRadius:2,flexShrink:0,alignSelf:'stretch',minHeight:40,marginTop:4}}/>
-              <h1 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(32px,5vw,60px)',lineHeight:0.9,color:T.text,letterSpacing:'-0.02em',textTransform:'uppercase'}}>
-                {p.brand} {p.category}
-              </h1>
-            </div>
-          </div>
-          {/* Compact search — opens modal */}
-          <div onClick={onSearchOpen} className="desktop-only" style={{display:'flex',background:T.inputBg,border:`1.5px solid ${T.inputBorder}`,borderRadius:10,overflow:'hidden',minWidth:300,cursor:'pointer',transition:'border-color 0.2s'}}
-            onMouseEnter={e=>e.currentTarget.style.borderColor=AMBER} onMouseLeave={e=>e.currentTarget.style.borderColor=T.inputBorder}>
-            <div style={{padding:'0 14px',display:'flex',alignItems:'center'}}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={T.muted} strokeWidth="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            </div>
-            <div style={{flex:1,padding:'13px 8px',fontSize:13,fontFamily:B,color:T.muted,userSelect:'none'}}>Search {p.brand} {p.category}…</div>
-            <div style={{padding:'0 18px',background:AMBER,display:'flex',alignItems:'center'}}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#050505" strokeWidth="3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+function CategoryHero({
+  onSearchOpen
+}) {
+  const p = CATEGORY_TPL;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "noise-layer",
+    style: {
+      position: 'relative',
+      background: T.bgAlt,
+      borderBottom: `1px solid ${T.border}`,
+      padding: '40px 32px 36px',
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      backgroundImage: `linear-gradient(${T.border} 1px,transparent 1px),linear-gradient(90deg,${T.border} 1px,transparent 1px)`,
+      backgroundSize: '80px 80px',
+      pointerEvents: 'none'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1360,
+      margin: '0 auto',
+      position: 'relative',
+      zIndex: 1
+    }
+  }, /*#__PURE__*/React.createElement("nav", {
+    style: {
+      display: 'flex',
+      gap: 6,
+      alignItems: 'center',
+      fontFamily: B,
+      fontSize: 12,
+      color: T.muted,
+      marginBottom: 18
+    }
+  }, p.breadcrumb.map(([label, href], i, arr) => /*#__PURE__*/React.createElement("span", {
+    key: label,
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 6
+    }
+  }, href ? /*#__PURE__*/React.createElement("a", {
+    href: href,
+    style: {
+      color: T.muted,
+      textDecoration: 'none'
+    },
+    onMouseEnter: e => e.target.style.color = AMBER,
+    onMouseLeave: e => e.target.style.color = T.muted
+  }, label) : /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: T.text,
+      fontWeight: 600
+    }
+  }, label), i < arr.length - 1 && /*#__PURE__*/React.createElement("span", {
+    style: {
+      opacity: 0.25
+    }
+  }, "\u203A")))), /*#__PURE__*/React.createElement("div", {
+    className: "hero-2col",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr auto',
+      gap: 32,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      animation: 'fadeUp 0.6s ease both'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 10,
+      marginBottom: 12,
+      flexWrap: 'wrap',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: D,
+      fontSize: 12,
+      fontWeight: 700,
+      letterSpacing: '0.14em',
+      textTransform: 'uppercase',
+      background: T.tagBg,
+      color: T.tagText,
+      border: '1px solid rgba(255,184,28,0.2)',
+      padding: '5px 14px',
+      borderRadius: 4
+    }
+  }, p.brand), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      color: T.green,
+      fontWeight: 600,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 6
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 6,
+      height: 6,
+      borderRadius: '50%',
+      background: T.green,
+      display: 'inline-block'
+    }
+  }), p.partCount, " parts in stock")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 16,
+      alignItems: 'flex-start'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 4,
+      background: AMBER,
+      borderRadius: 2,
+      flexShrink: 0,
+      alignSelf: 'stretch',
+      minHeight: 40,
+      marginTop: 4
+    }
+  }), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontFamily: D,
+      fontWeight: 900,
+      fontSize: 'clamp(32px,5vw,60px)',
+      lineHeight: 0.9,
+      color: T.text,
+      letterSpacing: '-0.02em',
+      textTransform: 'uppercase'
+    }
+  }, p.brand, " ", p.category))), /*#__PURE__*/React.createElement("div", {
+    onClick: onSearchOpen,
+    className: "desktop-only",
+    style: {
+      display: 'flex',
+      background: T.inputBg,
+      border: `1.5px solid ${T.inputBorder}`,
+      borderRadius: 10,
+      overflow: 'hidden',
+      minWidth: 300,
+      cursor: 'pointer',
+      transition: 'border-color 0.2s'
+    },
+    onMouseEnter: e => e.currentTarget.style.borderColor = AMBER,
+    onMouseLeave: e => e.currentTarget.style.borderColor = T.inputBorder
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '0 14px',
+      display: 'flex',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "16",
+    height: "16",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: T.muted,
+    strokeWidth: "2.5"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "11",
+    cy: "11",
+    r: "8"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "m21 21-4.35-4.35"
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      padding: '13px 8px',
+      fontSize: 13,
+      fontFamily: B,
+      color: T.muted,
+      userSelect: 'none'
+    }
+  }, "Search ", p.brand, " ", p.category, "\u2026"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '0 18px',
+      background: AMBER,
+      display: 'flex',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "#050505",
+    strokeWidth: "3"
+  }, /*#__PURE__*/React.createElement("circle", {
+    cx: "11",
+    cy: "11",
+    r: "8"
+  }), /*#__PURE__*/React.createElement("path", {
+    d: "m21 21-4.35-4.35"
+  })))))));
 }
-
-function FilterBar({active,setActive}){
-  const p=CATEGORY_TPL;
-  return(
-    <div className="filter-sticky" style={{background:T.bg,borderBottom:`1px solid ${T.border}`,padding:'0 32px'}}>
-      <div style={{maxWidth:1360,margin:'0 auto'}}>
-        <div className="hscroll" style={{padding:'12px 0'}}>
-          <div style={{display:'flex',gap:8,width:'max-content',alignItems:'center'}}>
-            <span style={{fontFamily:D,fontSize:10,fontWeight:700,letterSpacing:'0.14em',textTransform:'uppercase',color:T.muted,marginRight:8,flexShrink:0}}>Filter</span>
-            {p.filters.map(f=>(
-              <button key={f} onClick={()=>setActive(f)}
-                style={{fontFamily:B,fontSize:12,fontWeight:700,padding:'7px 16px',borderRadius:20,border:`1px solid ${active===f?AMBER:'rgba(255,255,255,0.1)'}`,cursor:'pointer',background:active===f?AMBER:'transparent',color:active===f?'#050505':'rgba(255,255,255,0.55)',whiteSpace:'nowrap',transition:'all 0.15s'}}>{f}</button>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+function FilterBar({
+  active,
+  setActive
+}) {
+  const p = CATEGORY_TPL;
+  return /*#__PURE__*/React.createElement("div", {
+    className: "filter-sticky",
+    style: {
+      background: T.bg,
+      borderBottom: `1px solid ${T.border}`,
+      padding: '0 32px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1360,
+      margin: '0 auto'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "hscroll",
+    style: {
+      padding: '12px 0'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 8,
+      width: 'max-content',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: D,
+      fontSize: 10,
+      fontWeight: 700,
+      letterSpacing: '0.14em',
+      textTransform: 'uppercase',
+      color: T.muted,
+      marginRight: 8,
+      flexShrink: 0
+    }
+  }, "Filter"), p.filters.map(f => /*#__PURE__*/React.createElement("button", {
+    key: f,
+    onClick: () => setActive(f),
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      fontWeight: 700,
+      padding: '7px 16px',
+      borderRadius: 20,
+      border: `1px solid ${active === f ? AMBER : 'rgba(255,255,255,0.1)'}`,
+      cursor: 'pointer',
+      background: active === f ? AMBER : 'transparent',
+      color: active === f ? '#050505' : 'rgba(255,255,255,0.55)',
+      whiteSpace: 'nowrap',
+      transition: 'all 0.15s'
+    }
+  }, f))))));
 }
 
 // Map filter chip labels to part name keywords for demo filtering
 const FILTER_KEYWORDS = {
-  'All':null,'Pumps':['pump'],'Motors':['motor'],'Cylinders':['cylinder'],
-  'Hoses & Fittings':['hose','fitting'],'Valves':['valve'],'Accumulators':['accumulator'],
-  'EC Series':['EC'],'FH Series':['FH'],'FM Series':['FM'],
+  'All': null,
+  'Pumps': ['pump'],
+  'Motors': ['motor'],
+  'Cylinders': ['cylinder'],
+  'Hoses & Fittings': ['hose', 'fitting'],
+  'Valves': ['valve'],
+  'Accumulators': ['accumulator'],
+  'EC Series': ['EC'],
+  'FH Series': ['FH'],
+  'FM Series': ['FM']
 };
-
-function PartsGrid({activeFilter}){
-  const p=CATEGORY_TPL;
-  const [visible,setVisible]=useState(12);
-  const kw=FILTER_KEYWORDS[activeFilter];
-  const parts=kw
-    ? p.parts.filter(pt=>kw.some(k=>pt.name.toLowerCase().includes(k.toLowerCase())||pt.models.some(m=>m.includes(k))))
-    : p.parts;
-  return(
-    <Section id="sec-parts-list" num="01" style={{padding:'40px 0 64px',borderBottom:`1px solid ${T.border}`}}>
-      <div>
-        <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:24,flexWrap:'wrap',gap:8}}>
-          <span style={{fontFamily:B,fontSize:13,color:T.muted}}>
-            Showing <strong style={{color:T.text}}>{Math.min(visible,parts.length)}</strong> of <strong style={{color:T.text}}>{activeFilter==='All'?p.partCount:parts.length}</strong> parts
-            {activeFilter!=='All'&&<span style={{color:AMBER,marginLeft:8}}>· filtered by {activeFilter}</span>}
-          </span>
-          <span style={{fontFamily:B,fontSize:12,color:T.green,display:'flex',alignItems:'center',gap:5}}>
-            <span style={{width:6,height:6,borderRadius:'50%',background:T.green,display:'inline-block'}}/>
-            All in stock · same-day dispatch
-          </span>
-        </div>
-        {parts.length===0&&(
-          <div style={{textAlign:'center',padding:'48px 0'}}>
-            <div style={{fontFamily:D,fontSize:18,fontWeight:700,color:T.muted,marginBottom:12}}>No demo parts match this filter</div>
-            <a href={WA(`Hi, I need ${p.brand} ${activeFilter} — do you have them in stock?`)} target="_blank"
-              style={{display:'inline-flex',alignItems:'center',gap:8,background:WG,color:'#fff',textDecoration:'none',padding:'11px 24px',borderRadius:9,fontFamily:D,fontWeight:700,fontSize:14,letterSpacing:'0.04em'}}>
-              <WASvg/> Ask for {activeFilter} on WhatsApp
-            </a>
-          </div>
-        )}
-        <div className="grid-4" style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:12}}>
-          {parts.slice(0,visible).map((part,i)=>{
-            const [hov,setHov]=useState(false);
-            const isMostOrdered=i<3;
-            return(
-              <div key={part.partNo} className="card-shine"
-                style={{background:T.bgCard,border:`1px solid ${hov?AMBER:T.border}`,borderRadius:12,padding:'18px 20px 16px',transition:'all 0.2s',transform:hov?'translateY(-2px)':'none',position:'relative'}}
-                onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}>
-                {isMostOrdered&&<div style={{position:'absolute',top:12,right:12,fontFamily:D,fontSize:9,fontWeight:700,letterSpacing:'0.1em',textTransform:'uppercase',background:'rgba(255,184,28,0.12)',color:AMBER,border:'1px solid rgba(255,184,28,0.25)',padding:'2px 8px',borderRadius:3}}>Popular</div>}
-                <div style={{display:'flex',alignItems:'center',gap:6,marginBottom:8}}>
-                  <span style={{width:6,height:6,borderRadius:'50%',background:T.green,display:'inline-block',flexShrink:0}}/>
-                  <span style={{fontFamily:B,fontSize:10,fontWeight:700,color:T.green}}>In Stock</span>
-                </div>
-                <code style={{fontFamily:'monospace',fontSize:12,color:AMBER,fontWeight:700,letterSpacing:'0.04em',display:'block',marginBottom:8,overflow:'hidden',whiteSpace:'nowrap',textOverflow:'ellipsis'}}>{part.partNo}</code>
-                <div style={{fontFamily:B,fontSize:13,color:T.text,fontWeight:600,lineHeight:1.35,marginBottom:10,minHeight:38}}>{part.name}</div>
-                <div style={{display:'flex',flexWrap:'wrap',gap:4,marginBottom:14}}>
-                  {part.models.slice(0,3).map(m=>(
-                    <span key={m} style={{fontFamily:D,fontSize:9,fontWeight:700,color:T.muted,background:'rgba(255,255,255,0.03)',border:`1px solid ${T.border}`,padding:'2px 6px',borderRadius:3,letterSpacing:'0.04em',whiteSpace:'nowrap'}}>{m}</span>
-                  ))}
-                  {part.models.length>3&&<span style={{fontFamily:D,fontSize:9,color:T.muted,padding:'2px 6px'}}>+{part.models.length-3}</span>}
-                </div>
-                <div style={{display:'flex',gap:6}}>
-                  <a href={partLink(part.partNo)}
-                    style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',background:hov?AMBER:'transparent',border:`1px solid ${hov?AMBER:T.border}`,color:hov?'#050505':T.muted,textDecoration:'none',padding:'7px 0',borderRadius:7,fontFamily:D,fontWeight:700,fontSize:11,letterSpacing:'0.05em',textTransform:'uppercase',transition:'all 0.2s'}}>
-                    View Details
-                  </a>
-                  <a href={WA(`Hi, I need part ${part.partNo} — ${part.name} (${p.brand} ${p.category}). Please confirm stock and price.`)} target="_blank"
-                    style={{width:34,display:'flex',alignItems:'center',justifyContent:'center',background:WG,borderRadius:7,flexShrink:0,transition:'opacity 0.2s'}}
-                    onMouseEnter={e=>e.currentTarget.style.opacity='0.8'} onMouseLeave={e=>e.currentTarget.style.opacity='1'}
-                    title="WhatsApp for quote">
-                    <WASvg/>
-                  </a>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        {visible<parts.length&&(
-          <div style={{textAlign:'center',marginTop:36}}>
-            <button onClick={()=>setVisible(v=>v+12)}
-              style={{background:T.bgCard,border:`1px solid ${T.border}`,color:T.text,padding:'14px 40px',borderRadius:10,fontFamily:D,fontWeight:700,fontSize:16,letterSpacing:'0.06em',textTransform:'uppercase',cursor:'pointer',transition:'all 0.2s'}}
-              onMouseEnter={e=>{e.currentTarget.style.borderColor=AMBER;e.currentTarget.style.color=AMBER;}} onMouseLeave={e=>{e.currentTarget.style.borderColor=T.border;e.currentTarget.style.color=T.text;}}>
-              Load More — {parts.length-visible} remaining
-            </button>
-          </div>
-        )}
-        {visible>=parts.length&&parts.length>0&&(
-          <div style={{textAlign:'center',marginTop:32}}>
-            <p style={{fontFamily:B,fontSize:13,color:T.muted,marginBottom:16}}>All {parts.length} parts shown. Need more options?</p>
-            <a href={WA(`Hi, I need more ${p.brand} ${p.category}. Can you send additional options?`)} target="_blank"
-              style={{display:'inline-flex',alignItems:'center',gap:8,background:WG,color:'#fff',textDecoration:'none',padding:'12px 28px',borderRadius:10,fontFamily:D,fontWeight:800,fontSize:15,letterSpacing:'0.06em',textTransform:'uppercase'}}>
-              <WASvg/> Ask about more parts
-            </a>
-          </div>
-        )}
-      </div>
-    </Section>
-  );
+function PartsGrid({
+  activeFilter
+}) {
+  const p = CATEGORY_TPL;
+  const [visible, setVisible] = useState(12);
+  const kw = FILTER_KEYWORDS[activeFilter];
+  const parts = kw ? p.parts.filter(pt => kw.some(k => pt.name.toLowerCase().includes(k.toLowerCase()) || pt.models.some(m => m.includes(k)))) : p.parts;
+  return /*#__PURE__*/React.createElement(Section, {
+    id: "sec-parts-list",
+    num: "01",
+    style: {
+      padding: '40px 0 64px',
+      borderBottom: `1px solid ${T.border}`
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: 24,
+      flexWrap: 'wrap',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 13,
+      color: T.muted
+    }
+  }, "Showing ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: T.text
+    }
+  }, Math.min(visible, parts.length)), " of ", /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: T.text
+    }
+  }, activeFilter === 'All' ? p.partCount : parts.length), " parts", activeFilter !== 'All' && /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: AMBER,
+      marginLeft: 8
+    }
+  }, "\xB7 filtered by ", activeFilter)), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontFamily: B,
+      fontSize: 12,
+      color: T.green,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 5
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 6,
+      height: 6,
+      borderRadius: '50%',
+      background: T.green,
+      display: 'inline-block'
+    }
+  }), "All in stock \xB7 same-day dispatch")), parts.length === 0 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: 'center',
+      padding: '48px 0'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: D,
+      fontSize: 18,
+      fontWeight: 700,
+      color: T.muted,
+      marginBottom: 12
+    }
+  }, "No demo parts match this filter"), /*#__PURE__*/React.createElement("a", {
+    href: WA(`Hi, I need ${p.brand} ${activeFilter} — do you have them in stock?`),
+    target: "_blank",
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 8,
+      background: WG,
+      color: '#fff',
+      textDecoration: 'none',
+      padding: '11px 24px',
+      borderRadius: 9,
+      fontFamily: D,
+      fontWeight: 700,
+      fontSize: 14,
+      letterSpacing: '0.04em'
+    }
+  }, /*#__PURE__*/React.createElement(WASvg, null), " Ask for ", activeFilter, " on WhatsApp")), /*#__PURE__*/React.createElement("div", {
+    className: "grid-4",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4,1fr)',
+      gap: 12
+    }
+  }, parts.slice(0, visible).map((part, i) => {
+    const [hov, setHov] = useState(false);
+    const isMostOrdered = i < 3;
+    return /*#__PURE__*/React.createElement("div", {
+      key: part.partNo,
+      className: "card-shine",
+      style: {
+        background: T.bgCard,
+        border: `1px solid ${hov ? AMBER : T.border}`,
+        borderRadius: 12,
+        padding: '18px 20px 16px',
+        transition: 'all 0.2s',
+        transform: hov ? 'translateY(-2px)' : 'none',
+        position: 'relative'
+      },
+      onMouseEnter: () => setHov(true),
+      onMouseLeave: () => setHov(false)
+    }, isMostOrdered && /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'absolute',
+        top: 12,
+        right: 12,
+        fontFamily: D,
+        fontSize: 9,
+        fontWeight: 700,
+        letterSpacing: '0.1em',
+        textTransform: 'uppercase',
+        background: 'rgba(255,184,28,0.12)',
+        color: AMBER,
+        border: '1px solid rgba(255,184,28,0.25)',
+        padding: '2px 8px',
+        borderRadius: 3
+      }
+    }, "Popular"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 6,
+        marginBottom: 8
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: 6,
+        height: 6,
+        borderRadius: '50%',
+        background: T.green,
+        display: 'inline-block',
+        flexShrink: 0
+      }
+    }), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: B,
+        fontSize: 10,
+        fontWeight: 700,
+        color: T.green
+      }
+    }, "In Stock")), /*#__PURE__*/React.createElement("code", {
+      style: {
+        fontFamily: 'monospace',
+        fontSize: 12,
+        color: AMBER,
+        fontWeight: 700,
+        letterSpacing: '0.04em',
+        display: 'block',
+        marginBottom: 8,
+        overflow: 'hidden',
+        whiteSpace: 'nowrap',
+        textOverflow: 'ellipsis'
+      }
+    }, part.partNo), /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontFamily: B,
+        fontSize: 13,
+        color: T.text,
+        fontWeight: 600,
+        lineHeight: 1.35,
+        marginBottom: 10,
+        minHeight: 38
+      }
+    }, part.name), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: 4,
+        marginBottom: 14
+      }
+    }, part.models.slice(0, 3).map(m => /*#__PURE__*/React.createElement("span", {
+      key: m,
+      style: {
+        fontFamily: D,
+        fontSize: 9,
+        fontWeight: 700,
+        color: T.muted,
+        background: 'rgba(255,255,255,0.03)',
+        border: `1px solid ${T.border}`,
+        padding: '2px 6px',
+        borderRadius: 3,
+        letterSpacing: '0.04em',
+        whiteSpace: 'nowrap'
+      }
+    }, m)), part.models.length > 3 && /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: D,
+        fontSize: 9,
+        color: T.muted,
+        padding: '2px 6px'
+      }
+    }, "+", part.models.length - 3)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'flex',
+        gap: 6
+      }
+    }, /*#__PURE__*/React.createElement("a", {
+      href: partLink(part.partNo),
+      style: {
+        flex: 1,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: hov ? AMBER : 'transparent',
+        border: `1px solid ${hov ? AMBER : T.border}`,
+        color: hov ? '#050505' : T.muted,
+        textDecoration: 'none',
+        padding: '7px 0',
+        borderRadius: 7,
+        fontFamily: D,
+        fontWeight: 700,
+        fontSize: 11,
+        letterSpacing: '0.05em',
+        textTransform: 'uppercase',
+        transition: 'all 0.2s'
+      }
+    }, "View Details"), /*#__PURE__*/React.createElement("a", {
+      href: WA(`Hi, I need part ${part.partNo} — ${part.name} (${p.brand} ${p.category}). Please confirm stock and price.`),
+      target: "_blank",
+      style: {
+        width: 34,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: WG,
+        borderRadius: 7,
+        flexShrink: 0,
+        transition: 'opacity 0.2s'
+      },
+      onMouseEnter: e => e.currentTarget.style.opacity = '0.8',
+      onMouseLeave: e => e.currentTarget.style.opacity = '1',
+      title: "WhatsApp for quote"
+    }, /*#__PURE__*/React.createElement(WASvg, null))));
+  })), visible < parts.length && /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: 'center',
+      marginTop: 36
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => setVisible(v => v + 12),
+    style: {
+      background: T.bgCard,
+      border: `1px solid ${T.border}`,
+      color: T.text,
+      padding: '14px 40px',
+      borderRadius: 10,
+      fontFamily: D,
+      fontWeight: 700,
+      fontSize: 16,
+      letterSpacing: '0.06em',
+      textTransform: 'uppercase',
+      cursor: 'pointer',
+      transition: 'all 0.2s'
+    },
+    onMouseEnter: e => {
+      e.currentTarget.style.borderColor = AMBER;
+      e.currentTarget.style.color = AMBER;
+    },
+    onMouseLeave: e => {
+      e.currentTarget.style.borderColor = T.border;
+      e.currentTarget.style.color = T.text;
+    }
+  }, "Load More \u2014 ", parts.length - visible, " remaining")), visible >= parts.length && parts.length > 0 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: 'center',
+      marginTop: 32
+    }
+  }, /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: B,
+      fontSize: 13,
+      color: T.muted,
+      marginBottom: 16
+    }
+  }, "All ", parts.length, " parts shown. Need more options?"), /*#__PURE__*/React.createElement("a", {
+    href: WA(`Hi, I need more ${p.brand} ${p.category}. Can you send additional options?`),
+    target: "_blank",
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 8,
+      background: WG,
+      color: '#fff',
+      textDecoration: 'none',
+      padding: '12px 28px',
+      borderRadius: 10,
+      fontFamily: D,
+      fontWeight: 800,
+      fontSize: 15,
+      letterSpacing: '0.06em',
+      textTransform: 'uppercase'
+    }
+  }, /*#__PURE__*/React.createElement(WASvg, null), " Ask about more parts"))));
 }
-
-function CategorySEO(){
-  const p=CATEGORY_TPL;
-  return(
-    <Section id="sec-cat-about" style={{padding:'64px 0'}}>
-      <div style={{maxWidth:640}}>
-        <Label>About This Category</Label>
-        <h2 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(20px,2.5vw,32px)',color:T.text,textTransform:'uppercase',letterSpacing:'-0.01em',marginBottom:16}}>{p.brand} {p.category}</h2>
-        <p style={{fontFamily:B,fontSize:15,color:T.muted,lineHeight:1.85}}>{p.categorySEO}</p>
-      </div>
-    </Section>
-  );
+function CategorySEO() {
+  const p = CATEGORY_TPL;
+  return /*#__PURE__*/React.createElement(Section, {
+    id: "sec-cat-about",
+    style: {
+      padding: '64px 0'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 640
+    }
+  }, /*#__PURE__*/React.createElement(Label, null, "About This Category"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: D,
+      fontWeight: 900,
+      fontSize: 'clamp(20px,2.5vw,32px)',
+      color: T.text,
+      textTransform: 'uppercase',
+      letterSpacing: '-0.01em',
+      marginBottom: 16
+    }
+  }, p.brand, " ", p.category), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: B,
+      fontSize: 15,
+      color: T.muted,
+      lineHeight: 1.85
+    }
+  }, p.categorySEO)));
 }
-
-function CategoryCTA(){
-  const p=CATEGORY_TPL;
-  const [hov,setHov]=useState(false);
-  return(
-    <section style={{background:'#128C7E',padding:'72px 32px',textAlign:'center'}}>
-      <div style={{maxWidth:640,margin:'0 auto'}}>
-        <div style={{fontFamily:'monospace',fontSize:12,fontWeight:700,letterSpacing:'0.14em',color:'rgba(255,255,255,0.5)',textTransform:'uppercase',marginBottom:14}}>{p.brand} · {p.category}</div>
-        <h2 style={{fontFamily:D,fontWeight:900,fontSize:'clamp(32px,5vw,56px)',color:'#fff',letterSpacing:'-0.02em',lineHeight:0.95,textTransform:'uppercase',marginBottom:16}}>
-          Can't find<br/><span style={{color:AMBER}}>what you need?</span>
-        </h2>
-        <p style={{fontFamily:B,fontSize:15,color:'rgba(255,255,255,0.75)',lineHeight:1.7,marginBottom:32}}>
-          We stock 418 {p.brand} {p.category} and source thousands more on demand. Send us a part number or description — we'll confirm availability and pricing within 60 minutes.
-        </p>
-        <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap'}}>
-          <a href={WA(`Hi, I need ${p.brand} ${p.category}. Part not listed on your website — can you check stock?`)} target="_blank"
-            onMouseEnter={()=>setHov(true)} onMouseLeave={()=>setHov(false)}
-            style={{display:'inline-flex',alignItems:'center',gap:10,background:WG,color:'#fff',textDecoration:'none',padding:'15px 32px',borderRadius:10,fontFamily:D,fontWeight:800,fontSize:17,letterSpacing:'0.04em',textTransform:'uppercase',boxShadow:hov?'0 8px 32px rgba(37,211,102,0.4)':'0 4px 20px rgba(37,211,102,0.25)',transform:hov?'translateY(-1px)':'none',transition:'all 0.2s'}}>
-            <WASvg/> WhatsApp Us
-          </a>
-          <a href={`mailto:parts@partstrading.com?subject=${encodeURIComponent(`${p.brand} ${p.category} enquiry`)}`}
-            style={{display:'inline-flex',alignItems:'center',gap:8,background:'transparent',border:'1px solid rgba(255,255,255,0.3)',color:'rgba(255,255,255,0.85)',textDecoration:'none',padding:'15px 28px',borderRadius:10,fontFamily:D,fontWeight:700,fontSize:16,letterSpacing:'0.04em',textTransform:'uppercase',transition:'all 0.2s'}}
-            onMouseEnter={e=>{e.currentTarget.style.borderColor='rgba(255,255,255,0.7)';e.currentTarget.style.color='#fff';}} onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(255,255,255,0.3)';e.currentTarget.style.color='rgba(255,255,255,0.85)';}}>
-            Email Enquiry
-          </a>
-        </div>
-        <p style={{fontFamily:B,fontSize:11,color:'rgba(255,255,255,0.45)',marginTop:20,letterSpacing:'0.03em'}}>Average response: 47 minutes · Proforma invoice same day · No obligation</p>
-      </div>
-    </section>
-  );
+function CategoryCTA() {
+  const p = CATEGORY_TPL;
+  const [hov, setHov] = useState(false);
+  return /*#__PURE__*/React.createElement("section", {
+    style: {
+      background: '#128C7E',
+      padding: '72px 32px',
+      textAlign: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 640,
+      margin: '0 auto'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: 'monospace',
+      fontSize: 12,
+      fontWeight: 700,
+      letterSpacing: '0.14em',
+      color: 'rgba(255,255,255,0.5)',
+      textTransform: 'uppercase',
+      marginBottom: 14
+    }
+  }, p.brand, " \xB7 ", p.category), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontFamily: D,
+      fontWeight: 900,
+      fontSize: 'clamp(32px,5vw,56px)',
+      color: '#fff',
+      letterSpacing: '-0.02em',
+      lineHeight: 0.95,
+      textTransform: 'uppercase',
+      marginBottom: 16
+    }
+  }, "Can't find", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: AMBER
+    }
+  }, "what you need?")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: B,
+      fontSize: 15,
+      color: 'rgba(255,255,255,0.75)',
+      lineHeight: 1.7,
+      marginBottom: 32
+    }
+  }, "We stock 418 ", p.brand, " ", p.category, " and source thousands more on demand. Send us a part number or description \u2014 we'll confirm availability and pricing within 60 minutes."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12,
+      justifyContent: 'center',
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: WA(`Hi, I need ${p.brand} ${p.category}. Part not listed on your website — can you check stock?`),
+    target: "_blank",
+    onMouseEnter: () => setHov(true),
+    onMouseLeave: () => setHov(false),
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 10,
+      background: WG,
+      color: '#fff',
+      textDecoration: 'none',
+      padding: '15px 32px',
+      borderRadius: 10,
+      fontFamily: D,
+      fontWeight: 800,
+      fontSize: 17,
+      letterSpacing: '0.04em',
+      textTransform: 'uppercase',
+      boxShadow: hov ? '0 8px 32px rgba(37,211,102,0.4)' : '0 4px 20px rgba(37,211,102,0.25)',
+      transform: hov ? 'translateY(-1px)' : 'none',
+      transition: 'all 0.2s'
+    }
+  }, /*#__PURE__*/React.createElement(WASvg, null), " WhatsApp Us"), /*#__PURE__*/React.createElement("a", {
+    href: `mailto:parts@partstrading.com?subject=${encodeURIComponent(`${p.brand} ${p.category} enquiry`)}`,
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 8,
+      background: 'transparent',
+      border: '1px solid rgba(255,255,255,0.3)',
+      color: 'rgba(255,255,255,0.85)',
+      textDecoration: 'none',
+      padding: '15px 28px',
+      borderRadius: 10,
+      fontFamily: D,
+      fontWeight: 700,
+      fontSize: 16,
+      letterSpacing: '0.04em',
+      textTransform: 'uppercase',
+      transition: 'all 0.2s'
+    },
+    onMouseEnter: e => {
+      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.7)';
+      e.currentTarget.style.color = '#fff';
+    },
+    onMouseLeave: e => {
+      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)';
+      e.currentTarget.style.color = 'rgba(255,255,255,0.85)';
+    }
+  }, "Email Enquiry")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontFamily: B,
+      fontSize: 11,
+      color: 'rgba(255,255,255,0.45)',
+      marginTop: 20,
+      letterSpacing: '0.03em'
+    }
+  }, "Average response: 47 minutes \xB7 Proforma invoice same day \xB7 No obligation")));
 }
-
-function CategoryPage({onSearchOpen}){
-  const [activeFilter,setActiveFilter]=useState('All');
-  const activeId=useScrollSpy(CAT_PAGE_SECS.map(s=>s.id));
-  return(
-    <>
-      <CategoryHero onSearchOpen={onSearchOpen}/>
-      <FilterBar active={activeFilter} setActive={setActiveFilter}/>
-      <div style={{maxWidth:1360,margin:'0 auto',padding:'0 32px',display:'flex',gap:56}}>
-        <BrandSidebar activeId={activeId} secs={CAT_PAGE_SECS} waMsg={`Hi, I need Volvo Hydraulic Parts. Please confirm availability and pricing.`}/>
-        <div style={{flex:1,minWidth:0,paddingBottom:80}}>
-          <PartsGrid activeFilter={activeFilter}/>
-          <SectionRule/>
-          <CategorySEO/>
-        </div>
-      </div>
-      <StatsBar/>
-      <CategoryCTA/>
-    </>
-  );
+function CategoryPage({
+  onSearchOpen
+}) {
+  const [activeFilter, setActiveFilter] = useState('All');
+  const activeId = useScrollSpy(CAT_PAGE_SECS.map(s => s.id));
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(CategoryHero, {
+    onSearchOpen: onSearchOpen
+  }), /*#__PURE__*/React.createElement(FilterBar, {
+    active: activeFilter,
+    setActive: setActiveFilter
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1360,
+      margin: '0 auto',
+      padding: '0 32px',
+      display: 'flex',
+      gap: 56
+    }
+  }, /*#__PURE__*/React.createElement(BrandSidebar, {
+    activeId: activeId,
+    secs: CAT_PAGE_SECS,
+    waMsg: `Hi, I need Volvo Hydraulic Parts. Please confirm availability and pricing.`
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      minWidth: 0,
+      paddingBottom: 80
+    }
+  }, /*#__PURE__*/React.createElement(PartsGrid, {
+    activeFilter: activeFilter
+  }), /*#__PURE__*/React.createElement(SectionRule, null), /*#__PURE__*/React.createElement(CategorySEO, null))), /*#__PURE__*/React.createElement(StatsBar, null), /*#__PURE__*/React.createElement(CategoryCTA, null));
 }
-
-
-
-function App(){
-  const [geo,setGeo]=useState(null);
-  const [searchOpen,setSearchOpen]=useState(false);
-  useEffect(()=>{
-    fetch('https://ipapi.co/json/?fields=country_code,country_name,timezone,continent_code')
-      .then(r=>r.json())
-      .then(d=>setGeo({country:d.country_code||'',countryName:d.country_name||'',timezone:d.timezone||'',continent:d.continent_code||''}))
-      .catch(()=>{});
-  },[]);
-  const openSearch=useCallback(()=>setSearchOpen(true),[]);
-  const closeSearch=useCallback(()=>setSearchOpen(false),[]);
-  return(
-    <GeoCtx.Provider value={geo}>
-      <AnnouncementBar/>
-      <Nav page="category" onSearchOpen={openSearch}/>
-      <main>
-        <CategoryPage onSearchOpen={openSearch}/>
-      </main>
-      <Footer/>
-      <WAFloatPill page="category"/>
-      <SearchModal open={searchOpen} onClose={closeSearch}/>
-    </GeoCtx.Provider>
-  );
+function App() {
+  const [geo, setGeo] = useState(null);
+  const [searchOpen, setSearchOpen] = useState(false);
+  useEffect(() => {
+    fetch('https://ipapi.co/json/?fields=country_code,country_name,timezone,continent_code').then(r => r.json()).then(d => setGeo({
+      country: d.country_code || '',
+      countryName: d.country_name || '',
+      timezone: d.timezone || '',
+      continent: d.continent_code || ''
+    })).catch(() => {});
+  }, []);
+  const openSearch = useCallback(() => setSearchOpen(true), []);
+  const closeSearch = useCallback(() => setSearchOpen(false), []);
+  return /*#__PURE__*/React.createElement(GeoCtx.Provider, {
+    value: geo
+  }, /*#__PURE__*/React.createElement(AnnouncementBar, null), /*#__PURE__*/React.createElement(Nav, {
+    page: "category",
+    onSearchOpen: openSearch
+  }), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(CategoryPage, {
+    onSearchOpen: openSearch
+  })), /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement(WAFloatPill, {
+    page: "category"
+  }), /*#__PURE__*/React.createElement(SearchModal, {
+    open: searchOpen,
+    onClose: closeSearch
+  }));
 }
-
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(App, null));
 </script>
 
 <!-- ptc-static-links -->
