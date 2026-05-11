@@ -2,7 +2,10 @@
   "seen_guids": [
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c00",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001093c",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010cc8",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dc05",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010907",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dbf1",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c6b",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a54",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bd9",
@@ -14,13 +17,27 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b68",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c26",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108af",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dc7f",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000de4f",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dc7b",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c95",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000ea08",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000daa5",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010abd",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dd01",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d71d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107e1",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000da7e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010530",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000de6a",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010cb5",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010998",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a80",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bb9",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010ca1",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000ddf5",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b40",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c3e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000106a1",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001094b",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001040b",
@@ -32,6 +49,7 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001073e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001073a",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010aed",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000daab",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b2c",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a85",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b89",
@@ -39,20 +57,25 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000105e5",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bc7",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a35",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dbe2",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010934",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010744",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b26",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001082e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c06",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107d4",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000da99",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a87",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010cb7",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a55",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001052e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001099a",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d7ff",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108f7",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108ca",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c4b",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010521",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000de07",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c7d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a4f",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001093a",
@@ -62,12 +85,18 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108e5",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bed",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b33",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000da95",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000109e1",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001088b",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bb0",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bc5",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b60",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dd03",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dd40",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108ff",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c85",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010502",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c8c",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b18",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d764",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d7ab",
@@ -75,10 +104,13 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a88",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a13",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b49",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010cbd",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000103c1",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a47",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c9f",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d925",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c23",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dbb6",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108e1",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a2e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010999",
@@ -87,12 +119,14 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001083d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010821",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c7a",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000de4e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c5d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a28",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001091b",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000106b2",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b4b",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001052a",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dcf5",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a49",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000103d2",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a78",
@@ -102,12 +136,14 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a5d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000109f1",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d7aa",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000da89",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010861",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a23",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b3a",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bf8",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a83",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000109e5",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000da5c",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010516",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010713",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a0c",
@@ -118,19 +154,26 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001092c",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d828",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000105e7",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c8d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107ca",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b35",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a68",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010723",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bdb",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000fc5c",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a33",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a57",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010947",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dd06",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dcff",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bbb",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001091e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c73",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c4f",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000da97",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a0f",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b31",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dd08",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000106a9",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001051b",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c04",
@@ -139,29 +182,39 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108f2",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b42",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a3f",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dcfe",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b05",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b3e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107e7",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001064d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a1a",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a25",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dbff",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010847",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b27",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000109f3",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dc7d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108cd",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a1c",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000109db",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b6a",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a2a",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bad",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c43",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010aa3",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dee3",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dc11",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108f6",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010519",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000103bf",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b5a",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010731",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c7c",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000daa1",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010ba6",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010afa",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dc0d",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dbfd",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b64",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000109bd",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108fd",
@@ -175,6 +228,7 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b6e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001071c",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010939",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dc0b",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a7c",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000ed48",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108fb",
@@ -190,33 +244,40 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a4b",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a0a",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010527",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dbea",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b45",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c54",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c75",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010940",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b66",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108e9",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dc81",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107ed",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010824",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b70",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a7e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010955",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108cf",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bb1",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001075e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010943",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107c7",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b1c",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d74f",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c84",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a38",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d802",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d748",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108d3",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001082f",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000da9d",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c39",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107e9",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a08",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c0a",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001073c",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010909",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dbf6",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010884",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b8f",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c61",
@@ -243,13 +304,18 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b9d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010503",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010760",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dc61",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c93",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b5e",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010ca3",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010501",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010725",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bfc",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001091c",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010721",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010cb9",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107e5",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010ca5",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000103bd",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b01",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108ef",
@@ -257,6 +323,12 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000109f8",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107f9",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010914",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dc0f",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dbd8",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dc0c",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c5e",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dee2",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dd00",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c25",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bf2",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001086f",
@@ -265,6 +337,9 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000109d6",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b94",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c18",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bac",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bae",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010cc6",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bcf",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010918",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d72e",
@@ -273,16 +348,20 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b29",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108ac",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000109e8",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c47",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001051d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010aea",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108ee",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000ddf6",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010941",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a95",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c1d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010921",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dc01",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010897",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c1f",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001088c",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dbda",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c79",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000103cd",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108c5",
@@ -290,11 +369,13 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001089a",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d926",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b2e",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b1e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001088e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b8d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001081e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a8d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c1a",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010ca7",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d6f9",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a9d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010529",
@@ -304,11 +385,13 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bc9",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b6c",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010910",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000dbdf",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bd7",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000109e3",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010945",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a1e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d805",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c83",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000103c8",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001071e",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107eb",
@@ -328,15 +411,18 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010af1",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010b34",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a64",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000fc5b",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d744",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d757",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d74d",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000d762",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010993",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a7a",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c91",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c13",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000109d8",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001093e",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010cbb",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010beb",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c59",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000108b1",
@@ -357,15 +443,17 @@
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0001051f",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a59",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010ad0",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-0000da43",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010c02",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010873",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010740",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000103d1",
+    "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010bbe",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-00010a11",
     "6fe95fc3-0a6a-4c38-9f57-9165996c8645-000107d1"
   ],
-  "last_sync": "2026-05-08T15:10:46.086076",
-  "last_morning_digest": "2026-05-08",
+  "last_sync": "2026-05-11T17:04:44.158709",
+  "last_morning_digest": "2026-05-11",
   "last_sale_rate": {
     "2452544": {
       "rate": 35000.0,
@@ -478,9 +566,9 @@
       "date": "2024-04-01"
     },
     "SEAL KIT": {
-      "rate": 5500.01,
-      "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
-      "date": "2026-04-30"
+      "rate": 650.0,
+      "party": "P C PATEL INFRA PRIVATE LTD- B",
+      "date": "2025-04-29"
     },
     "DRIVE SHAFT": {
       "rate": 31500.0,
@@ -498,9 +586,9 @@
       "date": "2025-12-27"
     },
     "BELT TENSIONER": {
-      "rate": 1650.0,
-      "party": "BSV EARTHMOVERS",
-      "date": "2026-04-25"
+      "rate": 1890.0,
+      "party": "ALOK TRADING CO.",
+      "date": "2026-05-09"
     },
     "FAN BLADE": {
       "rate": 7500.0,
@@ -518,9 +606,9 @@
       "date": "2026-03-24"
     },
     "WATER PUMP": {
-      "rate": 4500.0,
-      "party": "SHANTI EARTHCON",
-      "date": "2026-05-06"
+      "rate": 12500.0,
+      "party": "ATHARV SALES CORPORATION",
+      "date": "2025-04-22"
     },
     "FLEXIBLE HOSE": {
       "rate": 1170.0,
@@ -613,9 +701,9 @@
       "date": "2024-08-31"
     },
     "POWER STEERING PUMP": {
-      "rate": 10000.0,
-      "party": "P R AUTO SOLUTION",
-      "date": "2026-02-09"
+      "rate": 10500.0,
+      "party": "VARSHA ENTERPRISES (S)",
+      "date": "2025-04-22"
     },
     "1068247": {
       "rate": 3450.0,
@@ -663,9 +751,9 @@
       "date": "2026-05-02"
     },
     "VALVE": {
-      "rate": 1450.0,
-      "party": "BRIJWASI EARTHMOVING SPARES CO.",
-      "date": "2026-05-06"
+      "rate": 5000.0,
+      "party": "KUMAR ENGINEERS - KOLKATA",
+      "date": "2026-05-09"
     },
     "PULLY": {
       "rate": 5500.0,
@@ -673,9 +761,9 @@
       "date": "2024-04-04"
     },
     "FAN": {
-      "rate": 8100.0,
-      "party": "TAYSHETE INDUSTRIES",
-      "date": "2025-06-14"
+      "rate": 6750.0,
+      "party": "INDIA EARTHMOVERS",
+      "date": "2025-04-30"
     },
     "FAN CLUTCH": {
       "rate": 23000.0,
@@ -703,9 +791,9 @@
       "date": "2024-04-05"
     },
     "ACCESSORY TENSIONER": {
-      "rate": 3530.0,
-      "party": "AGARWAL EARTHMOVING ENTERPRISES",
-      "date": "2026-05-06"
+      "rate": 3800.0,
+      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
+      "date": "2025-04-22"
     },
     "23959585 FMX 460": {
       "rate": 16500.0,
@@ -823,9 +911,9 @@
       "date": "2026-03-16"
     },
     "BEARING": {
-      "rate": 6300.0,
-      "party": "SUSHEE INFRA & MINING LIMITED- ND",
-      "date": "2026-05-07"
+      "rate": 1950.0,
+      "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
+      "date": "2025-04-22"
     },
     "AC COMPRESSOR": {
       "rate": 15300.0,
@@ -868,9 +956,9 @@
       "date": "2026-01-14"
     },
     "SHOCK ABSORBER": {
-      "rate": 4250.0,
-      "party": "SUSHEE INFRA & MINING LIMITED- ND",
-      "date": "2026-05-07"
+      "rate": 3900.0,
+      "party": "BHAGWATI ENTERPRISES",
+      "date": "2025-04-29"
     },
     "BALL SEAT": {
       "rate": 250.0,
@@ -883,19 +971,19 @@
       "date": "2026-04-20"
     },
     "RADIATOR ASSLY": {
-      "rate": 21000.0,
-      "party": "ADITYA LUBRICANTS",
-      "date": "2025-11-13"
+      "rate": 24000.0,
+      "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
+      "date": "2025-04-30"
     },
     "FLYWHEEL RING": {
-      "rate": 3600.0,
-      "party": "SETHIYA TRADERS",
-      "date": "2026-04-08"
+      "rate": 6300.0,
+      "party": "P C PATEL INFRA PRIVATE LTD- B",
+      "date": "2026-05-11"
     },
     "SD COMPRESSOR": {
-      "rate": 16000.0,
-      "party": "KUMAR ENGINEERS - KOLKATA",
-      "date": "2026-05-07"
+      "rate": 15000.0,
+      "party": "KARAMJEET SINGH & CO.LTD - KORBA",
+      "date": "2026-05-11"
     },
     "SOLENOID VALVE": {
       "rate": 4950.0,
@@ -1038,9 +1126,9 @@
       "date": "2024-04-25"
     },
     "HANGER": {
-      "rate": 3600.0,
-      "party": "SANATAN TRADING CO.",
-      "date": "2026-05-07"
+      "rate": 4000.0,
+      "party": "RAGHUKUL ENTERPRISES",
+      "date": "2025-04-29"
     },
     "STEERING OIL GUAGE": {
       "rate": 100.0,
@@ -1048,9 +1136,9 @@
       "date": "2024-11-05"
     },
     "COOLANT TANK": {
-      "rate": 5000.0,
-      "party": "SANATAN TRADING CO.",
-      "date": "2026-03-16"
+      "rate": 1500.0,
+      "party": "P C PATEL INFRA PRIVATE LIMITED - MP",
+      "date": "2026-05-09"
     },
     "ENGINE MOUNTING": {
       "rate": 4950.0,
@@ -1073,14 +1161,14 @@
       "date": "2024-04-11"
     },
     "TURBOCHARGER": {
-      "rate": 45000.0,
-      "party": "GALAXY INFRATECH",
-      "date": "2026-04-18"
+      "rate": 53500.0,
+      "party": "DEVSHI EARTHMOVERS PVT.LTD -MH",
+      "date": "2025-04-30"
     },
     "AIR FILTER": {
-      "rate": 1350.0,
-      "party": "SSK ENTERPRISES,  TELANGANA",
-      "date": "2025-08-23"
+      "rate": 3500.0,
+      "party": "GLOBAL IMPEX (S)",
+      "date": "2025-04-30"
     },
     "RECEIVER DRIER": {
       "rate": 1500.0,
@@ -1268,9 +1356,9 @@
       "date": "2025-12-17"
     },
     "BEARING PULLEY": {
-      "rate": 2150.0,
-      "party": "KLP ENTERPRISES",
-      "date": "2026-05-04"
+      "rate": 2400.0,
+      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
+      "date": "2025-04-29"
     },
     "AIR CONTROL VALVE ASSY": {
       "rate": 1800.0,
@@ -1469,13 +1557,13 @@
     },
     "HYDRAULIC CYLINDER": {
       "rate": 9000.0,
-      "party": "P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR",
-      "date": "2026-05-02"
+      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
+      "date": "2026-05-11"
     },
     "REPAIR KIT": {
-      "rate": 6300.0,
-      "party": "SRI RAMESH AUTOMOBILES",
-      "date": "2026-05-08"
+      "rate": 720.0,
+      "party": "P.C.PATEL MAHALAXMI INFRA LLP",
+      "date": "2025-04-30"
     },
     "PILOT VALVE PEDAL": {
       "rate": 25000.0,
@@ -1658,14 +1746,14 @@
       "date": "2024-04-22"
     },
     "CAP": {
-      "rate": 6500.0,
-      "party": "P C PATEL INFRA PVT LTD, RAIGARH",
-      "date": "2026-03-16"
+      "rate": 5500.0,
+      "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
+      "date": "2025-04-22"
     },
     "TRUNNION": {
-      "rate": 13000.0,
-      "party": "P C PATEL INFRA PRIVATE LIMITED, BHAVNAGAR",
-      "date": "2026-01-28"
+      "rate": 12400.0,
+      "party": "ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA",
+      "date": "2025-04-22"
     },
     "BUSH": {
       "rate": 70.0,
@@ -1683,9 +1771,9 @@
       "date": "2024-04-23"
     },
     "STEERING PUMP": {
-      "rate": 48000.0,
-      "party": "EAGLE INFRA INDIA LIMITED",
-      "date": "2026-02-23"
+      "rate": 34000.0,
+      "party": "HARDESH ORES PVT LTD, SANDUR",
+      "date": "2026-05-09"
     },
     "CLUTCH RELEASER": {
       "rate": 19000.0,
@@ -1723,9 +1811,9 @@
       "date": "2024-04-23"
     },
     "CLUTCH SERVO": {
-      "rate": 8500.0,
-      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
-      "date": "2026-04-17"
+      "rate": 9500.0,
+      "party": "ATHARV SALES CORPORATION",
+      "date": "2025-04-22"
     },
     "21293367": {
       "rate": 3550.0,
@@ -2025,7 +2113,7 @@
     "HOSE": {
       "rate": 1980.0,
       "party": "JHARKHAND ENTERPRISES",
-      "date": "2026-04-30"
+      "date": "2026-05-11"
     },
     "DOOR CABLE": {
       "rate": 200.0,
@@ -2403,9 +2491,9 @@
       "date": "2026-02-05"
     },
     "EXHAUST PIPE": {
-      "rate": 11000.0,
-      "party": "AMITHA MINING EQUIPMENTS PVT LTD, HYDERABAD",
-      "date": "2026-03-07"
+      "rate": 12600.0,
+      "party": "DURGA DEVI AUTO MOBILES",
+      "date": "2025-04-30"
     },
     "1163758": {
       "rate": 20000.0,
@@ -2458,9 +2546,9 @@
       "date": "2025-11-21"
     },
     "EXHAUST CLAMP": {
-      "rate": 925.0,
-      "party": "KUMAR ENGINEERS - KOLKATA",
-      "date": "2025-10-09"
+      "rate": 900.0,
+      "party": "P.C.PATEL MAHALAXMI INFRA LLP",
+      "date": "2025-04-30"
     },
     "1809771": {
       "rate": 2907.0,
@@ -2598,9 +2686,9 @@
       "date": "2026-01-21"
     },
     "BUSHING": {
-      "rate": 1450.0,
-      "party": "SRI RAMESH AUTOMOBILES",
-      "date": "2026-05-08"
+      "rate": 2400.0,
+      "party": "P.C.PATEL MAHALAXMI INFRA LLP",
+      "date": "2025-04-22"
     },
     "1345279": {
       "rate": 175.0,
@@ -3373,9 +3461,9 @@
       "date": "2024-05-29"
     },
     "COMPRESSOR COMPLETE CYLINDER HEAD": {
-      "rate": 15500.0,
-      "party": "BSV EARTHMOVERS",
-      "date": "2026-04-24"
+      "rate": 11000.0,
+      "party": "ATHARV SALES CORPORATION",
+      "date": "2025-04-22"
     },
     "2667741": {
       "rate": 11700.0,
@@ -3398,14 +3486,14 @@
       "date": "2026-04-29"
     },
     "WIPER BLADE": {
-      "rate": 450.0,
-      "party": "HLS ASIA LTD.",
-      "date": "2026-04-04"
+      "rate": 650.0,
+      "party": "KUMAR ENGINEERS - KOLKATA",
+      "date": "2025-04-22"
     },
     "BLOWER MOTOR": {
       "rate": 7500.0,
-      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
-      "date": "2026-05-06"
+      "party": "P C PATEL INFRA PVT LTD, RAIGARH",
+      "date": "2026-05-11"
     },
     "AIR DRYER FILTER CATRIDGE": {
       "rate": 3600.0,
@@ -3538,9 +3626,9 @@
       "date": "2024-06-07"
     },
     "TANDAM BOGIE": {
-      "rate": 13500.0,
+      "rate": 13000.0,
       "party": "SANATAN TRADING CO.",
-      "date": "2026-04-18"
+      "date": "2025-04-22"
     },
     "BOWL": {
       "rate": 850.0,
@@ -3618,9 +3706,9 @@
       "date": "2026-03-23"
     },
     "CABIN BUSH": {
-      "rate": 420.0,
-      "party": "SKK INFRA SOLUTIONS PVT LTD",
-      "date": "2024-09-12"
+      "rate": 1450.0,
+      "party": "SRI RAMESH AUTOMOBILES",
+      "date": "2026-05-09"
     },
     "23424897  FRONT WHEEL HUB ASSLY": {
       "rate": 9000.0,
@@ -3688,9 +3776,9 @@
       "date": "2026-05-07"
     },
     "MIRROR": {
-      "rate": 900.0,
-      "party": "SUSHEE INFRA & MINING LIMITED (JH)",
-      "date": "2026-04-09"
+      "rate": 550.0,
+      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
+      "date": "2025-04-29"
     },
     "CLUTCH PULLEY ASSY": {
       "rate": 4750.0,
@@ -3728,9 +3816,9 @@
       "date": "2024-06-19"
     },
     "SENSOR": {
-      "rate": 3000.0,
-      "party": "KARAMJEET SINGH & CO.LTD - KORBA",
-      "date": "2026-05-05"
+      "rate": 2430.0,
+      "party": "P.C.PATEL MAHALAXMI INFRA LLP",
+      "date": "2025-04-30"
     },
     "BOGIE WASHER": {
       "rate": 450.0,
@@ -3778,9 +3866,9 @@
       "date": "2024-06-21"
     },
     "BRAKE DRUM": {
-      "rate": 8977.5,
-      "party": "OPCOMMERCE ONLINE PRIVATE LIMITED",
-      "date": "2026-05-02"
+      "rate": 9750.0,
+      "party": "ADITYA LUBRICANTS",
+      "date": "2025-04-30"
     },
     "22902431": {
       "rate": 4250.0,
@@ -4188,9 +4276,9 @@
       "date": "2025-04-01"
     },
     "HYDRAULIC PUMP": {
-      "rate": 4500.0,
-      "party": "P C PATEL INFRA PRIVATE LTD- B",
-      "date": "2026-04-28"
+      "rate": 24300.0,
+      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
+      "date": "2025-04-22"
     },
     "4T6699,": {
       "rate": 4897.03,
@@ -5093,9 +5181,9 @@
       "date": "2025-04-10"
     },
     "END BIT": {
-      "rate": 3500.0,
-      "party": "INFRASTRUCTURE LOGISTICS PVT LTD",
-      "date": "2026-04-21"
+      "rate": 11662.0,
+      "party": "OPCOMMERCE ONLINE PRIVATE LIMITED",
+      "date": "2025-04-22"
     },
     "2154938": {
       "rate": 2000.0,
@@ -5129,8 +5217,8 @@
     },
     "WASHER PUMP": {
       "rate": 1500.0,
-      "party": "HARDESH ORES PVT LTD, SANDUR",
-      "date": "2025-10-17"
+      "party": "INFRASTRUCTURE LOGISTICS PVT LTD, SANDUR",
+      "date": "2025-04-29"
     },
     "22696301 APV 2384": {
       "rate": 3000.0,
@@ -5468,9 +5556,9 @@
       "date": "2024-09-20"
     },
     "AIR CLEANER ASSLY": {
-      "rate": 15000.0,
-      "party": "TIRUPATI ENTERPRISES, UDAIPUR",
-      "date": "2025-11-07"
+      "rate": 13500.0,
+      "party": "JEET DIESEL  ENGINEERING",
+      "date": "2026-05-09"
     },
     "INJECTOR": {
       "rate": 17000.0,
@@ -5480,7 +5568,7 @@
     "DIPSTIK": {
       "rate": 1350.0,
       "party": "KUMAR ENGINEERS - KOLKATA",
-      "date": "2026-05-06"
+      "date": "2026-05-09"
     },
     "21911584": {
       "rate": 34000.0,
@@ -5898,9 +5986,9 @@
       "date": "2025-04-12"
     },
     "AUTO POWER STEERING PUMP": {
-      "rate": 27000.0,
-      "party": "TAURIAN MPS LIMITED",
-      "date": "2026-05-04"
+      "rate": 9750.0,
+      "party": "ATHARV SALES CORPORATION",
+      "date": "2025-04-22"
     },
     "VO994933": {
       "rate": 45.0,
@@ -8700,7 +8788,7 @@
     "CLAMP": {
       "rate": 1800.0,
       "party": "JHARKHAND ENTERPRISES",
-      "date": "2026-04-30"
+      "date": "2026-05-11"
     },
     "EXCAVATOR COIL": {
       "rate": 7200.0,
@@ -8999,8 +9087,8 @@
     },
     "CLUTCH PLATE SET": {
       "rate": 18000.0,
-      "party": "SASI FORKLIFT & AC DUCT PRODUCTS",
-      "date": "2025-03-25"
+      "party": "P C PATEL INFRA PRIVATE LIMITED - MP",
+      "date": "2026-05-09"
     },
     "21412639": {
       "rate": 1500.0,
@@ -9383,9 +9471,9 @@
       "date": "2025-04-22"
     },
     "VANE PUMP": {
-      "rate": 24300.0,
+      "rate": 7000.0,
       "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
-      "date": "2025-06-10"
+      "date": "2025-04-22"
     },
     "2394784 PUMP": {
       "rate": 22500.0,
@@ -10408,9 +10496,9 @@
       "date": "2026-01-13"
     },
     "CLUTCH CYLINDER": {
-      "rate": 20000.0,
-      "party": "MINING SOLUTIONS",
-      "date": "2025-07-04"
+      "rate": 25000.0,
+      "party": "KARAMJEET SINGH & CO.LTD - KORBA",
+      "date": "2026-05-11"
     },
     "GR5T8366": {
       "rate": 1125.0,
@@ -11843,9 +11931,9 @@
       "date": "2025-10-17"
     },
     "HOLLOW SPRING": {
-      "rate": 3000.0,
-      "party": "HARDESH ORES PVT LTD, SANDUR",
-      "date": "2025-10-17"
+      "rate": 3500.0,
+      "party": "S S MUCHANDI ENGINEERS AND CONTRACTORS",
+      "date": "2026-05-11"
     },
     "TAPPET COVER GASKET": {
       "rate": 3100.0,
@@ -11914,8 +12002,8 @@
     },
     "KING PIN CAP": {
       "rate": 180.0,
-      "party": "P C PATEL INFRA PRIVATE LIMITED - TELANGANA",
-      "date": "2025-12-27"
+      "party": "P C PATEL INFRA PVT LTD, BHUJ",
+      "date": "2026-05-09"
     },
     "BOLT WITH NUT": {
       "rate": 750.0,
@@ -12490,7 +12578,7 @@
     "DRIVE FLANGE": {
       "rate": 8100.0,
       "party": "P C PATEL INFRA PRIVATE LIMITED - MP",
-      "date": "2025-12-26"
+      "date": "2026-05-09"
     },
     "24679905": {
       "rate": 27500.0,
@@ -14059,8 +14147,8 @@
       "date": "2024-07-12"
     },
     "BELT TENSIONER|||ALOK TRADING CO.": {
-      "rate": 1350.0,
-      "date": "2024-07-01"
+      "rate": 1890.0,
+      "date": "2026-05-09"
     },
     "FAN BLADE|||SANATAN TRADING CO.": {
       "rate": 7500.0,
@@ -14759,8 +14847,8 @@
       "date": "2024-08-08"
     },
     "ACCESSORY TENSIONER|||P C PATEL INFRA PRIVATE LIMITED - TELANGANA": {
-      "rate": 4900.0,
-      "date": "2026-02-05"
+      "rate": 3800.0,
+      "date": "2025-04-22"
     },
     "COMP MOTOR|||P C PATEL INFRA PRIVATE LIMITED - MP": {
       "rate": 14000.0,
@@ -18728,7 +18816,7 @@
     },
     "TURBOCHARGER|||DEVSHI EARTHMOVERS PVT.LTD -MH": {
       "rate": 53500.0,
-      "date": "2025-05-09"
+      "date": "2025-04-30"
     },
     "OIL PUMP|||P C PATEL INFRA PRIVATE LIMITED - TELANGANA": {
       "rate": 36000.0,
@@ -19247,8 +19335,8 @@
       "date": "2025-04-14"
     },
     "BEARING|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
-      "rate": 5850.0,
-      "date": "2026-04-21"
+      "rate": 1950.0,
+      "date": "2025-04-22"
     },
     "2145694/1901729|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
       "rate": 3500.0,
@@ -19543,8 +19631,8 @@
       "date": "2025-05-15"
     },
     "ACCESSORY TENSIONER|||ALOK TRADING CO.": {
-      "rate": 1350.0,
-      "date": "2025-06-13"
+      "rate": 2750.0,
+      "date": "2025-04-29"
     },
     "RADIATOR|||AMITHA MINING EQUIPMENTS PVT LTD, HYDERABAD": {
       "rate": 20000.0,
@@ -19607,8 +19695,8 @@
       "date": "2024-08-16"
     },
     "TANDAM BOGIE|||SANATAN TRADING CO.": {
-      "rate": 13500.0,
-      "date": "2026-04-18"
+      "rate": 13000.0,
+      "date": "2025-04-22"
     },
     "CONICAL/ CRADDLE BUSH|||P R AUTO SOLUTION": {
       "rate": 2000.0,
@@ -20104,7 +20192,7 @@
     },
     "WASHER PUMP|||INFRASTRUCTURE LOGISTICS PVT LTD, SANDUR": {
       "rate": 1500.0,
-      "date": "2025-10-17"
+      "date": "2025-04-29"
     },
     "22728175|||TATHAGAT SALES AGENCY": {
       "rate": 10500.0,
@@ -21595,8 +21683,8 @@
       "date": "2024-10-16"
     },
     "BRAKE DRUM|||ADITYA LUBRICANTS": {
-      "rate": 9000.0,
-      "date": "2026-05-02"
+      "rate": 9750.0,
+      "date": "2025-04-30"
     },
     "21451967|||DILIP BUILDCON LIMITED- CHHATTISGARH": {
       "rate": 13500.0,
@@ -21748,7 +21836,7 @@
     },
     "STEERING PUMP|||INFRASTRUCTURE LOGISTICS PVT LTD, SANDUR": {
       "rate": 34000.0,
-      "date": "2025-04-24"
+      "date": "2026-05-09"
     },
     "U BOLT WITH NUTS|||KUMAR ENGINEERS - KOLKATA": {
       "rate": 1450.0,
@@ -22651,8 +22739,8 @@
       "date": "2025-02-24"
     },
     "BRAKE DRUM|||OPCOMMERCE ONLINE PRIVATE LIMITED": {
-      "rate": 8977.5,
-      "date": "2026-05-02"
+      "rate": 8122.5,
+      "date": "2026-05-08"
     },
     "REAR HUB|||KARAMJEET SINGH & CO. LTD.": {
       "rate": 8500.0,
@@ -23035,8 +23123,8 @@
       "date": "2026-02-07"
     },
     "SENSOR|||P.C.PATEL MAHALAXMI INFRA LLP": {
-      "rate": 2250.0,
-      "date": "2026-02-17"
+      "rate": 2430.0,
+      "date": "2025-04-30"
     },
     "GEAR BOX OIL SEAL|||P.C.PATEL MAHALAXMI INFRA LLP": {
       "rate": 720.0,
@@ -23695,8 +23783,8 @@
       "date": "2024-12-31"
     },
     "REPAIR KIT|||HARDESH ORES PVT LTD, SANDUR": {
-      "rate": 950.0,
-      "date": "2026-05-05"
+      "rate": 3600.0,
+      "date": "2025-04-29"
     },
     "RANGE COVER|||HARDESH ORES PVT LTD, SANDUR": {
       "rate": 6500.0,
@@ -23972,7 +24060,7 @@
     },
     "SD COMPRESSOR|||ASSOCIATED SOAPSTONE DISTRIBUTING CO PVT LTD CENTRA": {
       "rate": 16000.0,
-      "date": "2025-05-27"
+      "date": "2025-04-30"
     },
     "1858200  SWITCH|||SSK ENTERPRISES,  TELANGANA": {
       "rate": 4500.0,
@@ -24856,7 +24944,7 @@
     },
     "HYDRAULIC CYLINDER|||P C PATEL INFRA PRIVATE LIMITED - TELANGANA": {
       "rate": 9000.0,
-      "date": "2026-03-07"
+      "date": "2026-05-11"
     },
     "LOCKING CYLINDER|||P C PATEL INFRA PRIVATE LIMITED - TELANGANA": {
       "rate": 4500.0,
@@ -26739,8 +26827,8 @@
       "date": "2025-04-05"
     },
     "CLUTCH SERVO|||HARDESH ORES PVT LTD, SANDUR": {
-      "rate": 11500.0,
-      "date": "2025-11-10"
+      "rate": 21000.0,
+      "date": "2025-04-29"
     },
     "20515515|||KD EARTH MOVERS AND SPARES": {
       "rate": 220.0,
@@ -27223,12 +27311,12 @@
       "date": "2025-04-22"
     },
     "VANE PUMP|||P C PATEL INFRA PRIVATE LIMITED - TELANGANA": {
-      "rate": 24300.0,
-      "date": "2025-06-10"
+      "rate": 7000.0,
+      "date": "2025-04-22"
     },
     "HYDRAULIC PUMP|||P C PATEL INFRA PRIVATE LIMITED - TELANGANA": {
-      "rate": 4500.0,
-      "date": "2026-01-24"
+      "rate": 24300.0,
+      "date": "2025-04-22"
     },
     "2308777|||P C PATEL INFRA PRIVATE LIMITED - TELANGANA": {
       "rate": 56000.0,
@@ -27435,8 +27523,8 @@
       "date": "2025-04-28"
     },
     "SEAL KIT|||P C PATEL INFRA PRIVATE LTD- B": {
-      "rate": 2200.0,
-      "date": "2025-11-24"
+      "rate": 650.0,
+      "date": "2025-04-29"
     },
     "BEARING PULLEY|||P C PATEL INFRA PRIVATE LIMITED - TELANGANA": {
       "rate": 2400.0,
@@ -27472,7 +27560,7 @@
     },
     "FAN|||INDIA EARTHMOVERS": {
       "rate": 6750.0,
-      "date": "2025-05-10"
+      "date": "2025-04-30"
     },
     "EXHAUST CLAMP|||P.C.PATEL MAHALAXMI INFRA LLP": {
       "rate": 900.0,
@@ -27767,8 +27855,8 @@
       "date": "2025-05-13"
     },
     "COMPRESSOR COMPLETE CYLINDER HEAD|||TIRUPATI ENTERPRISES, UDAIPUR": {
-      "rate": 11500.0,
-      "date": "2025-08-21"
+      "rate": 11000.0,
+      "date": "2026-05-09"
     },
     "2078665 REAR LEAF SPRING|||NEXGEN SPARES": {
       "rate": 1640.0,
@@ -30756,7 +30844,7 @@
     },
     "BLOWER MOTOR|||P C PATEL INFRA PVT LTD, RAIGARH": {
       "rate": 7500.0,
-      "date": "2025-09-11"
+      "date": "2026-05-11"
     },
     "22928430|||DURGA INFRA MINING PVT. LTD - TELANGANA": {
       "rate": 10000.0,
@@ -32756,7 +32844,7 @@
     },
     "DRIVE FLANGE|||P C PATEL INFRA PRIVATE LIMITED - MP": {
       "rate": 8100.0,
-      "date": "2025-12-26"
+      "date": "2026-05-09"
     },
     "24679905|||AGRAWAL AGENCIES": {
       "rate": 27500.0,
@@ -33391,8 +33479,8 @@
       "date": "2026-02-05"
     },
     "SD COMPRESSOR|||KARAMJEET SINGH & CO.LTD - KORBA": {
-      "rate": 16000.0,
-      "date": "2026-04-28"
+      "rate": 15000.0,
+      "date": "2026-05-11"
     },
     "ALTERNATOR|||P C PATEL INFRA PVT LTD, RAIGARH": {
       "rate": 14400.0,
@@ -33888,7 +33976,7 @@
     },
     "FLYWHEEL RING|||P C PATEL INFRA PRIVATE LTD- B": {
       "rate": 6300.0,
-      "date": "2026-03-25"
+      "date": "2026-05-11"
     },
     "20592783|||P.C.PATEL MAHALAXMI INFRA LLP": {
       "rate": 800.0,
@@ -35876,7 +35964,7 @@
     },
     "END BIT|||OPCOMMERCE ONLINE PRIVATE LIMITED": {
       "rate": 11662.0,
-      "date": "2026-03-16"
+      "date": "2025-04-22"
     },
     "AIR DRYER|||SUSHEE INFRA & MINING LIMITED (JH)": {
       "rate": 3600.0,
@@ -36428,11 +36516,11 @@
     },
     "HOSE|||JHARKHAND ENTERPRISES": {
       "rate": 1980.0,
-      "date": "2026-04-30"
+      "date": "2026-05-11"
     },
     "CLAMP|||JHARKHAND ENTERPRISES": {
       "rate": 1800.0,
-      "date": "2026-04-30"
+      "date": "2026-05-11"
     },
     "RADIATOR|||RAVEENDRA ROCK PRODUCTS PVT LTD": {
       "rate": 24500.0,
@@ -36576,7 +36664,7 @@
     },
     "DIPSTIK|||KUMAR ENGINEERS - KOLKATA": {
       "rate": 1350.0,
-      "date": "2026-05-06"
+      "date": "2026-05-09"
     },
     "CONDENSOR|||KUMAR ENGINEERS - KOLKATA": {
       "rate": 8200.0,
@@ -36653,6 +36741,94 @@
     "HUB CAP|||SRI RAMESH AUTOMOBILES": {
       "rate": 1800.0,
       "date": "2026-05-08"
+    },
+    "STEERING PUMP|||HARDESH ORES PVT LTD, SANDUR": {
+      "rate": 34000.0,
+      "date": "2026-05-09"
+    },
+    "CLUTCH PLATE SET|||P C PATEL INFRA PRIVATE LIMITED - MP": {
+      "rate": 18000.0,
+      "date": "2026-05-09"
+    },
+    "COOLANT TANK|||P C PATEL INFRA PRIVATE LIMITED - MP": {
+      "rate": 1500.0,
+      "date": "2026-05-09"
+    },
+    "AIR CLEANER ASSLY|||JEET DIESEL  ENGINEERING": {
+      "rate": 13500.0,
+      "date": "2026-05-09"
+    },
+    "KING PIN CAP|||P C PATEL INFRA PVT LTD, BHUJ": {
+      "rate": 180.0,
+      "date": "2026-05-09"
+    },
+    "CABIN BUSH|||SRI RAMESH AUTOMOBILES": {
+      "rate": 1450.0,
+      "date": "2026-05-09"
+    },
+    "VALVE|||KUMAR ENGINEERS - KOLKATA": {
+      "rate": 5000.0,
+      "date": "2026-05-09"
+    },
+    "WATER PUMP|||TIRUPATI ENTERPRISES, UDAIPUR": {
+      "rate": 12500.0,
+      "date": "2026-05-09"
+    },
+    "HANGER|||RAGHUKUL ENTERPRISES": {
+      "rate": 4000.0,
+      "date": "2025-04-29"
+    },
+    "SENSOR|||EAGLE INFRA INDIA LIMITED": {
+      "rate": 4000.0,
+      "date": "2025-04-29"
+    },
+    "SHOCK ABSORBER|||BHAGWATI ENTERPRISES": {
+      "rate": 3900.0,
+      "date": "2025-04-29"
+    },
+    "REPAIR KIT|||P.C.PATEL MAHALAXMI INFRA LLP": {
+      "rate": 720.0,
+      "date": "2025-04-30"
+    },
+    "BUSHING|||P.C.PATEL MAHALAXMI INFRA LLP": {
+      "rate": 2400.0,
+      "date": "2025-04-22"
+    },
+    "POWER STEERING PUMP|||KUMAR ENGINEERS - KOLKATA": {
+      "rate": 22500.0,
+      "date": "2025-04-22"
+    },
+    "WIPER BLADE|||KUMAR ENGINEERS - KOLKATA": {
+      "rate": 650.0,
+      "date": "2025-04-22"
+    },
+    "WATER PUMP|||ATHARV SALES CORPORATION": {
+      "rate": 12500.0,
+      "date": "2025-04-22"
+    },
+    "AUTO POWER STEERING PUMP|||ATHARV SALES CORPORATION": {
+      "rate": 9750.0,
+      "date": "2025-04-22"
+    },
+    "CLUTCH SERVO|||ATHARV SALES CORPORATION": {
+      "rate": 9500.0,
+      "date": "2025-04-22"
+    },
+    "POWER STEERING PUMP|||VARSHA ENTERPRISES (S)": {
+      "rate": 10500.0,
+      "date": "2025-04-22"
+    },
+    "HOLLOW SPRING|||S S MUCHANDI ENGINEERS AND CONTRACTORS": {
+      "rate": 3500.0,
+      "date": "2026-05-11"
+    },
+    "CLUTCH CYLINDER|||KARAMJEET SINGH & CO.LTD - KORBA": {
+      "rate": 25000.0,
+      "date": "2026-05-11"
+    },
+    "FLYWHEEL RING|||P C PATEL INFRA PRIVATE LIMITED - MP": {
+      "rate": 6300.0,
+      "date": "2026-05-11"
     }
   }
 }
