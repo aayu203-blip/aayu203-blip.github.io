@@ -967,6 +967,8 @@ function Nav({
   const [cOpen, setCOpen] = useState(false);
   const bT = useRef(null);
   const cT = useRef(null);
+  const [mOpen, setMOpen] = React.useState(false);
+  React.useEffect(() => { document.body.style.overflow = mOpen ? 'hidden' : ''; return () => { document.body.style.overflow = ''; }; }, [mOpen]);
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', h, {
@@ -1238,92 +1240,78 @@ function Nav({
     onMouseEnter: e => e.currentTarget.style.opacity = 1,
     onMouseLeave: e => e.currentTarget.style.opacity = 0.75
   }, "About")), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 8,
-      flexShrink: 0
-    }
-  }, /*#__PURE__*/React.createElement("button", {
-    onClick: onSearchOpen,
-    "aria-label": "Search parts",
-    style: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: 34,
-      height: 34,
-      borderRadius: 7,
-      border: `1px solid rgba(255,255,255,0.2)`,
-      background: 'rgba(255,255,255,0.07)',
-      color: 'rgba(255,255,255,0.7)',
-      cursor: 'pointer',
-      transition: 'all 0.2s'
-    },
-    onMouseEnter: e => {
-      e.currentTarget.style.borderColor = AMBER;
-      e.currentTarget.style.color = AMBER;
-      e.currentTarget.style.background = 'rgba(255,184,28,0.1)';
-    },
-    onMouseLeave: e => {
-      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
-      e.currentTarget.style.color = 'rgba(255,255,255,0.7)';
-      e.currentTarget.style.background = 'rgba(255,255,255,0.07)';
-    }
-  }, /*#__PURE__*/React.createElement("svg", {
-    width: "14",
-    height: "14",
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "2.3"
-  }, /*#__PURE__*/React.createElement("circle", {
-    cx: "11",
-    cy: "11",
-    r: "8"
-  }), /*#__PURE__*/React.createElement("path", {
-    d: "m21 21-4.35-4.35"
-  }))), /*#__PURE__*/React.createElement("a", {
+    style: {display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0}
+  },
+  /*#__PURE__*/React.createElement("button", {
+    onClick: onSearchOpen, "aria-label": "Search parts",
+    style: {display: 'flex', alignItems: 'center', justifyContent: 'center', width: 36, height: 36, borderRadius: 8, border: '1px solid rgba(255,255,255,0.2)', background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.7)', cursor: 'pointer', transition: 'all 0.2s'},
+    onMouseEnter: e => { e.currentTarget.style.borderColor = AMBER; e.currentTarget.style.color = AMBER; e.currentTarget.style.background = 'rgba(255,184,28,0.1)'; },
+    onMouseLeave: e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)'; e.currentTarget.style.background = 'rgba(255,255,255,0.07)'; }
+  }, /*#__PURE__*/React.createElement("svg", {width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2.3"}, /*#__PURE__*/React.createElement("circle", {cx: "11", cy: "11", r: "8"}), /*#__PURE__*/React.createElement("path", {d: "m21 21-4.35-4.35"}))),
+  /*#__PURE__*/React.createElement("a", {
     href: WA('Hi, I need a quote for heavy equipment spare parts. Please help.'),
-    target: "_blank",
-    rel: "noopener noreferrer",
-    style: {
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: 7,
-      background: WG,
-      color: '#fff',
-      textDecoration: 'none',
-      padding: '8px 16px',
-      borderRadius: 8,
-      fontFamily: B,
-      fontWeight: 700,
-      fontSize: 13,
-      transition: 'opacity 0.2s',
-      boxShadow: '0 2px 14px rgba(37,211,102,0.3)'
+    target: "_blank", rel: "noopener noreferrer", className: "desktop-nav-links",
+    style: {display: 'inline-flex', alignItems: 'center', gap: 7, background: WG, color: '#fff', textDecoration: 'none', padding: '8px 16px', borderRadius: 8, fontFamily: B, fontWeight: 700, fontSize: 13, transition: 'opacity 0.2s', boxShadow: '0 2px 14px rgba(37,211,102,0.3)'},
+    onMouseEnter: e => e.currentTarget.style.opacity = '0.85', onMouseLeave: e => e.currentTarget.style.opacity = '1'
+  }, /*#__PURE__*/React.createElement(WASvg, {s: 13}), " WhatsApp"),
+  /*#__PURE__*/React.createElement("a", {
+    href: "#contact", className: "desktop-nav-links",
+    style: {background: AMBER, color: '#050505', textDecoration: 'none', padding: '8px 18px', borderRadius: 8, fontFamily: D, fontWeight: 700, fontSize: 13, letterSpacing: '0.06em', textTransform: 'uppercase', transition: 'opacity 0.2s'},
+    onMouseEnter: e => e.currentTarget.style.opacity = '0.82', onMouseLeave: e => e.currentTarget.style.opacity = '1'
+  }, "Get Quote"),
+  /*#__PURE__*/React.createElement("button", {
+    onClick: () => setMOpen(o => !o), "aria-label": mOpen ? "Close menu" : "Open menu",
+    "aria-expanded": mOpen, className: "mobile-menu-btn",
+    style: {display: 'none', alignItems: 'center', justifyContent: 'center', width: 38, height: 38, borderRadius: 8, border: `1px solid ${mOpen ? AMBER : 'rgba(255,255,255,0.14)'}`, background: mOpen ? 'rgba(255,184,28,0.1)' : 'rgba(255,255,255,0.06)', color: mOpen ? AMBER : 'rgba(255,255,255,0.75)', cursor: 'pointer', transition: 'all 0.2s', flexShrink: 0}
+  }, mOpen
+    ? /*#__PURE__*/React.createElement("svg", {width: "16", height: "16", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2.5"}, /*#__PURE__*/React.createElement("path", {d: "M18 6 6 18M6 6l12 12"}))
+    : /*#__PURE__*/React.createElement("svg", {width: "20", height: "14", viewBox: "0 0 24 16", fill: "none", stroke: "currentColor", strokeWidth: "2.4"}, /*#__PURE__*/React.createElement("path", {d: "M0 1h24M0 8h24M0 15h24"}))
+  ))),
+  mOpen && /*#__PURE__*/React.createElement(React.Fragment, null,
+    /*#__PURE__*/React.createElement("div", {
+      onClick: () => setMOpen(false),
+      style: {position: 'fixed', inset: 0, zIndex: 1100, background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)'}
+    }),
+    /*#__PURE__*/React.createElement("div", {
+      style: {position: 'fixed', top: 0, right: 0, bottom: 0, width: 'min(300px,100vw)', zIndex: 1101, background: '#080808', borderLeft: '1px solid rgba(255,255,255,0.07)', overflowY: 'auto', display: 'flex', flexDirection: 'column', boxShadow: '-24px 0 80px rgba(0,0,0,0.9)'}
     },
-    onMouseEnter: e => e.currentTarget.style.opacity = '0.85',
-    onMouseLeave: e => e.currentTarget.style.opacity = '1'
-  }, /*#__PURE__*/React.createElement(WASvg, {
-    s: 13
-  }), " WhatsApp"), /*#__PURE__*/React.createElement("a", {
-    href: "#contact",
-    style: {
-      background: AMBER,
-      color: '#050505',
-      textDecoration: 'none',
-      padding: '8px 18px',
-      borderRadius: 8,
-      fontFamily: D,
-      fontWeight: 700,
-      fontSize: 13,
-      letterSpacing: '0.06em',
-      textTransform: 'uppercase',
-      transition: 'opacity 0.2s'
-    },
-    onMouseEnter: e => e.currentTarget.style.opacity = '0.82',
-    onMouseLeave: e => e.currentTarget.style.opacity = '1'
-  }, "Get Quote"))));
+      /*#__PURE__*/React.createElement("div", {style: {display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 18px', borderBottom: '1px solid rgba(255,255,255,0.06)', flexShrink: 0}},
+        /*#__PURE__*/React.createElement("a", {href: "/", style: {display: 'flex', alignItems: 'center'}},
+          /*#__PURE__*/React.createElement("img", {src: "assets/images/ptc-logo.png", alt: "PTC", style: {height: 32, width: 'auto'}})
+        ),
+        /*#__PURE__*/React.createElement("button", {
+          onClick: () => setMOpen(false), "aria-label": "Close menu",
+          style: {width: 34, height: 34, borderRadius: 8, border: '1px solid rgba(255,255,255,0.09)', background: 'rgba(255,255,255,0.04)', color: 'rgba(255,255,255,0.6)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center'}
+        }, /*#__PURE__*/React.createElement("svg", {width: "14", height: "14", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2.5"}, /*#__PURE__*/React.createElement("path", {d: "M18 6 6 18M6 6l12 12"})))
+      ),
+      /*#__PURE__*/React.createElement("div", {style: {flex: 1, overflowY: 'auto'}},
+        ['Home', 'Blog', 'About'].map(name => {
+          const hrefs = {Home: '/', Blog: '/blog/', About: '/about.html'};
+          return /*#__PURE__*/React.createElement("a", {key: name, href: hrefs[name], onClick: () => setMOpen(false), style: {display: 'flex', alignItems: 'center', padding: '14px 18px', color: 'rgba(255,255,255,0.82)', textDecoration: 'none', fontFamily: "'Inter',sans-serif", fontSize: 15, fontWeight: 600, borderBottom: '1px solid rgba(255,255,255,0.04)'}}, name);
+        }),
+        /*#__PURE__*/React.createElement("div", {style: {padding: '18px 18px 8px'}},
+          /*#__PURE__*/React.createElement("div", {style: {fontFamily: "'Barlow Condensed',sans-serif", fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', color: 'rgba(255,255,255,0.28)', textTransform: 'uppercase', marginBottom: 10}}, "Shop by Brand"),
+          /*#__PURE__*/React.createElement("div", {style: {display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 6}},
+            BRANDS_NAV.map(br => /*#__PURE__*/React.createElement("a", {
+              key: br.name, href: `/${br.slug}/`, onClick: () => setMOpen(false),
+              style: {display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '10px 6px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.025)', textDecoration: 'none', color: 'rgba(255,255,255,0.78)', fontFamily: "'Inter',sans-serif", fontSize: 13, fontWeight: 600, textAlign: 'center'}
+            }, br.name))
+          )
+        )
+      ),
+      /*#__PURE__*/React.createElement("div", {style: {padding: '14px 18px 44px', display: 'flex', flexDirection: 'column', gap: 10, borderTop: '1px solid rgba(255,255,255,0.06)', flexShrink: 0}},
+        /*#__PURE__*/React.createElement("a", {
+          href: WA('Hi, I need a quote for heavy equipment spare parts. Please help.'),
+          target: "_blank", rel: "noopener",
+          style: {display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, background: '#25D366', color: '#fff', textDecoration: 'none', padding: '14px', borderRadius: 12, fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 800, fontSize: 16, letterSpacing: '0.05em'}
+        }, /*#__PURE__*/React.createElement(WASvg, {s: 17}), "WhatsApp Us"),
+        /*#__PURE__*/React.createElement("a", {
+          href: "#contact", onClick: () => setMOpen(false),
+          style: {display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#FFB81C', color: '#050505', textDecoration: 'none', padding: '14px', borderRadius: 12, fontFamily: "'Barlow Condensed',sans-serif", fontWeight: 800, fontSize: 16, letterSpacing: '0.05em'}
+        }, "Get Quote")
+      )
+    )
+  ));
 }
 
 // ── HERO SEARCH ───────────────────────────────────────────────────────────────
@@ -1835,11 +1823,11 @@ function HeroSearch({
     onChange: e => setQ(e.target.value),
     onFocus: enter,
     onKeyDown: handleKey,
-    placeholder: "Search by part number or description\u2026 e.g. 'VOE20450734' or 'Komatsu filter'",
+    placeholder: "Part number or description — e.g. VOE20450734",
     style: {
       flex: 1,
       padding: '18px 18px 18px 54px',
-      fontSize: 15,
+      fontSize: 16,
       fontFamily: B,
       fontWeight: 500,
       background: 'transparent',
@@ -2239,21 +2227,23 @@ function Hero() {
       e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)';
       e.currentTarget.style.color = 'rgba(255,255,255,0.8)';
     }
-  }, "Browse by Model \u2193")), countdown && /*#__PURE__*/React.createElement("div", {
+  }, "Browse by Model \u2193")), /*#__PURE__*/React.createElement("div", {
     className: "dispatch-glow",
     style: {
       display: 'inline-flex',
       alignItems: 'center',
-      gap: 24,
+      gap: isMobile ? 6 : 20,
       background: 'rgba(255,255,255,0.05)',
       backdropFilter: 'blur(12px)',
       border: '1px solid rgba(255,255,255,0.1)',
       borderRadius: 40,
-      padding: '10px 28px',
-      flexWrap: 'wrap',
+      padding: isMobile ? '10px 16px' : '10px 28px',
+      flexDirection: isMobile ? 'column' : 'row',
       justifyContent: 'center',
-      opacity: sm ? 0 : 1,
-      transition: 'opacity 0.3s'
+      opacity: sm ? 0 : (countdown ? 1 : 0),
+      visibility: countdown ? 'visible' : 'hidden',
+      transition: 'opacity 0.3s',
+      minHeight: 44
     }
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -2303,7 +2293,7 @@ function Hero() {
       fontSize: 13,
       color: 'rgba(255,255,255,0.5)'
     }
-  }, "\uD83D\uDCE6 Orders placed before 3 PM IST ship today"))));
+  }, "\uD83D\uDCE6 Orders before 3 PM IST ship today"))));
 }
 
 // ── TRUST STRIP ───────────────────────────────────────────────────────────────
@@ -4871,6 +4861,7 @@ function Footer() {
 
 // ── WA FLOAT PILL ─────────────────────────────────────────────────────────────
 function WAFloatPill() {
+  const {isMobile} = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [hov, setHov] = useState(false);
   useEffect(() => {
@@ -4880,6 +4871,7 @@ function WAFloatPill() {
     });
     return () => window.removeEventListener('scroll', h);
   }, []);
+  if (isMobile) return null;
   return /*#__PURE__*/React.createElement("a", {
     href: "https://wa.me/919821037990",
     target: "_blank",
