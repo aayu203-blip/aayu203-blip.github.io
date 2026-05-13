@@ -25,7 +25,6 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://partstrading.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://partstrading.com/blog/index.html"},{"@type":"ListItem","position":3,"name":"Kobelco SK200 / SK210 Parts India — K3V112 Pump, 4HK1 Engine, Filters (2026)","item":"https://partstrading.com/blog/kobelco-sk210-parts-india.html"}]}
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="/assets/css/tailwind.css" rel="stylesheet"/>
 <script src="/assets/js/alpine.min.js"></script>
 <style>
@@ -50,8 +49,44 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;font-family:'Barlow',sans-serif;background:#050505;color:#F0ECE6;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:#080808;}
+::-webkit-scrollbar-thumb{background:#FFB81C;border-radius:2px;}
+a{color:inherit;text-decoration:none;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;}}
+</style>
+<style>
+/* Blog prose — dark override */
+.ptc-article{max-width:740px;margin:0 auto;padding:48px 24px 80px;}
+.ptc-article h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,4vw,30px);font-weight:800;color:#F0ECE6;letter-spacing:.02em;margin:40px 0 14px;}
+.ptc-article h3{font-family:'Barlow',sans-serif;font-size:18px;font-weight:700;color:#F0ECE6;margin:28px 0 10px;}
+.ptc-article p{font-size:15px;line-height:1.8;color:rgba(255,255,255,0.65);margin:0 0 16px;}
+.ptc-article ul,.ptc-article ol{padding-left:24px;margin:0 0 20px;}
+.ptc-article li{font-size:15px;line-height:1.75;color:rgba(255,255,255,0.6);margin-bottom:6px;}
+.ptc-article strong{color:#F0ECE6;font-weight:700;}
+.ptc-article a{color:#FFB81C;text-decoration:underline;text-underline-offset:3px;}
+.ptc-cta{background:#0D0D0D;border:1px solid rgba(255,184,28,0.2);border-radius:14px;padding:36px;margin:48px 0 0;text-align:center;}
+.ptc-cta h3{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:900;color:#F0ECE6;margin:0 0 10px;}
+.ptc-cta p{font-size:14px;color:rgba(255,255,255,0.45);margin:0 0 24px;}
+.ptc-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.ptc-wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-family:'Barlow',sans-serif;font-weight:700;font-size:14px;padding:13px 26px;border-radius:10px;text-decoration:none!important;}
+.ptc-ghost-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,0.2);color:#F0ECE6;font-family:'Barlow',sans-serif;font-weight:600;font-size:14px;padding:13px 26px;border-radius:10px;text-decoration:none!important;}
+.ptc-header{padding:80px 24px 48px;max-width:740px;margin:0 auto;}
+.ptc-header-tag{display:inline-block;background:rgba(255,184,28,0.1);color:#FFB81C;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 14px;border-radius:20px;border:1px solid rgba(255,184,28,0.2);margin-bottom:20px;}
+.ptc-header h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,6vw,54px);font-weight:900;color:#F0ECE6;letter-spacing:-.01em;line-height:1.05;margin:0 0 16px;}
+.ptc-header p{font-size:16px;color:rgba(255,255,255,0.5);line-height:1.7;}
+.ptc-wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);text-decoration:none;}
+@media(max-width:600px){.ptc-header,.ptc-article{padding-left:16px;padding-right:16px;}.ptc-cta-btns{flex-direction:column;align-items:center;}}
+</style>
 </head>
-<body class="bg-gray-50">
+<body>
 <div class="bg-white border-b border-gray-200">
 <div class="max-w-5xl mx-auto px-4 py-3">
 <ol class="flex items-center space-x-2 text-xs text-gray-500">
@@ -94,11 +129,11 @@ K3V112 Pump, 4HK1 Engine, Filters</h1>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <a class="block p-5 bg-gray-50 rounded-2xl border border-gray-200 hover:border-yellow-400 transition-colors" href="/blog/hitachi-zx200-parts-india.html">
 <p class="font-bold text-gray-900 text-sm">Hitachi ZX200 Parts India — Filter Kit, HPV116 Pump, Undercarriage</p>
-<p class="text-xs text-gray-500 mt-1">Similar 20-tonne class excavator — filter intervals, pump diagnostics, 6BG1 engine guide</p>
+<p style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;">Similar 20-tonne class excavator — filter intervals, pump diagnostics, 6BG1 engine guide</p>
 </a>
 <a class="block p-5 bg-gray-50 rounded-2xl border border-gray-200 hover:border-yellow-400 transition-colors" href="/blog/komatsu-pc200-parts-india.html">
 <p class="font-bold text-gray-900 text-sm">Komatsu PC200 Parts India — Filter Kit, Hydraulic Seals, Track Chain</p>
-<p class="text-xs text-gray-500 mt-1">The Kawasaki K3V112 pump guide applies to Kobelco SK200-8 as well</p>
+<p style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;">The Kawasaki K3V112 pump guide applies to Kobelco SK200-8 as well</p>
 </a>
 </div>
 </div>

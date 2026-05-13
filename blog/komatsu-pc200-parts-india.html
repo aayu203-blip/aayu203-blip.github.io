@@ -54,7 +54,6 @@
   ]
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="/assets/css/tailwind.css" rel="stylesheet"/>
 <script src="/assets/js/alpine.min.js"></script>
 <style>
@@ -85,8 +84,44 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;font-family:'Barlow',sans-serif;background:#050505;color:#F0ECE6;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:#080808;}
+::-webkit-scrollbar-thumb{background:#FFB81C;border-radius:2px;}
+a{color:inherit;text-decoration:none;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;}}
+</style>
+<style>
+/* Blog prose — dark override */
+.ptc-article{max-width:740px;margin:0 auto;padding:48px 24px 80px;}
+.ptc-article h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,4vw,30px);font-weight:800;color:#F0ECE6;letter-spacing:.02em;margin:40px 0 14px;}
+.ptc-article h3{font-family:'Barlow',sans-serif;font-size:18px;font-weight:700;color:#F0ECE6;margin:28px 0 10px;}
+.ptc-article p{font-size:15px;line-height:1.8;color:rgba(255,255,255,0.65);margin:0 0 16px;}
+.ptc-article ul,.ptc-article ol{padding-left:24px;margin:0 0 20px;}
+.ptc-article li{font-size:15px;line-height:1.75;color:rgba(255,255,255,0.6);margin-bottom:6px;}
+.ptc-article strong{color:#F0ECE6;font-weight:700;}
+.ptc-article a{color:#FFB81C;text-decoration:underline;text-underline-offset:3px;}
+.ptc-cta{background:#0D0D0D;border:1px solid rgba(255,184,28,0.2);border-radius:14px;padding:36px;margin:48px 0 0;text-align:center;}
+.ptc-cta h3{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:900;color:#F0ECE6;margin:0 0 10px;}
+.ptc-cta p{font-size:14px;color:rgba(255,255,255,0.45);margin:0 0 24px;}
+.ptc-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.ptc-wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-family:'Barlow',sans-serif;font-weight:700;font-size:14px;padding:13px 26px;border-radius:10px;text-decoration:none!important;}
+.ptc-ghost-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,0.2);color:#F0ECE6;font-family:'Barlow',sans-serif;font-weight:600;font-size:14px;padding:13px 26px;border-radius:10px;text-decoration:none!important;}
+.ptc-header{padding:80px 24px 48px;max-width:740px;margin:0 auto;}
+.ptc-header-tag{display:inline-block;background:rgba(255,184,28,0.1);color:#FFB81C;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 14px;border-radius:20px;border:1px solid rgba(255,184,28,0.2);margin-bottom:20px;}
+.ptc-header h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,6vw,54px);font-weight:900;color:#F0ECE6;letter-spacing:-.01em;line-height:1.05;margin:0 0 16px;}
+.ptc-header p{font-size:16px;color:rgba(255,255,255,0.5);line-height:1.7;}
+.ptc-wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);text-decoration:none;}
+@media(max-width:600px){.ptc-header,.ptc-article{padding-left:16px;padding-right:16px;}.ptc-cta-btns{flex-direction:column;align-items:center;}}
+</style>
 </head>
-<body class="bg-gray-50">
+<body>
 <!-- Nav -->
 <!-- Canonical nav: white, sticky, clean -->
 <!-- Canonical nav: white, sticky, clean -->
@@ -327,66 +362,66 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <a class="block p-5 bg-gray-50 rounded-2xl border border-gray-200 hover:border-yellow-400 transition-colors" href="/blog/oem-vs-aftermarket-heavy-equipment-parts-india.html">
 <p class="font-bold text-gray-900 text-sm">OEM vs Aftermarket Heavy Equipment Parts — India Guide</p>
-<p class="text-xs text-gray-500 mt-1">When to pay OEM price and when aftermarket makes sense</p>
+<p style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;">When to pay OEM price and when aftermarket makes sense</p>
 </a>
 <a class="block p-5 bg-gray-50 rounded-2xl border border-gray-200 hover:border-yellow-400 transition-colors" href="/blog/cat-320-excavator-parts-india.html">
 <p class="font-bold text-gray-900 text-sm">CAT 320 Excavator Parts India — 2026 Guide</p>
-<p class="text-xs text-gray-500 mt-1">Hydraulic pump, undercarriage, engine parts for 320C/D/E/F</p>
+<p style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;">Hydraulic pump, undercarriage, engine parts for 320C/D/E/F</p>
 </a>
 </div>
 </div>
 </div>
 <!-- CTA -->
 <!-- Parts cross-links — auto-generated -->
-<div class="max-w-3xl mx-auto px-4 pb-10">
-<div class="border border-yellow-200 rounded-2xl p-6 bg-yellow-50">
-<h2 class="text-lg font-bold text-gray-900 mb-1">Parts Referenced in This Guide</h2>
-<p class="text-sm text-gray-600 mb-4">In stock in Mumbai — WhatsApp us the part number for a same-day quote.</p>
+<div style="max-width:740px;margin:0 auto;padding:0 24px 48px;">
+<div style="border:1px solid rgba(255,184,28,0.15);border-radius:14px;padding:24px;background:#0D0D0D;">
+<h2 style="font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:800;color:#F0ECE6;margin:0 0 6px;">Parts Referenced in This Guide</h2>
+<p style="font-size:13px;color:rgba(255,255,255,0.4);margin:0 0 16px;">In stock in Mumbai — WhatsApp us the part number for a same-day quote.</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-<a class="block bg-white border border-gray-200 rounded-xl p-4 hover:border-yellow-400 hover:shadow-md transition-all group" href="/cat/engine-parts/7w-5095">
+<a style="display:block;background:#111;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:14px 16px;text-decoration:none;" href="/cat/engine-parts/7w-5095">
 <div class="flex items-start justify-between gap-2">
 <div class="flex-1 min-w-0">
-<p class="text-xs font-semibold text-yellow-600 mb-1">CAT · Engine Parts</p>
-<p class="font-bold text-gray-900 text-sm leading-snug group-hover:text-yellow-700">CAT 134 Teeth Flywheel Gear</p>
-<p class="text-xs text-gray-500 mt-1">Part No: 7w-5095</p>
+<p style="font-size:11px;font-weight:700;color:#FFB81C;margin:0 0 4px;">CAT · Engine Parts</p>
+<p style="font-size:13px;font-weight:700;color:#F0ECE6;line-height:1.4;">CAT 134 Teeth Flywheel Gear</p>
+<p style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;">Part No: 7w-5095</p>
 </div>
-<svg class="w-4 h-4 text-gray-400 group-hover:text-yellow-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg style="display:none" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </div>
 </a>
-<a class="block bg-white border border-gray-200 rounded-xl p-4 hover:border-yellow-400 hover:shadow-md transition-all group" href="/cat/bearing-bushing/4543935">
+<a style="display:block;background:#111;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:14px 16px;text-decoration:none;" href="/cat/bearing-bushing/4543935">
 <div class="flex items-start justify-between gap-2">
 <div class="flex-1 min-w-0">
-<p class="text-xs font-semibold text-yellow-600 mb-1">CAT · Bearing &amp; Bushing</p>
-<p class="font-bold text-gray-900 text-sm leading-snug group-hover:text-yellow-700">CAT Main Bearing Kit</p>
-<p class="text-xs text-gray-500 mt-1">Part No: 4543935</p>
+<p style="font-size:11px;font-weight:700;color:#FFB81C;margin:0 0 4px;">CAT · Bearing &amp; Bushing</p>
+<p style="font-size:13px;font-weight:700;color:#F0ECE6;line-height:1.4;">CAT Main Bearing Kit</p>
+<p style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;">Part No: 4543935</p>
 </div>
-<svg class="w-4 h-4 text-gray-400 group-hover:text-yellow-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg style="display:none" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </div>
 </a>
-<a class="block bg-white border border-gray-200 rounded-xl p-4 hover:border-yellow-400 hover:shadow-md transition-all group" href="/cat/engine-parts/338-0718">
+<a style="display:block;background:#111;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:14px 16px;text-decoration:none;" href="/cat/engine-parts/338-0718">
 <div class="flex items-start justify-between gap-2">
 <div class="flex-1 min-w-0">
-<p class="text-xs font-semibold text-yellow-600 mb-1">CAT · Engine Parts</p>
-<p class="font-bold text-gray-900 text-sm leading-snug group-hover:text-yellow-700">CAT Coolant Tank</p>
-<p class="text-xs text-gray-500 mt-1">Part No: 338-0718</p>
+<p style="font-size:11px;font-weight:700;color:#FFB81C;margin:0 0 4px;">CAT · Engine Parts</p>
+<p style="font-size:13px;font-weight:700;color:#F0ECE6;line-height:1.4;">CAT Coolant Tank</p>
+<p style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;">Part No: 338-0718</p>
 </div>
-<svg class="w-4 h-4 text-gray-400 group-hover:text-yellow-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg style="display:none" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </div>
 </a>
-<a class="block bg-white border border-gray-200 rounded-xl p-4 hover:border-yellow-400 hover:shadow-md transition-all group" href="/cat/spare-parts/1065122">
+<a style="display:block;background:#111;border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:14px 16px;text-decoration:none;" href="/cat/spare-parts/1065122">
 <div class="flex items-start justify-between gap-2">
 <div class="flex-1 min-w-0">
-<p class="text-xs font-semibold text-yellow-600 mb-1">CAT · Spare Parts</p>
-<p class="font-bold text-gray-900 text-sm leading-snug group-hover:text-yellow-700">CAT Spare Parts Component</p>
-<p class="text-xs text-gray-500 mt-1">Part No: 1065122</p>
+<p style="font-size:11px;font-weight:700;color:#FFB81C;margin:0 0 4px;">CAT · Spare Parts</p>
+<p style="font-size:13px;font-weight:700;color:#F0ECE6;line-height:1.4;">CAT Spare Parts Component</p>
+<p style="font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;">Part No: 1065122</p>
 </div>
-<svg class="w-4 h-4 text-gray-400 group-hover:text-yellow-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<svg style="display:none" fill="none" stroke="currentColor" viewbox="0 0 24 24">
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </div>

@@ -7,7 +7,7 @@ const {
   useCallback
 } = React;
 const D = "'Barlow Condensed',sans-serif";
-const B = "'Inter',sans-serif";
+const B = "'Barlow',sans-serif";
 const AMBER = '#FFB81C';
 const WG = '#25D366';
 const WA = txt => `https://wa.me/919821037990?text=${encodeURIComponent(txt)}`;

@@ -19,9 +19,6 @@
 <meta name="twitter:site" content="@PTCMumbai">
 <meta name="twitter:creator" content="@PTCMumbai">
 
-<link href="../../assets/css/main.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script defer src="/assets/js/alpine.min.js"></script>
 <script src="/assets/js/ptc-components.js"></script>
 <script type="application/ld+json">
 {
@@ -58,33 +55,49 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;font-family:'Barlow',sans-serif;background:#050505;color:#F0ECE6;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:#080808;}
+::-webkit-scrollbar-thumb{background:#FFB81C;border-radius:2px;}
+a{color:inherit;text-decoration:none;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;}}
+</style>
+<style>
+/* Blog prose — dark override */
+.ptc-article{max-width:740px;margin:0 auto;padding:48px 24px 80px;}
+.ptc-article h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,4vw,30px);font-weight:800;color:#F0ECE6;letter-spacing:.02em;margin:40px 0 14px;}
+.ptc-article h3{font-family:'Barlow',sans-serif;font-size:18px;font-weight:700;color:#F0ECE6;margin:28px 0 10px;}
+.ptc-article p{font-size:15px;line-height:1.8;color:rgba(255,255,255,0.65);margin:0 0 16px;}
+.ptc-article ul,.ptc-article ol{padding-left:24px;margin:0 0 20px;}
+.ptc-article li{font-size:15px;line-height:1.75;color:rgba(255,255,255,0.6);margin-bottom:6px;}
+.ptc-article strong{color:#F0ECE6;font-weight:700;}
+.ptc-article a{color:#FFB81C;text-decoration:underline;text-underline-offset:3px;}
+.ptc-cta{background:#0D0D0D;border:1px solid rgba(255,184,28,0.2);border-radius:14px;padding:36px;margin:48px 0 0;text-align:center;}
+.ptc-cta h3{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:900;color:#F0ECE6;margin:0 0 10px;}
+.ptc-cta p{font-size:14px;color:rgba(255,255,255,0.45);margin:0 0 24px;}
+.ptc-cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.ptc-wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-family:'Barlow',sans-serif;font-weight:700;font-size:14px;padding:13px 26px;border-radius:10px;text-decoration:none!important;}
+.ptc-ghost-btn{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,0.2);color:#F0ECE6;font-family:'Barlow',sans-serif;font-weight:600;font-size:14px;padding:13px 26px;border-radius:10px;text-decoration:none!important;}
+.ptc-header{padding:80px 24px 48px;max-width:740px;margin:0 auto;}
+.ptc-header-tag{display:inline-block;background:rgba(255,184,28,0.1);color:#FFB81C;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 14px;border-radius:20px;border:1px solid rgba(255,184,28,0.2);margin-bottom:20px;}
+.ptc-header h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(32px,6vw,54px);font-weight:900;color:#F0ECE6;letter-spacing:-.01em;line-height:1.05;margin:0 0 16px;}
+.ptc-header p{font-size:16px;color:rgba(255,255,255,0.5);line-height:1.7;}
+.ptc-wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);text-decoration:none;}
+@media(max-width:600px){.ptc-header,.ptc-article{padding-left:16px;padding-right:16px;}.ptc-cta-btns{flex-direction:column;align-items:center;}}
+</style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-900">
+<body>
 
-<header class="pt-32 pb-16 bg-gradient-to-br from-yellow-50 via-white to-gray-100">
-<div class="max-w-4xl mx-auto px-4 text-center">
-  <span class="inline-block py-1 px-3 rounded-full bg-yellow-100 text-yellow-800 text-xs font-bold tracking-wide uppercase mb-4">Road Construction · Nairobi, Kenya 🇰🇪</span>
-  <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">Motor Grader Circle Drive.<br>Sourced and Shipped in 4 Days.</h1>
-  <p class="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">A CAT 140M motor grader down mid-project in Nairobi with a failed circle drive assembly — normally a 6–8 week OEM item. PTC had it on a plane the same day it was confirmed.</p>
-  <div class="mt-8 flex justify-center gap-8 flex-wrap">
-    <div class="text-center">
-      <div class="text-4xl font-black text-yellow-500">4 days</div>
-      <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mt-1">Mumbai to Nairobi</div>
-    </div>
-    <div class="text-center">
-      <div class="text-4xl font-black text-yellow-500">2 hrs</div>
-      <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mt-1">Stock Confirmed</div>
-    </div>
-    <div class="text-center">
-      <div class="text-4xl font-black text-yellow-500">6–8 wks</div>
-      <div class="text-xs font-bold tracking-widest uppercase text-gray-400 mt-1">OEM Lead Time (Avoided)</div>
-    </div>
-  </div>
-</div>
-</header>
+<header style="border-bottom:1px solid rgba(255,255,255,0.06);background:#050505"><div class="ptc-header"><span class="ptc-header-tag">Road Construction · Nairobi, Kenya 🇰🇪</span><h1>Motor Grader Circle Drive.<br>Sourced and Shipped in 4 Days.</h1><p>A CAT 140M motor grader down mid-project in Nairobi with a failed circle drive assembly — normally a 6–8 week OEM item. PTC had it on a plane the same day it was confirmed.</p></div></header>
 
-<article class="max-w-3xl mx-auto px-4 pb-20">
-<div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 prose prose-lg prose-yellow max-w-none">
+<article class="ptc-article">
+
 
 <h2>The Situation on the Ground</h2>
 <p>Road infrastructure contracts in East Africa operate on tight timelines. A contractor working on a Kenyan government road rehabilitation project had a <strong>CAT 140M motor grader</strong> fail mid-project due to a failed circle drive assembly — the ring gear mechanism that rotates the blade.</p>
