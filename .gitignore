@@ -24,6 +24,8 @@ __pycache__/
 *.xlsx
 *.xls
 *.json.bak
+gemini_product_cache.json
+vtp_sitemap_catalog.json
 worker.log
 worker_output.log
 
