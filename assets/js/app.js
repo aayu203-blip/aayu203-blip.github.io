@@ -1322,23 +1322,23 @@ const POPULAR_SEARCHES = [{
   label: 'D13 Injector',
   fill: 'D13 injector'
 }, {
-  label: 'PC200 Filter',
-  fill: 'PC200 filter'
-}, {
-  label: 'CAT 336 Hose',
-  fill: '336 hose'
+  label: 'FH16 Alternator',
+  fill: 'FH16 alternator'
 }, {
   label: 'R580 Clutch Kit',
   fill: 'R580 clutch'
 }, {
-  label: 'ZX300 Track Rollers',
-  fill: 'ZX300 roller'
+  label: 'Komatsu Filter',
+  fill: 'komatsu filter'
 }, {
-  label: 'FH16 Alternator',
-  fill: 'FH16 alternator'
+  label: 'Track Roller',
+  fill: 'track roller'
 }, {
-  label: 'HD785 Brake Pads',
-  fill: 'HD785 brake'
+  label: 'Excavator Seal',
+  fill: 'excavator seal'
+}, {
+  label: 'Hitachi Seal Kit',
+  fill: 'hitachi seal'
 }];
 const WASvg = ({
   s = 14
@@ -1385,14 +1385,23 @@ function HeroSearch({
   const doSearch = (query, b) => {
     if (query.length < 2) return [];
     const lq = query.toLowerCase();
+    const words = lq.split(/\s+/).filter(w => w.length > 1);
+    const matchEntry = (part, desc, brand) => {
+      const combined = `${part} ${desc} ${brand}`.toLowerCase();
+      return words.every(w => combined.includes(w));
+    };
     if (window.productSearchDB && window.productSearchDB.length > 0) {
       return window.productSearchDB.filter(p => {
-        const mq = (p.part || '').toLowerCase().includes(lq) || (p.desc || '').toLowerCase().includes(lq) || (p.brand || '').toLowerCase().includes(lq);
+        const mq = matchEntry(p.part || '', p.desc || '', p.brand || '');
         const mb = b === 'All' || (p.brand || '').toLowerCase() === b.toLowerCase();
         return mq && mb;
       }).slice(0, 6);
     }
-    return SAMPLE_PARTS.filter(p => (p.part.toLowerCase().includes(lq) || p.desc.toLowerCase().includes(lq) || p.brand.toLowerCase().includes(lq)) && (b === 'All' || p.brand === b)).slice(0, 6);
+    return SAMPLE_PARTS.filter(p => {
+      const mq = matchEntry(p.part, p.desc, p.brand);
+      const mb = b === 'All' || p.brand === b;
+      return mq && mb;
+    }).slice(0, 6);
   };
   useEffect(() => {
     setResults(doSearch(q, brand));
