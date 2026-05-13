@@ -1363,6 +1363,7 @@ function HeroSearch({
   const [sm, setSm] = useState(false);
   const [activeIdx, setActiveIdx] = useState(-1);
   const [brand, setBrand] = useState('All');
+  const [dbLoaded, setDbLoaded] = useState(!!(window.productSearchDB && window.productSearchDB.length > 0));
   const [pos, setPos] = useState({
     top: 0,
     left: 0,
@@ -1371,6 +1372,16 @@ function HeroSearch({
   const inputRef = useRef();
   const barRef = useRef();
   const brands = ['All', 'Volvo', 'Scania', 'Komatsu', 'CAT', 'Hitachi'];
+  useEffect(() => {
+    if (dbLoaded) return;
+    const t = setInterval(() => {
+      if (window.productSearchDB && window.productSearchDB.length > 0) {
+        setDbLoaded(true);
+        clearInterval(t);
+      }
+    }, 300);
+    return () => clearInterval(t);
+  }, []);
   const doSearch = (query, b) => {
     if (query.length < 2) return [];
     const lq = query.toLowerCase();
@@ -1386,7 +1397,7 @@ function HeroSearch({
   useEffect(() => {
     setResults(doSearch(q, brand));
     setActiveIdx(-1);
-  }, [q, brand]);
+  }, [q, brand, dbLoaded]);
   const calcPos = () => {
     if (!barRef.current) return;
     const r = barRef.current.getBoundingClientRect();
@@ -1557,6 +1568,30 @@ function HeroSearch({
         color: 'rgba(255,255,255,0.2)'
       }
     }, "Press ESC to close")));
+    if (results.length === 0 && !dbLoaded) return /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: '28px 24px 24px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: 12
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: 16,
+        height: 16,
+        border: '2px solid rgba(255,184,28,0.3)',
+        borderTopColor: AMBER,
+        borderRadius: '50%',
+        animation: 'spin 0.7s linear infinite',
+        flexShrink: 0
+      }
+    }), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontFamily: B,
+        fontSize: 13,
+        color: 'rgba(255,255,255,0.4)'
+      }
+    }, "Loading 70,000+ parts\u2026"));
     if (results.length === 0) return /*#__PURE__*/React.createElement("div", {
       style: {
         padding: '28px 24px 24px'
