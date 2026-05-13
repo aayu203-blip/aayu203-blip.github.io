@@ -45,7 +45,7 @@ button{cursor:pointer;}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
 .reveal.in{opacity:1;transform:none;}
 .section-ghost{position:absolute;top:-20px;right:-10px;font-family:${D};font-size:clamp(80px,12vw,140px);font-weight:900;color:rgba(255,255,255,.018);line-height:1;pointer-events:none;user-select:none;z-index:0;}
-.hero-2col{display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:start;}
+.hero-2col{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start;}
 .spec-2col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
 .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
@@ -66,7 +66,6 @@ button{cursor:pointer;}
   .related-grid{grid-template-columns:1fr 1fr;}
   .reviews-grid{grid-template-columns:1fr;}
   .sidebar-col{display:none;}
-  .hero-2col > div:last-child{order:-1;}
 }
 @media(max-width:480px){.related-grid{grid-template-columns:1fr;}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}}
@@ -190,6 +189,13 @@ function buildHero(){
     <nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:8px;font-family:${B};font-size:12px;color:${T.muted}">${breadcrumb}</nav>
   </div>
   <div class="hero-2col" style="max-width:1360px;margin:0 auto;padding:32px 32px 64px">
+    <div style="animation:fadeUp .6s .12s ease both;display:flex;flex-direction:column;gap:14px">
+      <div style="width:100%;height:200px;background:${T.bgAlt};border:1px solid ${T.border};border-radius:12px;overflow:hidden;position:relative">
+        <img src="${catImg(P.catSlug)}" alt="${esc(P.brand)} ${esc(P.category)}" onerror="this.style.display='none'" style="width:100%;height:100%;object-fit:cover;transition:opacity .4s;opacity:0" onload="this.style.opacity=1">
+        <div style="position:absolute;top:10px;left:10px;background:rgba(5,5,5,.72);backdrop-filter:blur(8px);border:1px solid ${T.border};border-radius:4px;padding:3px 9px;font-family:${D};font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:${T.muted}">${esc(P.condition||'OEM Aftermarket')}</div>
+      </div>
+      <div style="background:${T.bgCard};border:1px solid ${T.border};border-radius:12px;overflow:hidden">${miniSpecs}</div>
+    </div>
     <div style="animation:fadeUp .6s ease both">
       <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;align-items:center">
         <span style="font-family:${D};font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:${T.tagBg};color:${AMBER};border:1px solid rgba(255,184,28,.2);padding:5px 13px;border-radius:4px">${esc(P.brand)}</span>
@@ -224,13 +230,6 @@ function buildHero(){
         </a>
       </div>
       <div style="display:flex;gap:0;flex-wrap:wrap;border-top:1px solid ${T.border};padding-top:20px">${badges}</div>
-    </div>
-    <div style="animation:fadeUp .6s .12s ease both;display:flex;flex-direction:column;gap:14px">
-      <div style="width:100%;aspect-ratio:4/3;background:${T.bgAlt};border:1px solid ${T.border};border-radius:12px;overflow:hidden;position:relative">
-        <img src="${catImg(P.catSlug)}" alt="${esc(P.brand)} ${esc(P.category)}" onerror="this.style.display='none'" style="width:100%;height:100%;object-fit:cover;transition:opacity .4s;opacity:0" onload="this.style.opacity=1">
-        <div style="position:absolute;top:12px;left:12px;background:rgba(5,5,5,.72);backdrop-filter:blur(8px);border:1px solid ${T.border};border-radius:4px;padding:4px 10px;font-family:${D};font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:${T.muted}">${esc(P.condition||'OEM Aftermarket')}</div>
-      </div>
-      <div style="background:${T.bgCard};border:1px solid ${T.border};border-radius:12px;overflow:hidden">${miniSpecs}</div>
     </div>
   </div>
 </section>`;
