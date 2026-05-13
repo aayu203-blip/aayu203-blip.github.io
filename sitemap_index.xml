@@ -94,4 +94,8 @@
     <loc>https://partstrading.com/sitemap-kobelco.xml</loc>
     <lastmod>2026-05-06</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/news-sitemap.xml</loc>
+    <lastmod>2026-05-13</lastmod>
+  </sitemap>
 </sitemapindex>
