@@ -5,11 +5,13 @@
 ## Key Pages
 
 - [Homepage](https://partstrading.com/)
-- [Volvo Spare Parts — 787+ Parts](https://partstrading.com/volvo/)
-- [Komatsu Spare Parts — 25,400+ Parts](https://partstrading.com/komatsu/)
-- [CAT Spare Parts — 20,700+ Parts](https://partstrading.com/cat/)
-- [Scania Spare Parts — 1,700+ Parts](https://partstrading.com/scania/)
-- [Hitachi Spare Parts — 1,965+ Parts](https://partstrading.com/hitachi/)
+- [Volvo Spare Parts — 12,174 Parts](https://partstrading.com/volvo/)
+- [Komatsu Spare Parts — 21,606 Parts](https://partstrading.com/komatsu/)
+- [CAT Spare Parts — 21,100 Parts](https://partstrading.com/cat/)
+- [Scania Spare Parts — 3,320 Parts](https://partstrading.com/scania/)
+- [Hitachi Spare Parts — 3,521 Parts](https://partstrading.com/hitachi/)
+- [Kobelco Spare Parts — 820 Parts](https://partstrading.com/kobelco/)
+- [John Deere Spare Parts — 95 Parts](https://partstrading.com/john-deere/)
 - [Search Parts](https://partstrading.com/search)
 - [Equipment Models](https://partstrading.com/equipment-models/)
 - [Blog & Technical Guides](https://partstrading.com/blog/)
