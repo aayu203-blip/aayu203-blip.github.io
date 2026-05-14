@@ -13,7 +13,7 @@ const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>
 const BRANDS_NAV=[{name:'Volvo',slug:'volvo'},{name:'Scania',slug:'scania'},{name:'Komatsu',slug:'komatsu'},{name:'CAT',slug:'cat'},{name:'Hitachi',slug:'hitachi'},{name:'Hyundai',slug:'hyundai'},{name:'BEML',slug:'beml'},{name:'LiuGong',slug:'liugong'}];
 const CATS_NAV=["Engine Parts","Hydraulic Parts","Filters","Electrical Parts","Transmission Parts","Undercarriage","Brake Parts","Cooling System","Exhaust & Turbo","Seals & O-Rings","Cab & Body Parts","Bearing & Bushing","Fuel System","Drive & Swing Parts","Ground Engaging Tools","Hardware & Fasteners","Suspension & Chassis","Gearbox & Differential","Steering Parts"];
 const CATS_URLS={"Engine Parts":"engine-parts","Hydraulic Parts":"hydraulic-parts","Filters":"filters","Electrical Parts":"electrical-parts","Transmission Parts":"transmission-parts","Undercarriage":"undercarriage","Brake Parts":"brake-parts","Cooling System":"cooling-system","Exhaust & Turbo":"exhaust-turbo","Seals & O-Rings":"seals-orings","Cab & Body Parts":"cab-body-parts","Bearing & Bushing":"bearing-bushing","Fuel System":"fuel-system","Drive & Swing Parts":"drive-swing-parts","Ground Engaging Tools":"ground-engaging-tools","Hardware & Fasteners":"hardware-fasteners","Suspension & Chassis":"suspension-chassis","Gearbox & Differential":"gearbox-differential","Steering Parts":"steering-parts"};
-const PROD_SECS=[{id:'sec-compatible',label:'Compatible Models'},{id:'sec-specs',label:'Specifications'},{id:'sec-related',label:'Related Parts'},{id:'sec-reviews',label:'Reviews'},{id:'sec-faq',label:'FAQ'},{id:'sec-order',label:'Order Now'}];
+const PROD_SECS=[{id:'sec-compatible',label:'Compatible Models'},{id:'sec-specs',label:'Specifications'},{id:'sec-related',label:'Related Parts'},{id:'sec-reviews',label:'Reviews'},{id:'sec-faq',label:'FAQ'},{id:'sec-quickref',label:'Quick Reference'},{id:'sec-order',label:'Order Now'}];
 
 let DISPLAY_NAME=P.name;
 try{const m=document.title.match(/ — (.+?) \|/);if(m){const n=m[1];DISPLAY_NAME=n.startsWith(P.brand+' ')?n.slice(P.brand.length+1):n;}}catch(e){}
@@ -379,6 +379,30 @@ function buildFAQ(){
   </div>`;
 }
 
+// ── QUICK REFERENCE (static visible Q&A — feeds Featured Snippets / PAA) ──
+function buildQuickReference(){
+  const qas=(P.faq&&P.faq.length>0)?P.faq:[
+    {q:`Is ${P.partNo} — ${P.name} available in India?`,a:`Yes. Parts Trading Company stocks ${P.partNo} in Mumbai. Same-day dispatch for orders placed before 3 PM IST. WhatsApp or email to confirm current stock and pricing.`},
+    {q:`What is the minimum order quantity for ${P.partNo}?`,a:`MOQ is 1 piece. Fleet pricing applies at 10+ pieces. PTC supplies fleet operators, authorised ${P.brand} workshops, and parts distributors across India and internationally.`},
+    {q:`Does PTC ship ${P.partNo} internationally?`,a:`Yes — PTC exports from Mumbai to UAE, Saudi Arabia, Qatar, Nigeria, Kenya, South Africa, Bangladesh, Indonesia, Malaysia, UK, Germany, Sweden, and 40+ more countries. Airfreight for urgent orders; sea freight for bulk.`},
+    {q:`What documents come with an order for ${P.partNo}?`,a:`India orders include a GST invoice with correct HSN code. Export orders include commercial invoice, packing list, and certificate of origin. DDP available for select destinations.`},
+    {q:`How do I confirm ${P.partNo} fits my ${P.brand} machine?`,a:`Send your chassis serial number (VIN) on WhatsApp. PTC cross-references the ${P.brand} parts catalogue before dispatch — we confirm fitment before processing any order.`},
+    {q:`Is ${P.partNo} a genuine ${P.brand} part or aftermarket?`,a:`OEM-specification aftermarket — manufactured to original ${P.brand} tolerances and quality standards. PTC does not supply genuine OEM parts or counterfeit parts.`}
+  ];
+  const items=qas.map(f=>`<div style="padding:22px 24px;background:${T.bg}">
+    <h3 style="font-family:${D};font-size:14px;font-weight:800;color:${AMBER};text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px">${esc(f.q)}</h3>
+    <p style="font-family:${B};font-size:14px;color:${T.muted};line-height:1.75">${esc(f.a)}</p>
+  </div>`).join('');
+  return `<div id="sec-quickref" style="position:relative;overflow:hidden;padding:72px 0 64px;border-bottom:1px solid ${T.border}">
+    <div class="section-ghost">06</div>
+    <div class="reveal" style="position:relative;z-index:1">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><div style="width:24px;height:2px;background:${AMBER}"></div><span style="font-family:${D};font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:${AMBER}">Quick Reference</span></div>
+      <h2 style="font-family:${D};font-weight:900;font-size:clamp(26px,3.5vw,48px);color:${T.text};text-transform:uppercase;letter-spacing:-.02em;margin-bottom:40px">Technical Quick Reference</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden">${items}</div>
+    </div>
+  </div>`;
+}
+
 // ── CATEGORY DESC ──
 function buildCategoryDesc(){
   return `<div id="sec-order" style="position:relative;overflow:hidden;padding:64px 0">
@@ -464,6 +488,8 @@ function render(){
     ${buildReviews()}
     <div style="height:1px;background:${T.border}"></div>
     ${buildFAQ()}
+    <div style="height:1px;background:${T.border}"></div>
+    ${buildQuickReference()}
     <div style="height:1px;background:${T.border}"></div>
     ${buildCategoryDesc()}
   `;
