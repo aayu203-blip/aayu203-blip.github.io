@@ -213,6 +213,7 @@ window.getProductPageLink = function (result) {
     + flink('/cat/', 'CAT')
     + flink('/scania/', 'Scania')
     + flink('/hitachi/', 'Hitachi')
+    + flink('/liugong/', 'LiuGong')
     + flink('/jcb-spare-parts-india.html', 'JCB')
     + flink('/doosan-spare-parts-india.html', 'Doosan')
     + flink('/liebherr-spare-parts-india.html', 'Liebherr')
