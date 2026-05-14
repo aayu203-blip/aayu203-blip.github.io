@@ -85,8 +85,13 @@ body{overflow-x:hidden;font-family:'Barlow',sans-serif;background:#050505;color:
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q2JLHK896"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-0Q2JLHK896');</script>
 </head>
 <body>
+<div id="ptc-nav-root"></div>
+<noscript><nav style="background:#111;padding:12px 24px"><a href="/" style="color:#F0ECE6;font-weight:700;font-family:sans-serif">PTC</a> &rsaquo; <a href="/liugong/" style="color:#FFB81C;font-family:sans-serif">LiuGong</a></nav></noscript>
+<script src="/assets/js/ptc-components.js"></script>
 <div id="seo-static">
   <style>
     #seo-static{font-family:Barlow,sans-serif;max-width:1200px;margin:0 auto;padding:40px 24px;color:#F0ECE6;}
@@ -165,5 +170,6 @@ const root = ReactDOM.createRoot ? ReactDOM.createRoot(document.getElementById("
 if (root) root.render(React.createElement(CategoryApp));
 else ReactDOM.render(React.createElement(CategoryApp), document.getElementById("root"));
 </script>
+<div id="ptc-footer-root"></div>
 </body>
 </html>
