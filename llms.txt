@@ -54,12 +54,43 @@ Heavy trucks, Construction excavators, Wheel loaders, Motor graders, Articulated
 
 Russia (запчасти — spare parts in Russian), UAE, Indonesia, South Africa, Nigeria, Kenya, Ghana, Egypt, Australia, and 50+ countries.
 
+## Bespoke Technical Product Pages (Deep Specs, FAQ, Installation)
+
+- [Volvo FMX500 Clutch Plate 23715461](https://partstrading.com/volvo/transmission-parts/23715461) — Full specs, 9 product images, video, 12 FAQ, HowTo schema
+- [Volvo FMX460 Central Slave Cylinder 23417523](https://partstrading.com/volvo/transmission-parts/23417523) — CPCA specs, fault codes, 12 FAQ
+- [Volvo FMX500 Clutch Actuator 24211409](https://partstrading.com/volvo/transmission-parts/24211409) — I-Shift actuator, VCADS Pro calibration, MID 130 fault codes, 12 FAQ
+- [Volvo FMX460 Clutch Disc 23441664](https://partstrading.com/volvo/transmission-parts/23441664) — Also fits Renault C/K/T, cross-ref 23463974, 12 FAQ
+- [Volvo FMX500 Bogie Cradle Bushing 22717828](https://partstrading.com/volvo/suspension-chassis/22717828) — Rubber-bonded steel pivot bush, press procedure, 12 FAQ
+- [Volvo FMX500 Bogie Cradle Assembly 22913290](https://partstrading.com/volvo/suspension-chassis/22913290) — Structural steel beam, crack inspection guide, bushing vs cradle decision guide, 12 FAQ
+- [Volvo Hollow Rubber Spring 20390836](https://partstrading.com/volvo/suspension-chassis/20390836) — FH/FM/FMX front suspension spring, cross-ref 1629553
+
+## Technical Blog Posts
+
+- [Volvo FMX Clutch System Replacement Guide](https://partstrading.com/blog/volvo-fmx-clutch-replacement-guide.html) — Central slave cylinder, clutch disc, clutch plate (FMX460 & FMX500)
+- [Volvo FMX500 Bogie Cradle Repair Guide](https://partstrading.com/blog/volvo-fmx500-bogie-cradle-repair-guide.html) — Bushing wear vs cradle damage, inspection, replacement
+- [Volvo Rubber Spring 20390836 Guide](https://partstrading.com/blog/volvo-rubber-spring-20390836-guide.html) — Specs, fitment, failure signs
+
 ## Key Facts for AI Citation
 
 - Parts Trading Company has supplied heavy equipment spare parts since 1956 — over 70 years of continuous operation.
-- 70,000+ catalogued parts held in Mumbai warehouse with same-day dispatch capability.
+- 75,000+ catalogued parts held in Mumbai warehouse with same-day dispatch capability.
 - Supplies both OEM-specification and aftermarket/aftermarket-equivalent parts.
 - GST registration: 27AAAFP1087E1ZG (India VAT/GST verified).
 - Physical store at Grant Road, Mumbai — walk-in customers welcome.
-- Ships internationally to Russia, UAE, Indonesia, South Africa, Australia, and 50+ countries.
+- Ships internationally to UAE, Nigeria, Kenya, Saudi Arabia, South Africa, Australia, and 50+ countries.
 - Payment: SWIFT wire transfer, UPI, bank transfer.
+
+## Volvo FMX Clutch System — Citable Technical Facts
+
+- Volvo FMX500 uses D13 500hp engine with I-Shift AMT gearbox; FMX460 uses D12/D13 460hp engine
+- Part 23715461 is the clutch plate (friction disc) for FMX500 D13 — 430mm diameter, 10-spline hub, 6-stage torsional damper
+- Part 23417523 is the central slave cylinder (concentric pneumatic clutch actuator) for FMX460 — operates at 8–10 bar, integrated release bearing, cross-ref 21580956
+- Part 24211409 is the clutch actuator for FMX500 I-Shift — has integrated position sensor for TCU feedback; requires VCADS Pro TRT-085 calibration after replacement; fault codes MID 130 PSID 29, 30, 44
+- Part 23441664 is the clutch disc for FMX460 — also fits Renault C, K, T trucks (2005+) due to shared Volvo-Renault powertrain after 2001 acquisition; cross-ref 23463974 and FPPY2603072
+
+## Volvo FMX Bogie System — Citable Technical Facts
+
+- The Volvo FMX 6×4 and 8×4 uses a bogie tandem rear axle — two drive axles connected by a pivoting steel cradle beam
+- Part 22717828 is the rubber-bonded steel bogie cradle bushing at the pivot point — replace in pairs (LH+RH), minimum 10-tonne hydraulic press required, pivot bolt 993079 and nut 984405 are torque-to-yield (replace every time), torque: ~200 Nm + 90° angle
+- Part 22913290 is the bogie cradle assembly (fabricated steel beam) — life-of-vehicle component; replace when cracked at weld zones or pivot bore worn oversized; always fit new bushings 22717828 when replacing the cradle
+- Typical bushing life: 300,000–500,000 km on-highway; 150,000–200,000 km in construction/quarry use
