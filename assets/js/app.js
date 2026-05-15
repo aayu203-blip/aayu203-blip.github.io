@@ -1791,9 +1791,7 @@ function HeroSearch({
         color: 'rgba(255,255,255,0.2)'
       }
     }, "\u2191\u2193 navigate \xB7 Enter to open \xB7 ESC to close"), /*#__PURE__*/React.createElement("a", {
-      href: WA(`Hi, I'm searching for: ${q}. Can you help?`),
-      target: "_blank",
-      rel: "noopener noreferrer",
+      href: q ? `/search?q=${encodeURIComponent(q)}` : '/search',
       style: {
         fontFamily: B,
         fontSize: 12,
@@ -1921,7 +1919,7 @@ function HeroSearch({
     }
   }, "ESC") : /*#__PURE__*/React.createElement("button", {
     onClick: () => {
-      if (q) window.open(WA(`Hi, I need: ${q}. Please check availability and pricing.`), '_blank');
+      if (q) window.location.href = `/search?q=${encodeURIComponent(q)}`;
     },
     style: {
       padding: '0 32px',
