@@ -493,17 +493,20 @@ function render(){
     <div style="height:1px;background:${T.border}"></div>
     ${buildCategoryDesc()}
   `;
+  // BESPOKE HOOK — no-op on all standard pages (they never define these globals)
+  if(window.PTC_CUSTOM_SECS) PROD_SECS.splice(0,PROD_SECS.length,...window.PTC_CUSTOM_SECS);
+  const heroBlock=typeof window.PTC_CUSTOM_HERO==='function'?window.PTC_CUSTOM_HERO():buildHero()+buildXrefStrip();
+  const sectionsBlock=typeof window.PTC_CUSTOM_SECTIONS==='function'?window.PTC_CUSTOM_SECTIONS():sections;
   const html=`
     ${buildProgress()}
     ${buildAnnouncement()}
     ${buildNav()}
     ${buildStickyFilter()}
     <main>
-      ${buildHero()}
-      ${buildXrefStrip()}
+      ${heroBlock}
       <div style="max-width:1360px;margin:0 auto;padding:0 32px;display:flex;gap:56px">
         ${buildSidebar()}
-        <div style="flex:1;min-width:0;padding-bottom:80px">${sections}</div>
+        <div style="flex:1;min-width:0;padding-bottom:80px">${sectionsBlock}</div>
       </div>
       ${buildBottomCTA()}
     </main>

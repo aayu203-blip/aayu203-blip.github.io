@@ -134,127 +134,152 @@ const SAMPLE_PARTS = [{
   part: '20Y-60-31121',
   desc: 'Air Filter Element',
   brand: 'Komatsu',
-  cat: 'Filters'
+  cat: 'Filters',
+  url: '/search?q=20Y-60-31121'
 }, {
   part: 'VOE20450734',
   desc: 'Fuel Filter',
   brand: 'Volvo',
-  cat: 'Filters'
+  cat: 'Filters',
+  url: '/search?q=VOE20450734'
 }, {
   part: '1-87810-338-0',
   desc: 'Hydraulic Pump Assembly',
   brand: 'Hitachi',
-  cat: 'Hydraulic Parts'
+  cat: 'Hydraulic Parts',
+  url: '/search?q=1-87810-338-0'
 }, {
   part: '1544117',
   desc: 'O-Ring Seal Kit',
   brand: 'CAT',
-  cat: 'Seals & O-Rings'
+  cat: 'Seals & O-Rings',
+  url: '/search?q=1544117'
 }, {
   part: '1786801',
   desc: 'Engine Oil Filter',
   brand: 'CAT',
-  cat: 'Filters'
+  cat: 'Filters',
+  url: '/search?q=1786801'
 }, {
   part: 'VOE20726764',
   desc: 'D13 Piston Ring Set',
   brand: 'Volvo',
-  cat: 'Engine Parts'
+  cat: 'Engine Parts',
+  url: '/search?q=VOE20726764'
 }, {
   part: '1387185',
   desc: '3406 Cylinder Liner',
   brand: 'CAT',
-  cat: 'Engine Parts'
+  cat: 'Engine Parts',
+  url: '/search?q=1387185'
 }, {
   part: '20459253',
   desc: 'EC210 Hydraulic Pump',
   brand: 'Volvo',
-  cat: 'Hydraulic Parts'
+  cat: 'Hydraulic Parts',
+  url: '/search?q=20459253'
 }, {
   part: '11110683',
   desc: 'DC13 Fuel Injector',
   brand: 'Scania',
-  cat: 'Fuel System'
+  cat: 'Fuel System',
+  url: '/search?q=11110683'
 }, {
   part: '1768484',
   desc: 'Gearbox Oil Pump',
   brand: 'Scania',
-  cat: 'Transmission'
+  cat: 'Transmission',
+  url: '/search?q=1768484'
 }, {
   part: '1786868',
   desc: '777G Brake Pad Set',
   brand: 'CAT',
-  cat: 'Brake Parts'
+  cat: 'Brake Parts',
+  url: '/search?q=1786868'
 }, {
   part: 'KOM-6754818110',
   desc: 'PC200 Oil Filter',
   brand: 'Komatsu',
-  cat: 'Filters'
+  cat: 'Filters',
+  url: '/search?q=KOM-6754818110'
 }, {
   part: '4448402',
   desc: 'ZX200 Swing Motor',
   brand: 'Hitachi',
-  cat: 'Hydraulic Parts'
+  cat: 'Hydraulic Parts',
+  url: '/search?q=4448402'
 }, {
   part: 'SA8230-09860',
   desc: 'WA380 Air Cleaner',
   brand: 'Komatsu',
-  cat: 'Filters'
+  cat: 'Filters',
+  url: '/search?q=SA8230-09860'
 }, {
   part: 'VOE11703858',
   desc: 'FH16 Alternator 24V',
   brand: 'Volvo',
-  cat: 'Electrical Parts'
+  cat: 'Electrical Parts',
+  url: '/search?q=VOE11703858'
 }, {
   part: '1756432',
   desc: 'R Series Clutch Disc',
   brand: 'Scania',
-  cat: 'Transmission'
+  cat: 'Transmission',
+  url: '/search?q=1756432'
 }, {
   part: '20702172',
   desc: 'EC290 Track Roller',
   brand: 'Volvo',
-  cat: 'Undercarriage'
+  cat: 'Undercarriage',
+  url: '/search?q=20702172'
 }, {
   part: 'KOM-3EB-60-11430',
   desc: 'D85 Drive Sprocket',
   brand: 'Komatsu',
-  cat: 'Undercarriage'
+  cat: 'Undercarriage',
+  url: '/search?q=KOM-3EB-60-11430'
 }, {
   part: 'VOE20546629',
   desc: 'A40 Axle Shaft',
   brand: 'Volvo',
-  cat: 'Drive Parts'
+  cat: 'Drive Parts',
+  url: '/search?q=VOE20546629'
 }, {
   part: '11707317',
   desc: 'DC9 Turbocharger',
   brand: 'Scania',
-  cat: 'Exhaust & Turbo'
+  cat: 'Exhaust & Turbo',
+  url: '/search?q=11707317'
 }, {
   part: '4456722',
   desc: 'EX1200 Bucket Pin',
   brand: 'Hitachi',
-  cat: 'Ground Engaging'
+  cat: 'Ground Engaging',
+  url: '/search?q=4456722'
 }, {
   part: '1556655',
   desc: 'Water Pump Assembly',
   brand: 'CAT',
-  cat: 'Cooling System'
+  cat: 'Cooling System',
+  url: '/search?q=1556655'
 }, {
   part: 'KOM-700-21-28600',
   desc: 'D155 Final Drive',
   brand: 'Komatsu',
-  cat: 'Drive Parts'
+  cat: 'Drive Parts',
+  url: '/search?q=KOM-700-21-28600'
 }, {
   part: 'VOE20531299',
   desc: 'Starter Motor 24V',
   brand: 'Volvo',
-  cat: 'Electrical Parts'
+  cat: 'Electrical Parts',
+  url: '/search?q=VOE20531299'
 }, {
   part: '1786234',
   desc: '320 Boom Cylinder Seal',
   brand: 'CAT',
-  cat: 'Hydraulic Parts'
+  cat: 'Hydraulic Parts',
+  url: '/search?q=1786234'
 }];
 const ACTIVITY = [{
   flag: '🇮🇳',
