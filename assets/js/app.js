@@ -1532,9 +1532,12 @@ function HeroSearch({
     } else if (e.key === 'Enter') {
       if (activeIdx >= 0 && results[activeIdx]) {
         const r = results[activeIdx];
-        window.location.href = r.url || WA(`Hi, I need part ${r.part} — ${r.desc} (${r.brand}). Please confirm stock and price.`);
+        window.location.href = r.url || `/search?q=${encodeURIComponent(q)}`;
+      } else if (results.length > 0) {
+        const r = results[0];
+        window.location.href = r.url || `/search?q=${encodeURIComponent(q)}`;
       } else if (q) {
-        window.location.href = `/search?q=${encodeURIComponent(q)}${brand !== 'All' ? '&brand=' + encodeURIComponent(brand) : ''}`;
+        window.location.href = `/search?q=${encodeURIComponent(q)}`;
       }
     }
   };
@@ -1919,7 +1922,13 @@ function HeroSearch({
     }
   }, "ESC") : /*#__PURE__*/React.createElement("button", {
     onClick: () => {
-      if (q) window.location.href = `/search?q=${encodeURIComponent(q)}`;
+      if (!q) return;
+      if (results.length > 0) {
+        const first = results[0];
+        window.location.href = first.url || `/search?q=${encodeURIComponent(q)}`;
+      } else {
+        window.location.href = `/search?q=${encodeURIComponent(q)}`;
+      }
     },
     style: {
       padding: '0 32px',

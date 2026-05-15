@@ -654,7 +654,7 @@ function useCountdown() {
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 const catToSlug = c => c.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '');
 const catImg = c => `../assets/images/categories/${catToSlug(c)}.jpg`;
-const partLink = partNo => `../products/${partNo.toLowerCase()}.html`;
+const partLink = partNo => { const db = window.productSearchDB; if (db && db.length) { const e = db.find(p => p.part && p.part.toLowerCase() === partNo.toLowerCase()); if (e && e.url) return e.url; } return `/search?q=${encodeURIComponent(partNo)}`; };
 
 // ── READING PROGRESS ──────────────────────────────────────────────────────────
 function ReadingProgress() {
@@ -1217,8 +1217,7 @@ function SearchModal({
       color: T.muted
     }
   }, results.length, " results \xB7 full 51K+ database on WhatsApp"), /*#__PURE__*/React.createElement("a", {
-    href: WA(`Hi, I'm searching for: ${q}. Can you help?`),
-    target: "_blank",
+    href: `/search?q=${encodeURIComponent(q)}`,
     style: {
       fontFamily: B,
       fontSize: 12,
