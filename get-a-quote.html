@@ -71,7 +71,7 @@ body{overflow-x:hidden;font-family:'Barlow',sans-serif;background:#050505;color:
   <meta name="twitter:title" content="Get a Quote — Heavy Equipment Spare Parts | PTC">
   <meta name="twitter:description" content="Request a quote for Volvo, Komatsu, CAT, Scania spare parts. Fast response, competitive pricing, global shipping from Mumbai.">
   <meta name="twitter:image" content="https://partstrading.com/assets/images/warehouse-shelves.jpg">
-  <script src="assets/js/search-db.js" defer></script>
+  <script src="assets/js/search-db.js"></script>
     <link rel="alternate" hreflang="en" href="https://partstrading.com/get-a-quote.html">
   <link rel="alternate" hreflang="x-default" href="https://partstrading.com/get-a-quote.html">
   <link rel="canonical" href="https://partstrading.com/get-a-quote.html">
@@ -207,42 +207,6 @@ const geoShip = geo => {
     via: 'DHL / FedEx'
   };
 };
-const SEARCH_PARTS = [{
-  partNo: '20459253',
-  name: 'EC210 Hydraulic Pump',
-  brand: 'Volvo',
-  cat: 'Hydraulic Parts'
-}, {
-  partNo: 'VOE20450734',
-  name: 'Fuel Filter',
-  brand: 'Volvo',
-  cat: 'Filters'
-}, {
-  partNo: 'VOE14531858',
-  name: 'Main Control Valve',
-  brand: 'Volvo',
-  cat: 'Hydraulic Parts'
-}, {
-  partNo: '1786801',
-  name: 'Engine Oil Filter',
-  brand: 'CAT',
-  cat: 'Filters'
-}, {
-  partNo: '1556655',
-  name: 'Water Pump Assembly',
-  brand: 'CAT',
-  cat: 'Cooling System'
-}, {
-  partNo: '6754818110',
-  name: 'Oil Filter',
-  brand: 'Komatsu',
-  cat: 'Engine Parts'
-}, {
-  partNo: '20Y-60-31121',
-  name: 'Air Filter Element',
-  brand: 'Komatsu',
-  cat: 'Filters'
-}];
 
 // ── SHARED COMPONENTS ─────────────────────────────────────────────────────────
 const WASvg = ({
@@ -670,7 +634,7 @@ function SearchModal({
   const results = useMemo(() => {
     if (q.length < 2) return [];
     const lq = q.toLowerCase();
-    return SEARCH_PARTS.filter(p => (p.partNo.toLowerCase().includes(lq) || p.name.toLowerCase().includes(lq) || p.brand.toLowerCase().includes(lq)) && (brand === 'All' || p.brand === brand)).slice(0, 8);
+    return [];
   }, [q, brand]);
   if (!open) return null;
   return /*#__PURE__*/React.createElement("div", {
@@ -806,7 +770,7 @@ function SearchModal({
       fontSize: 13,
       color: T.muted
     }
-  }, "Full database has 70,000+ parts \u2014 WhatsApp us directly.")), /*#__PURE__*/React.createElement("a", {
+  }, "Full database has 75,000+ parts \u2014 WhatsApp us directly.")), /*#__PURE__*/React.createElement("a", {
     href: WA(`Hi, I'm searching for: ${q}. Please check availability and pricing.`),
     target: "_blank",
     style: {
@@ -894,7 +858,7 @@ function SearchModal({
       fontSize: 12,
       color: T.muted
     }
-  }, results.length, " results \xB7 full 51K+ database on WhatsApp")))), q.length < 2 && /*#__PURE__*/React.createElement("div", {
+  }, results.length, " results \xB7 full 75K+ database on WhatsApp")))), q.length < 2 && /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '20px',
       display: 'flex',
@@ -907,7 +871,7 @@ function SearchModal({
       fontSize: 12,
       color: T.muted
     }
-  }, "70,000+ parts indexed \xB7 type 2+ characters to search"), /*#__PURE__*/React.createElement("span", {
+  }, "75,000+ parts indexed \xB7 type 2+ characters to search"), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: B,
       fontSize: 12,
@@ -921,7 +885,7 @@ function AnnouncementBar() {
   const geo = useGeo();
   const ship = geoShip(geo);
   const shippingItem = ship && geo ? geo.country === 'IN' ? `India domestic: ${ship.est} · same-day dispatch available` : `Ships to ${geo.countryName} in ${ship.est} via ${ship.via}` : 'Shipping to 50+ countries worldwide';
-  const items = ['Order before 3 PM IST — ships same day', shippingItem, '70,000+ parts ready to dispatch, Mumbai', 'WhatsApp · Email · SWIFT & UPI accepted', 'Est. 1956 — 70 years of trusted supply'];
+  const items = ['Order before 3 PM IST — ships same day', shippingItem, '75,000+ parts ready to dispatch, Mumbai', 'WhatsApp · Email · SWIFT & UPI accepted', 'Est. 1956 — 70 years of trusted supply'];
   const all = [...items, ...items];
   return /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1700,7 +1664,7 @@ function AboutPage() {
       flexDirection: 'column',
       gap: 0
     }
-  }, [['1956', 'Founded at Grant Road, Mumbai — serving local construction contractors'], ['1970s', 'Expanded into mining equipment parts — first international shipments'], ['1990s', 'Added Volvo, Scania, Komatsu, CAT to a growing catalogue'], ['2000s', 'Export program launches — Russia, Africa, Southeast Asia become major markets'], ['2020s', '70,000+ part catalogue. Digital search. WhatsApp ordering. Same-day dispatch.']].map(([yr, ev], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['1956', 'Founded at Grant Road, Mumbai — serving local construction contractors'], ['1970s', 'Expanded into mining equipment parts — first international shipments'], ['1990s', 'Added Volvo, Scania, Komatsu, CAT to a growing catalogue'], ['2000s', 'Export program launches — Russia, Africa, Southeast Asia become major markets'], ['2020s', '75,000+ part catalogue. Digital search. WhatsApp ordering. Same-day dispatch.']].map(([yr, ev], i) => /*#__PURE__*/React.createElement("div", {
     key: yr,
     style: {
       display: 'flex',
@@ -1918,7 +1882,7 @@ function AboutPage() {
       gridTemplateColumns: '1fr 1fr',
       gap: 0
     }
-  }, [['70,000+', 'Parts in stock'], ['70+', 'Years operating'], ['16+', 'Equipment brands'], ['50+', 'Countries served']].map(([v, l], i) => /*#__PURE__*/React.createElement("div", {
+  }, [['75,000+', 'Parts in stock'], ['70+', 'Years operating'], ['16+', 'Equipment brands'], ['50+', 'Countries served']].map(([v, l], i) => /*#__PURE__*/React.createElement("div", {
     key: l,
     style: {
       padding: 20,

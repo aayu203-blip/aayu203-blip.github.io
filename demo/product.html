@@ -335,47 +335,6 @@ const BRANDS_NAV = [{
 const CATS_NAV = ['Engine Parts', 'Hydraulic Parts', 'Filters', 'Electrical Parts', 'Transmission Parts', 'Undercarriage', 'Brake Parts', 'Cooling System', 'Exhaust & Turbo', 'Seals & O-Rings', 'Cab & Body Parts', 'Bearing & Bushing', 'Fuel System', 'Drive & Swing Parts', 'Ground Engaging Tools', 'Hardware & Fasteners', 'Suspension & Chassis', 'Gearbox & Differential', 'Steering Parts'];
 
 // ── SEARCH DATA ───────────────────────────────────────────────────────────────
-const SEARCH_PARTS = [{
-  partNo: '20459253',
-  name: 'EC210 Hydraulic Pump',
-  brand: 'Volvo',
-  cat: 'Hydraulic Parts'
-}, {
-  partNo: 'VOE20450734',
-  name: 'Fuel Filter',
-  brand: 'Volvo',
-  cat: 'Filters'
-}, {
-  partNo: 'VOE14531858',
-  name: 'Main Control Valve',
-  brand: 'Volvo',
-  cat: 'Hydraulic Parts'
-}, {
-  partNo: '20702172',
-  name: 'EC290 Track Roller',
-  brand: 'Volvo',
-  cat: 'Undercarriage'
-}, {
-  partNo: '1786801',
-  name: 'Engine Oil Filter',
-  brand: 'CAT',
-  cat: 'Filters'
-}, {
-  partNo: '1556655',
-  name: 'Water Pump Assembly',
-  brand: 'CAT',
-  cat: 'Cooling System'
-}, {
-  partNo: '6754818110',
-  name: 'Oil Filter',
-  brand: 'Komatsu',
-  cat: 'Engine Parts'
-}, {
-  partNo: '20Y-60-31121',
-  name: 'Air Filter Element',
-  brand: 'Komatsu',
-  cat: 'Filters'
-}];
 
 // ── HOOKS ─────────────────────────────────────────────────────────────────────
 function useInView(opts = {}) {
@@ -766,7 +725,7 @@ function SearchModal({
   const results = useMemo(() => {
     if (q.length < 2) return [];
     const lq = q.toLowerCase();
-    return SEARCH_PARTS.filter(p => (p.partNo.toLowerCase().includes(lq) || p.name.toLowerCase().includes(lq) || p.brand.toLowerCase().includes(lq)) && (brand === 'All' || p.brand === brand)).slice(0, 8);
+    return [];
   }, [q, brand]);
   if (!open) return null;
   return /*#__PURE__*/React.createElement("div", {
@@ -1003,9 +962,8 @@ function SearchModal({
       fontSize: 12,
       color: T.muted
     }
-  }, results.length, " results \xB7 full 51K+ database on WhatsApp"), /*#__PURE__*/React.createElement("a", {
-    href: WA(`Hi, I'm searching for: ${q}. Can you help?`),
-    target: "_blank",
+  }, results.length, " results \xB7 full 75K+ database on WhatsApp"), /*#__PURE__*/React.createElement("a", {
+    href: `/search?q=${encodeURIComponent(q)}`,
     style: {
       fontFamily: B,
       fontSize: 12,
@@ -1013,7 +971,7 @@ function SearchModal({
       textDecoration: 'none',
       fontWeight: 700
     }
-  }, "Search all 51K+ \u2192")))), q.length < 2 && /*#__PURE__*/React.createElement("div", {
+  }, "Search all 75K+ \u2192")))), q.length < 2 && /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '20px',
       display: 'flex',

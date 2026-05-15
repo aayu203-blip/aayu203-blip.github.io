@@ -134,7 +134,7 @@ body{overflow-x:hidden;font-family:'Barlow',sans-serif;background:#050505;color:
   <meta name="twitter:title" content="Scania Engine Parts India | Parts Trading Company">
   <meta name="twitter:description" content="Buy Scania engine parts in India — 346+ parts in stock. OEM & aftermarket. Same-day dispatch from Mumbai. WhatsApp +91-98210-37990.">
   <meta name="twitter:image" content="https://partstrading.com/assets/images/warehouse-shelves.jpg">
-  <script src="../../assets/js/search-db.js" defer></script>
+  <script src="../../assets/js/search-db.js"></script>
   
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
@@ -434,67 +434,6 @@ const CATEGORY_TPL = {
   }],
   categorySEO: 'Scania engine parts from Parts Trading Company — Engine parts including cylinder heads, pistons, liners, crankshafts, camshafts, gaskets, and complete overhaul kits. OEM-specification aftermarket, stocked in Mumbai for same-day dispatch worldwide.'
 };
-const SEARCH_PARTS = [{
-  partNo: 'VOE20450734',
-  name: 'Fuel Filter',
-  brand: 'Volvo',
-  cat: 'Filters'
-}, {
-  partNo: '20459253',
-  name: 'EC210 Hydraulic Pump',
-  brand: 'Volvo',
-  cat: 'Hydraulic Parts'
-}, {
-  partNo: 'VOE20726764',
-  name: 'D13 Piston Ring Set',
-  brand: 'Volvo',
-  cat: 'Engine Parts'
-}, {
-  partNo: 'VOE11703858',
-  name: 'FH16 Alternator 24V',
-  brand: 'Volvo',
-  cat: 'Electrical'
-}, {
-  partNo: '20702172',
-  name: 'EC290 Track Roller',
-  brand: 'Volvo',
-  cat: 'Undercarriage'
-}, {
-  partNo: 'VOE20531299',
-  name: 'Starter Motor 24V',
-  brand: 'Volvo',
-  cat: 'Electrical'
-}, {
-  partNo: '14522218',
-  name: 'Hydraulic Seal Kit',
-  brand: 'Volvo',
-  cat: 'Hydraulic Parts'
-}, {
-  partNo: 'VOE14540534',
-  name: 'Swing Motor Assembly',
-  brand: 'Volvo',
-  cat: 'Hydraulic Parts'
-}, {
-  partNo: '1786801',
-  name: 'Engine Oil Filter',
-  brand: 'CAT',
-  cat: 'Filters'
-}, {
-  partNo: '1556655',
-  name: 'Water Pump Assembly',
-  brand: 'CAT',
-  cat: 'Cooling System'
-}, {
-  partNo: '6754818110',
-  name: 'Oil Filter',
-  brand: 'Komatsu',
-  cat: 'Engine Parts'
-}, {
-  partNo: '20Y-60-31121',
-  name: 'Air Filter Element',
-  brand: 'Komatsu',
-  cat: 'Filters'
-}];
 
 // ── NAV DATA ──────────────────────────────────────────────────────────────────
 const BRANDS_NAV = [{
@@ -933,7 +872,7 @@ function SearchModal({
         url: p.url
       }));
     }
-    return SEARCH_PARTS.filter(p => (p.partNo.toLowerCase().includes(lq) || p.name.toLowerCase().includes(lq) || p.brand.toLowerCase().includes(lq)) && (brand === 'All' || p.brand === brand)).slice(0, 8);
+    return [];
   }, [q, brand]);
   if (!open) return null;
   return /*#__PURE__*/React.createElement("div", {
@@ -1069,7 +1008,7 @@ function SearchModal({
       fontSize: 13,
       color: T.muted
     }
-  }, "Full database has 70,000+ parts \u2014 WhatsApp us directly.")), /*#__PURE__*/React.createElement("a", {
+  }, "Full database has 75,000+ parts \u2014 WhatsApp us directly.")), /*#__PURE__*/React.createElement("a", {
     href: WA(`Hi, I'm searching for: ${q}. Please check availability and pricing.`),
     target: "_blank",
     style: {
@@ -1170,7 +1109,7 @@ function SearchModal({
       fontSize: 12,
       color: T.muted
     }
-  }, results.length, " results \xB7 full 51K+ database on WhatsApp"), /*#__PURE__*/React.createElement("a", {
+  }, results.length, " results \xB7 full 75K+ database on WhatsApp"), /*#__PURE__*/React.createElement("a", {
     href: `/search?q=${encodeURIComponent(q)}`,
     style: {
       fontFamily: B,
@@ -1179,7 +1118,7 @@ function SearchModal({
       textDecoration: 'none',
       fontWeight: 700
     }
-  }, "Search all 51K+ \u2192")))), q.length < 2 && /*#__PURE__*/React.createElement("div", {
+  }, "Search all 75K+ \u2192")))), q.length < 2 && /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '20px',
       display: 'flex',
@@ -1192,7 +1131,7 @@ function SearchModal({
       fontSize: 12,
       color: T.muted
     }
-  }, "70,000+ parts indexed \xB7 type 2+ characters to search"), /*#__PURE__*/React.createElement("span", {
+  }, "75,000+ parts indexed \xB7 type 2+ characters to search"), /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: B,
       fontSize: 12,
@@ -1206,7 +1145,7 @@ function AnnouncementBar() {
   const geo = useGeo();
   const ship = geoShip(geo);
   const shippingItem = ship && geo ? geo.country === 'IN' ? `India domestic: ${ship.est} · same-day dispatch available` : `Ships to ${geo.countryName} in ${ship.est} via ${ship.via}` : 'Shipping to 50+ countries worldwide';
-  const items = ['Order before 3 PM IST — ships same day', shippingItem, '70,000+ parts ready to dispatch, Mumbai', 'WhatsApp · Email · SWIFT & UPI accepted', 'Est. 1956 — 70 years of trusted supply'];
+  const items = ['Order before 3 PM IST — ships same day', shippingItem, '75,000+ parts ready to dispatch, Mumbai', 'WhatsApp · Email · SWIFT & UPI accepted', 'Est. 1956 — 70 years of trusted supply'];
   const all = [...items, ...items];
   return /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1888,7 +1827,7 @@ function WAFloatPill({
 
 // ── STATS BAR ─────────────────────────────────────────────────────────────────
 function StatsBar() {
-  const stats = [['70,000+', 'Parts in Stock'], ['70+', 'Years Trusted'], ['16+', 'Brands Covered'], ['50+', 'Countries Served']];
+  const stats = [['75,000+', 'Parts in Stock'], ['70+', 'Years Trusted'], ['16+', 'Brands Covered'], ['50+', 'Countries Served']];
   return /*#__PURE__*/React.createElement("div", {
     style: {
       background: AMBER

@@ -166,42 +166,6 @@ const geoShip = geo => {
     via: 'DHL / FedEx'
   };
 };
-const SEARCH_PARTS = [{
-  partNo: '20459253',
-  name: 'EC210 Hydraulic Pump',
-  brand: 'Volvo',
-  cat: 'Hydraulic Parts'
-}, {
-  partNo: 'VOE20450734',
-  name: 'Fuel Filter',
-  brand: 'Volvo',
-  cat: 'Filters'
-}, {
-  partNo: 'VOE14531858',
-  name: 'Main Control Valve',
-  brand: 'Volvo',
-  cat: 'Hydraulic Parts'
-}, {
-  partNo: '1786801',
-  name: 'Engine Oil Filter',
-  brand: 'CAT',
-  cat: 'Filters'
-}, {
-  partNo: '1556655',
-  name: 'Water Pump Assembly',
-  brand: 'CAT',
-  cat: 'Cooling System'
-}, {
-  partNo: '6754818110',
-  name: 'Oil Filter',
-  brand: 'Komatsu',
-  cat: 'Engine Parts'
-}, {
-  partNo: '20Y-60-31121',
-  name: 'Air Filter Element',
-  brand: 'Komatsu',
-  cat: 'Filters'
-}];
 
 // ── SHARED COMPONENTS ─────────────────────────────────────────────────────────
 const WASvg = ({
@@ -629,7 +593,7 @@ function SearchModal({
   const results = useMemo(() => {
     if (q.length < 2) return [];
     const lq = q.toLowerCase();
-    return SEARCH_PARTS.filter(p => (p.partNo.toLowerCase().includes(lq) || p.name.toLowerCase().includes(lq) || p.brand.toLowerCase().includes(lq)) && (brand === 'All' || p.brand === brand)).slice(0, 8);
+    return [];
   }, [q, brand]);
   if (!open) return null;
   return /*#__PURE__*/React.createElement("div", {
@@ -853,7 +817,7 @@ function SearchModal({
       fontSize: 12,
       color: T.muted
     }
-  }, results.length, " results \xB7 full 51K+ database on WhatsApp")))), q.length < 2 && /*#__PURE__*/React.createElement("div", {
+  }, results.length, " results \xB7 full 75K+ database on WhatsApp")))), q.length < 2 && /*#__PURE__*/React.createElement("div", {
     style: {
       padding: '20px',
       display: 'flex',

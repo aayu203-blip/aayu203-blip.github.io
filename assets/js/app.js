@@ -130,157 +130,6 @@ const ALL_BRANDS = [{
   name: 'LiuGong',
   models: ['835', '855', '856', '877', '906', '915', '925', '936', '946', '956', '966', '976', 'D31', 'D41', 'D51']
 }];
-const SAMPLE_PARTS = [{
-  part: '20Y-60-31121',
-  desc: 'Air Filter Element',
-  brand: 'Komatsu',
-  cat: 'Filters',
-  url: '/search?q=20Y-60-31121'
-}, {
-  part: 'VOE20450734',
-  desc: 'Fuel Filter',
-  brand: 'Volvo',
-  cat: 'Filters',
-  url: '/search?q=VOE20450734'
-}, {
-  part: '1-87810-338-0',
-  desc: 'Hydraulic Pump Assembly',
-  brand: 'Hitachi',
-  cat: 'Hydraulic Parts',
-  url: '/search?q=1-87810-338-0'
-}, {
-  part: '1544117',
-  desc: 'O-Ring Seal Kit',
-  brand: 'CAT',
-  cat: 'Seals & O-Rings',
-  url: '/search?q=1544117'
-}, {
-  part: '1786801',
-  desc: 'Engine Oil Filter',
-  brand: 'CAT',
-  cat: 'Filters',
-  url: '/search?q=1786801'
-}, {
-  part: 'VOE20726764',
-  desc: 'D13 Piston Ring Set',
-  brand: 'Volvo',
-  cat: 'Engine Parts',
-  url: '/search?q=VOE20726764'
-}, {
-  part: '1387185',
-  desc: '3406 Cylinder Liner',
-  brand: 'CAT',
-  cat: 'Engine Parts',
-  url: '/search?q=1387185'
-}, {
-  part: '20459253',
-  desc: 'EC210 Hydraulic Pump',
-  brand: 'Volvo',
-  cat: 'Hydraulic Parts',
-  url: '/search?q=20459253'
-}, {
-  part: '11110683',
-  desc: 'DC13 Fuel Injector',
-  brand: 'Scania',
-  cat: 'Fuel System',
-  url: '/search?q=11110683'
-}, {
-  part: '1768484',
-  desc: 'Gearbox Oil Pump',
-  brand: 'Scania',
-  cat: 'Transmission',
-  url: '/search?q=1768484'
-}, {
-  part: '1786868',
-  desc: '777G Brake Pad Set',
-  brand: 'CAT',
-  cat: 'Brake Parts',
-  url: '/search?q=1786868'
-}, {
-  part: 'KOM-6754818110',
-  desc: 'PC200 Oil Filter',
-  brand: 'Komatsu',
-  cat: 'Filters',
-  url: '/search?q=KOM-6754818110'
-}, {
-  part: '4448402',
-  desc: 'ZX200 Swing Motor',
-  brand: 'Hitachi',
-  cat: 'Hydraulic Parts',
-  url: '/search?q=4448402'
-}, {
-  part: 'SA8230-09860',
-  desc: 'WA380 Air Cleaner',
-  brand: 'Komatsu',
-  cat: 'Filters',
-  url: '/search?q=SA8230-09860'
-}, {
-  part: 'VOE11703858',
-  desc: 'FH16 Alternator 24V',
-  brand: 'Volvo',
-  cat: 'Electrical Parts',
-  url: '/search?q=VOE11703858'
-}, {
-  part: '1756432',
-  desc: 'R Series Clutch Disc',
-  brand: 'Scania',
-  cat: 'Transmission',
-  url: '/search?q=1756432'
-}, {
-  part: '20702172',
-  desc: 'EC290 Track Roller',
-  brand: 'Volvo',
-  cat: 'Undercarriage',
-  url: '/search?q=20702172'
-}, {
-  part: 'KOM-3EB-60-11430',
-  desc: 'D85 Drive Sprocket',
-  brand: 'Komatsu',
-  cat: 'Undercarriage',
-  url: '/search?q=KOM-3EB-60-11430'
-}, {
-  part: 'VOE20546629',
-  desc: 'A40 Axle Shaft',
-  brand: 'Volvo',
-  cat: 'Drive Parts',
-  url: '/search?q=VOE20546629'
-}, {
-  part: '11707317',
-  desc: 'DC9 Turbocharger',
-  brand: 'Scania',
-  cat: 'Exhaust & Turbo',
-  url: '/search?q=11707317'
-}, {
-  part: '4456722',
-  desc: 'EX1200 Bucket Pin',
-  brand: 'Hitachi',
-  cat: 'Ground Engaging',
-  url: '/search?q=4456722'
-}, {
-  part: '1556655',
-  desc: 'Water Pump Assembly',
-  brand: 'CAT',
-  cat: 'Cooling System',
-  url: '/search?q=1556655'
-}, {
-  part: 'KOM-700-21-28600',
-  desc: 'D155 Final Drive',
-  brand: 'Komatsu',
-  cat: 'Drive Parts',
-  url: '/search?q=KOM-700-21-28600'
-}, {
-  part: 'VOE20531299',
-  desc: 'Starter Motor 24V',
-  brand: 'Volvo',
-  cat: 'Electrical Parts',
-  url: '/search?q=VOE20531299'
-}, {
-  part: '1786234',
-  desc: '320 Boom Cylinder Seal',
-  brand: 'CAT',
-  cat: 'Hydraulic Parts',
-  url: '/search?q=1786234'
-}];
 const ACTIVITY = [{
   flag: '🇮🇳',
   name: 'Rajesh M.',
@@ -657,7 +506,7 @@ const COUNTRIES = [{
 }];
 const STATS = [{
   raw: 70000,
-  display: '70,000+',
+  display: '75,000+',
   label: 'Parts in Stock'
 }, {
   raw: 70,
@@ -949,7 +798,7 @@ function AnnouncementBar() {
   const geo = useGeo();
   const ship = geoShipping(geo);
   const shippingItem = ship && geo ? geo.country === 'IN' ? `India domestic: ${ship.est} · same-day dispatch available` : `Ships to ${geo.countryName} in ${ship.est} via ${ship.via}` : 'Shipping to 50+ countries worldwide';
-  const items = ['Order before 3 PM IST — ships same day', shippingItem, '70,000+ parts ready to dispatch, Mumbai', 'WhatsApp · Email · SWIFT & UPI accepted', 'Est. 1956 — 70 years of trusted supply'];
+  const items = ['Order before 3 PM IST — ships same day', shippingItem, '75,000+ parts ready to dispatch, Mumbai', 'WhatsApp · Email · SWIFT & UPI accepted', 'Est. 1956 — 70 years of trusted supply'];
   const all = [...items, ...items];
   return /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1422,11 +1271,7 @@ function HeroSearch({
         return mq && mb;
       }).slice(0, 6);
     }
-    return SAMPLE_PARTS.filter(p => {
-      const mq = matchEntry(p.part, p.desc, p.brand);
-      const mb = b === 'All' || p.brand === b;
-      return mq && mb;
-    }).slice(0, 6);
+    return [];
   };
   useEffect(() => {
     setResults(doSearch(q, brand));
@@ -1598,7 +1443,7 @@ function HeroSearch({
         fontSize: 12,
         color: 'rgba(255,255,255,0.2)'
       }
-    }, "70,000+ parts indexed"), /*#__PURE__*/React.createElement("span", {
+    }, "75,000+ parts indexed"), /*#__PURE__*/React.createElement("span", {
       style: {
         fontFamily: B,
         fontSize: 12,
@@ -1628,7 +1473,7 @@ function HeroSearch({
         fontSize: 13,
         color: 'rgba(255,255,255,0.4)'
       }
-    }, "Loading 70,000+ parts\u2026"));
+    }, "Loading 75,000+ parts\u2026"));
     if (results.length === 0) return /*#__PURE__*/React.createElement("div", {
       style: {
         padding: '28px 24px 24px'
@@ -1649,7 +1494,7 @@ function HeroSearch({
         lineHeight: 1.75,
         marginBottom: 22
       }
-    }, "Our full database has 70,000+ parts. Send this part number on WhatsApp \u2014 we confirm in under 60 minutes."), /*#__PURE__*/React.createElement("a", {
+    }, "Our full database has 75,000+ parts. Send this part number on WhatsApp \u2014 we confirm in under 60 minutes."), /*#__PURE__*/React.createElement("a", {
       href: WA(`Hi, I need: ${q}. Do you have it in stock? Please confirm price and availability.`),
       target: "_blank",
       rel: "noopener noreferrer",
@@ -1802,7 +1647,7 @@ function HeroSearch({
         textDecoration: 'none',
         fontWeight: 700
       }
-    }, "Search all 51K+ \u2192")));
+    }, "Search all 75K+ \u2192")));
   };
   const portalEl = document.getElementById('search-portal');
   return /*#__PURE__*/React.createElement("div", {
@@ -1960,7 +1805,7 @@ function HeroSearch({
       fontSize: 11.5,
       color: 'rgba(255,255,255,0.28)'
     }
-  }, "70,000+ parts indexed \xB7 Type to search"), sm ? /*#__PURE__*/React.createElement("span", {
+  }, "75,000+ parts indexed \xB7 Type to search"), sm ? /*#__PURE__*/React.createElement("span", {
     style: {
       fontFamily: B,
       fontSize: 11.5,
@@ -2225,7 +2070,7 @@ function Hero() {
       maxWidth: 520,
       margin: '0 auto 48px'
     }
-  }, "70,000+ OEM & aftermarket parts for Volvo, Scania, Komatsu, CAT & 16 more brands \u2014 shipped from Mumbai to anywhere in the world."), /*#__PURE__*/React.createElement("div", {
+  }, "75,000+ OEM & aftermarket parts for Volvo, Scania, Komatsu, CAT & 16 more brands \u2014 shipped from Mumbai to anywhere in the world."), /*#__PURE__*/React.createElement("div", {
     className: "fu4",
     style: {
       maxWidth: 820,
@@ -2930,7 +2775,7 @@ function PopularParts() {
     },
     onMouseEnter: e => e.currentTarget.style.opacity = '1',
     onMouseLeave: e => e.currentTarget.style.opacity = '0.8'
-  }, "Search all 70,000+ parts \u2192")), /*#__PURE__*/React.createElement("div", {
+  }, "Search all 75,000+ parts \u2192")), /*#__PURE__*/React.createElement("div", {
     style: {
       display: 'grid',
       gridTemplateColumns: isMobile ? 'repeat(2,1fr)' : 'repeat(auto-fill,minmax(220px,1fr))',
@@ -3490,7 +3335,7 @@ function ProductCategories() {
       letterSpacing: '-0.02em',
       textTransform: 'uppercase'
     }
-  }, "70,000+ Parts", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+  }, "75,000+ Parts", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
     style: {
       color: AMBER
     }
@@ -5073,7 +4918,7 @@ function MobileStickyBar() {
 // ── OPERATIONS STRIP ──────────────────────────────────────────────────────────
 const OPS_SHOTS = [{
   img: 'assets/images/warehouse-shelves.jpg',
-  label: '70,000+ parts. Mumbai.',
+  label: '75,000+ parts. Mumbai.',
   caption: 'Floor-to-ceiling stock across 8 part categories — available for same-day dispatch.'
 }, {
   img: 'assets/images/team-counter.jpg',
