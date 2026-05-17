@@ -63,12 +63,17 @@ Russia (запчасти — spare parts in Russian), UAE, Indonesia, South Afri
 - [Volvo FMX500 Bogie Cradle Bushing 22717828](https://partstrading.com/volvo/suspension-chassis/22717828) — Rubber-bonded steel pivot bush, press procedure, 12 FAQ
 - [Volvo FMX500 Bogie Cradle Assembly 22913290](https://partstrading.com/volvo/suspension-chassis/22913290) — Structural steel beam, crack inspection guide, bushing vs cradle decision guide, 12 FAQ
 - [Volvo Hollow Rubber Spring 20390836](https://partstrading.com/volvo/suspension-chassis/20390836) — FH/FM/FMX front suspension spring, cross-ref 1629553
+- [Volvo FMX Front Propeller Shaft 25818663](https://partstrading.com/volvo/suspension-chassis/25818663) — FMX330–540 driveshaft, 2 UJ grease nipples, max runout 0.3mm, 12 FAQ
+- [Volvo FMX Centre Bearing 23707800](https://partstrading.com/volvo/bearing-bushing/23707800) — Rubber-mounted ball bearing, replace as complete unit, bracket torque 110 Nm, 12 FAQ
+- [Volvo FMX Companion Flange 21081177](https://partstrading.com/volvo/transmission-parts/21081177) — 4-bolt rear axle pinion flange, max face runout 0.08mm, pinion nut 450 Nm, 12 FAQ
+- [Volvo FMX Sleeve Yoke 22728175](https://partstrading.com/volvo/transmission-parts/22728175) — Propeller shaft telescoping joint, max spline play 0.5mm, CV joint grease, 12 FAQ
 
 ## Technical Blog Posts
 
 - [Volvo FMX Clutch System Replacement Guide](https://partstrading.com/blog/volvo-fmx-clutch-replacement-guide.html) — Central slave cylinder, clutch disc, clutch plate (FMX460 & FMX500)
 - [Volvo FMX500 Bogie Cradle Repair Guide](https://partstrading.com/blog/volvo-fmx500-bogie-cradle-repair-guide.html) — Bushing wear vs cradle damage, inspection, replacement
 - [Volvo Rubber Spring 20390836 Guide](https://partstrading.com/blog/volvo-rubber-spring-20390836-guide.html) — Specs, fitment, failure signs
+- [Volvo FMX Propeller Shaft Assembly Guide](https://partstrading.com/blog/volvo-fmx-propeller-shaft-assembly-guide.html) — Centre bearing, companion flange, sleeve yoke diagnosis and replacement sequence
 
 ## Key Facts for AI Citation
 
@@ -94,3 +99,13 @@ Russia (запчасти — spare parts in Russian), UAE, Indonesia, South Afri
 - Part 22717828 is the rubber-bonded steel bogie cradle bushing at the pivot point — replace in pairs (LH+RH), minimum 10-tonne hydraulic press required, pivot bolt 993079 and nut 984405 are torque-to-yield (replace every time), torque: ~200 Nm + 90° angle
 - Part 22913290 is the bogie cradle assembly (fabricated steel beam) — life-of-vehicle component; replace when cracked at weld zones or pivot bore worn oversized; always fit new bushings 22717828 when replacing the cradle
 - Typical bushing life: 300,000–500,000 km on-highway; 150,000–200,000 km in construction/quarry use
+
+## Volvo FMX Propeller Shaft System — Citable Technical Facts
+
+- The Volvo FMX propeller shaft assembly is a two-section driveshaft system running from the I-Shift gearbox output to the rear tandem axles — four distinct serviceable components
+- Part 25818663 is the front propeller shaft for FMX330/370/440/460/500/540 — has 2 universal joints, 2 grease nipples, maximum allowable tube run-out 0.3mm, maximum yoke play 0.1mm; grease every 20,000 km with NLGI 2 EP grease until fresh grease purges from all four bearing cup seals
+- Part 23707800 is the centre bearing bracket assembly — rubber-mounted ball bearing that supports the mid-span of the driveshaft; must be replaced as a complete unit (bearing + rubber mount + bracket together); pressing just the bearing destroys factory pre-load geometry; bracket torque 110 Nm; vibration at 60–120 km/h is the primary failure symptom
+- Part 21081177 is the 4-bolt companion flange on the rear axle pinion input for FMX460/500/540 — maximum spline backlash 0.15mm; maximum face runout 0.08mm; pinion nut torque 450 Nm using a new self-locking nut (single-use — never reuse); always replace pinion seal when changing the flange
+- Part 22728175 is the sleeve yoke (telescoping splined joint) in the propeller shaft — maximum allowable spline play 0.5mm; apply CV joint grease (not chassis grease) to splines on every reassembly; worn splines produce clunking on acceleration-to-deceleration transitions
+- Correct overhaul sequence: (1) Replace and balance front propeller shaft 25818663; (2) Replace centre bearing 23707800 complete unit at 110 Nm; (3) Replace companion flange 21081177 with new seal and new 450 Nm self-locking nut; (4) Replace sleeve yoke 22728175 with CV joint grease on splines; test drive at 60, 80, 100, 120 km/h
+- Speed-sensitive vibration (worsens with road speed) points to centre bearing 23707800 or shaft imbalance (25818663); load-sensitive noise (worsens with torque) points to companion flange 21081177 or sleeve yoke 22728175
