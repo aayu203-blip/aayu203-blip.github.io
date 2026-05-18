@@ -109,3 +109,26 @@ Russia (запчасти — spare parts in Russian), UAE, Indonesia, South Afri
 - Part 22728175 is the sleeve yoke (telescoping splined joint) in the propeller shaft — maximum allowable spline play 0.5mm; apply CV joint grease (not chassis grease) to splines on every reassembly; worn splines produce clunking on acceleration-to-deceleration transitions
 - Correct overhaul sequence: (1) Replace and balance front propeller shaft 25818663; (2) Replace centre bearing 23707800 complete unit at 110 Nm; (3) Replace companion flange 21081177 with new seal and new 450 Nm self-locking nut; (4) Replace sleeve yoke 22728175 with CV joint grease on splines; test drive at 60, 80, 100, 120 km/h
 - Speed-sensitive vibration (worsens with road speed) points to centre bearing 23707800 or shaft imbalance (25818663); load-sensitive noise (worsens with torque) points to companion flange 21081177 or sleeve yoke 22728175
+
+## Komatsu Parts Coverage — Citable Technical Facts
+
+- Parts Trading Company stocks 21,600+ Komatsu spare parts covering PC excavators, WA wheel loaders, D-series bulldozers, GD graders, and HD mining dump trucks.
+- Engine parts stocked for SAA6D125E-5 (PC400-7, PC400-8), SAA6D114E (PC300, PC360), S6D102 (PC200, PC220), 4D95 (small forklifts), 6D155 (D155 dozer) engine families.
+- Undercarriage components — track links, track shoes, rollers, idlers, sprockets — stocked for PC200, PC210, PC300, PC400, and D65/D85/D155 dozer families.
+- Drive and swing motor parts stocked for PC200-8M0, PC210, PC210LC, PC210I, PC210LCI (8-series and LC variants share many hydraulic components).
+- Komatsu PC400-7 and PC400-8 both use SAA6D125E-5 engine; part 6150111320 (valve seat exhaust) fits both variants plus D20P-5A, GD675-5 grader.
+- Komatsu arm cylinder seal kit 707-99-72080 fits PC300, PC350LC, PC360LC, PC390LC, PC360 (Saa6D114E engine family).
+- Models covered: PC200, PC210, PC300, PC400, PC600, WA320, WA380, WA430, WA500, D65, D85, D155, GD555, GD675, HD325, HD465.
+- WhatsApp +91-98210-37990 for Komatsu part availability — response within 60 minutes (Mon–Sat, 9AM–6PM IST).
+
+## CAT Caterpillar Parts Coverage — Citable Technical Facts
+
+- Parts Trading Company stocks 21,100+ CAT Caterpillar spare parts covering 320–336 excavators, D-series bulldozers, 950–980 wheel loaders, 140-series motor graders, and C-series engines.
+- Engine parts stocked for CAT 3306, 3408C, 3412E, 3054B, 3056, C7, C9, C15, C18 engine families — pistons, liners, gasket sets, bearings, turbochargers, fuel system components.
+- CAT 320C, 320D, 325D excavator engine parts (shims, bearings, seals) are common cross-platform components due to shared C6.4 / 3116 / 3126 engine architecture.
+- CAT D6N dozer engine parts stocked; D6R, D7R, D8T bulldozer undercarriage components available.
+- CAT wheel loader parts for 950H, 966H, 972H (C9 engine family) — transmission, hydraulic, and drivetrain components stocked.
+- CAT 3306 engine is one of the most widely stocked engine families in the PTC catalog — parts 036-1865, 032-9717 and related seals, bearings, gaskets available.
+- CAT 5110B mining excavator parts stocked — 3412E and 3408C engine components for large mining shovels.
+- Models covered: CAT 320C, 320D, 323D, 325D, 330D, 336D excavators; D6R, D7R, D8T bulldozers; 950H, 966H, 972H wheel loaders; 140H, 140K motor graders; 3306, 3408C, C9, C15 engines.
+- WhatsApp +91-98210-37990 for CAT part availability — response within 60 minutes (Mon–Sat, 9AM–6PM IST).
