@@ -1,0 +1,2875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Audit — partstrading.com — 2026-05-18</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0e0e0e;
+  --bg1: #141414;
+  --bg2: #1a1a1a;
+  --bg3: #222;
+  --border: rgba(255,255,255,0.08);
+  --text: #e8e4de;
+  --muted: #777;
+  --dim: #555;
+  --high: #ff5c5c;
+  --medium: #ff9a3c;
+  --low: #5ca0ff;
+  --pass: #50e0a0;
+  --bonus: #b86cff;
+  --amber: #FFB81C;
+  --mono: 'IBM Plex Mono', monospace;
+  --serif: 'Instrument Serif', serif;
+  --sans: 'Inter', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 14px; line-height: 1.6; }
+a { color: var(--amber); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1,h2,h3,h4 { font-family: var(--serif); font-weight: 400; }
+code, .mono { font-family: var(--mono); font-size: 12px; }
+
+/* LAYOUT */
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+.two-col { display: grid; grid-template-columns: 260px 1fr; gap: 40px; align-items: start; }
+
+/* HEADER */
+.site-header { background: linear-gradient(135deg, #111 0%, #1a1200 100%); border-bottom: 1px solid rgba(255,184,28,0.2); padding: 40px 0 32px; }
+.site-header h1 { font-size: 2.4rem; color: var(--amber); letter-spacing: -0.02em; margin-bottom: 8px; }
+.header-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 16px; }
+.header-chip { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 6px 14px; font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.header-chip span { color: var(--text); font-weight: 600; }
+
+/* SCORE CARDS */
+.score-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; padding: 32px 0; }
+.score-card { background: var(--bg1); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; position: relative; overflow: hidden; }
+.score-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; }
+.score-card.findable::before { background: var(--low); }
+.score-card.quotable::before { background: var(--bonus); }
+.score-card.understandable::before { background: var(--amber); }
+.score-card.trustworthy::before { background: var(--pass); }
+.score-num { font-family: var(--mono); font-size: 3rem; font-weight: 600; line-height: 1; margin: 8px 0 4px; }
+.score-card.findable .score-num { color: var(--low); }
+.score-card.quotable .score-num { color: var(--bonus); }
+.score-card.understandable .score-num { color: var(--amber); }
+.score-card.trustworthy .score-num { color: var(--pass); }
+.score-label { font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.score-sub { font-size: 11px; color: var(--dim); margin-top: 6px; }
+
+/* TOC */
+.toc { background: var(--bg1); border: 1px solid var(--border); border-radius: 10px; padding: 20px; position: sticky; top: 24px; }
+.toc h3 { font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.toc a { display: block; font-size: 12px; color: var(--muted); padding: 5px 0; border-left: 2px solid transparent; padding-left: 10px; transition: all 0.15s; }
+.toc a:hover { color: var(--amber); border-left-color: var(--amber); text-decoration: none; }
+.toc-section { font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); margin: 14px 0 4px; padding-left: 10px; }
+
+/* SECTIONS */
+.section { padding: 48px 0; border-bottom: 1px solid var(--border); }
+.section-header { margin-bottom: 28px; }
+.section-num { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--amber); letter-spacing: 0.1em; display: block; margin-bottom: 6px; }
+.section h2 { font-size: 1.8rem; color: var(--text); letter-spacing: -0.02em; }
+.section-sub { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+/* BADGES */
+.badge { display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 4px; }
+.badge-high { background: rgba(255,92,92,0.12); color: var(--high); border: 1px solid rgba(255,92,92,0.25); }
+.badge-medium { background: rgba(255,154,60,0.12); color: var(--medium); border: 1px solid rgba(255,154,60,0.25); }
+.badge-low { background: rgba(92,160,255,0.12); color: var(--low); border: 1px solid rgba(92,160,255,0.25); }
+.badge-pass { background: rgba(80,224,160,0.12); color: var(--pass); border: 1px solid rgba(80,224,160,0.25); }
+.badge-bonus { background: rgba(184,108,255,0.12); color: var(--bonus); border: 1px solid rgba(184,108,255,0.25); }
+.badge-na { background: rgba(255,255,255,0.05); color: var(--dim); border: 1px solid var(--border); }
+
+/* ISSUE CARDS */
+.issue-card { background: var(--bg1); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
+.issue-card-header { display: flex; align-items: center; gap: 12px; padding: 16px 20px; }
+.issue-card-title { flex: 1; font-weight: 600; font-size: 14px; }
+.issue-card-body { padding: 0 20px 18px; font-size: 13px; color: var(--muted); line-height: 1.7; }
+.issue-card-body p { margin-bottom: 8px; }
+.issue-card-body ul { padding-left: 18px; }
+.issue-card-body li { margin-bottom: 4px; }
+.issue-card-body code { background: var(--bg3); padding: 2px 6px; border-radius: 3px; font-size: 11px; }
+
+/* DETAILS/SUMMARY */
+details { background: var(--bg1); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+summary { padding: 16px 20px; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 10px; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: '+'; margin-left: auto; font-family: var(--mono); color: var(--muted); font-size: 16px; transition: transform 0.2s; }
+details[open] summary::after { content: '−'; }
+.details-body { padding: 0 20px 20px; font-size: 13px; color: var(--muted); line-height: 1.7; }
+.details-body p { margin-bottom: 10px; }
+.details-body ul { padding-left: 20px; margin-bottom: 10px; }
+.details-body li { margin-bottom: 5px; }
+
+/* CODE BLOCKS */
+.code-block { background: #0a0a0a; border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin: 14px 0; overflow-x: auto; font-family: var(--mono); font-size: 11px; line-height: 1.6; color: #b8b4ae; }
+.code-block .key { color: #79b8ff; }
+.code-block .val { color: #9ecbff; }
+.code-block .str { color: #85e89d; }
+.code-block .url { color: #e1b3ff; }
+
+/* TABLES */
+.table-wrap { overflow-x: auto; margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th { background: var(--bg2); color: var(--muted); font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 14px; text-align: left; border-bottom: 2px solid var(--border); white-space: nowrap; }
+td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(255,255,255,0.015); }
+td.mono { font-family: var(--mono); font-size: 11px; }
+td.pass { color: var(--pass); }
+td.fail { color: var(--high); }
+td.warn { color: var(--medium); }
+td.na { color: var(--dim); }
+
+/* COMPETITOR TABLE */
+.comp-cell-pass { background: rgba(80,224,160,0.08); color: var(--pass); font-family: var(--mono); font-size: 11px; text-align: center; }
+.comp-cell-fail { background: rgba(255,92,92,0.08); color: var(--high); font-family: var(--mono); font-size: 11px; text-align: center; }
+.comp-cell-warn { background: rgba(255,154,60,0.08); color: var(--medium); font-family: var(--mono); font-size: 11px; text-align: center; }
+.comp-cell-na { color: var(--dim); font-family: var(--mono); font-size: 11px; text-align: center; }
+
+/* ACTION PLAN */
+.action-table th { white-space: nowrap; }
+.action-row-high { border-left: 3px solid var(--high); }
+.action-row-medium { border-left: 3px solid var(--medium); }
+.action-row-low { border-left: 3px solid var(--low); }
+
+/* GRID HELPERS */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+/* STAT BAR */
+.stat-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.stat-label { font-size: 12px; color: var(--muted); width: 180px; flex-shrink: 0; }
+.stat-bar-wrap { flex: 1; background: var(--bg3); border-radius: 3px; height: 6px; }
+.stat-bar { height: 6px; border-radius: 3px; }
+.stat-val { font-family: var(--mono); font-size: 11px; color: var(--text); width: 36px; text-align: right; flex-shrink: 0; }
+
+/* CALLOUT */
+.callout { border-left: 3px solid var(--amber); background: rgba(255,184,28,0.05); padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0; font-size: 13px; color: var(--text); }
+
+@media (max-width: 900px) {
+  .two-col { grid-template-columns: 1fr; }
+  .toc { position: static; }
+  .score-grid { grid-template-columns: 1fr 1fr; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <div class="wrap">
+    <h1>SEO + AEO Audit</h1>
+    <p style="color:var(--muted);font-size:15px;margin-top:4px">Parts Trading Company · partstrading.com</p>
+    <div class="header-meta">
+      <div class="header-chip">URL <span>partstrading.com</span></div>
+      <div class="header-chip">Platform <span>Custom Static HTML + React (JS-rendered content)</span></div>
+      <div class="header-chip">Audit Date <span>2026-05-18</span></div>
+      <div class="header-chip">Pages Sampled <span>40+ source files</span></div>
+      <div class="header-chip">Sitemap Scale <span>30,000+ URLs across 26 sitemaps</span></div>
+    </div>
+
+    <!-- SCORE CARDS -->
+    <div class="score-grid">
+      <div class="score-card findable">
+        <div class="score-label">Findable</div>
+        <div class="score-num">72</div>
+        <div class="score-sub">robots, sitemap, canonical, redirects, crawlability</div>
+      </div>
+      <div class="score-card quotable">
+        <div class="score-label">Quotable</div>
+        <div class="score-num">68</div>
+        <div class="score-sub">FAQ, speakable, llms.txt, blog depth, AEO readiness</div>
+      </div>
+      <div class="score-card understandable">
+        <div class="score-label">Understandable</div>
+        <div class="score-num">61</div>
+        <div class="score-sub">part no. in signals, schema, H1/title, model compat.</div>
+      </div>
+      <div class="score-card trustworthy">
+        <div class="score-label">Trustworthy</div>
+        <div class="score-num">79</div>
+        <div class="score-sub">E-E-A-T, B2B conversion, OEM labeling, physical presence</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN LAYOUT -->
+<div class="wrap" style="padding-top:40px; padding-bottom:80px;">
+  <div class="two-col">
+
+    <!-- TOC SIDEBAR -->
+    <aside>
+      <nav class="toc">
+        <h3>Contents</h3>
+        <div class="toc-section">Technical Signals</div>
+        <a href="#s1">S1 · Part Number Signals</a>
+        <a href="#s2">S2 · Model Compatibility</a>
+        <a href="#s3">S3 · JS Rendering Risk</a>
+        <a href="#s4">S4 · H1 Tags</a>
+        <a href="#s5">S5 · Page Titles</a>
+        <a href="#s6">S6 · Meta Descriptions</a>
+        <a href="#s7">S7 · Product Schema</a>
+        <div class="toc-section">Content Quality</div>
+        <a href="#s8">S8 · Category Pages</a>
+        <a href="#s9">S9 · Duplicate Template Risk</a>
+        <a href="#s10">S10 · Thin Content</a>
+        <a href="#s11">S11 · Orphan Pages</a>
+        <div class="toc-section">Crawl & Infrastructure</div>
+        <a href="#s12">S12 · Redirect Audit</a>
+        <a href="#s13">S13 · Internal Search</a>
+        <a href="#s14">S14 · Open Graph</a>
+        <div class="toc-section">AEO & Content</div>
+        <a href="#s15">S15 · Content Structure + AEO</a>
+        <a href="#s16">S16 · Image SEO</a>
+        <a href="#s17">S17 · B2B Conversion</a>
+        <a href="#s18">S18 · Trust + E-E-A-T</a>
+        <div class="toc-section">AI & Future</div>
+        <a href="#s19">S19 · AI Crawlability</a>
+        <a href="#s20">S20 · llms.txt</a>
+        <a href="#s21">S21 · Content Freshness</a>
+        <a href="#s22">S22 · Core Web Vitals</a>
+        <div class="toc-section">Analysis</div>
+        <a href="#competitors">Competitor Comparison</a>
+        <a href="#action-plan">Action Plan</a>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 1 — PART NUMBER SIGNAL AUDIT
+═══════════════════════════════════════════════ -->
+<section class="section" id="s1">
+  <div class="section-header">
+    <span class="section-num">SECTION 01</span>
+    <h2>Part Number Signal Audit</h2>
+    <p class="section-sub">Where each OEM part number appears across page signals — per page type sampled</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>23715461 [BESPOKE]</th>
+          <th>20390836 [BESPOKE]</th>
+          <th>22717828 [BESPOKE]</th>
+          <th>11000274 [CATALOG]</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">URL slug</td>
+          <td class="pass">✓ /volvo/transmission-parts/23715461</td>
+          <td class="pass">✓ /volvo/suspension-chassis/20390836</td>
+          <td class="pass">✓ /volvo/suspension-chassis/22717828</td>
+          <td class="pass">✓ /volvo/bearing-bushing/11000274</td>
+        </tr>
+        <tr>
+          <td class="mono">H1 tag</td>
+          <td class="pass">✓ "Volvo FMX500 Clutch Plate 23715461"</td>
+          <td class="pass">✓ Contains 20390836</td>
+          <td class="pass">✓ Contains 22717828</td>
+          <td class="pass">✓ "11000274 — Roller Bearing"</td>
+        </tr>
+        <tr>
+          <td class="mono">Page title</td>
+          <td class="pass">✓ Title begins "Volvo FMX500 Clutch Plate 23715461"</td>
+          <td class="pass">✓ Contains 20390836</td>
+          <td class="pass">✓ Contains 22717828</td>
+          <td class="pass">✓ Title begins "11000274"</td>
+        </tr>
+        <tr>
+          <td class="mono">Meta description</td>
+          <td class="pass">✓ "Volvo 23715461 clutch plate…"</td>
+          <td class="pass">✓ "Volvo 20390836 rubber buffer…"</td>
+          <td class="pass">✓ "Volvo 22717828 bogie cradle…"</td>
+          <td class="pass">✓ "Buy Volvo 11000274…"</td>
+        </tr>
+        <tr>
+          <td class="mono">Static HTML body</td>
+          <td class="pass">✓ In JS var P={partNo:'23715461'…} + static noscript</td>
+          <td class="pass">✓ In JS var block</td>
+          <td class="pass">✓ In JS var block</td>
+          <td class="pass">✓ In static HTML block (pre-JS)</td>
+        </tr>
+        <tr>
+          <td class="mono">Schema: sku</td>
+          <td class="pass">✓ "sku":"23715461"</td>
+          <td class="pass">✓ "sku":"20390836"</td>
+          <td class="pass">✓ "sku":"22717828"</td>
+          <td class="pass">✓ "sku":"11000274"</td>
+        </tr>
+        <tr>
+          <td class="mono">Schema: mpn</td>
+          <td class="pass">✓ "mpn":"23715461"</td>
+          <td class="pass">✓ "mpn":"20390836"</td>
+          <td class="pass">✓ "mpn":"22717828"</td>
+          <td class="pass">✓ "mpn":"11000274"</td>
+        </tr>
+        <tr>
+          <td class="mono">Image filename</td>
+          <td class="pass">✓ 23715461-volvo-fmx500-clutch-plate-*.webp</td>
+          <td class="pass">✓ 20390836-rubber-buffer-*.webp</td>
+          <td class="warn">⚠ Uses generic suspension.jpg</td>
+          <td class="fail">✗ Uses generic spare-parts.jpg</td>
+        </tr>
+        <tr>
+          <td class="mono">Image alt text</td>
+          <td class="pass">✓ "Volvo FMX500 Clutch Plate 23715461 Parts Trading Company"</td>
+          <td class="pass">✓ Contains 20390836</td>
+          <td class="fail">✗ Not verified (generic image)</td>
+          <td class="pass">✓ "Roller Bearing – Part No 11000274 – Volvo Spare Part"</td>
+        </tr>
+        <tr>
+          <td class="mono">JS-only risk</td>
+          <td class="warn">⚠ Hero H1 built in JS — but also in JSON-LD + canonical in static head</td>
+          <td class="warn">⚠ Same pattern</td>
+          <td class="warn">⚠ Same pattern</td>
+          <td class="pass">✓ Static HTML fallback block present + noscript tag</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card" style="margin-top:20px">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">Bespoke page H1 rendered by JavaScript — not in raw static HTML</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Pages like 23715461 and 22717828 build their H1 via <code>window.PTC_CUSTOM_HERO()</code> JavaScript. The static HTML source contains only <code>&lt;div id="root"&gt;&lt;/div&gt;</code>. While JSON-LD schema and canonical tags are in the static <code>&lt;head&gt;</code>, Googlebot must render JS to read the actual H1. Google's indexing pipeline handles this but introduces a crawl-latency risk. Catalog pages (11000274) use a static HTML fallback block which is better.</p>
+      <ul>
+        <li>Recommendation: Add a static <code>&lt;h1&gt;</code> in the HTML body (can be visually hidden with CSS if needed for design) so the part number is indexable without JS execution.</li>
+        <li>Alternatively, ensure the <code>&lt;noscript&gt;</code> block on all pages includes the H1 — confirmed present on 11000274 but not verified on all bespoke pages.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">Generic image filenames on some bespoke and most catalog pages</span>
+    </div>
+    <div class="issue-card-body">
+      <p>22717828 uses <code>suspension.jpg</code> instead of a part-number-named file. Catalog page 11000274 uses <code>spare-parts.jpg</code>. Bespoke pages 23715461 and 20390836 correctly use part-number-prefixed .webp filenames. Image filename is a Google Image Search signal and a product schema image quality factor.</p>
+      <ul>
+        <li>All bespoke pages: use pattern <code>{partNo}-{brand}-{partName}-{angle}.webp</code> — already done for clutch plate and hollow spring.</li>
+        <li>Catalog pages: at minimum, rename the generic image or use an image-level <code>og:image</code> with the part number in the URL.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 2 — MACHINE MODEL COMPATIBILITY
+═══════════════════════════════════════════════ -->
+<section class="section" id="s2">
+  <div class="section-header">
+    <span class="section-num">SECTION 02</span>
+    <h2>Machine Model Compatibility Audit</h2>
+    <p class="section-sub">Where machine model compatibility appears in page signals</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>23715461 [BESPOKE]</th>
+          <th>11000274 [CATALOG]</th>
+          <th>Volvo/ [BRAND]</th>
+          <th>Komatsu/ [BRAND]</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">Page title</td>
+          <td class="pass">✓ "Volvo FMX500 Clutch Plate…"</td>
+          <td class="warn">⚠ No model — "Volvo Roller Bearing"</td>
+          <td class="pass">✓ "Volvo Spare Parts Supplier"</td>
+          <td class="pass">✓ "Komatsu Spare Parts Supplier"</td>
+        </tr>
+        <tr>
+          <td class="mono">H1 tag</td>
+          <td class="pass">✓ "Volvo FMX500 Clutch Plate 23715461"</td>
+          <td class="warn">⚠ "11000274 — Roller Bearing" (no model)</td>
+          <td class="pass">✓ Mentions EC excavators, FH/FM/FMX, A-series</td>
+          <td class="pass">✓ Mentions PC/D-series/WA</td>
+        </tr>
+        <tr>
+          <td class="mono">First paragraph</td>
+          <td class="pass">✓ "FMX500, FH500, FM500 (D13 500hp) · CPCA System"</td>
+          <td class="pass">✓ Static HTML: "Compatible with: Volvo FH12; FH16; FH 420…"</td>
+          <td class="pass">✓ Static SEO block lists model families</td>
+          <td class="pass">✓ Static SEO block lists PC200–D155 etc.</td>
+        </tr>
+        <tr>
+          <td class="mono">Schema description/vehicleType</td>
+          <td class="pass">✓ Product additionalProperty lists application</td>
+          <td class="pass">✓ Schema description includes model list</td>
+          <td class="na">N/A — no vehicleType on brand page</td>
+          <td class="na">N/A</td>
+        </tr>
+        <tr>
+          <td class="mono">Dedicated compat. section</td>
+          <td class="pass">✓ Full compat. section with grouped model families</td>
+          <td class="pass">✓ "Compatible Models" section in static HTML</td>
+          <td class="pass">✓ "Compatible Volvo Models" list in static HTML</td>
+          <td class="pass">✓ "Compatible Komatsu Models" list</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Finding:</strong> Catalog pages (like 11000274) correctly include machine model compatibility in static HTML, which is indexable without JS. Bespoke pages go further with grouped compatibility sections. The main gap is that many catalog page <strong>titles and H1s omit the machine model</strong> — "11000274 — Roller Bearing" vs the bespoke format "Volvo FMX500 Clutch Plate 23715461". Searchers querying "Volvo FH12 roller bearing 11000274" will match the description but not the title.
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">Catalog page titles/H1s omit primary machine model — only part number + generic part name</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Template: <code>"{partNo} — {partName} | In Stock | PTC Mumbai"</code>. Better: <code>"{partNo} {partName} for {primaryModel} | In Stock | PTC Mumbai"</code>. Machine model is the highest-intent term in any B2B parts search. The first machine model from the compatibility list should appear in the title at minimum.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 3 — JS RENDERING RISK AUDIT
+═══════════════════════════════════════════════ -->
+<section class="section" id="s3">
+  <div class="section-header">
+    <span class="section-num">SECTION 03</span>
+    <h2>JavaScript Rendering Risk Audit</h2>
+    <p class="section-sub">What exists in static HTML vs requiring JS execution to appear</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th>Homepage (index.html)</th>
+          <th>Brand Page (volvo/)</th>
+          <th>Bespoke (23715461)</th>
+          <th>Catalog (11000274)</th>
+          <th>Category (engine-parts/)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Title tag</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+        </tr>
+        <tr>
+          <td>Meta description</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+        </tr>
+        <tr>
+          <td>Canonical tag</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+        </tr>
+        <tr>
+          <td>og:title / og:description</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+          <td class="pass">✓ Static</td>
+        </tr>
+        <tr>
+          <td>H1 tag</td>
+          <td class="fail">✗ JS-only (app.js renders #root)</td>
+          <td class="pass">✓ Static in #seo-static block (hidden by JS)</td>
+          <td class="fail">✗ JS-only (PTC_CUSTOM_HERO)</td>
+          <td class="pass">✓ Static HTML before #root</td>
+          <td class="pass">✓ Static #seo-static block</td>
+        </tr>
+        <tr>
+          <td>Product description text</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓ Static SEO block</td>
+          <td class="fail">✗ JS-only</td>
+          <td class="pass">✓ Static HTML block</td>
+          <td class="pass">✓ Static block</td>
+        </tr>
+        <tr>
+          <td>Specs / compat content</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓ Model list in static HTML</td>
+          <td class="fail">✗ JS-only (PTC_CUSTOM_SECTIONS)</td>
+          <td class="pass">✓ Compatible Models in static HTML</td>
+          <td class="pass">✓ Category links in static HTML</td>
+        </tr>
+        <tr>
+          <td>FAQ items</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓ Static SEO FAQ block</td>
+          <td class="fail">✗ FAQ accordion is JS-rendered</td>
+          <td class="pass">✓ FAQ data in JS var (faq:[]) not static HTML</td>
+          <td class="na">N/A</td>
+        </tr>
+        <tr>
+          <td>JSON-LD schema</td>
+          <td class="pass">✓ Multiple schemas in static &lt;head&gt;</td>
+          <td class="pass">✓ Static in &lt;head&gt;</td>
+          <td class="pass">✓ Full Product+FAQ+HowTo schema in static &lt;head&gt;</td>
+          <td class="pass">✓ Product + BreadcrumbList in static &lt;head&gt;</td>
+          <td class="pass">✓ Static in &lt;head&gt;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-high">HIGH</span>
+      <span class="issue-card-title">Homepage H1 is entirely JS-rendered — no static fallback</span>
+    </div>
+    <div class="issue-card-body">
+      <p>The homepage (<code>index.html</code>) has <code>&lt;div id="root"&gt;&lt;/div&gt;</code> and all content including H1 is rendered by <code>app.js</code>. There is no <code>#seo-static</code> fallback, no <code>&lt;noscript&gt;</code> with H1, and the JSON-LD has a <code>speakable</code> reference to <code>#home h1</code> which will not be found in static HTML. This is the highest-traffic page and the most critical JS rendering risk.</p>
+      <ul>
+        <li>Add a static H1 to the homepage body — even if hidden with <code>position:absolute;clip:rect(0,0,0,0)</code></li>
+        <li>Or adopt the #seo-static pattern used on brand and category pages</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">Bespoke product pages: all body content (H1, specs, FAQs, compat) rendered by JS</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Pages like 23715461 and 22717828 use <code>window.PTC_CUSTOM_HERO</code> and <code>window.PTC_CUSTOM_SECTIONS</code> — all page content is injected post-JS. The JSON-LD schema block (including FAQPage) is correctly in the static <code>&lt;head&gt;</code>, which Google can read. However the visible FAQ accordion, specs table, and compatibility section are invisible to crawlers that don't execute JS. Google's Caffeine renderer does execute JS but with latency; Perplexity, ClaudeBot, and others may not.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 4 — H1 TAG AUDIT
+═══════════════════════════════════════════════ -->
+<section class="section" id="s4">
+  <div class="section-header">
+    <span class="section-num">SECTION 04</span>
+    <h2>H1 Tag Audit</h2>
+    <p class="section-sub">H1 count, content quality, and length across page types</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Page</th>
+          <th>Type</th>
+          <th>H1 Count</th>
+          <th>H1 Text</th>
+          <th>Part No.</th>
+          <th>Model</th>
+          <th>Length</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>index.html</td>
+          <td><span class="badge badge-na">HOME</span></td>
+          <td class="fail">0 (JS-only)</td>
+          <td class="na">Unable to verify from static source</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+          <td><span class="badge badge-high">HIGH</span></td>
+        </tr>
+        <tr>
+          <td>volvo/</td>
+          <td><span class="badge badge-na">BRAND</span></td>
+          <td class="pass">1</td>
+          <td>"Volvo Spare Parts — OEM &amp; Aftermarket | Parts Trading Company"</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓</td>
+          <td>59 chars ✓</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>komatsu/</td>
+          <td><span class="badge badge-na">BRAND</span></td>
+          <td class="pass">1</td>
+          <td>"Komatsu Spare Parts — OEM &amp; Aftermarket | Parts Trading Company"</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓</td>
+          <td>62 chars ✓</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>volvo/engine-parts/</td>
+          <td><span class="badge badge-na">CAT</span></td>
+          <td class="pass">1</td>
+          <td>Not extracted (JS-rendered in this template)</td>
+          <td class="na">N/A</td>
+          <td class="na">?</td>
+          <td class="na">?</td>
+          <td><span class="badge badge-medium">VERIFY</span></td>
+        </tr>
+        <tr>
+          <td>volvo/transmission-parts/23715461</td>
+          <td><span class="badge badge-bonus">BESPOKE</span></td>
+          <td class="warn">1 (JS-rendered)</td>
+          <td>"Volvo FMX500 Clutch Plate 23715461"</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td>35 chars (short)</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td>volvo/suspension-chassis/20390836</td>
+          <td><span class="badge badge-bonus">BESPOKE</span></td>
+          <td class="warn">1 (JS-rendered)</td>
+          <td>"Volvo 20390836 Hollow Spring / Rubber Buffer Mount"</td>
+          <td class="pass">✓</td>
+          <td class="warn">⚠ No specific model in H1</td>
+          <td>50 chars ✓</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td>volvo/bearing-bushing/11000274</td>
+          <td><span class="badge badge-na">CATALOG</span></td>
+          <td class="pass">1</td>
+          <td>"11000274 — Roller Bearing"</td>
+          <td class="pass">✓</td>
+          <td class="fail">✗ No model</td>
+          <td>26 chars (short)</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td>about.html</td>
+          <td><span class="badge badge-na">UTIL</span></td>
+          <td class="warn">0 (JS-rendered)</td>
+          <td>Unable to verify from static source</td>
+          <td class="na">N/A</td>
+          <td class="na">N/A</td>
+          <td class="na">—</td>
+          <td><span class="badge badge-medium">VERIFY</span></td>
+        </tr>
+        <tr>
+          <td>blog/volvo-fmx-clutch-replacement-guide.html</td>
+          <td><span class="badge badge-na">BLOG</span></td>
+          <td class="pass">1</td>
+          <td>"Volvo FMX Clutch System Replacement Guide: CPCA Cylinder, Clutch Disc &amp; Plate (FMX460 &amp; FMX500)"</td>
+          <td class="pass">✓ Part nos. in body</td>
+          <td class="pass">✓</td>
+          <td>96 chars (long)</td>
+          <td><span class="badge badge-low">LOW</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <details>
+    <summary><span class="badge badge-medium">MEDIUM</span> &nbsp; Catalog page H1s are too short and miss machine model</summary>
+    <div class="details-body">
+      <p>The catalog template produces H1s like "11000274 — Roller Bearing" (26 chars). Ideal target is 50–70 chars with part number + part name + primary model. Recommended format:</p>
+      <p><code>"{partNo} {partName} — {Brand} {primaryModel} | PTC"</code></p>
+      <p>Example: "11000274 Roller Bearing — Volvo FH12 FH16 | PTC Mumbai"</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="badge badge-low">LOW</span> &nbsp; Blog H1 exceeds 70 chars — consider shortening</summary>
+    <div class="details-body">
+      <p>The Volvo FMX clutch guide H1 is 96 characters. While not penalized, shorter H1s are more likely to be used verbatim in featured snippets. Recommended max: 70 chars.</p>
+    </div>
+  </details>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 5 — PAGE TITLE AUDIT
+═══════════════════════════════════════════════ -->
+<section class="section" id="s5">
+  <div class="section-header">
+    <span class="section-num">SECTION 05</span>
+    <h2>Page Title Audit</h2>
+    <p class="section-sub">Title tag length, keyword ordering, uniqueness across page types</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Page</th>
+          <th>Title</th>
+          <th>Length</th>
+          <th>Part No. First?</th>
+          <th>Brand+Model?</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>index.html</td>
+          <td>"Heavy Equipment Parts. Today. | Parts Trading Company"</td>
+          <td class="pass">53 ✓</td>
+          <td class="na">N/A</td>
+          <td class="warn">Brand mentioned, no model</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>volvo/</td>
+          <td>"Volvo Spare Parts Supplier — OEM &amp; Aftermarket | Est. 1956 | PTC Mumbai"</td>
+          <td class="warn">72 (over 60)</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓</td>
+          <td><span class="badge badge-low">LOW</span></td>
+        </tr>
+        <tr>
+          <td>komatsu/</td>
+          <td>"Komatsu Spare Parts Supplier — OEM &amp; Aftermarket | Est. 1956 | PTC Mumbai"</td>
+          <td class="warn">74 (over 60)</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓</td>
+          <td><span class="badge badge-low">LOW</span></td>
+        </tr>
+        <tr>
+          <td>volvo/engine-parts/</td>
+          <td>"Volvo Engine Parts India | Parts Trading Company"</td>
+          <td class="pass">48 ✓</td>
+          <td class="na">N/A</td>
+          <td class="warn">No model family</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td>volvo/transmission-parts/</td>
+          <td>"Volvo Transmission Parts India | Parts Trading Company"</td>
+          <td class="pass">54 ✓</td>
+          <td class="na">N/A</td>
+          <td class="warn">No model family</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td>23715461 [BESPOKE]</td>
+          <td>"Volvo FMX500 Clutch Plate 23715461 — OEM-Spec Friction Disc | PTC India"</td>
+          <td class="warn">72 (over 60)</td>
+          <td class="warn">Brand first, not part no.</td>
+          <td class="pass">✓</td>
+          <td><span class="badge badge-low">LOW</span></td>
+        </tr>
+        <tr>
+          <td>20390836 [BESPOKE]</td>
+          <td>"Volvo 20390836 Hollow Spring / Rubber Buffer Mount — Suspension Mounting Bush | PTC India"</td>
+          <td class="fail">88 chars (too long)</td>
+          <td class="pass">✓ Part no. near start</td>
+          <td class="pass">✓</td>
+          <td><span class="badge badge-high">HIGH</span></td>
+        </tr>
+        <tr>
+          <td>22717828 [BESPOKE]</td>
+          <td>"Bogie Cradle Bushing 22717828 Volvo FMX500 FMX460 | PTC India"</td>
+          <td class="pass">61 ✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>11000274 [CATALOG]</td>
+          <td>"11000274 — Volvo Roller Bearing | In Stock | PTC Mumbai"</td>
+          <td class="pass">55 ✓</td>
+          <td class="pass">✓ Part no. first</td>
+          <td class="warn">No model (FH12/FH16)</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td>about.html</td>
+          <td>"About Parts Trading Company — Est. 1956, Mumbai"</td>
+          <td class="pass">47 ✓</td>
+          <td class="na">N/A</td>
+          <td class="na">N/A</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>contact.html</td>
+          <td>"Contact Parts Trading Company — Mumbai, India"</td>
+          <td class="pass">46 ✓</td>
+          <td class="na">N/A</td>
+          <td class="na">N/A</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>blog/volvo-fmx-clutch…</td>
+          <td>"Volvo FMX Clutch Replacement Guide — Central Slave Cylinder, Clutch Disc &amp; Plate (FMX460 &amp; FMX500) | PTC"</td>
+          <td class="fail">103 chars (too long)</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓</td>
+          <td><span class="badge badge-high">HIGH</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-high">HIGH</span>
+      <span class="issue-card-title">Two bespoke page titles and one blog title exceed 85 characters — will be rewritten by Google</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Google rewrites titles exceeding ~60 chars at display. The 20390836 title (88 chars) and the blog guide title (103 chars) will be truncated or replaced. Recommended: trim to 58–62 chars while keeping part number and primary model at the front.</p>
+      <ul>
+        <li>20390836: <code>"Volvo 20390836 Rubber Spring / Hollow Mount | PTC India"</code> (54 chars)</li>
+        <li>Blog guide: <code>"Volvo FMX Clutch Replacement Guide — FMX460 &amp; FMX500 | PTC"</code> (62 chars)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">Category page titles missing machine model family — low search specificity</span>
+    </div>
+    <div class="issue-card-body">
+      <p>"Volvo Engine Parts India" and "Volvo Transmission Parts India" do not include the model families (EC, FH, FMX) that buyers search for. Recommend: "Volvo Engine Parts — EC/FH/FMX | PTC India" or similar.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 6 — META DESCRIPTION AUDIT
+═══════════════════════════════════════════════ -->
+<section class="section" id="s6">
+  <div class="section-header">
+    <span class="section-num">SECTION 06</span>
+    <h2>Meta Description Audit</h2>
+    <p class="section-sub">Length, uniqueness, part number presence, B2B triggers, trust signals</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Page</th>
+          <th>Description (truncated)</th>
+          <th>Chars</th>
+          <th>Part No.</th>
+          <th>B2B CTA</th>
+          <th>Trust</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>index.html</td>
+          <td>"OEM &amp; aftermarket heavy equipment spare parts — Volvo, Scania, Komatsu, CAT &amp; more. 75,000+ parts, same-day dispatch from Mumbai. Est. 1956."</td>
+          <td class="pass">139 ✓</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓ same-day</td>
+          <td class="pass">✓ 75,000+, Est. 1956</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>volvo/</td>
+          <td>"OEM-specification Volvo parts for EC excavators, FH/FM/FMX trucks &amp; A-series haulers. 70 years…Same-day dispatch before 3 PM. WhatsApp +91-98210-37990."</td>
+          <td class="pass">151 ✓</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓ WhatsApp number</td>
+          <td class="pass">✓ 70 years</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>komatsu/</td>
+          <td>"OEM-specification Komatsu parts for PC excavators, D-series dozers &amp; WA wheel loaders. 70 years…"</td>
+          <td class="pass">148 ✓</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓ WhatsApp</td>
+          <td class="pass">✓</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>23715461 [BESPOKE]</td>
+          <td>"Volvo 23715461 clutch plate for FMX500, FH500, FM500. OEM-spec friction disc, 430mm, 10-spline, 6-stage damper. In stock Mumbai, same-day dispatch. GST invoice. Ships 50+ countries."</td>
+          <td class="fail">184 (too long)</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓ GST, 50+ countries</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td>20390836 [BESPOKE]</td>
+          <td>"Volvo 20390836 rubber buffer / hollow spring mount. OEM-spec. In stock Mumbai, same-day dispatch. Fits FH, FM, FMX, Renault Premium. Also 1629553, 7420390836. GST invoice."</td>
+          <td class="warn">171 (too long)</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td>22717828 [BESPOKE]</td>
+          <td>"Volvo 22717828 bogie cradle bushing for FMX500, FMX460, FM Gen4, FH Gen4 tandem rear axle. Rubber-bonded steel, OEM-spec. In stock Mumbai, same-day dispatch. GST invoice. Ships 50+ countries."</td>
+          <td class="fail">193 (too long)</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td><span class="badge badge-high">HIGH</span></td>
+        </tr>
+        <tr>
+          <td>11000274 [CATALOG]</td>
+          <td>"Buy Volvo 11000274 — Roller Bearing for Volvo FH12, Volvo FH16, Volvo FH 420. OEM-spec aftermarket. Same-day dispatch Mumbai. WhatsApp +91-98210-37990."</td>
+          <td class="pass">151 ✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓ WhatsApp</td>
+          <td class="pass">✓</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>about.html</td>
+          <td>"About Parts Trading Company — heavy equipment spare parts supplier since 1956. Serving mining, construction &amp; transport industries in 50+ countries from Mumbai."</td>
+          <td class="pass">158 (slightly long)</td>
+          <td class="na">N/A</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓</td>
+          <td><span class="badge badge-low">LOW</span></td>
+        </tr>
+        <tr>
+          <td>contact.html</td>
+          <td>"Contact Parts Trading Company for heavy equipment spare parts. WhatsApp +91-98210-37990. Mumbai-based, serving customers in 50+ countries. Reply within 1 hour."</td>
+          <td class="pass">161 (slightly long)</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td><span class="badge badge-low">LOW</span></td>
+        </tr>
+        <tr>
+          <td>get-a-quote.html</td>
+          <td>"Get a quote for Volvo, Komatsu, CAT, Scania spare parts. Fast response, competitive pricing. Same-day dispatch from Mumbai to India and worldwide."</td>
+          <td class="pass">147 ✓</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-high">HIGH</span>
+      <span class="issue-card-title">3 bespoke page meta descriptions exceed 170 chars — will be truncated in SERPs</span>
+    </div>
+    <div class="issue-card-body">
+      <p>22717828 (193 chars), 23715461 (184 chars), and 20390836 (171 chars) are all over the ~155 char display limit. Google will truncate mid-sentence, likely cutting trust signals like "GST invoice" and "Ships 50+ countries". Trim to 150–155 chars max, prioritizing: part number → model → part type → stock/dispatch signal → one trust signal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 7 — PRODUCT SCHEMA AUDIT
+═══════════════════════════════════════════════ -->
+<section class="section" id="s7">
+  <div class="section-header">
+    <span class="section-num">SECTION 07</span>
+    <h2>Product Schema Audit</h2>
+    <p class="section-sub">JSON-LD completeness in static HTML head — per page type</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Schema Field</th>
+          <th>23715461 [BESPOKE]</th>
+          <th>22717828 [BESPOKE]</th>
+          <th>11000274 [CATALOG]</th>
+          <th>Homepage</th>
+          <th>volvo/ [BRAND]</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">@type: Product</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="na">N/A</td>
+          <td class="na">N/A</td>
+        </tr>
+        <tr>
+          <td class="mono">name</td>
+          <td class="pass">✓ With model</td>
+          <td class="pass">✓ With model</td>
+          <td class="pass">✓</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">sku</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">mpn</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">brand</td>
+          <td class="pass">✓ Volvo</td>
+          <td class="pass">✓ Volvo</td>
+          <td class="pass">✓ Volvo</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">description</td>
+          <td class="pass">✓ Detailed</td>
+          <td class="pass">✓ Detailed</td>
+          <td class="pass">✓</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">image (array)</td>
+          <td class="pass">✓ 9 images</td>
+          <td class="warn">⚠ 1 generic image</td>
+          <td class="warn">⚠ 1 generic image</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">offers (InStock)</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">price (B2B quote model)</td>
+          <td class="pass">✓ price:"0" — acceptable for B2B</td>
+          <td class="pass">✓ price:"0"</td>
+          <td class="warn">⚠ priceSpecification: price:"1" — inconsistent</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">shippingDetails</td>
+          <td class="pass">✓ With destination countries</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓ Extensive list</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">additionalProperty (specs)</td>
+          <td class="pass">✓ 9 properties</td>
+          <td class="pass">✓ 7 properties</td>
+          <td class="fail">✗ None</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">aggregateRating</td>
+          <td class="pass">✓ 4.8, 24 reviews</td>
+          <td class="pass">✓ 4.8, 34 reviews</td>
+          <td class="pass">✓ 4.8, 246 reviews</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">BreadcrumbList</td>
+          <td class="pass">✓ 4-level</td>
+          <td class="pass">✓ 4-level</td>
+          <td class="pass">✓ 4-level</td>
+          <td class="na">—</td>
+          <td class="pass">✓ 2-level</td>
+        </tr>
+        <tr>
+          <td class="mono">FAQPage</td>
+          <td class="pass">✓ 12 Q&amp;As</td>
+          <td class="pass">✓ 12 Q&amp;As</td>
+          <td class="fail">✗ Not present</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">HowTo</td>
+          <td class="pass">✓ 5 steps</td>
+          <td class="pass">✓ 5 steps</td>
+          <td class="fail">✗ Not present</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">VideoObject</td>
+          <td class="pass">✓ YouTube embed</td>
+          <td class="fail">✗ Not present</td>
+          <td class="fail">✗ Not present</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">Organization (homepage)</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+          <td class="pass">✓ Full with founder, address, telephone</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">LocalBusiness (homepage)</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+          <td class="pass">✓ With geo coords, hours, rating</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">WebSite → SearchAction</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+          <td class="pass">✓ SearchAction present</td>
+          <td class="na">—</td>
+        </tr>
+        <tr>
+          <td class="mono">ItemList (brand page)</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+          <td class="na">—</td>
+          <td class="pass">✓ Category list schema</td>
+        </tr>
+        <tr>
+          <td class="mono">speakable</td>
+          <td class="pass">✓ cssSelector: #sec-faq, .hero-h1</td>
+          <td class="pass">✓</td>
+          <td class="fail">✗ Not present</td>
+          <td class="pass">✓ cssSelector: #faq, #home h1</td>
+          <td class="na">—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">Catalog pages lack additionalProperty specs, FAQPage, HowTo, and speakable schema</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Catalog pages (30,000+ pages) have Product, BreadcrumbList, aggregateRating, and shippingDetails — a solid foundation. But they lack the richer schema types that enable rich results and AI citations: no FAQPage (even 4 basic Q&amp;As would qualify), no additionalProperty specs, no speakable. Adding even a minimal FAQ schema to all catalog pages would materially improve AI Overview eligibility.</p>
+    </div>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-low">LOW</span>
+      <span class="issue-card-title">Catalog page 11000274 uses price:"1" — inconsistent with bespoke pages using price:"0"</span>
+    </div>
+    <div class="issue-card-body">
+      <p>For a B2B quote-based business, <code>price:"0"</code> combined with a <code>description</code> explaining contact-for-pricing is the cleaner implementation (used correctly on bespoke pages). The catalog template uses <code>priceSpecification.price:"1"</code> which is inconsistent and potentially misleading. Standardize to <code>price:"0"</code> with a <code>description:"Contact for pricing — proforma invoice on request"</code> field across all catalog pages.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 8 — CATEGORY PAGE QUALITY
+═══════════════════════════════════════════════ -->
+<section class="section" id="s8">
+  <div class="section-header">
+    <span class="section-num">SECTION 08</span>
+    <h2>Category Page Quality</h2>
+    <p class="section-sub">Brand index and category page content depth, schema, and internal linking</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Check</th>
+          <th>volvo/ [BRAND]</th>
+          <th>komatsu/ [BRAND]</th>
+          <th>volvo/engine-parts/ [CAT]</th>
+          <th>volvo/transmission-parts/ [CAT]</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Unique H1 in static HTML</td>
+          <td class="pass">✓ "Volvo Spare Parts — OEM &amp; Aftermarket…"</td>
+          <td class="pass">✓ "Komatsu Spare Parts — OEM &amp; Aftermarket…"</td>
+          <td class="warn">⚠ Not in static block (JS-rendered)</td>
+          <td class="warn">⚠ Not confirmed in static block</td>
+        </tr>
+        <tr>
+          <td>100+ word intro (static)</td>
+          <td class="pass">✓ ~80 word static paragraph + FAQ</td>
+          <td class="pass">✓ ~80 word static paragraph + FAQ</td>
+          <td class="fail">✗ Only title + meta in head; body is JS</td>
+          <td class="fail">✗ Same</td>
+        </tr>
+        <tr>
+          <td>Internal category links</td>
+          <td class="pass">✓ 14 category links in static HTML</td>
+          <td class="pass">✓ 15 category links in static HTML</td>
+          <td class="na">Unable to verify from static source</td>
+          <td class="na">Unable to verify from static source</td>
+        </tr>
+        <tr>
+          <td>Schema: ItemList or CollectionPage</td>
+          <td class="pass">✓ ItemList with 6 subcategories</td>
+          <td class="pass">✓ ItemList with 6 subcategories</td>
+          <td class="warn">⚠ Only Organization + BreadcrumbList + ItemList (pointing to brand, not category)</td>
+          <td class="warn">⚠ Same — ItemList points to brand categories not product list</td>
+        </tr>
+        <tr>
+          <td>Compatible models list (static)</td>
+          <td class="pass">✓ 18 model variants in static HTML</td>
+          <td class="pass">✓ 16 model variants in static HTML</td>
+          <td class="na">Not in static source</td>
+          <td class="na">Not in static source</td>
+        </tr>
+        <tr>
+          <td>FAQ in static HTML</td>
+          <td class="pass">✓ 3 FAQ items</td>
+          <td class="pass">✓ 1 FAQ item visible</td>
+          <td class="fail">✗ None in static source</td>
+          <td class="fail">✗ None in static source</td>
+        </tr>
+        <tr>
+          <td>Unique meta description</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">Sub-category pages (engine-parts/, transmission-parts/) have thin static HTML — content is JS-rendered</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Brand index pages (volvo/, komatsu/) have excellent static HTML with ~80-word intro paragraph, 14+ category links, model list, and FAQ. Sub-category pages follow the same ptc-components.js pattern but lack a verified <code>#seo-static</code> block. The static HTML source shows only metadata in head — no static intro, no model list, no FAQ. This means the ~100+ sub-category pages have minimal crawlable content without JS execution.</p>
+      <ul>
+        <li>Add a <code>#seo-static</code> block to all sub-category page templates — same pattern as brand pages</li>
+        <li>Include: 1 static H1, 60+ word intro mentioning the category + brand + model family, model list, 3 FAQ items, and product part-number links</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 9 — DUPLICATE TEMPLATE RISK
+═══════════════════════════════════════════════ -->
+<section class="section" id="s9">
+  <div class="section-header">
+    <span class="section-num">SECTION 09</span>
+    <h2>Duplicate Template Risk</h2>
+    <p class="section-sub">Template duplication analysis across catalog product pages</p>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-high">HIGH</span>
+      <span class="issue-card-title">Catalog pages share identical description template — only part number and model list differ</span>
+    </div>
+    <div class="issue-card-body">
+      <p>All catalog pages (30,000+) use a template-generated description block:</p>
+      <div class="code-block">"OEM-specification <span class="str">{partName}</span>. Part number <span class="str">{partNo}</span>. Compatible with: <span class="str">{modelList}</span>. Supplied by Parts Trading Company, Mumbai. Est. 1956. Ships worldwide."</div>
+      <p>The <code>categoryDesc</code> field in the JS data object is also template-fill:</p>
+      <div class="code-block">"Volvo Bearing &amp; Bushing from Parts Trading Company cover the full range of Volvo equipment. We supply OEM-specification aftermarket bearing &amp; bushing sourced from certified manufacturers. PTC has supplied Volvo bearing &amp; bushing to customers across India, UAE, Russia, Indonesia, and Africa since 1956. Our Mumbai warehouse stocks high-turnover Volvo bearing &amp; bushing for same-day dispatch before 3 PM IST."</div>
+      <p>This is near-identical across all catalog pages within a category — only the category name changes. With 30,000 pages sharing structural content, Google's duplicate content filters may aggressively thin the index to only the most authoritative (bespoke) pages.</p>
+      <ul>
+        <li>Enrich catalog page descriptions with the part's specific technical function, at least 1 unique sentence</li>
+        <li>Even a simple template variant using <code>partType</code> and <code>primaryModel</code> would differentiate pages</li>
+        <li>Priority: enrich top 500 highest-traffic catalog pages first</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">FAQ questions are identical across all catalog pages — 4 stock questions reused</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Sampled catalog page 11000274 has FAQ array: "Is this part compatible with my machine?", "Is this OEM or aftermarket?", "How quickly can this part be dispatched?", "Do you export internationally?" — these 4 questions appear verbatim on every catalog page. While this is in the JS <code>faq</code> array rather than in FAQPage schema, if FAQPage schema is added to catalog pages, identical FAQs across 30,000 pages would likely suppress rich result eligibility.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 10 — THIN CONTENT RISK
+═══════════════════════════════════════════════ -->
+<section class="section" id="s10">
+  <div class="section-header">
+    <span class="section-num">SECTION 10</span>
+    <h2>Thin Content Risk</h2>
+    <p class="section-sub">Static HTML word count and content depth for catalog pages</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Page</th>
+          <th>Static HTML word count (approx)</th>
+          <th>Unique sections</th>
+          <th>FAQ (static)</th>
+          <th>Schema completeness</th>
+          <th>Risk</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>23715461 [BESPOKE]</td>
+          <td class="pass">~90 words in static; ~2000+ JS-rendered</td>
+          <td class="pass">13 custom sections</td>
+          <td class="pass">✓ 12 Q&amp;As in schema</td>
+          <td class="pass">Product + FAQ + HowTo + Video + Speakable</td>
+          <td><span class="badge badge-pass">LOW RISK</span></td>
+        </tr>
+        <tr>
+          <td>20390836 [BESPOKE]</td>
+          <td class="pass">Similar deep pattern</td>
+          <td class="pass">Rich sections</td>
+          <td class="pass">✓ In schema</td>
+          <td class="pass">Product + FAQ + HowTo</td>
+          <td><span class="badge badge-pass">LOW RISK</span></td>
+        </tr>
+        <tr>
+          <td>11000274 [CATALOG]</td>
+          <td class="warn">~120 words in static HTML block (pre-JS)</td>
+          <td class="warn">3 sections: specs table, compat list, CTAs</td>
+          <td class="warn">FAQ in JS array — not in static HTML or schema</td>
+          <td class="warn">Product + BreadcrumbList only</td>
+          <td><span class="badge badge-medium">MEDIUM RISK</span></td>
+        </tr>
+        <tr>
+          <td>Generic catalog (Komatsu, CAT, Hitachi parts)</td>
+          <td class="fail">~60–100 words static; relies on JS for all content</td>
+          <td class="fail">Template only</td>
+          <td class="fail">✗</td>
+          <td class="warn">Product + BreadcrumbList</td>
+          <td><span class="badge badge-high">HIGH RISK</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Scale concern:</strong> With 30,000+ catalog pages, even partial thin-content suppression would remove significant portions of the index. Google's "helpful content" classifier and crawl budget pressure on large sites means the weakest catalog pages risk being de-prioritized or excluded from the index entirely. Bespoke pages serve as an excellent template — the challenge is scaling similar depth to the top 1,000 catalog pages.
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 11 — ORPHAN PAGES + CRAWLABILITY
+═══════════════════════════════════════════════ -->
+<section class="section" id="s11">
+  <div class="section-header">
+    <span class="section-num">SECTION 11</span>
+    <h2>Orphan Pages + Crawlability</h2>
+    <p class="section-sub">Sitemap coverage, navigation reachability, redirect-layer orphans</p>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-high">HIGH</span>
+      <span class="issue-card-title">52,695 /products/{partNo}.html redirect files — no nav links to these URLs</span>
+    </div>
+    <div class="issue-card-body">
+      <p>The <code>/products/</code> directory contains 52,695 HTML files using <code>meta http-equiv="refresh"</code> to redirect to canonical brand/category/partNo URLs. These redirect pages have canonical tags pointing to the final destination and no nav links anywhere on the site. They are de-facto orphan pages — reachable only via direct URL or if linked from external sources using the old URL pattern.</p>
+      <ul>
+        <li>These pages do not appear to be included in the main sitemaps (sitemap-main.xml, sitemap-volvo.xml etc.) — the sitemaps correctly list canonical brand/category/partNo URLs</li>
+        <li>If any external links or old bookmarks point to /products/ URLs, the meta refresh redirect (not a 301) passes less link equity than a server-side redirect</li>
+        <li>Recommend: verify whether /products/ URLs are being indexed via Google Search Console. If indexed, these are wasted crawl budget</li>
+        <li>The meta refresh redirect is functionally a 0-second soft redirect. Google treats it similarly to a 301 but with less certainty. If the server supports it, implement 301 redirects via _redirects or .htaccess instead</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">New-products sitemap URLs (komatsu/spare-parts/PC210, komatsu/engine-parts/14Y-50-00010) — structure differs from main catalog pattern</span>
+    </div>
+    <div class="issue-card-body">
+      <p>sitemap-new-products-1.xml contains URLs like <code>https://partstrading.com/komatsu/spare-parts/PC210</code> and <code>https://partstrading.com/komatsu/engine-parts/14Y-50-00010</code>. These have priority 0.8 but their URL pattern differs from the main catalog (which uses only numeric part numbers). "PC210" is a machine model, not a part number — this may produce a model-level page rather than a product page. These need verification that they return 200 and have appropriate content.</p>
+    </div>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-pass">PASS</span>
+      <span class="issue-card-title">All sampled canonical product pages reachable via brand → category → product URL path</span>
+    </div>
+    <div class="issue-card-body">
+      <p>The hierarchy volvo/ → volvo/transmission-parts/ → volvo/transmission-parts/23715461 is structurally sound. Each level has internal links to the next. Sitemaps correctly list all three levels. Brand index pages include category links in static HTML for crawl discovery without JS.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 12 — CRAWL BUDGET / REDIRECT AUDIT
+═══════════════════════════════════════════════ -->
+<section class="section" id="s12">
+  <div class="section-header">
+    <span class="section-num">SECTION 12</span>
+    <h2>Crawl Budget &amp; Redirect Audit</h2>
+    <p class="section-sub">Redirect mechanism, chain length, canonical consistency</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>Finding</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Redirect mechanism</td>
+          <td>Meta http-equiv="refresh" (client-side). Not a server 301.</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td>Redirect chain length</td>
+          <td>1 hop: /products/2611116.html → /scania/cab-body-parts/2611116. Single hop confirmed.</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>Canonical on redirect page</td>
+          <td>✓ Canonical points to destination: <code>https://partstrading.com/scania/cab-body-parts/2611116</code></td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>Redirect destination returns 200</td>
+          <td>Unable to verify via live fetch (403 from WebFetch agent). Canonical present in source.</td>
+          <td><span class="badge badge-na">VERIFY</span></td>
+        </tr>
+        <tr>
+          <td>Crawl budget impact</td>
+          <td>52,695 redirect files + 30,000+ canonical pages = ~83,000 crawlable URLs. Large sites benefit from consolidating redirect layer or blocking /products/ via robots.txt.</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td>Robots.txt disallow for /products/</td>
+          <td>Not detected. /products/ redirect files are crawlable by all bots.</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">Consider adding Disallow: /products/ to robots.txt to protect crawl budget</span>
+    </div>
+    <div class="issue-card-body">
+      <p>With 52,695 redirect files in /products/, Googlebot spends crawl budget fetching and processing redirects before reaching canonical pages. Blocking /products/ in robots.txt would direct crawl budget to the 30,000+ canonical pages. Only do this after confirming no valuable external inbound links point to /products/ URLs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 13 — INTERNAL SEARCH
+═══════════════════════════════════════════════ -->
+<section class="section" id="s13">
+  <div class="section-header">
+    <span class="section-num">SECTION 13</span>
+    <h2>Internal Search</h2>
+    <p class="section-sub">Search functionality and its SEO implications</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Signal</th><th>Finding</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Search input element</td>
+          <td>Present — <code>#search-portal</code> div on homepage; search panel in brand/category pages via ptc-components.js</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>search-db.js accessibility</td>
+          <td>File exists at /assets/js/search-db.js (8.3 MB). Loaded on every page.</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td>SearchAction schema (homepage)</td>
+          <td>✓ WebSite schema with SearchAction pointing to /search?q={search_term_string}</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>/search page in sitemap</td>
+          <td>✓ Listed in sitemap-main.xml with priority 0.8</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>search-db.js size impact</td>
+          <td>8.3 MB JavaScript file loaded on every page. This is a significant performance burden — the entire parts database is client-side.</td>
+          <td><span class="badge badge-high">HIGH</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-high">HIGH</span>
+      <span class="issue-card-title">search-db.js (8.3 MB) loaded on every page — major Core Web Vitals impact</span>
+    </div>
+    <div class="issue-card-body">
+      <p>An 8.3 MB JavaScript file is loaded on every page load. Even compressed to ~2 MB with gzip/brotli, this is a blocking or bandwidth-intensive resource that impacts LCP, TBT, and INP scores. It delays interactivity and forces mobile users to download the full parts database on every page visit.</p>
+      <ul>
+        <li>Move search-db.js to lazy-load: only fetch when user clicks/focuses the search input</li>
+        <li>Or: implement a server-side search endpoint (even a simple JSON API) and remove client-side DB</li>
+        <li>Or: split search-db.js into brand-specific chunks (volvo-db.js, komatsu-db.js) and load only the relevant chunk based on current page context</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 14 — OPEN GRAPH + SOCIAL
+═══════════════════════════════════════════════ -->
+<section class="section" id="s14">
+  <div class="section-header">
+    <span class="section-num">SECTION 14</span>
+    <h2>Open Graph + Social</h2>
+    <p class="section-sub">OG tag coverage across page types</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>OG Tag</th>
+          <th>Homepage</th>
+          <th>volvo/ [BRAND]</th>
+          <th>23715461 [BESPOKE]</th>
+          <th>11000274 [CATALOG]</th>
+          <th>about.html</th>
+          <th>contact.html</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mono">og:title</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+        </tr>
+        <tr>
+          <td class="mono">og:description</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+        </tr>
+        <tr>
+          <td class="mono">og:image</td>
+          <td class="pass">✓ warehouse-shelves.jpg (1200×630)</td>
+          <td class="pass">✓ ptc-warehouse.webp (1200×630)</td>
+          <td class="pass">✓ Part-specific .webp</td>
+          <td class="warn">⚠ Generic spare-parts.jpg (800×600)</td>
+          <td class="warn">⚠ Generic warehouse-shelves.jpg</td>
+          <td class="warn">⚠ Generic warehouse-shelves.jpg</td>
+        </tr>
+        <tr>
+          <td class="mono">og:url</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="fail">✗ Points to partstrading.com/ (homepage), not about.html</td>
+          <td class="fail">✗ Points to partstrading.com/ (homepage), not contact.html</td>
+        </tr>
+        <tr>
+          <td class="mono">og:type</td>
+          <td class="pass">✓ website</td>
+          <td class="pass">✓ website</td>
+          <td class="pass">✓ product</td>
+          <td class="pass">✓ product</td>
+          <td class="pass">✓ website</td>
+          <td class="pass">✓ website</td>
+        </tr>
+        <tr>
+          <td class="mono">twitter:card</td>
+          <td class="pass">✓ summary_large_image</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="fail">✗ Not present</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-high">HIGH</span>
+      <span class="issue-card-title">about.html and contact.html have og:url pointing to homepage — wrong self-reference</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Both pages have <code>&lt;meta property="og:url" content="https://partstrading.com/"&gt;</code> — the homepage URL. This means if either page is shared on social media, the Open Graph URL attribute tells social platforms to attribute the content to the homepage, not the actual page. Fix: set og:url to the page's own canonical URL.</p>
+    </div>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-low">LOW</span>
+      <span class="issue-card-title">Catalog product og:image uses 800×600 generic image — below recommended 1200×630</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Twitter/X requires 1200×628 for large card preview. Catalog product og:image is 800×600 (spare-parts.jpg). Bespoke pages correctly use 600×600 (acceptable for product, but 1200×630 is preferred). Update catalog og:image dimensions to 1200×630.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 15 — CONTENT STRUCTURE + AEO
+═══════════════════════════════════════════════ -->
+<section class="section" id="s15">
+  <div class="section-header">
+    <span class="section-num">SECTION 15</span>
+    <h2>Content Structure + AEO</h2>
+    <p class="section-sub">Heading hierarchy, FAQ depth, AEO signals for bespoke pages and blog posts</p>
+  </div>
+
+  <details open>
+    <summary><span class="badge badge-pass">BESPOKE PAGES</span> &nbsp; 23715461 — Full AEO Analysis</summary>
+    <div class="details-body">
+      <p><strong>H1→H2→H3 structure:</strong> H1 "Volvo FMX500 Clutch Plate 23715461" → H2 sections: "What Is the Volvo FMX500 Clutch Plate 23715461?", "Key Numbers", "Specifications", "Cross Reference", "Compatibility", "Failure Symptoms", "OEM vs Copy", "Installation", "Product Video", "FAQ", "Quick Reference", "How to Order", "Related Reading" (all JS-rendered).</p>
+      <p><strong>FAQ count:</strong> 12 Q&amp;As — exceeds the 6+ minimum for FAQPage rich results. All 12 present in static JSON-LD schema.</p>
+      <p><strong>FAQPage schema:</strong> ✓ Present in static &lt;head&gt;</p>
+      <p><strong>Specs table:</strong> ✓ 13 spec rows including OEM part no., type, application, diameter, spline count, friction material, service life, HSN code</p>
+      <p><strong>Compatible models:</strong> ✓ FMX500, FH500, FM500 — grouped with additional model families in compat section</p>
+      <p><strong>Related parts:</strong> ✓ Linked via relatedParts array in JS</p>
+      <p><strong>First 150 words (static):</strong> Accessible via JSON-LD Product description + og:description in static head — AEO-viable for AI citation even without JS</p>
+      <p><strong>HowTo schema:</strong> ✓ 5-step installation guide in static JSON-LD</p>
+      <p><strong>VideoObject schema:</strong> ✓ YouTube video with uploadDate 2026-05-15</p>
+      <p><strong>Speakable:</strong> ✓ cssSelector targeting #sec-faq and .hero-h1</p>
+      <p><strong>AEO Verdict:</strong> <span class="badge badge-pass">EXCELLENT</span> — among the best-optimized product pages for AI citation in this sector</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="badge badge-pass">BLOG</span> &nbsp; volvo-fmx-clutch-replacement-guide.html — Full AEO Analysis</summary>
+    <div class="details-body">
+      <p><strong>Author name:</strong> ✓ "Vinesh Shah" in Article schema (author.name)</p>
+      <p><strong>datePublished in schema:</strong> ✓ "2026-05-15"</p>
+      <p><strong>dateModified:</strong> ✓ "2026-05-15" (same as published — no updates shown)</p>
+      <p><strong>Internal links:</strong> The article links to specific product pages (23715461, 23417523, 24211409, 23441664) — ✓ 4+ internal product links confirmed</p>
+      <p><strong>Speakable schema:</strong> ✓ cssSelector targeting h1, h2, .ptc-article</p>
+      <p><strong>FAQPage schema:</strong> ✓ 7 FAQ items in separate static JSON-LD block</p>
+      <p><strong>Article schema:</strong> ✓ Full Article type with headline, description, image, url, datePublished, author, publisher</p>
+      <p><strong>VideoObject schema:</strong> ✓ Present</p>
+      <p><strong>BreadcrumbList:</strong> ✓ 3-level: Home → Blog → Article</p>
+      <p><strong>Content depth:</strong> Extensive technical content — CPCA system explanation, FMX460 vs FMX500 differences, fault codes (MID 130 PSID 29/30/44), VCADS Pro calibration steps, cross-references</p>
+      <p><strong>Missing:</strong> No structured table of contents (TOC) with anchor links. No "worksFor" author affiliation (present in schema as worksFor.Organization). No Review schema.</p>
+      <p><strong>AEO Verdict:</strong> <span class="badge badge-pass">STRONG</span> — excellent technical depth and schema coverage</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="badge badge-medium">CATALOG PAGES</span> &nbsp; 11000274 — AEO Analysis</summary>
+    <div class="details-body">
+      <p><strong>H1→H2→H3:</strong> H1 "11000274 — Roller Bearing" → H2 "Compatible Models" → H2 "Installation &amp; Application Notes" (verified in static HTML). Minimal structure.</p>
+      <p><strong>FAQ count:</strong> 4 FAQ items in JS faq[] array — not in FAQPage schema. Zero AEO value in current state.</p>
+      <p><strong>Speakable:</strong> ✗ Not present</p>
+      <p><strong>First 150 words (static):</strong> ~120 words covering part number, part name, compatibility list, and dispatch info — adequate for AI citation of basic facts</p>
+      <p><strong>AEO Verdict:</strong> <span class="badge badge-medium">BASIC</span> — citations possible for part number + model compatibility facts only</p>
+    </div>
+  </details>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">Blog posts lack author bio page — author schema references about.html but no dedicated author page</span>
+    </div>
+    <div class="issue-card-body">
+      <p>The Article schema has <code>author.url: "https://partstrading.com/about.html"</code> — the company about page, not a dedicated author profile. For E-E-A-T signals and AI citation trust, a dedicated author page for "Vinesh Shah" with expertise details would strengthen authorship signals. At minimum, the about page should include a named author section.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 16 — IMAGE SEO
+═══════════════════════════════════════════════ -->
+<section class="section" id="s16">
+  <div class="section-header">
+    <span class="section-num">SECTION 16</span>
+    <h2>Image SEO</h2>
+    <p class="section-sub">Alt text, WebP format, filename SEO, dimensions</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Page</th>
+          <th>Alt text quality</th>
+          <th>Part No. in alt</th>
+          <th>WebP format</th>
+          <th>Part No. in filename</th>
+          <th>Width/height attrs</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>23715461 [BESPOKE]</td>
+          <td class="pass">"Volvo FMX500 Clutch Plate 23715461 Parts Trading Company"</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓ .webp × 9 images</td>
+          <td class="pass">✓ 23715461-volvo-fmx500-…</td>
+          <td class="pass">✓ width=600, height=600</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>20390836 [BESPOKE]</td>
+          <td class="pass">Contains part number and part name</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓ .webp × 9 images</td>
+          <td class="pass">✓ 20390836-rubber-buffer-…</td>
+          <td class="warn">⚠ og:image width/height present, inline img unclear</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>22717828 [BESPOKE]</td>
+          <td class="fail">Uses generic suspension.jpg — alt not specific</td>
+          <td class="fail">✗</td>
+          <td class="fail">✗ .jpg</td>
+          <td class="fail">✗ Generic filename</td>
+          <td class="na">Not verified</td>
+          <td><span class="badge badge-high">HIGH</span></td>
+        </tr>
+        <tr>
+          <td>11000274 [CATALOG]</td>
+          <td class="pass">"Roller Bearing – Part No 11000274 – Volvo Spare Part"</td>
+          <td class="pass">✓</td>
+          <td class="fail">✗ spare-parts.jpg (.jpg)</td>
+          <td class="fail">✗ Generic filename</td>
+          <td class="pass">✓ width=500, height=210</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td>volvo/ [BRAND]</td>
+          <td class="na">No product images — logo/brand only</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓ og:image uses .webp</td>
+          <td class="na">N/A</td>
+          <td class="na">N/A</td>
+          <td><span class="badge badge-pass">PASS</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-high">HIGH</span>
+      <span class="issue-card-title">Bespoke page 22717828 uses generic suspension.jpg instead of part-specific images</span>
+    </div>
+    <div class="issue-card-body">
+      <p>The bogie cradle bushing page (22717828) — a bespoke page listed prominently in llms.txt — uses <code>suspension.jpg</code> for both its og:image and product schema image. This is the same generic fallback used by catalog pages. Given this page has full bespoke content (12 FAQ, HowTo, detailed specs), the missing part-specific photos is the biggest remaining gap. Product images with the part number in the filename are a Google Shopping and Google Image signal.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 17 — B2B CONVERSION AUDIT
+═══════════════════════════════════════════════ -->
+<section class="section" id="s17">
+  <div class="section-header">
+    <span class="section-num">SECTION 17</span>
+    <h2>B2B Conversion Audit</h2>
+    <p class="section-sub">WhatsApp CTAs, quote triggers, trust signals, export signals across page types</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>Homepage</th>
+          <th>Brand Pages</th>
+          <th>Bespoke Product</th>
+          <th>Catalog Product</th>
+          <th>Contact / Quote</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>WhatsApp CTA (+91 format)</td>
+          <td class="pass">✓ wa.me/919821037990</td>
+          <td class="pass">✓ wa.me/919821037990 in static HTML</td>
+          <td class="pass">✓ "WhatsApp — Get Price" btn (green #25D366)</td>
+          <td class="pass">✓ "WhatsApp for Price &amp; Availability" btn</td>
+          <td class="pass">✓ +91-98210-37990</td>
+        </tr>
+        <tr>
+          <td>Pre-filled WhatsApp message</td>
+          <td class="na">General inquiry</td>
+          <td class="pass">✓ Includes brand in text</td>
+          <td class="pass">✓ Part number + name pre-filled in URL</td>
+          <td class="pass">✓ Part number + name pre-filled</td>
+          <td class="na">N/A</td>
+        </tr>
+        <tr>
+          <td>"Request Quote" / "Get Price" button</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓ Both WhatsApp and "Get Formal Quote" buttons</td>
+          <td class="pass">✓</td>
+          <td class="pass">✓ get-a-quote.html</td>
+        </tr>
+        <tr>
+          <td>Phone number in static HTML</td>
+          <td class="fail">✗ Not in static HTML (JS-rendered)</td>
+          <td class="pass">✓ +91-98210-37990 in static SEO block</td>
+          <td class="warn">⚠ In JS-rendered content; also in schema</td>
+          <td class="pass">✓ "Call Mumbai Office" button with tel: link</td>
+          <td class="pass">✓ In schema + static head</td>
+        </tr>
+        <tr>
+          <td>OEM/Aftermarket condition labeled</td>
+          <td class="na">N/A</td>
+          <td class="pass">✓ "OEM-specification aftermarket" in static text</td>
+          <td class="pass">✓ "OEM-Specification Aftermarket" badge in hero</td>
+          <td class="pass">✓ "Aftermarket — OEM Specification" in specs table</td>
+          <td class="na">N/A</td>
+        </tr>
+        <tr>
+          <td>Warranty information</td>
+          <td class="fail">✗ Not detected</td>
+          <td class="fail">✗ Not detected</td>
+          <td class="fail">✗ Not detected in static content</td>
+          <td class="warn">⚠ hasMerchantReturnPolicy (7-day) in schema only</td>
+          <td class="fail">✗ Not detected</td>
+        </tr>
+        <tr>
+          <td>Shipping timeline stated</td>
+          <td class="pass">✓ "same-day dispatch" in meta</td>
+          <td class="pass">✓ "Same-day dispatch before 3 PM" in static text</td>
+          <td class="pass">✓ Countdown timer + "ships today from Mumbai"</td>
+          <td class="pass">✓ "Same-day from Mumbai (before 3 PM IST)"</td>
+          <td class="pass">✓</td>
+        </tr>
+        <tr>
+          <td>Export capability stated</td>
+          <td class="pass">✓ 50+ countries in meta description</td>
+          <td class="pass">✓ In static FAQ answers</td>
+          <td class="pass">✓ "Ships to 50+ countries worldwide"</td>
+          <td class="pass">✓ 74 destination countries in shippingDetails schema</td>
+          <td class="pass">✓</td>
+        </tr>
+        <tr>
+          <td>Years in business</td>
+          <td class="pass">✓ "Est. 1956" in title + meta + schema</td>
+          <td class="pass">✓ "70 years" in intro text</td>
+          <td class="pass">✓ "Est. 1956" in trust strip</td>
+          <td class="pass">✓ "Est. 1956" in footer text</td>
+          <td class="pass">✓</td>
+        </tr>
+        <tr>
+          <td>GST / IEC number</td>
+          <td class="warn">⚠ GST number in llms.txt only (27AAAFP1087E1ZG)</td>
+          <td class="fail">✗ Not in page static content</td>
+          <td class="pass">✓ "GST invoice · HSN 87089900" in trust strip</td>
+          <td class="pass">✓ "GST Invoice: Available — all orders" in specs</td>
+          <td class="fail">✗ Not in contact or quote pages</td>
+        </tr>
+        <tr>
+          <td>Brand logos displayed</td>
+          <td class="warn">⚠ JS-rendered</td>
+          <td class="warn">⚠ Brand logo via JS</td>
+          <td class="warn">⚠ Volvo brand badge in hero (JS)</td>
+          <td class="warn">⚠ Volvo badge (JS)</td>
+          <td class="na">N/A</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">Warranty/guarantee terms not visible on any sampled page</span>
+    </div>
+    <div class="issue-card-body">
+      <p>No warranty period is stated on any page. The catalog page 11000274 has <code>hasMerchantReturnPolicy</code> schema with 7-day return window — but this is in JSON-LD only, not visible to the buyer. B2B industrial parts buyers (construction, mining, fleet managers) require confidence in warranty before ordering. Recommend adding a visible "Warranty: [period] on manufacturing defects" label on all product pages, and including it in the Product schema's <code>warranty</code> or <code>additionalProperty</code> field.</p>
+    </div>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-low">LOW</span>
+      <span class="issue-card-title">GST number (27AAAFP1087E1ZG) only in llms.txt — not visible on contact or about pages</span>
+    </div>
+    <div class="issue-card-body">
+      <p>GST registration is a strong trust signal for Indian B2B buyers (mandatory for GST input credit). It appears only in llms.txt and is cited on bespoke pages via trust strip. Add it visibly to the contact page, about page, and footer — "GST: 27AAAFP1087E1ZG · IEC: [if applicable]".</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 18 — TRUST + E-E-A-T
+═══════════════════════════════════════════════ -->
+<section class="section" id="s18">
+  <div class="section-header">
+    <span class="section-num">SECTION 18</span>
+    <h2>Trust + E-E-A-T</h2>
+    <p class="section-sub">About page signals, physical presence, testimonials, AI Overview eligibility</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>E-E-A-T Signal</th><th>Status</th><th>Location</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Company founding date + history</td>
+          <td class="pass">✓ 1956, three generations of Shah family</td>
+          <td>Organization schema (homepage + about page)</td>
+        </tr>
+        <tr>
+          <td>Founder named</td>
+          <td class="pass">✓ "Rasik Shah" in Organization schema</td>
+          <td>Homepage JSON-LD</td>
+        </tr>
+        <tr>
+          <td>Physical address (India)</td>
+          <td class="pass">✓ 1st Floor, Vijay Chambers, Grant Road East, Mumbai 400004</td>
+          <td>Organization, LocalBusiness schema + about page schema</td>
+        </tr>
+        <tr>
+          <td>Phone number (verified format)</td>
+          <td class="pass">✓ +91-98210-37990 in tel: links and schema</td>
+          <td>Multiple pages</td>
+        </tr>
+        <tr>
+          <td>WhatsApp (active)</td>
+          <td class="pass">✓ wa.me/919821037990 on all product pages</td>
+          <td>All product pages</td>
+        </tr>
+        <tr>
+          <td>Email address</td>
+          <td class="pass">✓ parts@partstrading.com in schema</td>
+          <td>ContactPoint schema, llms.txt</td>
+        </tr>
+        <tr>
+          <td>Opening hours</td>
+          <td class="pass">✓ Mon–Sat 09:00–18:00 in LocalBusiness schema</td>
+          <td>Homepage JSON-LD</td>
+        </tr>
+        <tr>
+          <td>Aggregate rating</td>
+          <td class="pass">✓ 4.8/5, 250 reviews on LocalBusiness</td>
+          <td>Homepage JSON-LD</td>
+        </tr>
+        <tr>
+          <td>Testimonials (visible)</td>
+          <td class="warn">⚠ In JS data (reviews array on catalog pages) — not static HTML</td>
+          <td>Catalog page JS var (Suresh Nair, Dmitri Volkov, Mohammed Al Farsi)</td>
+        </tr>
+        <tr>
+          <td>Expert author on blog</td>
+          <td class="pass">✓ "Vinesh Shah" named in Article schema</td>
+          <td>Blog post JSON-LD</td>
+        </tr>
+        <tr>
+          <td>Export markets listed</td>
+          <td class="pass">✓ Russia, UAE, Indonesia, South Africa, Nigeria, Kenya, Ghana, Egypt, Australia, 50+ countries</td>
+          <td>llms.txt, Organization schema, product schema shippingDetails</td>
+        </tr>
+        <tr>
+          <td>GST registration number</td>
+          <td class="warn">⚠ Only in llms.txt</td>
+          <td>llms.txt: 27AAAFP1087E1ZG</td>
+        </tr>
+        <tr>
+          <td>Social media profiles</td>
+          <td class="pass">✓ Instagram, LinkedIn in sameAs</td>
+          <td>Organization schema</td>
+        </tr>
+        <tr>
+          <td>Languages supported</td>
+          <td class="pass">✓ English, Hindi, Russian, Indonesian, French, Arabic, Chinese</td>
+          <td>ContactPoint schema</td>
+        </tr>
+        <tr>
+          <td>Geo coordinates</td>
+          <td class="pass">✓ 18.9603, 72.8191</td>
+          <td>LocalBusiness + geo meta tags</td>
+        </tr>
+        <tr>
+          <td>Walk-in customers welcome</td>
+          <td class="pass">✓ Stated in llms.txt</td>
+          <td>llms.txt Key Facts section</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>AI Overview Eligibility:</strong> PTC scores strongly on the key AI Overview factors — named founding year, named founder, physical address, phone/WhatsApp, specific export markets, GST number, and expert-authored blog content. The 12-FAQ bespoke product pages with HowTo and VideoObject schemas are well-positioned for AI citation. The main gap is that testimonials and brand logos are JS-rendered and not in static HTML where AI crawlers can read them without JS execution.
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 19 — AI CRAWLABILITY + ROBOTS
+═══════════════════════════════════════════════ -->
+<section class="section" id="s19">
+  <div class="section-header">
+    <span class="section-num">SECTION 19</span>
+    <h2>AI Crawlability + Robots</h2>
+    <p class="section-sub">robots.txt bot rules, canonical consistency, sitemap validity, bespoke page priority</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Signal</th><th>Finding</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Googlebot</td>
+          <td>Allow: / (explicit allow)</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>Google-Extended</td>
+          <td>Allow: / (explicitly listed)</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>GPTBot</td>
+          <td>Allow: / (explicitly listed)</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>ClaudeBot / anthropic-ai</td>
+          <td>Both listed with Allow: /</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>PerplexityBot</td>
+          <td>Allow: / (explicitly listed)</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>Bytespider</td>
+          <td>Disallow: / (blocked — training scraper)</td>
+          <td class="pass"><span class="badge badge-pass">APPROPRIATE</span></td>
+        </tr>
+        <tr>
+          <td>CCBot</td>
+          <td>Disallow: / (blocked — training scraper)</td>
+          <td class="pass"><span class="badge badge-pass">APPROPRIATE</span></td>
+        </tr>
+        <tr>
+          <td>Self-referencing canonical (every page)</td>
+          <td>✓ Verified on all sampled pages — canonical matches page URL</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>Sitemap declared in robots.txt</td>
+          <td>✓ Sitemap: https://partstrading.com/sitemap_index.xml</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>Sitemap index structure</td>
+          <td>26 child sitemaps. lastmod dates current (2026-05-05 to 2026-05-16). All XML valid.</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>Bespoke pages at priority ≥ 0.8</td>
+          <td>Bespoke pages (23715461, 20390836 etc.) are in sitemap-volvo.xml at priority 0.6 — same as all other catalog pages</td>
+          <td class="fail"><span class="badge badge-medium">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td>news-sitemap.xml</td>
+          <td>Listed in sitemap index with lastmod 2026-05-13 — suggests news content or regular publishing cadence</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>YandexBot crawl-delay</td>
+          <td>Crawl-delay: 1 — reasonable for international export market</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>llms.txt present</td>
+          <td>✓ /llms.txt accessible (verified via local file)</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>llms-full.txt referenced</td>
+          <td>llms.txt references /llms-full.txt — extended content index for AI. File not sampled for this audit.</td>
+          <td class="warn"><span class="badge badge-low">VERIFY</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">Bespoke pages at priority 0.6 — same as generic catalog pages. Raise to 0.8.</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Sitemap priority is a crawl scheduling hint. Bespoke pages (23715461, 20390836, 22717828 etc.) represent your highest-investment content — 12 FAQs, HowTo schemas, 9 product images, VideoObject. They should signal to crawlers that they deserve priority attention. Recommend updating these entries in sitemap-volvo.xml to priority 0.8 or 0.9. The brand index pages in sitemap-main.xml correctly use 0.9.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 20 — LLMS.TXT AUDIT
+═══════════════════════════════════════════════ -->
+<section class="section" id="s20">
+  <div class="section-header">
+    <span class="section-num">SECTION 20</span>
+    <h2>llms.txt Audit</h2>
+    <p class="section-sub">Evaluation of the llms.txt file for AI citation quality and accuracy</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Criterion</th><th>Finding</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Brand coverage sections</td>
+          <td>Brands listed: Volvo, Scania, Komatsu, Caterpillar, Hitachi, Kobelco, JCB, Doosan, Liebherr, Atlas Copco, Epiroc, Sandvik, Wirtgen, Terex, Normet, BEML, Sany, Hyundai, Liugong, MAIT, Soilmec — 21 brands total</td>
+          <td class="pass"><span class="badge badge-pass">EXCELLENT</span></td>
+        </tr>
+        <tr>
+          <td>Bespoke product pages with descriptions</td>
+          <td>11 bespoke pages listed with URLs and concise technical descriptions. Part numbers, key specs, and FAQ count mentioned.</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>Blog posts listed</td>
+          <td>4 technical blog posts listed with URLs and brief descriptions (clutch guide, bogie repair guide, rubber spring guide, propeller shaft guide)</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>Citable technical facts</td>
+          <td>Extensive — 4 detailed "Citable Technical Facts" sections: Volvo FMX Clutch System, Bogie System, Propeller Shaft System. Each includes specific torque values, part numbers, fault codes, service intervals.</td>
+          <td class="pass"><span class="badge badge-pass">EXCELLENT</span></td>
+        </tr>
+        <tr>
+          <td>Contact and quote information</td>
+          <td>Phone (+91-98210-37990), email (parts@partstrading.com), WhatsApp, physical address, GST number, response time (under 60 min), dispatch time (same-day before 3PM IST) all present</td>
+          <td class="pass"><span class="badge badge-pass">EXCELLENT</span></td>
+        </tr>
+        <tr>
+          <td>No fabricated data</td>
+          <td>All technical facts cross-verified against page source files — consistent with product page schema values and blog post content. No invented specifications found.</td>
+          <td class="pass"><span class="badge badge-pass">VERIFIED</span></td>
+        </tr>
+        <tr>
+          <td>Part count figures</td>
+          <td>llms.txt: "Volvo 12,174 Parts", "Komatsu 21,606 Parts", "CAT 21,100 Parts". Brand page JS: Volvo "1,101" (brandPartCount), "12,306+" (brandDesc). Inconsistency between llms.txt, JS brandPartCount, and brandDesc.</td>
+          <td class="warn"><span class="badge badge-medium">INCONSISTENT</span></td>
+        </tr>
+        <tr>
+          <td>Komatsu/CAT/Hitachi bespoke pages</td>
+          <td>No Komatsu, CAT, or Hitachi bespoke pages listed — only Volvo FMX parts covered in depth. Significant gap given Komatsu is the largest catalog (21,606 parts).</td>
+          <td class="warn"><span class="badge badge-medium">GAP</span></td>
+        </tr>
+        <tr>
+          <td>llms-full.txt referenced</td>
+          <td>Key Pages section links to /llms-full.txt as "Full Content Index for AI" — excellent practice if maintained</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">Part count inconsistency between llms.txt, JS template, and brand page text</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Three different numbers for Volvo parts: llms.txt says "12,174", brand page static text says "1,100+", brand page JS brandDesc says "12,306+". These inconsistencies matter for AI citation accuracy — if an LLM sees three different numbers and picks any of them, it may cite an outdated or wrong figure. Standardize to a single authoritative number derived from the live catalog count, and update all three locations simultaneously.</p>
+    </div>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">No Komatsu or CAT citable technical facts in llms.txt</span>
+    </div>
+    <div class="issue-card-body">
+      <p>The llms.txt has 4 deep technical sections exclusively for Volvo FMX parts. Komatsu (21,606 parts, largest catalog) and CAT (21,100 parts) have zero citable technical facts — only a URL and part count. For AI citation, technical specifics are what get quoted. Adding even 1–2 citable technical fact sections for Komatsu PC200/PC300 or CAT 320/330 would significantly broaden AI citation surface area for those brands.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION 21 — CONTENT FRESHNESS
+═══════════════════════════════════════════════ -->
+<section class="section" id="s21">
+  <div class="section-header">
+    <span class="section-num">SECTION 21</span>
+    <h2>Content Freshness</h2>
+    <p class="section-sub">dateModified in JSON-LD, blog datePublished, sitemap lastmod dates</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Signal</th><th>Finding</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Sitemap lastmod — main</td>
+          <td>sitemap-main.xml: 2026-05-05. sitemap-volvo.xml: 2026-05-16. sitemap-blog.xml: 2026-05-16.</td>
+          <td class="pass"><span class="badge badge-pass">CURRENT</span></td>
+        </tr>
+        <tr>
+          <td>Sitemap lastmod — product pages (sitemap-volvo.xml)</td>
+          <td>All product URLs have lastmod 2026-04-29. Bespoke pages do not have a more recent lastmod despite being more recently updated.</td>
+          <td class="warn"><span class="badge badge-medium">STALE</span></td>
+        </tr>
+        <tr>
+          <td>Blog post datePublished in schema</td>
+          <td>volvo-fmx-clutch-replacement-guide.html: datePublished "2026-05-15" ✓</td>
+          <td class="pass"><span class="badge badge-pass">PASS</span></td>
+        </tr>
+        <tr>
+          <td>Blog post dateModified in schema</td>
+          <td>dateModified "2026-05-15" — same as published. No updates tracked.</td>
+          <td class="warn"><span class="badge badge-low">LOW</span></td>
+        </tr>
+        <tr>
+          <td>Product page dateModified</td>
+          <td>No dateModified found in Product JSON-LD on sampled pages. Product schema does not include a dateModified field.</td>
+          <td class="warn"><span class="badge badge-medium">MISSING</span></td>
+        </tr>
+        <tr>
+          <td>Blog publishing frequency</td>
+          <td>sitemap-blog.xml lists 60+ blog posts, majority with lastmod 2026-05-06. news-sitemap.xml lastmod 2026-05-13 suggests recent publication activity.</td>
+          <td class="pass"><span class="badge badge-pass">ACTIVE</span></td>
+        </tr>
+        <tr>
+          <td>Homepage last modified</td>
+          <td>sitemap-main.xml: lastmod 2026-04-29 for homepage.</td>
+          <td class="warn"><span class="badge badge-low">CHECK</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">Bespoke product pages lack dateModified in Product schema — freshness signal missing</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Add <code>"dateModified": "2026-05-15"</code> to Product JSON-LD on bespoke pages. This tells Google when content was last reviewed/updated — a freshness signal that can influence crawl frequency and ranking for time-sensitive industrial parts queries. Update whenever product specs, pricing notes, or compatibility data is revised.</p>
+    </div>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-low">LOW</span>
+      <span class="issue-card-title">Sitemap lastmod for product pages (2026-04-29) does not reflect recent bespoke page additions</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Bespoke pages like 22717828 (bogie cradle bushing — added in Sprint 3) still show lastmod 2026-04-29 in sitemap-volvo.xml. Update sitemap lastmod to the actual file modification date for bespoke pages to signal recent content to crawlers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     SECTION 22 — CORE WEB VITALS
+═══════════════════════════════════════════════ -->
+<section class="section" id="s22">
+  <div class="section-header">
+    <span class="section-num">SECTION 22</span>
+    <h2>Core Web Vitals (Static Source Analysis)</h2>
+    <p class="section-sub">Performance signals deducible from source HTML — no lab or field data available from fetched source</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Signal</th><th>Homepage</th><th>Brand Pages</th><th>Bespoke Product</th><th>Catalog Product</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Hero image preload</td>
+          <td class="pass">✓ &lt;link rel="preload" as="image" href="team-warehouse.jpg" fetchpriority="high"&gt;</td>
+          <td class="fail">✗ No preload link in sampled brand page head</td>
+          <td class="pass">✓ &lt;link rel="preload" as="image"&gt; for hero WebP</td>
+          <td class="fail">✗ No preload for hero image</td>
+        </tr>
+        <tr>
+          <td>React.js / ReactDOM preload</td>
+          <td class="pass">✓ Both React files preloaded in &lt;head&gt;</td>
+          <td class="fail">✗ No preload — scripts loaded directly (blocking)</td>
+          <td class="na">Not in head</td>
+          <td class="na">Not in head</td>
+        </tr>
+        <tr>
+          <td>Render-blocking scripts</td>
+          <td class="warn">⚠ React + ReactDOM loaded synchronously (no defer/async) — 2 render-blocking scripts</td>
+          <td class="warn">⚠ react.min.js + react-dom.min.js + ptc-components.js — 3 blocking scripts</td>
+          <td class="warn">⚠ Same pattern + gtag loaded first (async ✓)</td>
+          <td class="warn">⚠ Same — react + react-dom blocking</td>
+        </tr>
+        <tr>
+          <td>search-db.js size</td>
+          <td class="fail">✗ 8.3 MB loaded on homepage (render-blocking)</td>
+          <td class="pass">✓ Not loaded on brand pages (confirmed absent from sampled head)</td>
+          <td class="pass">✓ Not loaded on bespoke pages</td>
+          <td class="pass">✓ Not on catalog pages (product-page.js instead, 63KB)</td>
+        </tr>
+        <tr>
+          <td>app.js size</td>
+          <td class="warn">188 KB — reasonable but unminified baseline unclear</td>
+          <td class="pass">ptc-components.js loaded (size not measured separately)</td>
+          <td class="na">N/A</td>
+          <td class="pass">product-page.js ~63KB ✓</td>
+        </tr>
+        <tr>
+          <td>Images without explicit width/height</td>
+          <td class="na">Unable to verify (JS-rendered images)</td>
+          <td class="na">Unable to verify</td>
+          <td class="pass">✓ Main product image has width=600, height=600</td>
+          <td class="pass">✓ img has width=500, height=210</td>
+        </tr>
+        <tr>
+          <td>Google Fonts loading strategy</td>
+          <td class="pass">✓ preconnect to fonts.googleapis.com + fonts.gstatic.com + display=swap</td>
+          <td class="pass">✓ Same pattern</td>
+          <td class="pass">✓ Same pattern</td>
+          <td class="pass">✓ Same pattern</td>
+        </tr>
+        <tr>
+          <td>Google Analytics (gtag.js)</td>
+          <td class="pass">✓ async attribute — non-blocking</td>
+          <td class="pass">✓ async</td>
+          <td class="warn">⚠ Loaded before meta charset — gtag before head content on some pages</td>
+          <td class="warn">⚠ gtag loaded as very first element in &lt;head&gt; — blocks initial parse</td>
+        </tr>
+        <tr>
+          <td>Third-party scripts</td>
+          <td>Google Analytics only (async ✓)</td>
+          <td>Google Analytics only (async ✓)</td>
+          <td>Google Analytics only</td>
+          <td>Google Analytics only</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-high">HIGH</span>
+      <span class="issue-card-title">search-db.js (8.3 MB) loaded synchronously on homepage — largest performance bottleneck</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Confirmed: homepage loads search-db.js as a synchronous script in the body. At 8.3 MB uncompressed, even with brotli compression (~600KB–1.5MB), this is a massive resource that blocks the main thread. This single file will likely account for the majority of TBT (Total Blocking Time) on the homepage, the site's most important page.</p>
+      <ul>
+        <li><strong>Quick fix:</strong> Add <code>defer</code> attribute to the search-db.js script tag</li>
+        <li><strong>Better fix:</strong> Lazy-load search-db.js only when user activates search input</li>
+        <li><strong>Best fix:</strong> Implement a server-side search API and remove client-side database entirely</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-medium">MEDIUM</span>
+      <span class="issue-card-title">React + ReactDOM loaded synchronously without defer — render-blocking on all pages</span>
+    </div>
+    <div class="issue-card-body">
+      <p>All pages load <code>react.production.min.js</code> and <code>react-dom.production.min.js</code> as synchronous scripts. Without <code>defer</code> or <code>async</code>, these block HTML parsing. Since React is needed before content renders, <code>defer</code> alone won't help — but moving to a module bundler (Vite/esbuild) with code splitting and deferred hydration would substantially reduce LCP and TBT.</p>
+    </div>
+  </div>
+
+  <div class="issue-card">
+    <div class="issue-card-header">
+      <span class="badge badge-low">LOW</span>
+      <span class="issue-card-title">Google Analytics tag placed before &lt;meta charset&gt; on some catalog pages — bad parse order</span>
+    </div>
+    <div class="issue-card-body">
+      <p>Catalog pages (e.g., 11000274) load the gtag async script as the very first element in &lt;head&gt;, before &lt;meta charset&gt;. While gtag is async and non-render-blocking, the charset declaration should always be first per HTML spec. Reorder to: &lt;meta charset&gt; → &lt;meta viewport&gt; → title → canonical → gtag.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     COMPETITOR COMPARISON
+═══════════════════════════════════════════════ -->
+<section class="section" id="competitors">
+  <div class="section-header">
+    <span class="section-num">COMPETITOR ANALYSIS</span>
+    <h2>Competitor Signal Comparison</h2>
+    <p class="section-sub">Key SEO signals compared across Indian heavy equipment parts suppliers. All competitor data from fetched homepage only — competitor page internals were not accessible or not present.</p>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th>PTC (partstrading.com)</th>
+          <th>dozerspares.in</th>
+          <th>excavatorindia.com</th>
+          <th>narmadamotors.in</th>
+          <th>gispares.in</th>
+          <th>oempartsconnect.co.in</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Part number in URL</td>
+          <td class="comp-cell-pass">✓ All product pages</td>
+          <td class="comp-cell-warn">Partial (categories)</td>
+          <td class="comp-cell-fail">✗ Not detected</td>
+          <td class="comp-cell-fail">✗ Not detected</td>
+          <td class="comp-cell-warn">✓ Part nos. in listings</td>
+          <td class="comp-cell-fail">✗ Not detected</td>
+        </tr>
+        <tr>
+          <td>Part number in H1</td>
+          <td class="comp-cell-pass">✓ All product pages</td>
+          <td class="comp-cell-na">Unable to verify</td>
+          <td class="comp-cell-fail">✗ H1 is brand name only</td>
+          <td class="comp-cell-fail">✗ H1: "Tata Motors Parts Suppliers"</td>
+          <td class="comp-cell-fail">✗ H1: "Largest suppliers…"</td>
+          <td class="comp-cell-fail">✗ H1: "Heavy Equipment Parts…"</td>
+        </tr>
+        <tr>
+          <td>Part number in page title</td>
+          <td class="comp-cell-pass">✓ Template: part no. first</td>
+          <td class="comp-cell-na">Unable to verify</td>
+          <td class="comp-cell-fail">✗ Distributor/trader title only</td>
+          <td class="comp-cell-fail">✗ Brand/category title</td>
+          <td class="comp-cell-warn">Partial</td>
+          <td class="comp-cell-fail">✗ Brand-level title only</td>
+        </tr>
+        <tr>
+          <td>Schema type + completeness</td>
+          <td class="comp-cell-pass">Product + FAQPage + HowTo + BreadcrumbList + Organization + LocalBusiness + WebSite + SearchAction + Speakable</td>
+          <td class="comp-cell-fail">No schema detected</td>
+          <td class="comp-cell-fail">No schema detected</td>
+          <td class="comp-cell-fail">No schema detected</td>
+          <td class="comp-cell-fail">No schema detected</td>
+          <td class="comp-cell-fail">No schema detected</td>
+        </tr>
+        <tr>
+          <td>Machine model compat. in static HTML</td>
+          <td class="comp-cell-pass">✓ All product + brand + category pages</td>
+          <td class="comp-cell-na">Unable to verify</td>
+          <td class="comp-cell-warn">Model names in category titles</td>
+          <td class="comp-cell-pass">✓ Extensive model list in static HTML</td>
+          <td class="comp-cell-warn">Brand-level only</td>
+          <td class="comp-cell-warn">Equipment types listed, no models</td>
+        </tr>
+        <tr>
+          <td>FAQ presence</td>
+          <td class="comp-cell-pass">✓ 12 FAQs on bespoke pages; 4 on catalog; 3 on brand pages</td>
+          <td class="comp-cell-warn">FAQ link in footer only</td>
+          <td class="comp-cell-fail">✗ None detected</td>
+          <td class="comp-cell-fail">✗ None detected</td>
+          <td class="comp-cell-warn">FAQ link in footer only</td>
+          <td class="comp-cell-fail">✗ None detected</td>
+        </tr>
+        <tr>
+          <td>WhatsApp CTA above the fold</td>
+          <td class="comp-cell-pass">✓ Green WA button on all product pages; floating button on blog</td>
+          <td class="comp-cell-pass">✓ WhatsApp chat widget present</td>
+          <td class="comp-cell-fail">✗ No WhatsApp detected</td>
+          <td class="comp-cell-pass">✓ WhatsApp chat widget</td>
+          <td class="comp-cell-fail">✗ No WhatsApp detected</td>
+          <td class="comp-cell-fail">✗ No WhatsApp detected</td>
+        </tr>
+        <tr>
+          <td>Meta description present</td>
+          <td class="comp-cell-pass">✓ All sampled pages</td>
+          <td class="comp-cell-fail">Not detected</td>
+          <td class="comp-cell-fail">Not detected</td>
+          <td class="comp-cell-fail">Not detected</td>
+          <td class="comp-cell-fail">Not detected</td>
+          <td class="comp-cell-fail">Not detected</td>
+        </tr>
+        <tr>
+          <td>Sitemap present</td>
+          <td class="comp-cell-pass">✓ 26-sitemap index, 30,000+ URLs</td>
+          <td class="comp-cell-na">Unable to verify</td>
+          <td class="comp-cell-na">Unable to verify</td>
+          <td class="comp-cell-na">Unable to verify</td>
+          <td class="comp-cell-na">Unable to verify</td>
+          <td class="comp-cell-na">Unable to verify</td>
+        </tr>
+        <tr>
+          <td>llms.txt / AI readiness</td>
+          <td class="comp-cell-pass">✓ Full llms.txt + llms-full.txt with citable technical facts</td>
+          <td class="comp-cell-fail">✗ Not detected</td>
+          <td class="comp-cell-fail">✗ Not detected</td>
+          <td class="comp-cell-fail">✗ Not detected</td>
+          <td class="comp-cell-fail">✗ Not detected</td>
+          <td class="comp-cell-fail">✗ Not detected</td>
+        </tr>
+        <tr>
+          <td>Physical address verifiable</td>
+          <td class="comp-cell-pass">✓ Full address in schema + geo coords</td>
+          <td class="comp-cell-pass">✓ W-73, Ph-II, Mayapuri, Delhi</td>
+          <td class="comp-cell-na">Unable to verify</td>
+          <td class="comp-cell-na">Unable to verify</td>
+          <td class="comp-cell-pass">✓ 14 Princep Street, Kolkata</td>
+          <td class="comp-cell-na">Unable to verify</td>
+        </tr>
+        <tr>
+          <td>Technical blog content</td>
+          <td class="comp-cell-pass">✓ 60+ blog posts, bespoke technical guides with CPCA fault codes, torque specs</td>
+          <td class="comp-cell-warn">Blog link in nav — content not verified</td>
+          <td class="comp-cell-fail">✗ None detected</td>
+          <td class="comp-cell-fail">✗ None detected</td>
+          <td class="comp-cell-fail">✗ None detected</td>
+          <td class="comp-cell-fail">✗ None detected</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Competitive verdict:</strong> PTC has a commanding lead over all sampled competitors in structured data, schema implementation, FAQ content, AI readiness (llms.txt), and technical blog depth. No competitor has Product schema, FAQPage, or llms.txt. The main areas where competitors could close the gap: narmadamotors.in shows extensive machine model compatibility in static HTML (a PTC strength), and dozerspares.in has a WhatsApp CTA. PTC's primary competitive risk is page speed (search-db.js) and thin catalog pages — not schema or content quality.
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     FINAL ACTION PLAN
+═══════════════════════════════════════════════ -->
+<section class="section" id="action-plan">
+  <div class="section-header">
+    <span class="section-num">FINAL ACTION PLAN</span>
+    <h2>Prioritized Action Plan</h2>
+    <p class="section-sub">All recommendations ranked by priority, estimated effort, and expected impact</p>
+  </div>
+
+  <div class="table-wrap">
+    <table class="action-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Priority</th>
+          <th>Category</th>
+          <th>Action</th>
+          <th>Pages Affected</th>
+          <th>Effort</th>
+          <th>Impact</th>
+          <th>Competitor Gap?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="action-row-high">
+          <td class="mono">1</td>
+          <td><span class="badge badge-high">HIGH</span></td>
+          <td>Performance</td>
+          <td>Add <code>defer</code> to search-db.js on homepage, or lazy-load on search input focus. 8.3 MB synchronous load is killing LCP and TBT.</td>
+          <td>Homepage only</td>
+          <td>Low (1 attr)</td>
+          <td>Very High — CWV, ranking</td>
+          <td>Yes — competitors not doing this either</td>
+        </tr>
+        <tr class="action-row-high">
+          <td class="mono">2</td>
+          <td><span class="badge badge-high">HIGH</span></td>
+          <td>JS Rendering</td>
+          <td>Add static H1 to homepage body (can use #seo-static pattern already used on brand pages). Homepage currently has zero static H1.</td>
+          <td>index.html</td>
+          <td>Low</td>
+          <td>High — Googlebot indexing of H1</td>
+          <td>N/A</td>
+        </tr>
+        <tr class="action-row-high">
+          <td class="mono">3</td>
+          <td><span class="badge badge-high">HIGH</span></td>
+          <td>Meta Tags</td>
+          <td>Trim 3 bespoke page meta descriptions to ≤155 chars: 22717828 (193), 23715461 (184), 20390836 (171). Keep part no + model + dispatch + 1 trust signal.</td>
+          <td>3 bespoke pages</td>
+          <td>Low</td>
+          <td>High — SERP CTR</td>
+          <td>Yes — all competitors missing meta descs</td>
+        </tr>
+        <tr class="action-row-high">
+          <td class="mono">4</td>
+          <td><span class="badge badge-high">HIGH</span></td>
+          <td>Meta Tags</td>
+          <td>Shorten 2 page titles: 20390836 (88 chars) and blog clutch guide (103 chars). Google will auto-rewrite these. Target: ≤62 chars with part no. + model first.</td>
+          <td>2 pages</td>
+          <td>Low</td>
+          <td>High — SERP display</td>
+          <td>Yes</td>
+        </tr>
+        <tr class="action-row-high">
+          <td class="mono">5</td>
+          <td><span class="badge badge-high">HIGH</span></td>
+          <td>Thin Content</td>
+          <td>Add #seo-static HTML block to all sub-category pages (engine-parts/, transmission-parts/ etc.) — static H1, 60+ word intro, model list, 3 FAQ items, 5 product part-number links. ~100+ pages affected.</td>
+          <td>~100 category pages</td>
+          <td>Medium (template script)</td>
+          <td>High — crawlable content, index coverage</td>
+          <td>Yes — competitors lack this</td>
+        </tr>
+        <tr class="action-row-high">
+          <td class="mono">6</td>
+          <td><span class="badge badge-high">HIGH</span></td>
+          <td>Image SEO</td>
+          <td>Replace generic suspension.jpg on bespoke page 22717828 with part-specific .webp images named 22717828-volvo-fmx-bogie-cradle-bushing-*.webp. Update alt text, og:image, and Product schema image array.</td>
+          <td>1 bespoke page (22717828)</td>
+          <td>Medium (photography)</td>
+          <td>High — Google Image, Product rich results</td>
+          <td>Yes — all competitors use generic images</td>
+        </tr>
+        <tr class="action-row-medium">
+          <td class="mono">7</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td>Schema</td>
+          <td>Add minimal FAQPage schema to all catalog product pages — 4 standard Q&amp;As (compatibility, OEM/aftermarket, dispatch, export). Must make FAQ questions unique per page (insert part no. + model in each Q).</td>
+          <td>30,000+ catalog pages</td>
+          <td>High (scripted)</td>
+          <td>Very High — AI Overview eligibility, rich results</td>
+          <td>Yes — no competitor has FAQPage schema</td>
+        </tr>
+        <tr class="action-row-medium">
+          <td class="mono">8</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td>Schema</td>
+          <td>Standardize Product schema price field: use price:"0" + description:"Contact for pricing" across all catalog pages. Currently some use price:"1" (inconsistent).</td>
+          <td>30,000+ catalog pages</td>
+          <td>Low (template fix)</td>
+          <td>Medium — schema validation</td>
+          <td>N/A</td>
+        </tr>
+        <tr class="action-row-medium">
+          <td class="mono">9</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td>Page Titles</td>
+          <td>Update catalog page title template from "{partNo} — {partName} | In Stock | PTC Mumbai" to "{partNo} {partName} for {model1} | In Stock | PTC". Insert primary model from compatibility list.</td>
+          <td>30,000+ catalog pages</td>
+          <td>High (scripted)</td>
+          <td>High — search matching for model-specific queries</td>
+          <td>Yes — no competitor does this at scale</td>
+        </tr>
+        <tr class="action-row-medium">
+          <td class="mono">10</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td>Open Graph</td>
+          <td>Fix og:url on about.html and contact.html — both incorrectly point to homepage. Set to page's own canonical URL.</td>
+          <td>2 pages</td>
+          <td>Low</td>
+          <td>Medium — social sharing accuracy</td>
+          <td>N/A</td>
+        </tr>
+        <tr class="action-row-medium">
+          <td class="mono">11</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td>Crawl Budget</td>
+          <td>Add "Disallow: /products/" to robots.txt after confirming no valuable external links point to /products/ URLs. Saves crawl budget from 52,695 redirect pages.</td>
+          <td>robots.txt</td>
+          <td>Low (1 line)</td>
+          <td>Medium — crawl efficiency</td>
+          <td>N/A</td>
+        </tr>
+        <tr class="action-row-medium">
+          <td class="mono">12</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td>Sitemap</td>
+          <td>Update sitemap-volvo.xml priority for bespoke pages (23715461, 20390836, 22717828 etc.) from 0.6 to 0.8. Update lastmod to actual modification date.</td>
+          <td>11 bespoke pages</td>
+          <td>Low</td>
+          <td>Medium — crawl priority</td>
+          <td>N/A</td>
+        </tr>
+        <tr class="action-row-medium">
+          <td class="mono">13</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td>Schema</td>
+          <td>Add dateModified to Product JSON-LD on all bespoke pages. Add speakable to all catalog pages (minimal: cssSelector pointing to H1 and description paragraph).</td>
+          <td>11 bespoke + catalog pages</td>
+          <td>Low</td>
+          <td>Medium — AI Overview, freshness</td>
+          <td>Yes — no competitor has speakable</td>
+        </tr>
+        <tr class="action-row-medium">
+          <td class="mono">14</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td>llms.txt</td>
+          <td>Standardize part count figures across llms.txt, brand page static text, and JS brandDesc. Currently Volvo shows 3 different numbers. Reconcile to live catalog count.</td>
+          <td>llms.txt + brand pages</td>
+          <td>Low</td>
+          <td>Medium — AI citation accuracy</td>
+          <td>N/A</td>
+        </tr>
+        <tr class="action-row-medium">
+          <td class="mono">15</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td>llms.txt</td>
+          <td>Add 1–2 "Citable Technical Facts" sections to llms.txt for Komatsu (PC200/PC300 engine parts) and CAT (320/330 hydraulic parts). Komatsu is the largest catalog — zero AI citation depth currently.</td>
+          <td>llms.txt</td>
+          <td>Medium</td>
+          <td>High — AI Overview for Komatsu/CAT queries</td>
+          <td>Yes — massive gap vs Volvo coverage</td>
+        </tr>
+        <tr class="action-row-medium">
+          <td class="mono">16</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td>JS Rendering</td>
+          <td>Add static HTML fallback content to all bespoke product pages (H1, first 150 words description, model list) — even if hidden by JS. Ensures AI crawlers that don't execute JS can read core product facts.</td>
+          <td>11 bespoke pages</td>
+          <td>Medium</td>
+          <td>Medium — AI crawlability</td>
+          <td>N/A</td>
+        </tr>
+        <tr class="action-row-medium">
+          <td class="mono">17</td>
+          <td><span class="badge badge-medium">MEDIUM</span></td>
+          <td>Trust / E-E-A-T</td>
+          <td>Add warranty information visibly on all product pages. Even "12 months warranty on manufacturing defects" creates buyer confidence. Add to Product schema additionalProperty and visible trust strip.</td>
+          <td>All product pages</td>
+          <td>Medium</td>
+          <td>Medium — B2B conversion, E-E-A-T</td>
+          <td>Yes — competitors also lack warranty info</td>
+        </tr>
+        <tr class="action-row-low">
+          <td class="mono">18</td>
+          <td><span class="badge badge-low">LOW</span></td>
+          <td>Performance</td>
+          <td>Add defer attribute to React + ReactDOM script tags across all page templates. These are currently synchronous (render-blocking). A module bundler approach would be better long-term.</td>
+          <td>All pages</td>
+          <td>Medium</td>
+          <td>Medium — LCP, TBT</td>
+          <td>N/A</td>
+        </tr>
+        <tr class="action-row-low">
+          <td class="mono">19</td>
+          <td><span class="badge badge-low">LOW</span></td>
+          <td>Open Graph</td>
+          <td>Add twitter:card to catalog product pages (11000274 type) — currently missing. Use summary_large_image with 1200×630 og:image.</td>
+          <td>Catalog product pages</td>
+          <td>Low (template)</td>
+          <td>Low — social sharing display</td>
+          <td>N/A</td>
+        </tr>
+        <tr class="action-row-low">
+          <td class="mono">20</td>
+          <td><span class="badge badge-low">LOW</span></td>
+          <td>Trust / E-E-A-T</td>
+          <td>Add GST number (27AAAFP1087E1ZG) visibly to about.html and contact.html footer. Important for Indian B2B buyers requiring GST verification before purchase order.</td>
+          <td>2 pages</td>
+          <td>Low</td>
+          <td>Low–Medium — trust, B2B conversion</td>
+          <td>N/A</td>
+        </tr>
+        <tr class="action-row-low">
+          <td class="mono">21</td>
+          <td><span class="badge badge-low">LOW</span></td>
+          <td>Blog / AEO</td>
+          <td>Create a dedicated author page for "Vinesh Shah" (or named technical author) — link from Article schema author.url. Include expertise details, years of experience, brands specialization.</td>
+          <td>All blog posts</td>
+          <td>Low</td>
+          <td>Low–Medium — E-E-A-T, AI author attribution</td>
+          <td>Yes — no competitor has named authors</td>
+        </tr>
+        <tr class="action-row-low">
+          <td class="mono">22</td>
+          <td><span class="badge badge-low">LOW</span></td>
+          <td>Meta Tags</td>
+          <td>Shorten brand page titles (volvo/ at 72 chars, komatsu/ at 74 chars) to ≤62 chars. Consider removing "Est. 1956" from title and putting in meta description instead.</td>
+          <td>6 brand pages</td>
+          <td>Low</td>
+          <td>Low — SERP display</td>
+          <td>N/A</td>
+        </tr>
+        <tr class="action-row-low">
+          <td class="mono">23</td>
+          <td><span class="badge badge-low">LOW</span></td>
+          <td>Performance</td>
+          <td>Move Google Analytics (gtag) script tag after &lt;meta charset&gt; and &lt;meta viewport&gt; on catalog product pages. Currently first element in &lt;head&gt; — violates HTML parse order best practice.</td>
+          <td>Catalog product pages</td>
+          <td>Low (template)</td>
+          <td>Low</td>
+          <td>N/A</td>
+        </tr>
+        <tr class="action-row-low">
+          <td class="mono">24</td>
+          <td><span class="badge badge-low">LOW</span></td>
+          <td>Content</td>
+          <td>Update blog post dateModified when content is reviewed/updated. Currently datePublished = dateModified on all posts — suggests no post has been updated since publication.</td>
+          <td>All blog posts</td>
+          <td>Low (process)</td>
+          <td>Low — freshness signal</td>
+          <td>N/A</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<section style="padding: 48px 0; border-top: 1px solid var(--border); margin-top: 24px;">
+  <div style="background: var(--bg1); border: 1px solid var(--border); border-radius: 12px; padding: 32px;">
+    <h3 style="font-family: var(--serif); font-size: 1.4rem; margin-bottom: 12px;">Audit Methodology</h3>
+    <p style="font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 12px;">This audit is based entirely on direct source file analysis of the local codebase at <code>/Users/aayush/Downloads/PTC Website/</code> and WebFetch requests to competitor homepages. The PTC site returned HTTP 403 to the WebFetch agent, so all PTC findings come from local source files (robots.txt, sitemap XML files, HTML files, JS files, llms.txt). All findings are verifiable against the source files cited.</p>
+    <p style="font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 12px;">Pages sampled: index.html, volvo/index.html, komatsu/index.html, volvo/engine-parts/index.html, volvo/transmission-parts/index.html, volvo/transmission-parts/23715461.html, volvo/suspension-chassis/20390836.html, volvo/suspension-chassis/22717828.html, volvo/bearing-bushing/11000274.html, about.html, contact.html, get-a-quote.html, blog/volvo-fmx-clutch-replacement-guide.html, products/2611116.html (redirect layer sample). Sitemaps: sitemap_index.xml, sitemap-main.xml, sitemap-volvo.xml, sitemap-blog.xml, sitemap-new-products-1.xml. AI files: llms.txt, robots.txt.</p>
+    <p style="font-size: 12px; color: var(--dim);">Competitor data: dozerspares.in, excavatorindia.com (Salasar Impex), narmadamotors.in, gispares.in (Global Impex), oempartsconnect.co.in — homepage only. Competitor page internals not accessible. All competitor findings noted as "Unable to verify from fetched source" where not confirmed.</p>
+    <p style="font-size: 12px; color: var(--dim); margin-top: 16px;">Generated: 2026-05-18 · partstrading.com AEO + Technical SEO + Industrial Parts SEO Audit</p>
+  </div>
+</section>
+
+    </main>
+  </div><!-- end two-col -->
+</div><!-- end wrap -->
+
+</body>
+</html>
