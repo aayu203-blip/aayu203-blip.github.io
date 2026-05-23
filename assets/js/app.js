@@ -1245,7 +1245,7 @@ function HeroSearch({
   });
   const inputRef = useRef();
   const barRef = useRef();
-  const brands = ['All', 'Volvo', 'Scania', 'Komatsu', 'CAT', 'Hitachi'];
+  const brands = ['All', 'Volvo', 'Scania', 'Komatsu', 'CAT', 'Hitachi', 'Sany', 'JCB'];
   useEffect(() => {
     if (dbLoaded) return;
     const t = setInterval(() => {
@@ -4494,7 +4494,7 @@ function Contact() {
 // ── FOOTER ────────────────────────────────────────────────────────────────────
 const FOOTER_COLS = [{
   h: 'Browse Brands',
-  links: [['Volvo Parts', '/volvo/'], ['Scania Parts', '/scania/'], ['Komatsu Parts', '/komatsu/'], ['CAT Parts', '/cat/'], ['Hitachi Parts', '/hitachi/'], ['All Brands', '/']]
+  links: [['Volvo Parts', '/volvo/'], ['Scania Parts', '/scania/'], ['Komatsu Parts', '/komatsu/'], ['CAT Parts', '/cat/'], ['Hitachi Parts', '/hitachi/'], ['Sany Parts', '/sany/'], ['JCB Parts', '/jcb/'], ['All Brands', '/']]
 }, {
   h: 'Part Categories',
   links: [['Engine Parts', '/volvo/engine-parts/'], ['Hydraulic Parts', '/volvo/hydraulic-parts/'], ['Filters', '/volvo/filters/'], ['Undercarriage', '/komatsu/undercarriage/'], ['Transmission', '/volvo/transmission-parts/'], ['All Categories', '/volvo/']]

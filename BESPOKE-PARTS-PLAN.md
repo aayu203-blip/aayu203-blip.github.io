@@ -249,15 +249,27 @@ Links to: 25818663, 23707800, 21081177, 22728175
 
 ---
 
-## Bespoke Pages Already Done
+## Bespoke Pages Already Done (17 total — all protected in generator)
 
-| Page | Status | Blog support |
-|------|--------|-------------|
-| `volvo/suspension-chassis/20390836.html` | ✅ Complete | 5 blog posts |
-| `volvo/transmission-parts/23715461.html` | ✅ Complete (2026-05-16) | `blog/volvo-fmx-clutch-replacement-guide.html` |
-| `volvo/transmission-parts/23417523.html` | ✅ Complete (2026-05-16) | Same blog post |
-| `volvo/transmission-parts/24211409.html` | ✅ Complete (2026-05-16) | Same blog post |
-| `volvo/transmission-parts/23441664.html` | ✅ Complete (2026-05-16) | Same blog post |
+| Page | Lines | Status |
+|------|-------|--------|
+| `volvo/suspension-chassis/20390836.html` | 967 | ✅ Complete — template page, 5 blog posts |
+| `volvo/transmission-parts/23715461.html` | 499 | ✅ Complete (2026-05-16) |
+| `volvo/transmission-parts/23417523.html` | 485 | ✅ Complete (2026-05-16) — restored from live 2026-05-22 |
+| `volvo/transmission-parts/24211409.html` | 480 | ✅ Complete (2026-05-16) — restored from live 2026-05-22 |
+| `volvo/transmission-parts/23441664.html` | 514 | ✅ Complete (2026-05-16) — restored from live 2026-05-22 |
+| `volvo/seals-orings/20523491.html` | 452 | ✅ Complete |
+| `volvo/seals-orings/21447682.html` | 453 | ✅ Complete |
+| `volvo/suspension-chassis/22717828.html` | 473 | ✅ Complete (FMX500 cradle bushing) |
+| `volvo/suspension-chassis/22913290.html` | 475 | ✅ Complete (FMX500 bogie assembly) |
+| `volvo/suspension-chassis/25818663.html` | 486 | ✅ Complete (propeller shaft) |
+| `scania/filters/2388680.html` | 421 | ✅ Complete |
+| `scania/filters/2866325.html` | 430 | ✅ Complete |
+| `scania/filters/2979070.html` | 416 | ✅ Complete |
+| `scania/hydraulic-parts/2536881.html` | 326 | ✅ Complete |
+| `scania/transmission-parts/1779734.html` | 314 | ✅ Complete |
+| `scania/transmission-parts/2027296.html` | 313 | ✅ Complete |
+| `scania/transmission-parts/2585836.html` | 411 | ✅ Complete |
 
 ---
 
