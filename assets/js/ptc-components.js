@@ -90,14 +90,14 @@ window.getProductPageLink = function (result) {
       --ptc-color-whatsapp:        #25d366;
       --ptc-color-whatsapp-shadow: rgba(37, 211, 102, 0.4);
       --ptc-color-whatsapp-pulse:  rgba(37, 211, 102, 0.3);
-      --ptc-color-accent:          #facc15;
-      --ptc-color-accent-dim:      rgba(250, 204, 21, 0.3);
-      --ptc-color-accent-border:   rgba(250, 204, 21, 0.5);
-      --ptc-color-dark-overlay:    rgba(17, 24, 39, 0.95);
-      --ptc-color-footer-bg:       #0f172a;
-      --ptc-color-footer-text:     #cbd5e1;
-      --ptc-color-footer-muted:    #94a3b8;
-      --ptc-color-footer-faint:    #64748b;
+      --ptc-color-accent:          #FFB81C;
+      --ptc-color-accent-dim:      rgba(255, 184, 28, 0.3);
+      --ptc-color-accent-border:   rgba(255, 184, 28, 0.5);
+      --ptc-color-dark-overlay:    rgba(5, 5, 5, 0.97);
+      --ptc-color-footer-bg:       #020202;
+      --ptc-color-footer-text:     #b8b4ae;
+      --ptc-color-footer-muted:    #777;
+      --ptc-color-footer-faint:    #555;
       --ptc-color-nav-link:        rgba(255,255,255,0.65);
     }
     html { scroll-padding-top: 80px !important; }
@@ -110,6 +110,10 @@ window.getProductPageLink = function (result) {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0);    }
     }
+    @keyframes ptcDrawerIn {
+      from { transform: translateX(100%); }
+      to   { transform: translateX(0); }
+    }
     .ptc-nav-link:hover { color: #F0ECE6 !important; }
     [id^="ptc-wa-"], .ptc-wa-btn { visibility: visible !important; opacity: 1 !important; display: flex !important; }
     #ptc-geo-bubble { display: block !important; }
@@ -119,7 +123,17 @@ window.getProductPageLink = function (result) {
     .ptc-breadcrumb a:hover { color: #F0ECE6; }
     .footer-link { transition: all 0.3s; }
     .footer-link:hover { color: var(--ptc-color-accent) !important; transform: translateX(5px); }
-    @media(max-width:768px) { .ptc-nav-desktop { display: none !important; } }
+    /* Nav desktop/mobile visibility */
+    .ptc-nav-desktop { display: flex !important; }
+    .ptc-mob-btn     { display: none !important; }
+    @media(max-width:768px) {
+      .ptc-nav-desktop { display: none !important; }
+      .ptc-mob-btn     { display: flex !important; }
+    }
+    /* Mobile drawer */
+    #ptc-mob-overlay { display:none; position:fixed; inset:0; z-index:1099; background:rgba(0,0,0,0.7); backdrop-filter:blur(4px); }
+    #ptc-mob-drawer  { display:none; position:fixed; top:0; right:0; bottom:0; width:min(300px,100vw); z-index:1100; background:#080808; border-left:1px solid rgba(255,255,255,0.07); overflow-y:auto; flex-direction:column; box-shadow:-24px 0 80px rgba(0,0,0,0.9); animation:ptcDrawerIn .22s ease; }
+    #ptc-mob-overlay.ptc-open, #ptc-mob-drawer.ptc-open { display:flex; }
   </style>`;
 
   // ── NAV HTML ────────────────────────────────────────────────────────────────
@@ -127,17 +141,55 @@ window.getProductPageLink = function (result) {
   // • Removed redundant inline color styles; .nav-link CSS rule above handles colour.
   // • onerror hides the logo img gracefully if the asset is missing.
   const WA_SVG_SM = '<svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>';
-  const NAV_HTML = '<nav aria-label="Main Navigation" style="position:sticky;top:0;z-index:1000;background:rgba(5,5,5,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.07);">'
-    + '<div style="max-width:1360px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;">'
-    + '<a href="' + PTC_CONFIG.baseUrl + '/" style="font-family:\'Barlow Condensed\',sans-serif;font-size:20px;font-weight:900;color:#FFB81C;text-decoration:none;letter-spacing:.04em;flex-shrink:0;line-height:1;">PARTS TRADING CO.</a>'
-    + '<div class="ptc-nav-desktop" style="display:flex;align-items:center;gap:2px;">'
+
+  const MOB_BRANDS = [
+    ['Volvo','/volvo/'],['Scania','/scania/'],['Komatsu','/komatsu/'],
+    ['CAT','/cat/'],['Hitachi','/hitachi/'],['Sany','/sany/'],['JCB','/jcb/']
+  ];
+
+  const NAV_HTML = '<nav id="ptc-nav" aria-label="Main Navigation" style="position:sticky;top:0;z-index:1000;background:rgba(5,5,5,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.07);">'
+    + '<div style="max-width:1360px;margin:0 auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px;">'
+    // Logo
+    + '<a href="' + PTC_CONFIG.baseUrl + '/" style="display:flex;align-items:center;flex-shrink:0;text-decoration:none;">'
+    + '<img src="/assets/images/ptc-logo.png" alt="Parts Trading Company" style="height:36px;width:auto;" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'block\'">'
+    + '<span style="display:none;font-family:\'Barlow Condensed\',sans-serif;font-size:18px;font-weight:900;color:#FFB81C;letter-spacing:.04em;">PTC</span>'
+    + '</a>'
+    // Desktop links
+    + '<div class="ptc-nav-desktop" style="align-items:center;gap:2px;">'
     + '<a class="ptc-nav-link" href="' + PTC_CONFIG.baseUrl + '/" style="color:rgba(255,255,255,.65);font-family:\'Barlow\',sans-serif;font-size:13px;font-weight:500;padding:0 13px;height:64px;display:flex;align-items:center;text-decoration:none;transition:color .18s;letter-spacing:.04em;text-transform:uppercase;">Home</a>'
-    + '<a class="ptc-nav-link" href="' + PTC_CONFIG.baseUrl + '/#brands" style="color:rgba(255,255,255,.65);font-family:\'Barlow\',sans-serif;font-size:13px;font-weight:500;padding:0 13px;height:64px;display:flex;align-items:center;text-decoration:none;transition:color .18s;letter-spacing:.04em;text-transform:uppercase;">Brands</a>'
+    + '<a class="ptc-nav-link" href="' + PTC_CONFIG.baseUrl + '/volvo/" style="color:rgba(255,255,255,.65);font-family:\'Barlow\',sans-serif;font-size:13px;font-weight:500;padding:0 13px;height:64px;display:flex;align-items:center;text-decoration:none;transition:color .18s;letter-spacing:.04em;text-transform:uppercase;">Volvo</a>'
+    + '<a class="ptc-nav-link" href="' + PTC_CONFIG.baseUrl + '/scania/" style="color:rgba(255,255,255,.65);font-family:\'Barlow\',sans-serif;font-size:13px;font-weight:500;padding:0 13px;height:64px;display:flex;align-items:center;text-decoration:none;transition:color .18s;letter-spacing:.04em;text-transform:uppercase;">Scania</a>'
     + '<a class="ptc-nav-link" href="' + PTC_CONFIG.baseUrl + '/blog/" style="color:rgba(255,255,255,.65);font-family:\'Barlow\',sans-serif;font-size:13px;font-weight:500;padding:0 13px;height:64px;display:flex;align-items:center;text-decoration:none;transition:color .18s;letter-spacing:.04em;text-transform:uppercase;">Blog</a>'
-    + '<a href="https://wa.me/919821037990?text=Hi%2C%20I%20need%20spare%20parts%20assistance." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#25D366;color:#fff;font-family:\'Barlow\',sans-serif;font-size:13px;font-weight:700;padding:9px 18px;border-radius:8px;text-decoration:none;margin-left:10px;transition:opacity .18s;letter-spacing:.02em;" onmouseenter="this.style.opacity=\'.85\'" onmouseleave="this.style.opacity=\'1\'">' + WA_SVG_SM + ' WhatsApp Us</a>'
+    + '<a href="https://wa.me/919821037990?text=Hi%2C%20I%20need%20spare%20parts%20assistance." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:#25D366;color:#fff;font-family:\'Barlow\',sans-serif;font-size:13px;font-weight:700;padding:9px 18px;border-radius:8px;text-decoration:none;margin-left:8px;transition:opacity .18s;" onmouseenter="this.style.opacity=\'.85\'" onmouseleave="this.style.opacity=\'1\'">' + WA_SVG_SM + ' WhatsApp</a>'
+    + '</div>'
+    // Hamburger button
+    + '<button id="ptc-mob-open" class="ptc-mob-btn" aria-label="Open menu" aria-expanded="false" style="align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.8);cursor:pointer;padding:0;flex-shrink:0;">'
+    + '<svg width="20" height="14" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="0" y1="1" x2="20" y2="1"/><line x1="0" y1="7" x2="20" y2="7"/><line x1="0" y1="13" x2="20" y2="13"/></svg>'
+    + '</button>'
+    + '</div>'
+    + '</nav>'
+    // Overlay backdrop
+    + '<div id="ptc-mob-overlay" onclick="window.ptcCloseMenu()"></div>'
+    // Slide-out drawer
+    + '<div id="ptc-mob-drawer" role="dialog" aria-label="Navigation menu">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,0.07);flex-shrink:0;">'
+    + '<a href="/" style="display:flex;align-items:center;"><img src="/assets/images/ptc-logo.png" alt="PTC" style="height:32px;width:auto;"></a>'
+    + '<button id="ptc-mob-close" onclick="window.ptcCloseMenu()" aria-label="Close menu" style="width:34px;height:34px;border-radius:8px;border:1px solid rgba(255,255,255,0.09);background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.7);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">'
+    + '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>'
+    + '</button>'
+    + '</div>'
+    + '<div style="flex:1;overflow-y:auto;padding-bottom:8px;">'
+    + ['Home:/','Blog:/blog/','About:/about.html'].map(function(s){var p=s.split(':');return '<a href="'+p[1]+'" onclick="window.ptcCloseMenu()" style="display:flex;align-items:center;padding:14px 18px;color:rgba(255,255,255,0.82);text-decoration:none;font-family:\'Barlow\',sans-serif;font-size:15px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.04);">'+p[0]+'</a>';}).join('')
+    + '<div style="padding:18px 18px 8px;font-family:\'Barlow Condensed\',sans-serif;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,0.28);">Shop by Brand</div>'
+    + '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:0 18px 18px;">'
+    + MOB_BRANDS.map(function(b){return '<a href="'+b[1]+'" onclick="window.ptcCloseMenu()" style="display:flex;align-items:center;justify-content:center;padding:11px 6px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.025);text-decoration:none;color:rgba(255,255,255,0.78);font-family:\'Barlow\',sans-serif;font-size:13px;font-weight:600;text-align:center;">'+b[0]+'</a>';}).join('')
     + '</div>'
     + '</div>'
-    + '</nav>';
+    + '<div style="padding:14px 18px 44px;display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(255,255,255,0.06);flex-shrink:0;">'
+    + '<a href="https://wa.me/919821037990" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;text-decoration:none;padding:14px;border-radius:12px;font-family:\'Barlow Condensed\',sans-serif;font-weight:800;font-size:16px;letter-spacing:.05em;">' + WA_SVG_SM + ' WhatsApp Us</a>'
+    + '<a href="/get-a-quote.html" style="display:flex;align-items:center;justify-content:center;background:#FFB81C;color:#050505;text-decoration:none;padding:14px;border-radius:12px;font-family:\'Barlow Condensed\',sans-serif;font-weight:800;font-size:16px;letter-spacing:.05em;">Get Quote</a>'
+    + '</div>'
+    + '</div>';
 
   // ── WHATSAPP FLOATER HTML ────────────────────────────────────────────────────
   // Colours now reference CSS variables defined in STYLE_HTML above.
@@ -209,7 +261,7 @@ window.getProductPageLink = function (result) {
     + flink('/hitachi/', 'Hitachi')
     + flink('/liugong/', 'LiuGong')
     + flink('/sany/', 'Sany')
-    + flink('/jcb-spare-parts-india.html', 'JCB')
+    + flink('/jcb/', 'JCB')
     + flink('/doosan-spare-parts-india.html', 'Doosan')
     + flink('/liebherr-spare-parts-india.html', 'Liebherr')
     + flink('/atlas-copco-spare-parts-india.html', 'Atlas Copco')
@@ -339,6 +391,28 @@ window.getProductPageLink = function (result) {
         document.querySelectorAll('nav').forEach(function (n) { n.remove(); });
         document.body.insertAdjacentHTML('afterbegin', NAV_HTML);
       }
+
+      // Mobile menu open/close
+      window.ptcCloseMenu = function () {
+        var ol = document.getElementById('ptc-mob-overlay');
+        var dr = document.getElementById('ptc-mob-drawer');
+        var bt = document.getElementById('ptc-mob-open');
+        if (ol) ol.classList.remove('ptc-open');
+        if (dr) dr.classList.remove('ptc-open');
+        if (bt) bt.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      };
+      window.ptcOpenMenu = function () {
+        var ol = document.getElementById('ptc-mob-overlay');
+        var dr = document.getElementById('ptc-mob-drawer');
+        var bt = document.getElementById('ptc-mob-open');
+        if (ol) ol.classList.add('ptc-open');
+        if (dr) dr.classList.add('ptc-open');
+        if (bt) bt.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      };
+      var mobOpenBtn = document.getElementById('ptc-mob-open');
+      if (mobOpenBtn) mobOpenBtn.addEventListener('click', window.ptcOpenMenu);
 
       // FOOTER — replace any existing footer with the shared component
       if (!document.getElementById('ptc-footer')) {

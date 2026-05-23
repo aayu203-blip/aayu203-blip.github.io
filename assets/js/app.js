@@ -586,21 +586,21 @@ const BLOG = [{
   title: 'Volvo D13 Engine: Common Problems & Fixes',
   date: 'Mar 2025',
   read: '8 min',
-  href: '/blog/volvo-d13-engine-problems.html',
+  href: '/blog/volvo-d13-engine-common-problems-and-fixes.html',
   cover: 'assets/images/blog/volvo-injector.jpg'
 }, {
   tag: 'Komatsu',
   title: 'Komatsu Hydraulic Pump Failure: Signs & Solutions',
   date: 'Jan 2025',
   read: '7 min',
-  href: '/blog/komatsu-hydraulic-pump-failure.html',
+  href: '/blog/komatsu-hydraulic-pump-failure-symptoms.html',
   cover: 'assets/images/blog/komatsu-pump.jpg'
 }, {
   tag: 'Scania',
   title: 'Scania PDE vs HPI Injectors — Full Comparison',
   date: 'Feb 2025',
   read: '6 min',
-  href: '/blog/scania-injectors-pde-vs-hpi.html',
+  href: '/blog/scania-pde-vs-hpi-injectors-explained.html',
   cover: 'assets/images/blog/scania-injector.png'
 }];
 
