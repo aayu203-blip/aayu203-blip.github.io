@@ -1,6 +1,9 @@
 # www -> canonical non-www
 https://www.partstrading.com/* https://partstrading.com/:splat 301!
 
+# /products/ catch-all -> homepage (52,695 thin redirect pages removed)
+/products/:splat / 301
+
 # Old /pages/ URLs -> new site
 /pages/hubs/brand-volvo.html /volvo/ 301
 /pages/aftermarket-volvo-21036050.html /volvo/transmission-parts/21036050.html 301
