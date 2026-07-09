@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 
 # Main Sitemap Index
 Sitemap: https://partstrading.com/sitemap_index.xml
