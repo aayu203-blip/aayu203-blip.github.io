@@ -298,6 +298,34 @@ function buildSpecifications(){
   </div>`;
 }
 
+// ── WORKSHOP & SOURCING NOTES ──
+// Recovers the {type:"workshop",...} block from pages that set PTC_CUSTOM_SECTIONS
+// as a plain array/object instead of a function. Those pages' array never rendered
+// (only a function is honored — see sectionsBlock below), so this reads the array
+// directly and renders just the workshop entry into the default section flow.
+// Pages using the correct function-based PTC_CUSTOM_SECTIONS are unaffected — this
+// only fires when window.PTC_CUSTOM_SECTIONS exists and is NOT a function.
+function buildWorkshopNotes(){
+  const arr=window.PTC_CUSTOM_SECTIONS;
+  if(!arr || typeof arr==='function' || !Array.isArray(arr)) return '';
+  const w=arr.find(s=>s && s.type==='workshop');
+  if(!w) return '';
+  const rows=[['Failure Mode',w.failure],['Commonly Paired',w.paired],['Installation Note',w.install],['Sourcing',w.sourcing]]
+    .filter(([,v])=>v)
+    .map(([label,val])=>`<div style="padding:18px 0;border-bottom:1px solid ${T.border}">
+      <div style="font-family:${D};font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:${AMBER};margin-bottom:8px">${esc(label)}</div>
+      <p style="font-family:${B};font-size:14px;color:${T.muted};line-height:1.75">${esc(val)}</p>
+    </div>`).join('');
+  return `<div id="sec-workshop" style="position:relative;overflow:hidden;padding:72px 0 64px;border-bottom:1px solid ${T.border}">
+    <div class="section-ghost">WS</div>
+    <div class="reveal" style="position:relative;z-index:1">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><div style="width:24px;height:2px;background:${AMBER}"></div><span style="font-family:${D};font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:${AMBER}">From The Bench</span></div>
+      <h2 style="font-family:${D};font-weight:900;font-size:clamp(26px,3.5vw,44px);color:${T.text};text-transform:uppercase;letter-spacing:-.02em;margin-bottom:24px">${esc(w.title||'Workshop & Sourcing Notes')}</h2>
+      <div>${rows}</div>
+    </div>
+  </div>`;
+}
+
 // ── RELATED PARTS ──
 function buildRelatedParts(){
   const parts=(P.relatedParts||[]).map(e=>{
@@ -482,6 +510,8 @@ function render(){
     ${buildCompatibleModels()}
     <div style="height:1px;background:${T.border}"></div>
     ${buildSpecifications()}
+    <div style="height:1px;background:${T.border}"></div>
+    ${buildWorkshopNotes()}
     <div style="height:1px;background:${T.border}"></div>
     ${buildRelatedParts()}
     <div style="height:1px;background:${T.border}"></div>
