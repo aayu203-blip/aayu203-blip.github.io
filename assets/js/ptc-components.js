@@ -448,6 +448,16 @@ window.getProductPageLink = function (result) {
       }
     }
 
+    // Some React-root pages (e.g. liugong/) mount an explicit
+    // #ptc-footer-root placeholder instead of rendering their own footer —
+    // populate it regardless of the hasReactRoot skip above.
+    if (hasReactRoot) {
+      const footerRoot = document.getElementById('ptc-footer-root');
+      if (footerRoot && !document.getElementById('ptc-footer')) {
+        footerRoot.insertAdjacentHTML('beforeend', FOOTER_HTML);
+      }
+    }
+
     // ── GEO-IP SHIPPING BUBBLE ────────────────────────────────────────────────
     // • AbortController enforces a 3 s timeout so the fetch never hangs.
     // • city / country_name are set via textContent — NOT innerHTML — to prevent
