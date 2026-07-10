@@ -601,7 +601,7 @@ const BLOG = [{
   date: 'Feb 2025',
   read: '6 min',
   href: '/blog/scania-pde-vs-hpi-injectors-explained.html',
-  cover: 'assets/images/blog/scania-injector.png'
+  cover: 'assets/images/blog/scania-injector.jpg'
 }];
 
 // ── HOOKS ─────────────────────────────────────────────────────────────────────
@@ -5080,7 +5080,7 @@ const INDUSTRIES = [{
 }, {
   id: 'road',
   name: 'Road Building\n& Quarrying',
-  img: 'assets/images/industries/road.png',
+  img: 'assets/images/industries/road.jpg',
   gradient: 'linear-gradient(135deg,#0d0d1a 0%,#06060d 100%)',
   accent: '#FFB81C',
   desc: 'Motor graders, pavers, and compactors take punishing daily loads. We carry the specialist parts for road-building equipment that most suppliers don\'t stock — including circle drives, screed components, and roller bearings.',
@@ -5098,7 +5098,7 @@ const INDUSTRIES = [{
 }, {
   id: 'underground',
   name: 'Underground\nMining',
-  img: 'assets/images/industries/underground.png',
+  img: 'assets/images/industries/underground.jpg',
   gradient: 'linear-gradient(135deg,#0a0a0a 0%,#050505 100%)',
   accent: '#FFB81C',
   desc: 'One of India\'s few dedicated underground mining parts suppliers. Rock drills, LHDs, shotcrete machines, and roof bolters — we stock the specialist components that keep drives and stopes running.',
@@ -5107,7 +5107,7 @@ const INDUSTRIES = [{
 }, {
   id: 'marine',
   name: 'Marine &\nOffshore',
-  img: 'assets/images/industries/marine.png',
+  img: 'assets/images/industries/marine.jpg',
   gradient: 'linear-gradient(135deg,#000d1a 0%,#000608 100%)',
   accent: '#FFB81C',
   desc: 'Vessel downtime costs thousands per hour. We supply engine, gearbox, and auxiliary system parts for commercial marine — fishing fleets, offshore support vessels, barges, and port equipment.',
