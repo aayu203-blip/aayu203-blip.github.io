@@ -4500,7 +4500,7 @@ const FOOTER_COLS = [{
   links: [['Engine Parts', '/volvo/engine-parts/'], ['Hydraulic Parts', '/volvo/hydraulic-parts/'], ['Filters', '/volvo/filters/'], ['Undercarriage', '/komatsu/undercarriage/'], ['Transmission', '/volvo/transmission-parts/'], ['All Categories', '/volvo/']]
 }, {
   h: 'Company',
-  links: [['About PTC', '/about.html'], ['Blog & Guides', '/blog/'], ['Contact Us', '/contact.html'], ['Int\'l Shipping', '/deliveries.html'], ['Get a Quote', '/get-a-quote.html']]
+  links: [['About PTC', '/about.html'], ['Blog & Guides', '/blog/'], ['Parts Interchange Lookup', '/parts-interchange-lookup.html'], ['Contact Us', '/contact.html'], ['Int\'l Shipping', '/deliveries.html'], ['Get a Quote', '/get-a-quote.html']]
 }];
 function Footer() {
   const {

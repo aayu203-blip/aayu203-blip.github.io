@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Heavy Equipment Part Number Interchange &amp; Cross-Reference Lookup | PTC</title>
+  <meta name="description" id="page-desc" content="Free interchange lookup for 75,000+ heavy equipment part numbers — Volvo, Scania, Komatsu, CAT, Hitachi and more. Find OEM and aftermarket cross-references instantly.">
+  <link rel="canonical" href="https://partstrading.com/parts-interchange-lookup.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"PTC Part Number Interchange & Cross-Reference Lookup","url":"https://partstrading.com/parts-interchange-lookup.html","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free tool to look up OEM and aftermarket interchange numbers across 75,000+ heavy equipment spare parts for Volvo, Scania, Komatsu, CAT, Hitachi, Kobelco, JCB, Sany, John Deere and LiuGong.","provider":{"@type":"Organization","name":"Parts Trading Company","url":"https://partstrading.com"},"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://partstrading.com/parts-interchange-lookup.html?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+  </script>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a part number interchange or cross-reference?","acceptedAnswer":{"@type":"Answer","text":"An interchange or cross-reference is a mapping between an OEM (original equipment manufacturer) part number and equivalent aftermarket or alternate-brand part numbers that fit the same application. Manufacturers often reuse the same physical component across multiple machine models and even across brands under license, so one physical part can have several valid part numbers."}},{"@type":"Question","name":"Is an aftermarket part with a different number the same as the OEM part?","acceptedAnswer":{"@type":"Answer","text":"Aftermarket parts are manufactured to match OEM specifications (dimensions, material, tolerances) but carry a different part number from a different manufacturer. A correct cross-reference means the aftermarket part fits and performs the same function as the OEM part it replaces — always confirm fitment against your machine's serial number before ordering."}},{"@type":"Question","name":"How accurate is this interchange lookup?","acceptedAnswer":{"@type":"Answer","text":"Results are drawn from Parts Trading Company's own 75,000+ part catalog, where cross-reference and OEM-equivalent numbers are recorded against each listing where known. Always confirm exact fitment using your machine's serial number before ordering — the same part number can apply to different specifications across production years."}}]}
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #050505; color: #F0ECE6; font-family: 'Inter', sans-serif; min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+    :focus-visible { outline: 2px solid #FFB81C; outline-offset: 3px; border-radius: 3px; }
+
+    .nav { background: rgba(5,5,5,0.97); padding: 14px 24px; display: flex; align-items: center; gap: 32px; border-bottom: 1px solid rgba(255,255,255,0.055); position: sticky; top: 0; z-index: 100; }
+    .nav-logo { color: #F0ECE6; font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 18px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .nav-logo span { color: #FFB81C; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { color: rgba(240,236,230,0.65); font-size: 13px; font-weight: 600; transition: color 0.15s; }
+    .nav-links a:hover { color: #F0ECE6; }
+
+    .intro-wrap { max-width: 860px; margin: 0 auto; padding: 48px 24px 8px; }
+    .intro-eyebrow { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #FFB81C; margin-bottom: 10px; }
+    .intro-heading { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(28px,4vw,46px); letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 16px; line-height: 1.05; }
+    .intro-heading span { color: #FFB81C; }
+    .intro-body { font-size: 15px; line-height: 1.75; color: rgba(240,236,230,0.65); max-width: 700px; margin-bottom: 12px; }
+    .intro-body strong { color: #F0ECE6; }
+
+    .search-wrap { max-width: 860px; margin: 0 auto; padding: 28px 24px 32px; }
+
+    .search-bar { display: flex; gap: 10px; margin-bottom: 16px; }
+    .search-input { flex: 1; background: rgba(255,255,255,0.06); border: 1.5px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 14px 18px; color: #F0ECE6; font-size: 16px; font-family: inherit; outline: none; transition: border-color 0.2s; }
+    .search-input::placeholder { color: rgba(240,236,230,0.3); }
+    .search-input:focus { border-color: #FFB81C; }
+    .search-btn { background: #FFB81C; color: #050505; border: none; border-radius: 10px; padding: 0 24px; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; transition: opacity 0.2s; white-space: nowrap; }
+    .search-btn:hover { opacity: 0.88; }
+
+    .brand-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .brand-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 6px 16px; color: rgba(240,236,230,0.6); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .brand-btn:hover, .brand-btn.active { background: rgba(255,184,28,0.1); border-color: rgba(255,184,28,0.35); color: #FFB81C; }
+
+    .results-meta { font-size: 13px; color: rgba(240,236,230,0.4); margin-bottom: 16px; }
+    .results-heading { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(22px,3vw,32px); letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 16px; }
+    .results-heading span { color: #FFB81C; }
+    .results-list { display: flex; flex-direction: column; gap: 8px; }
+
+    .result-card { background: #0F0F0F; border: 1px solid rgba(255,255,255,0.055); border-radius: 10px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: all 0.2s; }
+    .result-card:hover { border-color: rgba(255,184,28,0.3); background: #141414; transform: translateX(2px); }
+    .result-info { flex: 1; min-width: 0; }
+    .result-part { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 17px; letter-spacing: 0.02em; color: #FFB81C; margin-bottom: 4px; }
+    .result-desc { font-size: 14px; color: #F0ECE6; font-weight: 600; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .result-meta { font-size: 12px; color: rgba(240,236,230,0.4); }
+    .result-arrow { color: rgba(240,236,230,0.25); font-size: 18px; flex-shrink: 0; transition: color 0.15s; }
+    .result-card:hover .result-arrow { color: #FFB81C; }
+
+    .no-results { background: #0F0F0F; border: 1px solid rgba(255,255,255,0.055); border-radius: 10px; padding: 36px 28px; text-align: center; }
+    .no-results h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 22px; margin-bottom: 10px; }
+    .no-results p { color: rgba(240,236,230,0.5); font-size: 14px; line-height: 1.7; margin-bottom: 24px; }
+    .wa-btn { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #fff; padding: 13px 24px; border-radius: 9px; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: 0.05em; text-transform: uppercase; transition: opacity 0.2s; }
+    .wa-btn:hover { opacity: 0.88; }
+
+    .show-more { display: flex; justify-content: center; margin-top: 24px; }
+    .show-more-btn { background: transparent; border: 1.5px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 10px 28px; color: rgba(240,236,230,0.6); font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit; }
+    .show-more-btn:hover { border-color: rgba(255,184,28,0.35); color: #FFB81C; }
+
+    .faq-wrap { max-width: 860px; margin: 24px auto 0; padding: 32px 24px 48px; border-top: 1px solid rgba(255,255,255,0.055); }
+    .faq-heading { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 22px; letter-spacing: -0.01em; text-transform: uppercase; margin-bottom: 20px; }
+    .faq-item { margin-bottom: 20px; }
+    .faq-q { font-weight: 700; font-size: 15px; margin-bottom: 6px; color: #F0ECE6; }
+    .faq-a { font-size: 14px; line-height: 1.7; color: rgba(240,236,230,0.6); }
+
+    .footer-mini { border-top: 1px solid rgba(255,255,255,0.055); padding: 24px; text-align: center; color: rgba(240,236,230,0.25); font-size: 12px; margin-top: 24px; }
+    .footer-mini a { color: rgba(255,184,28,0.6); }
+
+    @media (max-width: 640px) {
+      .search-bar { flex-direction: column; }
+      .nav-links { display: none; }
+      .result-card { padding: 14px 16px; }
+    }
+  </style>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main navigation">
+  <a href="/" class="nav-logo">Parts <span>Trading</span> Co.</a>
+  <div class="nav-links">
+    <a href="/volvo/">Volvo</a>
+    <a href="/komatsu/">Komatsu</a>
+    <a href="/cat/">CAT</a>
+    <a href="/scania/">Scania</a>
+    <a href="/hitachi/">Hitachi</a>
+    <a href="/get-a-quote.html">Get Quote</a>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div class="intro-wrap">
+    <div class="intro-eyebrow">Free Tool — No Login Required</div>
+    <h1 class="intro-heading">Part Number <span>Interchange &amp; Cross-Reference</span> Lookup</h1>
+    <p class="intro-body">Enter any OEM or aftermarket part number to find equivalents across our <strong>75,000+ part catalog</strong> — Volvo, Scania, Komatsu, CAT, Hitachi, Kobelco, JCB, Sany, John Deere and LiuGong. Built from real inventory data, not a generic parts list.</p>
+    <p class="intro-body">Heavy equipment manufacturers frequently reuse the same physical component across multiple machine models, and aftermarket manufacturers produce OEM-spec equivalents under different part numbers. This tool searches part numbers, descriptions and known cross-references together, so an OEM number often surfaces the aftermarket equivalents we stock — and vice versa.</p>
+  </div>
+
+  <div class="search-wrap">
+    <h2 class="results-heading" id="results-heading">Look Up a <span>Part Number</span></h2>
+
+    <form class="search-bar" role="search" onsubmit="return doFormSearch()">
+      <input type="search" id="q" class="search-input" placeholder="e.g. 20884103, VOE21644596, PC200-8…" autocomplete="off" aria-label="Enter part number" spellcheck="false">
+      <button type="submit" class="search-btn">Look Up</button>
+    </form>
+
+    <div class="brand-filters" id="brand-filters" role="group" aria-label="Filter by brand"></div>
+    <div class="results-meta" id="results-meta"></div>
+    <div id="results-container"></div>
+    <div class="show-more" id="show-more-wrap" style="display:none">
+      <button class="show-more-btn" onclick="showMore()">Show more results</button>
+    </div>
+  </div>
+
+  <div class="faq-wrap">
+    <h2 class="faq-heading">About Interchange Lookups</h2>
+    <div class="faq-item">
+      <div class="faq-q">What is a part number interchange or cross-reference?</div>
+      <div class="faq-a">An interchange or cross-reference is a mapping between an OEM (original equipment manufacturer) part number and equivalent aftermarket or alternate-brand part numbers that fit the same application. Manufacturers often reuse the same physical component across multiple machine models and even across brands under license, so one physical part can have several valid part numbers.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is an aftermarket part with a different number the same as the OEM part?</div>
+      <div class="faq-a">Aftermarket parts are manufactured to match OEM specifications (dimensions, material, tolerances) but carry a different part number from a different manufacturer. A correct cross-reference means the aftermarket part fits and performs the same function as the OEM part it replaces — always confirm fitment against your machine's serial number before ordering.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How accurate is this interchange lookup?</div>
+      <div class="faq-a">Results are drawn from Parts Trading Company's own 75,000+ part catalog, where cross-reference and OEM-equivalent numbers are recorded against each listing where known. Always confirm exact fitment using your machine's serial number before ordering — the same part number can apply to different specifications across production years.</div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer-mini" role="contentinfo">
+  <a href="/">Parts Trading Company</a> · Vijay Chambers, Grant Road East, Mumbai 400004, India ·
+  <a href="tel:+919821037990">+91-98210-37990</a>
+</footer>
+
+<script src="/assets/js/search-db.js"></script>
+<script>
+(function () {
+  const BRANDS = ['All', 'Volvo', 'Komatsu', 'CAT', 'Scania', 'Hitachi'];
+  const WA_BASE = 'https://wa.me/919821037990?text=';
+  const PAGE_SIZE = 20;
+
+  let currentBrand = 'All';
+  let allResults = [];
+  let shownCount = PAGE_SIZE;
+  let currentQuery = '';
+
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name) || '';
+  }
+
+  function pushState(q, brand) {
+    const params = new URLSearchParams();
+    if (q) params.set('q', q);
+    if (brand && brand !== 'All') params.set('brand', brand);
+    const qs = params.toString();
+    history.replaceState(null, '', '/parts-interchange-lookup.html' + (qs ? '?' + qs : ''));
+  }
+
+  function search(q, brand) {
+    const db = window.productSearchDB;
+    if (!db || !q || q.length < 2) return [];
+    const lq = q.toLowerCase().trim();
+    const terms = lq.split(/\s+/);
+    return db.filter(p => {
+      if (brand && brand !== 'All' && (p.brand || '').toLowerCase() !== brand.toLowerCase()) return false;
+      const haystack = ((p.part || '') + ' ' + (p.desc || '') + ' ' + (p.brand || '')).toLowerCase();
+      return terms.every(t => haystack.includes(t));
+    });
+  }
+
+  function escHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function renderResults() {
+    const container = document.getElementById('results-container');
+    const meta = document.getElementById('results-meta');
+    const heading = document.getElementById('results-heading');
+    const showMoreWrap = document.getElementById('show-more-wrap');
+    const q = currentQuery;
+
+    if (!q) {
+      heading.innerHTML = 'Look Up a <span>Part Number</span>';
+      meta.textContent = '75,000+ parts indexed across Volvo, Komatsu, CAT, Scania, Hitachi and more.';
+      container.innerHTML = '';
+      showMoreWrap.style.display = 'none';
+      return;
+    }
+
+    const total = allResults.length;
+    const shown = allResults.slice(0, shownCount);
+
+    heading.innerHTML = 'Interchange Results for <span>' + escHtml(q) + '</span>';
+    document.title = q + ' — Interchange & Cross-Reference | Parts Trading Company';
+
+    if (total === 0) {
+      meta.textContent = '';
+      container.innerHTML = '<div class="no-results">'
+        + '<h2>No match in our catalog yet</h2>'
+        + '<p>Our database covers 75,000+ parts, but not every OEM number is cross-referenced yet. Send us your part number on WhatsApp — we confirm the correct equivalent in under 60 minutes.</p>'
+        + '<a href="' + WA_BASE + encodeURIComponent('Hi, I need the interchange/equivalent for part number: ' + q + '. Please confirm cross-reference and availability.') + '" target="_blank" rel="noopener noreferrer" class="wa-btn">'
+        + '<svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>'
+        + 'Ask on WhatsApp — &ldquo;' + escHtml(q) + '&rdquo;</a></div>';
+      showMoreWrap.style.display = 'none';
+      return;
+    }
+
+    meta.textContent = total.toLocaleString() + ' result' + (total !== 1 ? 's' : '') + ' found';
+
+    const listHtml = shown.map(r => {
+      const href = r.url || (WA_BASE + encodeURIComponent('Hi, I need part ' + r.part + ' — ' + r.desc + ' (' + r.brand + '). Please confirm stock and price.'));
+      const target = r.url ? '' : ' target="_blank" rel="noopener noreferrer"';
+      return '<a href="' + escHtml(href) + '"' + target + ' class="result-card">'
+        + '<div class="result-info">'
+        + '<div class="result-part">' + escHtml(r.part) + '</div>'
+        + '<div class="result-desc">' + escHtml(r.desc) + '</div>'
+        + '<div class="result-meta">' + escHtml(r.brand) + (r.cat ? ' · ' + escHtml(r.cat) : '') + '</div>'
+        + '</div>'
+        + '<div class="result-arrow">→</div>'
+        + '</a>';
+    }).join('');
+
+    container.innerHTML = '<div class="results-list">' + listHtml + '</div>';
+
+    showMoreWrap.style.display = (shownCount < total) ? 'flex' : 'none';
+  }
+
+  function renderBrandFilters() {
+    const wrap = document.getElementById('brand-filters');
+    wrap.innerHTML = BRANDS.map(b =>
+      '<button class="brand-btn' + (b === currentBrand ? ' active' : '') + '" onclick="setBrand(\'' + b + '\')" aria-pressed="' + (b === currentBrand ? 'true' : 'false') + '">' + b + '</button>'
+    ).join('');
+  }
+
+  window.setBrand = function (b) {
+    currentBrand = b;
+    shownCount = PAGE_SIZE;
+    allResults = search(currentQuery, currentBrand);
+    pushState(currentQuery, currentBrand);
+    renderBrandFilters();
+    renderResults();
+  };
+
+  window.showMore = function () {
+    shownCount += PAGE_SIZE;
+    renderResults();
+  };
+
+  window.doFormSearch = function () {
+    const q = document.getElementById('q').value.trim();
+    if (!q) return false;
+    currentQuery = q;
+    shownCount = PAGE_SIZE;
+    allResults = search(q, currentBrand);
+    pushState(q, currentBrand);
+    renderResults();
+    return false;
+  };
+
+  function init() {
+    const q = getParam('q');
+    const brand = getParam('brand') || 'All';
+    currentBrand = BRANDS.includes(brand) ? brand : 'All';
+
+    renderBrandFilters();
+
+    if (q) {
+      document.getElementById('q').value = q;
+      currentQuery = q;
+      allResults = search(q, currentBrand);
+      renderResults();
+    } else {
+      renderResults();
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
