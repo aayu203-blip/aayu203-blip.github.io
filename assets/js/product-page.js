@@ -61,6 +61,7 @@ button{cursor:pointer;}
 @media(max-width:768px){
   .desktop-only{display:none!important;}
   .mob-hbg{display:flex!important;}
+  .mob-hide-cta{display:none!important;}
   .hero-2col{grid-template-columns:1fr;}
   .spec-2col{grid-template-columns:1fr;}
   .related-grid{grid-template-columns:1fr 1fr;}
@@ -130,13 +131,17 @@ function buildNav(){
       <a href="/about.html" style="${btnStyle}" onmouseenter="this.style.opacity=1" onmouseleave="this.style.opacity=.75">About</a>
     </div>
     <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
-      <a href="${WA(waMsg)}" target="_blank" style="display:inline-flex;align-items:center;gap:7px;background:${WG};color:#fff;text-decoration:none;border-radius:8px;padding:8px 16px;font-family:${B};font-size:13px;font-weight:700;transition:opacity .2s" onmouseenter="this.style.opacity='.85'" onmouseleave="this.style.opacity='1'">${waSvg(13)} WhatsApp</a>
-      <a href="#sec-order" style="background:${AMBER};color:#050505;text-decoration:none;padding:8px 18px;border-radius:8px;font-family:${D};font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;transition:opacity .2s" onmouseenter="this.style.opacity='.82'" onmouseleave="this.style.opacity='1'">Get Quote</a>
+      <button id="ptc-search-btn" aria-label="Search parts" title="Search parts" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:7px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);color:rgba(255,255,255,.7);cursor:pointer;transition:all .2s;flex-shrink:0" onmouseenter="this.style.borderColor='${AMBER}';this.style.color='${AMBER}';this.style.background='rgba(255,184,28,.1)'" onmouseleave="this.style.borderColor='rgba(255,255,255,.2)';this.style.color='rgba(255,255,255,.7)';this.style.background='rgba(255,255,255,.07)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <a href="${WA(waMsg)}" target="_blank" class="mob-hide-cta" style="display:inline-flex;align-items:center;gap:7px;background:${WG};color:#fff;text-decoration:none;border-radius:8px;padding:8px 16px;font-family:${B};font-size:13px;font-weight:700;transition:opacity .2s" onmouseenter="this.style.opacity='.85'" onmouseleave="this.style.opacity='1'">${waSvg(13)} WhatsApp</a>
+      <a href="#sec-order" class="mob-hide-cta" style="background:${AMBER};color:#050505;text-decoration:none;padding:8px 18px;border-radius:8px;font-family:${D};font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;transition:opacity .2s" onmouseenter="this.style.opacity='.82'" onmouseleave="this.style.opacity='1'">Get Quote</a>
       <button id="ptc-menu-btn" class="mob-hbg" aria-label="Menu" style="background:none;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);border-radius:6px;width:34px;height:34px;align-items:center;justify-content:center;flex-shrink:0;padding:0" onclick="document.getElementById('ptc-mobile-menu').classList.toggle('open')">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
     </div>
   </div>
+  ${buildSearchModal()}
   <div id="ptc-mobile-menu">
     <div style="margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.07)">
       <div style="font-family:${D};font-size:9px;font-weight:700;letter-spacing:.15em;color:${T.muted};text-transform:uppercase;margin-bottom:10px">By Brand</div>
@@ -154,6 +159,100 @@ function buildNav(){
     </div>
   </div>
 </nav>`;
+}
+
+// ── SEARCH MODAL ──
+const SEARCH_BRANDS=['All','Volvo','Scania','Komatsu','CAT','Hitachi'];
+function buildSearchModal(){
+  const chips=SEARCH_BRANDS.map(b=>`<button type="button" class="ptc-search-brand${b==='All'?' active':''}" data-brand="${b}" style="font-family:${B};font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid ${b==='All'?AMBER:'rgba(255,255,255,.1)'};cursor:pointer;background:${b==='All'?AMBER:'transparent'};color:${b==='All'?'#050505':'rgba(255,255,255,.5)'};transition:all .15s">${b}</button>`).join('');
+  return `<div id="ptc-search-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.88);backdrop-filter:blur(8px);align-items:flex-start;justify-content:center;padding-top:80px">
+  <div id="ptc-search-panel" style="animation:modalIn .2s ease both;width:100%;max-width:720px;margin:0 16px;background:${T.bgCard};border:1px solid ${T.border};border-radius:16px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.8)">
+    <div style="display:flex;gap:8px;padding:16px 20px 0;flex-wrap:wrap" id="ptc-search-brands">${chips}
+      <button type="button" id="ptc-search-close" style="margin-left:auto;background:transparent;border:none;cursor:pointer;color:${T.muted};padding:4px 8px;display:flex;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <div style="display:flex;align-items:center;border-bottom:1px solid ${T.border};margin:12px 0 0">
+      <div style="padding:0 20px;flex-shrink:0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="${T.muted}" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+      <input id="ptc-search-input" type="search" placeholder="Part number or description — e.g. VOE20450734 or hydraulic pump" style="flex:1;padding:18px 16px 18px 0;font-size:16px;font-family:${B};font-weight:500;background:transparent;border:none;color:${T.text};outline:none">
+    </div>
+    <div id="ptc-search-results"></div>
+  </div>
+</div>`;
+}
+function ptcSearchResultRow(r){
+  return `<a href="${r.url||WA(`Hi, I need part ${r.partNo} — ${r.name} (${r.brand}). Please confirm availability and pricing.`)}" ${r.url?'':'target="_blank"'} style="display:flex;align-items:center;justify-content:space-between;padding:13px 20px;border-bottom:1px solid ${T.border};text-decoration:none;transition:background .15s;gap:12px" onmouseenter="this.style.background='rgba(255,184,28,.04)'" onmouseleave="this.style.background='transparent'">
+    <div>
+      <div style="display:flex;gap:8px;align-items:center;margin-bottom:3px;flex-wrap:wrap">
+        <span style="font-family:monospace;font-weight:700;font-size:14px;color:${AMBER}">${esc(r.partNo)}</span>
+        <span style="font-family:${B};font-size:11px;color:${T.muted};background:rgba(255,255,255,.04);padding:2px 8px;border-radius:4px;border:1px solid ${T.border}">${esc(r.brand)}</span>
+        <span style="font-family:${B};font-size:11px;color:${T.muted};background:rgba(255,255,255,.04);padding:2px 8px;border-radius:4px;border:1px solid ${T.border}">${esc(r.cat)}</span>
+      </div>
+      <div style="font-family:${B};font-size:13px;color:${T.muted}">${esc(r.name)}</div>
+    </div>
+  </a>`;
+}
+function ptcRenderSearchResults(q,brand){
+  const box=document.getElementById('ptc-search-results');
+  if(!box) return;
+  if(q.length<2){box.innerHTML='';return;}
+  const DB=window.productSearchDB||null;
+  const lq=q.toLowerCase();
+  const results=DB?DB.filter(p=>((p.part||'').toLowerCase().includes(lq)||(p.desc||'').toLowerCase().includes(lq)||(p.brand||'').toLowerCase().includes(lq))&&(brand==='All'||p.brand===brand)).slice(0,12).map(p=>({partNo:p.part,name:p.desc,brand:p.brand,cat:p.cat,url:p.url})):[];
+  if(!results.length){
+    box.innerHTML=`<div style="padding:24px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px">
+      <div>
+        <div style="font-family:${D};font-weight:700;font-size:16px;color:${T.text};margin-bottom:4px">No match found</div>
+        <div style="font-family:${B};font-size:13px;color:${T.muted}">Full database has 75,000+ parts — WhatsApp us directly.</div>
+      </div>
+      <a href="${WA(`Hi, I'm searching for: ${q}. Please check availability and pricing.`)}" target="_blank" style="display:flex;align-items:center;gap:8px;background:${WG};color:#fff;text-decoration:none;padding:11px 18px;border-radius:9px;font-family:${D};font-weight:700;font-size:14px;white-space:nowrap;flex-shrink:0">${waSvg(16)} Ask on WhatsApp</a>
+    </div>`;
+  }else{
+    box.innerHTML=results.map(ptcSearchResultRow).join('');
+  }
+}
+let _ptcSearchDbRequested=false;
+function ptcEnsureSearchDBLoaded(cb){
+  if(window.productSearchDB&&window.productSearchDB.length){if(cb)cb();return;}
+  if(_ptcSearchDbRequested){if(cb){const iv=setInterval(()=>{if(window.productSearchDB&&window.productSearchDB.length){clearInterval(iv);cb();}},100);}return;}
+  _ptcSearchDbRequested=true;
+  const s=document.createElement('script');
+  s.src='/assets/js/search-db.js';
+  s.onload=()=>{if(cb)cb();};
+  document.head.appendChild(s);
+}
+function initSearch(){
+  const btn=document.getElementById('ptc-search-btn');
+  const overlay=document.getElementById('ptc-search-overlay');
+  const panel=document.getElementById('ptc-search-panel');
+  const closeBtn=document.getElementById('ptc-search-close');
+  const input=document.getElementById('ptc-search-input');
+  const brandsBox=document.getElementById('ptc-search-brands');
+  if(!btn||!overlay) return;
+  let brand='All';
+  const open=()=>{
+    overlay.style.display='flex';
+    ptcEnsureSearchDBLoaded(()=>ptcRenderSearchResults(input.value,brand));
+    setTimeout(()=>input.focus(),80);
+  };
+  const close=()=>{overlay.style.display='none';input.value='';document.getElementById('ptc-search-results').innerHTML='';};
+  btn.addEventListener('click',open);
+  closeBtn.addEventListener('click',close);
+  overlay.addEventListener('click',e=>{if(e.target===overlay)close();});
+  panel.addEventListener('click',e=>e.stopPropagation());
+  window.addEventListener('keydown',e=>{if(e.key==='Escape'&&overlay.style.display==='flex')close();});
+  input.addEventListener('input',()=>ptcRenderSearchResults(input.value,brand));
+  brandsBox.querySelectorAll('.ptc-search-brand').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      brand=chip.dataset.brand;
+      brandsBox.querySelectorAll('.ptc-search-brand').forEach(c=>{
+        const active=c===chip;
+        c.style.border=`1px solid ${active?AMBER:'rgba(255,255,255,.1)'}`;
+        c.style.background=active?AMBER:'transparent';
+        c.style.color=active?'#050505':'rgba(255,255,255,.5)';
+        c.classList.toggle('active',active);
+      });
+      ptcRenderSearchResults(input.value,brand);
+    });
+  });
 }
 
 // ── STICKY FILTER BAR ──
@@ -667,4 +766,5 @@ initReveal();
 initScrollSpy();
 initWAFloat();
 initNav();
+initSearch();
 })();

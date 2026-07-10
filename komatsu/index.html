@@ -70,6 +70,7 @@ body{overflow-x:hidden;font-family:'Barlow',sans-serif;background:#050505;color:
 
 @media(max-width:768px){
   .mob-hbg{display:flex!important;}
+  .mob-hide-cta{display:none!important;}
   .mob-menu-overlay{display:block!important;}
   /* Reduce container padding on all max-width wrappers */
   [style*="max-width: 1360px"]{padding-left:14px!important;padding-right:14px!important;}
@@ -1525,6 +1526,7 @@ function Nav({
     href: navWaMsg,
     target: "_blank",
     rel: "noopener",
+    className: "mob-hide-cta",
     style: {
       display: 'inline-flex',
       alignItems: 'center',
@@ -1547,6 +1549,7 @@ function Nav({
     size: 13
   }), " WhatsApp"), /*#__PURE__*/React.createElement("a", {
     href: "#contact",
+    className: "mob-hide-cta",
     style: {
       background: AMBER,
       color: '#050505',

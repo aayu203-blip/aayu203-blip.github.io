@@ -46,7 +46,7 @@ body{overflow-x:hidden;font-family:'Barlow',sans-serif;background:#050505;color:
 .ptc-input::placeholder{color:rgba(255,255,255,0.25);}
 
 @media(max-width:960px){
-  .desktop-nav-links{display:none!important;}
+  .desktop-only{display:none!important;}
   .sidebar-col{display:none!important;}
   .hero-title{font-size:clamp(48px,15vw,100px)!important;}
   .two-col{grid-template-columns:1fr!important;}
@@ -614,10 +614,20 @@ function SearchModal({
 }) {
   const [q, setQ] = useState('');
   const [brand, setBrand] = useState('All');
+  const [dbTick, setDbTick] = useState(0);
   const inputRef = useRef();
   const brands = ['All', 'Volvo', 'Scania', 'Komatsu', 'CAT', 'Hitachi'];
   useEffect(() => {
     if (open) {
+      if (window.productSearchDB && window.productSearchDB.length) {
+        setDbTick(t => t + 1);
+      } else if (!window._ptcSearchDbRequested) {
+        window._ptcSearchDbRequested = true;
+        const s = document.createElement('script');
+        s.src = '/assets/js/search-db.js';
+        s.onload = () => setDbTick(t => t + 1);
+        document.head.appendChild(s);
+      }
       setTimeout(() => inputRef.current?.focus(), 80);
     } else {
       setQ('');
@@ -633,8 +643,10 @@ function SearchModal({
   const results = useMemo(() => {
     if (q.length < 2) return [];
     const lq = q.toLowerCase();
-    return [];
-  }, [q, brand]);
+    const DB = window.productSearchDB || null;
+    if (!DB) return [];
+    return DB.filter(p => ((p.part || '').toLowerCase().includes(lq) || (p.desc || '').toLowerCase().includes(lq) || (p.brand || '').toLowerCase().includes(lq)) && (brand === 'All' || p.brand === brand)).slice(0, 12).map(p => ({ partNo: p.part, name: p.desc, brand: p.brand }));
+  }, [q, brand, dbTick]);
   if (!open) return null;
   return /*#__PURE__*/React.createElement("div", {
     onClick: onClose,
@@ -1259,7 +1271,7 @@ function Nav({
   }, /*#__PURE__*/React.createElement(WASvg, {
     size: 13
   }), "WhatsApp"), /*#__PURE__*/React.createElement("a", {
-    href: "utility.html?page=quote",
+    href: "/get-a-quote.html",
     style: {
       background: AMBER,
       color: '#050505',
