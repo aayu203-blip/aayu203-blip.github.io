@@ -2070,7 +2070,7 @@ function Hero() {
       maxWidth: 520,
       margin: '0 auto 48px'
     }
-  }, "75,000+ OEM & aftermarket parts for Volvo, Scania, Komatsu, CAT & 16 more brands \u2014 shipped from Mumbai to anywhere in the world."), /*#__PURE__*/React.createElement("div", {
+  }, "75,000+ OEM & aftermarket parts for Volvo, Scania, Komatsu, CAT & 16 more brands. Dispatched from Mumbai today \u2014 Dubai in 3 days, Nairobi in 6, anywhere in the world."), /*#__PURE__*/React.createElement("div", {
     className: "fu4",
     style: {
       maxWidth: 820,
