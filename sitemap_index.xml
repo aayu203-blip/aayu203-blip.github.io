@@ -106,4 +106,8 @@
     <loc>https://partstrading.com/sitemap-sany.xml</loc>
     <lastmod>2026-05-14</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>https://partstrading.com/sitemap-jcb.xml</loc>
+    <lastmod>2026-07-10</lastmod>
+  </sitemap>
 </sitemapindex>
