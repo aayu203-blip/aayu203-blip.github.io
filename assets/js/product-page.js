@@ -15,6 +15,7 @@ const CATS_NAV=["Engine Parts","Hydraulic Parts","Filters","Electrical Parts","T
 const CATS_URLS={"Engine Parts":"engine-parts","Hydraulic Parts":"hydraulic-parts","Filters":"filters","Electrical Parts":"electrical-parts","Transmission Parts":"transmission-parts","Undercarriage":"undercarriage","Brake Parts":"brake-parts","Cooling System":"cooling-system","Exhaust & Turbo":"exhaust-turbo","Seals & O-Rings":"seals-orings","Cab & Body Parts":"cab-body-parts","Bearing & Bushing":"bearing-bushing","Fuel System":"fuel-system","Drive & Swing Parts":"drive-swing-parts","Ground Engaging Tools":"ground-engaging-tools","Hardware & Fasteners":"hardware-fasteners","Suspension & Chassis":"suspension-chassis","Gearbox & Differential":"gearbox-differential","Steering Parts":"steering-parts"};
 const PROD_SECS=[{id:'sec-compatible',label:'Compatible Models'},{id:'sec-specs',label:'Specifications'},{id:'sec-related',label:'Related Parts'},{id:'sec-reviews',label:'Reviews'},{id:'sec-faq',label:'FAQ'},{id:'sec-quickref',label:'Quick Reference'},{id:'sec-order',label:'Order Now'}];
 
+if(typeof P==='undefined'){window.P={};}
 let DISPLAY_NAME=P.name;
 try{const m=document.title.match(/ — (.+?) \|/);if(m){const n=m[1];DISPLAY_NAME=n.startsWith(P.brand+' ')?n.slice(P.brand.length+1):n;}}catch(e){}
 
