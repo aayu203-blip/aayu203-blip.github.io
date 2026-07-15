@@ -315,7 +315,6 @@ window.PTC_CUSTOM_SECS = [
   {id:'sec-faq',      label:'FAQ'},
   {id:'sec-quickref', label:'Quick Reference'},
   {id:'sec-order',    label:'How to Order'},
-  {id:'sec-reviews',  label:'Reviews'},
   {id:'sec-reading',  label:'Related Reading'}
 ];
 
@@ -357,17 +356,6 @@ window.PTC_CUSTOM_HERO = function() {
     +     '<span style="font-family:\'Barlow Condensed\',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:#FFB81C;color:#000;padding:4px 11px;border-radius:3px">Volvo</span>'
     +     '<span style="font-family:\'Barlow Condensed\',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(74,222,128,.1);color:#4ade80;border:1px solid rgba(74,222,128,.25);padding:4px 11px;border-radius:3px;display:inline-flex;align-items:center;gap:5px"><span style="width:5px;height:5px;border-radius:50%;background:#4ade80;display:inline-block"></span>In Stock — Mumbai</span>'
     +     '<span style="font-family:\'Barlow Condensed\',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.05);color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.08);padding:4px 11px;border-radius:3px">Suspension &amp; Chassis</span>'
-    +   '</div>'
-    +   '<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">'
-    +     '<span style="display:inline-flex;gap:1px">'
-    +       '<svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB81C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'
-    +       '<svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB81C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'
-    +       '<svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB81C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'
-    +       '<svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB81C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'
-    +       '<svg width="14" height="14" viewBox="0 0 24 24" fill="#FFB81C"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'
-    +     '</span>'
-    +     '<span style="font-family:\'Barlow\',sans-serif;font-size:13px;font-weight:700;color:#F0ECE6">4.9</span>'
-    +     '<span style="font-family:\'Barlow\',sans-serif;font-size:13px;color:rgba(255,255,255,.45)">· 38 verified orders</span>'
     +   '</div>'
     +   '<div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:14px">'
     +     '<div class="hero-amber-rule"></div>'
@@ -709,34 +697,6 @@ window.PTC_CUSTOM_SECTIONS = function() {
     + '</div>'
   );
 
-  /* ── 16 REVIEWS ── */
-  var secReviews = SEC('sec-reviews','16','Customer Feedback','Reviews',
-    'Verified feedback from fleet operators, workshops, and procurement teams across India and export markets',
-    '<div class="review-rating-bar">'
-    + '<div>'
-    +   '<div class="review-big-score">4.9</div>'
-    +   '<div class="review-stars-big">★★★★★</div>'
-    +   '<div class="review-count">38 verified orders · Parts Trading Company</div>'
-    + '</div>'
-    + '<div class="review-bars">'
-    +   '<div class="review-bar-row"><span style="width:14px;text-align:right">5</span><div class="review-bar-track"><div class="review-bar-fill" style="width:89%"></div></div><span>34</span></div>'
-    +   '<div class="review-bar-row"><span style="width:14px;text-align:right">4</span><div class="review-bar-track"><div class="review-bar-fill" style="width:8%"></div></div><span>3</span></div>'
-    +   '<div class="review-bar-row"><span style="width:14px;text-align:right">3</span><div class="review-bar-track"><div class="review-bar-fill" style="width:3%"></div></div><span>1</span></div>'
-    +   '<div class="review-bar-row"><span style="width:14px;text-align:right">2</span><div class="review-bar-track"><div class="review-bar-fill" style="width:0%"></div></div><span>0</span></div>'
-    +   '<div class="review-bar-row"><span style="width:14px;text-align:right">1</span><div class="review-bar-track"><div class="review-bar-fill" style="width:0%"></div></div><span>0</span></div>'
-    + '</div>'
-    + '</div>'
-    + '<div class="review-grid-inner">'
-    + '<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">&ldquo;Ordered 20 pairs for our Volvo FH fleet. PTC confirmed the 1629553 / 20390836 cross-reference before dispatch — every piece fitted perfectly. Quality is clearly OEM-grade. The vibration issue across 8 trucks is resolved.&rdquo;</div><div class="review-meta">Fleet Manager, Road Transport — Delhi NCR</div></div>'
-    + '<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">&ldquo;We&rsquo;d been getting incorrect spec hollow springs from another supplier. PTC sent the correct 20390836 same day. Rubber compound hardness feels exactly right — same as the original Volvo parts we pulled out.&rdquo;</div><div class="review-meta">Workshop Owner — Mumbai</div></div>'
-    + '<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">&ldquo;Exported to our workshop in Kenya. Airfreight, well packed, arrived in 5 days. Fits Volvo FM12 perfectly. We&rsquo;ve now stocked 50 pieces. Pricing is competitive and export documentation is correct for import clearance.&rdquo;</div><div class="review-meta">Parts Buyer — Nairobi, Kenya</div></div>'
-    + '<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">&ldquo;Our Renault Premium fleet uses the same hollow spring. PTC confirmed fitment before we placed the order. 30 pieces across 15 trucks — zero fitment issues, all correct spec. Will continue to order.&rdquo;</div><div class="review-meta">Fleet Supervisor, FMCG Logistics — Pune</div></div>'
-    + '</div>'
-    + '<div style="margin-top:20px">'
-    + '<a href="/volvo/suspension-chassis/" style="font-family:\'Barlow\',sans-serif;font-size:.85rem;color:#FFB81C;font-weight:600">All Volvo Suspension &amp; Chassis parts →</a>'
-    + '</div>'
-  );
-
   /* ── 17 RELATED READING ── */
   var readingCards = [
     ['/blog/volvo-rubber-spring-20390836-guide.html','Volvo Maintenance Guide','Volvo Rubber Spring 20390836: The Complete Guide','Specs, fitment chart, cross-references, failure symptoms, and how to source in India and globally.'],
@@ -759,7 +719,7 @@ window.PTC_CUSTOM_SECTIONS = function() {
 
   return secWhat + secStats + secAnatomy + secXref + secSpecs + secImages
     + secSymptoms + secCompare + secCompat + secHowto + secProc + secVideo
-    + secFaq + secQuickref + secOrder + secReviews + secReading;
+    + secFaq + secQuickref + secOrder + secReading;
 };
 </script>
 
