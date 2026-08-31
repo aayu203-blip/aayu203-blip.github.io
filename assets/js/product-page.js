@@ -4,7 +4,7 @@
 const AMBER='#FFB81C',WG='#25D366',D="'Barlow Condensed',sans-serif",B="'Barlow',sans-serif";
 const T={bg:'#050505',bgAlt:'#080808',bgCard:'#0D0D0D',text:'#F0ECE6',muted:'rgba(255,255,255,0.45)',border:'rgba(255,255,255,0.07)',navBg:'rgba(5,5,5,0.97)',footerBg:'#030303',tagBg:'rgba(255,184,28,0.08)',amberDim:'rgba(255,184,28,0.08)'};
 const WA=t=>`https://wa.me/919821037990?text=${encodeURIComponent(t)}`;
-const EMAIL='parts@partstrading.com';
+const EMAIL='partstrading@gmail.com';
 const CAT_IMG_MAP={'seals-orings':'seals-o-rings','spare-parts':'engine-parts'};
 const catImg=t=>`/assets/images/categories/${CAT_IMG_MAP[t]||t}.jpg`;
 const partLink=(b,c,n)=>`/${b||P.brandSlug}/${c||P.catSlug}/${n}`;

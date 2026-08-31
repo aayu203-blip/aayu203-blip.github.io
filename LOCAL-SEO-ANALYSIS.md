@@ -60,7 +60,7 @@
 - Street: 1st Floor, Vijay Chambers, opp. Dreamland Cinema, Grant Road East
 - City: Mumbai, Maharashtra 400004, India
 - Phone: +91-98210-37990
-- Email: parts@partstrading.com
+- Email: partstrading@gmail.com
 
 **From product page JSON-LD:**
 - Organization: Parts Trading Company ✅

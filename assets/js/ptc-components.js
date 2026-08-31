@@ -10,7 +10,7 @@
 const PTC_CONFIG = {
   baseUrl:   'https://partstrading.com',
   whatsapp:  '919821037990',
-  email:     'parts@partstrading.com',
+  email:     'partstrading@gmail.com',
   phone:     '+91 98210 37990',
   phoneRaw:  '+919821037990',
   address:   'Grant Road, Mumbai<br>Maharashtra 400 007, India',
@@ -275,7 +275,7 @@ window.getProductPageLink = function (result) {
     + '<ul style="list-style:none;padding:0;margin:0;font-size:13px;color:var(--ptc-color-footer-muted);line-height:2;">'
     + '<li><a href="tel:+919821037990" style="' + FL + '" ' + FLH + '>+91 98210 37990</a></li>'
     + '<li><a href="tel:+912240755999" style="' + FL + '" ' + FLH + '>+91 22 4075 5999</a></li>'
-    + '<li><a href="mailto:parts@partstrading.com" style="' + FL + '" ' + FLH + '>parts@partstrading.com</a></li>'
+    + '<li><a href="mailto:partstrading@gmail.com" style="' + FL + '" ' + FLH + '>partstrading@gmail.com</a></li>'
     + '<li style="font-size:12px;color:var(--ptc-color-footer-faint);">Mon–Sat 9:00–18:00 IST</li>'
     + '</ul>'
     + '</div>'

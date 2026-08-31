@@ -79,7 +79,7 @@ Recommended file (ready to deploy):
 
 ## Contact
 - WhatsApp: +91-98210-37990
-- Email: parts@partstrading.com
+- Email: partstrading@gmail.com
 - Address: 1st Floor, Vijay Chambers, Grant Road East, Mumbai 400004, India
 - Hours: Mon–Sat 9 AM–6 PM IST
 ```

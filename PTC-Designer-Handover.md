@@ -10,7 +10,7 @@
 - Heavy equipment spare parts supplier — 70 years in business, Est. 1956
 - Physical location: Vijay Chambers, Grant Road East, Mumbai 400004, India
 - Phone / WhatsApp: +91 98210 37990
-- Email: parts@partstrading.com
+- Email: partstrading@gmail.com
 - Website: partstrading.com (GitHub Pages + Vercel)
 
 **What they sell:**
@@ -304,7 +304,7 @@ const D    = "'Barlow Condensed',sans-serif";  // display font
 const B    = "'Barlow',sans-serif";             // body font
 const AMBER = '#FFB81C';
 const WA   = t => `https://wa.me/919821037990?text=${encodeURIComponent(t)}`;
-const EMAIL = 'parts@partstrading.com';
+const EMAIL = 'partstrading@gmail.com';
 
 const T = {
   bg:'#050505', bgCard:'#0D0D0D', bgSection:'#080808', bgAlt:'#0B0B0B',

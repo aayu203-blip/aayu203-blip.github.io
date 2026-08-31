@@ -420,7 +420,7 @@ Currently has `CollectionPage` but no breadcrumb schema. Add:
 **11. Create `.well-known/security.txt`**  
 Simple trust signal. Content:
 ```
-Contact: mailto:parts@partstrading.com
+Contact: mailto:partstrading@gmail.com
 Expires: 2027-05-13T00:00:00.000Z
 ```
 

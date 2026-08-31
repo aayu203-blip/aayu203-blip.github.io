@@ -103,7 +103,7 @@ Haulage & Fleet Operations, Marine & Offshore
 - **Founded:** 1956 (70+ years in the industry)
 - **Location:** Mumbai, India — ships globally
 - **Phone:** +91-98210-37990
-- **Email:** parts@partstrading.com
+- **Email:** partstrading@gmail.com
 - **Response time:** Under 60 minutes for quotations (Mon–Sat, 9AM–6PM IST)
 - **Dispatch:** Same-day for orders before 3PM IST
 - **Export experience:** Russia, UAE, Indonesia, South Africa, Nigeria, Australia, Kenya
